@@ -205,14 +205,6 @@ gamma_m = np.logspace(-2, 2, 5)     # 0.01 to 100, logarithmic
 gamma_p = np.logspace(-2, 2, 5)     # 0.01 to 100, logarithmic
 protein_degradation = np.linspace(1, 10, 5)  # 1 to 10, linear
 
-# # to test whether the multiprocessing function works as expected, let's run 2 single simulations
-# alpha_off = [0.1, 1]
-# alpha_on = [0.01, 0.1]
-# beta = [1, 10]
-# gamma_m = [0.01]
-# gamma_p = [0.01, 0.1]
-# protein_degradation = [1] 
-
 size = 1000  # Number of simulations
 # Generate parameter grid with filtering conditions to enforce beta >> alpha_off >> alpha_on
 filtered_param_grid = [
