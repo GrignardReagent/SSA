@@ -1,4 +1,4 @@
-# Stochastic Simulation Algorithm (SSA) 
+# Stochastic Simulation Algorithm (SSA)
 
 This page contains all codes for running the SSA to produce synthetic data for my PhD project. Here are some of the biological networks I'm currently working on:
 
