@@ -1,20 +1,0 @@
-Number of parameters: 9
-Overall Progress:   0%|          | 0/9 [00:00<?, ?it/s]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=20.00, sigma_b=0.00, rho=200.00, d=0.10:   0%|          | 0/9 [00:11<?, ?it/s]sigma_u=20.00, sigma_b=0.00, rho=200.00, d=0.10:  11%|█         | 1/9 [00:11<01:29, 11.23s/it]sigma_u=10.00, sigma_b=0.00, rho=100.00, d=0.10:  11%|█         | 1/9 [00:11<01:29, 11.23s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=10.00, sigma_b=0.00, rho=200.00, d=0.10:  22%|██▏       | 2/9 [00:14<01:18, 11.23s/it]sigma_u=10.00, sigma_b=0.00, rho=200.00, d=0.10:  33%|███▎      | 3/9 [00:14<00:25,  4.29s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=20.00, sigma_b=0.01, rho=200.00, d=0.10:  33%|███▎      | 3/9 [00:40<00:25,  4.29s/it]sigma_u=20.00, sigma_b=0.01, rho=200.00, d=0.10:  44%|████▍     | 4/9 [00:40<00:57, 11.54s/it]sigma_u=10.00, sigma_b=0.01, rho=100.00, d=0.10:  44%|████▍     | 4/9 [00:40<00:57, 11.54s/it]sigma_u=10.00, sigma_b=0.01, rho=100.00, d=0.10:  56%|█████▌    | 5/9 [00:40<00:31,  7.94s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=1.00, sigma_b=0.00, rho=100.00, d=0.10:  56%|█████▌    | 5/9 [00:58<00:31,  7.94s/it] sigma_u=1.00, sigma_b=0.00, rho=100.00, d=0.10:  67%|██████▋   | 6/9 [00:58<00:32, 10.99s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=10.00, sigma_b=0.01, rho=200.00, d=0.10:  67%|██████▋   | 6/9 [01:09<00:32, 10.99s/it]sigma_u=10.00, sigma_b=0.01, rho=200.00, d=0.10:  78%|███████▊  | 7/9 [01:09<00:21, 10.95s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=1.00, sigma_b=0.00, rho=200.00, d=0.10:  78%|███████▊  | 7/9 [01:52<00:21, 10.95s/it] sigma_u=1.00, sigma_b=0.00, rho=200.00, d=0.10:  89%|████████▉ | 8/9 [01:52<00:20, 20.93s/it]/localdisk/home/s1732775/stochastic_simulations/SSA_telegraph_model_02/SSA_finetune_tele.py:181: RuntimeWarning: invalid value encountered in divide
-  fano_m_time = samples[:, :, 2].var(axis=0) / samples[:, :, 2].mean(axis=0)
-sigma_u=20.00, sigma_b=0.10, rho=200.00, d=0.10:  89%|████████▉ | 8/9 [05:15<00:20, 20.93s/it]sigma_u=20.00, sigma_b=0.10, rho=200.00, d=0.10: 100%|██████████| 9/9 [05:15<00:00, 76.77s/it]sigma_u=20.00, sigma_b=0.10, rho=200.00, d=0.10: 100%|██████████| 9/9 [05:15<00:00, 35.03s/it]
