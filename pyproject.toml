@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "stochastic_simulations"
+version = "0.1"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "scipy",
+    "tqdm",
+    "numba",
+    "biocircuits",
+    "sympy",
+    "scikit-learn",
+    "ipykernel"
+]

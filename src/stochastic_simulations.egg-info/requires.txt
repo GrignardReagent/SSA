@@ -1,0 +1,10 @@
+numpy
+matplotlib
+pandas
+scipy
+tqdm
+numba
+biocircuits
+sympy
+scikit-learn
+ipykernel

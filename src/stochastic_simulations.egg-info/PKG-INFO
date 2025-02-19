@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: stochastic_simulations
+Version: 0.1
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: tqdm
+Requires-Dist: numba
+Requires-Dist: biocircuits
+Requires-Dist: sympy
+Requires-Dist: scikit-learn
+Requires-Dist: ipykernel
