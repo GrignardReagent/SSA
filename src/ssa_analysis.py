@@ -1,19 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-# import numpy as np
-# import pandas as pd
-# import os
-# import tqdm
-# import scipy.stats as st
-# import numba
-# import biocircuits
-# import itertools
-# from sympy import sqrt
-# from sklearn.svm import SVC
-# from sklearn.metrics import accuracy_score
-# from sklearn.model_selection import train_test_split
-# from sklearn.decomposition import PCA
-
+import seaborn as sns
 
 ################## Reports and Statistical Analysis
 def find_steady_state(time_points, mean_trajectory, threshold=0.05):
@@ -215,10 +202,10 @@ def plot_mRNA_variance(time_points, stress_trajectories, normal_trajectories):
 # Example usage:
 # variance_report = plot_mRNA_variance(time_points, stress_trajectories, normal_trajectories)
 
-################## Distribution of mRNA counts at a specific time point
+################## Distribution of mRNA counts after reaching steady state (data from all the timepoints)
 def plot_mRNA_dist(time_points, stress_trajectories, normal_trajectories):
     """
-    Plot the data distribution for each condition at a specific time point.
+    Plot the probability density function (PDF) of mRNA counts at steady state.
     
     Parameters:
         time_points (numpy array): Array of time points for the simulation.
@@ -226,25 +213,25 @@ def plot_mRNA_dist(time_points, stress_trajectories, normal_trajectories):
         normal_trajectories (numpy array): Array of mRNA trajectories for normal condition.
     """
 
-    # steady-state time
+    # Determine the steady-state time
     mean_stress = stress_trajectories.mean(axis=0)
     mean_normal = normal_trajectories.mean(axis=0)
-    steady_state_time_stress, ss_index_stress = find_steady_state(time_points, mean_stress)
-    steady_state_time_normal, ss_index_normal = find_steady_state(time_points, mean_normal)
+    _, ss_index_stress = find_steady_state(time_points, mean_stress)
+    _, ss_index_normal = find_steady_state(time_points, mean_normal)
 
-    # Extract mRNA counts after steady state is reached, for each condition
-    stress_midpoint = stress_trajectories[:, ss_index_stress + 1]
-    normal_midpoint = normal_trajectories[:, ss_index_normal + 1]
+    # Extract mRNA counts after steady state is reached
+    stress_ss = stress_trajectories[:, ss_index_stress:].flatten()
+    normal_ss = normal_trajectories[:, ss_index_normal:].flatten()
 
-    # Plot the data distribution
+    # Plot KDE (smooth curve)
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.hist(stress_midpoint, bins=10, alpha=0.5, label='Stressed Condition', color='blue')
-    ax.hist(normal_midpoint, bins=10, alpha=0.5, label='Normal Condition', color='green')
+    sns.kdeplot(stress_ss, fill=True, color='blue', label='Stressed Condition', linewidth=2)
+    sns.kdeplot(normal_ss, fill=True, color='green', label='Normal Condition', linewidth=2)
 
-    # Labels and legend
-    ax.set_xlabel("mRNA Count at Steady-State Time Point")
-    ax.set_ylabel("Frequency")
-    ax.set_title("Distribution of mRNA Counts at Steady-State Time Point")
+    # Labels and title
+    ax.set_xlabel("mRNA Count at Steady-State")
+    ax.set_ylabel("Probability Density")
+    ax.set_title("Distribution of mRNA Counts at Steady-State")
     ax.legend()
     ax.grid(True)
 

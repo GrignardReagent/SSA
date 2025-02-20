@@ -3,16 +3,6 @@ import tqdm
 import numpy as np
 import pandas as pd
 import scipy.stats as st
-# import os
-# import matplotlib.pyplot as plt
-# import numba
-# import biocircuits
-# import itertools
-# from sympy import sqrt
-# from sklearn.svm import SVC
-# from sklearn.metrics import accuracy_score
-# from sklearn.model_selection import train_test_split
-# from sklearn.decomposition import PCA
 
 # Define the update matrix for the reactions
 # Columns: G, G*, M
@@ -187,7 +177,27 @@ def run_simulation(args):
     # Save each trajectory as a row with label
     return [[label] + list(trajectory) for trajectory in samples]
 
-def simulate_two_telegraph_model_systems(parameter_sets, time_points, size):
+def find_steady_state(time_points, mean_trajectory, threshold=0.05):
+    """
+    Determine the time point when the system reaches steady state.
+    
+    Parameters:
+        time_points (numpy array): Array of time points.
+        mean_trajectory (numpy array): Mean mRNA counts over time.
+        threshold (float): Relative change threshold for steady state detection.
+        
+    Returns:
+        steady_state_time (float): Time when steady state is reached.
+        steady_state_index (int): Index corresponding to the steady state time.
+    """
+    window_size = 5  # Look at changes over a small window
+    for i in range(len(mean_trajectory) - window_size):
+        recent_change = np.abs(np.diff(mean_trajectory[i:i + window_size])).mean()
+        if recent_change < threshold * mean_trajectory[i]:  
+            return time_points[i], i
+    return time_points[-1], len(time_points) - 1  # Default to last time point if no steady state detected
+
+def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, force_steady_state=True, max_extension_factor=5, num_cores=None):
     """
     Simulates two systems using stochastic gene expression model.
     
@@ -195,23 +205,133 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size):
         parameter_sets (list): List of parameter dictionaries for each system.
         time_points (numpy array): Array of time points for the simulation.
         size (int): Number of simulations per condition.
+        force_steady_state (bool): If True, extends simulation time until steady-state is reached.
+        max_extension_factor (int): Maximum number of extensions to prevent infinite looping.
+        num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
     
     Returns:
         pd.DataFrame: DataFrame containing simulation results.
     """
-    num_cores = multiprocessing.cpu_count() # TODO: make this an optional parameter
-    with multiprocessing.Pool(num_cores) as pool:
-        print(f"Running simulations on {num_cores} cores..."
-              f"\nSystem 1 parameters: {parameter_sets[0]}"
-              f"\nSystem 2 parameters: {parameter_sets[1]}") 
-        results = list(tqdm.tqdm(pool.imap(run_simulation, [(p, time_points, size) for p in parameter_sets]), 
-                                 total=len(parameter_sets), desc="Simulating Systems"))
+    if num_cores is None:
+        num_cores = multiprocessing.cpu_count()
+    extended = False  # Track if simulation was extended
+    df_results = None # Store simulation results across iterations
 
-    # Flatten results
-    results = [item for sublist in results for item in sublist]
+    for extension_round in range(max_extension_factor): # TODO: get rid of this for loop and the break statements - it's inefficient as it runs both parameter sets again even if one of them has already reached steady state
+        with multiprocessing.Pool(num_cores) as pool:
+            print(f"Running simulations on {num_cores} cores... (Attempt {extension_round + 1})"
+                  f"\nSystem 1 parameters: {parameter_sets[0]}"
+                  f"\nSystem 2 parameters: {parameter_sets[1]}") 
+            results = list(tqdm.tqdm(pool.imap(run_simulation, [(p, time_points, size) for p in parameter_sets]), 
+                                     total=len(parameter_sets), desc="Simulating Systems"))
 
-    # Convert to DataFrame
-    columns = ["label"] + [f"time_{t}" for t in time_points]
-    df_results = pd.DataFrame(results, columns=columns)
+        # Flatten results
+        results = [item for sublist in results for item in sublist]
 
-    return df_results
+        # Convert to DataFrame
+        columns = ["label"] + [f"time_{t}" for t in time_points]
+        df_new_results = pd.DataFrame(results, columns=columns)
+
+        # merge with existing results if extending simulation
+        if df_results is not None:
+            df_results = pd.concat([df_results, df_new_results], ignore_index=True)
+        else:
+            df_results = df_new_results
+
+        # Check if steady-state is reached
+        stress_trajectories = df_results[df_results["label"] == 0].iloc[:, 1:].values
+        normal_trajectories = df_results[df_results["label"] == 1].iloc[:, 1:].values
+
+        mean_stress = stress_trajectories.mean(axis=0)
+        mean_normal = normal_trajectories.mean(axis=0)
+
+        _, steady_state_index_stress = find_steady_state(time_points, mean_stress)
+        _, steady_state_index_normal = find_steady_state(time_points, mean_normal)
+
+        # If steady-state is not reached
+        if steady_state_index_stress == (len(time_points) - 1) or steady_state_index_normal == (len(time_points) - 1): # TODO: check for only 1 system at a time
+            if force_steady_state:
+                print("⚠️ Warning: Steady-state not reached.") 
+                time_points = np.arange(0, time_points[-1] * 1.5, time_points[1] - time_points[0])  # Extend time by 50%
+                print(f"Extending simulation time range to {time_points[-1]} minutes...")
+                extended = True
+            else:
+                print("⚠️ Warning: Steady-state not reached, but simulation will not be extended as per user choice.")
+                break  # Stop extending time
+        else:
+            break  # Exit loop if steady-state is reached
+
+    if extended:
+        print(f"✅ Final simulation time range: {time_points[-1]} minutes")
+
+    return df_results    
+
+
+# def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, force_steady_state=True, max_extension_factor=5, num_cores=None):
+#     """
+#     Simulates two systems using stochastic gene expression model.
+    
+#     Parameters:
+#         parameter_sets (list): List of parameter dictionaries for each system.
+#         time_points (numpy array): Array of time points for the simulation.
+#         size (int): Number of simulations per condition.
+#         force_steady_state (bool): If True, extends simulation time until steady-state is reached.
+#         max_extension_factor (int): Maximum number of extensions to prevent infinite looping.
+#         num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
+    
+#     Returns:
+#         pd.DataFrame: DataFrame containing simulation results.
+#     """
+#     if num_cores is None:
+#         num_cores = multiprocessing.cpu_count()
+#     extended = [False, False]  # Track if simulation was extended for each system
+#     df_results = None  # Store simulation results across iterations
+
+#     for extension_round in range(max_extension_factor):
+#         with multiprocessing.Pool(num_cores) as pool:
+#             print(f"Running simulations on {num_cores} cores... (Attempt {extension_round + 1})"
+#                   f"\nSystem 1 parameters: {parameter_sets[0]}"
+#                   f"\nSystem 2 parameters: {parameter_sets[1]}")
+#             results = list(tqdm.tqdm(pool.imap(run_simulation, [(p, time_points, size) for p in parameter_sets]),
+#                                      total=len(parameter_sets), desc="Simulating Systems"))
+
+#         # Flatten results
+#         results = [item for sublist in results for item in sublist]
+
+#         # Convert to DataFrame
+#         columns = ["label"] + [f"time_{t}" for t in time_points]
+#         df_new_results = pd.DataFrame(results, columns=columns)
+
+#         # Merge with existing results if extending simulation
+#         if df_results is not None:
+#             df_results = pd.concat([df_results, df_new_results], ignore_index=True)
+#         else:
+#             df_results = df_new_results
+
+#         # Check if steady-state is reached for each system
+#         for label in [0, 1]:
+#             trajectories = df_results[df_results["label"] == label].iloc[:, 1:].values
+#             mean_trajectory = trajectories.mean(axis=0)
+#             steady_state_time, _ = find_steady_state(time_points, mean_trajectory)
+
+#             # If steady-state is not reached
+#             if steady_state_time < time_points[-1]:
+#                 if force_steady_state:
+#                     print(f"⚠️ Warning: Steady-state not reached for system {label}.")
+#                     time_points = np.arange(0, time_points[-1] * 1.5, time_points[1] - time_points[0])  # Extend time by 50%
+#                     print(f"Extending simulation time range to {time_points[-1]} minutes for system {label}...")
+#                     extended[label] = True
+#                 else:
+#                     print(f"⚠️ Warning: Steady-state not reached for system {label}, but simulation will not be extended as per user choice.")
+#                     break  # Stop extending time
+#             else:
+#                 extended[label] = False
+
+#         # Exit loop if steady-state is reached for both systems
+#         if not any(extended):
+#             break
+
+#     if any(extended):
+#         print(f"✅ Final simulation time range: {time_points[-1]} minutes")
+
+#     return df_results

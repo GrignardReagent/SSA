@@ -14,6 +14,7 @@ dependencies:
 
   # Data visualization
   - matplotlib
+  - seaborn
   - tqdm
 
   # Machine learning & statistics
