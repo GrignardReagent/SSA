@@ -214,58 +214,65 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, forc
     """
     if num_cores is None:
         num_cores = multiprocessing.cpu_count()
-    extended = False  # Track if simulation was extended
-    df_results = None # Store simulation results across iterations
+    df_results = None  # Store simulation results across iterations
+    # initial time points
+    initial_time_points = time_points.copy()
 
-    for extension_round in range(max_extension_factor): # TODO: get rid of this for loop and the break statements - it's inefficient as it runs both parameter sets again even if one of them has already reached steady state
-        with multiprocessing.Pool(num_cores) as pool:
-            print(f"Running simulations on {num_cores} cores... (Attempt {extension_round + 1})"
-                  f"\nSystem 1 parameters: {parameter_sets[0]}"
-                  f"\nSystem 2 parameters: {parameter_sets[1]}") 
-            results = list(tqdm.tqdm(pool.imap(run_simulation, [(p, time_points, size) for p in parameter_sets]), 
-                                     total=len(parameter_sets), desc="Simulating Systems"))
+    for system_index, param_set in list(tqdm.tqdm(enumerate(parameter_sets), total=len(parameter_sets), desc="Simulating Telegraph Model Systems")):
+        extended = False  # Track if simulation was extended for this system
 
-        # Flatten results
-        results = [item for sublist in results for item in sublist]
+        for extension_round in range(max_extension_factor):
+            with multiprocessing.Pool(num_cores) as pool:
+                print(f"Running simulations on {num_cores} cores... (Attempt {extension_round + 1})"
+                      f"\nSystem {system_index + 1} parameters: {param_set}")
+                
+                results = pool.map(run_simulation, [(param_set, time_points, size)])
 
-        # Convert to DataFrame
-        columns = ["label"] + [f"time_{t}" for t in time_points]
-        df_new_results = pd.DataFrame(results, columns=columns)
+            # Flatten results
+            results = [item for sublist in results for item in sublist]
 
-        # merge with existing results if extending simulation
-        if df_results is not None:
-            df_results = pd.concat([df_results, df_new_results], ignore_index=True)
-        else:
-            df_results = df_new_results
+            # Convert to DataFrame
+            columns = ["label"] + [f"time_{t}" for t in time_points]
+            df_new_results = pd.DataFrame(results, columns=columns)
 
-        # Check if steady-state is reached
-        stress_trajectories = df_results[df_results["label"] == 0].iloc[:, 1:].values
-        normal_trajectories = df_results[df_results["label"] == 1].iloc[:, 1:].values
-
-        mean_stress = stress_trajectories.mean(axis=0)
-        mean_normal = normal_trajectories.mean(axis=0)
-
-        _, steady_state_index_stress = find_steady_state(time_points, mean_stress)
-        _, steady_state_index_normal = find_steady_state(time_points, mean_normal)
-
-        # If steady-state is not reached
-        if steady_state_index_stress == (len(time_points) - 1) or steady_state_index_normal == (len(time_points) - 1): # TODO: check for only 1 system at a time
-            if force_steady_state:
-                print("⚠️ Warning: Steady-state not reached.") 
-                time_points = np.arange(0, time_points[-1] * 1.5, time_points[1] - time_points[0])  # Extend time by 50%
-                print(f"Extending simulation time range to {time_points[-1]} minutes...")
-                extended = True
+            # Merge with existing results if extending simulation
+            if df_results is not None:
+                df_new_results = df_new_results[df_results.columns]  # Align columns before merging
+                df_results = pd.concat([df_results, df_new_results], ignore_index=True)
             else:
-                print("⚠️ Warning: Steady-state not reached, but simulation will not be extended as per user choice.")
-                break  # Stop extending time
-        else:
-            break  # Exit loop if steady-state is reached
+                df_results = df_new_results
 
-    if extended:
-        print(f"✅ Final simulation time range: {time_points[-1]} minutes")
+            # Check if steady-state is reached
+            trajectories = df_results[df_results["label"] == system_index].iloc[:, 1:].values
+            mean_trajectory = trajectories.mean(axis=0)
 
-    return df_results    
+            steady_state_time, steady_state_index = find_steady_state(time_points, mean_trajectory)
 
+            # If steady-state is not reached
+            if steady_state_index == (len(time_points) - 1):
+                if force_steady_state:
+                    print(f"⚠️ Warning: Steady-state not reached for system {system_index + 1}.")
+                    time_points = np.arange(0, time_points[-1] * 1.5, time_points[1] - time_points[0])  # Extend time by 50%
+                    print(f"Extending simulation time range to {time_points[-1]} minutes for system {system_index + 1}...")
+                    extended = True
+                else:
+                    print(f"⚠️ Warning: Steady-state not reached for system {system_index + 1}, but simulation will not be extended as per user choice.")
+                    break
+            else:
+                print(f"✅ Steady-state reached for system {system_index + 1} at {steady_state_time} minutes.")
+                break
+
+        if extended:
+            print(f"✅ Final simulation time range for system {system_index + 1}: {time_points[-1]} minutes")
+            # reset timepoint to original timepoints after extending
+            time_points = initial_time_points.copy()
+
+    # check for NaN values before returning        
+    if df_results.isna().sum().sum() > 0:
+        print("⚠️ Warning: NaN values detected in df_results!")
+        print(df_results.isna().sum()[df_results.isna().sum() > 0])
+
+    return df_results
 
 # def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, force_steady_state=True, max_extension_factor=5, num_cores=None):
 #     """
