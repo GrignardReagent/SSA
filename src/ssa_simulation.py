@@ -3,6 +3,7 @@ import tqdm
 import numpy as np
 import pandas as pd
 import scipy.stats as st
+from ssa_analysis import find_steady_state
 
 # Define the update matrix for the reactions
 # Columns: G, G*, M
@@ -177,26 +178,6 @@ def run_simulation(args):
     # Save each trajectory as a row with label
     return [[label] + list(trajectory) for trajectory in samples]
 
-def find_steady_state(time_points, mean_trajectory, threshold=0.05):
-    """
-    Determine the time point when the system reaches steady state.
-    
-    Parameters:
-        time_points (numpy array): Array of time points.
-        mean_trajectory (numpy array): Mean mRNA counts over time.
-        threshold (float): Relative change threshold for steady state detection.
-        
-    Returns:
-        steady_state_time (float): Time when steady state is reached.
-        steady_state_index (int): Index corresponding to the steady state time.
-    """
-    window_size = 5  # Look at changes over a small window
-    for i in range(len(mean_trajectory) - window_size):
-        recent_change = np.abs(np.diff(mean_trajectory[i:i + window_size])).mean()
-        if recent_change < threshold * mean_trajectory[i]:  
-            return time_points[i], i
-    return time_points[-1], len(time_points) - 1  # Default to last time point if no steady state detected
-
 #### ORIGINAL FUNCTION ####
 # def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, force_steady_state=True, max_extension_factor=5, num_cores=None):
 #     """
@@ -356,7 +337,7 @@ def find_steady_state(time_points, mean_trajectory, threshold=0.05):
 #     return df_results
 
 #####GPT 03#####
-def run_simulation_continuous(args):
+def run_simulation_continuous(args): # Worker function  
     """
     Runs a simulation segment starting from given initial states.
     
@@ -452,7 +433,7 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size,
             traj_array = np.array([row[1:] for row in overall_results])
             mean_traj = traj_array.mean(axis=0)
             # Use the overall time grid to check for steady state
-            steady_state_time, steady_state_index = find_steady_state(overall_time, mean_traj)
+            steady_state_time, steady_state_index = find_steady_state(overall_time, mean_traj, threshold=0.10)
             if steady_state_index < len(overall_time) - 1:
                 print(f"✅ Steady-state reached for system {system_index + 1} at {steady_state_time} minutes.")
                 break

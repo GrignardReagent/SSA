@@ -3,20 +3,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ################## Reports and Statistical Analysis
-def find_steady_state(time_points, mean_trajectory, threshold=0.05):
+def find_steady_state(time_points, mean_trajectory, threshold=0.1):
     """
     Determine the time point when the system reaches steady state.
     
     Parameters:
         time_points (numpy array): Array of time points.
         mean_trajectory (numpy array): Mean mRNA counts over time.
-        threshold (float): Relative change threshold for steady state detection.
+        threshold (float): Relative change threshold for steady state detection, increase the detection threshold if the defined system struggles to reach steady state.
         
     Returns:
         steady_state_time (float): Time when steady state is reached.
         steady_state_index (int): Index corresponding to the steady state time.
     """
-    window_size = 5  # Look at changes over a small window
+    window_size = int(len(time_points) * 0.05)  # Look at changes over a window size relative to the total time points defined
     for i in range(len(mean_trajectory) - window_size):
         recent_change = np.abs(np.diff(mean_trajectory[i:i + window_size])).mean()
         if recent_change < threshold * mean_trajectory[i]:  
