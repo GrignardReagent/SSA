@@ -2,4 +2,6 @@
 SSA_tele_w_protein/data/samples*
 SSA_telegraph_model/data/samples*
 SSA_telegraph_model_02/data/samples*
+
+# virtual environment
 .env
