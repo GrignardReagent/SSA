@@ -430,10 +430,10 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size,
                 overall_results = [ prev + seg[1:] for prev, seg in zip(overall_results, seg_results)]
                 overall_time = np.concatenate([overall_time, seg_time[1:]])
             # Compute the mean mRNA trajectory (ignoring the label column)
-            traj_array = np.array([row[1:] for row in overall_results])
-            mean_traj = traj_array.mean(axis=0)
+            # traj_array = np.array([row[1:] for row in overall_results])
+            # mean_traj = traj_array.mean(axis=0)
             # Use the overall time grid to check for steady state
-            steady_state_time, steady_state_index = find_steady_state(overall_time, mean_traj, threshold=0.10)
+            steady_state_time, steady_state_index = find_steady_state(param_set)
             if steady_state_index < len(overall_time) - 1:
                 print(f"✅ Steady-state reached for system {system_index + 1} at {steady_state_time} minutes.")
                 break
