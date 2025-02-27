@@ -3,27 +3,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 ################## Reports and Statistical Analysis
-# def find_steady_state(time_points, mean_trajectory, threshold=0.05):
-#     """
-#     (RETIRED)
-#     Determine the time point when the system reaches steady state.
-    
-#     Parameters:
-#         time_points (numpy array): Array of time points.
-#         mean_trajectory (numpy array): Mean mRNA counts over time.
-#         threshold (float): Relative change threshold for steady state detection, increase the detection threshold if the defined system struggles to reach steady state.
-        
-#     Returns:
-#         steady_state_time (float): Time when steady state is reached.
-#         steady_state_index (int): Index corresponding to the steady state time.
-#     """
-#     window_size = int(len(time_points) * 0.05)  # Look at changes over a window size relative to the total time points defined
-#     for i in range(len(mean_trajectory) - window_size):
-#         recent_change = np.abs(np.diff(mean_trajectory[i:i + window_size])).mean()
-#         if recent_change < threshold * mean_trajectory[i]:  
-#             return time_points[i], i
-#     return time_points[-1], len(time_points) - 1  # Default to last time point if no steady state detected
-
 def find_steady_state(parameter_set: dict):
     """
     Determine the time point when the system reaches steady state, this is usually 10/degradation rate, so this function take the parameter_set as the input and return the steady state time.
@@ -67,14 +46,6 @@ def statistical_report(parameter_sets: list, stress_trajectories, normal_traject
 
     # Print Report
     print("\n=== Statistical Report ===")
-    # print(f"Steady-State Reached: {'Yes' if ss_reached_stress else 'No'} (Stress) | {'Yes' if ss_reached_normal else 'No'} (Normal)")
-
-    # if not ss_reached_stress:
-    #     print("⚠️ Warning: Steady-state not clearly reached in stressed condition. Consider extending simulation time.")
-
-    # if not ss_reached_normal:
-    #     print("⚠️ Warning: Steady-state not clearly reached in normal condition. Consider extending simulation time.")
-
     print("\n📊 **Steady-State Statistics:**")
     print(f"  Stressed Condition (after {steady_state_time_stress:.1f} min):")
     print(f"    - Mean mRNA Count: {mean_mRNA_stress_ss:.2f}")
@@ -85,10 +56,8 @@ def statistical_report(parameter_sets: list, stress_trajectories, normal_traject
     print(f"    - Variance: {var_mRNA_normal_ss:.2f}")
 
     return {
-        # "Steady State Reached": {"Stress": ss_reached_stress, "Normal": ss_reached_normal},
-        "Stress Stats": {"Mean": mean_mRNA_stress_ss, "Variance": var_mRNA_stress_ss, "Steady State Time": steady_state_time_stress},
-        "Normal Stats": {"Mean": mean_mRNA_normal_ss, "Variance": var_mRNA_normal_ss, "Steady State Time": steady_state_time_normal}
-    }
+        "Stressed Mean": mean_mRNA_stress_ss, "Stressed Variance": var_mRNA_stress_ss, "Stressed Steady State Time": steady_state_time_stress},{"Normal Mean": mean_mRNA_normal_ss, "Normal Variance": var_mRNA_normal_ss, "Normal Steady State Time": steady_state_time_normal
+        }
 
 ################## Mean mRNA counts over time
 def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories, normal_trajectories):
