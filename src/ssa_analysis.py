@@ -193,6 +193,7 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
     # Show plot
     plt.show()
 
+############# Autocorrelation and Cross-correlation ##############
 def autocrosscorr(
     yA,
     yB=None,

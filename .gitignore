@@ -1,7 +1,4 @@
 # large data file
-SSA_tele_w_protein/data/samples*
-SSA_telegraph_model/data/samples*
-SSA_telegraph_model_02/data/samples*
-
+./experiments/SSA_telegraph_model/var_v_accuracy_plot/data/mRNA*
 # virtual environment
 .env
