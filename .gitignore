@@ -1,4 +1,5 @@
 # large data file
-./experiments/SSA_telegraph_model/var_v_accuracy_plot/data/mRNA*
+experiments/SSA_telegraph_model/var_v_accuracy_plot/data/mRNA*
 # virtual environment
 .env
+
