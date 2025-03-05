@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader, TensorDataset
 # Define the MLP model
 class MLP(nn.Module):
     def __init__(self, input_size, hidden_size:list, output_size, 
-                 dropout_rate=0.3, learning_rate=0.01, 
+                 dropout_rate=0.3, learning_rate=0.001, 
                  device=None):
         # Call the parent class (nn.Module) constructor
         super(MLP, self).__init__() 
@@ -56,7 +56,6 @@ class MLP(nn.Module):
                 nn.init.kaiming_normal_(layer.weight, mode='fan_in', nonlinearity='relu')
                 if layer.bias is not None:
                     nn.init.zeros_(layer.bias)  # Set bias to zero
-
 
     def forward(self, x):
         '''
