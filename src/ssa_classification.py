@@ -6,7 +6,7 @@ import os
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.decomposition import PCA
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 
@@ -115,30 +115,21 @@ def random_forest_classifier(X_train, X_test, y_train, y_test, rf_n_estimators=1
 
     return rf_acc
 
-def pca_plot(mRNA_traj_file):
-    """
-    Load the mRNA trajectories dataset and perform PCA for visualization.
+# def mlp_classifier(X_train, X_test, y_train, y_test):
+#     """ 
+#     Trains a basic MLP model for classification and evaluates the model.
     
-    Parameters:
-        mRNA_traj_file: Path to the mRNA trajectories dataset
-    """
-    # Load the mRNA trajectories dataset
-    df_results = pd.read_csv(mRNA_traj_file)
+#     Parameters:
+#         X_train, X_test, y_train, y_test: Split data
+    
+#     Returns:
+#         accuracy: Classification accuracy of the MLP model
+#     """
+#     # MLP Classifier
+#     # mlp = MLPClassifier(hidden_layer_sizes=(100, 100), max_iter=1000)
+#     mlp.fit(X_train, y_train)
+#     mlp_preds = mlp.predict(X_test)
+#     mlp_acc = accuracy_score(y_test, mlp_preds)
+#     print(f"=== MLP Classifier Accuracy: {mlp_acc:.2f} ===")
 
-    # Extract features (mRNA trajectories) and labels
-    X = df_results.iloc[:, 1:].values  # All time series data
-    y = df_results["label"].values  # Labels: 0 (Stressed Condition) or 1 (Normal Condition)
-
-    # Scatter plot of two PCA components for visualization
-    pca = PCA(n_components=2)
-    X_pca = pca.fit_transform(X)
-
-    plt.figure(figsize=(8, 6))
-    plt.scatter(X_pca[y == 0, 0], X_pca[y == 0, 1], color='blue', label='Stressed Condition', alpha=0.5)
-    plt.scatter(X_pca[y == 1, 0], X_pca[y == 1, 1], color='green', label='Normal Condition', alpha=0.5)
-    plt.xlabel("Principal Component 1")
-    plt.ylabel("Principal Component 2")
-    plt.title("PCA Projection of mRNA Trajectories")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+#     return mlp_acc

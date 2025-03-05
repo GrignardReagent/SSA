@@ -218,3 +218,18 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, num_
         print(df_results.isna().sum()[df_results.isna().sum() > 0])
 
     return df_results
+
+def simulate_one_telegraph_model_system(parameter_set, time_points, size, num_cores=None):
+    """
+    Simulates a single system using stochastic gene expression model without forcing steady-state extension.
+    
+    Parameters:
+        parameter_set (dict): Parameter dictionary for the system.
+        time_points (numpy array): Array of time points for the simulation.
+        size (int): Number of simulations per condition.
+        num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
+    
+    Returns:
+        pd.DataFrame: DataFrame containing simulation results.
+    """
+    return simulate_two_telegraph_model_systems([parameter_set], time_points, size, num_cores)
