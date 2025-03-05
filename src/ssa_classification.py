@@ -123,7 +123,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from models.MLP import MLP
 
-def mlp_classifier(X_train, X_test, y_train, y_test, input_size=None, hidden_size:list=None, output_size=None, dropout_rate=0.3, learning_rate=0.001, batch_size=32, epochs=10):
+def mlp_classifier(X_train, X_test, y_train, y_test, input_size=None, hidden_size:list=[300, 200], output_size=None, dropout_rate=0.3, learning_rate=0.001, batch_size=32, epochs=10):
     """ 
     Trains a basic MLP model for classification and evaluates the model. This is a high level function and doesn't allow you to change the model architecture. To modify model architecture, you need to modify the MLP class in models/MLP.py.
     
@@ -143,7 +143,6 @@ def mlp_classifier(X_train, X_test, y_train, y_test, input_size=None, hidden_siz
     # Define model parameters
     input_size = X_train.shape[1]
     output_size = len(set(y_train))  # Number of classes
-    hidden_size = [300, 200]
 
     # Standardize the data 
     # If your input features are too large (e.g., >1000) or too small (<0.0001), it can cause unstable training, so it's better to standardize the data.
