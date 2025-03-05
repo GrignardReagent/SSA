@@ -53,8 +53,10 @@ def svm_classifier(X_train, X_test, y_train, y_test, svm_C=1.0, svm_gamma='scale
     # Evaluate the model
     y_pred = svm_model.predict(X_test)
     svm_acc = accuracy_score(y_test, y_pred)
-    print(f"=== SVM Classification Accuracy: {svm_acc:.2f} ===")
-
+    if svm_kernel == 'rbf':
+        print(f"=== SVM (RBF Kernel) Classification Accuracy: {svm_acc:.2f} ===")
+    elif svm_kernel == 'linear':
+        print(f"=== SVM (Linear Kernel) Classification Accuracy: {svm_acc:.2f} ===")
     return svm_acc
 
 def random_classifier(y_test):
@@ -118,6 +120,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
+from sklearn.preprocessing import StandardScaler
 from models.MLP import MLP
 
 def mlp_classifier(X_train, X_test, y_train, y_test, input_size=None, hidden_size:list=None, output_size=None, dropout_rate=0.3, learning_rate=0.001, batch_size=32, epochs=10):
@@ -141,6 +144,12 @@ def mlp_classifier(X_train, X_test, y_train, y_test, input_size=None, hidden_siz
     input_size = X_train.shape[1]
     output_size = len(set(y_train))  # Number of classes
     hidden_size = [300, 200]
+
+    # Standardize the data 
+    # If your input features are too large (e.g., >1000) or too small (<0.0001), it can cause unstable training, so it's better to standardize the data.
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
 
     # prepare the data in terms of tensors and dataloaders so torch can use it
     train_loader = DataLoader(TensorDataset(

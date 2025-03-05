@@ -35,7 +35,7 @@ class MLP(nn.Module):
 
         # Enable multi-GPU support if multiple GPUs are available
         if num_gpus > 1:
-            self = nn.DataParallel(self)  # Wrap model in DataParallel
+            self.model = nn.DataParallel(self)  # Wrap model in DataParallel
 
         # loss function and optimiser
         self.criterion = nn.CrossEntropyLoss()
@@ -73,6 +73,12 @@ class MLP(nn.Module):
         Train the model using the provided DataLoader and optional validation DataLoader.
         Saves the best model based on the validation accuracy.
         '''
+        torch.cuda.empty_cache()  # Free unused memory
+
+        if self.device.type == 'cuda':
+            print("✅ Running on CUDA!")
+        else:
+            print("❌ Still on CPU...")
 
         best_val_acc = 0.0
         # losses = []
@@ -84,6 +90,8 @@ class MLP(nn.Module):
             for batch_X, batch_y in train_loader:
                 # Move data to GPU if available
                 batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
+                # GPU check
+                # print("Data device:", batch_X.device)
 
                 self.optimizer.zero_grad()  # Reset gradients
                 outputs = self(batch_X)  # Forward pass
