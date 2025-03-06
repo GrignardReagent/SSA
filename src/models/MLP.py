@@ -35,11 +35,25 @@ class MLP(nn.Module):
 
         # Enable multi-GPU support if multiple GPUs are available
         if num_gpus > 1:
-            self.model = nn.DataParallel(self)  # Wrap model in DataParallel
+            self = nn.DataParallel(self)  # Ensure it's on the correct device
 
-        # loss function and optimiser
-        self.criterion = nn.CrossEntropyLoss()
-        self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+        # Assign optimizer to `self.module` if using DataParallel
+        if isinstance(self, nn.DataParallel):
+            self.module.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate)
+            self.module.criterion = nn.CrossEntropyLoss()
+        else:
+            self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+            self.criterion = nn.CrossEntropyLoss()
+
+        # # loss function and optimiser
+        # self.criterion = nn.CrossEntropyLoss()
+        # self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+        # # Initialize optimizer after wrapping with DataParallel
+        # self.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate) if isinstance(self, nn.DataParallel) else optim.Adam(self.parameters(), lr=learning_rate)
+        
+        # debug line
+        print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
+
     
     def initialize_weights(self):
         """
@@ -92,12 +106,18 @@ class MLP(nn.Module):
                 batch_X, batch_y = batch_X.to(self.device), batch_y.to(self.device)
                 # GPU check
                 # print("Data device:", batch_X.device)
+                
+                # Ensure optimiser is correctly accessed if using DataParallel
+                if isinstance(self, nn.DataParallel):
+                    model = self.module  # Get the underlying model
+                else:
+                    model = self  # Use the model as is
 
-                self.optimizer.zero_grad()  # Reset gradients
-                outputs = self(batch_X)  # Forward pass
-                loss = self.criterion(outputs, batch_y)  # Compute loss
+                model.optimizer.zero_grad()  # Reset gradients; also use the correct optimiser from the model
+                outputs = model(batch_X)  # Forward pass
+                loss = model.criterion(outputs, batch_y)  # Compute loss
                 loss.backward()  # Backpropagation
-                self.optimizer.step()  # Update weights
+                model.optimizer.step()  # Update weights
 
                 total_loss += loss.item()
                 correct += (torch.argmax(outputs, dim=1) == batch_y).sum().item()
