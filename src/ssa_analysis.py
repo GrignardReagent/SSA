@@ -181,18 +181,34 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
     normal_ss = normal_trajectories[:, steady_state_index_normal:].flatten()
 
     # Plot KDE (smooth curve)
-    fig, ax = plt.subplots(figsize=(10, 6))
-    sns.kdeplot(stress_ss, fill=True, color='blue', label='Stressed Condition', linewidth=2)
-    sns.kdeplot(normal_ss, fill=True, color='green', label='Normal Condition', linewidth=2)
+    # fig, ax = plt.subplots(figsize=(10, 6))
+    # sns.kdeplot(stress_ss, fill=True, color='blue', label='Stressed Condition', linewidth=2)
+    # sns.kdeplot(normal_ss, fill=True, color='green', label='Normal Condition', linewidth=2)
+        # Labels and title
+    # ax.set_xlabel("mRNA Count at Steady-State")
+    # ax.set_ylabel("Probability Density")
+    # ax.set_title("Distribution of mRNA Counts at Steady-State")
+    # ax.legend()
+    # ax.grid(True)
+
+    # Plot histogram (recommended for Poisson-distributed data)
+    # Determine maximum mRNA count to set bin range
+    max_count = max(stress_ss.max(), normal_ss.max())
+
+    # Set up bins explicitly for integer values (Poisson data)
+    bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
+
+    # Plot histograms
+    plt.figure(figsize=(10, 6))
+    plt.hist(stress_ss, bins=bins, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
+    plt.hist(normal_ss, bins=bins, density=True, alpha=0.6, color='green', label='Normal Condition', edgecolor='black')
 
     # Labels and title
-    ax.set_xlabel("mRNA Count at Steady-State")
-    ax.set_ylabel("Probability Density")
-    ax.set_title("Distribution of mRNA Counts at Steady-State")
-    ax.legend()
-    ax.grid(True)
-
-    # Show plot
+    plt.xlabel("mRNA Count at Steady-State")
+    plt.ylabel("Probability Density")
+    plt.title("Distribution of mRNA Counts at Steady-State")
+    plt.legend()
+    plt.grid(True)
     plt.show()
 
 ############# Autocorrelation and Cross-correlation ##############
