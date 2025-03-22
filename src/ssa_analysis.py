@@ -192,16 +192,16 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
     # ax.grid(True)
 
     # Plot histogram (recommended for Poisson-distributed data)
-    # Determine maximum mRNA count to set bin range
-    max_count = max(stress_ss.max(), normal_ss.max())
+    # # Determine maximum mRNA count to set bin range
+    # max_count = max(stress_ss.max(), normal_ss.max())
 
-    # Set up bins explicitly for integer values (Poisson data)
-    bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
+    # # Set up bins explicitly for integer values (Poisson data)
+    # bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
 
     # Plot histograms
     plt.figure(figsize=(10, 6))
-    plt.hist(stress_ss, bins=bins, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
-    plt.hist(normal_ss, bins=bins, density=True, alpha=0.6, color='green', label='Normal Condition', edgecolor='black')
+    plt.hist(stress_ss, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
+    plt.hist(normal_ss, density=True, alpha=0.6, color='green', label='Normal Condition', edgecolor='black')
 
     # Labels and title
     plt.xlabel("mRNA Count at Steady-State")
