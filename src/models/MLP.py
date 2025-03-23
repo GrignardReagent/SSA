@@ -82,20 +82,21 @@ class MLP(nn.Module):
         x = self.fc3(x)  # Output layer (logits)
         return x          # Return the final output
 
-    def train_model(self, train_loader, val_loader=None, epochs=10, save_path=None):
+    def train_model(self, train_loader, val_loader=None, epochs=50, patience=10, save_path=None):
         '''
         Train the model using the provided DataLoader and optional validation DataLoader.
         Saves the best model based on the validation accuracy.
         '''
+        # CUDA
         torch.cuda.empty_cache()  # Free unused memory
-
         if self.device.type == 'cuda':
             print("✅ Running on CUDA!")
         else:
             print("❌ Still on CPU...")
 
+        history = {'train_loss': [], 'train_acc': [], 'val_acc': []}
         best_val_acc = 0.0
-        # losses = []
+        epochs_no_improve = 0
 
         for epoch in range(epochs):
             self.train()
@@ -124,24 +125,35 @@ class MLP(nn.Module):
                 total += batch_y.size(0)
             
             train_acc = correct / total
-            # avg_loss = total_loss / len(train_loader)
-            # losses.append(avg_loss)
-            print(f"Epoch [{epoch+1}/{epochs}], Loss: {total_loss:.4f}, Train Acc: {train_acc:.4f}")
+            avg_loss = total_loss / len(train_loader)
+            history['train_loss'].append(avg_loss)
+            history['train_acc'].append(train_acc)
+            print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
 
+            # Early stopping
             if val_loader is not None:
                 val_acc = self.evaluate(val_loader)
+                history['val_acc'].append(val_acc)
                 print(f"Validation Acc: {val_acc:.4f}")
 
                 # save the best model based on validation accuracy
                 if val_acc > best_val_acc:
                     best_val_acc = val_acc
+                    epochs_no_improve = 0
                     # only save the model if a save path is provided
                     if save_path is not None:
                         torch.save(self.state_dict(), save_path)
                         print(f"✅ Model saved at {save_path} (Best Validation Acc: {best_val_acc:.4f})")
+                else:
+                    epochs_no_improve += 1
+                    print(f"No improvement ({epochs_no_improve}/{patience}).")
+
+                if epochs_no_improve >= patience:
+                    print(f"Stopping early! No improvement for {patience} epochs.")
+                    break
 
         print("Training complete!")        
-        # return losses
+        return history
     
     def evaluate(self, data_loader):
         '''
