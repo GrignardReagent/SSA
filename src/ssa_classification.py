@@ -1,49 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import os
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-
-def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None, split_random_state=42):
-    """
-    Loads the mRNA trajectories dataset, extracts features and labels,
-    and splits the data into training, test, and optionally validation sets.
-
-    Parameters:
-        mRNA_traj_file: Path to the mRNA trajectories dataset
-        split_test_size: Fraction of the dataset for the test split (default: 0.2)
-        split_val_size: Fraction of the training data for the validation split (default: None) - **Required for Deep Learning**
-        split_random_state: Seed for reproducibility (default: 42)
-
-    Returns:
-        X_train, X_test, y_train, y_test [, X_val, y_val]: Split data
-    """
-    # Load dataset
-    df_results = pd.read_csv(mRNA_traj_file)
-
-    # Extract features and labels
-    X = df_results.iloc[:, 1:].values
-    y = df_results["label"].values
-
-    # Split data into train/test
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=split_test_size, random_state=split_random_state, stratify=y
-    )
-
-    # Further split training data if validation size is specified
-    if split_val_size:
-        X_train, X_val, y_train, y_val = train_test_split(
-            X_train, y_train, test_size=split_val_size,
-            random_state=split_random_state, stratify=y_train
-        )
-        return X_train, X_val, X_test, y_train, y_val, y_test
-
-    return X_train, X_test, y_train, y_test
 
 def svm_classifier(X_train, X_test, y_train, y_test, svm_C=1.0, svm_gamma='scale', svm_kernel='rbf'):
     """
@@ -134,6 +93,7 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
 from models.MLP import MLP
+from utils.set_seed import set_seed
 
 def mlp_classifier(X_train, X_val, X_test, y_train, y_val, y_test, input_size=None, hidden_size:list=[300, 200], output_size=None, dropout_rate=0.3, learning_rate=0.001, batch_size=32, epochs=10):
     """ 
@@ -152,6 +112,7 @@ def mlp_classifier(X_train, X_val, X_test, y_train, y_val, y_test, input_size=No
         accuracy: Classification accuracy of the MLP model
     """
 
+    set_seed(42)  # Set random seed for reproducibility
     # Define model parameters
     input_size = X_train.shape[1]
     output_size = len(set(y_train))  # Number of classes

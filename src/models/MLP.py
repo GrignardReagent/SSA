@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader, TensorDataset
 # Define the MLP model
 class MLP(nn.Module):
     def __init__(self, input_size, hidden_size:list, output_size, 
-                 dropout_rate=0.3, learning_rate=0.001, 
+                 dropout_rate=0.3, learning_rate=0.001, optimizer='Adam', 
                  device=None):
         # Call the parent class (nn.Module) constructor
         super(MLP, self).__init__() 
@@ -39,17 +39,29 @@ class MLP(nn.Module):
 
         # Assign optimizer to `self.module` if using DataParallel
         if isinstance(self, nn.DataParallel):
-            self.module.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate)
+            # Optimizer setup
+            if optimizer == "Adam":
+                self.module.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate)
+            elif optimizer == "SGD":
+                self.module.optimizer = optim.SGD(self.module.parameters(), lr=learning_rate, momentum=0.9)
+            elif optimizer == "AdamW":
+                self.module.optimizer = optim.AdamW(self.module.parameters(), lr=learning_rate)
+            else:
+                raise ValueError(f"Unsupported optimizer: {optimizer}")
+            
             self.module.criterion = nn.CrossEntropyLoss()
         else:
-            self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+            # Optimizer setup
+            if optimizer == "Adam":
+                self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
+            elif optimizer == "SGD":
+                self.optimizer = optim.SGD(self.parameters(), lr=learning_rate, momentum=0.9)
+            elif optimizer == "AdamW":
+                self.optimizer = optim.AdamW(self.parameters(), lr=learning_rate)
+            else:
+                raise ValueError(f"Unsupported optimizer: {optimizer}")
+            
             self.criterion = nn.CrossEntropyLoss()
-
-        # # loss function and optimiser
-        # self.criterion = nn.CrossEntropyLoss()
-        # self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
-        # # Initialize optimizer after wrapping with DataParallel
-        # self.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate) if isinstance(self, nn.DataParallel) else optim.Adam(self.parameters(), lr=learning_rate)
         
         # debug line
         print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
@@ -130,7 +142,6 @@ class MLP(nn.Module):
             history['train_acc'].append(train_acc)
             print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
 
-            # Early stopping
             if val_loader is not None:
                 val_acc = self.evaluate(val_loader)
                 history['val_acc'].append(val_acc)
@@ -144,6 +155,7 @@ class MLP(nn.Module):
                     if save_path is not None:
                         torch.save(self.state_dict(), save_path)
                         print(f"✅ Model saved at {save_path} (Best Validation Acc: {best_val_acc:.4f})")
+                # ealry stopping
                 else:
                     epochs_no_improve += 1
                     print(f"No improvement ({epochs_no_improve}/{patience}).")
