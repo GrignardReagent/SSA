@@ -61,6 +61,7 @@ def statistical_report(parameter_sets: list, stress_trajectories, normal_traject
         "Stressed Mean": mean_mRNA_stress_ss, "Stressed Variance": var_mRNA_stress_ss, "Stressed Steady State Time": steady_state_time_stress},{"Normal Mean": mean_mRNA_normal_ss, "Normal Variance": var_mRNA_normal_ss, "Normal Steady State Time": steady_state_time_normal
         }
 
+#TODO: Move plots into a separate moedule in the visualisation folder
 ################## Mean mRNA counts over time
 def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories, normal_trajectories):
     """
