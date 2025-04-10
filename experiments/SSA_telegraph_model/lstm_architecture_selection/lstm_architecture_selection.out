@@ -1,0 +1,4603 @@
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+=== Repeated Training for Vanilla LSTM ===
+Run 1/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6932, Train Acc: 0.5012
+Validation Acc: 0.5047
+Epoch [2/50], Loss: 0.6934, Train Acc: 0.4934
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6932, Train Acc: 0.5012
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6932, Train Acc: 0.5074
+Validation Acc: 0.5094
+Epoch [5/50], Loss: 0.6932, Train Acc: 0.5059
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6932, Train Acc: 0.5066
+Validation Acc: 0.4922
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6936, Train Acc: 0.5090
+Validation Acc: 0.5234
+Epoch [8/50], Loss: 0.6930, Train Acc: 0.5047
+Validation Acc: 0.5203
+No improvement (1/10).
+Epoch [9/50], Loss: 0.6933, Train Acc: 0.5004
+Validation Acc: 0.5062
+No improvement (2/10).
+Epoch [10/50], Loss: 0.6927, Train Acc: 0.5094
+Validation Acc: 0.5031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.6930, Train Acc: 0.5070
+Validation Acc: 0.4906
+No improvement (4/10).
+Epoch [12/50], Loss: 0.6913, Train Acc: 0.5238
+Validation Acc: 0.5141
+No improvement (5/10).
+Epoch [13/50], Loss: 0.6905, Train Acc: 0.5219
+Validation Acc: 0.5344
+Epoch [14/50], Loss: 0.6905, Train Acc: 0.5160
+Validation Acc: 0.5188
+No improvement (1/10).
+Epoch [15/50], Loss: 0.6890, Train Acc: 0.5297
+Validation Acc: 0.4813
+No improvement (2/10).
+Epoch [16/50], Loss: 0.6885, Train Acc: 0.5328
+Validation Acc: 0.5188
+No improvement (3/10).
+Epoch [17/50], Loss: 0.6852, Train Acc: 0.5406
+Validation Acc: 0.6000
+Epoch [18/50], Loss: 0.6915, Train Acc: 0.5223
+Validation Acc: 0.5141
+No improvement (1/10).
+Epoch [19/50], Loss: 0.6874, Train Acc: 0.5547
+Validation Acc: 0.5578
+No improvement (2/10).
+Epoch [20/50], Loss: 0.6841, Train Acc: 0.5687
+Validation Acc: 0.5906
+No improvement (3/10).
+Epoch [21/50], Loss: 0.6861, Train Acc: 0.5559
+Validation Acc: 0.5250
+No improvement (4/10).
+Epoch [22/50], Loss: 0.6838, Train Acc: 0.5629
+Validation Acc: 0.5297
+No improvement (5/10).
+Epoch [23/50], Loss: 0.6793, Train Acc: 0.5785
+Validation Acc: 0.6125
+Epoch [24/50], Loss: 0.6789, Train Acc: 0.5754
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [25/50], Loss: 0.6729, Train Acc: 0.5977
+Validation Acc: 0.5906
+No improvement (2/10).
+Epoch [26/50], Loss: 0.6724, Train Acc: 0.5863
+Validation Acc: 0.6062
+No improvement (3/10).
+Epoch [27/50], Loss: 0.6596, Train Acc: 0.6309
+Validation Acc: 0.6375
+Epoch [28/50], Loss: 0.6701, Train Acc: 0.5883
+Validation Acc: 0.5641
+No improvement (1/10).
+Epoch [29/50], Loss: 0.6840, Train Acc: 0.5656
+Validation Acc: 0.5266
+No improvement (2/10).
+Epoch [30/50], Loss: 0.6856, Train Acc: 0.5676
+Validation Acc: 0.5156
+No improvement (3/10).
+Epoch [31/50], Loss: 0.6796, Train Acc: 0.5801
+Validation Acc: 0.5594
+No improvement (4/10).
+Epoch [32/50], Loss: 0.6896, Train Acc: 0.5410
+Validation Acc: 0.5844
+No improvement (5/10).
+Epoch [33/50], Loss: 0.6799, Train Acc: 0.5602
+Validation Acc: 0.5844
+No improvement (6/10).
+Epoch [34/50], Loss: 0.6755, Train Acc: 0.5867
+Validation Acc: 0.6234
+No improvement (7/10).
+Epoch [35/50], Loss: 0.6691, Train Acc: 0.6020
+Validation Acc: 0.6391
+Epoch [36/50], Loss: 0.6678, Train Acc: 0.6168
+Validation Acc: 0.6422
+Epoch [37/50], Loss: 0.6642, Train Acc: 0.6289
+Validation Acc: 0.6359
+No improvement (1/10).
+Epoch [38/50], Loss: 0.6618, Train Acc: 0.6367
+Validation Acc: 0.6359
+No improvement (2/10).
+Epoch [39/50], Loss: 0.6547, Train Acc: 0.6559
+Validation Acc: 0.6687
+Epoch [40/50], Loss: 0.6533, Train Acc: 0.6562
+Validation Acc: 0.6562
+No improvement (1/10).
+Epoch [41/50], Loss: 0.6460, Train Acc: 0.6645
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [42/50], Loss: 0.6485, Train Acc: 0.6641
+Validation Acc: 0.6984
+Epoch [43/50], Loss: 0.6427, Train Acc: 0.6844
+Validation Acc: 0.6734
+No improvement (1/10).
+Epoch [44/50], Loss: 0.6392, Train Acc: 0.6883
+Validation Acc: 0.7016
+Epoch [45/50], Loss: 0.6337, Train Acc: 0.6937
+Validation Acc: 0.7109
+Epoch [46/50], Loss: 0.6288, Train Acc: 0.7070
+Validation Acc: 0.6969
+No improvement (1/10).
+Epoch [47/50], Loss: 0.6353, Train Acc: 0.7000
+Validation Acc: 0.7172
+Epoch [48/50], Loss: 0.6456, Train Acc: 0.6594
+Validation Acc: 0.6922
+No improvement (1/10).
+Epoch [49/50], Loss: 0.6308, Train Acc: 0.6949
+Validation Acc: 0.7047
+No improvement (2/10).
+Epoch [50/50], Loss: 0.6345, Train Acc: 0.6867
+Validation Acc: 0.6719
+No improvement (3/10).
+Training complete!
+Run 2/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6935, Train Acc: 0.4902
+Validation Acc: 0.5094
+Epoch [2/50], Loss: 0.6932, Train Acc: 0.4941
+Validation Acc: 0.4969
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6933, Train Acc: 0.4855
+Validation Acc: 0.5016
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6930, Train Acc: 0.5059
+Validation Acc: 0.5031
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6931, Train Acc: 0.5074
+Validation Acc: 0.4891
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6915, Train Acc: 0.5375
+Validation Acc: 0.5328
+Epoch [7/50], Loss: 0.6895, Train Acc: 0.5375
+Validation Acc: 0.5516
+Epoch [8/50], Loss: 0.6859, Train Acc: 0.5582
+Validation Acc: 0.5875
+Epoch [9/50], Loss: 0.6860, Train Acc: 0.5586
+Validation Acc: 0.5563
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6825, Train Acc: 0.5711
+Validation Acc: 0.5875
+No improvement (2/10).
+Epoch [11/50], Loss: 0.6745, Train Acc: 0.6023
+Validation Acc: 0.6031
+Epoch [12/50], Loss: 0.6715, Train Acc: 0.6004
+Validation Acc: 0.6328
+Epoch [13/50], Loss: 0.6699, Train Acc: 0.6109
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [14/50], Loss: 0.6673, Train Acc: 0.6102
+Validation Acc: 0.6078
+No improvement (2/10).
+Epoch [15/50], Loss: 0.6588, Train Acc: 0.6406
+Validation Acc: 0.6312
+No improvement (3/10).
+Epoch [16/50], Loss: 0.6630, Train Acc: 0.6168
+Validation Acc: 0.6297
+No improvement (4/10).
+Epoch [17/50], Loss: 0.6543, Train Acc: 0.6391
+Validation Acc: 0.6484
+Epoch [18/50], Loss: 0.6460, Train Acc: 0.6621
+Validation Acc: 0.6578
+Epoch [19/50], Loss: 0.6466, Train Acc: 0.6531
+Validation Acc: 0.6391
+No improvement (1/10).
+Epoch [20/50], Loss: 0.6490, Train Acc: 0.6453
+Validation Acc: 0.6297
+No improvement (2/10).
+Epoch [21/50], Loss: 0.6474, Train Acc: 0.6426
+Validation Acc: 0.6453
+No improvement (3/10).
+Epoch [22/50], Loss: 0.6365, Train Acc: 0.6707
+Validation Acc: 0.6766
+Epoch [23/50], Loss: 0.6249, Train Acc: 0.6969
+Validation Acc: 0.6781
+Epoch [24/50], Loss: 0.6287, Train Acc: 0.6805
+Validation Acc: 0.6969
+Epoch [25/50], Loss: 0.6149, Train Acc: 0.7074
+Validation Acc: 0.7078
+Epoch [26/50], Loss: 0.6158, Train Acc: 0.7012
+Validation Acc: 0.6297
+No improvement (1/10).
+Epoch [27/50], Loss: 0.6253, Train Acc: 0.6758
+Validation Acc: 0.6891
+No improvement (2/10).
+Epoch [28/50], Loss: 0.6086, Train Acc: 0.7090
+Validation Acc: 0.6844
+No improvement (3/10).
+Epoch [29/50], Loss: 0.6317, Train Acc: 0.6660
+Validation Acc: 0.6766
+No improvement (4/10).
+Epoch [30/50], Loss: 0.6099, Train Acc: 0.6953
+Validation Acc: 0.6984
+No improvement (5/10).
+Epoch [31/50], Loss: 0.6018, Train Acc: 0.7074
+Validation Acc: 0.7203
+Epoch [32/50], Loss: 0.5947, Train Acc: 0.7277
+Validation Acc: 0.7422
+Epoch [33/50], Loss: 0.5916, Train Acc: 0.7332
+Validation Acc: 0.7203
+No improvement (1/10).
+Epoch [34/50], Loss: 0.5990, Train Acc: 0.7168
+Validation Acc: 0.7156
+No improvement (2/10).
+Epoch [35/50], Loss: 0.5852, Train Acc: 0.7402
+Validation Acc: 0.7359
+No improvement (3/10).
+Epoch [36/50], Loss: 0.5842, Train Acc: 0.7414
+Validation Acc: 0.7266
+No improvement (4/10).
+Epoch [37/50], Loss: 0.5781, Train Acc: 0.7453
+Validation Acc: 0.7484
+Epoch [38/50], Loss: 0.5763, Train Acc: 0.7496
+Validation Acc: 0.7531
+Epoch [39/50], Loss: 0.5717, Train Acc: 0.7535
+Validation Acc: 0.7625
+Epoch [40/50], Loss: 0.5729, Train Acc: 0.7523
+Validation Acc: 0.7609
+No improvement (1/10).
+Epoch [41/50], Loss: 0.5649, Train Acc: 0.7633
+Validation Acc: 0.7391
+No improvement (2/10).
+Epoch [42/50], Loss: 0.5643, Train Acc: 0.7566
+Validation Acc: 0.7547
+No improvement (3/10).
+Epoch [43/50], Loss: 0.5659, Train Acc: 0.7566
+Validation Acc: 0.7562
+No improvement (4/10).
+Epoch [44/50], Loss: 0.5603, Train Acc: 0.7633
+Validation Acc: 0.7766
+Epoch [45/50], Loss: 0.5606, Train Acc: 0.7660
+Validation Acc: 0.7812
+Epoch [46/50], Loss: 0.5560, Train Acc: 0.7645
+Validation Acc: 0.7734
+No improvement (1/10).
+Epoch [47/50], Loss: 0.5569, Train Acc: 0.7680
+Validation Acc: 0.7797
+No improvement (2/10).
+Epoch [48/50], Loss: 0.5542, Train Acc: 0.7633
+Validation Acc: 0.7828
+Epoch [49/50], Loss: 0.5508, Train Acc: 0.7688
+Validation Acc: 0.7859
+Epoch [50/50], Loss: 0.5540, Train Acc: 0.7699
+Validation Acc: 0.7844
+No improvement (1/10).
+Training complete!
+Run 3/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6933, Train Acc: 0.4852
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6932, Train Acc: 0.5090
+Validation Acc: 0.5094
+Epoch [3/50], Loss: 0.6936, Train Acc: 0.4883
+Validation Acc: 0.4953
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6932, Train Acc: 0.4996
+Validation Acc: 0.5094
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6933, Train Acc: 0.4992
+Validation Acc: 0.5172
+Epoch [6/50], Loss: 0.6931, Train Acc: 0.5113
+Validation Acc: 0.5031
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6918, Train Acc: 0.5285
+Validation Acc: 0.5094
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6903, Train Acc: 0.5219
+Validation Acc: 0.5375
+Epoch [9/50], Loss: 0.6887, Train Acc: 0.5441
+Validation Acc: 0.5219
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6823, Train Acc: 0.5668
+Validation Acc: 0.5500
+Epoch [11/50], Loss: 0.6847, Train Acc: 0.5535
+Validation Acc: 0.5484
+No improvement (1/10).
+Epoch [12/50], Loss: 0.6826, Train Acc: 0.5426
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [13/50], Loss: 0.6784, Train Acc: 0.5715
+Validation Acc: 0.5781
+Epoch [14/50], Loss: 0.6802, Train Acc: 0.5547
+Validation Acc: 0.5609
+No improvement (1/10).
+Epoch [15/50], Loss: 0.6767, Train Acc: 0.5707
+Validation Acc: 0.5734
+No improvement (2/10).
+Epoch [16/50], Loss: 0.6757, Train Acc: 0.5730
+Validation Acc: 0.5750
+No improvement (3/10).
+Epoch [17/50], Loss: 0.6720, Train Acc: 0.5906
+Validation Acc: 0.5422
+No improvement (4/10).
+Epoch [18/50], Loss: 0.7190, Train Acc: 0.5023
+Validation Acc: 0.4906
+No improvement (5/10).
+Epoch [19/50], Loss: 0.7014, Train Acc: 0.5016
+Validation Acc: 0.4875
+No improvement (6/10).
+Epoch [20/50], Loss: 0.6960, Train Acc: 0.5012
+Validation Acc: 0.5234
+No improvement (7/10).
+Epoch [21/50], Loss: 0.6941, Train Acc: 0.5062
+Validation Acc: 0.4656
+No improvement (8/10).
+Epoch [22/50], Loss: 0.6933, Train Acc: 0.5098
+Validation Acc: 0.5094
+No improvement (9/10).
+Epoch [23/50], Loss: 0.6929, Train Acc: 0.5188
+Validation Acc: 0.5219
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 4/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.4953
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6933, Train Acc: 0.5008
+Validation Acc: 0.5062
+Epoch [3/50], Loss: 0.6935, Train Acc: 0.4832
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6930, Train Acc: 0.5242
+Validation Acc: 0.5563
+Epoch [5/50], Loss: 0.6921, Train Acc: 0.5188
+Validation Acc: 0.5422
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6910, Train Acc: 0.5434
+Validation Acc: 0.5141
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6905, Train Acc: 0.5344
+Validation Acc: 0.5234
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6899, Train Acc: 0.5230
+Validation Acc: 0.5547
+No improvement (4/10).
+Epoch [9/50], Loss: 0.6839, Train Acc: 0.5598
+Validation Acc: 0.5328
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6824, Train Acc: 0.5684
+Validation Acc: 0.5516
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6801, Train Acc: 0.5633
+Validation Acc: 0.5672
+Epoch [12/50], Loss: 0.6825, Train Acc: 0.5555
+Validation Acc: 0.5703
+Epoch [13/50], Loss: 0.6750, Train Acc: 0.5758
+Validation Acc: 0.5813
+Epoch [14/50], Loss: 0.6676, Train Acc: 0.5969
+Validation Acc: 0.5984
+Epoch [15/50], Loss: 0.6622, Train Acc: 0.6000
+Validation Acc: 0.5875
+No improvement (1/10).
+Epoch [16/50], Loss: 0.6676, Train Acc: 0.5887
+Validation Acc: 0.5922
+No improvement (2/10).
+Epoch [17/50], Loss: 0.6635, Train Acc: 0.5973
+Validation Acc: 0.6125
+Epoch [18/50], Loss: 0.6906, Train Acc: 0.5570
+Validation Acc: 0.4984
+No improvement (1/10).
+Epoch [19/50], Loss: 0.6970, Train Acc: 0.5262
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [20/50], Loss: 0.6889, Train Acc: 0.5344
+Validation Acc: 0.5422
+No improvement (3/10).
+Epoch [21/50], Loss: 0.6972, Train Acc: 0.4938
+Validation Acc: 0.5062
+No improvement (4/10).
+Epoch [22/50], Loss: 0.6909, Train Acc: 0.5238
+Validation Acc: 0.5062
+No improvement (5/10).
+Epoch [23/50], Loss: 0.6900, Train Acc: 0.5461
+Validation Acc: 0.5016
+No improvement (6/10).
+Epoch [24/50], Loss: 0.6894, Train Acc: 0.5293
+Validation Acc: 0.5031
+No improvement (7/10).
+Epoch [25/50], Loss: 0.6881, Train Acc: 0.5449
+Validation Acc: 0.4906
+No improvement (8/10).
+Epoch [26/50], Loss: 0.6902, Train Acc: 0.5352
+Validation Acc: 0.5422
+No improvement (9/10).
+Epoch [27/50], Loss: 0.6915, Train Acc: 0.5289
+Validation Acc: 0.4859
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 5/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.4816
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6931, Train Acc: 0.5027
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6931, Train Acc: 0.4965
+Validation Acc: 0.5203
+Epoch [4/50], Loss: 0.6932, Train Acc: 0.5055
+Validation Acc: 0.5234
+Epoch [5/50], Loss: 0.6933, Train Acc: 0.5117
+Validation Acc: 0.5437
+Epoch [6/50], Loss: 0.6930, Train Acc: 0.5133
+Validation Acc: 0.5047
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6895, Train Acc: 0.5410
+Validation Acc: 0.5047
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6964, Train Acc: 0.4852
+Validation Acc: 0.5172
+No improvement (3/10).
+Epoch [9/50], Loss: 0.6916, Train Acc: 0.5324
+Validation Acc: 0.5031
+No improvement (4/10).
+Epoch [10/50], Loss: 0.6932, Train Acc: 0.5027
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [11/50], Loss: 0.6922, Train Acc: 0.4984
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [12/50], Loss: 0.6920, Train Acc: 0.4902
+Validation Acc: 0.5094
+No improvement (7/10).
+Epoch [13/50], Loss: 0.6933, Train Acc: 0.4949
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [14/50], Loss: 0.6933, Train Acc: 0.4840
+Validation Acc: 0.5078
+No improvement (9/10).
+Epoch [15/50], Loss: 0.6930, Train Acc: 0.5145
+Validation Acc: 0.4703
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 6/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6932, Train Acc: 0.5000
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6936, Train Acc: 0.4781
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6933, Train Acc: 0.4977
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6931, Train Acc: 0.5152
+Validation Acc: 0.5094
+Epoch [5/50], Loss: 0.6932, Train Acc: 0.5020
+Validation Acc: 0.5375
+Epoch [6/50], Loss: 0.6934, Train Acc: 0.4945
+Validation Acc: 0.4938
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6927, Train Acc: 0.5012
+Validation Acc: 0.5500
+Epoch [8/50], Loss: 0.6915, Train Acc: 0.5250
+Validation Acc: 0.5406
+No improvement (1/10).
+Epoch [9/50], Loss: 0.6901, Train Acc: 0.5254
+Validation Acc: 0.5391
+No improvement (2/10).
+Epoch [10/50], Loss: 0.6842, Train Acc: 0.5516
+Validation Acc: 0.5391
+No improvement (3/10).
+Epoch [11/50], Loss: 0.6791, Train Acc: 0.5605
+Validation Acc: 0.5500
+No improvement (4/10).
+Epoch [12/50], Loss: 0.6723, Train Acc: 0.5750
+Validation Acc: 0.5766
+Epoch [13/50], Loss: 0.6674, Train Acc: 0.5785
+Validation Acc: 0.5875
+Epoch [14/50], Loss: 0.6571, Train Acc: 0.6051
+Validation Acc: 0.5578
+No improvement (1/10).
+Epoch [15/50], Loss: 0.6589, Train Acc: 0.5879
+Validation Acc: 0.5891
+Epoch [16/50], Loss: 0.6499, Train Acc: 0.6035
+Validation Acc: 0.5875
+No improvement (1/10).
+Epoch [17/50], Loss: 0.7186, Train Acc: 0.5348
+Validation Acc: 0.4531
+No improvement (2/10).
+Epoch [18/50], Loss: 0.7039, Train Acc: 0.5000
+Validation Acc: 0.4609
+No improvement (3/10).
+Epoch [19/50], Loss: 0.6959, Train Acc: 0.4898
+Validation Acc: 0.5203
+No improvement (4/10).
+Epoch [20/50], Loss: 0.6964, Train Acc: 0.5176
+Validation Acc: 0.5453
+No improvement (5/10).
+Epoch [21/50], Loss: 0.6918, Train Acc: 0.5352
+Validation Acc: 0.5609
+No improvement (6/10).
+Epoch [22/50], Loss: 0.6949, Train Acc: 0.5164
+Validation Acc: 0.4969
+No improvement (7/10).
+Epoch [23/50], Loss: 0.6917, Train Acc: 0.5289
+Validation Acc: 0.5797
+No improvement (8/10).
+Epoch [24/50], Loss: 0.6893, Train Acc: 0.5441
+Validation Acc: 0.5719
+No improvement (9/10).
+Epoch [25/50], Loss: 0.6914, Train Acc: 0.5297
+Validation Acc: 0.4969
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 7/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.4887
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6934, Train Acc: 0.4789
+Validation Acc: 0.4906
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6933, Train Acc: 0.5031
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6932, Train Acc: 0.4977
+Validation Acc: 0.5172
+Epoch [5/50], Loss: 0.6930, Train Acc: 0.5062
+Validation Acc: 0.5188
+Epoch [6/50], Loss: 0.6936, Train Acc: 0.5039
+Validation Acc: 0.5219
+Epoch [7/50], Loss: 0.6926, Train Acc: 0.5109
+Validation Acc: 0.4688
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6919, Train Acc: 0.5164
+Validation Acc: 0.4844
+No improvement (2/10).
+Epoch [9/50], Loss: 0.6921, Train Acc: 0.5242
+Validation Acc: 0.4969
+No improvement (3/10).
+Epoch [10/50], Loss: 0.6933, Train Acc: 0.5070
+Validation Acc: 0.4953
+No improvement (4/10).
+Epoch [11/50], Loss: 0.6939, Train Acc: 0.4938
+Validation Acc: 0.4828
+No improvement (5/10).
+Epoch [12/50], Loss: 0.6938, Train Acc: 0.4953
+Validation Acc: 0.4813
+No improvement (6/10).
+Epoch [13/50], Loss: 0.6936, Train Acc: 0.4930
+Validation Acc: 0.4859
+No improvement (7/10).
+Epoch [14/50], Loss: 0.6932, Train Acc: 0.5074
+Validation Acc: 0.5016
+No improvement (8/10).
+Epoch [15/50], Loss: 0.6930, Train Acc: 0.4961
+Validation Acc: 0.5469
+Epoch [16/50], Loss: 0.6928, Train Acc: 0.5215
+Validation Acc: 0.5016
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6932, Train Acc: 0.5109
+Validation Acc: 0.4969
+No improvement (2/10).
+Epoch [18/50], Loss: 0.6933, Train Acc: 0.4973
+Validation Acc: 0.4859
+No improvement (3/10).
+Epoch [19/50], Loss: 0.6931, Train Acc: 0.4945
+Validation Acc: 0.4781
+No improvement (4/10).
+Epoch [20/50], Loss: 0.6935, Train Acc: 0.4895
+Validation Acc: 0.4922
+No improvement (5/10).
+Epoch [21/50], Loss: 0.6926, Train Acc: 0.5164
+Validation Acc: 0.5188
+No improvement (6/10).
+Epoch [22/50], Loss: 0.6927, Train Acc: 0.5145
+Validation Acc: 0.4672
+No improvement (7/10).
+Epoch [23/50], Loss: 0.6935, Train Acc: 0.4910
+Validation Acc: 0.4875
+No improvement (8/10).
+Epoch [24/50], Loss: 0.6931, Train Acc: 0.5051
+Validation Acc: 0.5078
+No improvement (9/10).
+Epoch [25/50], Loss: 0.6929, Train Acc: 0.4957
+Validation Acc: 0.5031
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 8/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.4867
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6933, Train Acc: 0.5023
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6930, Train Acc: 0.5070
+Validation Acc: 0.5156
+Epoch [4/50], Loss: 0.6931, Train Acc: 0.5023
+Validation Acc: 0.5234
+Epoch [5/50], Loss: 0.6921, Train Acc: 0.5098
+Validation Acc: 0.4859
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6963, Train Acc: 0.4996
+Validation Acc: 0.5172
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6914, Train Acc: 0.5188
+Validation Acc: 0.5359
+Epoch [8/50], Loss: 0.6890, Train Acc: 0.5262
+Validation Acc: 0.5563
+Epoch [9/50], Loss: 0.6897, Train Acc: 0.5410
+Validation Acc: 0.5328
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6925, Train Acc: 0.5328
+Validation Acc: 0.4938
+No improvement (2/10).
+Epoch [11/50], Loss: 0.6937, Train Acc: 0.5137
+Validation Acc: 0.4969
+No improvement (3/10).
+Epoch [12/50], Loss: 0.6911, Train Acc: 0.5258
+Validation Acc: 0.5500
+No improvement (4/10).
+Epoch [13/50], Loss: 0.6882, Train Acc: 0.5477
+Validation Acc: 0.5672
+Epoch [14/50], Loss: 0.6830, Train Acc: 0.5742
+Validation Acc: 0.5766
+Epoch [15/50], Loss: 0.6818, Train Acc: 0.5766
+Validation Acc: 0.5969
+Epoch [16/50], Loss: 0.6798, Train Acc: 0.5766
+Validation Acc: 0.5859
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6788, Train Acc: 0.5762
+Validation Acc: 0.5984
+Epoch [18/50], Loss: 0.6807, Train Acc: 0.5668
+Validation Acc: 0.5781
+No improvement (1/10).
+Epoch [19/50], Loss: 0.6890, Train Acc: 0.5508
+Validation Acc: 0.5687
+No improvement (2/10).
+Epoch [20/50], Loss: 0.6888, Train Acc: 0.5543
+Validation Acc: 0.5906
+No improvement (3/10).
+Epoch [21/50], Loss: 0.6831, Train Acc: 0.5691
+Validation Acc: 0.6000
+Epoch [22/50], Loss: 0.6768, Train Acc: 0.5852
+Validation Acc: 0.6047
+Epoch [23/50], Loss: 0.6767, Train Acc: 0.5875
+Validation Acc: 0.5828
+No improvement (1/10).
+Epoch [24/50], Loss: 0.6723, Train Acc: 0.5891
+Validation Acc: 0.5906
+No improvement (2/10).
+Epoch [25/50], Loss: 0.6727, Train Acc: 0.5969
+Validation Acc: 0.5859
+No improvement (3/10).
+Epoch [26/50], Loss: 0.6687, Train Acc: 0.6043
+Validation Acc: 0.5922
+No improvement (4/10).
+Epoch [27/50], Loss: 0.6626, Train Acc: 0.6098
+Validation Acc: 0.6094
+Epoch [28/50], Loss: 0.6570, Train Acc: 0.6230
+Validation Acc: 0.5984
+No improvement (1/10).
+Epoch [29/50], Loss: 0.6584, Train Acc: 0.6094
+Validation Acc: 0.6188
+Epoch [30/50], Loss: 0.6522, Train Acc: 0.6270
+Validation Acc: 0.6234
+Epoch [31/50], Loss: 0.6477, Train Acc: 0.6406
+Validation Acc: 0.6391
+Epoch [32/50], Loss: 0.6471, Train Acc: 0.6355
+Validation Acc: 0.6547
+Epoch [33/50], Loss: 0.6435, Train Acc: 0.6355
+Validation Acc: 0.6406
+No improvement (1/10).
+Epoch [34/50], Loss: 0.6403, Train Acc: 0.6395
+Validation Acc: 0.6391
+No improvement (2/10).
+Epoch [35/50], Loss: 0.6390, Train Acc: 0.6383
+Validation Acc: 0.6453
+No improvement (3/10).
+Epoch [36/50], Loss: 0.6356, Train Acc: 0.6461
+Validation Acc: 0.6875
+Epoch [37/50], Loss: 0.6326, Train Acc: 0.6520
+Validation Acc: 0.6562
+No improvement (1/10).
+Epoch [38/50], Loss: 0.6343, Train Acc: 0.6484
+Validation Acc: 0.6937
+Epoch [39/50], Loss: 0.6304, Train Acc: 0.6562
+Validation Acc: 0.6703
+No improvement (1/10).
+Epoch [40/50], Loss: 0.6284, Train Acc: 0.6551
+Validation Acc: 0.6438
+No improvement (2/10).
+Epoch [41/50], Loss: 0.6298, Train Acc: 0.6602
+Validation Acc: 0.6500
+No improvement (3/10).
+Epoch [42/50], Loss: 0.6197, Train Acc: 0.6695
+Validation Acc: 0.6547
+No improvement (4/10).
+Epoch [43/50], Loss: 0.6174, Train Acc: 0.6738
+Validation Acc: 0.6562
+No improvement (5/10).
+Epoch [44/50], Loss: 0.6166, Train Acc: 0.6699
+Validation Acc: 0.6609
+No improvement (6/10).
+Epoch [45/50], Loss: 0.6156, Train Acc: 0.6711
+Validation Acc: 0.6516
+No improvement (7/10).
+Epoch [46/50], Loss: 0.6158, Train Acc: 0.6707
+Validation Acc: 0.6766
+No improvement (8/10).
+Epoch [47/50], Loss: 0.6094, Train Acc: 0.6777
+Validation Acc: 0.6594
+No improvement (9/10).
+Epoch [48/50], Loss: 0.6077, Train Acc: 0.6820
+Validation Acc: 0.6656
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 9/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6935, Train Acc: 0.5027
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6933, Train Acc: 0.5047
+Validation Acc: 0.5125
+Epoch [3/50], Loss: 0.6933, Train Acc: 0.4980
+Validation Acc: 0.4938
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6929, Train Acc: 0.5145
+Validation Acc: 0.5016
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6931, Train Acc: 0.4879
+Validation Acc: 0.4984
+No improvement (3/10).
+Epoch [6/50], Loss: 0.6934, Train Acc: 0.4914
+Validation Acc: 0.5016
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6933, Train Acc: 0.5074
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6931, Train Acc: 0.5078
+Validation Acc: 0.5266
+Epoch [9/50], Loss: 0.6929, Train Acc: 0.5152
+Validation Acc: 0.5250
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6930, Train Acc: 0.5078
+Validation Acc: 0.5297
+Epoch [11/50], Loss: 0.6931, Train Acc: 0.4992
+Validation Acc: 0.5109
+No improvement (1/10).
+Epoch [12/50], Loss: 0.6926, Train Acc: 0.5059
+Validation Acc: 0.5406
+Epoch [13/50], Loss: 0.6925, Train Acc: 0.4980
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [14/50], Loss: 0.6923, Train Acc: 0.5219
+Validation Acc: 0.5328
+No improvement (2/10).
+Epoch [15/50], Loss: 0.6892, Train Acc: 0.5453
+Validation Acc: 0.5781
+Epoch [16/50], Loss: 0.6879, Train Acc: 0.5527
+Validation Acc: 0.5203
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6892, Train Acc: 0.5477
+Validation Acc: 0.5422
+No improvement (2/10).
+Epoch [18/50], Loss: 0.6872, Train Acc: 0.5527
+Validation Acc: 0.5531
+No improvement (3/10).
+Epoch [19/50], Loss: 0.6825, Train Acc: 0.5750
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [20/50], Loss: 0.6750, Train Acc: 0.6023
+Validation Acc: 0.5953
+Epoch [21/50], Loss: 0.6698, Train Acc: 0.6258
+Validation Acc: 0.6094
+Epoch [22/50], Loss: 0.6708, Train Acc: 0.6098
+Validation Acc: 0.5703
+No improvement (1/10).
+Epoch [23/50], Loss: 0.6790, Train Acc: 0.5855
+Validation Acc: 0.5984
+No improvement (2/10).
+Epoch [24/50], Loss: 0.6715, Train Acc: 0.5938
+Validation Acc: 0.5953
+No improvement (3/10).
+Epoch [25/50], Loss: 0.6678, Train Acc: 0.6168
+Validation Acc: 0.6000
+No improvement (4/10).
+Epoch [26/50], Loss: 0.6649, Train Acc: 0.6113
+Validation Acc: 0.6203
+Epoch [27/50], Loss: 0.6630, Train Acc: 0.6230
+Validation Acc: 0.6266
+Epoch [28/50], Loss: 0.6599, Train Acc: 0.6242
+Validation Acc: 0.6234
+No improvement (1/10).
+Epoch [29/50], Loss: 0.6596, Train Acc: 0.6266
+Validation Acc: 0.6328
+Epoch [30/50], Loss: 0.6592, Train Acc: 0.6172
+Validation Acc: 0.6422
+Epoch [31/50], Loss: 0.6576, Train Acc: 0.6262
+Validation Acc: 0.6516
+Epoch [32/50], Loss: 0.6561, Train Acc: 0.6254
+Validation Acc: 0.6391
+No improvement (1/10).
+Epoch [33/50], Loss: 0.6495, Train Acc: 0.6406
+Validation Acc: 0.6484
+No improvement (2/10).
+Epoch [34/50], Loss: 0.6514, Train Acc: 0.6355
+Validation Acc: 0.6609
+Epoch [35/50], Loss: 0.6495, Train Acc: 0.6453
+Validation Acc: 0.6672
+Epoch [36/50], Loss: 0.6480, Train Acc: 0.6445
+Validation Acc: 0.6609
+No improvement (1/10).
+Epoch [37/50], Loss: 0.6570, Train Acc: 0.6250
+Validation Acc: 0.6391
+No improvement (2/10).
+Epoch [38/50], Loss: 0.6519, Train Acc: 0.6379
+Validation Acc: 0.6547
+No improvement (3/10).
+Epoch [39/50], Loss: 0.6443, Train Acc: 0.6469
+Validation Acc: 0.6672
+No improvement (4/10).
+Epoch [40/50], Loss: 0.6407, Train Acc: 0.6547
+Validation Acc: 0.6750
+Epoch [41/50], Loss: 0.6432, Train Acc: 0.6570
+Validation Acc: 0.6766
+Epoch [42/50], Loss: 0.6389, Train Acc: 0.6648
+Validation Acc: 0.6734
+No improvement (1/10).
+Epoch [43/50], Loss: 0.6378, Train Acc: 0.6594
+Validation Acc: 0.6828
+Epoch [44/50], Loss: 0.6391, Train Acc: 0.6625
+Validation Acc: 0.6891
+Epoch [45/50], Loss: 0.6337, Train Acc: 0.6652
+Validation Acc: 0.6781
+No improvement (1/10).
+Epoch [46/50], Loss: 0.6428, Train Acc: 0.6398
+Validation Acc: 0.6312
+No improvement (2/10).
+Epoch [47/50], Loss: 0.6411, Train Acc: 0.6477
+Validation Acc: 0.6516
+No improvement (3/10).
+Epoch [48/50], Loss: 0.6370, Train Acc: 0.6504
+Validation Acc: 0.6859
+No improvement (4/10).
+Epoch [49/50], Loss: 0.6318, Train Acc: 0.6617
+Validation Acc: 0.6953
+Epoch [50/50], Loss: 0.6304, Train Acc: 0.6703
+Validation Acc: 0.6984
+Training complete!
+Run 10/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.4938
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6934, Train Acc: 0.4965
+Validation Acc: 0.4938
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6931, Train Acc: 0.5035
+Validation Acc: 0.5109
+Epoch [4/50], Loss: 0.6906, Train Acc: 0.5355
+Validation Acc: 0.5391
+Epoch [5/50], Loss: 0.6902, Train Acc: 0.5437
+Validation Acc: 0.5953
+Epoch [6/50], Loss: 0.6906, Train Acc: 0.5051
+Validation Acc: 0.5328
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6904, Train Acc: 0.5230
+Validation Acc: 0.5672
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6904, Train Acc: 0.5199
+Validation Acc: 0.5469
+No improvement (3/10).
+Epoch [9/50], Loss: 0.6846, Train Acc: 0.5531
+Validation Acc: 0.5672
+No improvement (4/10).
+Epoch [10/50], Loss: 0.6822, Train Acc: 0.5754
+Validation Acc: 0.6016
+Epoch [11/50], Loss: 0.6749, Train Acc: 0.5871
+Validation Acc: 0.6250
+Epoch [12/50], Loss: 0.6732, Train Acc: 0.5898
+Validation Acc: 0.6172
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6737, Train Acc: 0.5852
+Validation Acc: 0.6406
+Epoch [14/50], Loss: 0.6637, Train Acc: 0.6109
+Validation Acc: 0.5984
+No improvement (1/10).
+Epoch [15/50], Loss: 0.6629, Train Acc: 0.6070
+Validation Acc: 0.6234
+No improvement (2/10).
+Epoch [16/50], Loss: 0.6621, Train Acc: 0.6172
+Validation Acc: 0.6719
+Epoch [17/50], Loss: 0.6518, Train Acc: 0.6379
+Validation Acc: 0.6188
+No improvement (1/10).
+Epoch [18/50], Loss: 0.6549, Train Acc: 0.6297
+Validation Acc: 0.6344
+No improvement (2/10).
+Epoch [19/50], Loss: 0.6609, Train Acc: 0.6207
+Validation Acc: 0.6141
+No improvement (3/10).
+Epoch [20/50], Loss: 0.6528, Train Acc: 0.6355
+Validation Acc: 0.6266
+No improvement (4/10).
+Epoch [21/50], Loss: 0.6393, Train Acc: 0.6504
+Validation Acc: 0.6547
+No improvement (5/10).
+Epoch [22/50], Loss: 0.6317, Train Acc: 0.6687
+Validation Acc: 0.6453
+No improvement (6/10).
+Epoch [23/50], Loss: 0.6309, Train Acc: 0.6578
+Validation Acc: 0.6672
+No improvement (7/10).
+Epoch [24/50], Loss: 0.6437, Train Acc: 0.6363
+Validation Acc: 0.6750
+Epoch [25/50], Loss: 0.6488, Train Acc: 0.6320
+Validation Acc: 0.5766
+No improvement (1/10).
+Epoch [26/50], Loss: 0.6538, Train Acc: 0.6047
+Validation Acc: 0.6578
+No improvement (2/10).
+Epoch [27/50], Loss: 0.6353, Train Acc: 0.6641
+Validation Acc: 0.6813
+Epoch [28/50], Loss: 0.6217, Train Acc: 0.6758
+Validation Acc: 0.6937
+Epoch [29/50], Loss: 0.6039, Train Acc: 0.7020
+Validation Acc: 0.7094
+Epoch [30/50], Loss: 0.5997, Train Acc: 0.7082
+Validation Acc: 0.7063
+No improvement (1/10).
+Epoch [31/50], Loss: 0.5926, Train Acc: 0.7207
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [32/50], Loss: 0.5980, Train Acc: 0.7086
+Validation Acc: 0.7172
+Epoch [33/50], Loss: 0.5870, Train Acc: 0.7180
+Validation Acc: 0.7109
+No improvement (1/10).
+Epoch [34/50], Loss: 0.6210, Train Acc: 0.6801
+Validation Acc: 0.6109
+No improvement (2/10).
+Epoch [35/50], Loss: 0.6271, Train Acc: 0.6613
+Validation Acc: 0.6594
+No improvement (3/10).
+Epoch [36/50], Loss: 0.6058, Train Acc: 0.6941
+Validation Acc: 0.6859
+No improvement (4/10).
+Epoch [37/50], Loss: 0.5896, Train Acc: 0.7242
+Validation Acc: 0.6766
+No improvement (5/10).
+Epoch [38/50], Loss: 0.5891, Train Acc: 0.7102
+Validation Acc: 0.6969
+No improvement (6/10).
+Epoch [39/50], Loss: 0.5798, Train Acc: 0.7242
+Validation Acc: 0.7047
+No improvement (7/10).
+Epoch [40/50], Loss: 0.5826, Train Acc: 0.7191
+Validation Acc: 0.7516
+Epoch [41/50], Loss: 0.5794, Train Acc: 0.7320
+Validation Acc: 0.7250
+No improvement (1/10).
+Epoch [42/50], Loss: 0.5758, Train Acc: 0.7383
+Validation Acc: 0.7266
+No improvement (2/10).
+Epoch [43/50], Loss: 0.5630, Train Acc: 0.7672
+Validation Acc: 0.7391
+No improvement (3/10).
+Epoch [44/50], Loss: 0.5594, Train Acc: 0.7609
+Validation Acc: 0.7266
+No improvement (4/10).
+Epoch [45/50], Loss: 0.5563, Train Acc: 0.7766
+Validation Acc: 0.7453
+No improvement (5/10).
+Epoch [46/50], Loss: 0.5511, Train Acc: 0.7816
+Validation Acc: 0.7625
+Epoch [47/50], Loss: 0.5516, Train Acc: 0.7844
+Validation Acc: 0.7672
+Epoch [48/50], Loss: 0.5468, Train Acc: 0.7832
+Validation Acc: 0.7625
+No improvement (1/10).
+Epoch [49/50], Loss: 0.5458, Train Acc: 0.7797
+Validation Acc: 0.7781
+Epoch [50/50], Loss: 0.5394, Train Acc: 0.7957
+Validation Acc: 0.7734
+No improvement (1/10).
+Training complete!
+
+=== Repeated Training for Conv1D Only ===
+Run 1/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.5059
+Validation Acc: 0.5078
+Epoch [2/50], Loss: 0.6884, Train Acc: 0.5406
+Validation Acc: 0.5516
+Epoch [3/50], Loss: 0.6788, Train Acc: 0.5695
+Validation Acc: 0.5953
+Epoch [4/50], Loss: 0.6652, Train Acc: 0.5980
+Validation Acc: 0.6172
+Epoch [5/50], Loss: 0.6605, Train Acc: 0.6113
+Validation Acc: 0.6141
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6465, Train Acc: 0.6438
+Validation Acc: 0.6203
+Epoch [7/50], Loss: 0.6451, Train Acc: 0.6480
+Validation Acc: 0.6625
+Epoch [8/50], Loss: 0.6369, Train Acc: 0.6707
+Validation Acc: 0.6766
+Epoch [9/50], Loss: 0.6400, Train Acc: 0.6691
+Validation Acc: 0.5344
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6791, Train Acc: 0.5574
+Validation Acc: 0.5703
+No improvement (2/10).
+Epoch [11/50], Loss: 0.6609, Train Acc: 0.5965
+Validation Acc: 0.6438
+No improvement (3/10).
+Epoch [12/50], Loss: 0.6469, Train Acc: 0.6453
+Validation Acc: 0.6703
+No improvement (4/10).
+Epoch [13/50], Loss: 0.6295, Train Acc: 0.6824
+Validation Acc: 0.6969
+Epoch [14/50], Loss: 0.6009, Train Acc: 0.7355
+Validation Acc: 0.7266
+Epoch [15/50], Loss: 0.5813, Train Acc: 0.7504
+Validation Acc: 0.7797
+Epoch [16/50], Loss: 0.5628, Train Acc: 0.7602
+Validation Acc: 0.7922
+Epoch [17/50], Loss: 0.5543, Train Acc: 0.7855
+Validation Acc: 0.7750
+No improvement (1/10).
+Epoch [18/50], Loss: 0.6177, Train Acc: 0.7063
+Validation Acc: 0.7203
+No improvement (2/10).
+Epoch [19/50], Loss: 0.5688, Train Acc: 0.7711
+Validation Acc: 0.7547
+No improvement (3/10).
+Epoch [20/50], Loss: 0.5397, Train Acc: 0.7934
+Validation Acc: 0.7609
+No improvement (4/10).
+Epoch [21/50], Loss: 0.5168, Train Acc: 0.8246
+Validation Acc: 0.8094
+Epoch [22/50], Loss: 0.5055, Train Acc: 0.8301
+Validation Acc: 0.8172
+Epoch [23/50], Loss: 0.4936, Train Acc: 0.8391
+Validation Acc: 0.8281
+Epoch [24/50], Loss: 0.4857, Train Acc: 0.8527
+Validation Acc: 0.8406
+Epoch [25/50], Loss: 0.4773, Train Acc: 0.8609
+Validation Acc: 0.8406
+No improvement (1/10).
+Epoch [26/50], Loss: 0.4816, Train Acc: 0.8531
+Validation Acc: 0.8141
+No improvement (2/10).
+Epoch [27/50], Loss: 0.4780, Train Acc: 0.8602
+Validation Acc: 0.8578
+Epoch [28/50], Loss: 0.4657, Train Acc: 0.8797
+Validation Acc: 0.8453
+No improvement (1/10).
+Epoch [29/50], Loss: 0.4562, Train Acc: 0.8809
+Validation Acc: 0.8656
+Epoch [30/50], Loss: 0.4560, Train Acc: 0.8777
+Validation Acc: 0.8078
+No improvement (1/10).
+Epoch [31/50], Loss: 0.5061, Train Acc: 0.8285
+Validation Acc: 0.8047
+No improvement (2/10).
+Epoch [32/50], Loss: 0.5262, Train Acc: 0.7992
+Validation Acc: 0.8203
+No improvement (3/10).
+Epoch [33/50], Loss: 0.4730, Train Acc: 0.8516
+Validation Acc: 0.8531
+No improvement (4/10).
+Epoch [34/50], Loss: 0.4543, Train Acc: 0.8801
+Validation Acc: 0.8625
+No improvement (5/10).
+Epoch [35/50], Loss: 0.4393, Train Acc: 0.8895
+Validation Acc: 0.8781
+Epoch [36/50], Loss: 0.4320, Train Acc: 0.8945
+Validation Acc: 0.8906
+Epoch [37/50], Loss: 0.4235, Train Acc: 0.9035
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [38/50], Loss: 0.4146, Train Acc: 0.9035
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [39/50], Loss: 0.4068, Train Acc: 0.9109
+Validation Acc: 0.9062
+Epoch [40/50], Loss: 0.4100, Train Acc: 0.9117
+Validation Acc: 0.9125
+Epoch [41/50], Loss: 0.4122, Train Acc: 0.9035
+Validation Acc: 0.9000
+No improvement (1/10).
+Epoch [42/50], Loss: 0.4203, Train Acc: 0.9043
+Validation Acc: 0.8750
+No improvement (2/10).
+Epoch [43/50], Loss: 0.4333, Train Acc: 0.8840
+Validation Acc: 0.8953
+No improvement (3/10).
+Epoch [44/50], Loss: 0.4059, Train Acc: 0.9172
+Validation Acc: 0.9203
+Epoch [45/50], Loss: 0.4521, Train Acc: 0.8754
+Validation Acc: 0.8406
+No improvement (1/10).
+Epoch [46/50], Loss: 0.4497, Train Acc: 0.8730
+Validation Acc: 0.8859
+No improvement (2/10).
+Epoch [47/50], Loss: 0.4218, Train Acc: 0.8965
+Validation Acc: 0.8969
+No improvement (3/10).
+Epoch [48/50], Loss: 0.4072, Train Acc: 0.9094
+Validation Acc: 0.9297
+Epoch [49/50], Loss: 0.3964, Train Acc: 0.9215
+Validation Acc: 0.9234
+No improvement (1/10).
+Epoch [50/50], Loss: 0.3856, Train Acc: 0.9281
+Validation Acc: 0.9266
+No improvement (2/10).
+Training complete!
+Run 2/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6933, Train Acc: 0.5023
+Validation Acc: 0.5094
+Epoch [2/50], Loss: 0.6924, Train Acc: 0.5180
+Validation Acc: 0.5453
+Epoch [3/50], Loss: 0.6850, Train Acc: 0.5605
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6793, Train Acc: 0.5609
+Validation Acc: 0.5906
+Epoch [5/50], Loss: 0.6780, Train Acc: 0.5813
+Validation Acc: 0.5188
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6924, Train Acc: 0.5328
+Validation Acc: 0.5047
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6890, Train Acc: 0.5309
+Validation Acc: 0.5484
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6842, Train Acc: 0.5285
+Validation Acc: 0.5344
+No improvement (4/10).
+Epoch [9/50], Loss: 0.6809, Train Acc: 0.5574
+Validation Acc: 0.5437
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6761, Train Acc: 0.5750
+Validation Acc: 0.5906
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6758, Train Acc: 0.5969
+Validation Acc: 0.5969
+Epoch [12/50], Loss: 0.6706, Train Acc: 0.6055
+Validation Acc: 0.5797
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6641, Train Acc: 0.6223
+Validation Acc: 0.6125
+Epoch [14/50], Loss: 0.6577, Train Acc: 0.6398
+Validation Acc: 0.6281
+Epoch [15/50], Loss: 0.6539, Train Acc: 0.6430
+Validation Acc: 0.6422
+Epoch [16/50], Loss: 0.6545, Train Acc: 0.6371
+Validation Acc: 0.6250
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6744, Train Acc: 0.6031
+Validation Acc: 0.5250
+No improvement (2/10).
+Epoch [18/50], Loss: 0.6832, Train Acc: 0.5633
+Validation Acc: 0.5672
+No improvement (3/10).
+Epoch [19/50], Loss: 0.6715, Train Acc: 0.6004
+Validation Acc: 0.5953
+No improvement (4/10).
+Epoch [20/50], Loss: 0.6629, Train Acc: 0.6254
+Validation Acc: 0.6234
+No improvement (5/10).
+Epoch [21/50], Loss: 0.6590, Train Acc: 0.6258
+Validation Acc: 0.6078
+No improvement (6/10).
+Epoch [22/50], Loss: 0.6651, Train Acc: 0.6199
+Validation Acc: 0.6203
+No improvement (7/10).
+Epoch [23/50], Loss: 0.6557, Train Acc: 0.6516
+Validation Acc: 0.6438
+Epoch [24/50], Loss: 0.6472, Train Acc: 0.6582
+Validation Acc: 0.6734
+Epoch [25/50], Loss: 0.6416, Train Acc: 0.6793
+Validation Acc: 0.6781
+Epoch [26/50], Loss: 0.6351, Train Acc: 0.6887
+Validation Acc: 0.6984
+Epoch [27/50], Loss: 0.6284, Train Acc: 0.7023
+Validation Acc: 0.6813
+No improvement (1/10).
+Epoch [28/50], Loss: 0.6265, Train Acc: 0.7000
+Validation Acc: 0.6859
+No improvement (2/10).
+Epoch [29/50], Loss: 0.6134, Train Acc: 0.7246
+Validation Acc: 0.7016
+Epoch [30/50], Loss: 0.6190, Train Acc: 0.7121
+Validation Acc: 0.6641
+No improvement (1/10).
+Epoch [31/50], Loss: 0.6207, Train Acc: 0.7137
+Validation Acc: 0.6906
+No improvement (2/10).
+Epoch [32/50], Loss: 0.6151, Train Acc: 0.7258
+Validation Acc: 0.7234
+Epoch [33/50], Loss: 0.6266, Train Acc: 0.6891
+Validation Acc: 0.5844
+No improvement (1/10).
+Epoch [34/50], Loss: 0.6512, Train Acc: 0.6492
+Validation Acc: 0.6719
+No improvement (2/10).
+Epoch [35/50], Loss: 0.6270, Train Acc: 0.6930
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [36/50], Loss: 0.6230, Train Acc: 0.7031
+Validation Acc: 0.6922
+No improvement (4/10).
+Epoch [37/50], Loss: 0.6089, Train Acc: 0.7184
+Validation Acc: 0.7281
+Epoch [38/50], Loss: 0.6115, Train Acc: 0.7156
+Validation Acc: 0.7438
+Epoch [39/50], Loss: 0.5975, Train Acc: 0.7410
+Validation Acc: 0.7609
+Epoch [40/50], Loss: 0.5862, Train Acc: 0.7613
+Validation Acc: 0.7719
+Epoch [41/50], Loss: 0.5878, Train Acc: 0.7555
+Validation Acc: 0.7625
+No improvement (1/10).
+Epoch [42/50], Loss: 0.5809, Train Acc: 0.7602
+Validation Acc: 0.7672
+No improvement (2/10).
+Epoch [43/50], Loss: 0.5751, Train Acc: 0.7684
+Validation Acc: 0.7719
+No improvement (3/10).
+Epoch [44/50], Loss: 0.5761, Train Acc: 0.7656
+Validation Acc: 0.7781
+Epoch [45/50], Loss: 0.5630, Train Acc: 0.7840
+Validation Acc: 0.7937
+Epoch [46/50], Loss: 0.5709, Train Acc: 0.7734
+Validation Acc: 0.7484
+No improvement (1/10).
+Epoch [47/50], Loss: 0.5815, Train Acc: 0.7508
+Validation Acc: 0.7609
+No improvement (2/10).
+Epoch [48/50], Loss: 0.5819, Train Acc: 0.7523
+Validation Acc: 0.7422
+No improvement (3/10).
+Epoch [49/50], Loss: 0.5776, Train Acc: 0.7598
+Validation Acc: 0.7641
+No improvement (4/10).
+Epoch [50/50], Loss: 0.5699, Train Acc: 0.7738
+Validation Acc: 0.7766
+No improvement (5/10).
+Training complete!
+Run 3/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5004
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6859, Train Acc: 0.5469
+Validation Acc: 0.5656
+Epoch [3/50], Loss: 0.6721, Train Acc: 0.5703
+Validation Acc: 0.5234
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6798, Train Acc: 0.5551
+Validation Acc: 0.5656
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6703, Train Acc: 0.5695
+Validation Acc: 0.5875
+Epoch [6/50], Loss: 0.6641, Train Acc: 0.5781
+Validation Acc: 0.5906
+Epoch [7/50], Loss: 0.6688, Train Acc: 0.5813
+Validation Acc: 0.6031
+Epoch [8/50], Loss: 0.6518, Train Acc: 0.6094
+Validation Acc: 0.6281
+Epoch [9/50], Loss: 0.6411, Train Acc: 0.6246
+Validation Acc: 0.6312
+Epoch [10/50], Loss: 0.6555, Train Acc: 0.6004
+Validation Acc: 0.5828
+No improvement (1/10).
+Epoch [11/50], Loss: 0.6580, Train Acc: 0.5883
+Validation Acc: 0.6172
+No improvement (2/10).
+Epoch [12/50], Loss: 0.6400, Train Acc: 0.6164
+Validation Acc: 0.6344
+Epoch [13/50], Loss: 0.6435, Train Acc: 0.6055
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [14/50], Loss: 0.6458, Train Acc: 0.6059
+Validation Acc: 0.5922
+No improvement (2/10).
+Epoch [15/50], Loss: 0.6454, Train Acc: 0.6246
+Validation Acc: 0.5969
+No improvement (3/10).
+Epoch [16/50], Loss: 0.6337, Train Acc: 0.6266
+Validation Acc: 0.6500
+Epoch [17/50], Loss: 0.6181, Train Acc: 0.6762
+Validation Acc: 0.5891
+No improvement (1/10).
+Epoch [18/50], Loss: 0.6165, Train Acc: 0.6691
+Validation Acc: 0.6875
+Epoch [19/50], Loss: 0.6213, Train Acc: 0.6852
+Validation Acc: 0.6469
+No improvement (1/10).
+Epoch [20/50], Loss: 0.6124, Train Acc: 0.6914
+Validation Acc: 0.6719
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5919, Train Acc: 0.7215
+Validation Acc: 0.6438
+No improvement (3/10).
+Epoch [22/50], Loss: 0.6005, Train Acc: 0.7023
+Validation Acc: 0.6813
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5623, Train Acc: 0.7699
+Validation Acc: 0.7562
+Epoch [24/50], Loss: 0.5343, Train Acc: 0.8086
+Validation Acc: 0.7562
+No improvement (1/10).
+Epoch [25/50], Loss: 0.5226, Train Acc: 0.8086
+Validation Acc: 0.7969
+Epoch [26/50], Loss: 0.5095, Train Acc: 0.8203
+Validation Acc: 0.8141
+Epoch [27/50], Loss: 0.4797, Train Acc: 0.8488
+Validation Acc: 0.8109
+No improvement (1/10).
+Epoch [28/50], Loss: 0.4823, Train Acc: 0.8453
+Validation Acc: 0.8203
+Epoch [29/50], Loss: 0.4780, Train Acc: 0.8570
+Validation Acc: 0.8234
+Epoch [30/50], Loss: 0.4605, Train Acc: 0.8719
+Validation Acc: 0.7828
+No improvement (1/10).
+Epoch [31/50], Loss: 0.5547, Train Acc: 0.7828
+Validation Acc: 0.7672
+No improvement (2/10).
+Epoch [32/50], Loss: 0.4990, Train Acc: 0.8414
+Validation Acc: 0.8281
+Epoch [33/50], Loss: 0.4754, Train Acc: 0.8492
+Validation Acc: 0.8313
+Epoch [34/50], Loss: 0.5111, Train Acc: 0.8133
+Validation Acc: 0.8156
+No improvement (1/10).
+Epoch [35/50], Loss: 0.4571, Train Acc: 0.8676
+Validation Acc: 0.8594
+Epoch [36/50], Loss: 0.4423, Train Acc: 0.8805
+Validation Acc: 0.8672
+Epoch [37/50], Loss: 0.4404, Train Acc: 0.8781
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [38/50], Loss: 0.5026, Train Acc: 0.8285
+Validation Acc: 0.8000
+No improvement (2/10).
+Epoch [39/50], Loss: 0.4632, Train Acc: 0.8578
+Validation Acc: 0.8875
+Epoch [40/50], Loss: 0.4312, Train Acc: 0.8891
+Validation Acc: 0.8922
+Epoch [41/50], Loss: 0.4199, Train Acc: 0.8926
+Validation Acc: 0.8922
+No improvement (1/10).
+Epoch [42/50], Loss: 0.3996, Train Acc: 0.9047
+Validation Acc: 0.9062
+Epoch [43/50], Loss: 0.3964, Train Acc: 0.9066
+Validation Acc: 0.9219
+Epoch [44/50], Loss: 0.3892, Train Acc: 0.9125
+Validation Acc: 0.9250
+Epoch [45/50], Loss: 0.4309, Train Acc: 0.8875
+Validation Acc: 0.8938
+No improvement (1/10).
+Epoch [46/50], Loss: 0.4098, Train Acc: 0.9012
+Validation Acc: 0.9141
+No improvement (2/10).
+Epoch [47/50], Loss: 0.4162, Train Acc: 0.8984
+Validation Acc: 0.8781
+No improvement (3/10).
+Epoch [48/50], Loss: 0.4198, Train Acc: 0.8934
+Validation Acc: 0.8969
+No improvement (4/10).
+Epoch [49/50], Loss: 0.3944, Train Acc: 0.9102
+Validation Acc: 0.9156
+No improvement (5/10).
+Epoch [50/50], Loss: 0.3704, Train Acc: 0.9262
+Validation Acc: 0.9391
+Training complete!
+Run 4/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6932, Train Acc: 0.5047
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.5387
+Validation Acc: 0.5641
+Epoch [3/50], Loss: 0.6813, Train Acc: 0.5762
+Validation Acc: 0.5922
+Epoch [4/50], Loss: 0.6735, Train Acc: 0.6039
+Validation Acc: 0.6031
+Epoch [5/50], Loss: 0.6849, Train Acc: 0.5773
+Validation Acc: 0.5687
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6737, Train Acc: 0.6023
+Validation Acc: 0.5750
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6688, Train Acc: 0.6199
+Validation Acc: 0.5984
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6646, Train Acc: 0.6133
+Validation Acc: 0.6156
+Epoch [9/50], Loss: 0.6594, Train Acc: 0.6309
+Validation Acc: 0.6687
+Epoch [10/50], Loss: 0.6422, Train Acc: 0.6684
+Validation Acc: 0.6813
+Epoch [11/50], Loss: 0.6542, Train Acc: 0.6289
+Validation Acc: 0.6078
+No improvement (1/10).
+Epoch [12/50], Loss: 0.6451, Train Acc: 0.6523
+Validation Acc: 0.6312
+No improvement (2/10).
+Epoch [13/50], Loss: 0.6346, Train Acc: 0.6777
+Validation Acc: 0.6875
+Epoch [14/50], Loss: 0.6283, Train Acc: 0.6770
+Validation Acc: 0.7031
+Epoch [15/50], Loss: 0.6306, Train Acc: 0.6770
+Validation Acc: 0.6516
+No improvement (1/10).
+Epoch [16/50], Loss: 0.6224, Train Acc: 0.6941
+Validation Acc: 0.7156
+Epoch [17/50], Loss: 0.6284, Train Acc: 0.6816
+Validation Acc: 0.6625
+No improvement (1/10).
+Epoch [18/50], Loss: 0.7119, Train Acc: 0.5375
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [19/50], Loss: 0.6984, Train Acc: 0.4961
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [20/50], Loss: 0.6938, Train Acc: 0.5062
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [21/50], Loss: 0.6934, Train Acc: 0.5082
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [22/50], Loss: 0.6937, Train Acc: 0.5062
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [23/50], Loss: 0.6942, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [24/50], Loss: 0.6935, Train Acc: 0.5070
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [25/50], Loss: 0.6937, Train Acc: 0.5043
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [26/50], Loss: 0.6926, Train Acc: 0.5156
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 5/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.4934
+Validation Acc: 0.5016
+Epoch [2/50], Loss: 0.6896, Train Acc: 0.5480
+Validation Acc: 0.5234
+Epoch [3/50], Loss: 0.6861, Train Acc: 0.5602
+Validation Acc: 0.5563
+Epoch [4/50], Loss: 0.6782, Train Acc: 0.5687
+Validation Acc: 0.5938
+Epoch [5/50], Loss: 0.6732, Train Acc: 0.5707
+Validation Acc: 0.6172
+Epoch [6/50], Loss: 0.6824, Train Acc: 0.5422
+Validation Acc: 0.5719
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6735, Train Acc: 0.5723
+Validation Acc: 0.6172
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6824, Train Acc: 0.5617
+Validation Acc: 0.5844
+No improvement (3/10).
+Epoch [9/50], Loss: 0.6776, Train Acc: 0.5426
+Validation Acc: 0.6047
+No improvement (4/10).
+Epoch [10/50], Loss: 0.6663, Train Acc: 0.5867
+Validation Acc: 0.5922
+No improvement (5/10).
+Epoch [11/50], Loss: 0.6571, Train Acc: 0.5801
+Validation Acc: 0.6234
+Epoch [12/50], Loss: 0.6507, Train Acc: 0.6168
+Validation Acc: 0.6172
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6330, Train Acc: 0.6289
+Validation Acc: 0.6469
+Epoch [14/50], Loss: 0.6256, Train Acc: 0.6453
+Validation Acc: 0.6719
+Epoch [15/50], Loss: 0.6041, Train Acc: 0.6719
+Validation Acc: 0.7016
+Epoch [16/50], Loss: 0.5991, Train Acc: 0.6848
+Validation Acc: 0.7469
+Epoch [17/50], Loss: 0.5718, Train Acc: 0.7328
+Validation Acc: 0.7578
+Epoch [18/50], Loss: 0.5733, Train Acc: 0.7117
+Validation Acc: 0.7125
+No improvement (1/10).
+Epoch [19/50], Loss: 0.5743, Train Acc: 0.7281
+Validation Acc: 0.7859
+Epoch [20/50], Loss: 0.5353, Train Acc: 0.7562
+Validation Acc: 0.8172
+Epoch [21/50], Loss: 0.5433, Train Acc: 0.7547
+Validation Acc: 0.7625
+No improvement (1/10).
+Epoch [22/50], Loss: 0.5257, Train Acc: 0.7727
+Validation Acc: 0.7859
+No improvement (2/10).
+Epoch [23/50], Loss: 0.5102, Train Acc: 0.7766
+Validation Acc: 0.8344
+Epoch [24/50], Loss: 0.4858, Train Acc: 0.7863
+Validation Acc: 0.8203
+No improvement (1/10).
+Epoch [25/50], Loss: 0.4820, Train Acc: 0.7910
+Validation Acc: 0.8531
+Epoch [26/50], Loss: 0.5023, Train Acc: 0.7742
+Validation Acc: 0.8609
+Epoch [27/50], Loss: 0.4718, Train Acc: 0.7988
+Validation Acc: 0.8453
+No improvement (1/10).
+Epoch [28/50], Loss: 0.4675, Train Acc: 0.8094
+Validation Acc: 0.8266
+No improvement (2/10).
+Epoch [29/50], Loss: 0.5153, Train Acc: 0.7641
+Validation Acc: 0.8016
+No improvement (3/10).
+Epoch [30/50], Loss: 0.4875, Train Acc: 0.7977
+Validation Acc: 0.8281
+No improvement (4/10).
+Epoch [31/50], Loss: 0.4510, Train Acc: 0.8164
+Validation Acc: 0.8828
+Epoch [32/50], Loss: 0.4390, Train Acc: 0.8301
+Validation Acc: 0.8812
+No improvement (1/10).
+Epoch [33/50], Loss: 0.4276, Train Acc: 0.8473
+Validation Acc: 0.8891
+Epoch [34/50], Loss: 0.4233, Train Acc: 0.8391
+Validation Acc: 0.8953
+Epoch [35/50], Loss: 0.4286, Train Acc: 0.8504
+Validation Acc: 0.8875
+No improvement (1/10).
+Epoch [36/50], Loss: 0.4229, Train Acc: 0.8391
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [37/50], Loss: 0.4196, Train Acc: 0.8555
+Validation Acc: 0.9125
+Epoch [38/50], Loss: 0.4193, Train Acc: 0.8500
+Validation Acc: 0.8781
+No improvement (1/10).
+Epoch [39/50], Loss: 0.4093, Train Acc: 0.8641
+Validation Acc: 0.9250
+Epoch [40/50], Loss: 0.3919, Train Acc: 0.8773
+Validation Acc: 0.9422
+Epoch [41/50], Loss: 0.4379, Train Acc: 0.8301
+Validation Acc: 0.8688
+No improvement (1/10).
+Epoch [42/50], Loss: 0.4216, Train Acc: 0.8551
+Validation Acc: 0.9141
+No improvement (2/10).
+Epoch [43/50], Loss: 0.3986, Train Acc: 0.8633
+Validation Acc: 0.9141
+No improvement (3/10).
+Epoch [44/50], Loss: 0.3895, Train Acc: 0.8734
+Validation Acc: 0.9328
+No improvement (4/10).
+Epoch [45/50], Loss: 0.3830, Train Acc: 0.8711
+Validation Acc: 0.9375
+No improvement (5/10).
+Epoch [46/50], Loss: 0.3739, Train Acc: 0.8746
+Validation Acc: 0.9437
+Epoch [47/50], Loss: 0.3766, Train Acc: 0.8738
+Validation Acc: 0.9422
+No improvement (1/10).
+Epoch [48/50], Loss: 0.3760, Train Acc: 0.8797
+Validation Acc: 0.9437
+No improvement (2/10).
+Epoch [49/50], Loss: 0.3709, Train Acc: 0.8781
+Validation Acc: 0.9437
+No improvement (3/10).
+Epoch [50/50], Loss: 0.3685, Train Acc: 0.8797
+Validation Acc: 0.9437
+No improvement (4/10).
+Training complete!
+Run 6/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.5027
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6919, Train Acc: 0.5227
+Validation Acc: 0.5219
+Epoch [3/50], Loss: 0.6893, Train Acc: 0.5262
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6786, Train Acc: 0.5633
+Validation Acc: 0.5578
+Epoch [5/50], Loss: 0.6791, Train Acc: 0.5883
+Validation Acc: 0.5172
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6656, Train Acc: 0.6129
+Validation Acc: 0.5656
+Epoch [7/50], Loss: 0.6849, Train Acc: 0.5637
+Validation Acc: 0.5469
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6694, Train Acc: 0.5832
+Validation Acc: 0.5719
+Epoch [9/50], Loss: 0.6618, Train Acc: 0.6086
+Validation Acc: 0.6062
+Epoch [10/50], Loss: 0.6755, Train Acc: 0.5926
+Validation Acc: 0.6172
+Epoch [11/50], Loss: 0.6528, Train Acc: 0.6414
+Validation Acc: 0.6281
+Epoch [12/50], Loss: 0.6449, Train Acc: 0.6531
+Validation Acc: 0.6781
+Epoch [13/50], Loss: 0.6303, Train Acc: 0.6652
+Validation Acc: 0.6859
+Epoch [14/50], Loss: 0.6630, Train Acc: 0.6082
+Validation Acc: 0.6156
+No improvement (1/10).
+Epoch [15/50], Loss: 0.6359, Train Acc: 0.6668
+Validation Acc: 0.6719
+No improvement (2/10).
+Epoch [16/50], Loss: 0.6181, Train Acc: 0.6910
+Validation Acc: 0.7359
+Epoch [17/50], Loss: 0.5939, Train Acc: 0.7160
+Validation Acc: 0.7500
+Epoch [18/50], Loss: 0.5894, Train Acc: 0.7188
+Validation Acc: 0.7344
+No improvement (1/10).
+Epoch [19/50], Loss: 0.5819, Train Acc: 0.7219
+Validation Acc: 0.6687
+No improvement (2/10).
+Epoch [20/50], Loss: 0.6180, Train Acc: 0.6719
+Validation Acc: 0.6109
+No improvement (3/10).
+Epoch [21/50], Loss: 0.6504, Train Acc: 0.6121
+Validation Acc: 0.6547
+No improvement (4/10).
+Epoch [22/50], Loss: 0.5948, Train Acc: 0.6887
+Validation Acc: 0.7125
+No improvement (5/10).
+Epoch [23/50], Loss: 0.5670, Train Acc: 0.7148
+Validation Acc: 0.7219
+No improvement (6/10).
+Epoch [24/50], Loss: 0.5504, Train Acc: 0.7238
+Validation Acc: 0.7328
+No improvement (7/10).
+Epoch [25/50], Loss: 0.5531, Train Acc: 0.7242
+Validation Acc: 0.7391
+No improvement (8/10).
+Epoch [26/50], Loss: 0.5350, Train Acc: 0.7371
+Validation Acc: 0.7516
+Epoch [27/50], Loss: 0.5221, Train Acc: 0.7562
+Validation Acc: 0.7672
+Epoch [28/50], Loss: 0.5187, Train Acc: 0.7734
+Validation Acc: 0.7906
+Epoch [29/50], Loss: 0.5141, Train Acc: 0.7824
+Validation Acc: 0.7969
+Epoch [30/50], Loss: 0.5150, Train Acc: 0.7781
+Validation Acc: 0.7875
+No improvement (1/10).
+Epoch [31/50], Loss: 0.5147, Train Acc: 0.7816
+Validation Acc: 0.8109
+Epoch [32/50], Loss: 0.5064, Train Acc: 0.7930
+Validation Acc: 0.7625
+No improvement (1/10).
+Epoch [33/50], Loss: 0.5415, Train Acc: 0.7672
+Validation Acc: 0.7859
+No improvement (2/10).
+Epoch [34/50], Loss: 0.5101, Train Acc: 0.7977
+Validation Acc: 0.8047
+No improvement (3/10).
+Epoch [35/50], Loss: 0.4886, Train Acc: 0.8180
+Validation Acc: 0.8172
+Epoch [36/50], Loss: 0.4843, Train Acc: 0.8152
+Validation Acc: 0.7969
+No improvement (1/10).
+Epoch [37/50], Loss: 0.4827, Train Acc: 0.8176
+Validation Acc: 0.8125
+No improvement (2/10).
+Epoch [38/50], Loss: 0.4744, Train Acc: 0.8285
+Validation Acc: 0.8344
+Epoch [39/50], Loss: 0.4652, Train Acc: 0.8336
+Validation Acc: 0.8453
+Epoch [40/50], Loss: 0.4596, Train Acc: 0.8484
+Validation Acc: 0.8297
+No improvement (1/10).
+Epoch [41/50], Loss: 0.4532, Train Acc: 0.8469
+Validation Acc: 0.8422
+No improvement (2/10).
+Epoch [42/50], Loss: 0.4543, Train Acc: 0.8430
+Validation Acc: 0.8656
+Epoch [43/50], Loss: 0.4570, Train Acc: 0.8348
+Validation Acc: 0.8609
+No improvement (1/10).
+Epoch [44/50], Loss: 0.4596, Train Acc: 0.8391
+Validation Acc: 0.8625
+No improvement (2/10).
+Epoch [45/50], Loss: 0.4581, Train Acc: 0.8484
+Validation Acc: 0.8625
+No improvement (3/10).
+Epoch [46/50], Loss: 0.4576, Train Acc: 0.8473
+Validation Acc: 0.8750
+Epoch [47/50], Loss: 0.4399, Train Acc: 0.8594
+Validation Acc: 0.8781
+Epoch [48/50], Loss: 0.4399, Train Acc: 0.8590
+Validation Acc: 0.8828
+Epoch [49/50], Loss: 0.4347, Train Acc: 0.8590
+Validation Acc: 0.8812
+No improvement (1/10).
+Epoch [50/50], Loss: 0.4285, Train Acc: 0.8746
+Validation Acc: 0.8875
+Training complete!
+Run 7/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.5051
+Validation Acc: 0.5125
+Epoch [2/50], Loss: 0.6914, Train Acc: 0.5285
+Validation Acc: 0.5344
+Epoch [3/50], Loss: 0.6863, Train Acc: 0.5473
+Validation Acc: 0.4969
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6903, Train Acc: 0.5270
+Validation Acc: 0.5375
+Epoch [5/50], Loss: 0.6818, Train Acc: 0.5711
+Validation Acc: 0.5656
+Epoch [6/50], Loss: 0.6729, Train Acc: 0.5984
+Validation Acc: 0.5563
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6763, Train Acc: 0.5801
+Validation Acc: 0.5547
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6911, Train Acc: 0.5539
+Validation Acc: 0.5797
+Epoch [9/50], Loss: 0.6728, Train Acc: 0.6016
+Validation Acc: 0.5844
+Epoch [10/50], Loss: 0.6754, Train Acc: 0.5813
+Validation Acc: 0.5719
+No improvement (1/10).
+Epoch [11/50], Loss: 0.6700, Train Acc: 0.5953
+Validation Acc: 0.5437
+No improvement (2/10).
+Epoch [12/50], Loss: 0.6719, Train Acc: 0.5945
+Validation Acc: 0.5766
+No improvement (3/10).
+Epoch [13/50], Loss: 0.6681, Train Acc: 0.5992
+Validation Acc: 0.5813
+No improvement (4/10).
+Epoch [14/50], Loss: 0.6610, Train Acc: 0.6254
+Validation Acc: 0.5844
+No improvement (5/10).
+Epoch [15/50], Loss: 0.6554, Train Acc: 0.6277
+Validation Acc: 0.5891
+Epoch [16/50], Loss: 0.6571, Train Acc: 0.6148
+Validation Acc: 0.5953
+Epoch [17/50], Loss: 0.6470, Train Acc: 0.6375
+Validation Acc: 0.6250
+Epoch [18/50], Loss: 0.6402, Train Acc: 0.6457
+Validation Acc: 0.6625
+Epoch [19/50], Loss: 0.6370, Train Acc: 0.6641
+Validation Acc: 0.6937
+Epoch [20/50], Loss: 0.6362, Train Acc: 0.6629
+Validation Acc: 0.6844
+No improvement (1/10).
+Epoch [21/50], Loss: 0.6270, Train Acc: 0.6766
+Validation Acc: 0.6594
+No improvement (2/10).
+Epoch [22/50], Loss: 0.6233, Train Acc: 0.6773
+Validation Acc: 0.6766
+No improvement (3/10).
+Epoch [23/50], Loss: 0.6294, Train Acc: 0.6863
+Validation Acc: 0.6828
+No improvement (4/10).
+Epoch [24/50], Loss: 0.6136, Train Acc: 0.7152
+Validation Acc: 0.7125
+Epoch [25/50], Loss: 0.6030, Train Acc: 0.7324
+Validation Acc: 0.7188
+Epoch [26/50], Loss: 0.6083, Train Acc: 0.7320
+Validation Acc: 0.7172
+No improvement (1/10).
+Epoch [27/50], Loss: 0.5939, Train Acc: 0.7430
+Validation Acc: 0.7281
+Epoch [28/50], Loss: 0.6014, Train Acc: 0.7297
+Validation Acc: 0.7250
+No improvement (1/10).
+Epoch [29/50], Loss: 0.5897, Train Acc: 0.7457
+Validation Acc: 0.7406
+Epoch [30/50], Loss: 0.5792, Train Acc: 0.7516
+Validation Acc: 0.7484
+Epoch [31/50], Loss: 0.5747, Train Acc: 0.7508
+Validation Acc: 0.7578
+Epoch [32/50], Loss: 0.5702, Train Acc: 0.7590
+Validation Acc: 0.7578
+No improvement (1/10).
+Epoch [33/50], Loss: 0.5597, Train Acc: 0.7805
+Validation Acc: 0.7578
+No improvement (2/10).
+Epoch [34/50], Loss: 0.5610, Train Acc: 0.7723
+Validation Acc: 0.7906
+Epoch [35/50], Loss: 0.5576, Train Acc: 0.7668
+Validation Acc: 0.7984
+Epoch [36/50], Loss: 0.5303, Train Acc: 0.8035
+Validation Acc: 0.8313
+Epoch [37/50], Loss: 0.5250, Train Acc: 0.8117
+Validation Acc: 0.8219
+No improvement (1/10).
+Epoch [38/50], Loss: 0.5188, Train Acc: 0.8187
+Validation Acc: 0.8281
+No improvement (2/10).
+Epoch [39/50], Loss: 0.5135, Train Acc: 0.8242
+Validation Acc: 0.8453
+Epoch [40/50], Loss: 0.5303, Train Acc: 0.7953
+Validation Acc: 0.8266
+No improvement (1/10).
+Epoch [41/50], Loss: 0.5279, Train Acc: 0.7945
+Validation Acc: 0.8453
+No improvement (2/10).
+Epoch [42/50], Loss: 0.5102, Train Acc: 0.8187
+Validation Acc: 0.8562
+Epoch [43/50], Loss: 0.4988, Train Acc: 0.8301
+Validation Acc: 0.8562
+No improvement (1/10).
+Epoch [44/50], Loss: 0.4890, Train Acc: 0.8402
+Validation Acc: 0.8781
+Epoch [45/50], Loss: 0.4832, Train Acc: 0.8418
+Validation Acc: 0.8594
+No improvement (1/10).
+Epoch [46/50], Loss: 0.4750, Train Acc: 0.8480
+Validation Acc: 0.8797
+Epoch [47/50], Loss: 0.4640, Train Acc: 0.8523
+Validation Acc: 0.8938
+Epoch [48/50], Loss: 0.4646, Train Acc: 0.8527
+Validation Acc: 0.8828
+No improvement (1/10).
+Epoch [49/50], Loss: 0.4857, Train Acc: 0.8211
+Validation Acc: 0.8641
+No improvement (2/10).
+Epoch [50/50], Loss: 0.4694, Train Acc: 0.8438
+Validation Acc: 0.8797
+No improvement (3/10).
+Training complete!
+Run 8/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6930, Train Acc: 0.5016
+Validation Acc: 0.5188
+Epoch [2/50], Loss: 0.6871, Train Acc: 0.5473
+Validation Acc: 0.5500
+Epoch [3/50], Loss: 0.6870, Train Acc: 0.5441
+Validation Acc: 0.5500
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6848, Train Acc: 0.5473
+Validation Acc: 0.5500
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6849, Train Acc: 0.5613
+Validation Acc: 0.4984
+No improvement (3/10).
+Epoch [6/50], Loss: 0.7074, Train Acc: 0.4949
+Validation Acc: 0.4984
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6974, Train Acc: 0.4996
+Validation Acc: 0.4984
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6957, Train Acc: 0.4973
+Validation Acc: 0.4984
+No improvement (6/10).
+Epoch [9/50], Loss: 0.6936, Train Acc: 0.5102
+Validation Acc: 0.4984
+No improvement (7/10).
+Epoch [10/50], Loss: 0.6946, Train Acc: 0.4969
+Validation Acc: 0.4984
+No improvement (8/10).
+Epoch [11/50], Loss: 0.6939, Train Acc: 0.5016
+Validation Acc: 0.4984
+No improvement (9/10).
+Epoch [12/50], Loss: 0.6946, Train Acc: 0.4938
+Validation Acc: 0.4984
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 9/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6930, Train Acc: 0.5086
+Validation Acc: 0.5062
+Epoch [2/50], Loss: 0.6886, Train Acc: 0.5375
+Validation Acc: 0.5328
+Epoch [3/50], Loss: 0.6799, Train Acc: 0.5719
+Validation Acc: 0.5969
+Epoch [4/50], Loss: 0.6655, Train Acc: 0.6082
+Validation Acc: 0.6391
+Epoch [5/50], Loss: 0.6637, Train Acc: 0.6145
+Validation Acc: 0.6156
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6507, Train Acc: 0.6438
+Validation Acc: 0.6031
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6489, Train Acc: 0.6430
+Validation Acc: 0.6453
+Epoch [8/50], Loss: 0.6405, Train Acc: 0.6422
+Validation Acc: 0.6141
+No improvement (1/10).
+Epoch [9/50], Loss: 0.6434, Train Acc: 0.6285
+Validation Acc: 0.6297
+No improvement (2/10).
+Epoch [10/50], Loss: 0.6322, Train Acc: 0.6520
+Validation Acc: 0.6625
+Epoch [11/50], Loss: 0.6534, Train Acc: 0.6262
+Validation Acc: 0.6625
+No improvement (1/10).
+Epoch [12/50], Loss: 0.6259, Train Acc: 0.6785
+Validation Acc: 0.6109
+No improvement (2/10).
+Epoch [13/50], Loss: 0.6341, Train Acc: 0.6754
+Validation Acc: 0.6297
+No improvement (3/10).
+Epoch [14/50], Loss: 0.6349, Train Acc: 0.6422
+Validation Acc: 0.5813
+No improvement (4/10).
+Epoch [15/50], Loss: 0.6447, Train Acc: 0.6336
+Validation Acc: 0.6609
+No improvement (5/10).
+Epoch [16/50], Loss: 0.6147, Train Acc: 0.6762
+Validation Acc: 0.6766
+Epoch [17/50], Loss: 0.6095, Train Acc: 0.6875
+Validation Acc: 0.6984
+Epoch [18/50], Loss: 0.6036, Train Acc: 0.7121
+Validation Acc: 0.7422
+Epoch [19/50], Loss: 0.6028, Train Acc: 0.7055
+Validation Acc: 0.6656
+No improvement (1/10).
+Epoch [20/50], Loss: 0.6057, Train Acc: 0.6992
+Validation Acc: 0.7203
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5919, Train Acc: 0.7387
+Validation Acc: 0.7469
+Epoch [22/50], Loss: 0.5928, Train Acc: 0.7344
+Validation Acc: 0.7328
+No improvement (1/10).
+Epoch [23/50], Loss: 0.6119, Train Acc: 0.7016
+Validation Acc: 0.7047
+No improvement (2/10).
+Epoch [24/50], Loss: 0.6016, Train Acc: 0.7203
+Validation Acc: 0.7438
+No improvement (3/10).
+Epoch [25/50], Loss: 0.6125, Train Acc: 0.6937
+Validation Acc: 0.7172
+No improvement (4/10).
+Epoch [26/50], Loss: 0.5891, Train Acc: 0.7211
+Validation Acc: 0.7562
+Epoch [27/50], Loss: 0.5710, Train Acc: 0.7531
+Validation Acc: 0.7578
+Epoch [28/50], Loss: 0.5687, Train Acc: 0.7492
+Validation Acc: 0.7578
+No improvement (1/10).
+Epoch [29/50], Loss: 0.5567, Train Acc: 0.7664
+Validation Acc: 0.7750
+Epoch [30/50], Loss: 0.5503, Train Acc: 0.7816
+Validation Acc: 0.7828
+Epoch [31/50], Loss: 0.5454, Train Acc: 0.7816
+Validation Acc: 0.7953
+Epoch [32/50], Loss: 0.5377, Train Acc: 0.7934
+Validation Acc: 0.8000
+Epoch [33/50], Loss: 0.5317, Train Acc: 0.8020
+Validation Acc: 0.8172
+Epoch [34/50], Loss: 0.5246, Train Acc: 0.8039
+Validation Acc: 0.8141
+No improvement (1/10).
+Epoch [35/50], Loss: 0.5246, Train Acc: 0.8074
+Validation Acc: 0.8172
+No improvement (2/10).
+Epoch [36/50], Loss: 0.5273, Train Acc: 0.8016
+Validation Acc: 0.8141
+No improvement (3/10).
+Epoch [37/50], Loss: 0.5202, Train Acc: 0.8023
+Validation Acc: 0.8063
+No improvement (4/10).
+Epoch [38/50], Loss: 0.5100, Train Acc: 0.8152
+Validation Acc: 0.8250
+Epoch [39/50], Loss: 0.5066, Train Acc: 0.8234
+Validation Acc: 0.8328
+Epoch [40/50], Loss: 0.5009, Train Acc: 0.8297
+Validation Acc: 0.8266
+No improvement (1/10).
+Epoch [41/50], Loss: 0.4996, Train Acc: 0.8293
+Validation Acc: 0.8297
+No improvement (2/10).
+Epoch [42/50], Loss: 0.4968, Train Acc: 0.8344
+Validation Acc: 0.8344
+Epoch [43/50], Loss: 0.4966, Train Acc: 0.8297
+Validation Acc: 0.8297
+No improvement (1/10).
+Epoch [44/50], Loss: 0.4875, Train Acc: 0.8371
+Validation Acc: 0.8375
+Epoch [45/50], Loss: 0.4876, Train Acc: 0.8414
+Validation Acc: 0.8375
+No improvement (1/10).
+Epoch [46/50], Loss: 0.4870, Train Acc: 0.8398
+Validation Acc: 0.8297
+No improvement (2/10).
+Epoch [47/50], Loss: 0.5085, Train Acc: 0.8180
+Validation Acc: 0.7859
+No improvement (3/10).
+Epoch [48/50], Loss: 0.5216, Train Acc: 0.8059
+Validation Acc: 0.8016
+No improvement (4/10).
+Epoch [49/50], Loss: 0.5080, Train Acc: 0.8105
+Validation Acc: 0.8078
+No improvement (5/10).
+Epoch [50/50], Loss: 0.4979, Train Acc: 0.8223
+Validation Acc: 0.8078
+No improvement (6/10).
+Training complete!
+Run 10/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6935, Train Acc: 0.4789
+Validation Acc: 0.4906
+Epoch [2/50], Loss: 0.6936, Train Acc: 0.4957
+Validation Acc: 0.4969
+Epoch [3/50], Loss: 0.6927, Train Acc: 0.5039
+Validation Acc: 0.5391
+Epoch [4/50], Loss: 0.6978, Train Acc: 0.5465
+Validation Acc: 0.5516
+Epoch [5/50], Loss: 0.6903, Train Acc: 0.5430
+Validation Acc: 0.5500
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6810, Train Acc: 0.5844
+Validation Acc: 0.6094
+Epoch [7/50], Loss: 0.6653, Train Acc: 0.6184
+Validation Acc: 0.5719
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6620, Train Acc: 0.6293
+Validation Acc: 0.6484
+Epoch [9/50], Loss: 0.6653, Train Acc: 0.6188
+Validation Acc: 0.6578
+Epoch [10/50], Loss: 0.6525, Train Acc: 0.6445
+Validation Acc: 0.6469
+No improvement (1/10).
+Epoch [11/50], Loss: 0.6460, Train Acc: 0.6602
+Validation Acc: 0.6672
+Epoch [12/50], Loss: 0.6397, Train Acc: 0.6656
+Validation Acc: 0.6219
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6545, Train Acc: 0.6445
+Validation Acc: 0.6594
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6439, Train Acc: 0.6719
+Validation Acc: 0.6672
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6245, Train Acc: 0.7039
+Validation Acc: 0.7094
+Epoch [16/50], Loss: 0.6221, Train Acc: 0.6957
+Validation Acc: 0.6484
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6433, Train Acc: 0.6625
+Validation Acc: 0.6969
+No improvement (2/10).
+Epoch [18/50], Loss: 0.6109, Train Acc: 0.7152
+Validation Acc: 0.6547
+No improvement (3/10).
+Epoch [19/50], Loss: 0.6181, Train Acc: 0.7016
+Validation Acc: 0.6578
+No improvement (4/10).
+Epoch [20/50], Loss: 0.5949, Train Acc: 0.7316
+Validation Acc: 0.7219
+Epoch [21/50], Loss: 0.5593, Train Acc: 0.7824
+Validation Acc: 0.7516
+Epoch [22/50], Loss: 0.5476, Train Acc: 0.7906
+Validation Acc: 0.7578
+Epoch [23/50], Loss: 0.5390, Train Acc: 0.8004
+Validation Acc: 0.6609
+No improvement (1/10).
+Epoch [24/50], Loss: 0.6302, Train Acc: 0.6730
+Validation Acc: 0.6766
+No improvement (2/10).
+Epoch [25/50], Loss: 0.5969, Train Acc: 0.7148
+Validation Acc: 0.7219
+No improvement (3/10).
+Epoch [26/50], Loss: 0.5640, Train Acc: 0.7703
+Validation Acc: 0.7547
+No improvement (4/10).
+Epoch [27/50], Loss: 0.5456, Train Acc: 0.7895
+Validation Acc: 0.7719
+Epoch [28/50], Loss: 0.5298, Train Acc: 0.8023
+Validation Acc: 0.7812
+Epoch [29/50], Loss: 0.5338, Train Acc: 0.8066
+Validation Acc: 0.7844
+Epoch [30/50], Loss: 0.5190, Train Acc: 0.8164
+Validation Acc: 0.7844
+No improvement (1/10).
+Epoch [31/50], Loss: 0.5135, Train Acc: 0.8215
+Validation Acc: 0.7953
+Epoch [32/50], Loss: 0.5061, Train Acc: 0.8344
+Validation Acc: 0.8172
+Epoch [33/50], Loss: 0.5017, Train Acc: 0.8359
+Validation Acc: 0.8156
+No improvement (1/10).
+Epoch [34/50], Loss: 0.4971, Train Acc: 0.8301
+Validation Acc: 0.7922
+No improvement (2/10).
+Epoch [35/50], Loss: 0.4937, Train Acc: 0.8434
+Validation Acc: 0.8078
+No improvement (3/10).
+Epoch [36/50], Loss: 0.4896, Train Acc: 0.8484
+Validation Acc: 0.8094
+No improvement (4/10).
+Epoch [37/50], Loss: 0.4848, Train Acc: 0.8570
+Validation Acc: 0.8359
+Epoch [38/50], Loss: 0.4762, Train Acc: 0.8625
+Validation Acc: 0.8391
+Epoch [39/50], Loss: 0.4698, Train Acc: 0.8727
+Validation Acc: 0.8422
+Epoch [40/50], Loss: 0.4765, Train Acc: 0.8637
+Validation Acc: 0.8344
+No improvement (1/10).
+Epoch [41/50], Loss: 0.4759, Train Acc: 0.8699
+Validation Acc: 0.8422
+No improvement (2/10).
+Epoch [42/50], Loss: 0.4683, Train Acc: 0.8695
+Validation Acc: 0.8484
+Epoch [43/50], Loss: 0.4623, Train Acc: 0.8809
+Validation Acc: 0.8359
+No improvement (1/10).
+Epoch [44/50], Loss: 0.4599, Train Acc: 0.8781
+Validation Acc: 0.8578
+Epoch [45/50], Loss: 0.4562, Train Acc: 0.8828
+Validation Acc: 0.8578
+No improvement (1/10).
+Epoch [46/50], Loss: 0.4536, Train Acc: 0.8785
+Validation Acc: 0.8594
+Epoch [47/50], Loss: 0.4550, Train Acc: 0.8836
+Validation Acc: 0.8625
+Epoch [48/50], Loss: 0.4444, Train Acc: 0.8926
+Validation Acc: 0.8688
+Epoch [49/50], Loss: 0.4400, Train Acc: 0.8941
+Validation Acc: 0.8781
+Epoch [50/50], Loss: 0.4363, Train Acc: 0.8965
+Validation Acc: 0.8609
+No improvement (1/10).
+Training complete!
+
+=== Repeated Training for Conv1D + Attention ===
+Run 1/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6888, Train Acc: 0.5363
+Validation Acc: 0.5094
+Epoch [2/50], Loss: 0.6815, Train Acc: 0.5781
+Validation Acc: 0.5609
+Epoch [3/50], Loss: 0.6900, Train Acc: 0.5391
+Validation Acc: 0.5328
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6918, Train Acc: 0.5437
+Validation Acc: 0.5188
+No improvement (2/10).
+Epoch [5/50], Loss: 0.7008, Train Acc: 0.5086
+Validation Acc: 0.5203
+No improvement (3/10).
+Epoch [6/50], Loss: 0.6943, Train Acc: 0.5086
+Validation Acc: 0.5109
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6933, Train Acc: 0.5059
+Validation Acc: 0.5125
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6933, Train Acc: 0.5020
+Validation Acc: 0.5156
+No improvement (6/10).
+Epoch [9/50], Loss: 0.6924, Train Acc: 0.5113
+Validation Acc: 0.5141
+No improvement (7/10).
+Epoch [10/50], Loss: 0.6923, Train Acc: 0.5109
+Validation Acc: 0.5156
+No improvement (8/10).
+Epoch [11/50], Loss: 0.6915, Train Acc: 0.5184
+Validation Acc: 0.5188
+No improvement (9/10).
+Epoch [12/50], Loss: 0.6917, Train Acc: 0.5113
+Validation Acc: 0.5281
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 2/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4973
+Validation Acc: 0.5609
+Epoch [2/50], Loss: 0.6838, Train Acc: 0.5613
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6943, Train Acc: 0.5074
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6931, Train Acc: 0.5090
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6932, Train Acc: 0.5051
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6932, Train Acc: 0.5047
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6927, Train Acc: 0.5180
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6932, Train Acc: 0.5035
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6936, Train Acc: 0.4941
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6933, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6933, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 3/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.4898
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6896, Train Acc: 0.5309
+Validation Acc: 0.5469
+Epoch [3/50], Loss: 0.6885, Train Acc: 0.5469
+Validation Acc: 0.5469
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6939, Train Acc: 0.5250
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6952, Train Acc: 0.5113
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [6/50], Loss: 0.7001, Train Acc: 0.4879
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6945, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6951, Train Acc: 0.4879
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [9/50], Loss: 0.6942, Train Acc: 0.4961
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [10/50], Loss: 0.6932, Train Acc: 0.5082
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [11/50], Loss: 0.6938, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [12/50], Loss: 0.6944, Train Acc: 0.4926
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 4/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6937, Train Acc: 0.5035
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6922, Train Acc: 0.5148
+Validation Acc: 0.5437
+Epoch [3/50], Loss: 0.6836, Train Acc: 0.5781
+Validation Acc: 0.6344
+Epoch [4/50], Loss: 0.6698, Train Acc: 0.6191
+Validation Acc: 0.6719
+Epoch [5/50], Loss: 0.6670, Train Acc: 0.6133
+Validation Acc: 0.6859
+Epoch [6/50], Loss: 0.6725, Train Acc: 0.5984
+Validation Acc: 0.5719
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6624, Train Acc: 0.6191
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [8/50], Loss: 0.6859, Train Acc: 0.5547
+Validation Acc: 0.5422
+No improvement (3/10).
+Epoch [9/50], Loss: 0.6877, Train Acc: 0.5441
+Validation Acc: 0.4984
+No improvement (4/10).
+Epoch [10/50], Loss: 0.6884, Train Acc: 0.5391
+Validation Acc: 0.5641
+No improvement (5/10).
+Epoch [11/50], Loss: 0.6750, Train Acc: 0.5859
+Validation Acc: 0.6141
+No improvement (6/10).
+Epoch [12/50], Loss: 0.6714, Train Acc: 0.6082
+Validation Acc: 0.6484
+No improvement (7/10).
+Epoch [13/50], Loss: 0.6721, Train Acc: 0.5996
+Validation Acc: 0.6094
+No improvement (8/10).
+Epoch [14/50], Loss: 0.6713, Train Acc: 0.6016
+Validation Acc: 0.6375
+No improvement (9/10).
+Epoch [15/50], Loss: 0.6568, Train Acc: 0.6426
+Validation Acc: 0.6797
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 5/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6907, Train Acc: 0.5301
+Validation Acc: 0.5047
+Epoch [2/50], Loss: 0.6938, Train Acc: 0.5629
+Validation Acc: 0.5031
+No improvement (1/10).
+Epoch [3/50], Loss: 0.7140, Train Acc: 0.4859
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6985, Train Acc: 0.5098
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6964, Train Acc: 0.5012
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6950, Train Acc: 0.5020
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6953, Train Acc: 0.4973
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6928, Train Acc: 0.5160
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6949, Train Acc: 0.4969
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6938, Train Acc: 0.5062
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6939, Train Acc: 0.5043
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 6/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6904, Train Acc: 0.5293
+Validation Acc: 0.5297
+Epoch [2/50], Loss: 0.6834, Train Acc: 0.5551
+Validation Acc: 0.5781
+Epoch [3/50], Loss: 0.6712, Train Acc: 0.5777
+Validation Acc: 0.6109
+Epoch [4/50], Loss: 0.6602, Train Acc: 0.6121
+Validation Acc: 0.6453
+Epoch [5/50], Loss: 0.6458, Train Acc: 0.6324
+Validation Acc: 0.6188
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6446, Train Acc: 0.6355
+Validation Acc: 0.6438
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6339, Train Acc: 0.6641
+Validation Acc: 0.6234
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6257, Train Acc: 0.6828
+Validation Acc: 0.6438
+No improvement (4/10).
+Epoch [9/50], Loss: 0.6022, Train Acc: 0.7109
+Validation Acc: 0.7484
+Epoch [10/50], Loss: 0.5805, Train Acc: 0.7375
+Validation Acc: 0.7609
+Epoch [11/50], Loss: 0.5727, Train Acc: 0.7398
+Validation Acc: 0.7000
+No improvement (1/10).
+Epoch [12/50], Loss: 0.5730, Train Acc: 0.7293
+Validation Acc: 0.8047
+Epoch [13/50], Loss: 0.5604, Train Acc: 0.7449
+Validation Acc: 0.7969
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5618, Train Acc: 0.7371
+Validation Acc: 0.7781
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5723, Train Acc: 0.7309
+Validation Acc: 0.7859
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5719, Train Acc: 0.7414
+Validation Acc: 0.8313
+Epoch [17/50], Loss: 0.5418, Train Acc: 0.7594
+Validation Acc: 0.7484
+No improvement (1/10).
+Epoch [18/50], Loss: 0.5368, Train Acc: 0.7602
+Validation Acc: 0.8125
+No improvement (2/10).
+Epoch [19/50], Loss: 0.5320, Train Acc: 0.7695
+Validation Acc: 0.8484
+Epoch [20/50], Loss: 0.5177, Train Acc: 0.7828
+Validation Acc: 0.8562
+Epoch [21/50], Loss: 0.5177, Train Acc: 0.7855
+Validation Acc: 0.8609
+Epoch [22/50], Loss: 0.5087, Train Acc: 0.7848
+Validation Acc: 0.8531
+No improvement (1/10).
+Epoch [23/50], Loss: 0.5338, Train Acc: 0.7684
+Validation Acc: 0.8656
+Epoch [24/50], Loss: 0.5061, Train Acc: 0.7852
+Validation Acc: 0.8703
+Epoch [25/50], Loss: 0.4947, Train Acc: 0.8023
+Validation Acc: 0.8641
+No improvement (1/10).
+Epoch [26/50], Loss: 0.4925, Train Acc: 0.7965
+Validation Acc: 0.8750
+Epoch [27/50], Loss: 0.4964, Train Acc: 0.7859
+Validation Acc: 0.8875
+Epoch [28/50], Loss: 0.4943, Train Acc: 0.7996
+Validation Acc: 0.8609
+No improvement (1/10).
+Epoch [29/50], Loss: 0.5067, Train Acc: 0.7906
+Validation Acc: 0.8844
+No improvement (2/10).
+Epoch [30/50], Loss: 0.4964, Train Acc: 0.7863
+Validation Acc: 0.8187
+No improvement (3/10).
+Epoch [31/50], Loss: 0.5125, Train Acc: 0.7816
+Validation Acc: 0.9078
+Epoch [32/50], Loss: 0.4897, Train Acc: 0.7914
+Validation Acc: 0.8500
+No improvement (1/10).
+Epoch [33/50], Loss: 0.4882, Train Acc: 0.7980
+Validation Acc: 0.8875
+No improvement (2/10).
+Epoch [34/50], Loss: 0.4764, Train Acc: 0.8086
+Validation Acc: 0.8938
+No improvement (3/10).
+Epoch [35/50], Loss: 0.4763, Train Acc: 0.8113
+Validation Acc: 0.8953
+No improvement (4/10).
+Epoch [36/50], Loss: 0.4710, Train Acc: 0.8246
+Validation Acc: 0.9187
+Epoch [37/50], Loss: 0.4569, Train Acc: 0.8199
+Validation Acc: 0.9172
+No improvement (1/10).
+Epoch [38/50], Loss: 0.4543, Train Acc: 0.8262
+Validation Acc: 0.9219
+Epoch [39/50], Loss: 0.4593, Train Acc: 0.8125
+Validation Acc: 0.9094
+No improvement (1/10).
+Epoch [40/50], Loss: 0.4530, Train Acc: 0.8293
+Validation Acc: 0.9234
+Epoch [41/50], Loss: 0.4578, Train Acc: 0.8215
+Validation Acc: 0.9203
+No improvement (1/10).
+Epoch [42/50], Loss: 0.4523, Train Acc: 0.8230
+Validation Acc: 0.9062
+No improvement (2/10).
+Epoch [43/50], Loss: 0.4685, Train Acc: 0.8125
+Validation Acc: 0.9062
+No improvement (3/10).
+Epoch [44/50], Loss: 0.4578, Train Acc: 0.8176
+Validation Acc: 0.9234
+No improvement (4/10).
+Epoch [45/50], Loss: 0.4471, Train Acc: 0.8246
+Validation Acc: 0.9234
+No improvement (5/10).
+Epoch [46/50], Loss: 0.4422, Train Acc: 0.8359
+Validation Acc: 0.9250
+Epoch [47/50], Loss: 0.4515, Train Acc: 0.8293
+Validation Acc: 0.9250
+No improvement (1/10).
+Epoch [48/50], Loss: 0.4372, Train Acc: 0.8348
+Validation Acc: 0.9234
+No improvement (2/10).
+Epoch [49/50], Loss: 0.4425, Train Acc: 0.8336
+Validation Acc: 0.9234
+No improvement (3/10).
+Epoch [50/50], Loss: 0.4397, Train Acc: 0.8301
+Validation Acc: 0.9234
+No improvement (4/10).
+Training complete!
+Run 7/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6935, Train Acc: 0.4898
+Validation Acc: 0.5734
+Epoch [2/50], Loss: 0.7062, Train Acc: 0.5430
+Validation Acc: 0.4969
+No improvement (1/10).
+Epoch [3/50], Loss: 0.7228, Train Acc: 0.5062
+Validation Acc: 0.4844
+No improvement (2/10).
+Epoch [4/50], Loss: 0.7106, Train Acc: 0.5066
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6993, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6956, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6945, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6942, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6940, Train Acc: 0.4875
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6931, Train Acc: 0.5117
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6931, Train Acc: 0.5078
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 8/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6898, Train Acc: 0.5348
+Validation Acc: 0.6031
+Epoch [2/50], Loss: 0.6703, Train Acc: 0.6156
+Validation Acc: 0.6297
+Epoch [3/50], Loss: 0.6512, Train Acc: 0.6391
+Validation Acc: 0.6781
+Epoch [4/50], Loss: 0.6445, Train Acc: 0.6570
+Validation Acc: 0.7000
+Epoch [5/50], Loss: 0.6325, Train Acc: 0.6895
+Validation Acc: 0.6828
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6393, Train Acc: 0.6730
+Validation Acc: 0.6203
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6453, Train Acc: 0.6406
+Validation Acc: 0.7063
+Epoch [8/50], Loss: 0.6206, Train Acc: 0.6832
+Validation Acc: 0.7047
+No improvement (1/10).
+Epoch [9/50], Loss: 0.6085, Train Acc: 0.7109
+Validation Acc: 0.7234
+Epoch [10/50], Loss: 0.5967, Train Acc: 0.7371
+Validation Acc: 0.6813
+No improvement (1/10).
+Epoch [11/50], Loss: 0.6362, Train Acc: 0.6602
+Validation Acc: 0.7656
+Epoch [12/50], Loss: 0.5719, Train Acc: 0.7387
+Validation Acc: 0.8250
+Epoch [13/50], Loss: 0.6040, Train Acc: 0.7078
+Validation Acc: 0.7453
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5668, Train Acc: 0.7625
+Validation Acc: 0.7984
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5350, Train Acc: 0.7957
+Validation Acc: 0.7953
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5508, Train Acc: 0.7715
+Validation Acc: 0.7922
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5239, Train Acc: 0.8227
+Validation Acc: 0.8516
+Epoch [18/50], Loss: 0.4931, Train Acc: 0.8504
+Validation Acc: 0.8516
+No improvement (1/10).
+Epoch [19/50], Loss: 0.4947, Train Acc: 0.8441
+Validation Acc: 0.8859
+Epoch [20/50], Loss: 0.4757, Train Acc: 0.8488
+Validation Acc: 0.8781
+No improvement (1/10).
+Epoch [21/50], Loss: 0.4742, Train Acc: 0.8621
+Validation Acc: 0.8375
+No improvement (2/10).
+Epoch [22/50], Loss: 0.4559, Train Acc: 0.8812
+Validation Acc: 0.8734
+No improvement (3/10).
+Epoch [23/50], Loss: 0.4395, Train Acc: 0.8949
+Validation Acc: 0.9156
+Epoch [24/50], Loss: 0.4404, Train Acc: 0.8930
+Validation Acc: 0.8891
+No improvement (1/10).
+Epoch [25/50], Loss: 0.4652, Train Acc: 0.8672
+Validation Acc: 0.8313
+No improvement (2/10).
+Epoch [26/50], Loss: 0.4317, Train Acc: 0.9066
+Validation Acc: 0.9078
+No improvement (3/10).
+Epoch [27/50], Loss: 0.4464, Train Acc: 0.8914
+Validation Acc: 0.9187
+Epoch [28/50], Loss: 0.4278, Train Acc: 0.9109
+Validation Acc: 0.9203
+Epoch [29/50], Loss: 0.4432, Train Acc: 0.8906
+Validation Acc: 0.8562
+No improvement (1/10).
+Epoch [30/50], Loss: 0.4245, Train Acc: 0.9039
+Validation Acc: 0.9250
+Epoch [31/50], Loss: 0.4011, Train Acc: 0.9289
+Validation Acc: 0.9203
+No improvement (1/10).
+Epoch [32/50], Loss: 0.4043, Train Acc: 0.9203
+Validation Acc: 0.9328
+Epoch [33/50], Loss: 0.3780, Train Acc: 0.9414
+Validation Acc: 0.9219
+No improvement (1/10).
+Epoch [34/50], Loss: 0.3940, Train Acc: 0.9289
+Validation Acc: 0.9406
+Epoch [35/50], Loss: 0.3838, Train Acc: 0.9344
+Validation Acc: 0.9375
+No improvement (1/10).
+Epoch [36/50], Loss: 0.3791, Train Acc: 0.9332
+Validation Acc: 0.9359
+No improvement (2/10).
+Epoch [37/50], Loss: 0.3961, Train Acc: 0.9195
+Validation Acc: 0.9266
+No improvement (3/10).
+Epoch [38/50], Loss: 0.3744, Train Acc: 0.9324
+Validation Acc: 0.9406
+No improvement (4/10).
+Epoch [39/50], Loss: 0.3537, Train Acc: 0.9527
+Validation Acc: 0.9516
+Epoch [40/50], Loss: 0.3544, Train Acc: 0.9496
+Validation Acc: 0.9531
+Epoch [41/50], Loss: 0.3437, Train Acc: 0.9516
+Validation Acc: 0.9531
+No improvement (1/10).
+Epoch [42/50], Loss: 0.3429, Train Acc: 0.9570
+Validation Acc: 0.9469
+No improvement (2/10).
+Epoch [43/50], Loss: 0.3546, Train Acc: 0.9453
+Validation Acc: 0.9484
+No improvement (3/10).
+Epoch [44/50], Loss: 0.3467, Train Acc: 0.9531
+Validation Acc: 0.9453
+No improvement (4/10).
+Epoch [45/50], Loss: 0.3383, Train Acc: 0.9539
+Validation Acc: 0.9500
+No improvement (5/10).
+Epoch [46/50], Loss: 0.3404, Train Acc: 0.9508
+Validation Acc: 0.9500
+No improvement (6/10).
+Epoch [47/50], Loss: 0.3330, Train Acc: 0.9539
+Validation Acc: 0.9500
+No improvement (7/10).
+Epoch [48/50], Loss: 0.3308, Train Acc: 0.9559
+Validation Acc: 0.9531
+No improvement (8/10).
+Epoch [49/50], Loss: 0.3326, Train Acc: 0.9543
+Validation Acc: 0.9531
+No improvement (9/10).
+Epoch [50/50], Loss: 0.3340, Train Acc: 0.9602
+Validation Acc: 0.9531
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 9/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6933, Train Acc: 0.4980
+Validation Acc: 0.5203
+Epoch [2/50], Loss: 0.6939, Train Acc: 0.5207
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6968, Train Acc: 0.4855
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6950, Train Acc: 0.4770
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6933, Train Acc: 0.4871
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6930, Train Acc: 0.5078
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6934, Train Acc: 0.4949
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6932, Train Acc: 0.5008
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6932, Train Acc: 0.5004
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6930, Train Acc: 0.5070
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6935, Train Acc: 0.4875
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 10/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6940, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6868, Train Acc: 0.5566
+Validation Acc: 0.5922
+Epoch [3/50], Loss: 0.6809, Train Acc: 0.5891
+Validation Acc: 0.6609
+Epoch [4/50], Loss: 0.6773, Train Acc: 0.5902
+Validation Acc: 0.6125
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6590, Train Acc: 0.6270
+Validation Acc: 0.6406
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6711, Train Acc: 0.5953
+Validation Acc: 0.6734
+Epoch [7/50], Loss: 0.6400, Train Acc: 0.6641
+Validation Acc: 0.6359
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6401, Train Acc: 0.6562
+Validation Acc: 0.7188
+Epoch [9/50], Loss: 0.6265, Train Acc: 0.7008
+Validation Acc: 0.7500
+Epoch [10/50], Loss: 0.6074, Train Acc: 0.7238
+Validation Acc: 0.7656
+Epoch [11/50], Loss: 0.5846, Train Acc: 0.7414
+Validation Acc: 0.7641
+No improvement (1/10).
+Epoch [12/50], Loss: 0.5736, Train Acc: 0.7469
+Validation Acc: 0.8031
+Epoch [13/50], Loss: 0.5727, Train Acc: 0.7371
+Validation Acc: 0.6859
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5817, Train Acc: 0.7387
+Validation Acc: 0.7344
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5383, Train Acc: 0.7777
+Validation Acc: 0.8297
+Epoch [16/50], Loss: 0.5367, Train Acc: 0.7707
+Validation Acc: 0.7406
+No improvement (1/10).
+Epoch [17/50], Loss: 0.5774, Train Acc: 0.7535
+Validation Acc: 0.7656
+No improvement (2/10).
+Epoch [18/50], Loss: 0.5147, Train Acc: 0.7898
+Validation Acc: 0.8156
+No improvement (3/10).
+Epoch [19/50], Loss: 0.5124, Train Acc: 0.7992
+Validation Acc: 0.8078
+No improvement (4/10).
+Epoch [20/50], Loss: 0.4881, Train Acc: 0.8195
+Validation Acc: 0.8797
+Epoch [21/50], Loss: 0.4449, Train Acc: 0.8496
+Validation Acc: 0.8797
+No improvement (1/10).
+Epoch [22/50], Loss: 0.4468, Train Acc: 0.8316
+Validation Acc: 0.8453
+No improvement (2/10).
+Epoch [23/50], Loss: 0.4519, Train Acc: 0.8281
+Validation Acc: 0.8688
+No improvement (3/10).
+Epoch [24/50], Loss: 0.4332, Train Acc: 0.8512
+Validation Acc: 0.8609
+No improvement (4/10).
+Epoch [25/50], Loss: 0.4151, Train Acc: 0.8629
+Validation Acc: 0.8953
+Epoch [26/50], Loss: 0.4153, Train Acc: 0.8449
+Validation Acc: 0.9062
+Epoch [27/50], Loss: 0.4117, Train Acc: 0.8504
+Validation Acc: 0.9047
+No improvement (1/10).
+Epoch [28/50], Loss: 0.4135, Train Acc: 0.8480
+Validation Acc: 0.8953
+No improvement (2/10).
+Epoch [29/50], Loss: 0.4113, Train Acc: 0.8520
+Validation Acc: 0.9062
+No improvement (3/10).
+Epoch [30/50], Loss: 0.4040, Train Acc: 0.8570
+Validation Acc: 0.9172
+Epoch [31/50], Loss: 0.3960, Train Acc: 0.8637
+Validation Acc: 0.9078
+No improvement (1/10).
+Epoch [32/50], Loss: 0.4021, Train Acc: 0.8594
+Validation Acc: 0.8969
+No improvement (2/10).
+Epoch [33/50], Loss: 0.4081, Train Acc: 0.8602
+Validation Acc: 0.8984
+No improvement (3/10).
+Epoch [34/50], Loss: 0.3858, Train Acc: 0.8652
+Validation Acc: 0.9266
+Epoch [35/50], Loss: 0.3853, Train Acc: 0.8723
+Validation Acc: 0.9172
+No improvement (1/10).
+Epoch [36/50], Loss: 0.3931, Train Acc: 0.8676
+Validation Acc: 0.9281
+Epoch [37/50], Loss: 0.3865, Train Acc: 0.8742
+Validation Acc: 0.9125
+No improvement (1/10).
+Epoch [38/50], Loss: 0.3960, Train Acc: 0.8602
+Validation Acc: 0.9250
+No improvement (2/10).
+Epoch [39/50], Loss: 0.3906, Train Acc: 0.8637
+Validation Acc: 0.9156
+No improvement (3/10).
+Epoch [40/50], Loss: 0.3907, Train Acc: 0.8668
+Validation Acc: 0.9250
+No improvement (4/10).
+Epoch [41/50], Loss: 0.3814, Train Acc: 0.8672
+Validation Acc: 0.9234
+No improvement (5/10).
+Epoch [42/50], Loss: 0.3749, Train Acc: 0.8730
+Validation Acc: 0.9328
+Epoch [43/50], Loss: 0.3709, Train Acc: 0.8797
+Validation Acc: 0.9391
+Epoch [44/50], Loss: 0.3675, Train Acc: 0.8820
+Validation Acc: 0.9375
+No improvement (1/10).
+Epoch [45/50], Loss: 0.3708, Train Acc: 0.8672
+Validation Acc: 0.9484
+Epoch [46/50], Loss: 0.3603, Train Acc: 0.8816
+Validation Acc: 0.9484
+No improvement (1/10).
+Epoch [47/50], Loss: 0.3700, Train Acc: 0.8695
+Validation Acc: 0.9484
+No improvement (2/10).
+Epoch [48/50], Loss: 0.3729, Train Acc: 0.8766
+Validation Acc: 0.9469
+No improvement (3/10).
+Epoch [49/50], Loss: 0.3640, Train Acc: 0.8820
+Validation Acc: 0.9469
+No improvement (4/10).
+Epoch [50/50], Loss: 0.3692, Train Acc: 0.8723
+Validation Acc: 0.9469
+No improvement (5/10).
+Training complete!
+
+=== Repeated Training for Conv1D + MultiHead ===
+Run 1/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.4879
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6933, Train Acc: 0.5133
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6848, Train Acc: 0.5547
+Validation Acc: 0.5437
+Epoch [4/50], Loss: 0.6869, Train Acc: 0.5715
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [5/50], Loss: 0.7006, Train Acc: 0.5020
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6951, Train Acc: 0.4973
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [7/50], Loss: 0.6940, Train Acc: 0.4984
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [8/50], Loss: 0.6938, Train Acc: 0.4977
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [9/50], Loss: 0.6948, Train Acc: 0.4805
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [10/50], Loss: 0.6936, Train Acc: 0.4813
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [11/50], Loss: 0.6935, Train Acc: 0.5000
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [12/50], Loss: 0.6934, Train Acc: 0.5012
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [13/50], Loss: 0.6930, Train Acc: 0.5090
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 2/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.5055
+Validation Acc: 0.5625
+Epoch [2/50], Loss: 0.6835, Train Acc: 0.5633
+Validation Acc: 0.6125
+Epoch [3/50], Loss: 0.6701, Train Acc: 0.6121
+Validation Acc: 0.5172
+No improvement (1/10).
+Epoch [4/50], Loss: 0.7039, Train Acc: 0.5195
+Validation Acc: 0.5062
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6943, Train Acc: 0.5074
+Validation Acc: 0.5344
+No improvement (3/10).
+Epoch [6/50], Loss: 0.6887, Train Acc: 0.5359
+Validation Acc: 0.5578
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6790, Train Acc: 0.5746
+Validation Acc: 0.5953
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6736, Train Acc: 0.5863
+Validation Acc: 0.6141
+Epoch [9/50], Loss: 0.6614, Train Acc: 0.6176
+Validation Acc: 0.6000
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6777, Train Acc: 0.5746
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [11/50], Loss: 0.6974, Train Acc: 0.5023
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [12/50], Loss: 0.6937, Train Acc: 0.5215
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [13/50], Loss: 0.6943, Train Acc: 0.5051
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [14/50], Loss: 0.6934, Train Acc: 0.5129
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [15/50], Loss: 0.6942, Train Acc: 0.4984
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [16/50], Loss: 0.6937, Train Acc: 0.5023
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [17/50], Loss: 0.6939, Train Acc: 0.4969
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [18/50], Loss: 0.6937, Train Acc: 0.4988
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 3/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6868, Train Acc: 0.5563
+Validation Acc: 0.5203
+Epoch [2/50], Loss: 0.6668, Train Acc: 0.6289
+Validation Acc: 0.6672
+Epoch [3/50], Loss: 0.6475, Train Acc: 0.6406
+Validation Acc: 0.6891
+Epoch [4/50], Loss: 0.6433, Train Acc: 0.6559
+Validation Acc: 0.6422
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6332, Train Acc: 0.6676
+Validation Acc: 0.6031
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6194, Train Acc: 0.6887
+Validation Acc: 0.7359
+Epoch [7/50], Loss: 0.6161, Train Acc: 0.6934
+Validation Acc: 0.6813
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6031, Train Acc: 0.7051
+Validation Acc: 0.7734
+Epoch [9/50], Loss: 0.6186, Train Acc: 0.6832
+Validation Acc: 0.7547
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6065, Train Acc: 0.7121
+Validation Acc: 0.7937
+Epoch [11/50], Loss: 0.5714, Train Acc: 0.7340
+Validation Acc: 0.7703
+No improvement (1/10).
+Epoch [12/50], Loss: 0.5732, Train Acc: 0.7273
+Validation Acc: 0.7750
+No improvement (2/10).
+Epoch [13/50], Loss: 0.6248, Train Acc: 0.6949
+Validation Acc: 0.7594
+No improvement (3/10).
+Epoch [14/50], Loss: 0.5606, Train Acc: 0.7480
+Validation Acc: 0.8234
+Epoch [15/50], Loss: 0.5482, Train Acc: 0.7727
+Validation Acc: 0.7937
+No improvement (1/10).
+Epoch [16/50], Loss: 0.6225, Train Acc: 0.6816
+Validation Acc: 0.6937
+No improvement (2/10).
+Epoch [17/50], Loss: 0.5794, Train Acc: 0.7301
+Validation Acc: 0.7859
+No improvement (3/10).
+Epoch [18/50], Loss: 0.5510, Train Acc: 0.7793
+Validation Acc: 0.8422
+Epoch [19/50], Loss: 0.5183, Train Acc: 0.7937
+Validation Acc: 0.8391
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5095, Train Acc: 0.7953
+Validation Acc: 0.8844
+Epoch [21/50], Loss: 0.5110, Train Acc: 0.7934
+Validation Acc: 0.8734
+No improvement (1/10).
+Epoch [22/50], Loss: 0.5118, Train Acc: 0.8020
+Validation Acc: 0.8672
+No improvement (2/10).
+Epoch [23/50], Loss: 0.5001, Train Acc: 0.7965
+Validation Acc: 0.8453
+No improvement (3/10).
+Epoch [24/50], Loss: 0.4888, Train Acc: 0.8031
+Validation Acc: 0.8734
+No improvement (4/10).
+Epoch [25/50], Loss: 0.4490, Train Acc: 0.8617
+Validation Acc: 0.9047
+Epoch [26/50], Loss: 0.4312, Train Acc: 0.8730
+Validation Acc: 0.9234
+Epoch [27/50], Loss: 0.4322, Train Acc: 0.8625
+Validation Acc: 0.9000
+No improvement (1/10).
+Epoch [28/50], Loss: 0.4335, Train Acc: 0.8805
+Validation Acc: 0.9234
+No improvement (2/10).
+Epoch [29/50], Loss: 0.4181, Train Acc: 0.8934
+Validation Acc: 0.9406
+Epoch [30/50], Loss: 0.4180, Train Acc: 0.8992
+Validation Acc: 0.9391
+No improvement (1/10).
+Epoch [31/50], Loss: 0.4037, Train Acc: 0.9121
+Validation Acc: 0.9234
+No improvement (2/10).
+Epoch [32/50], Loss: 0.3952, Train Acc: 0.9180
+Validation Acc: 0.9422
+Epoch [33/50], Loss: 0.3927, Train Acc: 0.9270
+Validation Acc: 0.9516
+Epoch [34/50], Loss: 0.3891, Train Acc: 0.9199
+Validation Acc: 0.9500
+No improvement (1/10).
+Epoch [35/50], Loss: 0.3888, Train Acc: 0.9250
+Validation Acc: 0.9359
+No improvement (2/10).
+Epoch [36/50], Loss: 0.4402, Train Acc: 0.8762
+Validation Acc: 0.9313
+No improvement (3/10).
+Epoch [37/50], Loss: 0.3850, Train Acc: 0.9230
+Validation Acc: 0.9453
+No improvement (4/10).
+Epoch [38/50], Loss: 0.3794, Train Acc: 0.9246
+Validation Acc: 0.9531
+Epoch [39/50], Loss: 0.3705, Train Acc: 0.9352
+Validation Acc: 0.9563
+Epoch [40/50], Loss: 0.3623, Train Acc: 0.9371
+Validation Acc: 0.9516
+No improvement (1/10).
+Epoch [41/50], Loss: 0.3687, Train Acc: 0.9328
+Validation Acc: 0.9516
+No improvement (2/10).
+Epoch [42/50], Loss: 0.3622, Train Acc: 0.9398
+Validation Acc: 0.9547
+No improvement (3/10).
+Epoch [43/50], Loss: 0.3559, Train Acc: 0.9477
+Validation Acc: 0.9578
+Epoch [44/50], Loss: 0.3540, Train Acc: 0.9430
+Validation Acc: 0.9578
+No improvement (1/10).
+Epoch [45/50], Loss: 0.3524, Train Acc: 0.9461
+Validation Acc: 0.9578
+No improvement (2/10).
+Epoch [46/50], Loss: 0.3510, Train Acc: 0.9375
+Validation Acc: 0.9578
+No improvement (3/10).
+Epoch [47/50], Loss: 0.3575, Train Acc: 0.9422
+Validation Acc: 0.9578
+No improvement (4/10).
+Epoch [48/50], Loss: 0.3524, Train Acc: 0.9402
+Validation Acc: 0.9578
+No improvement (5/10).
+Epoch [49/50], Loss: 0.3515, Train Acc: 0.9480
+Validation Acc: 0.9563
+No improvement (6/10).
+Epoch [50/50], Loss: 0.3520, Train Acc: 0.9430
+Validation Acc: 0.9563
+No improvement (7/10).
+Training complete!
+Run 4/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6936, Train Acc: 0.5055
+Validation Acc: 0.5125
+Epoch [2/50], Loss: 0.6872, Train Acc: 0.5484
+Validation Acc: 0.6141
+Epoch [3/50], Loss: 0.6763, Train Acc: 0.5887
+Validation Acc: 0.6297
+Epoch [4/50], Loss: 0.6571, Train Acc: 0.6375
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6459, Train Acc: 0.6547
+Validation Acc: 0.6969
+Epoch [6/50], Loss: 0.6458, Train Acc: 0.6578
+Validation Acc: 0.6328
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6464, Train Acc: 0.6461
+Validation Acc: 0.7547
+Epoch [8/50], Loss: 0.6113, Train Acc: 0.7023
+Validation Acc: 0.7547
+No improvement (1/10).
+Epoch [9/50], Loss: 0.7035, Train Acc: 0.5648
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [10/50], Loss: 0.7144, Train Acc: 0.5078
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [11/50], Loss: 0.7017, Train Acc: 0.5008
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [12/50], Loss: 0.6981, Train Acc: 0.4988
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [13/50], Loss: 0.6965, Train Acc: 0.5023
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [14/50], Loss: 0.6938, Train Acc: 0.5145
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [15/50], Loss: 0.6974, Train Acc: 0.4922
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [16/50], Loss: 0.6978, Train Acc: 0.4883
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [17/50], Loss: 0.6962, Train Acc: 0.4965
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 5/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6932, Train Acc: 0.4969
+Validation Acc: 0.5266
+Epoch [2/50], Loss: 0.6913, Train Acc: 0.5504
+Validation Acc: 0.5219
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6799, Train Acc: 0.5656
+Validation Acc: 0.5813
+Epoch [4/50], Loss: 0.6905, Train Acc: 0.5434
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6972, Train Acc: 0.4926
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6948, Train Acc: 0.4871
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [7/50], Loss: 0.6932, Train Acc: 0.5051
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [8/50], Loss: 0.6933, Train Acc: 0.5027
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [9/50], Loss: 0.6935, Train Acc: 0.4984
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [10/50], Loss: 0.6938, Train Acc: 0.4918
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [11/50], Loss: 0.6932, Train Acc: 0.5047
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [12/50], Loss: 0.6937, Train Acc: 0.4926
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [13/50], Loss: 0.6933, Train Acc: 0.5020
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 6/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.5113
+Validation Acc: 0.5125
+Epoch [2/50], Loss: 0.6977, Train Acc: 0.5258
+Validation Acc: 0.5016
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6948, Train Acc: 0.5012
+Validation Acc: 0.5016
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6941, Train Acc: 0.4898
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.7054, Train Acc: 0.5152
+Validation Acc: 0.5016
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6936, Train Acc: 0.5020
+Validation Acc: 0.5016
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6932, Train Acc: 0.5031
+Validation Acc: 0.5016
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6933, Train Acc: 0.4973
+Validation Acc: 0.5016
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6927, Train Acc: 0.5078
+Validation Acc: 0.5016
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6924, Train Acc: 0.5148
+Validation Acc: 0.5016
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6931, Train Acc: 0.5004
+Validation Acc: 0.5016
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 7/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.5082
+Validation Acc: 0.5172
+Epoch [2/50], Loss: 0.6896, Train Acc: 0.5430
+Validation Acc: 0.5406
+Epoch [3/50], Loss: 0.6929, Train Acc: 0.5215
+Validation Acc: 0.5062
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6920, Train Acc: 0.5137
+Validation Acc: 0.5094
+No improvement (2/10).
+Epoch [5/50], Loss: 0.6923, Train Acc: 0.5016
+Validation Acc: 0.5016
+No improvement (3/10).
+Epoch [6/50], Loss: 0.6926, Train Acc: 0.5102
+Validation Acc: 0.5016
+No improvement (4/10).
+Epoch [7/50], Loss: 0.6913, Train Acc: 0.5207
+Validation Acc: 0.5016
+No improvement (5/10).
+Epoch [8/50], Loss: 0.6928, Train Acc: 0.4980
+Validation Acc: 0.5016
+No improvement (6/10).
+Epoch [9/50], Loss: 0.6924, Train Acc: 0.5066
+Validation Acc: 0.5016
+No improvement (7/10).
+Epoch [10/50], Loss: 0.6922, Train Acc: 0.5156
+Validation Acc: 0.5047
+No improvement (8/10).
+Epoch [11/50], Loss: 0.6926, Train Acc: 0.5059
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [12/50], Loss: 0.6929, Train Acc: 0.4949
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 8/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6933, Train Acc: 0.5117
+Validation Acc: 0.5344
+Epoch [2/50], Loss: 0.6888, Train Acc: 0.5664
+Validation Acc: 0.4891
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6824, Train Acc: 0.5578
+Validation Acc: 0.6484
+Epoch [4/50], Loss: 0.6750, Train Acc: 0.5871
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6828, Train Acc: 0.5578
+Validation Acc: 0.5891
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6818, Train Acc: 0.5594
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [7/50], Loss: 0.6938, Train Acc: 0.5039
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [8/50], Loss: 0.6936, Train Acc: 0.4777
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [9/50], Loss: 0.6930, Train Acc: 0.4887
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [10/50], Loss: 0.6931, Train Acc: 0.5078
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [11/50], Loss: 0.6934, Train Acc: 0.4840
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [12/50], Loss: 0.6932, Train Acc: 0.5004
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [13/50], Loss: 0.6931, Train Acc: 0.5094
+Validation Acc: 0.5000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 9/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6940, Train Acc: 0.4816
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6932, Train Acc: 0.5051
+Validation Acc: 0.5547
+Epoch [3/50], Loss: 0.6829, Train Acc: 0.5703
+Validation Acc: 0.5797
+Epoch [4/50], Loss: 0.6697, Train Acc: 0.6086
+Validation Acc: 0.6578
+Epoch [5/50], Loss: 0.6590, Train Acc: 0.6344
+Validation Acc: 0.6422
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6606, Train Acc: 0.6328
+Validation Acc: 0.5969
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6822, Train Acc: 0.5895
+Validation Acc: 0.6438
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6406, Train Acc: 0.6523
+Validation Acc: 0.7047
+Epoch [9/50], Loss: 0.6336, Train Acc: 0.6645
+Validation Acc: 0.6156
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6098, Train Acc: 0.6891
+Validation Acc: 0.6828
+No improvement (2/10).
+Epoch [11/50], Loss: 0.5899, Train Acc: 0.7191
+Validation Acc: 0.7438
+Epoch [12/50], Loss: 0.5925, Train Acc: 0.7133
+Validation Acc: 0.6969
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6021, Train Acc: 0.7055
+Validation Acc: 0.7438
+No improvement (2/10).
+Epoch [14/50], Loss: 0.5500, Train Acc: 0.7633
+Validation Acc: 0.7641
+Epoch [15/50], Loss: 0.5452, Train Acc: 0.7715
+Validation Acc: 0.8141
+Epoch [16/50], Loss: 0.5395, Train Acc: 0.7695
+Validation Acc: 0.7375
+No improvement (1/10).
+Epoch [17/50], Loss: 0.5160, Train Acc: 0.7934
+Validation Acc: 0.8609
+Epoch [18/50], Loss: 0.4991, Train Acc: 0.8004
+Validation Acc: 0.7234
+No improvement (1/10).
+Epoch [19/50], Loss: 0.5201, Train Acc: 0.7891
+Validation Acc: 0.7984
+No improvement (2/10).
+Epoch [20/50], Loss: 0.4739, Train Acc: 0.8223
+Validation Acc: 0.8438
+No improvement (3/10).
+Epoch [21/50], Loss: 0.4620, Train Acc: 0.8414
+Validation Acc: 0.8734
+Epoch [22/50], Loss: 0.4377, Train Acc: 0.8477
+Validation Acc: 0.9000
+Epoch [23/50], Loss: 0.4521, Train Acc: 0.8395
+Validation Acc: 0.8203
+No improvement (1/10).
+Epoch [24/50], Loss: 0.4199, Train Acc: 0.8789
+Validation Acc: 0.9281
+Epoch [25/50], Loss: 0.4127, Train Acc: 0.8586
+Validation Acc: 0.8562
+No improvement (1/10).
+Epoch [26/50], Loss: 0.4743, Train Acc: 0.8348
+Validation Acc: 0.8609
+No improvement (2/10).
+Epoch [27/50], Loss: 0.4431, Train Acc: 0.8477
+Validation Acc: 0.8672
+No improvement (3/10).
+Epoch [28/50], Loss: 0.3903, Train Acc: 0.9027
+Validation Acc: 0.9219
+No improvement (4/10).
+Epoch [29/50], Loss: 0.3677, Train Acc: 0.9184
+Validation Acc: 0.9594
+Epoch [30/50], Loss: 0.3711, Train Acc: 0.9109
+Validation Acc: 0.9563
+No improvement (1/10).
+Epoch [31/50], Loss: 0.3779, Train Acc: 0.9234
+Validation Acc: 0.9625
+Epoch [32/50], Loss: 0.3500, Train Acc: 0.9484
+Validation Acc: 0.9703
+Epoch [33/50], Loss: 0.3400, Train Acc: 0.9465
+Validation Acc: 0.9672
+No improvement (1/10).
+Epoch [34/50], Loss: 0.3386, Train Acc: 0.9484
+Validation Acc: 0.9781
+Epoch [35/50], Loss: 0.3277, Train Acc: 0.9555
+Validation Acc: 0.9750
+No improvement (1/10).
+Epoch [36/50], Loss: 0.3309, Train Acc: 0.9523
+Validation Acc: 0.9750
+No improvement (2/10).
+Epoch [37/50], Loss: 0.3948, Train Acc: 0.9039
+Validation Acc: 0.9328
+No improvement (3/10).
+Epoch [38/50], Loss: 0.3317, Train Acc: 0.9469
+Validation Acc: 0.9781
+No improvement (4/10).
+Epoch [39/50], Loss: 0.3275, Train Acc: 0.9527
+Validation Acc: 0.9797
+Epoch [40/50], Loss: 0.3074, Train Acc: 0.9602
+Validation Acc: 0.9797
+No improvement (1/10).
+Epoch [41/50], Loss: 0.3095, Train Acc: 0.9621
+Validation Acc: 0.9781
+No improvement (2/10).
+Epoch [42/50], Loss: 0.3101, Train Acc: 0.9539
+Validation Acc: 0.9781
+No improvement (3/10).
+Epoch [43/50], Loss: 0.3058, Train Acc: 0.9609
+Validation Acc: 0.9781
+No improvement (4/10).
+Epoch [44/50], Loss: 0.3039, Train Acc: 0.9617
+Validation Acc: 0.9781
+No improvement (5/10).
+Epoch [45/50], Loss: 0.3055, Train Acc: 0.9609
+Validation Acc: 0.9781
+No improvement (6/10).
+Epoch [46/50], Loss: 0.3079, Train Acc: 0.9613
+Validation Acc: 0.9781
+No improvement (7/10).
+Epoch [47/50], Loss: 0.2994, Train Acc: 0.9609
+Validation Acc: 0.9781
+No improvement (8/10).
+Epoch [48/50], Loss: 0.2982, Train Acc: 0.9602
+Validation Acc: 0.9781
+No improvement (9/10).
+Epoch [49/50], Loss: 0.2965, Train Acc: 0.9641
+Validation Acc: 0.9781
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 10/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6920, Train Acc: 0.5242
+Validation Acc: 0.5703
+Epoch [2/50], Loss: 0.6680, Train Acc: 0.6164
+Validation Acc: 0.6656
+Epoch [3/50], Loss: 0.6478, Train Acc: 0.6555
+Validation Acc: 0.6297
+No improvement (1/10).
+Epoch [4/50], Loss: 0.6303, Train Acc: 0.6707
+Validation Acc: 0.6953
+Epoch [5/50], Loss: 0.6276, Train Acc: 0.6824
+Validation Acc: 0.6984
+Epoch [6/50], Loss: 0.6150, Train Acc: 0.7098
+Validation Acc: 0.7500
+Epoch [7/50], Loss: 0.6086, Train Acc: 0.7070
+Validation Acc: 0.7266
+No improvement (1/10).
+Epoch [8/50], Loss: 0.5666, Train Acc: 0.7559
+Validation Acc: 0.7734
+Epoch [9/50], Loss: 0.5963, Train Acc: 0.7172
+Validation Acc: 0.7219
+No improvement (1/10).
+Epoch [10/50], Loss: 0.5689, Train Acc: 0.7676
+Validation Acc: 0.7016
+No improvement (2/10).
+Epoch [11/50], Loss: 0.5817, Train Acc: 0.7371
+Validation Acc: 0.7641
+No improvement (3/10).
+Epoch [12/50], Loss: 0.5660, Train Acc: 0.7637
+Validation Acc: 0.7922
+Epoch [13/50], Loss: 0.5376, Train Acc: 0.7988
+Validation Acc: 0.8156
+Epoch [14/50], Loss: 0.5229, Train Acc: 0.7910
+Validation Acc: 0.8125
+No improvement (1/10).
+Epoch [15/50], Loss: 0.5021, Train Acc: 0.8187
+Validation Acc: 0.8047
+No improvement (2/10).
+Epoch [16/50], Loss: 0.5284, Train Acc: 0.7980
+Validation Acc: 0.8562
+Epoch [17/50], Loss: 0.4888, Train Acc: 0.8496
+Validation Acc: 0.8297
+No improvement (1/10).
+Epoch [18/50], Loss: 0.5554, Train Acc: 0.7719
+Validation Acc: 0.7641
+No improvement (2/10).
+Epoch [19/50], Loss: 0.5251, Train Acc: 0.7949
+Validation Acc: 0.8500
+No improvement (3/10).
+Epoch [20/50], Loss: 0.4748, Train Acc: 0.8777
+Validation Acc: 0.8953
+Epoch [21/50], Loss: 0.4594, Train Acc: 0.8363
+Validation Acc: 0.8859
+No improvement (1/10).
+Epoch [22/50], Loss: 0.4606, Train Acc: 0.8316
+Validation Acc: 0.8594
+No improvement (2/10).
+Epoch [23/50], Loss: 0.4551, Train Acc: 0.8383
+Validation Acc: 0.8953
+No improvement (3/10).
+Epoch [24/50], Loss: 0.4438, Train Acc: 0.8363
+Validation Acc: 0.9000
+Epoch [25/50], Loss: 0.4177, Train Acc: 0.8641
+Validation Acc: 0.9047
+Epoch [26/50], Loss: 0.4399, Train Acc: 0.8883
+Validation Acc: 0.9141
+Epoch [27/50], Loss: 0.4049, Train Acc: 0.9262
+Validation Acc: 0.9313
+Epoch [28/50], Loss: 0.4392, Train Acc: 0.8941
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [29/50], Loss: 0.4114, Train Acc: 0.9160
+Validation Acc: 0.9047
+No improvement (2/10).
+Epoch [30/50], Loss: 0.4254, Train Acc: 0.9008
+Validation Acc: 0.8578
+No improvement (3/10).
+Epoch [31/50], Loss: 0.4107, Train Acc: 0.9109
+Validation Acc: 0.9094
+No improvement (4/10).
+Epoch [32/50], Loss: 0.3804, Train Acc: 0.9324
+Validation Acc: 0.9406
+Epoch [33/50], Loss: 0.3596, Train Acc: 0.9500
+Validation Acc: 0.9406
+No improvement (1/10).
+Epoch [34/50], Loss: 0.3523, Train Acc: 0.9512
+Validation Acc: 0.9469
+Epoch [35/50], Loss: 0.3419, Train Acc: 0.9555
+Validation Acc: 0.9437
+No improvement (1/10).
+Epoch [36/50], Loss: 0.3443, Train Acc: 0.9555
+Validation Acc: 0.9437
+No improvement (2/10).
+Epoch [37/50], Loss: 0.3548, Train Acc: 0.9500
+Validation Acc: 0.9422
+No improvement (3/10).
+Epoch [38/50], Loss: 0.3399, Train Acc: 0.9574
+Validation Acc: 0.9453
+No improvement (4/10).
+Epoch [39/50], Loss: 0.3338, Train Acc: 0.9578
+Validation Acc: 0.9437
+No improvement (5/10).
+Epoch [40/50], Loss: 0.3348, Train Acc: 0.9598
+Validation Acc: 0.9437
+No improvement (6/10).
+Epoch [41/50], Loss: 0.3360, Train Acc: 0.9586
+Validation Acc: 0.9437
+No improvement (7/10).
+Epoch [42/50], Loss: 0.3375, Train Acc: 0.9559
+Validation Acc: 0.9453
+No improvement (8/10).
+Epoch [43/50], Loss: 0.3255, Train Acc: 0.9605
+Validation Acc: 0.9453
+No improvement (9/10).
+Epoch [44/50], Loss: 0.3303, Train Acc: 0.9594
+Validation Acc: 0.9453
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+
+=== Repeated Training for Full Model ===
+Run 1/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.3263, Train Acc: 0.4953
+Validation Acc: 0.5109
+Epoch [2/50], Loss: 1.4968, Train Acc: 0.4777
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4744, Train Acc: 0.4977
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 1.4741, Train Acc: 0.5059
+Validation Acc: 0.4594
+No improvement (3/10).
+Epoch [5/50], Loss: 1.4256, Train Acc: 0.4973
+Validation Acc: 0.5031
+No improvement (4/10).
+Epoch [6/50], Loss: 1.4042, Train Acc: 0.5137
+Validation Acc: 0.5125
+Epoch [7/50], Loss: 1.4203, Train Acc: 0.5070
+Validation Acc: 0.5062
+No improvement (1/10).
+Epoch [8/50], Loss: 1.3926, Train Acc: 0.4875
+Validation Acc: 0.5109
+No improvement (2/10).
+Epoch [9/50], Loss: 1.3163, Train Acc: 0.5086
+Validation Acc: 0.5031
+No improvement (3/10).
+Epoch [10/50], Loss: 1.0625, Train Acc: 0.5266
+Validation Acc: 0.5078
+No improvement (4/10).
+Epoch [11/50], Loss: 1.3526, Train Acc: 0.5305
+Validation Acc: 0.5344
+Epoch [12/50], Loss: 1.0812, Train Acc: 0.5211
+Validation Acc: 0.5078
+No improvement (1/10).
+Epoch [13/50], Loss: 0.8495, Train Acc: 0.5188
+Validation Acc: 0.5219
+No improvement (2/10).
+Epoch [14/50], Loss: 0.8065, Train Acc: 0.5184
+Validation Acc: 0.5172
+No improvement (3/10).
+Epoch [15/50], Loss: 0.7951, Train Acc: 0.5230
+Validation Acc: 0.5203
+No improvement (4/10).
+Epoch [16/50], Loss: 0.7842, Train Acc: 0.5340
+Validation Acc: 0.5141
+No improvement (5/10).
+Epoch [17/50], Loss: 0.7813, Train Acc: 0.5227
+Validation Acc: 0.5172
+No improvement (6/10).
+Epoch [18/50], Loss: 0.7718, Train Acc: 0.5172
+Validation Acc: 0.5156
+No improvement (7/10).
+Epoch [19/50], Loss: 0.7732, Train Acc: 0.5207
+Validation Acc: 0.5141
+No improvement (8/10).
+Epoch [20/50], Loss: 0.7684, Train Acc: 0.5273
+Validation Acc: 0.5234
+No improvement (9/10).
+Epoch [21/50], Loss: 0.7689, Train Acc: 0.5215
+Validation Acc: 0.5172
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 2/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.3615, Train Acc: 0.5000
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.5433, Train Acc: 0.4973
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.5050, Train Acc: 0.4969
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 1.4995, Train Acc: 0.5016
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 1.4591, Train Acc: 0.5074
+Validation Acc: 0.4859
+No improvement (4/10).
+Epoch [6/50], Loss: 1.4109, Train Acc: 0.4973
+Validation Acc: 0.4984
+No improvement (5/10).
+Epoch [7/50], Loss: 1.2444, Train Acc: 0.4895
+Validation Acc: 0.5062
+Epoch [8/50], Loss: 0.8739, Train Acc: 0.5043
+Validation Acc: 0.5328
+Epoch [9/50], Loss: 0.8484, Train Acc: 0.5156
+Validation Acc: 0.5203
+No improvement (1/10).
+Epoch [10/50], Loss: 0.8017, Train Acc: 0.5074
+Validation Acc: 0.4891
+No improvement (2/10).
+Epoch [11/50], Loss: 0.7828, Train Acc: 0.5262
+Validation Acc: 0.5219
+No improvement (3/10).
+Epoch [12/50], Loss: 0.7834, Train Acc: 0.5230
+Validation Acc: 0.5094
+No improvement (4/10).
+Epoch [13/50], Loss: 0.7663, Train Acc: 0.5352
+Validation Acc: 0.5125
+No improvement (5/10).
+Epoch [14/50], Loss: 0.7635, Train Acc: 0.5191
+Validation Acc: 0.5406
+Epoch [15/50], Loss: 0.7648, Train Acc: 0.5293
+Validation Acc: 0.5406
+No improvement (1/10).
+Epoch [16/50], Loss: 0.7643, Train Acc: 0.5148
+Validation Acc: 0.5359
+No improvement (2/10).
+Epoch [17/50], Loss: 0.7923, Train Acc: 0.5137
+Validation Acc: 0.5266
+No improvement (3/10).
+Epoch [18/50], Loss: 0.7596, Train Acc: 0.5227
+Validation Acc: 0.5328
+No improvement (4/10).
+Epoch [19/50], Loss: 0.7545, Train Acc: 0.5312
+Validation Acc: 0.5328
+No improvement (5/10).
+Epoch [20/50], Loss: 0.7502, Train Acc: 0.5336
+Validation Acc: 0.5391
+No improvement (6/10).
+Epoch [21/50], Loss: 0.7498, Train Acc: 0.5129
+Validation Acc: 0.5344
+No improvement (7/10).
+Epoch [22/50], Loss: 0.7488, Train Acc: 0.5289
+Validation Acc: 0.5406
+No improvement (8/10).
+Epoch [23/50], Loss: 0.7493, Train Acc: 0.5289
+Validation Acc: 0.5406
+No improvement (9/10).
+Epoch [24/50], Loss: 0.7481, Train Acc: 0.5363
+Validation Acc: 0.5406
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 3/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.2180, Train Acc: 0.5023
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.5589, Train Acc: 0.5074
+Validation Acc: 0.5031
+Epoch [3/50], Loss: 1.5050, Train Acc: 0.4973
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [4/50], Loss: 1.4699, Train Acc: 0.4910
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [5/50], Loss: 1.4754, Train Acc: 0.4875
+Validation Acc: 0.5078
+Epoch [6/50], Loss: 1.4253, Train Acc: 0.4934
+Validation Acc: 0.5156
+Epoch [7/50], Loss: 1.4158, Train Acc: 0.5016
+Validation Acc: 0.5062
+No improvement (1/10).
+Epoch [8/50], Loss: 1.2882, Train Acc: 0.4996
+Validation Acc: 0.5062
+No improvement (2/10).
+Epoch [9/50], Loss: 1.0020, Train Acc: 0.5023
+Validation Acc: 0.4797
+No improvement (3/10).
+Epoch [10/50], Loss: 0.8205, Train Acc: 0.5246
+Validation Acc: 0.5125
+No improvement (4/10).
+Epoch [11/50], Loss: 0.8007, Train Acc: 0.5246
+Validation Acc: 0.5172
+Epoch [12/50], Loss: 0.7783, Train Acc: 0.5238
+Validation Acc: 0.5094
+No improvement (1/10).
+Epoch [13/50], Loss: 0.7639, Train Acc: 0.5176
+Validation Acc: 0.5047
+No improvement (2/10).
+Epoch [14/50], Loss: 0.7696, Train Acc: 0.5047
+Validation Acc: 0.5109
+No improvement (3/10).
+Epoch [15/50], Loss: 0.7634, Train Acc: 0.5266
+Validation Acc: 0.4891
+No improvement (4/10).
+Epoch [16/50], Loss: 0.7588, Train Acc: 0.5437
+Validation Acc: 0.5203
+Epoch [17/50], Loss: 0.7538, Train Acc: 0.5332
+Validation Acc: 0.5094
+No improvement (1/10).
+Epoch [18/50], Loss: 0.7511, Train Acc: 0.5352
+Validation Acc: 0.5141
+No improvement (2/10).
+Epoch [19/50], Loss: 0.7502, Train Acc: 0.5348
+Validation Acc: 0.5062
+No improvement (3/10).
+Epoch [20/50], Loss: 0.7521, Train Acc: 0.5395
+Validation Acc: 0.4891
+No improvement (4/10).
+Epoch [21/50], Loss: 0.7425, Train Acc: 0.5504
+Validation Acc: 0.4938
+No improvement (5/10).
+Epoch [22/50], Loss: 0.7439, Train Acc: 0.5359
+Validation Acc: 0.4953
+No improvement (6/10).
+Epoch [23/50], Loss: 0.7407, Train Acc: 0.5441
+Validation Acc: 0.5031
+No improvement (7/10).
+Epoch [24/50], Loss: 0.7413, Train Acc: 0.5539
+Validation Acc: 0.4984
+No improvement (8/10).
+Epoch [25/50], Loss: 0.7378, Train Acc: 0.5500
+Validation Acc: 0.5047
+No improvement (9/10).
+Epoch [26/50], Loss: 0.7389, Train Acc: 0.5578
+Validation Acc: 0.5109
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 4/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.2852, Train Acc: 0.4852
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.5131, Train Acc: 0.4922
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4879, Train Acc: 0.4992
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 1.3948, Train Acc: 0.5109
+Validation Acc: 0.5172
+Epoch [5/50], Loss: 0.9974, Train Acc: 0.5004
+Validation Acc: 0.5047
+No improvement (1/10).
+Epoch [6/50], Loss: 0.8268, Train Acc: 0.5141
+Validation Acc: 0.5109
+No improvement (2/10).
+Epoch [7/50], Loss: 0.8058, Train Acc: 0.5180
+Validation Acc: 0.5016
+No improvement (3/10).
+Epoch [8/50], Loss: 0.7987, Train Acc: 0.5105
+Validation Acc: 0.4969
+No improvement (4/10).
+Epoch [9/50], Loss: 0.7796, Train Acc: 0.5277
+Validation Acc: 0.4984
+No improvement (5/10).
+Epoch [10/50], Loss: 0.7550, Train Acc: 0.5227
+Validation Acc: 0.4922
+No improvement (6/10).
+Epoch [11/50], Loss: 0.7574, Train Acc: 0.5207
+Validation Acc: 0.5094
+No improvement (7/10).
+Epoch [12/50], Loss: 0.7561, Train Acc: 0.5344
+Validation Acc: 0.5047
+No improvement (8/10).
+Epoch [13/50], Loss: 0.7522, Train Acc: 0.5379
+Validation Acc: 0.5203
+Epoch [14/50], Loss: 0.7476, Train Acc: 0.5316
+Validation Acc: 0.5188
+No improvement (1/10).
+Epoch [15/50], Loss: 0.7505, Train Acc: 0.5383
+Validation Acc: 0.5234
+Epoch [16/50], Loss: 0.7535, Train Acc: 0.5289
+Validation Acc: 0.5312
+Epoch [17/50], Loss: 0.7522, Train Acc: 0.5301
+Validation Acc: 0.5297
+No improvement (1/10).
+Epoch [18/50], Loss: 0.7442, Train Acc: 0.5352
+Validation Acc: 0.5406
+Epoch [19/50], Loss: 0.7454, Train Acc: 0.5316
+Validation Acc: 0.5422
+Epoch [20/50], Loss: 0.7420, Train Acc: 0.5379
+Validation Acc: 0.5375
+No improvement (1/10).
+Epoch [21/50], Loss: 0.7430, Train Acc: 0.5242
+Validation Acc: 0.5547
+Epoch [22/50], Loss: 0.7417, Train Acc: 0.5469
+Validation Acc: 0.5625
+Epoch [23/50], Loss: 0.7438, Train Acc: 0.5402
+Validation Acc: 0.5625
+No improvement (1/10).
+Epoch [24/50], Loss: 0.7433, Train Acc: 0.5410
+Validation Acc: 0.5359
+No improvement (2/10).
+Epoch [25/50], Loss: 0.7399, Train Acc: 0.5391
+Validation Acc: 0.5422
+No improvement (3/10).
+Epoch [26/50], Loss: 0.7321, Train Acc: 0.5566
+Validation Acc: 0.5687
+Epoch [27/50], Loss: 0.7373, Train Acc: 0.5582
+Validation Acc: 0.5484
+No improvement (1/10).
+Epoch [28/50], Loss: 0.7433, Train Acc: 0.5559
+Validation Acc: 0.5453
+No improvement (2/10).
+Epoch [29/50], Loss: 0.7327, Train Acc: 0.5621
+Validation Acc: 0.5734
+Epoch [30/50], Loss: 0.7319, Train Acc: 0.5691
+Validation Acc: 0.5719
+No improvement (1/10).
+Epoch [31/50], Loss: 0.7250, Train Acc: 0.5660
+Validation Acc: 0.5859
+Epoch [32/50], Loss: 0.7252, Train Acc: 0.5867
+Validation Acc: 0.5766
+No improvement (1/10).
+Epoch [33/50], Loss: 0.7268, Train Acc: 0.5836
+Validation Acc: 0.5703
+No improvement (2/10).
+Epoch [34/50], Loss: 0.7265, Train Acc: 0.5996
+Validation Acc: 0.5328
+No improvement (3/10).
+Epoch [35/50], Loss: 0.7228, Train Acc: 0.6086
+Validation Acc: 0.6016
+Epoch [36/50], Loss: 0.7083, Train Acc: 0.6293
+Validation Acc: 0.5687
+No improvement (1/10).
+Epoch [37/50], Loss: 0.7006, Train Acc: 0.6566
+Validation Acc: 0.6703
+Epoch [38/50], Loss: 0.6941, Train Acc: 0.6695
+Validation Acc: 0.6719
+Epoch [39/50], Loss: 0.6867, Train Acc: 0.6801
+Validation Acc: 0.6219
+No improvement (1/10).
+Epoch [40/50], Loss: 0.6795, Train Acc: 0.6816
+Validation Acc: 0.7016
+Epoch [41/50], Loss: 0.6727, Train Acc: 0.7027
+Validation Acc: 0.6125
+No improvement (1/10).
+Epoch [42/50], Loss: 0.6690, Train Acc: 0.7219
+Validation Acc: 0.6766
+No improvement (2/10).
+Epoch [43/50], Loss: 0.6507, Train Acc: 0.7324
+Validation Acc: 0.7562
+Epoch [44/50], Loss: 0.6288, Train Acc: 0.7645
+Validation Acc: 0.7781
+Epoch [45/50], Loss: 0.6215, Train Acc: 0.7734
+Validation Acc: 0.7969
+Epoch [46/50], Loss: 0.6189, Train Acc: 0.7660
+Validation Acc: 0.7078
+No improvement (1/10).
+Epoch [47/50], Loss: 0.6221, Train Acc: 0.7527
+Validation Acc: 0.7578
+No improvement (2/10).
+Epoch [48/50], Loss: 0.6066, Train Acc: 0.7898
+Validation Acc: 0.7609
+No improvement (3/10).
+Epoch [49/50], Loss: 0.5912, Train Acc: 0.8074
+Validation Acc: 0.8047
+Epoch [50/50], Loss: 0.5659, Train Acc: 0.8223
+Validation Acc: 0.8281
+Training complete!
+Run 5/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.1462, Train Acc: 0.4816
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.4997, Train Acc: 0.4895
+Validation Acc: 0.4922
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4831, Train Acc: 0.4703
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 1.4577, Train Acc: 0.4852
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 1.4093, Train Acc: 0.4953
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 1.1152, Train Acc: 0.5051
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.8873, Train Acc: 0.4918
+Validation Acc: 0.5109
+Epoch [8/50], Loss: 0.8193, Train Acc: 0.5156
+Validation Acc: 0.5047
+No improvement (1/10).
+Epoch [9/50], Loss: 0.8126, Train Acc: 0.5121
+Validation Acc: 0.5047
+No improvement (2/10).
+Epoch [10/50], Loss: 0.7921, Train Acc: 0.5113
+Validation Acc: 0.5047
+No improvement (3/10).
+Epoch [11/50], Loss: 0.7855, Train Acc: 0.5133
+Validation Acc: 0.5094
+No improvement (4/10).
+Epoch [12/50], Loss: 0.7820, Train Acc: 0.5309
+Validation Acc: 0.4891
+No improvement (5/10).
+Epoch [13/50], Loss: 0.7697, Train Acc: 0.5281
+Validation Acc: 0.5078
+No improvement (6/10).
+Epoch [14/50], Loss: 0.7759, Train Acc: 0.5141
+Validation Acc: 0.5094
+No improvement (7/10).
+Epoch [15/50], Loss: 0.7694, Train Acc: 0.5164
+Validation Acc: 0.5125
+Epoch [16/50], Loss: 0.7568, Train Acc: 0.5121
+Validation Acc: 0.5109
+No improvement (1/10).
+Epoch [17/50], Loss: 0.7554, Train Acc: 0.5105
+Validation Acc: 0.5188
+Epoch [18/50], Loss: 0.7568, Train Acc: 0.5254
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [19/50], Loss: 0.7570, Train Acc: 0.5109
+Validation Acc: 0.5141
+No improvement (2/10).
+Epoch [20/50], Loss: 0.7484, Train Acc: 0.5219
+Validation Acc: 0.5109
+No improvement (3/10).
+Epoch [21/50], Loss: 0.7451, Train Acc: 0.5324
+Validation Acc: 0.5094
+No improvement (4/10).
+Epoch [22/50], Loss: 0.7406, Train Acc: 0.5277
+Validation Acc: 0.5266
+Epoch [23/50], Loss: 0.7404, Train Acc: 0.5164
+Validation Acc: 0.5250
+No improvement (1/10).
+Epoch [24/50], Loss: 0.7382, Train Acc: 0.5402
+Validation Acc: 0.5219
+No improvement (2/10).
+Epoch [25/50], Loss: 0.7357, Train Acc: 0.5387
+Validation Acc: 0.5141
+No improvement (3/10).
+Epoch [26/50], Loss: 0.7326, Train Acc: 0.5449
+Validation Acc: 0.5156
+No improvement (4/10).
+Epoch [27/50], Loss: 0.7342, Train Acc: 0.5414
+Validation Acc: 0.5266
+No improvement (5/10).
+Epoch [28/50], Loss: 0.7327, Train Acc: 0.5391
+Validation Acc: 0.5141
+No improvement (6/10).
+Epoch [29/50], Loss: 0.7306, Train Acc: 0.5449
+Validation Acc: 0.5172
+No improvement (7/10).
+Epoch [30/50], Loss: 0.7305, Train Acc: 0.5312
+Validation Acc: 0.5375
+Epoch [31/50], Loss: 0.7348, Train Acc: 0.5426
+Validation Acc: 0.5453
+Epoch [32/50], Loss: 0.7278, Train Acc: 0.5410
+Validation Acc: 0.5359
+No improvement (1/10).
+Epoch [33/50], Loss: 0.7287, Train Acc: 0.5484
+Validation Acc: 0.5437
+No improvement (2/10).
+Epoch [34/50], Loss: 0.7303, Train Acc: 0.5434
+Validation Acc: 0.5422
+No improvement (3/10).
+Epoch [35/50], Loss: 0.7266, Train Acc: 0.5500
+Validation Acc: 0.5516
+Epoch [36/50], Loss: 0.7239, Train Acc: 0.5566
+Validation Acc: 0.5609
+Epoch [37/50], Loss: 0.7270, Train Acc: 0.5473
+Validation Acc: 0.5563
+No improvement (1/10).
+Epoch [38/50], Loss: 0.7283, Train Acc: 0.5512
+Validation Acc: 0.5437
+No improvement (2/10).
+Epoch [39/50], Loss: 0.7240, Train Acc: 0.5559
+Validation Acc: 0.5469
+No improvement (3/10).
+Epoch [40/50], Loss: 0.7254, Train Acc: 0.5758
+Validation Acc: 0.5563
+No improvement (4/10).
+Epoch [41/50], Loss: 0.7207, Train Acc: 0.5598
+Validation Acc: 0.5672
+Epoch [42/50], Loss: 0.7215, Train Acc: 0.5551
+Validation Acc: 0.5719
+Epoch [43/50], Loss: 0.7201, Train Acc: 0.5535
+Validation Acc: 0.5547
+No improvement (1/10).
+Epoch [44/50], Loss: 0.7163, Train Acc: 0.5691
+Validation Acc: 0.5641
+No improvement (2/10).
+Epoch [45/50], Loss: 0.7192, Train Acc: 0.5727
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [46/50], Loss: 0.7168, Train Acc: 0.5723
+Validation Acc: 0.5656
+No improvement (4/10).
+Epoch [47/50], Loss: 0.7182, Train Acc: 0.5781
+Validation Acc: 0.5703
+No improvement (5/10).
+Epoch [48/50], Loss: 0.7175, Train Acc: 0.5699
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [49/50], Loss: 0.7141, Train Acc: 0.5867
+Validation Acc: 0.5672
+No improvement (7/10).
+Epoch [50/50], Loss: 0.7171, Train Acc: 0.5805
+Validation Acc: 0.5813
+Training complete!
+Run 6/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.1988, Train Acc: 0.4996
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.4668, Train Acc: 0.4922
+Validation Acc: 0.5297
+Epoch [3/50], Loss: 1.3273, Train Acc: 0.5020
+Validation Acc: 0.5016
+No improvement (1/10).
+Epoch [4/50], Loss: 0.9018, Train Acc: 0.5020
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [5/50], Loss: 0.8474, Train Acc: 0.5090
+Validation Acc: 0.5359
+Epoch [6/50], Loss: 0.8305, Train Acc: 0.4945
+Validation Acc: 0.5250
+No improvement (1/10).
+Epoch [7/50], Loss: 0.7848, Train Acc: 0.5133
+Validation Acc: 0.5344
+No improvement (2/10).
+Epoch [8/50], Loss: 0.7802, Train Acc: 0.5211
+Validation Acc: 0.5359
+No improvement (3/10).
+Epoch [9/50], Loss: 0.7968, Train Acc: 0.5113
+Validation Acc: 0.4953
+No improvement (4/10).
+Epoch [10/50], Loss: 0.7827, Train Acc: 0.5191
+Validation Acc: 0.5328
+No improvement (5/10).
+Epoch [11/50], Loss: 0.7553, Train Acc: 0.5242
+Validation Acc: 0.5250
+No improvement (6/10).
+Epoch [12/50], Loss: 0.7552, Train Acc: 0.5297
+Validation Acc: 0.5297
+No improvement (7/10).
+Epoch [13/50], Loss: 0.7481, Train Acc: 0.5211
+Validation Acc: 0.5344
+No improvement (8/10).
+Epoch [14/50], Loss: 0.7455, Train Acc: 0.5281
+Validation Acc: 0.5391
+Epoch [15/50], Loss: 0.7430, Train Acc: 0.5262
+Validation Acc: 0.5406
+Epoch [16/50], Loss: 0.7420, Train Acc: 0.5207
+Validation Acc: 0.5391
+No improvement (1/10).
+Epoch [17/50], Loss: 0.7375, Train Acc: 0.5285
+Validation Acc: 0.5422
+Epoch [18/50], Loss: 0.7403, Train Acc: 0.5184
+Validation Acc: 0.5281
+No improvement (1/10).
+Epoch [19/50], Loss: 0.7416, Train Acc: 0.5262
+Validation Acc: 0.5625
+Epoch [20/50], Loss: 0.7380, Train Acc: 0.5484
+Validation Acc: 0.5266
+No improvement (1/10).
+Epoch [21/50], Loss: 0.7373, Train Acc: 0.5195
+Validation Acc: 0.5656
+Epoch [22/50], Loss: 0.7381, Train Acc: 0.5312
+Validation Acc: 0.5578
+No improvement (1/10).
+Epoch [23/50], Loss: 0.7315, Train Acc: 0.5371
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [24/50], Loss: 0.7323, Train Acc: 0.5469
+Validation Acc: 0.5672
+Epoch [25/50], Loss: 0.7259, Train Acc: 0.5590
+Validation Acc: 0.5594
+No improvement (1/10).
+Epoch [26/50], Loss: 0.7284, Train Acc: 0.5469
+Validation Acc: 0.5625
+No improvement (2/10).
+Epoch [27/50], Loss: 0.7279, Train Acc: 0.5582
+Validation Acc: 0.5813
+Epoch [28/50], Loss: 0.7270, Train Acc: 0.5707
+Validation Acc: 0.6000
+Epoch [29/50], Loss: 0.7165, Train Acc: 0.5809
+Validation Acc: 0.6062
+Epoch [30/50], Loss: 0.7178, Train Acc: 0.5953
+Validation Acc: 0.6484
+Epoch [31/50], Loss: 0.7050, Train Acc: 0.6152
+Validation Acc: 0.6344
+No improvement (1/10).
+Epoch [32/50], Loss: 0.7055, Train Acc: 0.6254
+Validation Acc: 0.6438
+No improvement (2/10).
+Epoch [33/50], Loss: 0.7011, Train Acc: 0.6230
+Validation Acc: 0.6766
+Epoch [34/50], Loss: 0.6804, Train Acc: 0.6656
+Validation Acc: 0.7375
+Epoch [35/50], Loss: 0.6720, Train Acc: 0.6734
+Validation Acc: 0.7391
+Epoch [36/50], Loss: 0.6840, Train Acc: 0.6555
+Validation Acc: 0.7203
+No improvement (1/10).
+Epoch [37/50], Loss: 0.6529, Train Acc: 0.6988
+Validation Acc: 0.7625
+Epoch [38/50], Loss: 0.6582, Train Acc: 0.6973
+Validation Acc: 0.7562
+No improvement (1/10).
+Epoch [39/50], Loss: 0.6446, Train Acc: 0.7031
+Validation Acc: 0.7719
+Epoch [40/50], Loss: 0.6662, Train Acc: 0.6754
+Validation Acc: 0.6781
+No improvement (1/10).
+Epoch [41/50], Loss: 0.6659, Train Acc: 0.6883
+Validation Acc: 0.7594
+No improvement (2/10).
+Epoch [42/50], Loss: 0.6368, Train Acc: 0.7199
+Validation Acc: 0.7609
+No improvement (3/10).
+Epoch [43/50], Loss: 0.6351, Train Acc: 0.7184
+Validation Acc: 0.7828
+Epoch [44/50], Loss: 0.6022, Train Acc: 0.7582
+Validation Acc: 0.8094
+Epoch [45/50], Loss: 0.5883, Train Acc: 0.7715
+Validation Acc: 0.8125
+Epoch [46/50], Loss: 0.5831, Train Acc: 0.7703
+Validation Acc: 0.8078
+No improvement (1/10).
+Epoch [47/50], Loss: 0.5876, Train Acc: 0.7707
+Validation Acc: 0.7781
+No improvement (2/10).
+Epoch [48/50], Loss: 0.5887, Train Acc: 0.7617
+Validation Acc: 0.8000
+No improvement (3/10).
+Epoch [49/50], Loss: 0.5683, Train Acc: 0.7715
+Validation Acc: 0.8328
+Epoch [50/50], Loss: 0.5436, Train Acc: 0.8125
+Validation Acc: 0.8406
+Training complete!
+Run 7/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.2869, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.5162, Train Acc: 0.4852
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4702, Train Acc: 0.4781
+Validation Acc: 0.5078
+Epoch [4/50], Loss: 1.4449, Train Acc: 0.4859
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [5/50], Loss: 1.4173, Train Acc: 0.4941
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [6/50], Loss: 1.3587, Train Acc: 0.4953
+Validation Acc: 0.5125
+Epoch [7/50], Loss: 0.9637, Train Acc: 0.5098
+Validation Acc: 0.5125
+No improvement (1/10).
+Epoch [8/50], Loss: 0.8097, Train Acc: 0.4914
+Validation Acc: 0.5141
+Epoch [9/50], Loss: 0.8039, Train Acc: 0.5043
+Validation Acc: 0.5203
+Epoch [10/50], Loss: 0.7916, Train Acc: 0.5172
+Validation Acc: 0.5094
+No improvement (1/10).
+Epoch [11/50], Loss: 0.7665, Train Acc: 0.5160
+Validation Acc: 0.5203
+No improvement (2/10).
+Epoch [12/50], Loss: 0.7898, Train Acc: 0.5109
+Validation Acc: 0.5078
+No improvement (3/10).
+Epoch [13/50], Loss: 0.7585, Train Acc: 0.5188
+Validation Acc: 0.5219
+Epoch [14/50], Loss: 0.7752, Train Acc: 0.5121
+Validation Acc: 0.5328
+Epoch [15/50], Loss: 0.7607, Train Acc: 0.5074
+Validation Acc: 0.5125
+No improvement (1/10).
+Epoch [16/50], Loss: 0.7817, Train Acc: 0.5254
+Validation Acc: 0.5266
+No improvement (2/10).
+Epoch [17/50], Loss: 0.7574, Train Acc: 0.5344
+Validation Acc: 0.5328
+No improvement (3/10).
+Epoch [18/50], Loss: 0.7546, Train Acc: 0.5359
+Validation Acc: 0.5250
+No improvement (4/10).
+Epoch [19/50], Loss: 0.7355, Train Acc: 0.5258
+Validation Acc: 0.5297
+No improvement (5/10).
+Epoch [20/50], Loss: 0.7359, Train Acc: 0.5234
+Validation Acc: 0.5172
+No improvement (6/10).
+Epoch [21/50], Loss: 0.7345, Train Acc: 0.5191
+Validation Acc: 0.5297
+No improvement (7/10).
+Epoch [22/50], Loss: 0.7284, Train Acc: 0.5281
+Validation Acc: 0.5297
+No improvement (8/10).
+Epoch [23/50], Loss: 0.7229, Train Acc: 0.5199
+Validation Acc: 0.5344
+Epoch [24/50], Loss: 0.7223, Train Acc: 0.5301
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [25/50], Loss: 0.7214, Train Acc: 0.5293
+Validation Acc: 0.5328
+No improvement (2/10).
+Epoch [26/50], Loss: 0.7220, Train Acc: 0.5258
+Validation Acc: 0.5344
+No improvement (3/10).
+Epoch [27/50], Loss: 0.7205, Train Acc: 0.5230
+Validation Acc: 0.5375
+Epoch [28/50], Loss: 0.7199, Train Acc: 0.5297
+Validation Acc: 0.5406
+Epoch [29/50], Loss: 0.7183, Train Acc: 0.5184
+Validation Acc: 0.5422
+Epoch [30/50], Loss: 0.7192, Train Acc: 0.5324
+Validation Acc: 0.5375
+No improvement (1/10).
+Epoch [31/50], Loss: 0.7189, Train Acc: 0.5285
+Validation Acc: 0.5391
+No improvement (2/10).
+Epoch [32/50], Loss: 0.7136, Train Acc: 0.5375
+Validation Acc: 0.5359
+No improvement (3/10).
+Epoch [33/50], Loss: 0.7124, Train Acc: 0.5437
+Validation Acc: 0.5469
+Epoch [34/50], Loss: 0.7095, Train Acc: 0.5461
+Validation Acc: 0.5500
+Epoch [35/50], Loss: 0.7139, Train Acc: 0.5316
+Validation Acc: 0.5406
+No improvement (1/10).
+Epoch [36/50], Loss: 0.7094, Train Acc: 0.5395
+Validation Acc: 0.5437
+No improvement (2/10).
+Epoch [37/50], Loss: 0.7071, Train Acc: 0.5434
+Validation Acc: 0.5406
+No improvement (3/10).
+Epoch [38/50], Loss: 0.7088, Train Acc: 0.5512
+Validation Acc: 0.5437
+No improvement (4/10).
+Epoch [39/50], Loss: 0.7009, Train Acc: 0.5660
+Validation Acc: 0.5625
+Epoch [40/50], Loss: 0.6997, Train Acc: 0.5758
+Validation Acc: 0.5734
+Epoch [41/50], Loss: 0.6981, Train Acc: 0.5617
+Validation Acc: 0.5750
+Epoch [42/50], Loss: 0.6986, Train Acc: 0.5551
+Validation Acc: 0.5750
+No improvement (1/10).
+Epoch [43/50], Loss: 0.6962, Train Acc: 0.5625
+Validation Acc: 0.5703
+No improvement (2/10).
+Epoch [44/50], Loss: 0.6971, Train Acc: 0.5785
+Validation Acc: 0.5516
+No improvement (3/10).
+Epoch [45/50], Loss: 0.6914, Train Acc: 0.5746
+Validation Acc: 0.5672
+No improvement (4/10).
+Epoch [46/50], Loss: 0.6881, Train Acc: 0.5715
+Validation Acc: 0.5828
+Epoch [47/50], Loss: 0.6878, Train Acc: 0.5824
+Validation Acc: 0.5844
+Epoch [48/50], Loss: 0.6842, Train Acc: 0.5824
+Validation Acc: 0.5906
+Epoch [49/50], Loss: 0.6853, Train Acc: 0.5852
+Validation Acc: 0.5906
+No improvement (1/10).
+Epoch [50/50], Loss: 0.6837, Train Acc: 0.5691
+Validation Acc: 0.5797
+No improvement (2/10).
+Training complete!
+Run 8/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.6551, Train Acc: 0.5008
+Validation Acc: 0.5141
+Epoch [2/50], Loss: 1.4949, Train Acc: 0.5043
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4760, Train Acc: 0.5027
+Validation Acc: 0.5062
+No improvement (2/10).
+Epoch [4/50], Loss: 1.4705, Train Acc: 0.4762
+Validation Acc: 0.4922
+No improvement (3/10).
+Epoch [5/50], Loss: 1.4533, Train Acc: 0.4992
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 1.4373, Train Acc: 0.4934
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 1.4209, Train Acc: 0.4891
+Validation Acc: 0.5141
+No improvement (6/10).
+Epoch [8/50], Loss: 1.4010, Train Acc: 0.4961
+Validation Acc: 0.5094
+No improvement (7/10).
+Epoch [9/50], Loss: 1.3706, Train Acc: 0.5059
+Validation Acc: 0.4891
+No improvement (8/10).
+Epoch [10/50], Loss: 1.2823, Train Acc: 0.5051
+Validation Acc: 0.5156
+Epoch [11/50], Loss: 1.0262, Train Acc: 0.5059
+Validation Acc: 0.5188
+Epoch [12/50], Loss: 0.8527, Train Acc: 0.5184
+Validation Acc: 0.5219
+Epoch [13/50], Loss: 0.8005, Train Acc: 0.5016
+Validation Acc: 0.4969
+No improvement (1/10).
+Epoch [14/50], Loss: 0.7915, Train Acc: 0.5156
+Validation Acc: 0.4938
+No improvement (2/10).
+Epoch [15/50], Loss: 0.7908, Train Acc: 0.5090
+Validation Acc: 0.5281
+Epoch [16/50], Loss: 0.7811, Train Acc: 0.5090
+Validation Acc: 0.5141
+No improvement (1/10).
+Epoch [17/50], Loss: 0.7644, Train Acc: 0.5129
+Validation Acc: 0.4891
+No improvement (2/10).
+Epoch [18/50], Loss: 0.7617, Train Acc: 0.5219
+Validation Acc: 0.5094
+No improvement (3/10).
+Epoch [19/50], Loss: 0.7607, Train Acc: 0.5102
+Validation Acc: 0.5156
+No improvement (4/10).
+Epoch [20/50], Loss: 0.7549, Train Acc: 0.5105
+Validation Acc: 0.5125
+No improvement (5/10).
+Epoch [21/50], Loss: 0.7602, Train Acc: 0.5277
+Validation Acc: 0.5219
+No improvement (6/10).
+Epoch [22/50], Loss: 0.7521, Train Acc: 0.5152
+Validation Acc: 0.5234
+No improvement (7/10).
+Epoch [23/50], Loss: 0.7521, Train Acc: 0.5152
+Validation Acc: 0.5266
+No improvement (8/10).
+Epoch [24/50], Loss: 0.7499, Train Acc: 0.5168
+Validation Acc: 0.5234
+No improvement (9/10).
+Epoch [25/50], Loss: 0.7459, Train Acc: 0.5258
+Validation Acc: 0.5234
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 9/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.2200, Train Acc: 0.4887
+Validation Acc: 0.4938
+Epoch [2/50], Loss: 1.4971, Train Acc: 0.5055
+Validation Acc: 0.5000
+Epoch [3/50], Loss: 1.4779, Train Acc: 0.5074
+Validation Acc: 0.5125
+Epoch [4/50], Loss: 1.4383, Train Acc: 0.4883
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [5/50], Loss: 1.4162, Train Acc: 0.4965
+Validation Acc: 0.4953
+No improvement (2/10).
+Epoch [6/50], Loss: 1.2495, Train Acc: 0.4926
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [7/50], Loss: 0.8582, Train Acc: 0.5012
+Validation Acc: 0.5109
+No improvement (4/10).
+Epoch [8/50], Loss: 0.7948, Train Acc: 0.5129
+Validation Acc: 0.5234
+Epoch [9/50], Loss: 0.7828, Train Acc: 0.5289
+Validation Acc: 0.5188
+No improvement (1/10).
+Epoch [10/50], Loss: 0.7679, Train Acc: 0.5234
+Validation Acc: 0.4953
+No improvement (2/10).
+Epoch [11/50], Loss: 0.7852, Train Acc: 0.5191
+Validation Acc: 0.5219
+No improvement (3/10).
+Epoch [12/50], Loss: 0.7759, Train Acc: 0.5277
+Validation Acc: 0.4938
+No improvement (4/10).
+Epoch [13/50], Loss: 0.7634, Train Acc: 0.5234
+Validation Acc: 0.5312
+Epoch [14/50], Loss: 0.7579, Train Acc: 0.5086
+Validation Acc: 0.4984
+No improvement (1/10).
+Epoch [15/50], Loss: 0.7573, Train Acc: 0.5262
+Validation Acc: 0.4969
+No improvement (2/10).
+Epoch [16/50], Loss: 0.7532, Train Acc: 0.5266
+Validation Acc: 0.5344
+Epoch [17/50], Loss: 0.7495, Train Acc: 0.5203
+Validation Acc: 0.5125
+No improvement (1/10).
+Epoch [18/50], Loss: 0.7493, Train Acc: 0.5289
+Validation Acc: 0.5094
+No improvement (2/10).
+Epoch [19/50], Loss: 0.7465, Train Acc: 0.5320
+Validation Acc: 0.5188
+No improvement (3/10).
+Epoch [20/50], Loss: 0.7486, Train Acc: 0.5426
+Validation Acc: 0.5125
+No improvement (4/10).
+Epoch [21/50], Loss: 0.7475, Train Acc: 0.5188
+Validation Acc: 0.5078
+No improvement (5/10).
+Epoch [22/50], Loss: 0.7465, Train Acc: 0.5324
+Validation Acc: 0.5078
+No improvement (6/10).
+Epoch [23/50], Loss: 0.7457, Train Acc: 0.5191
+Validation Acc: 0.5125
+No improvement (7/10).
+Epoch [24/50], Loss: 0.7420, Train Acc: 0.5211
+Validation Acc: 0.4984
+No improvement (8/10).
+Epoch [25/50], Loss: 0.7407, Train Acc: 0.5164
+Validation Acc: 0.5094
+No improvement (9/10).
+Epoch [26/50], Loss: 0.7423, Train Acc: 0.5250
+Validation Acc: 0.5141
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+Run 10/10
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 2.1899, Train Acc: 0.5008
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 1.4840, Train Acc: 0.5023
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 1.4888, Train Acc: 0.5012
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 1.4431, Train Acc: 0.5066
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 1.4218, Train Acc: 0.4996
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 1.4120, Train Acc: 0.5109
+Validation Acc: 0.5031
+Epoch [7/50], Loss: 1.3930, Train Acc: 0.5242
+Validation Acc: 0.5016
+No improvement (1/10).
+Epoch [8/50], Loss: 1.3524, Train Acc: 0.5215
+Validation Acc: 0.5281
+Epoch [9/50], Loss: 1.1382, Train Acc: 0.5027
+Validation Acc: 0.5141
+No improvement (1/10).
+Epoch [10/50], Loss: 0.9076, Train Acc: 0.5113
+Validation Acc: 0.5094
+No improvement (2/10).
+Epoch [11/50], Loss: 0.9058, Train Acc: 0.5074
+Validation Acc: 0.5188
+No improvement (3/10).
+Epoch [12/50], Loss: 1.3292, Train Acc: 0.5113
+Validation Acc: 0.5016
+No improvement (4/10).
+Epoch [13/50], Loss: 1.1064, Train Acc: 0.4836
+Validation Acc: 0.5406
+Epoch [14/50], Loss: 0.9877, Train Acc: 0.5121
+Validation Acc: 0.4859
+No improvement (1/10).
+Epoch [15/50], Loss: 0.8965, Train Acc: 0.5086
+Validation Acc: 0.5437
+Epoch [16/50], Loss: 0.8219, Train Acc: 0.5270
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [17/50], Loss: 0.7940, Train Acc: 0.5227
+Validation Acc: 0.5031
+No improvement (2/10).
+Epoch [18/50], Loss: 0.7810, Train Acc: 0.5371
+Validation Acc: 0.5109
+No improvement (3/10).
+Epoch [19/50], Loss: 0.7886, Train Acc: 0.5113
+Validation Acc: 0.5281
+No improvement (4/10).
+Epoch [20/50], Loss: 0.7743, Train Acc: 0.5246
+Validation Acc: 0.5297
+No improvement (5/10).
+Epoch [21/50], Loss: 0.7644, Train Acc: 0.5199
+Validation Acc: 0.5250
+No improvement (6/10).
+Epoch [22/50], Loss: 0.7643, Train Acc: 0.5258
+Validation Acc: 0.5312
+No improvement (7/10).
+Epoch [23/50], Loss: 0.7631, Train Acc: 0.5152
+Validation Acc: 0.5141
+No improvement (8/10).
+Epoch [24/50], Loss: 0.7564, Train Acc: 0.5320
+Validation Acc: 0.5156
+No improvement (9/10).
+Epoch [25/50], Loss: 0.7591, Train Acc: 0.5285
+Validation Acc: 0.5344
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+
+=== Averaged Experiment Summary ===
+Vanilla LSTM: Test Acc = 0.6173 ± 0.1125, Val Acc = 0.6072, Train Acc = 0.6192, Time = 29.03s
+Conv1D Only: Test Acc = 0.7999 ± 0.1595, Val Acc = 0.8020, Train Acc = 0.7954, Time = 42.08s
+Conv1D + Attention: Test Acc = 0.6555 ± 0.2012, Val Acc = 0.6531, Train Acc = 0.6309, Time = 32.59s
+Conv1D + MultiHead: Test Acc = 0.6385 ± 0.2094, Val Acc = 0.6381, Train Acc = 0.6377, Time = 36.89s
+Full Model: Test Acc = 0.6058 ± 0.1316, Val Acc = 0.5970, Train Acc = 0.5979, Time = 56.68s

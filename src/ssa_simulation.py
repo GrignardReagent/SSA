@@ -3,7 +3,7 @@ import tqdm
 import numpy as np
 import pandas as pd
 import scipy.stats as st
-from ssa_analysis import find_steady_state
+from utils.find_steady_state import find_steady_state
 
 # Define the update matrix for the reactions
 # Columns: G, G*, M
