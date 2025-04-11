@@ -3,7 +3,7 @@
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
-from models.MLP import MLP
+from models.mlp import MLP
 from utils.set_seed import set_seed
 
 def mlp_classifier(X_train, X_val, X_test, y_train, y_val, y_test, input_size=None, hidden_size:list=[300, 200], output_size=None, dropout_rate=0.3, learning_rate=0.001, batch_size=32, epochs=10):

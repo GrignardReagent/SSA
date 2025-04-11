@@ -1,5 +1,6 @@
 import itertools
 import torch
+import torch.nn as nn
 import numpy as np
 import time
 import csv
@@ -68,6 +69,9 @@ for i, (hidden_size, num_layers, dropout_rate, lr, batch_size) in enumerate(tqdm
         use_auxiliary=False
     )
 
+    if torch.cuda.device_count() > 1:
+        model = nn.DataParallel(model)
+    
     history = model.train_model(train_loader, val_loader, epochs=50, patience=10)
     test_acc = model.evaluate(test_loader)
     duration = time.time() - start
