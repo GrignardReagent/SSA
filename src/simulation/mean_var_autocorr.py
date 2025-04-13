@@ -79,7 +79,7 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
                     rho_range=(1, 1000), sigma_b_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000):
     """
     Find parameters rho, sigma_b, and d that satisfy the equations for given target mean/variance/autocorrelation (at t=1).
-    Args:
+    Args:s
         parameter_set (dict): Dictionary with at least a 'sigma_u' key.
         mu_target (float): Target mean.
         variance_target (float): Target variance.
@@ -126,20 +126,37 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     max_attempts = 10
     for attempt in range(max_attempts):
         print(f"Attempt {attempt + 1}/{max_attempts}")
-        
+
+        # only expand search space if this is not the first attempt
+        if attempt == 0: 
+            current_rho_range = rho_range
+            current_sigma_b_range = sigma_b_range
+            current_d_range = d_range
+            current_num_guesses = num_guesses
+        else:
+            # Expand ranges by 30% each failed attempt
+            factor = 1 + attempt * 0.3
+            current_rho_range = (rho_range[0], rho_range[1] * factor)
+            current_sigma_b_range = (sigma_b_range[0], sigma_b_range[1] * factor)
+            current_d_range = (d_range[0], d_range[1] * factor)
+            current_num_guesses = int(num_guesses * (1 + attempt * 0.2))
+
+        # Generate guesses
         if "rho" in to_solve:
-            rho_guesses = np.random.uniform(*rho_range, num_guesses)
+            rho_guesses = np.random.uniform(*current_rho_range, current_num_guesses)
         else:
-            rho_guesses = [fixed["rho"]] * num_guesses
+            rho_guesses = [fixed["rho"]] * current_num_guesses
         if "sigma_b" in to_solve:
-            sigma_b_guesses = np.random.uniform(*sigma_b_range, num_guesses)
+            sigma_b_guesses = np.random.uniform(*current_sigma_b_range, current_num_guesses)
         else:
-            sigma_b_guesses = [fixed["sigma_b"]] * num_guesses
+            sigma_b_guesses = [fixed["sigma_b"]] * current_num_guesses
         if "d" in to_solve:
-            d_guesses = np.random.uniform(*d_range, num_guesses)
+            d_guesses = np.random.uniform(*current_d_range, current_num_guesses)
         else:
-            d_guesses = [fixed["d"]] * num_guesses
+            d_guesses = [fixed["d"]] * current_num_guesses
+
         initial_guesses = list(zip(rho_guesses, sigma_b_guesses, d_guesses))
+
         # print(f"Initial guesses: {initial_guesses}")
 
         for initial_guess in initial_guesses:
