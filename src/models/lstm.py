@@ -8,9 +8,8 @@ import torch.nn.functional as F
 
 class LSTMClassifier(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, output_size,
-                 dropout_rate=0.2, learning_rate=0.001, optimizer='Adam', bidirectional=True,
-                 use_attention=True, num_attention_heads=4, use_auxiliary=False, aux_weight=0.1,
-                 use_conv1d=True,
+                 dropout_rate=0.2, learning_rate=0.001, optimizer='Adam', bidirectional=True, use_conv1d=False,
+                 use_attention=False, num_attention_heads=4, use_auxiliary=False, aux_weight=0.1,
                  device=None):
         super(LSTMClassifier, self).__init__()
         self.bidirectional = bidirectional
