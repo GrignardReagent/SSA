@@ -124,6 +124,8 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
         raise ValueError("At least one of mu_target, variance_target, or autocorr_target must be specified.")
 
     max_attempts = 10
+    max_factor = 2.0
+    max_guesses = 2000
     for attempt in range(max_attempts):
         print(f"Attempt {attempt + 1}/{max_attempts}")
 
@@ -135,11 +137,11 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
             current_num_guesses = num_guesses
         else:
             # Expand ranges by 30% each failed attempt
-            factor = 1 + attempt * 0.3
+            factor = min(1 + attempt * 0.3, max_factor)
             current_rho_range = (rho_range[0], rho_range[1] * factor)
             current_sigma_b_range = (sigma_b_range[0], sigma_b_range[1] * factor)
             current_d_range = (d_range[0], d_range[1] * factor)
-            current_num_guesses = int(num_guesses * (1 + attempt * 0.2))
+            current_num_guesses = min(int(num_guesses * (1 + attempt * 0.2)), max_guesses)
 
         # Generate guesses
         if "rho" in to_solve:

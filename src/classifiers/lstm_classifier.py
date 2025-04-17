@@ -58,6 +58,20 @@ def lstm_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
 
     # === Evaluate ===
     lstm_acc = model.evaluate(test_loader)
-    print(f"=== Long-Short Term Memory (LSTM) Accuracy: {lstm_acc:.2f} ===")
 
+    # print out vanilla LSTM accuracy
+    if not use_conv1d and not use_attention:
+        print(f"=== Vanilla Long-Short Term Memory (LSTM) Accuracy: {lstm_acc:.2f} ===")
+    # LSTM with Conv1D accuracy
+    elif use_conv1d and not use_attention:
+        print(f"=== LSTM with Conv1D Accuracy: {lstm_acc:.2f} ===")
+    # LSTM with Conv1D and Attention accuracy
+    elif use_conv1d and use_attention and num_attention_heads == 1:
+        print(f"=== LSTM with Conv1D and Attention Accuracy: {lstm_acc:.2f} ===")
+    # LSTM with Multi-Head Attention accuracy
+    elif use_conv1d and use_attention and num_attention_heads > 1:
+        print(f"=== LSTM with Conv1D and {num_attention_heads}-Head Attention Accuracy: {lstm_acc:.2f} ===")
+    # LSTM with auxiliary input accuracy
+    elif use_auxiliary:
+        print(f"=== LSTM with Auxiliary Input Accuracy: {lstm_acc:.2f} ===")
     return lstm_acc

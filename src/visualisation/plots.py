@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -158,6 +159,69 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
     plt.xlabel("mRNA Count at Steady-State")
     plt.ylabel("Probability Density")
     plt.title("Distribution of mRNA Counts at Steady-State")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+#### Autocorrelation and Cross-correlation of mRNA counts over time
+def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories):
+    """
+    Plot the autocorrelation of mRNA counts over time for each condition.
+
+    Parameters:
+        parameter_sets (list): List of parameter sets (dict) for the simulation.
+        stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
+        normal_trajectories (numpy array): Array of mRNA trajectories for normal condition.
+    """
+    # Find the time index at which steady state is reached
+    _, steady_state_index_stress = find_steady_state(parameter_sets[0])
+    _, steady_state_index_normal = find_steady_state(parameter_sets[1])
+
+    # Extract steady-state portions
+    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
+    steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
+
+    # Compute autocorrelation
+    stress_autocorr, lags_stress = autocrosscorr(steady_state_traj_stress)
+    normal_autocorr, lags_normal = autocrosscorr(steady_state_traj_normal)
+
+    # Plot the autocorrelation of mRNA counts over time for each condition
+    plt.figure()
+    plt.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
+    plt.plot(lags_normal, np.nanmean(normal_autocorr, axis=0), color='green', label='Normal Condition')
+    plt.title('Autocorrelation of mRNA Counts at Steady-State')
+    plt.xlabel('Lag')
+    plt.ylabel('Autocorrelation')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectories):
+    """
+    Plot the cross-correlation of mRNA counts over time between stressed and normal conditions.
+
+    Parameters:
+        parameter_sets (list): List of parameter sets (dict) for the simulation.
+        stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
+        normal_trajectories (numpy array): Array of mRNA trajectories for normal condition.
+    """
+    # Find the time index at which steady state is reached
+    _, steady_state_index_stress = find_steady_state(parameter_sets[0])
+    _, steady_state_index_normal = find_steady_state(parameter_sets[1])
+
+    # Extract steady-state portions
+    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
+    steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
+
+    # Compute cross-correlation
+    crosscorr, lags_crosscorr = autocrosscorr(steady_state_traj_stress, steady_state_traj_normal)
+
+    # Plot the cross-correlation of mRNA counts over time
+    plt.figure()
+    plt.plot(lags_crosscorr, np.nanmean(crosscorr, axis=0), color='blue', label='Cross-correlation: Stressed vs. Normal')
+    plt.title('Crosscorrelation of mRNA Counts at Steady-State')
+    plt.xlabel('Lag')
+    plt.ylabel('Crosscorrelation')
     plt.legend()
     plt.grid(True)
     plt.show()
