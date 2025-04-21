@@ -1,0 +1,4104 @@
+Running Variance Ratio Simulations:   0%|          | 0/4 [00:00<?, ?it/s]/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:32: RuntimeWarning: invalid value encountered in multiply
+  ACmRNA_eq = sp.exp(-d * t) * (
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:33: RuntimeWarning: invalid value encountered in multiply
+  d * sp.exp((d - sigma_u - sigma_b) * t) * rho * sigma_u
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The number of calls to function has reached maxfev = 400.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  solution = fsolve(
+Attempt 1/10
+Attempt 2/10
+[STRESS] ✅ Found: {'rho': 6290.50335971804, 'sigma_b': 0.021046155088260233, 'd': 0.7346460807771147}
+Attempt 1/10
+[NORMAL] ✅ Found: {'rho': 1179.1338138049475, 'sigma_b': 0.0601454399984859, 'd': 0.7827636158617434}
+Updated Parameter Sets: [{'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}, {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}]
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.15s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:11<00:00,  5.67s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:11<00:00,  5.75s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_0_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.65
+    - Variance: 3416.08
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.40
+    - Variance: 1147.39
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.64 ===
+=== Random Forest Accuracy: 0.74 ===
+=== Logistic Regression Accuracy: 0.61 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.2702, Train Acc: 0.5625
+Validation Acc: 0.5781
+Epoch [2/100], Loss: 0.8685, Train Acc: 0.6602
+Validation Acc: 0.6250
+Epoch [3/100], Loss: 0.7855, Train Acc: 0.6992
+Validation Acc: 0.5781
+No improvement (1/10).
+Epoch [4/100], Loss: 0.4584, Train Acc: 0.7930
+Validation Acc: 0.5781
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5234, Train Acc: 0.7891
+Validation Acc: 0.6406
+Epoch [6/100], Loss: 0.4630, Train Acc: 0.7656
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [7/100], Loss: 0.3903, Train Acc: 0.8516
+Validation Acc: 0.6250
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3635, Train Acc: 0.8242
+Validation Acc: 0.6094
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3624, Train Acc: 0.8438
+Validation Acc: 0.6094
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3215, Train Acc: 0.8320
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/100], Loss: 0.2665, Train Acc: 0.8789
+Validation Acc: 0.6250
+No improvement (6/10).
+Epoch [12/100], Loss: 0.3180, Train Acc: 0.8672
+Validation Acc: 0.6406
+No improvement (7/10).
+Epoch [13/100], Loss: 0.2789, Train Acc: 0.8750
+Validation Acc: 0.6094
+No improvement (8/10).
+Epoch [14/100], Loss: 0.2506, Train Acc: 0.8828
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [15/100], Loss: 0.2484, Train Acc: 0.8984
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.71 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6930, Train Acc: 0.5156
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6871, Train Acc: 0.7031
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6709, Train Acc: 0.7969
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6270, Train Acc: 0.8125
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6038, Train Acc: 0.8242
+Validation Acc: 0.7188
+No improvement (1/10).
+Epoch [6/50], Loss: 0.5867, Train Acc: 0.8086
+Validation Acc: 0.8750
+Epoch [7/50], Loss: 0.5955, Train Acc: 0.7383
+Validation Acc: 0.9062
+Epoch [8/50], Loss: 0.5786, Train Acc: 0.7812
+Validation Acc: 0.9062
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5859, Train Acc: 0.7734
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5701, Train Acc: 0.8203
+Validation Acc: 0.9219
+Epoch [11/50], Loss: 0.5660, Train Acc: 0.8438
+Validation Acc: 0.8594
+No improvement (1/10).
+Epoch [12/50], Loss: 0.5647, Train Acc: 0.8086
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [13/50], Loss: 0.5571, Train Acc: 0.8125
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [14/50], Loss: 0.5483, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [15/50], Loss: 0.5343, Train Acc: 0.8750
+Validation Acc: 0.8750
+No improvement (5/10).
+Epoch [16/50], Loss: 0.5374, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [17/50], Loss: 0.5354, Train Acc: 0.8594
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [18/50], Loss: 0.5306, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [19/50], Loss: 0.5303, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [20/50], Loss: 0.5245, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.84 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5000
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6887, Train Acc: 0.6445
+Validation Acc: 0.5469
+Epoch [3/50], Loss: 0.6769, Train Acc: 0.6680
+Validation Acc: 0.6250
+Epoch [4/50], Loss: 0.6613, Train Acc: 0.6875
+Validation Acc: 0.6406
+Epoch [5/50], Loss: 0.6324, Train Acc: 0.7266
+Validation Acc: 0.7344
+Epoch [6/50], Loss: 0.6185, Train Acc: 0.7266
+Validation Acc: 0.7344
+No improvement (1/10).
+Epoch [7/50], Loss: 0.6130, Train Acc: 0.7344
+Validation Acc: 0.7656
+Epoch [8/50], Loss: 0.5918, Train Acc: 0.7656
+Validation Acc: 0.7812
+Epoch [9/50], Loss: 0.6052, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [10/50], Loss: 0.6155, Train Acc: 0.7188
+Validation Acc: 0.7344
+No improvement (2/10).
+Epoch [11/50], Loss: 0.5784, Train Acc: 0.7930
+Validation Acc: 0.7812
+No improvement (3/10).
+Epoch [12/50], Loss: 0.5915, Train Acc: 0.7539
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [13/50], Loss: 0.5738, Train Acc: 0.7773
+Validation Acc: 0.7500
+No improvement (5/10).
+Epoch [14/50], Loss: 0.5753, Train Acc: 0.7773
+Validation Acc: 0.7500
+No improvement (6/10).
+Epoch [15/50], Loss: 0.5830, Train Acc: 0.7617
+Validation Acc: 0.7344
+No improvement (7/10).
+Epoch [16/50], Loss: 0.5729, Train Acc: 0.7773
+Validation Acc: 0.7344
+No improvement (8/10).
+Epoch [17/50], Loss: 0.5858, Train Acc: 0.7539
+Validation Acc: 0.7344
+No improvement (9/10).
+Epoch [18/50], Loss: 0.5877, Train Acc: 0.7461
+Validation Acc: 0.7344
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.78 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.43s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.12s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.17s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_1_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.62s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.10s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_2_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.50s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.49s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.49s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_3_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.55s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.13s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.19s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_4_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.47s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.04s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.11s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_5_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.63s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.10s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_6_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.52s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.10s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.17s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_7_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.46s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.11s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.16s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_8_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.78s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.021046155088260233, 'rho': 6290.50335971804, 'd': 0.7346460807771147, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.28s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.36s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running Variance Ratio Simulations:  25%|██▌       | 1/4 [07:36<22:49, 456.49s/it]/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:32: RuntimeWarning: invalid value encountered in multiply
+  ACmRNA_eq = sp.exp(-d * t) * (
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:33: RuntimeWarning: invalid value encountered in multiply
+  d * sp.exp((d - sigma_u - sigma_b) * t) * rho * sigma_u
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The number of calls to function has reached maxfev = 400.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  solution = fsolve(
+Running Variance Ratio Simulations:  50%|█████     | 2/4 [52:42<59:19, 1779.63s/it]Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.0601454399984859, 'rho': 1179.1338138049475, 'd': 0.7827636158617434, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3360_1200/steady_state_trajectories/m_traj_3360.0_1200.0_9_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 10.15
+    - Variance: 3301.50
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.56 ===
+=== Random Forest Accuracy: 0.72 ===
+=== Logistic Regression Accuracy: 0.62 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3377, Train Acc: 0.5273
+Validation Acc: 0.5156
+Epoch [2/100], Loss: 0.8593, Train Acc: 0.6211
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.7861, Train Acc: 0.6758
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [4/100], Loss: 0.7139, Train Acc: 0.6992
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5784, Train Acc: 0.7539
+Validation Acc: 0.6250
+Epoch [6/100], Loss: 0.5638, Train Acc: 0.7539
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [7/100], Loss: 0.4551, Train Acc: 0.7852
+Validation Acc: 0.6094
+No improvement (2/10).
+Epoch [8/100], Loss: 0.3775, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [9/100], Loss: 0.3825, Train Acc: 0.8203
+Validation Acc: 0.5938
+No improvement (4/10).
+Epoch [10/100], Loss: 0.3945, Train Acc: 0.8242
+Validation Acc: 0.5312
+No improvement (5/10).
+Epoch [11/100], Loss: 0.3217, Train Acc: 0.8633
+Validation Acc: 0.5312
+No improvement (6/10).
+Epoch [12/100], Loss: 0.4188, Train Acc: 0.8398
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [13/100], Loss: 0.3314, Train Acc: 0.8867
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [14/100], Loss: 0.3007, Train Acc: 0.8711
+Validation Acc: 0.6094
+No improvement (9/10).
+Epoch [15/100], Loss: 0.3316, Train Acc: 0.8594
+Validation Acc: 0.5938
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.61 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6866, Train Acc: 0.7109
+Validation Acc: 0.5156
+Epoch [3/50], Loss: 0.6642, Train Acc: 0.8398
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6126, Train Acc: 0.8555
+Validation Acc: 0.7500
+Epoch [5/50], Loss: 0.5815, Train Acc: 0.8906
+Validation Acc: 0.8281
+Epoch [6/50], Loss: 0.5706, Train Acc: 0.8242
+Validation Acc: 0.8281
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5841, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5558, Train Acc: 0.8242
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5598, Train Acc: 0.8320
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5519, Train Acc: 0.8477
+Validation Acc: 0.6250
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5527, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5485, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [13/50], Loss: 0.5530, Train Acc: 0.8164
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [14/50], Loss: 0.5560, Train Acc: 0.8008
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [15/50], Loss: 0.5410, Train Acc: 0.8398
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [16/50], Loss: 0.5327, Train Acc: 0.8477
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [17/50], Loss: 0.5283, Train Acc: 0.8711
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [18/50], Loss: 0.5313, Train Acc: 0.8438
+Validation Acc: 0.9062
+Epoch [19/50], Loss: 0.5487, Train Acc: 0.8281
+Validation Acc: 0.8438
+No improvement (1/10).
+Epoch [20/50], Loss: 0.5337, Train Acc: 0.8438
+Validation Acc: 0.8438
+No improvement (2/10).
+Epoch [21/50], Loss: 0.5353, Train Acc: 0.8281
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [22/50], Loss: 0.5345, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [23/50], Loss: 0.5291, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (5/10).
+Epoch [24/50], Loss: 0.5364, Train Acc: 0.8359
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [25/50], Loss: 0.5309, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (7/10).
+Epoch [26/50], Loss: 0.5342, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (8/10).
+Epoch [27/50], Loss: 0.5219, Train Acc: 0.8555
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [28/50], Loss: 0.5340, Train Acc: 0.8477
+Validation Acc: 0.9062
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.94 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6931, Train Acc: 0.4883
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6898, Train Acc: 0.6211
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6786, Train Acc: 0.6523
+Validation Acc: 0.6562
+Epoch [4/50], Loss: 0.6586, Train Acc: 0.6953
+Validation Acc: 0.7969
+Epoch [5/50], Loss: 0.6457, Train Acc: 0.7070
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [6/50], Loss: 0.6395, Train Acc: 0.7109
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [7/50], Loss: 0.6552, Train Acc: 0.6523
+Validation Acc: 0.7500
+No improvement (3/10).
+Epoch [8/50], Loss: 0.6095, Train Acc: 0.7383
+Validation Acc: 0.7656
+No improvement (4/10).
+Epoch [9/50], Loss: 0.5904, Train Acc: 0.7734
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [10/50], Loss: 0.6275, Train Acc: 0.6836
+Validation Acc: 0.5781
+No improvement (6/10).
+Epoch [11/50], Loss: 0.6433, Train Acc: 0.6602
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [12/50], Loss: 0.5981, Train Acc: 0.7461
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [13/50], Loss: 0.5859, Train Acc: 0.7695
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [14/50], Loss: 0.5893, Train Acc: 0.7578
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.74 ===
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+[STRESS] ❌ No suitable solution found.
+Attempt 1/10
+[NORMAL] ✅ Found: {'rho': 1179.1338138044316, 'sigma_b': 0.060145439998485865, 'd': 0.7827636158617431}
+⚠️ Skipping simulation for ratio 2.8600 due to stress failure.
+
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+[STRESS] ✅ Found: {'rho': 6470.3580153730945, 'sigma_b': 0.020460616750549967, 'd': 0.7346511191190542}
+Attempt 1/10
+[NORMAL] ✅ Found: {'rho': 1179.1338138053677, 'sigma_b': 0.06014543999849313, 'd': 0.7827636158617437}
+Updated Parameter Sets: [{'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}, {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}]
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.24s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.01s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.04s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_0_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.44
+    - Variance: 2904.12
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.68
+    - Variance: 1113.87
+=== SVM (RBF Kernel) Classification Accuracy: 0.66 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.51 ===
+=== Random Forest Accuracy: 0.79 ===
+=== Logistic Regression Accuracy: 0.47 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3153, Train Acc: 0.5586
+Validation Acc: 0.5469
+Epoch [2/100], Loss: 0.8350, Train Acc: 0.6445
+Validation Acc: 0.6094
+Epoch [3/100], Loss: 0.6612, Train Acc: 0.7344
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [4/100], Loss: 0.5493, Train Acc: 0.7383
+Validation Acc: 0.6250
+Epoch [5/100], Loss: 0.5577, Train Acc: 0.7617
+Validation Acc: 0.6406
+Epoch [6/100], Loss: 0.4353, Train Acc: 0.8242
+Validation Acc: 0.6406
+No improvement (1/10).
+Epoch [7/100], Loss: 0.3831, Train Acc: 0.8203
+Validation Acc: 0.6562
+Epoch [8/100], Loss: 0.4603, Train Acc: 0.7969
+Validation Acc: 0.6250
+No improvement (1/10).
+Epoch [9/100], Loss: 0.3793, Train Acc: 0.8516
+Validation Acc: 0.6406
+No improvement (2/10).
+Epoch [10/100], Loss: 0.3852, Train Acc: 0.8242
+Validation Acc: 0.6406
+No improvement (3/10).
+Epoch [11/100], Loss: 0.2760, Train Acc: 0.8789
+Validation Acc: 0.6250
+No improvement (4/10).
+Epoch [12/100], Loss: 0.3139, Train Acc: 0.8594
+Validation Acc: 0.6875
+Epoch [13/100], Loss: 0.2577, Train Acc: 0.8906
+Validation Acc: 0.6719
+No improvement (1/10).
+Epoch [14/100], Loss: 0.2317, Train Acc: 0.8984
+Validation Acc: 0.6719
+No improvement (2/10).
+Epoch [15/100], Loss: 0.2586, Train Acc: 0.8867
+Validation Acc: 0.6406
+No improvement (3/10).
+Epoch [16/100], Loss: 0.2253, Train Acc: 0.9023
+Validation Acc: 0.6406
+No improvement (4/10).
+Epoch [17/100], Loss: 0.2434, Train Acc: 0.9102
+Validation Acc: 0.7031
+Epoch [18/100], Loss: 0.1915, Train Acc: 0.9062
+Validation Acc: 0.7188
+Epoch [19/100], Loss: 0.2337, Train Acc: 0.9062
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [20/100], Loss: 0.1902, Train Acc: 0.9414
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [21/100], Loss: 0.1439, Train Acc: 0.9492
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [22/100], Loss: 0.1622, Train Acc: 0.9336
+Validation Acc: 0.7188
+No improvement (4/10).
+Epoch [23/100], Loss: 0.2002, Train Acc: 0.9180
+Validation Acc: 0.6875
+No improvement (5/10).
+Epoch [24/100], Loss: 0.1714, Train Acc: 0.9375
+Validation Acc: 0.6875
+No improvement (6/10).
+Epoch [25/100], Loss: 0.1526, Train Acc: 0.9375
+Validation Acc: 0.6875
+No improvement (7/10).
+Epoch [26/100], Loss: 0.1221, Train Acc: 0.9492
+Validation Acc: 0.6719
+No improvement (8/10).
+Epoch [27/100], Loss: 0.1264, Train Acc: 0.9453
+Validation Acc: 0.6719
+No improvement (9/10).
+Epoch [28/100], Loss: 0.1403, Train Acc: 0.9414
+Validation Acc: 0.6406
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.56 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6928, Train Acc: 0.5078
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6871, Train Acc: 0.6562
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6678, Train Acc: 0.8398
+Validation Acc: 0.7656
+Epoch [4/50], Loss: 0.6219, Train Acc: 0.8320
+Validation Acc: 0.7656
+No improvement (1/10).
+Epoch [5/50], Loss: 0.5944, Train Acc: 0.8477
+Validation Acc: 0.7969
+Epoch [6/50], Loss: 0.5867, Train Acc: 0.7812
+Validation Acc: 0.8750
+Epoch [7/50], Loss: 0.5892, Train Acc: 0.7539
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [8/50], Loss: 0.5607, Train Acc: 0.8125
+Validation Acc: 0.5938
+No improvement (2/10).
+Epoch [9/50], Loss: 0.5618, Train Acc: 0.8242
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [10/50], Loss: 0.5594, Train Acc: 0.8203
+Validation Acc: 0.8281
+No improvement (4/10).
+Epoch [11/50], Loss: 0.5657, Train Acc: 0.8008
+Validation Acc: 0.8750
+No improvement (5/10).
+Epoch [12/50], Loss: 0.5471, Train Acc: 0.8320
+Validation Acc: 0.8281
+No improvement (6/10).
+Epoch [13/50], Loss: 0.5621, Train Acc: 0.7969
+Validation Acc: 0.8438
+No improvement (7/10).
+Epoch [14/50], Loss: 0.5508, Train Acc: 0.8164
+Validation Acc: 0.8906
+Epoch [15/50], Loss: 0.5494, Train Acc: 0.8477
+Validation Acc: 0.8750
+No improvement (1/10).
+Epoch [16/50], Loss: 0.5361, Train Acc: 0.8438
+Validation Acc: 0.8750
+No improvement (2/10).
+Epoch [17/50], Loss: 0.5386, Train Acc: 0.8594
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [18/50], Loss: 0.5446, Train Acc: 0.8359
+Validation Acc: 0.8750
+No improvement (4/10).
+Epoch [19/50], Loss: 0.5457, Train Acc: 0.8477
+Validation Acc: 0.8750
+No improvement (5/10).
+Epoch [20/50], Loss: 0.5317, Train Acc: 0.8711
+Validation Acc: 0.8750
+No improvement (6/10).
+Epoch [21/50], Loss: 0.5399, Train Acc: 0.8164
+Validation Acc: 0.8750
+No improvement (7/10).
+Epoch [22/50], Loss: 0.5382, Train Acc: 0.8477
+Validation Acc: 0.8750
+No improvement (8/10).
+Epoch [23/50], Loss: 0.5425, Train Acc: 0.8477
+Validation Acc: 0.8750
+No improvement (9/10).
+Epoch [24/50], Loss: 0.5457, Train Acc: 0.8242
+Validation Acc: 0.8750
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6926, Train Acc: 0.5234
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6877, Train Acc: 0.6523
+Validation Acc: 0.6406
+Epoch [3/50], Loss: 0.6724, Train Acc: 0.6523
+Validation Acc: 0.6719
+Epoch [4/50], Loss: 0.6544, Train Acc: 0.6680
+Validation Acc: 0.6875
+Epoch [5/50], Loss: 0.6355, Train Acc: 0.7109
+Validation Acc: 0.7812
+Epoch [6/50], Loss: 0.6048, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [7/50], Loss: 0.5985, Train Acc: 0.7656
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [8/50], Loss: 0.6042, Train Acc: 0.7383
+Validation Acc: 0.7344
+No improvement (2/10).
+Epoch [9/50], Loss: 0.5907, Train Acc: 0.7656
+Validation Acc: 0.6875
+No improvement (3/10).
+Epoch [10/50], Loss: 0.6116, Train Acc: 0.7305
+Validation Acc: 0.7188
+No improvement (4/10).
+Epoch [11/50], Loss: 0.5988, Train Acc: 0.7422
+Validation Acc: 0.7188
+No improvement (5/10).
+Epoch [12/50], Loss: 0.5950, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [13/50], Loss: 0.5608, Train Acc: 0.8047
+Validation Acc: 0.7656
+No improvement (7/10).
+Epoch [14/50], Loss: 0.5538, Train Acc: 0.8125
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [15/50], Loss: 0.5518, Train Acc: 0.8125
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [16/50], Loss: 0.5498, Train Acc: 0.8164
+Validation Acc: 0.7500
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.61s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.15s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.22s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_1_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:07<00:07,  7.12s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:13<00:00,  6.46s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:13<00:00,  6.56s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_2_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.70s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.20s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.28s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_3_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.93s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.29s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.39s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_4_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.48s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.13s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.19s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_5_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.82s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:13<00:00,  6.46s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:13<00:00,  6.52s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_6_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.62s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.17s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.24s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_7_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.59s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.33s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.36s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_8_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:06<00:06,  6.55s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 0.020460616750549967, 'rho': 6470.3580153730945, 'd': 0.7346511191190542, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.12s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:12<00:00,  6.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+Running Variance Ratio Simulations:  75%|███████▌  | 3/4 [1:21:34<29:18, 1758.14s/it]/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:32: RuntimeWarning: invalid value encountered in multiply
+  ACmRNA_eq = sp.exp(-d * t) * (
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:33: RuntimeWarning: invalid value encountered in multiply
+  d * sp.exp((d - sigma_u - sigma_b) * t) * rho * sigma_u
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The number of calls to function has reached maxfev = 400.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:166: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  solution = fsolve(
+<lambdifygenerated-98905>:2: RuntimeWarning: overflow encountered in exp
+  return array([[sigma_b/(d*(sigma_b + 18.0)), -0.00308641975308642*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2) + rho/(d*(sigma_b + 18.0)), -rho*sigma_b/(d**2*(sigma_b + 18.0))], [0.111111111111111*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) + sigma_b/(d*(sigma_b + 18.0)), -0.000171467764060357*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(0.0555555555555556*d + 0.0555555555555556*sigma_b + 1)**2) - 0.00617283950617284*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**3*(d + sigma_b + 18.0)) + 0.0555555555555556*rho**2/(d*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) - 0.00308641975308642*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2) + rho/(d*(sigma_b + 18.0)), -0.000171467764060357*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(0.0555555555555556*d + 0.0555555555555556*sigma_b + 1)**2) - 0.0555555555555556*rho**2*sigma_b/(d**2*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) - rho*sigma_b/(d**2*(sigma_b + 18.0))], [-0.000171467764060357*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) + (2.74139635404827e-7*d*exp(d - sigma_b) - 18.0*sigma_b - 324.0)*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)), 9.52598689224204e-6*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*(-d - 2.0*sigma_b - 36.0)*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) + 0.00308641975308642*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((0.0555555555555556*d - 0.0555555555555556*sigma_b - 1)**2*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) + (d**2 - 2.74139635404827e-7*d*rho*exp(d - sigma_b) - 18.0*rho - 324.0*(0.0555555555555556*sigma_b + 1)**2 - (sigma_b + 18.0)*(2.0*sigma_b + 36.0))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)), 9.52598689224204e-6*(-sigma_b - 18.0)*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) - (2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) - 0.00308641975308642*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((0.0555555555555556*d - 0.0555555555555556*sigma_b - 1)**2*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) + (2.74139635404827e-7*d*rho*exp(d - sigma_b) + 2*d*(sigma_b + 18.0) + 2.74139635404827e-7*rho*exp(d - sigma_b))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))]])
+<lambdifygenerated-98905>:2: RuntimeWarning: invalid value encountered in scalar multiply
+  return array([[sigma_b/(d*(sigma_b + 18.0)), -0.00308641975308642*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2) + rho/(d*(sigma_b + 18.0)), -rho*sigma_b/(d**2*(sigma_b + 18.0))], [0.111111111111111*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) + sigma_b/(d*(sigma_b + 18.0)), -0.000171467764060357*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(0.0555555555555556*d + 0.0555555555555556*sigma_b + 1)**2) - 0.00617283950617284*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**3*(d + sigma_b + 18.0)) + 0.0555555555555556*rho**2/(d*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) - 0.00308641975308642*rho*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2) + rho/(d*(sigma_b + 18.0)), -0.000171467764060357*rho**2*sigma_b/(d*(0.0555555555555556*sigma_b + 1)**2*(0.0555555555555556*d + 0.0555555555555556*sigma_b + 1)**2) - 0.0555555555555556*rho**2*sigma_b/(d**2*(0.0555555555555556*sigma_b + 1)**2*(d + sigma_b + 18.0)) - rho*sigma_b/(d**2*(sigma_b + 18.0))], [-0.000171467764060357*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) + (2.74139635404827e-7*d*exp(d - sigma_b) - 18.0*sigma_b - 324.0)*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)), 9.52598689224204e-6*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*(-d - 2.0*sigma_b - 36.0)*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) + 0.00308641975308642*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((0.0555555555555556*d - 0.0555555555555556*sigma_b - 1)**2*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) + (d**2 - 2.74139635404827e-7*d*rho*exp(d - sigma_b) - 18.0*rho - 324.0*(0.0555555555555556*sigma_b + 1)**2 - (sigma_b + 18.0)*(2.0*sigma_b + 36.0))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)), 9.52598689224204e-6*(-sigma_b - 18.0)*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(0.00308641975308642*d*(sigma_b + 18.0) + 0.0555555555555556*rho + (0.0555555555555556*sigma_b + 1)**2)**2) - (2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) - 0.00308641975308642*(2.74139635404827e-7*d*rho*exp(d - sigma_b) - (sigma_b + 18.0)*(-d**2 + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))*exp(-d)/((0.0555555555555556*d - 0.0555555555555556*sigma_b - 1)**2*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2)) + (2.74139635404827e-7*d*rho*exp(d - sigma_b) + 2*d*(sigma_b + 18.0) + 2.74139635404827e-7*rho*exp(d - sigma_b))*exp(-d)/((d - sigma_b - 18.0)*(d*(sigma_b + 18.0) + 18.0*rho + 324.0*(0.0555555555555556*sigma_b + 1)**2))]])
+Running Variance Ratio Simulations: 100%|██████████| 4/4 [2:07:14<00:00, 2145.63s/it]Running Variance Ratio Simulations: 100%|██████████| 4/4 [2:07:14<00:00, 1908.64s/it]
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 0.06014543999849313, 'rho': 1179.1338138053677, 'd': 0.7827636158617437, 'label': 1}
+Steady state series saved to data_12_04_2025/mRNA_trajectories_variance_3456_1200/steady_state_trajectories/m_traj_3456.0_1200.0_9_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 13.6 min):
+    - Mean mRNA Count: 9.83
+    - Variance: 2995.78
+
+  Normal Condition (after 12.8 min):
+    - Mean mRNA Count: 9.72
+    - Variance: 1100.31
+=== SVM (RBF Kernel) Classification Accuracy: 0.75 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.50 ===
+=== Random Forest Accuracy: 0.68 ===
+=== Logistic Regression Accuracy: 0.59 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.4777, Train Acc: 0.5000
+Validation Acc: 0.6406
+Epoch [2/100], Loss: 0.7659, Train Acc: 0.6680
+Validation Acc: 0.5938
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6795, Train Acc: 0.6758
+Validation Acc: 0.5312
+No improvement (2/10).
+Epoch [4/100], Loss: 0.6664, Train Acc: 0.7266
+Validation Acc: 0.5312
+No improvement (3/10).
+Epoch [5/100], Loss: 0.5492, Train Acc: 0.7500
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [6/100], Loss: 0.5353, Train Acc: 0.7891
+Validation Acc: 0.5625
+No improvement (5/10).
+Epoch [7/100], Loss: 0.4599, Train Acc: 0.7930
+Validation Acc: 0.5625
+No improvement (6/10).
+Epoch [8/100], Loss: 0.3987, Train Acc: 0.8438
+Validation Acc: 0.5469
+No improvement (7/10).
+Epoch [9/100], Loss: 0.3725, Train Acc: 0.8281
+Validation Acc: 0.5469
+No improvement (8/10).
+Epoch [10/100], Loss: 0.4008, Train Acc: 0.8320
+Validation Acc: 0.5781
+No improvement (9/10).
+Epoch [11/100], Loss: 0.3840, Train Acc: 0.8398
+Validation Acc: 0.5625
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.66 ===
+=== Random Classifier Accuracy: 0.45 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6927, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6861, Train Acc: 0.7148
+Validation Acc: 0.5312
+Epoch [3/50], Loss: 0.6628, Train Acc: 0.8555
+Validation Acc: 0.7969
+Epoch [4/50], Loss: 0.6071, Train Acc: 0.8867
+Validation Acc: 0.9219
+Epoch [5/50], Loss: 0.5749, Train Acc: 0.9062
+Validation Acc: 0.9375
+Epoch [6/50], Loss: 0.5615, Train Acc: 0.8438
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [7/50], Loss: 0.5731, Train Acc: 0.7812
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [8/50], Loss: 0.5427, Train Acc: 0.8125
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [9/50], Loss: 0.5500, Train Acc: 0.8008
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [10/50], Loss: 0.5483, Train Acc: 0.8281
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [11/50], Loss: 0.5464, Train Acc: 0.8008
+Validation Acc: 0.8438
+No improvement (6/10).
+Epoch [12/50], Loss: 0.5331, Train Acc: 0.8281
+Validation Acc: 0.9062
+No improvement (7/10).
+Epoch [13/50], Loss: 0.5428, Train Acc: 0.8125
+Validation Acc: 0.8438
+No improvement (8/10).
+Epoch [14/50], Loss: 0.5507, Train Acc: 0.7891
+Validation Acc: 0.8906
+No improvement (9/10).
+Epoch [15/50], Loss: 0.5360, Train Acc: 0.8203
+Validation Acc: 0.8906
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.88 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6929, Train Acc: 0.5117
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6874, Train Acc: 0.6484
+Validation Acc: 0.6562
+Epoch [3/50], Loss: 0.6717, Train Acc: 0.6953
+Validation Acc: 0.7188
+Epoch [4/50], Loss: 0.6440, Train Acc: 0.7539
+Validation Acc: 0.5312
+No improvement (1/10).
+Epoch [5/50], Loss: 0.6249, Train Acc: 0.7656
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [6/50], Loss: 0.6173, Train Acc: 0.7305
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [7/50], Loss: 0.5998, Train Acc: 0.7500
+Validation Acc: 0.7344
+Epoch [8/50], Loss: 0.5865, Train Acc: 0.7578
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [9/50], Loss: 0.5807, Train Acc: 0.7930
+Validation Acc: 0.7031
+No improvement (2/10).
+Epoch [10/50], Loss: 0.5672, Train Acc: 0.8008
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [11/50], Loss: 0.5913, Train Acc: 0.7617
+Validation Acc: 0.7969
+Epoch [12/50], Loss: 0.6343, Train Acc: 0.6797
+Validation Acc: 0.7031
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6796, Train Acc: 0.6055
+Validation Acc: 0.6562
+No improvement (2/10).
+Epoch [14/50], Loss: 0.6591, Train Acc: 0.6328
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [15/50], Loss: 0.6387, Train Acc: 0.6484
+Validation Acc: 0.7500
+No improvement (4/10).
+Epoch [16/50], Loss: 0.6089, Train Acc: 0.7070
+Validation Acc: 0.7656
+No improvement (5/10).
+Epoch [17/50], Loss: 0.5853, Train Acc: 0.7383
+Validation Acc: 0.7812
+No improvement (6/10).
+Epoch [18/50], Loss: 0.5908, Train Acc: 0.7227
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [19/50], Loss: 0.5921, Train Acc: 0.7344
+Validation Acc: 0.7656
+No improvement (8/10).
+Epoch [20/50], Loss: 0.5746, Train Acc: 0.7617
+Validation Acc: 0.7812
+No improvement (9/10).
+Epoch [21/50], Loss: 0.5859, Train Acc: 0.7461
+Validation Acc: 0.7812
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D Accuracy: 0.79 ===
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+[STRESS] ❌ No suitable solution found.
+Attempt 1/10
+[NORMAL] ✅ Found: {'rho': 1179.1338138044316, 'sigma_b': 0.060145439998485865, 'd': 0.7827636158617431}
+⚠️ Skipping simulation for ratio 2.9000 due to stress failure.
+
+
+⚠️ Variance ratios where STRESS solution failed:
+  Index 1, Ratio = 2.8600
+  Index 3, Ratio = 2.9000
