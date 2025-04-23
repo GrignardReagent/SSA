@@ -20,12 +20,15 @@ dependencies:
   # Machine learning & statistics
   - scikit-learn
   - numba
+  - statsmodels
 
   - ipykernel  # Required for Jupyter Notebooks
   - jupyterlab  # Optional, if you want Jupyter support
 
-  # Biocircuits package (if not available in Conda, install via pip)
+  # if not available in conda, install via pip
   - pip
   - pip:
-      - biocircuits  # Install biocircuits via pip
+      - biocircuits  # Biocircuits package for stochastic simulations
+      - optuna
+      - torch
       - -e .  # Install local package using pyproject.toml

@@ -3,16 +3,18 @@ requires = ["setuptools", "wheel"]
 
 [project]
 name = "stochastic_simulations"
-version = "0.1"
-dependencies = [
-    "numpy",
-    "matplotlib",
-    "pandas",
-    "scipy",
-    "tqdm",
-    "numba",
-    "biocircuits",
-    "sympy",
-    "scikit-learn",
-    "ipykernel"
-]
+version = "0.2.0"
+dependencies =  [ "numpy", 
+                    "matplotlib", 
+                    "pandas", 
+                    "scipy", 
+                    "tqdm", 
+                    "numba", 
+                    "biocircuits", 
+                    "sympy", 
+                    "scikit-learn", 
+                    "ipykernel", 
+                    "optuna", 
+                    "torch", 
+                    "statsmodels", 
+                    "seaborn",]

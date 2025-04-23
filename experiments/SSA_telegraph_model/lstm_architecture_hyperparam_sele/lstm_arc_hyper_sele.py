@@ -92,8 +92,11 @@ for cfg in architectures:
                 use_auxiliary=cfg['aux']
             )
 
-            if torch.cuda.device_count() > 1:
-                model = nn.DataParallel(model)
+            # # Apply DataParallel here if multiple GPUs are available
+            # if torch.cuda.device_count() > 1:
+            #     print(f"Using {torch.cuda.device_count()} GPUs")
+            #     model = nn.DataParallel(model)
+            # model.to(model.device) # Ensure model is on the correct device
 
             history = model.train_model(train_loader, val_loader, epochs=epochs, patience=10)
             test_acc = model.evaluate(test_loader)
