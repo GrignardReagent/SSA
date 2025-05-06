@@ -1,0 +1,14 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+  0%|          | 0/5 [00:00<?, ?it/s]
+Grid Search:   0%|          | 0/1620 [00:00<?, ?it/s][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1271/1620 [06:31<01:47,  3.24it/s][A
+Grid Search:  79%|███████▊  | 1272/1620 [12:33<04:08,  1.40it/s][A
+Grid Search:  79%|███████▊  | 1273/1620 [16:32<06:20,  1.10s/it][A
+Grid Search:  79%|███████▊  | 1274/1620 [20:34<09:29,  1.65s/it][A
+Grid Search:  79%|███████▊  | 1275/1620 [25:10<14:35,  2.54s/it][A
+Grid Search:  79%|███████▉  | 1276/1620 [27:58<18:56,  3.30s/it][A
+Grid Search:  79%|███████▉  | 1277/1620 [32:44<29:28,  5.16s/it][A
+Grid Search:  79%|███████▉  | 1278/1620 [35:27<37:43,  6.62s/it][A

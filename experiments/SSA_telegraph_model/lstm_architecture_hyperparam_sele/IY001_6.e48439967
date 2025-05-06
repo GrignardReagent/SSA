@@ -1,0 +1,217 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+  0%|          | 0/5 [00:00<?, ?it/s]
+Grid Search:   0%|          | 0/1620 [00:00<?, ?it/s][A
+Grid Search:   0%|          | 2/1620 [00:00<02:38, 10.19it/s][A
+Grid Search:   0%|          | 4/1620 [00:00<02:36, 10.32it/s][A
+Grid Search:   0%|          | 6/1620 [00:00<02:36, 10.33it/s][A
+Grid Search:   0%|          | 8/1620 [00:00<02:35, 10.36it/s][A
+Grid Search:   1%|          | 10/1620 [00:00<02:35, 10.38it/s][A
+Grid Search:   1%|          | 12/1620 [00:01<02:34, 10.40it/s][A
+Grid Search:   1%|          | 14/1620 [00:01<02:34, 10.41it/s][A
+Grid Search:   1%|          | 16/1620 [00:01<02:34, 10.41it/s][A
+Grid Search:   1%|          | 18/1620 [00:01<02:33, 10.41it/s][A
+Grid Search:   1%|          | 20/1620 [00:01<02:33, 10.40it/s][A
+Grid Search:   1%|▏         | 22/1620 [00:02<02:34, 10.36it/s][A
+Grid Search:   1%|▏         | 24/1620 [00:02<02:34, 10.35it/s][A
+Grid Search:   2%|▏         | 26/1620 [00:02<02:33, 10.38it/s][A
+Grid Search:   2%|▏         | 28/1620 [00:02<02:33, 10.39it/s][A
+Grid Search:   2%|▏         | 30/1620 [00:02<02:32, 10.40it/s][A
+Grid Search:   2%|▏         | 32/1620 [00:03<02:32, 10.39it/s][A
+Grid Search:   2%|▏         | 34/1620 [00:03<02:32, 10.40it/s][A
+Grid Search:   2%|▏         | 36/1620 [00:03<02:32, 10.41it/s][A
+Grid Search:   2%|▏         | 38/1620 [00:03<02:31, 10.44it/s][A
+Grid Search:   2%|▏         | 40/1620 [00:03<02:31, 10.44it/s][A
+Grid Search:   3%|▎         | 42/1620 [00:04<02:30, 10.45it/s][A
+Grid Search:   3%|▎         | 44/1620 [00:04<02:30, 10.45it/s][A
+Grid Search:   3%|▎         | 46/1620 [00:04<02:30, 10.45it/s][A
+Grid Search:   3%|▎         | 48/1620 [00:04<02:30, 10.45it/s][A
+Grid Search:   3%|▎         | 50/1620 [00:04<02:29, 10.49it/s][A
+Grid Search:   3%|▎         | 52/1620 [00:04<02:28, 10.56it/s][A
+Grid Search:   3%|▎         | 54/1620 [00:05<02:28, 10.55it/s][A
+Grid Search:   3%|▎         | 56/1620 [00:05<02:27, 10.57it/s][A
+Grid Search:   4%|▎         | 58/1620 [00:05<02:27, 10.61it/s][A
+Grid Search:   4%|▎         | 60/1620 [00:05<02:26, 10.66it/s][A
+Grid Search:   4%|▍         | 62/1620 [00:05<02:26, 10.62it/s][A
+Grid Search:   4%|▍         | 64/1620 [00:06<02:29, 10.42it/s][A
+Grid Search:   4%|▍         | 66/1620 [00:06<02:29, 10.42it/s][A
+Grid Search:   4%|▍         | 68/1620 [00:06<02:28, 10.44it/s][A
+Grid Search:   4%|▍         | 70/1620 [00:06<02:27, 10.48it/s][A
+Grid Search:   4%|▍         | 72/1620 [00:06<02:26, 10.54it/s][A
+Grid Search:   5%|▍         | 74/1620 [00:07<02:27, 10.49it/s][A
+Grid Search:   5%|▍         | 76/1620 [00:07<02:26, 10.54it/s][A
+Grid Search:   5%|▍         | 78/1620 [00:07<02:25, 10.58it/s][A
+Grid Search:   5%|▍         | 80/1620 [00:07<02:25, 10.56it/s][A
+Grid Search:   5%|▌         | 82/1620 [00:07<02:26, 10.51it/s][A
+Grid Search:   5%|▌         | 84/1620 [00:08<02:27, 10.40it/s][A
+Grid Search:   5%|▌         | 86/1620 [00:08<02:27, 10.40it/s][A
+Grid Search:   5%|▌         | 88/1620 [00:08<02:26, 10.43it/s][A
+Grid Search:   6%|▌         | 90/1620 [00:08<02:26, 10.47it/s][A
+Grid Search:   6%|▌         | 92/1620 [00:08<02:26, 10.44it/s][A
+Grid Search:   6%|▌         | 94/1620 [00:09<02:28, 10.26it/s][A
+Grid Search:   6%|▌         | 96/1620 [00:09<02:26, 10.39it/s][A
+Grid Search:   6%|▌         | 98/1620 [00:09<02:25, 10.45it/s][A
+Grid Search:   6%|▌         | 100/1620 [00:09<02:25, 10.46it/s][A
+Grid Search:   6%|▋         | 102/1620 [00:09<02:25, 10.45it/s][A
+Grid Search:   6%|▋         | 104/1620 [00:09<02:25, 10.43it/s][A
+Grid Search:   7%|▋         | 106/1620 [00:10<02:25, 10.43it/s][A
+Grid Search:   7%|▋         | 108/1620 [00:10<02:24, 10.46it/s][A
+Grid Search:   7%|▋         | 110/1620 [00:10<02:23, 10.53it/s][A
+Grid Search:   7%|▋         | 112/1620 [00:10<02:22, 10.59it/s][A
+Grid Search:   7%|▋         | 114/1620 [00:10<02:21, 10.62it/s][A
+Grid Search:   7%|▋         | 116/1620 [00:11<02:21, 10.65it/s][A
+Grid Search:   7%|▋         | 118/1620 [00:11<02:21, 10.64it/s][A
+Grid Search:   7%|▋         | 120/1620 [00:11<02:21, 10.59it/s][A
+Grid Search:   8%|▊         | 122/1620 [00:11<02:22, 10.54it/s][A
+Grid Search:   8%|▊         | 124/1620 [00:11<02:22, 10.52it/s][A
+Grid Search:   8%|▊         | 126/1620 [00:12<02:22, 10.48it/s][A
+Grid Search:   8%|▊         | 128/1620 [00:12<02:22, 10.48it/s][A
+Grid Search:   8%|▊         | 130/1620 [00:12<02:22, 10.47it/s][A
+Grid Search:   8%|▊         | 132/1620 [00:12<02:21, 10.51it/s][A
+Grid Search:   8%|▊         | 134/1620 [00:12<02:21, 10.51it/s][A
+Grid Search:   8%|▊         | 136/1620 [00:12<02:20, 10.55it/s][A
+Grid Search:   9%|▊         | 138/1620 [00:13<02:19, 10.59it/s][A
+Grid Search:   9%|▊         | 140/1620 [00:13<02:19, 10.63it/s][A
+Grid Search:   9%|▉         | 142/1620 [00:13<02:18, 10.67it/s][A
+Grid Search:   9%|▉         | 144/1620 [00:13<02:19, 10.60it/s][A
+Grid Search:   9%|▉         | 146/1620 [00:13<02:19, 10.54it/s][A
+Grid Search:   9%|▉         | 148/1620 [00:14<02:20, 10.51it/s][A
+Grid Search:   9%|▉         | 150/1620 [00:14<02:20, 10.49it/s][A
+Grid Search:   9%|▉         | 152/1620 [00:14<02:19, 10.49it/s][A
+Grid Search:  10%|▉         | 154/1620 [00:14<02:19, 10.50it/s][A
+Grid Search:  10%|▉         | 156/1620 [00:14<02:18, 10.55it/s][A
+Grid Search:  10%|▉         | 158/1620 [00:15<02:21, 10.34it/s][A
+Grid Search:  10%|▉         | 160/1620 [00:15<02:20, 10.40it/s][A
+Grid Search:  10%|█         | 162/1620 [00:15<02:19, 10.46it/s][A
+Grid Search:  10%|█         | 164/1620 [00:15<02:18, 10.51it/s][A
+Grid Search:  10%|█         | 166/1620 [00:15<02:17, 10.57it/s][A
+Grid Search:  10%|█         | 168/1620 [00:16<02:17, 10.58it/s][A
+Grid Search:  10%|█         | 170/1620 [00:16<02:16, 10.59it/s][A
+Grid Search:  11%|█         | 172/1620 [00:16<02:18, 10.47it/s][A
+Grid Search:  11%|█         | 174/1620 [00:16<02:18, 10.46it/s][A
+Grid Search:  11%|█         | 176/1620 [00:16<02:17, 10.50it/s][A
+Grid Search:  11%|█         | 178/1620 [00:16<02:18, 10.43it/s][A
+Grid Search:  11%|█         | 180/1620 [00:17<02:17, 10.47it/s][A
+Grid Search:  11%|█         | 182/1620 [00:17<02:16, 10.52it/s][A
+Grid Search:  11%|█▏        | 184/1620 [00:17<02:16, 10.53it/s][A
+Grid Search:  11%|█▏        | 186/1620 [00:17<02:16, 10.51it/s][A
+Grid Search:  12%|█▏        | 188/1620 [00:17<02:16, 10.48it/s][A
+Grid Search:  12%|█▏        | 190/1620 [00:18<02:16, 10.46it/s][A
+Grid Search:  12%|█▏        | 192/1620 [00:18<02:15, 10.51it/s][A
+Grid Search:  12%|█▏        | 194/1620 [00:18<02:15, 10.54it/s][A
+Grid Search:  12%|█▏        | 196/1620 [00:18<02:15, 10.54it/s][A
+Grid Search:  12%|█▏        | 198/1620 [00:18<02:15, 10.50it/s][A
+Grid Search:  12%|█▏        | 200/1620 [00:19<02:16, 10.40it/s][A
+Grid Search:  12%|█▏        | 202/1620 [00:19<02:16, 10.39it/s][A
+Grid Search:  13%|█▎        | 204/1620 [00:19<02:15, 10.46it/s][A
+Grid Search:  13%|█▎        | 206/1620 [00:19<02:14, 10.49it/s][A
+Grid Search:  13%|█▎        | 208/1620 [00:19<02:14, 10.53it/s][A
+Grid Search:  13%|█▎        | 210/1620 [00:20<02:14, 10.49it/s][A
+Grid Search:  13%|█▎        | 212/1620 [00:20<02:13, 10.56it/s][A
+Grid Search:  13%|█▎        | 214/1620 [00:20<02:13, 10.56it/s][A
+Grid Search:  13%|█▎        | 216/1620 [00:20<02:12, 10.57it/s][A
+Grid Search:  13%|█▎        | 218/1620 [00:20<02:12, 10.58it/s][A
+Grid Search:  14%|█▎        | 220/1620 [00:20<02:12, 10.54it/s][A
+Grid Search:  14%|█▎        | 222/1620 [00:21<02:13, 10.46it/s][A
+Grid Search:  14%|█▍        | 224/1620 [00:21<02:13, 10.46it/s][A
+Grid Search:  14%|█▍        | 226/1620 [00:21<02:12, 10.52it/s][A
+Grid Search:  14%|█▍        | 228/1620 [00:21<02:12, 10.52it/s][A
+Grid Search:  14%|█▍        | 230/1620 [00:21<02:13, 10.43it/s][A
+Grid Search:  14%|█▍        | 232/1620 [00:22<02:14, 10.34it/s][A
+Grid Search:  14%|█▍        | 234/1620 [00:22<02:13, 10.39it/s][A
+Grid Search:  15%|█▍        | 236/1620 [00:22<02:12, 10.43it/s][A
+Grid Search:  15%|█▍        | 238/1620 [00:22<02:12, 10.43it/s][A
+Grid Search:  15%|█▍        | 240/1620 [00:22<02:11, 10.46it/s][A
+Grid Search:  15%|█▍        | 242/1620 [00:23<02:12, 10.38it/s][A
+Grid Search:  15%|█▌        | 244/1620 [00:23<02:11, 10.43it/s][A
+Grid Search:  15%|█▌        | 246/1620 [00:23<02:10, 10.50it/s][A
+Grid Search:  15%|█▌        | 248/1620 [00:23<02:09, 10.56it/s][A
+Grid Search:  15%|█▌        | 250/1620 [00:23<02:09, 10.61it/s][A
+Grid Search:  16%|█▌        | 252/1620 [00:24<02:09, 10.56it/s][A
+Grid Search:  16%|█▌        | 254/1620 [00:24<02:09, 10.54it/s][A
+Grid Search:  16%|█▌        | 256/1620 [00:24<02:09, 10.56it/s][A
+Grid Search:  16%|█▌        | 258/1620 [00:24<02:10, 10.48it/s][A
+Grid Search:  16%|█▌        | 260/1620 [00:24<02:09, 10.49it/s][A
+Grid Search:  16%|█▌        | 262/1620 [00:24<02:08, 10.53it/s][A
+Grid Search:  16%|█▋        | 264/1620 [00:25<02:08, 10.59it/s][A
+Grid Search:  16%|█▋        | 266/1620 [00:25<02:07, 10.63it/s][A
+Grid Search:  17%|█▋        | 268/1620 [00:25<02:06, 10.66it/s][A
+Grid Search:  17%|█▋        | 270/1620 [00:25<02:06, 10.69it/s][A
+Grid Search:  17%|█▋        | 272/1620 [00:25<02:06, 10.70it/s][A
+Grid Search:  17%|█▋        | 274/1620 [00:26<02:05, 10.68it/s][A
+Grid Search:  17%|█▋        | 276/1620 [00:26<02:05, 10.68it/s][A
+Grid Search:  17%|█▋        | 278/1620 [00:26<02:05, 10.69it/s][A
+Grid Search:  17%|█▋        | 280/1620 [00:26<02:05, 10.70it/s][A
+Grid Search:  17%|█▋        | 282/1620 [00:26<02:04, 10.71it/s][A
+Grid Search:  18%|█▊        | 284/1620 [00:27<02:04, 10.72it/s][A
+Grid Search:  18%|█▊        | 286/1620 [00:27<02:04, 10.70it/s][A
+Grid Search:  18%|█▊        | 288/1620 [00:27<02:04, 10.68it/s][A
+Grid Search:  18%|█▊        | 290/1620 [00:27<02:04, 10.68it/s][A
+Grid Search:  18%|█▊        | 292/1620 [00:27<02:04, 10.68it/s][A
+Grid Search:  18%|█▊        | 294/1620 [00:27<02:03, 10.70it/s][A
+Grid Search:  18%|█▊        | 296/1620 [00:28<02:03, 10.69it/s][A
+Grid Search:  18%|█▊        | 298/1620 [00:28<02:03, 10.66it/s][A
+Grid Search:  19%|█▊        | 300/1620 [00:28<02:03, 10.66it/s][A
+Grid Search:  19%|█▊        | 302/1620 [00:28<02:03, 10.68it/s][A
+Grid Search:  19%|█▉        | 304/1620 [00:28<02:03, 10.69it/s][A
+Grid Search:  19%|█▉        | 306/1620 [00:29<02:03, 10.67it/s][A
+Grid Search:  19%|█▉        | 308/1620 [00:29<02:02, 10.68it/s][A
+Grid Search:  19%|█▉        | 310/1620 [00:29<02:02, 10.67it/s][A
+Grid Search:  19%|█▉        | 312/1620 [00:29<02:02, 10.66it/s][A
+Grid Search:  19%|█▉        | 314/1620 [00:29<02:02, 10.69it/s][A
+Grid Search:  20%|█▉        | 316/1620 [00:30<02:02, 10.60it/s][A
+Grid Search:  20%|█▉        | 318/1620 [00:30<02:06, 10.28it/s][A
+Grid Search:  20%|█▉        | 320/1620 [00:30<02:06, 10.30it/s][A
+Grid Search:  20%|█▉        | 322/1620 [00:30<02:05, 10.37it/s][A
+Grid Search:  20%|██        | 324/1620 [00:30<02:04, 10.43it/s][A
+Grid Search:  20%|██        | 326/1620 [00:31<02:04, 10.39it/s][A
+Grid Search:  20%|██        | 328/1620 [00:31<02:03, 10.47it/s][A
+Grid Search:  20%|██        | 330/1620 [00:31<02:02, 10.51it/s][A
+Grid Search:  20%|██        | 332/1620 [00:31<02:03, 10.43it/s][A
+Grid Search:  21%|██        | 334/1620 [00:31<02:04, 10.35it/s][A
+Grid Search:  21%|██        | 336/1620 [00:31<02:03, 10.38it/s][A
+Grid Search:  21%|██        | 338/1620 [00:32<02:02, 10.43it/s][A
+Grid Search:  21%|██        | 340/1620 [00:32<02:02, 10.48it/s][A
+Grid Search:  21%|██        | 342/1620 [00:32<02:01, 10.49it/s][A
+Grid Search:  21%|██        | 344/1620 [00:32<02:01, 10.50it/s][A
+Grid Search:  21%|██▏       | 346/1620 [00:32<02:02, 10.44it/s][A
+Grid Search:  21%|██▏       | 348/1620 [00:33<02:01, 10.44it/s][A
+Grid Search:  22%|██▏       | 350/1620 [00:33<02:01, 10.42it/s][A
+Grid Search:  22%|██▏       | 352/1620 [00:33<02:01, 10.45it/s][A
+Grid Search:  22%|██▏       | 354/1620 [00:33<02:00, 10.51it/s][A
+Grid Search:  22%|██▏       | 356/1620 [00:33<02:00, 10.46it/s][A
+Grid Search:  22%|██▏       | 358/1620 [00:34<02:00, 10.44it/s][A
+Grid Search:  22%|██▏       | 360/1620 [00:34<02:00, 10.46it/s][A
+Grid Search:  22%|██▏       | 362/1620 [00:34<01:59, 10.50it/s][A
+Grid Search:  22%|██▏       | 364/1620 [00:34<01:59, 10.55it/s][A
+Grid Search:  23%|██▎       | 366/1620 [00:34<01:58, 10.60it/s][A
+Grid Search:  23%|██▎       | 368/1620 [00:35<01:58, 10.56it/s][A
+Grid Search:  23%|██▎       | 370/1620 [00:35<01:58, 10.59it/s][A
+Grid Search:  23%|██▎       | 372/1620 [00:35<01:57, 10.64it/s][A
+Grid Search:  23%|██▎       | 374/1620 [00:35<01:56, 10.68it/s][A
+Grid Search:  23%|██▎       | 376/1620 [00:35<01:56, 10.69it/s][AGrid Search:  23%|██▎       | 376/1620 [00:35<01:58, 10.51it/s]
+  0%|          | 0/5 [00:35<?, ?it/s]
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_6.py", line 118, in <module>
+    if not claim_config(config_key):
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_6.py", line 74, in claim_config
+    df = pd.read_csv(results_file)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

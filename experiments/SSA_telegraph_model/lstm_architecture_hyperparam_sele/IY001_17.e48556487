@@ -1,0 +1,31 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+  0%|          | 0/5 [00:00<?, ?it/s]
+Grid Search:   0%|          | 0/1620 [00:00<?, ?it/s][AGrid Search:   0%|          | 0/1620 [00:00<?, ?it/s]
+  0%|          | 0/5 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_17.py", line 118, in <module>
+    if not claim_config(config_key):
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_17.py", line 74, in claim_config
+    df = pd.read_csv(results_file)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 12 fields in line 5389, saw 23
+

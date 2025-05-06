@@ -1,0 +1,40 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+  0%|          | 0/5 [00:00<?, ?it/s]
+Grid Search:   0%|          | 0/1620 [00:00<?, ?it/s][A
+Grid Search:   0%|          | 1/1620 [00:00<04:33,  5.91it/s][A
+Grid Search:   0%|          | 2/1620 [00:00<04:31,  5.96it/s][A
+Grid Search:   0%|          | 3/1620 [00:00<04:31,  5.96it/s][A
+Grid Search:   0%|          | 4/1620 [00:00<04:30,  5.97it/s][A
+Grid Search:   0%|          | 5/1620 [00:00<04:29,  5.99it/s][A
+Grid Search:   0%|          | 6/1620 [00:01<04:29,  6.00it/s][A
+Grid Search:   0%|          | 7/1620 [00:01<04:34,  5.89it/s][A
+Grid Search:   0%|          | 8/1620 [00:01<04:33,  5.89it/s][A
+Grid Search:   1%|          | 9/1620 [00:01<04:32,  5.91it/s][A
+Grid Search:   1%|          | 10/1620 [00:01<04:30,  5.94it/s][A
+Grid Search:   1%|          | 11/1620 [00:01<04:30,  5.96it/s][AGrid Search:   1%|          | 11/1620 [00:01<04:30,  5.94it/s]
+  0%|          | 0/5 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_14.py", line 118, in <module>
+    if not claim_config(config_key):
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/SSA_telegraph_model/lstm_architecture_hyperparam_sele/IY001_14.py", line 74, in claim_config
+    df = pd.read_csv(results_file)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
