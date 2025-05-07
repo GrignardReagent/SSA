@@ -12,6 +12,10 @@ def statistical_report(parameter_sets: list, stress_trajectories, normal_traject
         parameter_sets (list): List of parameter sets (dict) for the simulation.
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array): Array of mRNA trajectories for normal condition.
+        
+    Outputs:
+        - Prints the mean and variance of mRNA counts at steady state for both conditions.
+        - Returns a dictionary with the computed statistics: Stressed Mean, Stressed Variance,  Stressed Steady State Time; Normal Mean, Normal Variance, Normal Steady State Time.
     """
 
     # Find steady-state time points

@@ -9028,3 +9028,86 @@ WARNING: If you use conda to create environments, your home directory may fill u
 Grid Search:  77%|███████▋  | 1244/1620 [42:11:11<27:59:07, 267.95s/it][A
 Grid Search:  77%|███████▋  | 1245/1620 [42:11:12<19:32:51, 187.66s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
   return self._call_impl(*args, **kwargs)
+
+Grid Search:  77%|███████▋  | 1246/1620 [42:15:09<21:03:00, 202.62s/it][A
+Grid Search:  77%|███████▋  | 1247/1620 [42:15:09<14:42:19, 141.93s/it][A
+Grid Search:  77%|███████▋  | 1248/1620 [42:15:10<10:16:48, 99.48s/it] [A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  77%|███████▋  | 1249/1620 [42:17:33<11:35:48, 112.53s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  77%|███████▋  | 1250/1620 [42:19:51<12:22:01, 120.33s/it][A
+Grid Search:  77%|███████▋  | 1251/1620 [42:19:52<8:38:35, 84.32s/it]  [A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  77%|███████▋  | 1252/1620 [42:32:05<28:31:56, 279.12s/it][A
+Grid Search:  77%|███████▋  | 1253/1620 [42:32:06<19:55:40, 195.48s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  77%|███████▋  | 1254/1620 [42:53:18<52:42:17, 518.41s/it][A
+Grid Search:  77%|███████▋  | 1255/1620 [42:53:18<36:48:07, 362.98s/it][A
+Grid Search:  78%|███████▊  | 1256/1620 [42:53:18<25:42:01, 254.18s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1257/1620 [43:05:13<39:33:02, 392.24s/it][A
+Grid Search:  78%|███████▊  | 1258/1620 [43:05:13<27:37:07, 274.66s/it][A
+Grid Search:  78%|███████▊  | 1259/1620 [43:05:13<19:17:20, 192.36s/it][A
+Grid Search:  78%|███████▊  | 1260/1620 [43:05:13<13:28:26, 134.74s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1261/1620 [43:10:08<18:13:41, 182.79s/it][A
+Grid Search:  78%|███████▊  | 1262/1620 [43:10:09<12:44:00, 128.05s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1263/1620 [43:15:04<17:40:27, 178.23s/it][A
+Grid Search:  78%|███████▊  | 1264/1620 [43:15:04<12:20:47, 124.85s/it][A
+Grid Search:  78%|███████▊  | 1265/1620 [43:15:05<8:37:38, 87.49s/it]  [A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1266/1620 [43:17:48<10:51:05, 110.36s/it][A
+Grid Search:  78%|███████▊  | 1267/1620 [43:17:49<7:35:02, 77.34s/it]  [A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1268/1620 [43:19:35<8:25:25, 86.15s/it][A
+Grid Search:  78%|███████▊  | 1269/1620 [43:19:36<5:53:20, 60.40s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  78%|███████▊  | 1270/1620 [43:38:40<37:28:31, 385.46s/it][A
+Grid Search:  78%|███████▊  | 1271/1620 [43:38:40<26:10:00, 269.92s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▊  | 1272/1620 [43:56:58<50:07:04, 518.46s/it][A
+Grid Search:  79%|███████▊  | 1273/1620 [43:56:59<34:59:26, 363.02s/it][A
+Grid Search:  79%|███████▊  | 1274/1620 [43:56:59<24:25:54, 254.20s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▊  | 1275/1620 [44:05:11<31:12:06, 325.59s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1276/1620 [44:10:17<30:32:31, 319.63s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1277/1620 [44:14:36<28:43:19, 301.46s/it][A
+Grid Search:  79%|███████▉  | 1278/1620 [44:14:36<20:03:21, 211.12s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1279/1620 [44:24:51<31:28:14, 332.24s/it][A
+Grid Search:  79%|███████▉  | 1280/1620 [44:24:51<21:58:25, 232.66s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1281/1620 [44:35:22<33:08:52, 352.01s/it][A
+Grid Search:  79%|███████▉  | 1282/1620 [44:35:22<23:08:37, 246.50s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1283/1620 [44:40:52<25:24:44, 271.47s/it][A
+Grid Search:  79%|███████▉  | 1284/1620 [44:40:52<17:44:41, 190.12s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1285/1620 [44:43:14<16:21:04, 175.72s/it][A
+Grid Search:  79%|███████▉  | 1286/1620 [44:43:15<11:25:13, 123.09s/it][A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+
+Grid Search:  79%|███████▉  | 1287/1620 [44:46:01<12:35:20, 136.10s/it][A
+Grid Search:  80%|███████▉  | 1288/1620 [44:46:01<8:47:40, 95.36s/it]  [A/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1739: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
