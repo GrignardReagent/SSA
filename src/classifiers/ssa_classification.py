@@ -1,3 +1,8 @@
+#################################################################################
+# THIS FILE IS OBSOLETE AND WILL BE REMOVED IN THE FUTURE
+# All functions have been moved to individual files in src/classifiers/
+#################################################################################
+
 import numpy as np
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score

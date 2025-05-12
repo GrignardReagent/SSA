@@ -54,7 +54,7 @@ The repository provides tools for generating synthetic time series data using th
 The simplest way to generate data is through the `mRNA_traj_sim.ipynb` notebook:
 
 ```python
-from ssa_simulation import simulate_two_telegraph_model_systems
+from simulation.simulate_telegraph_model import simulate_two_telegraph_model_systems
 import numpy as np
 
 # Define parameters for normal and stressed conditions
