@@ -1,7 +1,3 @@
-#################################################################################
-# THIS FILE IS OBSOLETE AND WILL BE REMOVED IN THE FUTURE
-# All functions have been moved to src/simulation/simulate_telegraph_model.py
-#################################################################################
 
 import multiprocessing
 import tqdm

@@ -51,7 +51,14 @@ The repository provides tools for generating synthetic time series data using th
 
 ### Basic Telegraph Model Simulation
 
-The simplest way to generate data is through the `mRNA_traj_sim.ipynb` notebook:
+The package provides two main functions for running simulations:
+
+1. `simulate_two_telegraph_model_systems`: Simulates two different systems (e.g., normal and stressed conditions)
+2. `simulate_one_telegraph_model_system`: Simulates a single system with given parameters
+
+#### Example: Simulating Two Systems (Normal and Stressed Conditions)
+
+The simplest way to generate data for two different conditions is through the `mRNA_traj_sim.ipynb` notebook:
 
 ```python
 from simulation.simulate_telegraph_model import simulate_two_telegraph_model_systems
@@ -76,7 +83,31 @@ df_results = simulate_two_telegraph_model_systems(parameter_sets, time_points, s
 df_results.to_csv("data/mRNA_trajectories_example.csv", index=False)
 ```
 
-The simulator utilizes multiprocessing to speed up simulations across multiple CPU cores.
+#### Example: Simulating a Single System
+
+You can also simulate a single system with specific parameters:
+
+```python
+from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
+import numpy as np
+
+# Define parameters for a single condition
+parameter_set = {"sigma_u": 0.1, "sigma_b": 0.1, "rho": 10.0, "d": 1.0, "label": 0}
+
+# Time points for simulation
+time_points = np.arange(0, 144.0, 1.0)
+
+# Number of trajectories to generate
+size = 200
+
+# Run simulation for a single system
+df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size)
+
+# Save dataset
+df_results.to_csv("data/mRNA_trajectories_single_system.csv", index=False)
+```
+
+Both simulators utilize multiprocessing to speed up simulations across multiple CPU cores.
 
 ## 📓 Notebook Guide
 
