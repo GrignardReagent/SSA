@@ -144,23 +144,29 @@ All experimental details and results are/will be systematically documented in an
 
 ## 📂 Source Code Organization
 
-The `src` directory contains the following modules and packages:
-
-### Core Modules
-- **ssa_simulation.py** - Core implementation of the Stochastic Simulation Algorithm
-- **ssa_analysis.py** - Statistical analysis tools for time series data
-- **ssa_classification.py** - Helper functions for classification tasks
+The `src` directory is organized into the following subdirectories:
 
 ### Subdirectories
+- **simulation/** - Core simulation capabilities and models:
+  - `simulate_telegraph_model.py` - Implementation of the Stochastic Simulation Algorithm (SSA) for telegraph model
+- **classifiers/** - Classification algorithms for time series data:
+  - `svm_classifier.py` - Support Vector Machine classifier
+  - `random_forest_classifier.py` - Random Forest classifier 
+  - `logistic_regression_classifier.py` - Logistic Regression classifier
+  - `random_classifier.py` - Random baseline classifier
+- **stats/** - Statistical analysis tools:
+  - `report.py` - Statistical reporting functions
+  - `autocorrelation.py` - Auto-correlation and cross-correlation analysis
 - **models/** - Neural network model implementations:
-  - `lstm.py` - LSTM classifier and regressor implementations
+  - `MLP.py` - Multilayer Perceptron implementation
+  - `LSTM.py` - LSTM classifier and regressor implementations
   - `transformer.py` - Transformer-based time series models
-  - `mlp.py` - Simple feedforward neural networks
-- **utils/** - Utility functions for data loading, preprocessing and visualization
-- **simulation/** - Extended simulation capabilities and models
-- **classifiers/** - Additional classification algorithms and wrappers
-- **stats/** - Statistical analysis tools
-- **visualisation/** - Plotting and visualization tools
+- **utils/** - Utility functions for data loading and preprocessing:
+  - `load_data.py` - Data loading utilities
+  - `set_seed.py` - Random seed setting for reproducibility
+  - `steady_state.py` - Steady state detection functions
+- **visualisation/** - Plotting and visualization tools:
+  - `plots.py` - Functions for plotting trajectories, distributions, and analysis results
 
 ## 📜 Acknowledgements
 This project is part of my PhD research, focusing on understanding and characterizing metabolic oscillations of yeast cells using mathematical modeling and machine learning. 
