@@ -51,6 +51,7 @@ from classifiers.random_forest_classifier import random_forest_classifier
 from classifiers.logistic_regression_classifier import logistic_regression_classifier
 from classifiers.mlp_classifier import mlp_classifier
 from classifiers.random_classifier import random_classifier
+from classifiers.transformer_classifier import transformer_classifier
 
 ###############################################################################
 # 1) Define target mean, variance and autocorrelations, and some parameters to start with
@@ -129,7 +130,7 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
     ###########################################################################
     for i in range(num_iterations):
 
-        output_dir = f"/home/ianyang/stochastic_simulations/experiments/SSA_telegraph_model/var_v_accuracy_plot/data_12_04_2025/mRNA_trajectories_variance_{int(variance_target_stress)}_{int(variance_target_normal)}"
+        output_dir = f"/home/ianyang/stochastic_simulations/experiments/EXP-25-IY004/var_v_accuracy_plot/data_12_04_2025/mRNA_trajectories_variance_{int(variance_target_stress)}_{int(variance_target_normal)}"
         os.makedirs(output_dir, exist_ok=True)
         # save full time series
         output_file = f"{output_dir}/m_traj_{variance_target_stress}_{variance_target_normal}_{i}.csv"
@@ -157,7 +158,7 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
         rf_accuracy = random_forest_classifier(X_train, X_test, y_train, y_test)
         log_reg_accuracy = logistic_regression_classifier(X_train, X_test, y_train, y_test)
         mlp_accuracy = mlp_classifier(X_train, X_val, X_test, y_train, y_val, y_test, epochs=100)
-        # vinilla LSTM, not finetuned
+        # vanilla LSTM, not finetuned
         lstm_accuracy = lstm_classifier(X_train, X_val, X_test, y_train, y_val, y_test, epochs=50,
                                         use_conv1d=False, use_attention=False, use_auxiliary=False)
         # Train and evaluate model using best hyperparams and architecture from IY001
@@ -174,6 +175,18 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
             num_attention_heads=4 if best_arch_config['attention'] else 0,
             use_auxiliary=best_arch_config['aux'],
         )
+        # Vanilla Transformer, not finetuned
+        transformer_accuracy = transformer_classifier(
+            X_train, X_val, X_test, y_train, y_val, y_test, 
+            d_model=64, nhead=4, num_layers=2, epochs=50,
+            use_conv1d=False, use_auxiliary=False
+        )
+        # Transformer with Conv1D and auxiliary task
+        transformer_full_accuracy = transformer_classifier(
+            X_train, X_val, X_test, y_train, y_val, y_test, 
+            d_model=128, nhead=8, num_layers=4, epochs=50,
+            use_conv1d=True, use_auxiliary=True
+        )
         random_accuracy = random_classifier(y_test)
 
         # Record results
@@ -189,10 +202,12 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
             "Random Classifier Accuracy": [random_accuracy],
             "Vanilla LSTM Accuracy": [lstm_accuracy],
             "IY001A Accuracy": [iy001a_lstm_accuracy],
+            "Vanilla Transformer Accuracy": [transformer_accuracy],
+            "Full Transformer Accuracy": [transformer_full_accuracy],
         })
 
         # Save results
-        results_file = "data/IY004A.csv"
+        results_file = "data/IY004B.csv"
         if not os.path.isfile(results_file):
             df_acc_results.to_csv(results_file, index=False)
         else:

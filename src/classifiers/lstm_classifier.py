@@ -9,7 +9,7 @@ from utils.set_seed import set_seed
 def lstm_classifier(X_train, X_val, X_test, y_train, y_val, y_test, 
                     input_size=None, hidden_size=64, num_layers=2, 
                     output_size=None, dropout_rate=0.3, learning_rate=0.001, 
-                    batch_size=64, epochs=50, patience=10, bidirectional=True, use_conv1d=False, use_attention=False, num_attention_heads=1, use_auxiliary=False, save_path=None):
+                    batch_size=64, epochs=100, patience=10, bidirectional=True, use_conv1d=True, use_attention=True, num_attention_heads=4, use_auxiliary=False, save_path=None):
     """ 
     Trains an LSTM model for classification and evaluates it. 
     This is a high-level wrapper for quick usage.
