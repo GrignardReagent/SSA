@@ -10,7 +10,9 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
                           input_size=None, d_model=64, nhead=4, num_layers=2,
                           output_size=None, dropout_rate=0.2, learning_rate=0.001, 
                           batch_size=64, epochs=50, patience=10, optimizer='Adam',
-                          use_conv1d=False, use_auxiliary=False, aux_weight=0.1, save_path=None):
+                          use_conv1d=False, use_auxiliary=False, aux_weight=0.1,
+                          pooling_strategy='last', use_mask=False, gradient_clip=1.0, 
+                          save_path=None):
     """ 
     Trains a Transformer model for classification and evaluates it. 
     This is a high-level wrapper for quick usage.
@@ -32,6 +34,9 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
         use_conv1d: Whether to use Conv1D preprocessing (default: False)
         use_auxiliary: Whether to use auxiliary task (default: False)
         aux_weight: Weight for auxiliary loss (default: 0.1)
+        pooling_strategy: How to pool sequence outputs ('last', 'mean', 'learnable') (default: 'last')
+        use_mask: Whether to use attention masking for variable length sequences (default: False)
+        gradient_clip: Value for gradient clipping (default: 1.0)
         save_path: Path to save the best model (default: None)
         
     Returns:
@@ -48,14 +53,37 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
 
     # === Standardize ===
     scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_val = scaler.transform(X_val)
-    X_test = scaler.transform(X_test)
-
-    # === Reshape for Transformer: (batch, seq_len, features) ===
-    X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], input_size))
-    X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], input_size))
-    X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], input_size))
+    # Check if input is already 3D (time series data)
+    if len(X_train.shape) == 3:
+        # Reshape 3D data to 2D for scaling
+        original_shape_train = X_train.shape
+        original_shape_val = X_val.shape
+        original_shape_test = X_test.shape
+        
+        # Reshape to 2D: (batch * seq_len, features)
+        X_train_2d = X_train.reshape(-1, X_train.shape[-1])
+        X_val_2d = X_val.reshape(-1, X_val.shape[-1])
+        X_test_2d = X_test.reshape(-1, X_test.shape[-1])
+        
+        # Scale the data
+        X_train_2d = scaler.fit_transform(X_train_2d)
+        X_val_2d = scaler.transform(X_val_2d)
+        X_test_2d = scaler.transform(X_test_2d)
+        
+        # Reshape back to 3D
+        X_train = X_train_2d.reshape(original_shape_train)
+        X_val = X_val_2d.reshape(original_shape_val)
+        X_test = X_test_2d.reshape(original_shape_test)
+    else:
+        # Regular 2D data handling
+        X_train = scaler.fit_transform(X_train)
+        X_val = scaler.transform(X_val)
+        X_test = scaler.transform(X_test)
+        
+        # === Reshape for Transformer: (batch, seq_len, features) ===
+        X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], input_size))
+        X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], input_size))
+        X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], input_size))
 
     # === Convert to tensors and loaders ===
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
@@ -81,7 +109,10 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
         optimizer=optimizer,
         use_conv1d=use_conv1d,
         use_auxiliary=use_auxiliary,
-        aux_weight=aux_weight
+        aux_weight=aux_weight,
+        pooling_strategy=pooling_strategy,
+        use_mask=use_mask,
+        gradient_clip=gradient_clip
     )
 
     model.train_model(train_loader, val_loader, epochs=epochs, patience=patience, save_path=save_path)

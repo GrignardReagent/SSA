@@ -1,0 +1,204 @@
+🚀 DEMONSTRATING TRANSFORMER CLASSIFIER WITH IMPROVED ARCHITECTURE
+================================================================================
+
+🔍 Demo 1: Basic transformer with default settings
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/10], Loss: 4.5388, Train Acc: 0.3048
+Validation Acc: 0.2944
+Epoch [2/10], Loss: 3.9540, Train Acc: 0.3202
+Validation Acc: 0.4611
+Epoch [3/10], Loss: 3.3981, Train Acc: 0.3810
+Validation Acc: 0.5722
+Epoch [4/10], Loss: 3.0645, Train Acc: 0.4012
+Validation Acc: 0.6611
+Epoch [5/10], Loss: 2.8643, Train Acc: 0.3964
+Validation Acc: 0.7056
+Epoch [6/10], Loss: 2.5844, Train Acc: 0.4488
+Validation Acc: 0.7278
+Epoch [7/10], Loss: 2.5773, Train Acc: 0.4655
+Validation Acc: 0.7333
+Epoch [8/10], Loss: 2.3253, Train Acc: 0.4583
+Validation Acc: 0.7333
+No improvement (1/5).
+Epoch [9/10], Loss: 2.3228, Train Acc: 0.4845
+Validation Acc: 0.7333
+No improvement (2/5).
+Epoch [10/10], Loss: 2.5496, Train Acc: 0.4679
+Validation Acc: 0.7333
+No improvement (3/5).
+Training complete!
+Test Accuracy: 0.6944
+
+🔍 Demo 2: Transformer with Conv1D preprocessing
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/10], Loss: 5.5007, Train Acc: 0.3095
+Validation Acc: 0.3056
+Epoch [2/10], Loss: 4.0369, Train Acc: 0.3464
+Validation Acc: 0.3778
+Epoch [3/10], Loss: 3.3436, Train Acc: 0.3440
+Validation Acc: 0.4833
+Epoch [4/10], Loss: 2.7202, Train Acc: 0.3643
+Validation Acc: 0.5222
+Epoch [5/10], Loss: 2.7635, Train Acc: 0.3798
+Validation Acc: 0.5556
+Epoch [6/10], Loss: 2.4178, Train Acc: 0.4298
+Validation Acc: 0.5667
+Epoch [7/10], Loss: 2.4101, Train Acc: 0.4393
+Validation Acc: 0.5722
+Epoch [8/10], Loss: 2.2072, Train Acc: 0.4619
+Validation Acc: 0.5778
+Epoch [9/10], Loss: 2.3688, Train Acc: 0.4476
+Validation Acc: 0.5722
+No improvement (1/5).
+Epoch [10/10], Loss: 2.1734, Train Acc: 0.4488
+Validation Acc: 0.5722
+No improvement (2/5).
+Training complete!
+Test Accuracy: 0.5333
+
+🔍 Demo 3: Transformer with mean pooling and gradient clipping
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/10], Loss: 2.1925, Train Acc: 0.3548
+Validation Acc: 0.6111
+Epoch [2/10], Loss: 1.7301, Train Acc: 0.3750
+Validation Acc: 0.6278
+Epoch [3/10], Loss: 1.4228, Train Acc: 0.3964
+Validation Acc: 0.6944
+Epoch [4/10], Loss: 1.2760, Train Acc: 0.4321
+Validation Acc: 0.6778
+No improvement (1/5).
+Epoch [5/10], Loss: 1.1400, Train Acc: 0.4762
+Validation Acc: 0.6833
+No improvement (2/5).
+Epoch [6/10], Loss: 1.1108, Train Acc: 0.4952
+Validation Acc: 0.6833
+No improvement (3/5).
+Epoch [7/10], Loss: 1.0314, Train Acc: 0.5202
+Validation Acc: 0.6944
+No improvement (4/5).
+Epoch [8/10], Loss: 1.0785, Train Acc: 0.4929
+Validation Acc: 0.6944
+No improvement (5/5).
+Stopping early! No improvement for 5 epochs.
+Training complete!
+Test Accuracy: 0.7056
+
+🔍 Demo 4: Transformer with learnable pooling
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/10], Loss: 237.5441, Train Acc: 0.3202
+Validation Acc: 0.3333
+Epoch [2/10], Loss: 106.9638, Train Acc: 0.3226
+Validation Acc: 0.4111
+Epoch [3/10], Loss: 60.4865, Train Acc: 0.4012
+Validation Acc: 0.5278
+Epoch [4/10], Loss: 48.0366, Train Acc: 0.3881
+Validation Acc: 0.6333
+Epoch [5/10], Loss: 45.9735, Train Acc: 0.3940
+Validation Acc: 0.6056
+No improvement (1/5).
+Epoch [6/10], Loss: 32.8239, Train Acc: 0.4571
+Validation Acc: 0.6056
+No improvement (2/5).
+Epoch [7/10], Loss: 31.6447, Train Acc: 0.4440
+Validation Acc: 0.6222
+No improvement (3/5).
+Epoch [8/10], Loss: 26.6963, Train Acc: 0.4952
+Validation Acc: 0.6222
+No improvement (4/5).
+Epoch [9/10], Loss: 29.2148, Train Acc: 0.4452
+Validation Acc: 0.6278
+No improvement (5/5).
+Stopping early! No improvement for 5 epochs.
+Training complete!
+Test Accuracy: 0.5889
+
+🔍 Demo 5: Full feature set with norm_first transformer and auxiliary task
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/15], Loss: 4.0701, Train Acc: 0.3679
+Validation Acc: 0.3778
+Epoch [2/15], Loss: 2.9785, Train Acc: 0.3524
+Validation Acc: 0.4944
+Epoch [3/15], Loss: 2.0060, Train Acc: 0.3726
+Validation Acc: 0.4833
+No improvement (1/5).
+Epoch [4/15], Loss: 1.6157, Train Acc: 0.4048
+Validation Acc: 0.4500
+No improvement (2/5).
+Epoch [5/15], Loss: 1.5088, Train Acc: 0.3786
+Validation Acc: 0.6333
+Epoch [6/15], Loss: 1.4042, Train Acc: 0.4286
+Validation Acc: 0.6111
+No improvement (1/5).
+Epoch [7/15], Loss: 1.3214, Train Acc: 0.4262
+Validation Acc: 0.6444
+Epoch [8/15], Loss: 1.2387, Train Acc: 0.4786
+Validation Acc: 0.6167
+No improvement (1/5).
+Epoch [9/15], Loss: 1.2488, Train Acc: 0.4524
+Validation Acc: 0.6111
+No improvement (2/5).
+Epoch [10/15], Loss: 1.1922, Train Acc: 0.5012
+Validation Acc: 0.6722
+Epoch [11/15], Loss: 1.1792, Train Acc: 0.5214
+Validation Acc: 0.6556
+No improvement (1/5).
+Epoch [12/15], Loss: 1.1754, Train Acc: 0.4857
+Validation Acc: 0.6778
+Epoch [13/15], Loss: 1.1838, Train Acc: 0.5131
+Validation Acc: 0.6833
+Epoch [14/15], Loss: 1.1337, Train Acc: 0.5333
+Validation Acc: 0.6833
+No improvement (1/5).
+Epoch [15/15], Loss: 1.1721, Train Acc: 0.5250
+Validation Acc: 0.6778
+No improvement (2/5).
+Training complete!
+Test Accuracy: 0.6778
+
+📊 RESULTS COMPARISON
+==================================================
+Basic Transformer: 0.6944
+With Conv1D: 0.5333
+With Mean Pooling: 0.7056
+With Learnable Pooling: 0.5889
+Advanced Configuration: 0.6778
+
+🔍 Using the high-level wrapper function
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/10], Loss: 1.9491, Train Acc: 0.3679
+Validation Acc: 0.3944
+Epoch [2/10], Loss: 1.8519, Train Acc: 0.3619
+Validation Acc: 0.4333
+Epoch [3/10], Loss: 1.5637, Train Acc: 0.3881
+Validation Acc: 0.4611
+Epoch [4/10], Loss: 1.4730, Train Acc: 0.3881
+Validation Acc: 0.4889
+Epoch [5/10], Loss: 1.3668, Train Acc: 0.4274
+Validation Acc: 0.4889
+No improvement (1/10).
+Epoch [6/10], Loss: 1.2991, Train Acc: 0.3952
+Validation Acc: 0.5278
+Epoch [7/10], Loss: 1.2131, Train Acc: 0.4333
+Validation Acc: 0.5611
+Epoch [8/10], Loss: 1.2072, Train Acc: 0.4548
+Validation Acc: 0.5611
+No improvement (1/10).
+Epoch [9/10], Loss: 1.2151, Train Acc: 0.4333
+Validation Acc: 0.5667
+Epoch [10/10], Loss: 1.2777, Train Acc: 0.4298
+Validation Acc: 0.5722
+Training complete!
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+Test Accuracy from wrapper: 0.5889

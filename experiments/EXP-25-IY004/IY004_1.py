@@ -181,7 +181,7 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
             d_model=64, nhead=4, num_layers=2, epochs=50,
             use_conv1d=False, use_auxiliary=False
         )
-        # Transformer with Conv1D and auxiliary task
+        # Transformer with Conv1D and auxiliary task, not finetuned
         transformer_full_accuracy = transformer_classifier(
             X_train, X_val, X_test, y_train, y_val, y_test, 
             d_model=128, nhead=8, num_layers=4, epochs=50,

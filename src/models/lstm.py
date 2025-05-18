@@ -210,7 +210,7 @@ class LSTMClassifier(nn.Module):
                 history['val_acc'].append(val_acc)
                 print(f"Validation Acc: {val_acc:.4f}")
 
-                model.scheduler.step(val_acc)
+                self.scheduler.step(val_acc)  # Fixed: Changed from model.scheduler to self.scheduler
 
                 if val_acc > best_val_acc:
                     best_val_acc = val_acc
