@@ -4,6 +4,8 @@ import sympy as sp
 from sympy import init_printing
 import numpy as np
 from scipy.optimize import fsolve
+from utils.fano_factor import calculate_fano_factor
+from utils.cv import calculate_cv
 
 # Define symbols globally for reuse
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
@@ -76,7 +78,8 @@ def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targe
 
 
 def find_parameters(parameter_set, mu_target=None, variance_target=None, autocorr_target=None,
-                    rho_range=(1, 1000), sigma_b_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000):
+                    rho_range=(1, 1000), sigma_b_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000, 
+                    check_biological=True, max_fano_factor=20, max_cv=5.0):
     """
     Find parameters rho, sigma_b, and d that satisfy the equations for given target mean/variance/autocorrelation (at t=1).
     Args:s
@@ -88,6 +91,9 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
         sigma_b_range (tuple): Range for sigma_b.
         d_range (tuple): Range for d.
         num_guesses (int): Number of random guesses to try.
+        check_biological (bool): Whether to check if the solution is biologically appropriate.
+        max_fano_factor (float): Maximum allowed Fano factor for a biologically appropriate solution.
+        max_cv (float): Maximum allowed coefficient of variation for a biologically appropriate solution.
     Returns:
         tuple: A tuple containing the found parameters (rho, sigma_b, d).
     """
@@ -169,14 +175,27 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
                     fprime=jacobian,
                     xtol=1e-8
                 )
-                # print(f"Solution: {solution}")
 
                 residuals = equations(solution, sigma_u_val, mu_target, variance_target, autocorr_target)
                 residuals = np.abs(residuals)
-                # print(f"Residuals: {residuals}")
 
                 if all(res < 1e-4 for res in residuals) and all(x > 0 for x in solution):
-                    # print(f"Found solution: {solution}")
+                    # Check biological appropriateness if required
+                    if check_biological:
+                        rho_val, sigma_b_val, d_val = solution
+                        
+                        # Check Fano factor
+                        fano_factor = calculate_fano_factor(rho_val, sigma_b_val, d_val, sigma_u_val)
+                        
+                        # Check coefficient of variation 
+                        cv = calculate_cv(variance_target, mu_target)
+                        if cv >= max_cv:
+                            print(f"WARNING: Solution found but CV {cv:.2f} > {max_cv}, consider changing the target variance or mean.")
+                        if fano_factor >= max_fano_factor:
+                            print(f"WARNING: Solution found but Fano factor {fano_factor:.2f} > {max_fano_factor}, consider changing the target parameters.")
+                        else:
+                            print(f"Found biologically appropriate solution with Fano factor: {fano_factor:.2f}")
+                        
                     return solution
             except Exception:
                 continue
