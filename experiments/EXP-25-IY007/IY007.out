@@ -1,0 +1,2277 @@
+Finding parameters where all CV ratios are biologically appropriate...
+
+Testing parameters: CV normal = 0.80, Mean = 15.00
+✅ System is biologically appropriate with Fano factor: 9.60, CV: 0.80
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 2.40, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 2.50, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 2.60, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 2.70, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 2.80, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 2.90, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 3.01, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 3.12, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 3.23, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 3.34, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 3.46, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 3.57, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 3.69, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 3.81, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 3.93, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 4.06, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 4.18, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 4.31, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 4.44, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 4.57, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 4.70, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 4.84, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 4.98, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 5.12, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 5.26, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 5.40, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 5.54, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 5.69, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 5.84, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 5.99, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 6.14, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 6.30, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 6.46, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 6.61, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 6.77, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 6.94, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 7.10, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 7.27, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 7.43, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 7.60, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 7.78, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 7.95, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 8.13, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 8.30, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 8.48, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 8.66, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 8.85, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 9.03, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 9.22, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 9.41, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 9.60, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 9.79, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 9.99, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 10.18, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 10.38, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 10.58, CV: 0.84
+✅ System is biologically appropriate with Fano factor: 10.79, CV: 0.85
+✅ System is biologically appropriate with Fano factor: 10.99, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 11.20, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 11.41, CV: 0.87
+✅ System is biologically appropriate with Fano factor: 11.62, CV: 0.88
+✅ System is biologically appropriate with Fano factor: 11.83, CV: 0.89
+✅ System is biologically appropriate with Fano factor: 12.04, CV: 0.90
+✅ System is biologically appropriate with Fano factor: 12.26, CV: 0.90
+✅ System is biologically appropriate with Fano factor: 12.48, CV: 0.91
+✅ System is biologically appropriate with Fano factor: 12.70, CV: 0.92
+✅ System is biologically appropriate with Fano factor: 12.92, CV: 0.93
+✅ System is biologically appropriate with Fano factor: 13.14, CV: 0.94
+✅ System is biologically appropriate with Fano factor: 13.37, CV: 0.94
+✅ System is biologically appropriate with Fano factor: 13.59, CV: 0.95
+✅ System is biologically appropriate with Fano factor: 13.82, CV: 0.96
+✅ System is biologically appropriate with Fano factor: 14.06, CV: 0.97
+✅ System is biologically appropriate with Fano factor: 14.29, CV: 0.98
+✅ System is biologically appropriate with Fano factor: 14.52, CV: 0.98
+✅ System is biologically appropriate with Fano factor: 14.76, CV: 0.99
+✅ System is biologically appropriate with Fano factor: 15.00, CV: 1.00
+✅ System is biologically appropriate with Fano factor: 15.24, CV: 1.01
+✅ System is biologically appropriate with Fano factor: 15.48, CV: 1.02
+✅ System is biologically appropriate with Fano factor: 15.73, CV: 1.02
+✅ System is biologically appropriate with Fano factor: 15.98, CV: 1.03
+✅ System is biologically appropriate with Fano factor: 16.22, CV: 1.04
+✅ System is biologically appropriate with Fano factor: 16.47, CV: 1.05
+✅ System is biologically appropriate with Fano factor: 16.73, CV: 1.06
+✅ System is biologically appropriate with Fano factor: 16.98, CV: 1.06
+✅ System is biologically appropriate with Fano factor: 17.24, CV: 1.07
+✅ System is biologically appropriate with Fano factor: 17.50, CV: 1.08
+✅ System is biologically appropriate with Fano factor: 17.76, CV: 1.09
+✅ System is biologically appropriate with Fano factor: 18.02, CV: 1.10
+✅ System is biologically appropriate with Fano factor: 18.28, CV: 1.10
+✅ System is biologically appropriate with Fano factor: 18.55, CV: 1.11
+✅ System is biologically appropriate with Fano factor: 18.82, CV: 1.12
+✅ System is biologically appropriate with Fano factor: 19.09, CV: 1.13
+✅ System is biologically appropriate with Fano factor: 19.36, CV: 1.14
+✅ System is biologically appropriate with Fano factor: 19.63, CV: 1.14
+✅ System is biologically appropriate with Fano factor: 19.91, CV: 1.15
+⚠️ WARNING: Fano factor 20.18 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.03 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.31 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.89 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.18 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.77 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.06 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.36 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.97 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.27 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.58 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.88 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 292353.90it/s]
+
+⚠️ WARNING: Fano factor 25.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.51 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.82 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.14 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.45 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.77 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.42 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.07 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.73 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.06 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.08 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.42 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.45 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.80 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.15 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.50 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.86 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.21 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.57 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.29 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.02 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.13 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.50 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.88 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 37.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 37.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 38.02 > 20, consider changing the target parameters.
+⚠️ 55 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.4500000000000008, 1.4600000000000009, 1.4700000000000009, 1.4800000000000009, 1.4900000000000009]
+
+Testing parameters: CV normal = 0.64, Mean = 22.50
+✅ System is biologically appropriate with Fano factor: 9.22, CV: 0.64
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 2.30, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 2.40, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 2.49, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 2.59, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 2.69, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 2.79, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 2.89, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 2.99, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 3.10, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 3.21, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 3.32, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 3.43, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 3.54, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 3.66, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 3.77, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 3.89, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 4.01, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 4.14, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 4.26, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 4.39, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 4.52, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 4.65, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 4.78, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 4.91, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 5.05, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 5.18, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 5.32, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 5.46, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 5.61, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 5.75, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 5.90, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 6.05, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 6.20, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 6.35, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 6.50, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 6.66, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 6.82, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 6.98, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 7.14, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 7.30, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 7.46, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 7.63, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 7.80, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 7.97, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 8.14, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 8.32, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 8.49, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 8.67, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 8.85, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 9.03, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 9.22, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 9.40, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 9.59, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 9.78, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 9.97, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 10.16, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 10.36, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 10.55, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 10.75, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 10.95, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 11.15, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 11.36, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 11.56, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 11.77, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 11.98, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 12.19, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 12.40, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 12.62, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 12.83, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 13.05, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 13.27, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 13.49, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 13.72, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 13.94, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 14.17, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 14.40, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 14.63, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 14.86, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 15.10, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 15.34, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 15.58, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 15.82, CV: 0.84
+✅ System is biologically appropriate with Fano factor: 16.06, CV: 0.84
+✅ System is biologically appropriate with Fano factor: 16.30, CV: 0.85
+✅ System is biologically appropriate with Fano factor: 16.55, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 16.80, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 17.05, CV: 0.87
+✅ System is biologically appropriate with Fano factor: 17.30, CV: 0.88
+✅ System is biologically appropriate with Fano factor: 17.55, CV: 0.88
+✅ System is biologically appropriate with Fano factor: 17.81, CV: 0.89
+✅ System is biologically appropriate with Fano factor: 18.06, CV: 0.90
+✅ System is biologically appropriate with Fano factor: 18.32, CV: 0.90
+✅ System is biologically appropriate with Fano factor: 18.58, CV: 0.91
+✅ System is biologically appropriate with Fano factor: 18.85, CV: 0.92
+✅ System is biologically appropriate with Fano factor: 19.11, CV: 0.92
+✅ System is biologically appropriate with Fano factor: 19.38, CV: 0.93
+✅ System is biologically appropriate with Fano factor: 19.64, CV: 0.93
+✅ System is biologically appropriate with Fano factor: 19.91, CV: 0.94
+⚠️ WARNING: Fano factor 20.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.01 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.29 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.57 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.86 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.14 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.43 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.72 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.01 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.30 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.59 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.89 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 346064.69it/s]
+
+⚠️ WARNING: Fano factor 24.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.09 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.70 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.01 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.32 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.63 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.95 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.58 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.90 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.22 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.55 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.87 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.86 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.86 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.54 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.88 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.57 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.92 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.27 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.62 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.97 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.33 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.69 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.77 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.13 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.50 > 20, consider changing the target parameters.
+⚠️ 52 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.4800000000000009, 1.4900000000000009, 1.5000000000000009, 1.510000000000001, 1.520000000000001]
+
+Testing parameters: CV normal = 0.60, Mean = 25.50
+✅ System is biologically appropriate with Fano factor: 9.18, CV: 0.60
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 2.30, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 2.39, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 2.48, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 2.58, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 2.68, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 2.78, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 2.88, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 2.98, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 3.09, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 3.20, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 3.30, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 3.42, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 3.53, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 3.64, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 3.76, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 3.88, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 4.00, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 4.12, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 4.24, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 4.37, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 4.50, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 4.63, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 4.89, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 5.03, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 5.16, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 5.30, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 5.44, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 5.59, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 5.73, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 5.88, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 6.02, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 6.17, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 6.32, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 6.48, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 6.63, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 6.79, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 6.95, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 7.11, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 7.27, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 7.44, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 7.60, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 7.77, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 7.94, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 8.11, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 8.28, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 8.46, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 8.64, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 8.82, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 9.00, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 9.18, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 9.36, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 9.55, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 9.74, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 9.93, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 10.12, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 10.31, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 10.51, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 10.71, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 10.91, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 11.11, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 11.31, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 11.52, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 11.72, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 11.93, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 12.14, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 12.35, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 12.57, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 12.78, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 13.00, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 13.22, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 13.44, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 13.66, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 13.89, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 14.12, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 14.34, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 14.57, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 14.81, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 15.04, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 15.28, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 15.51, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 15.75, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 16.00, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 16.24, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 16.48, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 16.73, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 16.98, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 17.23, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 17.48, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 17.74, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 17.99, CV: 0.84
+✅ System is biologically appropriate with Fano factor: 18.25, CV: 0.85
+✅ System is biologically appropriate with Fano factor: 18.51, CV: 0.85
+✅ System is biologically appropriate with Fano factor: 18.77, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 19.04, CV: 0.86
+✅ System is biologically appropriate with Fano factor: 19.30, CV: 0.87
+✅ System is biologically appropriate with Fano factor: 19.57, CV: 0.88
+✅ System is biologically appropriate with Fano factor: 19.84, CV: 0.88
+⚠️ WARNING: Fano factor 20.11 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.38 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.21 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.77 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.05 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.34 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.63 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.92 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.21 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.50 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.80 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 356052.97it/s]
+
+⚠️ WARNING: Fano factor 24.09 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.69 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.99 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.30 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.91 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.22 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.84 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.16 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.11 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.44 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.09 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.41 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.07 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.41 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.08 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.42 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.45 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.14 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.84 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.55 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.91 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.27 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.63 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.99 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 36.35 > 20, consider changing the target parameters.
+⚠️ 52 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.4800000000000009, 1.4900000000000009, 1.5000000000000009, 1.510000000000001, 1.520000000000001]
+
+Testing parameters: CV normal = 0.56, Mean = 28.50
+✅ System is biologically appropriate with Fano factor: 8.94, CV: 0.56
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 2.23, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.32, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 2.42, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 2.51, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 2.61, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 2.70, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 2.80, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 2.90, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.01, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.11, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 3.22, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 3.33, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 3.44, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 3.55, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 3.66, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 3.78, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 3.89, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 4.01, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 4.13, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 4.26, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 4.38, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 4.51, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 4.63, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 4.89, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 5.03, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 5.16, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 5.30, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 5.44, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 5.58, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 5.72, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 5.86, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 6.01, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 6.16, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 6.31, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 6.46, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 6.61, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 6.76, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 6.92, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 7.08, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 7.24, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 7.40, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 7.56, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 7.73, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 7.90, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 8.07, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 8.24, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 8.41, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 8.58, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 8.76, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 8.94, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 9.12, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 9.30, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 9.48, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 9.67, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 9.85, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 10.04, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 10.23, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 10.42, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 10.62, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 10.81, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 11.01, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 11.21, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 11.41, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 11.62, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 11.82, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 12.03, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 12.23, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 12.44, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 12.66, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 12.87, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 13.09, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 13.30, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 13.52, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 13.74, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 13.97, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 14.19, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 14.42, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 14.64, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 14.87, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 15.10, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 15.34, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 15.57, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 15.81, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 16.05, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 16.29, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 16.53, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 16.77, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 17.02, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 17.27, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 17.52, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 17.77, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 18.02, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 18.28, CV: 0.80
+✅ System is biologically appropriate with Fano factor: 18.53, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 18.79, CV: 0.81
+✅ System is biologically appropriate with Fano factor: 19.05, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 19.31, CV: 0.82
+✅ System is biologically appropriate with Fano factor: 19.58, CV: 0.83
+✅ System is biologically appropriate with Fano factor: 19.84, CV: 0.83
+⚠️ WARNING: Fano factor 20.11 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.38 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.65 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.92 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.03 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.31 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.88 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.17 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 354248.65it/s]
+
+⚠️ WARNING: Fano factor 23.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.33 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.63 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.83 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.13 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.44 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.06 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.37 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.69 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.32 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.96 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.28 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.59 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.92 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.25 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.59 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.61 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.95 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.29 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.99 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.33 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 34.69 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 35.39 > 20, consider changing the target parameters.
+⚠️ 50 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.5000000000000009, 1.510000000000001, 1.520000000000001, 1.530000000000001, 1.540000000000001]
+
+Testing parameters: CV normal = 0.52, Mean = 31.50
+✅ System is biologically appropriate with Fano factor: 8.52, CV: 0.52
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 2.13, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.22, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.30, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.39, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.48, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.58, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 2.67, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 2.77, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 2.87, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 2.96, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.07, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.17, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.27, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.38, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 3.49, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 3.60, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 3.71, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 3.82, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 3.94, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 4.06, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.17, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.29, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 4.42, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 4.54, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 4.66, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 4.79, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 4.92, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 5.05, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 5.18, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 5.32, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 5.45, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 5.59, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 5.73, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 5.87, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 6.01, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 6.15, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 6.30, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 6.45, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 6.60, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 6.75, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 6.90, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 7.05, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 7.21, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 7.37, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 7.53, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 7.69, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 7.85, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 8.01, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 8.18, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 8.35, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 8.52, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 8.69, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 8.86, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 9.04, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 9.21, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 9.39, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 9.57, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 9.75, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 9.93, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 10.12, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 10.31, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 10.49, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 10.68, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 10.88, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 11.07, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 11.26, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 11.46, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 11.66, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 11.86, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 12.06, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 12.27, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 12.47, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 12.68, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 12.89, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 13.10, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 13.31, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 13.52, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 13.74, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 13.96, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 14.17, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 14.39, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 14.62, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 14.84, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 15.07, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 15.29, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 15.52, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 15.75, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 15.99, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 16.22, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 16.46, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 16.69, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 16.93, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 17.17, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 17.42, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 17.66, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 17.91, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 18.16, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 18.41, CV: 0.76
+✅ System is biologically appropriate with Fano factor: 18.66, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 18.91, CV: 0.77
+✅ System is biologically appropriate with Fano factor: 19.16, CV: 0.78
+✅ System is biologically appropriate with Fano factor: 19.42, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 19.68, CV: 0.79
+✅ System is biologically appropriate with Fano factor: 19.94, CV: 0.80
+⚠️ WARNING: Fano factor 20.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.73 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.81 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.08 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.35 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 386690.60it/s]
+
+⚠️ WARNING: Fano factor 22.63 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.91 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.19 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.33 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.62 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.91 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.09 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.38 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.68 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.99 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.29 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.90 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.21 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.52 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.84 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.15 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.43 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.07 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.73 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.06 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 32.72 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.06 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 33.73 > 20, consider changing the target parameters.
+⚠️ 46 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.540000000000001, 1.550000000000001, 1.560000000000001, 1.570000000000001, 1.580000000000001]
+
+Testing parameters: CV normal = 0.48, Mean = 34.50
+✅ System is biologically appropriate with Fano factor: 7.95, CV: 0.48
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 1.99, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.07, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.15, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.23, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.32, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.40, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.49, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.58, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.67, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.77, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.86, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 2.96, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.06, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.15, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.26, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.36, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.46, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.57, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.68, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 3.78, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 3.89, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.01, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.12, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 4.24, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 4.35, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.47, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.59, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.71, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 4.84, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 4.96, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.09, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.22, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 5.34, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 5.48, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 5.61, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 5.74, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 5.88, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 6.02, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 6.16, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 6.30, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 6.44, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 6.58, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 6.73, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 6.87, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 7.02, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 7.17, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 7.33, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 7.48, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 7.63, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 7.79, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 7.95, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 8.11, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 8.27, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 8.43, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 8.60, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 8.76, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 8.93, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 9.10, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 9.27, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 9.44, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 9.62, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 9.79, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 9.97, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 10.15, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 10.33, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 10.51, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 10.70, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 10.88, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 11.07, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 11.26, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 11.45, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 11.64, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 11.83, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 12.03, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 12.22, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 12.42, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 12.62, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 12.82, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 13.02, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 13.23, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 13.43, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 13.64, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 13.85, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 14.06, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 14.27, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 14.49, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 14.70, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 14.92, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 15.14, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 15.36, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 15.58, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 15.80, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 16.03, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 16.25, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 16.48, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 16.71, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 16.94, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 17.18, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 17.41, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 17.65, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 17.88, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 18.12, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 18.36, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 18.61, CV: 0.73
+✅ System is biologically appropriate with Fano factor: 18.85, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 19.10, CV: 0.74
+✅ System is biologically appropriate with Fano factor: 19.34, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 19.59, CV: 0.75
+✅ System is biologically appropriate with Fano factor: 19.84, CV: 0.76
+⚠️ WARNING: Fano factor 20.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.35 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.60 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.86 > 20, consider changing the target parameters.Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 391016.53it/s]
+
+⚠️ WARNING: Fano factor 21.12 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.38 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.90 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.17 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.43 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.70 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.97 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.24 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.52 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.79 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.07 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.34 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.62 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.90 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.18 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.47 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.75 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.33 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.62 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.91 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.20 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.50 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.80 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.09 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.70 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.30 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.61 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 29.92 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.54 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 30.85 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.16 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 31.48 > 20, consider changing the target parameters.
+⚠️ 41 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.590000000000001, 1.600000000000001, 1.610000000000001, 1.620000000000001, 1.630000000000001]
+
+Testing parameters: CV normal = 0.44, Mean = 37.50
+✅ System is biologically appropriate with Fano factor: 7.26, CV: 0.44
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 1.81, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 1.89, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 1.96, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.04, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.12, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.20, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.28, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.36, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.44, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.53, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.61, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.70, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.79, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 2.88, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 2.97, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.07, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.16, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.26, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.36, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.46, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.56, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.66, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.76, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.87, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 3.98, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.08, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.19, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.30, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.42, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.53, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 4.65, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 4.88, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.00, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.12, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.25, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.37, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.50, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.62, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 5.75, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 5.88, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.01, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.14, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.28, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 6.41, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 6.55, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 6.69, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 6.83, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 6.97, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 7.12, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 7.26, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 7.41, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 7.55, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 7.70, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 7.85, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 8.00, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 8.16, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 8.31, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 8.47, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 8.63, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 8.78, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 8.95, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 9.11, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 9.27, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 9.44, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 9.60, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 9.77, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 9.94, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 10.11, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 10.28, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 10.45, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 10.63, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 10.81, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 10.98, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 11.16, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 11.34, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 11.53, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 11.71, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 11.89, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 12.08, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 12.27, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 12.46, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 12.65, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 12.84, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 13.04, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 13.23, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 13.43, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 13.63, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 13.83, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 14.03, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 14.23, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 14.43, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 14.64, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 14.85, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 15.05, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 15.26, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 15.48, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 15.69, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 15.90, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 16.12, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 16.34, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 16.55, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 16.77, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 16.99, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 17.22, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 17.44, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 17.67, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 17.90, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 18.12, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 18.35, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 18.59, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 18.82, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 19.05, CV: 0.71
+✅ System is biologically appropriate with Fano factor: 19.29, CV: 0.72Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 386928.41it/s]
+
+✅ System is biologically appropriate with Fano factor: 19.53, CV: 0.72
+✅ System is biologically appropriate with Fano factor: 19.77, CV: 0.73
+⚠️ WARNING: Fano factor 20.01 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.25 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.98 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.48 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.73 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.98 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.74 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.26 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.52 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.78 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.05 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.31 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.58 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.85 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.12 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.93 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.21 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.49 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 26.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.04 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.32 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.61 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 27.89 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.18 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 28.75 > 20, consider changing the target parameters.
+⚠️ 34 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.660000000000001, 1.670000000000001, 1.680000000000001, 1.690000000000001, 1.700000000000001]
+
+Testing parameters: CV normal = 0.40, Mean = 40.50
+✅ System is biologically appropriate with Fano factor: 6.48, CV: 0.40
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 1.62, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.69, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.75, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 1.82, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 1.89, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 1.96, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.03, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.11, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.18, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.26, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.33, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.41, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.49, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.57, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.65, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.74, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.82, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.91, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.00, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.09, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.18, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.27, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.36, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.45, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.55, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.65, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.74, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.84, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 3.94, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.04, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.15, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.25, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.36, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.46, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.57, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.68, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.79, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 4.90, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.02, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.13, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.25, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.37, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.48, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.60, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.73, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.85, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 5.97, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.10, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 6.22, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 6.35, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.48, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.61, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.74, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 6.87, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.01, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.14, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.28, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.42, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 7.56, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 7.70, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 7.84, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 7.98, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 8.13, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 8.27, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 8.42, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 8.57, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 8.72, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 8.87, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 9.02, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 9.18, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 9.33, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 9.49, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 9.64, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 9.80, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 9.96, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 10.13, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 10.29, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 10.45, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 10.62, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 10.78, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 10.95, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 11.12, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 11.29, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 11.46, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 11.64, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 11.81, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 11.99, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 12.16, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 12.34, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 12.52, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 12.70, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 12.88, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 13.07, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 13.25, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 13.44, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 13.62, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 13.81, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 14.00, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 14.19, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 14.39, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 14.58, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 14.78, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 14.97, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 15.17, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 15.37, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 15.57, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 15.77, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 15.97, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 16.18, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 16.38, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 16.59, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 16.80, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 17.01, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 17.22, CV: 0.65Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 315677.67it/s]
+
+✅ System is biologically appropriate with Fano factor: 17.43, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 17.64, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 17.86, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 18.07, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 18.29, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 18.51, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 18.73, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 18.95, CV: 0.68
+✅ System is biologically appropriate with Fano factor: 19.17, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 19.39, CV: 0.69
+✅ System is biologically appropriate with Fano factor: 19.62, CV: 0.70
+✅ System is biologically appropriate with Fano factor: 19.85, CV: 0.70
+⚠️ WARNING: Fano factor 20.07 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.30 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.53 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.76 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.23 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.46 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.70 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.94 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.18 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.42 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.90 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.15 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 23.89 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.14 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.39 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.64 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 24.89 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.15 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.40 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 25.66 > 20, consider changing the target parameters.
+⚠️ 24 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.7600000000000011, 1.7700000000000011, 1.7800000000000011, 1.7900000000000011, 1.8000000000000012]
+
+Testing parameters: CV normal = 0.36, Mean = 43.50
+✅ System is biologically appropriate with Fano factor: 5.64, CV: 0.36
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 1.41, CV: 0.18
+✅ System is biologically appropriate with Fano factor: 1.47, CV: 0.18
+✅ System is biologically appropriate with Fano factor: 1.52, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.58, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.64, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.71, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.77, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.83, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 1.90, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 1.96, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 2.03, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.10, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.17, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.24, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.31, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.38, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.46, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.53, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.61, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.68, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.76, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.84, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 2.92, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 3.00, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 3.09, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.17, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.26, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.34, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.43, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.52, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.61, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.70, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.79, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.88, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 3.98, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 4.07, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.17, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.27, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.37, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.47, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.57, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.67, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.77, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.88, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 4.98, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 5.09, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 5.20, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.30, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.41, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.53, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.64, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.75, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.87, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 5.98, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 6.10, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 6.22, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.33, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.45, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 6.58, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 6.70, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 6.82, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 6.95, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 7.07, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 7.20, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.33, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.46, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.59, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.72, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.85, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 7.98, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 8.12, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 8.25, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 8.39, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 8.53, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 8.67, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 8.81, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 8.95, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 9.09, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 9.24, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 9.38, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 9.53, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 9.67, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 9.82, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 9.97, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 10.12, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 10.27, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 10.43, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 10.58, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 10.74, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 10.89, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 11.05, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 11.21, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 11.37, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 11.53, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 11.69, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 11.85, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 12.02, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 12.18, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 12.35, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 12.52, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 12.68, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 12.85, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 13.03, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 13.20, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 13.37, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 13.54, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 13.72, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 13.90, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 14.07, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 14.25, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 14.43, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 14.61, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 14.80, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 14.98, CV: 0.59Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 367062.78it/s]
+
+✅ System is biologically appropriate with Fano factor: 15.16, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 15.35, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 15.53, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 15.72, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 15.91, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 16.10, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 16.29, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 16.48, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 16.68, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 16.87, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 17.07, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 17.27, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 17.46, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 17.66, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 17.86, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 18.06, CV: 0.64
+✅ System is biologically appropriate with Fano factor: 18.27, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 18.47, CV: 0.65
+✅ System is biologically appropriate with Fano factor: 18.67, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 18.88, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 19.09, CV: 0.66
+✅ System is biologically appropriate with Fano factor: 19.29, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 19.50, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 19.71, CV: 0.67
+✅ System is biologically appropriate with Fano factor: 19.93, CV: 0.68
+⚠️ WARNING: Fano factor 20.14 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.35 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.57 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 20.78 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.00 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.22 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.44 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.66 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 21.88 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.10 > 20, consider changing the target parameters.
+⚠️ WARNING: Fano factor 22.33 > 20, consider changing the target parameters.
+⚠️ 11 out of 150 CV ratios are not biologically appropriate
+First few inappropriate ratios: [1.8900000000000012, 1.9000000000000012, 1.9100000000000013, 1.9200000000000013, 1.9300000000000013]
+
+Testing parameters: CV normal = 0.32, Mean = 46.50
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.32
+Checking all CV ratios:   0%|          | 0/150 [00:00<?, ?it/s]✅ System is biologically appropriate with Fano factor: 1.19, CV: 0.16
+✅ System is biologically appropriate with Fano factor: 1.24, CV: 0.16
+✅ System is biologically appropriate with Fano factor: 1.29, CV: 0.17
+✅ System is biologically appropriate with Fano factor: 1.34, CV: 0.17
+✅ System is biologically appropriate with Fano factor: 1.39, CV: 0.17
+✅ System is biologically appropriate with Fano factor: 1.44, CV: 0.18
+✅ System is biologically appropriate with Fano factor: 1.49, CV: 0.18
+✅ System is biologically appropriate with Fano factor: 1.55, CV: 0.18
+✅ System is biologically appropriate with Fano factor: 1.60, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.66, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.71, CV: 0.19
+✅ System is biologically appropriate with Fano factor: 1.77, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.83, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.89, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 1.95, CV: 0.20
+✅ System is biologically appropriate with Fano factor: 2.01, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 2.07, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 2.14, CV: 0.21
+✅ System is biologically appropriate with Fano factor: 2.20, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.27, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.33, CV: 0.22
+✅ System is biologically appropriate with Fano factor: 2.40, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.47, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.54, CV: 0.23
+✅ System is biologically appropriate with Fano factor: 2.61, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.68, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.75, CV: 0.24
+✅ System is biologically appropriate with Fano factor: 2.82, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.90, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.97, CV: 0.25
+✅ System is biologically appropriate with Fano factor: 3.05, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 3.12, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 3.20, CV: 0.26
+✅ System is biologically appropriate with Fano factor: 3.28, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.36, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.44, CV: 0.27
+✅ System is biologically appropriate with Fano factor: 3.52, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.60, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.69, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.77, CV: 0.28
+✅ System is biologically appropriate with Fano factor: 3.86, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 3.94, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 4.03, CV: 0.29
+✅ System is biologically appropriate with Fano factor: 4.12, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 4.21, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 4.30, CV: 0.30
+✅ System is biologically appropriate with Fano factor: 4.39, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.48, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.57, CV: 0.31
+✅ System is biologically appropriate with Fano factor: 4.67, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.86, CV: 0.32
+✅ System is biologically appropriate with Fano factor: 4.95, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 5.05, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 5.15, CV: 0.33
+✅ System is biologically appropriate with Fano factor: 5.25, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 5.35, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 5.45, CV: 0.34
+✅ System is biologically appropriate with Fano factor: 5.55, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.66, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.76, CV: 0.35
+✅ System is biologically appropriate with Fano factor: 5.87, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 5.97, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 6.08, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 6.19, CV: 0.36
+✅ System is biologically appropriate with Fano factor: 6.30, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 6.41, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 6.52, CV: 0.37
+✅ System is biologically appropriate with Fano factor: 6.63, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.74, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.86, CV: 0.38
+✅ System is biologically appropriate with Fano factor: 6.97, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 7.09, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 7.20, CV: 0.39
+✅ System is biologically appropriate with Fano factor: 7.32, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 7.44, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 7.56, CV: 0.40
+✅ System is biologically appropriate with Fano factor: 7.68, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.80, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 7.92, CV: 0.41
+✅ System is biologically appropriate with Fano factor: 8.05, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 8.17, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 8.30, CV: 0.42
+✅ System is biologically appropriate with Fano factor: 8.42, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 8.55, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 8.68, CV: 0.43
+✅ System is biologically appropriate with Fano factor: 8.81, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 8.94, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 9.07, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 9.20, CV: 0.44
+✅ System is biologically appropriate with Fano factor: 9.33, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 9.47, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 9.60, CV: 0.45
+✅ System is biologically appropriate with Fano factor: 9.74, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 9.87, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 10.01, CV: 0.46
+✅ System is biologically appropriate with Fano factor: 10.15, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 10.29, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 10.43, CV: 0.47
+✅ System is biologically appropriate with Fano factor: 10.57, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 10.71, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 10.86, CV: 0.48
+✅ System is biologically appropriate with Fano factor: 11.00, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 11.15, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 11.29, CV: 0.49
+✅ System is biologically appropriate with Fano factor: 11.44, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 11.59, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 11.74, CV: 0.50
+✅ System is biologically appropriate with Fano factor: 11.89, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 12.04, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 12.19, CV: 0.51
+✅ System is biologically appropriate with Fano factor: 12.34, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 12.50, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 12.65, CV: 0.52Checking all CV ratios: 100%|██████████| 150/150 [00:00<00:00, 348750.33it/s]
+
+✅ System is biologically appropriate with Fano factor: 12.81, CV: 0.52
+✅ System is biologically appropriate with Fano factor: 12.96, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 13.12, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 13.28, CV: 0.53
+✅ System is biologically appropriate with Fano factor: 13.44, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 13.60, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 13.76, CV: 0.54
+✅ System is biologically appropriate with Fano factor: 13.92, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 14.09, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 14.25, CV: 0.55
+✅ System is biologically appropriate with Fano factor: 14.42, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 14.58, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 14.75, CV: 0.56
+✅ System is biologically appropriate with Fano factor: 14.92, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 15.09, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 15.26, CV: 0.57
+✅ System is biologically appropriate with Fano factor: 15.43, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 15.60, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 15.77, CV: 0.58
+✅ System is biologically appropriate with Fano factor: 15.95, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 16.12, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 16.30, CV: 0.59
+✅ System is biologically appropriate with Fano factor: 16.47, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 16.65, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 16.83, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 17.01, CV: 0.60
+✅ System is biologically appropriate with Fano factor: 17.19, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 17.37, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 17.55, CV: 0.61
+✅ System is biologically appropriate with Fano factor: 17.74, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 17.92, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 18.11, CV: 0.62
+✅ System is biologically appropriate with Fano factor: 18.29, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 18.48, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 18.67, CV: 0.63
+✅ System is biologically appropriate with Fano factor: 18.86, CV: 0.64
+✅ Found parameters where all CV ratios are biologically appropriate!
+CV normal = 0.32, Mean = 46.50, Variance normal = 221.41
+
+Starting simulations with:
+Normal CV: 0.32, Mean: 46.50, Variance: 221.41
+Running CV Ratio Simulations:   0%|          | 0/150 [00:00<?, ?it/s]/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:34: RuntimeWarning: invalid value encountered in multiply
+  ACmRNA_eq = sp.exp(-d * t) * (
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:35: RuntimeWarning: invalid value encountered in multiply
+  d * sp.exp((d - sigma_u - sigma_b) * t) * rho * sigma_u
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:264: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+
+Testing CV ratio: 0.50, Stress CV: 0.16, Normal CV: 0.32
+Corresponding variances - Stress: 55.35, Normal: 221.41
+✅ System is biologically appropriate with Fano factor: 1.19, CV: 0.16
+Attempt 1/10
+✅ System is biologically appropriate with Fano factor: 1.19, CV: 0.16
+[STRESS] ✅ Found: {'rho': 44.76449823895574, 'sigma_b': 46.70683307781963, 'd': 0.694881971900683}
+Attempt 1/10
+✅ System is biologically appropriate with Fano factor: 4.76, CV: 0.32
+[NORMAL] ✅ Found: {'rho': 91.09946619150107, 'sigma_b': 5.4008188966006605, 'd': 0.7347427425680894}
+Updated Parameter Sets: [{'sigma_u': 18.0, 'sigma_b': 46.70683307781963, 'rho': 44.76449823895574, 'd': 0.694881971900683, 'label': 0}, {'sigma_u': 9.0, 'sigma_b': 5.4008188966006605, 'rho': 91.09946619150107, 'd': 0.7347427425680894, 'label': 1}]
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:26<00:26, 26.47s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 46.70683307781963, 'rho': 44.76449823895574, 'd': 0.694881971900683, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:48<00:00, 23.74s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:48<00:00, 24.15s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 5.4008188966006605, 'rho': 91.09946619150107, 'd': 0.7347427425680894, 'label': 1}
+Steady state series saved to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/data/mRNA_trajectories_cv_0.16_0.32/steady_state_trajectories/m_traj_cv_0.16_0.32_0_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 14.4 min):
+    - Mean mRNA Count: 46.41
+    - Variance: 54.75
+
+  Normal Condition (after 13.6 min):
+    - Mean mRNA Count: 46.14
+    - Variance: 222.44
+=== SVM (RBF Kernel) Classification Accuracy: 1.00 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.51 ===
+=== Random Forest Accuracy: 0.97 ===
+=== Logistic Regression Accuracy: 0.51 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.1192, Train Acc: 0.5898
+Validation Acc: 0.6094
+Epoch [2/100], Loss: 0.6525, Train Acc: 0.7305
+Validation Acc: 0.6406
+Epoch [3/100], Loss: 0.5870, Train Acc: 0.7773
+Validation Acc: 0.6250
+No improvement (1/10).
+Epoch [4/100], Loss: 0.4317, Train Acc: 0.8281
+Validation Acc: 0.6562
+Epoch [5/100], Loss: 0.3199, Train Acc: 0.8477
+Validation Acc: 0.6719
+Epoch [6/100], Loss: 0.2794, Train Acc: 0.8828
+Validation Acc: 0.7344
+Epoch [7/100], Loss: 0.2238, Train Acc: 0.8984
+Validation Acc: 0.7344
+No improvement (1/10).
+Epoch [8/100], Loss: 0.2436, Train Acc: 0.8945
+Validation Acc: 0.7969
+Epoch [9/100], Loss: 0.1612, Train Acc: 0.9336
+Validation Acc: 0.7500
+No improvement (1/10).
+Epoch [10/100], Loss: 0.1282, Train Acc: 0.9531
+Validation Acc: 0.7344
+No improvement (2/10).
+Epoch [11/100], Loss: 0.0748, Train Acc: 0.9805
+Validation Acc: 0.6875
+No improvement (3/10).
+Epoch [12/100], Loss: 0.1227, Train Acc: 0.9688
+Validation Acc: 0.6875
+No improvement (4/10).
+Epoch [13/100], Loss: 0.1505, Train Acc: 0.9531
+Validation Acc: 0.7031
+No improvement (5/10).
+Epoch [14/100], Loss: 0.1071, Train Acc: 0.9531
+Validation Acc: 0.7656
+No improvement (6/10).
+Epoch [15/100], Loss: 0.1046, Train Acc: 0.9531
+Validation Acc: 0.7812
+No improvement (7/10).
+Epoch [16/100], Loss: 0.0929, Train Acc: 0.9609
+Validation Acc: 0.7500
+No improvement (8/10).
+Epoch [17/100], Loss: 0.0702, Train Acc: 0.9805
+Validation Acc: 0.7656
+No improvement (9/10).
+Epoch [18/100], Loss: 0.0632, Train Acc: 0.9766
+Validation Acc: 0.7500
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.64 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6933, Train Acc: 0.4805
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6925, Train Acc: 0.5469
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6932, Train Acc: 0.5195
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6922, Train Acc: 0.5703
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6908, Train Acc: 0.5469
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6896, Train Acc: 0.5469
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6875, Train Acc: 0.5156
+Validation Acc: 0.5938
+Epoch [8/50], Loss: 0.6848, Train Acc: 0.5312
+Validation Acc: 0.5469
+No improvement (1/10).
+Epoch [9/50], Loss: 0.6836, Train Acc: 0.5234
+Validation Acc: 0.5781
+No improvement (2/10).
+Epoch [10/50], Loss: 0.6817, Train Acc: 0.5703
+Validation Acc: 0.6406
+Epoch [11/50], Loss: 0.6762, Train Acc: 0.5938
+Validation Acc: 0.6719
+Epoch [12/50], Loss: 0.6627, Train Acc: 0.6523
+Validation Acc: 0.7188
+Epoch [13/50], Loss: 0.6521, Train Acc: 0.7773
+Validation Acc: 0.7812
+Epoch [14/50], Loss: 0.6474, Train Acc: 0.7852
+Validation Acc: 0.8125
+Epoch [15/50], Loss: 0.6465, Train Acc: 0.7891
+Validation Acc: 0.8281
+Epoch [16/50], Loss: 0.6489, Train Acc: 0.7773
+Validation Acc: 0.7812
+No improvement (1/10).
+Epoch [17/50], Loss: 0.6572, Train Acc: 0.7539
+Validation Acc: 0.8281
+No improvement (2/10).
+Epoch [18/50], Loss: 0.6347, Train Acc: 0.7969
+Validation Acc: 0.8594
+Epoch [19/50], Loss: 0.6305, Train Acc: 0.8047
+Validation Acc: 0.8750
+Epoch [20/50], Loss: 0.6214, Train Acc: 0.8359
+Validation Acc: 0.8906
+Epoch [21/50], Loss: 0.6088, Train Acc: 0.8594
+Validation Acc: 0.9062
+Epoch [22/50], Loss: 0.6077, Train Acc: 0.8398
+Validation Acc: 0.9062
+No improvement (1/10).
+Epoch [23/50], Loss: 0.6022, Train Acc: 0.8594
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [24/50], Loss: 0.6024, Train Acc: 0.8125
+Validation Acc: 0.8750
+No improvement (3/10).
+Epoch [25/50], Loss: 0.5820, Train Acc: 0.8516
+Validation Acc: 0.8906
+No improvement (4/10).
+Epoch [26/50], Loss: 0.5750, Train Acc: 0.8516
+Validation Acc: 0.9062
+No improvement (5/10).
+Epoch [27/50], Loss: 0.5816, Train Acc: 0.8086
+Validation Acc: 0.8906
+No improvement (6/10).
+Epoch [28/50], Loss: 0.5760, Train Acc: 0.8359
+Validation Acc: 0.8594
+No improvement (7/10).
+Epoch [29/50], Loss: 0.5672, Train Acc: 0.8125
+Validation Acc: 0.8594
+No improvement (8/10).
+Epoch [30/50], Loss: 0.5706, Train Acc: 0.8477
+Validation Acc: 0.8750
+No improvement (9/10).
+Epoch [31/50], Loss: 0.5794, Train Acc: 0.8359
+Validation Acc: 0.8750
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.85 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 0.6919, Train Acc: 0.5586
+Validation Acc: 0.5000
+Epoch [2/100], Loss: 0.6750, Train Acc: 0.8555
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6051, Train Acc: 1.0000
+Validation Acc: 1.0000
+Epoch [4/100], Loss: 0.5273, Train Acc: 0.8789
+Validation Acc: 1.0000
+No improvement (1/10).
+Epoch [5/100], Loss: 0.4957, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (2/10).
+Epoch [6/100], Loss: 0.4965, Train Acc: 0.8164
+Validation Acc: 1.0000
+No improvement (3/10).
+Epoch [7/100], Loss: 0.4919, Train Acc: 0.8242
+Validation Acc: 1.0000
+No improvement (4/10).
+Epoch [8/100], Loss: 0.4874, Train Acc: 0.8398
+Validation Acc: 1.0000
+No improvement (5/10).
+Epoch [9/100], Loss: 0.4859, Train Acc: 0.8594
+Validation Acc: 1.0000
+No improvement (6/10).
+Epoch [10/100], Loss: 0.4702, Train Acc: 0.8477
+Validation Acc: 1.0000
+No improvement (7/10).
+Epoch [11/100], Loss: 0.4696, Train Acc: 0.8672
+Validation Acc: 1.0000
+No improvement (8/10).
+Epoch [12/100], Loss: 0.4616, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (9/10).
+Epoch [13/100], Loss: 0.4819, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 4.0056, Train Acc: 0.5117
+Validation Acc: 0.6250
+Epoch [2/50], Loss: 4.0756, Train Acc: 0.4766
+Validation Acc: 0.6406
+Epoch [3/50], Loss: 3.8515, Train Acc: 0.5273
+Validation Acc: 0.6406
+No improvement (1/10).
+Epoch [4/50], Loss: 4.1223, Train Acc: 0.4844
+Validation Acc: 0.6562
+Epoch [5/50], Loss: 3.4502, Train Acc: 0.5273
+Validation Acc: 0.6562
+No improvement (1/10).
+Epoch [6/50], Loss: 3.2091, Train Acc: 0.5508
+Validation Acc: 0.5938
+No improvement (2/10).
+Epoch [7/50], Loss: 3.1904, Train Acc: 0.5352
+Validation Acc: 0.5469
+No improvement (3/10).
+Epoch [8/50], Loss: 3.4080, Train Acc: 0.5117
+Validation Acc: 0.5312
+No improvement (4/10).
+Epoch [9/50], Loss: 3.0852, Train Acc: 0.5430
+Validation Acc: 0.5156
+No improvement (5/10).
+Epoch [10/50], Loss: 2.9039, Train Acc: 0.5234
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [11/50], Loss: 2.7653, Train Acc: 0.5273
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [12/50], Loss: 2.8070, Train Acc: 0.5273
+Validation Acc: 0.4531
+No improvement (8/10).
+Epoch [13/50], Loss: 2.5430, Train Acc: 0.5430
+Validation Acc: 0.4531
+No improvement (9/10).
+Epoch [14/50], Loss: 2.4187, Train Acc: 0.5547
+Validation Acc: 0.4531
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Vanilla Transformer Accuracy: 0.56 ===/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 92.4307, Train Acc: 0.5078
+Validation Acc: 0.5469
+Epoch [2/50], Loss: 86.3804, Train Acc: 0.5273
+Validation Acc: 0.7656
+Epoch [3/50], Loss: 82.4335, Train Acc: 0.5273
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [4/50], Loss: 73.1008, Train Acc: 0.4883
+Validation Acc: 0.6719
+No improvement (2/10).
+Epoch [5/50], Loss: 61.4836, Train Acc: 0.5117
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [6/50], Loss: 48.2251, Train Acc: 0.5352
+Validation Acc: 0.7031
+No improvement (4/10).
+Epoch [7/50], Loss: 35.7589, Train Acc: 0.5156
+Validation Acc: 0.7031
+No improvement (5/10).
+Epoch [8/50], Loss: 26.7273, Train Acc: 0.5195
+Validation Acc: 0.6875
+No improvement (6/10).
+Epoch [9/50], Loss: 17.6842, Train Acc: 0.5820
+Validation Acc: 0.6719
+No improvement (7/10).
+Epoch [10/50], Loss: 12.0730, Train Acc: 0.5938
+Validation Acc: 0.7031
+No improvement (8/10).
+Epoch [11/50], Loss: 8.9951, Train Acc: 0.5469
+Validation Acc: 0.7188
+No improvement (9/10).
+Epoch [12/50], Loss: 7.4827, Train Acc: 0.5156
+Validation Acc: 0.7500
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Transformer with Conv1D and Auxiliary Task Accuracy: 0.79 ===
+=== Random Classifier Accuracy: 0.45 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems:  50%|█████     | 1/2 [00:26<00:26, 26.27s/it][ARunning simulations on 12 cores...
+System 1 parameters: {'sigma_u': 18.0, 'sigma_b': 46.70683307781963, 'rho': 44.76449823895574, 'd': 0.694881971900683, 'label': 0}
+
+Simulating Telegraph Model Systems: 100%|██████████| 2/2 [00:48<00:00, 23.78s/it][ASimulating Telegraph Model Systems: 100%|██████████| 2/2 [00:48<00:00, 24.15s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py:1751: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Running simulations on 12 cores...
+System 2 parameters: {'sigma_u': 9.0, 'sigma_b': 5.4008188966006605, 'rho': 91.09946619150107, 'd': 0.7347427425680894, 'label': 1}
+Steady state series saved to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/data/mRNA_trajectories_cv_0.16_0.32/steady_state_trajectories/m_traj_cv_0.16_0.32_1_SS.csv
+
+=== Statistical Report ===
+
+📊 **Steady-State Statistics:**
+  Stressed Condition (after 14.4 min):
+    - Mean mRNA Count: 46.50
+    - Variance: 56.48
+
+  Normal Condition (after 13.6 min):
+    - Mean mRNA Count: 46.51
+    - Variance: 220.74
+=== SVM (RBF Kernel) Classification Accuracy: 1.00 ===
+=== SVM (Linear Kernel) Classification Accuracy: 0.51 ===
+=== Random Forest Accuracy: 1.00 ===
+=== Logistic Regression Accuracy: 0.55 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 1.3002, Train Acc: 0.4922
+Validation Acc: 0.5469
+Epoch [2/100], Loss: 0.9598, Train Acc: 0.5898
+Validation Acc: 0.5625
+Epoch [3/100], Loss: 0.6783, Train Acc: 0.6758
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [4/100], Loss: 0.5681, Train Acc: 0.7539
+Validation Acc: 0.5156
+No improvement (2/10).
+Epoch [5/100], Loss: 0.5057, Train Acc: 0.7852
+Validation Acc: 0.5625
+No improvement (3/10).
+Epoch [6/100], Loss: 0.4300, Train Acc: 0.8047
+Validation Acc: 0.5625
+No improvement (4/10).
+Epoch [7/100], Loss: 0.3697, Train Acc: 0.8359
+Validation Acc: 0.5781
+Epoch [8/100], Loss: 0.2585, Train Acc: 0.8906
+Validation Acc: 0.6094
+Epoch [9/100], Loss: 0.2603, Train Acc: 0.8867
+Validation Acc: 0.6094
+No improvement (1/10).
+Epoch [10/100], Loss: 0.2510, Train Acc: 0.8867
+Validation Acc: 0.6875
+Epoch [11/100], Loss: 0.1759, Train Acc: 0.9414
+Validation Acc: 0.6719
+No improvement (1/10).
+Epoch [12/100], Loss: 0.1517, Train Acc: 0.9492
+Validation Acc: 0.6250
+No improvement (2/10).
+Epoch [13/100], Loss: 0.1613, Train Acc: 0.9375
+Validation Acc: 0.6406
+No improvement (3/10).
+Epoch [14/100], Loss: 0.1292, Train Acc: 0.9531
+Validation Acc: 0.6719
+No improvement (4/10).
+Epoch [15/100], Loss: 0.1118, Train Acc: 0.9648
+Validation Acc: 0.5938
+No improvement (5/10).
+Epoch [16/100], Loss: 0.1303, Train Acc: 0.9531
+Validation Acc: 0.5938
+No improvement (6/10).
+Epoch [17/100], Loss: 0.1042, Train Acc: 0.9609
+Validation Acc: 0.6094
+No improvement (7/10).
+Epoch [18/100], Loss: 0.1042, Train Acc: 0.9492
+Validation Acc: 0.6250
+No improvement (8/10).
+Epoch [19/100], Loss: 0.0832, Train Acc: 0.9766
+Validation Acc: 0.6719
+No improvement (9/10).
+Epoch [20/100], Loss: 0.0722, Train Acc: 0.9727
+Validation Acc: 0.6562
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Multilayer Perceptron (MLP) Accuracy: 0.81 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 0.6934, Train Acc: 0.4805
+Validation Acc: 0.5000
+Epoch [2/50], Loss: 0.6925, Train Acc: 0.5312
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/50], Loss: 0.6933, Train Acc: 0.5312
+Validation Acc: 0.5000
+No improvement (2/10).
+Epoch [4/50], Loss: 0.6926, Train Acc: 0.5469
+Validation Acc: 0.5000
+No improvement (3/10).
+Epoch [5/50], Loss: 0.6918, Train Acc: 0.5156
+Validation Acc: 0.5000
+No improvement (4/10).
+Epoch [6/50], Loss: 0.6917, Train Acc: 0.5664
+Validation Acc: 0.5000
+No improvement (5/10).
+Epoch [7/50], Loss: 0.6911, Train Acc: 0.5586
+Validation Acc: 0.5000
+No improvement (6/10).
+Epoch [8/50], Loss: 0.6895, Train Acc: 0.5703
+Validation Acc: 0.5000
+No improvement (7/10).
+Epoch [9/50], Loss: 0.6897, Train Acc: 0.5312
+Validation Acc: 0.5000
+No improvement (8/10).
+Epoch [10/50], Loss: 0.6888, Train Acc: 0.5430
+Validation Acc: 0.5000
+No improvement (9/10).
+Epoch [11/50], Loss: 0.6871, Train Acc: 0.5312
+Validation Acc: 0.5156
+Epoch [12/50], Loss: 0.6859, Train Acc: 0.5469
+Validation Acc: 0.5156
+No improvement (1/10).
+Epoch [13/50], Loss: 0.6850, Train Acc: 0.5703
+Validation Acc: 0.5469
+Epoch [14/50], Loss: 0.6843, Train Acc: 0.5664
+Validation Acc: 0.6094
+Epoch [15/50], Loss: 0.6830, Train Acc: 0.5820
+Validation Acc: 0.6406
+Epoch [16/50], Loss: 0.6803, Train Acc: 0.5977
+Validation Acc: 0.6719
+Epoch [17/50], Loss: 0.6784, Train Acc: 0.6016
+Validation Acc: 0.6875
+Epoch [18/50], Loss: 0.6754, Train Acc: 0.6172
+Validation Acc: 0.6719
+No improvement (1/10).
+Epoch [19/50], Loss: 0.6700, Train Acc: 0.6797
+Validation Acc: 0.7969
+Epoch [20/50], Loss: 0.6587, Train Acc: 0.7617
+Validation Acc: 0.9062
+Epoch [21/50], Loss: 0.6451, Train Acc: 0.8438
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [22/50], Loss: 0.6318, Train Acc: 0.9219
+Validation Acc: 0.9375
+Epoch [23/50], Loss: 0.6236, Train Acc: 0.9766
+Validation Acc: 0.9531
+Epoch [24/50], Loss: 0.6169, Train Acc: 0.9844
+Validation Acc: 0.9688
+Epoch [25/50], Loss: 0.6059, Train Acc: 0.9805
+Validation Acc: 0.9844
+Epoch [26/50], Loss: 0.5974, Train Acc: 0.9766
+Validation Acc: 0.9844
+No improvement (1/10).
+Epoch [27/50], Loss: 0.5940, Train Acc: 0.9766
+Validation Acc: 0.9844
+No improvement (2/10).
+Epoch [28/50], Loss: 0.5847, Train Acc: 0.9727
+Validation Acc: 0.9844
+No improvement (3/10).
+Epoch [29/50], Loss: 0.5864, Train Acc: 0.9375
+Validation Acc: 0.9531
+No improvement (4/10).
+Epoch [30/50], Loss: 0.5703, Train Acc: 0.9375
+Validation Acc: 0.9531
+No improvement (5/10).
+Epoch [31/50], Loss: 0.5792, Train Acc: 0.9297
+Validation Acc: 0.9531
+No improvement (6/10).
+Epoch [32/50], Loss: 0.5698, Train Acc: 0.9180
+Validation Acc: 0.9531
+No improvement (7/10).
+Epoch [33/50], Loss: 0.5599, Train Acc: 0.9141
+Validation Acc: 0.9375
+No improvement (8/10).
+Epoch [34/50], Loss: 0.5546, Train Acc: 0.9180
+Validation Acc: 0.9375
+No improvement (9/10).
+Epoch [35/50], Loss: 0.5465, Train Acc: 0.9180
+Validation Acc: 0.9531
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.95 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/100], Loss: 0.6920, Train Acc: 0.5547
+Validation Acc: 0.5000
+Epoch [2/100], Loss: 0.6755, Train Acc: 0.8555
+Validation Acc: 0.5000
+No improvement (1/10).
+Epoch [3/100], Loss: 0.6090, Train Acc: 1.0000
+Validation Acc: 1.0000
+Epoch [4/100], Loss: 0.5266, Train Acc: 0.8828
+Validation Acc: 1.0000
+No improvement (1/10).
+Epoch [5/100], Loss: 0.4957, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (2/10).
+Epoch [6/100], Loss: 0.4969, Train Acc: 0.8164
+Validation Acc: 1.0000
+No improvement (3/10).
+Epoch [7/100], Loss: 0.4927, Train Acc: 0.8242
+Validation Acc: 1.0000
+No improvement (4/10).
+Epoch [8/100], Loss: 0.4877, Train Acc: 0.8398
+Validation Acc: 1.0000
+No improvement (5/10).
+Epoch [9/100], Loss: 0.4862, Train Acc: 0.8594
+Validation Acc: 1.0000
+No improvement (6/10).
+Epoch [10/100], Loss: 0.4703, Train Acc: 0.8477
+Validation Acc: 1.0000
+No improvement (7/10).
+Epoch [11/100], Loss: 0.4697, Train Acc: 0.8672
+Validation Acc: 1.0000
+No improvement (8/10).
+Epoch [12/100], Loss: 0.4617, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (9/10).
+Epoch [13/100], Loss: 0.4820, Train Acc: 0.8516
+Validation Acc: 1.0000
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 4.3883, Train Acc: 0.4922
+Validation Acc: 0.5625
+Epoch [2/50], Loss: 4.1035, Train Acc: 0.5195
+Validation Acc: 0.5625
+No improvement (1/10).
+Epoch [3/50], Loss: 4.0922, Train Acc: 0.5039
+Validation Acc: 0.5469
+No improvement (2/10).
+Epoch [4/50], Loss: 3.7369, Train Acc: 0.5117
+Validation Acc: 0.5469
+No improvement (3/10).
+Epoch [5/50], Loss: 3.7229, Train Acc: 0.5273
+Validation Acc: 0.5469
+No improvement (4/10).
+Epoch [6/50], Loss: 3.2385, Train Acc: 0.5586
+Validation Acc: 0.4531
+No improvement (5/10).
+Epoch [7/50], Loss: 3.1511, Train Acc: 0.5391
+Validation Acc: 0.4531
+No improvement (6/10).
+Epoch [8/50], Loss: 3.0315, Train Acc: 0.5234
+Validation Acc: 0.4688
+No improvement (7/10).
+Epoch [9/50], Loss: 3.3250, Train Acc: 0.4922
+Validation Acc: 0.4688/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+
+No improvement (8/10).
+Epoch [10/50], Loss: 2.6249, Train Acc: 0.5898
+Validation Acc: 0.4844
+No improvement (9/10).
+Epoch [11/50], Loss: 2.6407, Train Acc: 0.5352
+Validation Acc: 0.4688
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Vanilla Transformer Accuracy: 0.44 ===
+🔄 Using device: cuda (1 GPUs available)
+DEBUG: Optimizer initialized? True
+✅ Running on CUDA!
+Epoch [1/50], Loss: 92.0614, Train Acc: 0.5234
+Validation Acc: 0.5781
+Epoch [2/50], Loss: 87.8827, Train Acc: 0.5352
+Validation Acc: 0.7812
+Epoch [3/50], Loss: 84.7269, Train Acc: 0.5469
+Validation Acc: 0.6875
+No improvement (1/10).
+Epoch [4/50], Loss: 73.3702, Train Acc: 0.5234
+Validation Acc: 0.7188
+No improvement (2/10).
+Epoch [5/50], Loss: 60.7161, Train Acc: 0.5430
+Validation Acc: 0.7031
+No improvement (3/10).
+Epoch [6/50], Loss: 48.7665, Train Acc: 0.5430
+Validation Acc: 0.7188
+No improvement (4/10).
+Epoch [7/50], Loss: 34.6849, Train Acc: 0.5508
+Validation Acc: 0.7344
+No improvement (5/10).
+Epoch [8/50], Loss: 26.4617, Train Acc: 0.5000
+Validation Acc: 0.6875
+No improvement (6/10).
+Epoch [9/50], Loss: 18.6894, Train Acc: 0.5391
+Validation Acc: 0.7031
+No improvement (7/10).
+Epoch [10/50], Loss: 12.0146, Train Acc: 0.5586
+Validation Acc: 0.7031
+No improvement (8/10).
+Epoch [11/50], Loss: 8.9780, Train Acc: 0.5547
+Validation Acc: 0.7500
+No improvement (9/10).
+Epoch [12/50], Loss: 7.7035, Train Acc: 0.5664
+Validation Acc: 0.7969
+Epoch [13/50], Loss: 7.1636, Train Acc: 0.5859
+Validation Acc: 0.8438
+Epoch [14/50], Loss: 7.3230, Train Acc: 0.5625
+Validation Acc: 0.8594
+Epoch [15/50], Loss: 5.7851, Train Acc: 0.6523
+Validation Acc: 0.8906
+Epoch [16/50], Loss: 6.1726, Train Acc: 0.6445
+Validation Acc: 0.8906
+No improvement (1/10).
+Epoch [17/50], Loss: 5.7076, Train Acc: 0.6641
+Validation Acc: 0.8906
+No improvement (2/10).
+Epoch [18/50], Loss: 5.1612, Train Acc: 0.6797
+Validation Acc: 0.8906
+No improvement (3/10).
+Epoch [19/50], Loss: 5.7205, Train Acc: 0.7148
+Validation Acc: 0.9062
+Epoch [20/50], Loss: 4.7210, Train Acc: 0.7500
+Validation Acc: 0.9062
+No improvement (1/10).
+Epoch [21/50], Loss: 4.6434, Train Acc: 0.7461
+Validation Acc: 0.9062
+No improvement (2/10).
+Epoch [22/50], Loss: 4.7350, Train Acc: 0.7305
+Validation Acc: 0.9062
+No improvement (3/10).
+Epoch [23/50], Loss: 5.2225, Train Acc: 0.7656
+Validation Acc: 0.9062
+No improvement (4/10).
+Epoch [24/50], Loss: 3.9973, Train Acc: 0.7852
+Validation Acc: 0.9219
+Epoch [25/50], Loss: 4.4715, Train Acc: 0.7852
+Validation Acc: 0.9375
+Epoch [26/50], Loss: 3.9994, Train Acc: 0.8203
+Validation Acc: 0.9375
+No improvement (1/10).
+Epoch [27/50], Loss: 3.9716, Train Acc: 0.7930
+Validation Acc: 0.9375
+No improvement (2/10).
+Epoch [28/50], Loss: 4.2564, Train Acc: 0.8203
+Validation Acc: 0.9375
+No improvement (3/10).
+Epoch [29/50], Loss: 3.9609, Train Acc: 0.8086
+Validation Acc: 0.9375
+No improvement (4/10).
+Epoch [30/50], Loss: 4.1405, Train Acc: 0.7852
+Validation Acc: 0.9375
+No improvement (5/10).
+Epoch [31/50], Loss: 4.3330, Train Acc: 0.8086
+Validation Acc: 0.9375
+No improvement (6/10).
+Epoch [32/50], Loss: 3.8659, Train Acc: 0.8359
+Validation Acc: 0.9375
+No improvement (7/10).
+Epoch [33/50], Loss: 3.5290, Train Acc: 0.8750
+Validation Acc: 0.9375
+No improvement (8/10).
+Epoch [34/50], Loss: 4.1441, Train Acc: 0.8594
+Validation Acc: 0.9375
+No improvement (9/10).
+Epoch [35/50], Loss: 4.0018, Train Acc: 0.8203
+Validation Acc: 0.9375
+No improvement (10/10).
+Stopping early! No improvement for 10 epochs.
+Training complete!
+=== Transformer with Conv1D and Auxiliary Task Accuracy: 0.99 ===
+=== Random Classifier Accuracy: 0.45 ===
+
+Simulating Telegraph Model Systems:   0%|          | 0/2 [00:00<?, ?it/s][A
