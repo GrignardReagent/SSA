@@ -3,7 +3,7 @@
 import sympy as sp
 from sympy import init_printing
 import numpy as np
-from scipy.optimize import fsolve
+from scipy.optimize import fsolve, check_grad
 from utils.fano_factor import calculate_fano_factor,calculate_fano_factor_from_params
 from utils.cv import calculate_cv
 
@@ -12,6 +12,20 @@ rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_
 init_printing(use_unicode=True)
 
 def equations(vars, sigma_u, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
+    '''
+    Define the equations for the telegraph model based on the given parameters.
+    Args:
+        vars (tuple): Tuple of variables (rho, sigma_b, d).
+        sigma_u (float): Value of sigma_u.
+        mu_target (float, optional): Target mean.
+        variance_target (float, optional): Target variance.
+        autocorr_target (float, optional): Target autocorrelation at t=1.
+        cv_target (float, optional): Target coefficient of variation.
+        fano_factor_target (float, optional): Target Fano factor.
+    Returns:
+        list: List of equations evaluated at the given variables.
+    '''
+    
     rho, sigma_b, d = vars
 
     eqs = []
@@ -56,11 +70,25 @@ def equations(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targ
     return eqs
 
 def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
+    ''' 
+    Calculate the Jacobian matrix for the equations defined above.
+    Args:
+        vars (tuple): Tuple of variables (rho, sigma_b, d).
+        sigma_u (float): Value of sigma_u.
+        mu_target (float, optional): Target mean.
+        variance_target (float, optional): Target variance.
+        autocorr_target (float, optional): Target autocorrelation at t=1.
+        cv_target (float, optional): Target coefficient of variation.
+        fano_factor_target (float, optional): Target Fano factor.
+    Returns:
+        np.ndarray: Jacobian matrix evaluated at the given variables.
+    '''
+    
     rho_val, sigma_b_val, d_val = vars
     rho_sym, sigma_b_sym, d_sym = sp.symbols('rho sigma_b d', real=True, positive=True)
 
-    eqs = []
 
+    eqs = []
     # Mean
     if mu_target is not None:
         mean_eqn = sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) - mu_target
@@ -98,7 +126,11 @@ def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targe
         fano_factor_eqn = 1 + (rho_sym * sigma_u) / ((sigma_b_sym + sigma_u) * (sigma_b_sym + d_sym + sigma_u)) - fano_factor_target
         eqs.append(fano_factor_eqn)
 
+    # Calculate the Jacobian matrix
+    # Note: We use sympy's jacobian function to compute the Jacobian matrix
+    # and then convert it to a numpy array for numerical evaluation
     J = sp.Matrix(eqs).jacobian([rho_sym, sigma_b_sym, d_sym])
+    # Convert the Jacobian to a numerical function
     J_func = sp.lambdify((rho_sym, sigma_b_sym, d_sym), J, "numpy")
     return np.array(J_func(rho_val, sigma_b_val, d_val)).astype(np.float64)
 
@@ -135,6 +167,47 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
         appropriateness = True
     
     return appropriateness
+
+def validate_jacobian(sigma_u_val, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
+    """
+    Validate the Jacobian function using scipy.optimize.check_grad.
+    
+    Args:
+        sigma_u_val (float): Value of sigma_u.
+        mu_target, variance_target, autocorr_target, cv_target, fano_factor_target: Target values.
+        
+    Returns:
+        float: The difference between numerical and analytical Jacobians.
+    """
+    # Define a scalar objective function (sum of squared residuals)
+    def objective(vars):
+        residuals = equations(vars, sigma_u_val, mu_target, variance_target, 
+                             autocorr_target, cv_target, fano_factor_target)
+        return np.sum(np.square(residuals))
+    
+    # Define gradient of the objective function using our analytical Jacobian
+    def gradient(vars):
+        J = jacobian(vars, sigma_u_val, mu_target, variance_target, 
+                    autocorr_target, cv_target, fano_factor_target)
+        residuals = equations(vars, sigma_u_val, mu_target, variance_target, 
+                             autocorr_target, cv_target, fano_factor_target)
+        # Gradient of sum of squared residuals is 2 * J^T * residuals
+        return 2 * np.dot(J.T, residuals)
+    
+    # Test point - reasonable values for rho, sigma_b, d
+    test_point = np.array([50.0, 0.5, 1.0])
+    
+    # Check the gradient
+    diff = check_grad(objective, gradient, test_point)
+    
+    # A small difference indicates that the Jacobian is accurate
+    threshold = 1e-4
+    if diff < threshold:
+        print(f"✅ Jacobian validation passed: difference = {diff:.6e}")
+    else:
+        print(f"⚠️ Jacobian validation warning: difference = {diff:.6e} > {threshold}")
+    
+    return diff
 
 def find_parameters(parameter_set, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None,
                     rho_range=(1, 1000), sigma_b_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000, 
@@ -175,6 +248,9 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     sigma_u_val = parameter_set.get("sigma_u")
     if sigma_u_val is None:
         raise ValueError("parameter_set must include a 'sigma_u' key.")
+
+    # Validate the Jacobian before using it in fsolve
+    validate_jacobian(sigma_u_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target)
 
     to_solve = []
     fixed = {}
