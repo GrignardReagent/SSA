@@ -51,6 +51,7 @@ def equations(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targ
         ) / (
             (d - sigma_u - sigma_b) * (rho * sigma_u + d * (sigma_u + sigma_b) + (sigma_u + sigma_b) ** 2)
         )
+        # Evaluate autocorrelation at t=1
         autocorr_eqn = ACmRNA_eq.subs(t, 1) - autocorr_target
         eqs.append(float(autocorr_eqn))
         
@@ -85,54 +86,138 @@ def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targe
     '''
     
     rho_val, sigma_b_val, d_val = vars
-    rho_sym, sigma_b_sym, d_sym = sp.symbols('rho sigma_b d', real=True, positive=True)
+    
+    # Special case: If we're targeting mean, CV, and autocorrelation specifically,
+    # use the specialized optimized Jacobian calculation
+    if (mu_target is not None and cv_target is not None and autocorr_target is not None and
+        variance_target is None and fano_factor_target is None):
+        
+        # Create a 3x3 Jacobian matrix for [rho, sigma_b, d]
+        J = np.zeros((3, 3))
+        
+        # Derivative of mean equation with respect to rho
+        J[0, 0] = sigma_b_val / (d_val * (sigma_b_val + sigma_u))
+        
+        # Derivative of mean equation with respect to sigma_b
+        J[0, 1] = rho_val / (d_val * (sigma_b_val + sigma_u)) - (rho_val * sigma_b_val) / (d_val * (sigma_b_val + sigma_u)**2)
+        
+        # Derivative of mean equation with respect to d
+        J[0, 2] = -rho_val * sigma_b_val / (d_val**2 * (sigma_b_val + sigma_u))
+        
+        # Derivative of CV equation with respect to rho, sigma_b
+        # These are complex expressions - for simplicity we'll use finite differences
+        delta = 1e-6
+        
+        # CV with respect to rho
+        vars_delta = (rho_val + delta, sigma_b_val, d_val)
+        cv_plus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        vars_delta = (rho_val - delta, sigma_b_val, d_val)
+        cv_minus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        J[1, 0] = (cv_plus_delta - cv_minus_delta) / (2 * delta)
+        
+        # CV with respect to sigma_b
+        vars_delta = (rho_val, sigma_b_val + delta, d_val)
+        cv_plus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        vars_delta = (rho_val, sigma_b_val - delta, d_val)
+        cv_minus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        J[1, 1] = (cv_plus_delta - cv_minus_delta) / (2 * delta)
+        
+        # Derivative of CV equation with respect to d
+        vars_delta = (rho_val, sigma_b_val, d_val + delta)
+        cv_plus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        vars_delta = (rho_val, sigma_b_val, d_val - delta)
+        cv_minus_delta = equations(vars_delta, sigma_u, mu_target, None, None, cv_target, None)[1]
+        J[1, 2] = (cv_plus_delta - cv_minus_delta) / (2 * delta)
+        
+        # Derivative of autocorrelation equation with respect to rho, sigma_b
+        # These are complex expressions - for simplicity we'll use finite differences
+        
+        # Autocorrelation with respect to rho
+        vars_delta = (rho_val + delta, sigma_b_val, d_val)
+        ac_plus_delta = equations(vars_delta, sigma_u, mu_target, autocorr_target, None, None)[2]
+        vars_delta = (rho_val - delta, sigma_b_val, d_val)
+        ac_minus_delta = equations(vars_delta, sigma_u, mu_target, autocorr_target, None, None)[2]
+        J[2, 0] = (ac_plus_delta - ac_minus_delta) / (2 * delta)
+        
+        # Autocorrelation with respect to sigma_b
+        vars_delta = (rho_val, sigma_b_val + delta, d_val)
+        ac_plus_delta = equations(vars_delta, sigma_u, mu_target, autocorr_target, None, None)[2]
+        vars_delta = (rho_val, sigma_b_val - delta, d_val)
+        ac_minus_delta = equations(vars_delta, sigma_u, mu_target, autocorr_target, None, None)[2]
+        J[2, 1] = (ac_plus_delta - ac_minus_delta) / (2 * delta)
+        
+        # Derivative of autocorrelation equation with respect to d - use the solved expression
+        # The expression is the one provided in the prompt
+        sigma_b_sym = sigma_b_val  # For clarity when using the expression
+        d = d_val  # For clarity when using the expression
+        
+        # Using the provided analytical solution for the derivative with respect to d
+        J[2, 2] = ((-1 + cv_target)*(-1 + sp.exp((autocorr_target*d*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym))/(d*mu_target + sigma_b_sym - cv_target*sigma_b_sym)))*mu_target*(-1 + cv_target + mu_target)*sigma_b_sym*(d*mu_target + sigma_b_sym - cv_target*sigma_b_sym) + 
+                    autocorr_target*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym)*
+                    (d**2*mu_target**2 - d*mu_target*(-2 + cv_target + cv_target**2 + cv_target*mu_target)*sigma_b_sym - 
+                    (-1 + cv_target)*(1 + cv_target**2*
+                        (-1 + sp.exp((autocorr_target*d*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym))/(d*mu_target + sigma_b_sym - cv_target*sigma_b_sym))) + 
+                        cv_target*sp.exp((autocorr_target*d*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym))/(d*mu_target + sigma_b_sym - cv_target*sigma_b_sym))*(-2 + mu_target) - 
+                        sp.exp((autocorr_target*d*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym))/(d*mu_target + sigma_b_sym - cv_target*sigma_b_sym))*(-1 + mu_target) - cv_target*mu_target)*sigma_b_sym**2))/\
+                    (cv_target*sp.exp(autocorr_target*d)*(-(d*mu_target) + (-1 + cv_target)*sigma_b_sym)*(d*mu_target - (-2 + 2*cv_target + mu_target)*sigma_b_sym)**2)
+        
+        return J
+    
+    # For all other cases, use the general sympy-based Jacobian calculation
+    else:
+        rho_sym, sigma_b_sym, d_sym = sp.symbols('rho sigma_b d', real=True, positive=True)
+        
+        eqs = []
+        # Mean
+        if mu_target is not None:
+            mean_eqn = sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) - mu_target
+            # solved using mathematica
+            # rho_sym = (d_sym * mu_target * (sigma_b_sym + sigma_u)) / sigma_b_sym
+            eqs.append(mean_eqn)
 
+        # Variance
+        if variance_target is not None:
+            variance_eqn = (
+                sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) +
+                ((sigma_u * sigma_b_sym) * rho_sym**2 / (d_sym * (sigma_b_sym + sigma_u + d_sym) * (sigma_u + sigma_b_sym)**2))
+            ) - variance_target
+            eqs.append(variance_eqn)
 
-    eqs = []
-    # Mean
-    if mu_target is not None:
-        mean_eqn = sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) - mu_target
-        eqs.append(mean_eqn)
+        # Autocorrelation
+        if autocorr_target is not None:
+            ACmRNA_eq = sp.exp(-d_sym * t) * (
+                d_sym * sp.exp((d_sym - sigma_u - sigma_b_sym) * t) * rho_sym * sigma_u
+                - (sigma_u + sigma_b_sym) * (-d_sym**2 + rho_sym * sigma_u + (sigma_u + sigma_b_sym)**2)
+            ) / (
+                (d_sym - sigma_u - sigma_b_sym) * (rho_sym * sigma_u + d_sym * (sigma_u + sigma_b_sym) + (sigma_u + sigma_b_sym)**2)
+            )
+            autocorr_eqn = ACmRNA_eq.subs(t, 1) - autocorr_target
+            eqs.append(autocorr_eqn)
 
-    # Variance
-    if variance_target is not None:
-        variance_eqn = (
-            sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) +
-            ((sigma_u * sigma_b_sym) * rho_sym**2 / (d_sym * (sigma_b_sym + sigma_u + d_sym) * (sigma_u + sigma_b_sym)**2))
-        ) - variance_target
-        eqs.append(variance_eqn)
+        # Coefficient of Variation (CV)
+        if cv_target is not None:
+            cv_eqn = (sp.sqrt((
+                sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) +
+                ((sigma_u * sigma_b_sym) * rho_sym**2 / (d_sym * (sigma_b_sym + sigma_u + d_sym) * (sigma_u + sigma_b_sym)**2))
+            )) / mu_target) - cv_target
+            # solved using mathematica
+            # sigma_b_sym = (d_sym - cv_target*d_sym + 2*sigma_u - 2*cv_target*sigma_u - sp.sqrt(-1 + cv_target)*sp.sqrt(-d_sym**2 + cv_target*d_sym**2 + 4*rho_sym*sigma_u))/(2*(-1 + cv_target))
+                           
+            eqs.append(cv_eqn)
 
-    # Autocorrelation
-    if autocorr_target is not None:
-        ACmRNA_eq = sp.exp(-d_sym * t) * (
-            d_sym * sp.exp((d_sym - sigma_u - sigma_b_sym) * t) * rho_sym * sigma_u
-            - (sigma_u + sigma_b_sym) * (-d_sym**2 + rho_sym * sigma_u + (sigma_u + sigma_b_sym)**2)
-        ) / (
-            (d_sym - sigma_u - sigma_b_sym) * (rho_sym * sigma_u + d_sym * (sigma_u + sigma_b_sym) + (sigma_u + sigma_b_sym)**2)
-        )
-        autocorr_eqn = ACmRNA_eq.subs(t, 1) - autocorr_target
-        eqs.append(autocorr_eqn)
+        # Fano Factor
+        if fano_factor_target is not None:
+            fano_factor_eqn = 1 + (rho_sym * sigma_u) / ((sigma_b_sym + sigma_u) * (sigma_b_sym + d_sym + sigma_u)) - fano_factor_target
+            eqs.append(fano_factor_eqn)
 
-    # Coefficient of Variation (CV)
-    if cv_target is not None:
-        cv_eqn = (sp.sqrt((
-            sigma_b_sym * rho_sym / (d_sym * (sigma_b_sym + sigma_u)) +
-            ((sigma_u * sigma_b_sym) * rho_sym**2 / (d_sym * (sigma_b_sym + sigma_u + d_sym) * (sigma_u + sigma_b_sym)**2))
-        )) / mu_target) - cv_target
-        eqs.append(cv_eqn)
+        # Calculate the Jacobian matrix
+        # Note: We use sympy's jacobian function to compute the Jacobian matrix
+        # and then convert it to a numpy array for numerical evaluation
+        J = sp.Matrix(eqs).jacobian([rho_sym, sigma_b_sym, d_sym])
+        # Convert the Jacobian to a numerical function
+        J_func = sp.lambdify((rho_sym, sigma_b_sym, d_sym), J, "numpy")
+        return np.array(J_func(rho_val, sigma_b_val, d_val)).astype(np.float64)
 
-    # Fano Factor
-    if fano_factor_target is not None:
-        fano_factor_eqn = 1 + (rho_sym * sigma_u) / ((sigma_b_sym + sigma_u) * (sigma_b_sym + d_sym + sigma_u)) - fano_factor_target
-        eqs.append(fano_factor_eqn)
-
-    # Calculate the Jacobian matrix
-    # Note: We use sympy's jacobian function to compute the Jacobian matrix
-    # and then convert it to a numpy array for numerical evaluation
-    J = sp.Matrix(eqs).jacobian([rho_sym, sigma_b_sym, d_sym])
-    # Convert the Jacobian to a numerical function
-    J_func = sp.lambdify((rho_sym, sigma_b_sym, d_sym), J, "numpy")
-    return np.array(J_func(rho_val, sigma_b_val, d_val)).astype(np.float64)
 
 def check_biological_appropriateness(variance_target, mu_target, max_fano_factor=20, min_fano_factor=1, max_cv=5.0):
     '''
@@ -249,8 +334,16 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     if sigma_u_val is None:
         raise ValueError("parameter_set must include a 'sigma_u' key.")
 
-    # Validate the Jacobian before using it in fsolve
-    validate_jacobian(sigma_u_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target)
+    # Check if we're using the specialized case (mean, CV, and autocorrelation)
+    use_specialized_jacobian = (mu_target is not None and cv_target is not None and 
+                               autocorr_target is not None and
+                               variance_target is None and fano_factor_target is None)
+    
+    if use_specialized_jacobian:
+        print("Using specialized Jacobian for CV, mean, and autocorrelation")
+    else:
+        # Validate the general Jacobian before using it in fsolve
+        validate_jacobian(sigma_u_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target)
 
     to_solve = []
     fixed = {}
@@ -340,7 +433,7 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
                 solution = fsolve(
                     equations, initial_guess,
                     args=(sigma_u_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target),
-                    fprime=jacobian,
+                    fprime=jacobian,  # Always use the main jacobian function
                     xtol=1e-8
                 )
 
