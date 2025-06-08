@@ -5,11 +5,56 @@ from sympy import init_printing
 import numpy as np
 from scipy.optimize import fsolve, check_grad
 from utils.fano_factor import calculate_fano_factor,calculate_fano_factor_from_params
-from utils.cv import calculate_cv
-
 # Define symbols globally for reuse
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
 init_printing(use_unicode=True)
+
+# Precompute symbols and derivative functions for a fast Jacobian used when
+# mean, CV, and autocorrelation targets are provided simultaneously.
+mu_t, cv_t, ac_t = sp.symbols('mu_t cv_t ac_t')
+
+# Mean equation derivatives
+mean_drho_sym = sigma_b / (d * (sigma_b + sigma_u))
+mean_dsigmab_sym = rho * sigma_u / (d * (sigma_b + sigma_u) ** 2)
+mean_dd_sym = -sigma_b * rho / (d ** 2 * (sigma_b + sigma_u))
+
+# CV equation and derivatives
+cv_expr_sym = sp.sqrt(
+    sigma_b * rho / (d * (sigma_b + sigma_u))
+    + (sigma_u * sigma_b) * rho ** 2 / (d * (sigma_b + sigma_u + d) * (sigma_b + sigma_u) ** 2)
+) / mu_t - cv_t
+cv_drho_sym = sp.diff(cv_expr_sym, rho)
+cv_dsigmab_sym = sp.diff(cv_expr_sym, sigma_b)
+cv_dd_sym = sp.diff(cv_expr_sym, d)
+
+# Autocorrelation equation derivatives evaluated at t=1
+ACmRNA_eq = sp.exp(-d * t) * (
+    d * sp.exp((d - sigma_u - sigma_b) * t) * rho * sigma_u
+    - (sigma_u + sigma_b) * (-d**2 + rho * sigma_u + (sigma_u + sigma_b) ** 2)
+) / (
+    (d - sigma_u - sigma_b) * (rho * sigma_u + d * (sigma_u + sigma_b) + (sigma_u + sigma_b) ** 2)
+)
+autocorr_expr_sym = ACmRNA_eq.subs(t, 1) - ac_t
+ac_drho_sym = sp.diff(autocorr_expr_sym, rho)
+ac_dsigmab_sym = sp.diff(autocorr_expr_sym, sigma_b)
+ac_dd_sym = sp.simplify(sp.diff(autocorr_expr_sym, d))
+
+# Lambdify derivative expressions for numerical evaluation
+_MEAN_DERIVS = (
+    sp.lambdify((rho, sigma_b, d, sigma_u), mean_drho_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u), mean_dsigmab_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u), mean_dd_sym, 'numpy'),
+)
+_CV_DERIVS = (
+    sp.lambdify((rho, sigma_b, d, sigma_u, mu_t), cv_drho_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u, mu_t), cv_dsigmab_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u, mu_t), cv_dd_sym, 'numpy'),
+)
+_AC_DERIVS = (
+    sp.lambdify((rho, sigma_b, d, sigma_u, ac_t), ac_drho_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u, ac_t), ac_dsigmab_sym, 'numpy'),
+    sp.lambdify((rho, sigma_b, d, sigma_u, ac_t), ac_dd_sym, 'numpy'),
+)
 
 def equations(vars, sigma_u, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
     '''
@@ -72,6 +117,9 @@ def equations(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targ
 def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
     ''' 
     Calculate the Jacobian matrix for the equations defined above.
+    When mean, CV and autocorrelation targets are simultaneously supplied (with
+    neither variance nor Fano factor fixed), a custom Jacobian based on analytic
+    derivatives is returned for efficiency.
     Args:
         vars (tuple): Tuple of variables (rho, sigma_b, d).
         sigma_u (float): Value of sigma_u.
@@ -85,6 +133,34 @@ def jacobian(vars, sigma_u, mu_target=None, variance_target=None, autocorr_targe
     '''
     
     rho_val, sigma_b_val, d_val = vars
+
+    # Optimization: when mean, CV and autocorrelation targets are provided (and
+    # variance and Fano factor are not), use pre-computed analytic derivatives
+    # rather than relying on SymPy's jacobian each call.
+    if (
+        mu_target is not None
+        and cv_target is not None
+        and autocorr_target is not None
+        and variance_target is None
+        and fano_factor_target is None
+    ):
+        J = np.zeros((3, 3), dtype=float)
+        # Mean equation derivatives
+        J[0, 0] = _MEAN_DERIVS[0](rho_val, sigma_b_val, d_val, sigma_u)
+        J[0, 1] = _MEAN_DERIVS[1](rho_val, sigma_b_val, d_val, sigma_u)
+        J[0, 2] = _MEAN_DERIVS[2](rho_val, sigma_b_val, d_val, sigma_u)
+
+        # CV equation derivatives
+        J[1, 0] = _CV_DERIVS[0](rho_val, sigma_b_val, d_val, sigma_u, mu_target)
+        J[1, 1] = _CV_DERIVS[1](rho_val, sigma_b_val, d_val, sigma_u, mu_target)
+        J[1, 2] = _CV_DERIVS[2](rho_val, sigma_b_val, d_val, sigma_u, mu_target)
+
+        # Autocorrelation equation derivatives (explicit d derivative used)
+        J[2, 0] = _AC_DERIVS[0](rho_val, sigma_b_val, d_val, sigma_u, autocorr_target)
+        J[2, 1] = _AC_DERIVS[1](rho_val, sigma_b_val, d_val, sigma_u, autocorr_target)
+        J[2, 2] = _AC_DERIVS[2](rho_val, sigma_b_val, d_val, sigma_u, autocorr_target)
+        return J
+
     rho_sym, sigma_b_sym, d_sym = sp.symbols('rho sigma_b d', real=True, positive=True)
 
 
