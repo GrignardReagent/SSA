@@ -17,3 +17,5 @@ src/*/__pycache__/*
 src/*.egg-info/*
 src/*/*.egg-info/*
 **/debug.ipynb
+# virtual environments
+micromamba/
