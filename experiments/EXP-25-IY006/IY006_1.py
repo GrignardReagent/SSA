@@ -23,7 +23,7 @@ from utils.load_data import load_and_split_data
 # ---------------------------------------------------------------------------
 # Data preparation (same dataset and preprocessing as IY006.py)
 # ---------------------------------------------------------------------------
-DATA_FILE = "~/stochastic_simulations/experiments/EXP-25-IY001/data/combined_traj_1199_1200_SS.csv"
+DATA_FILE = "/exports/eddie/scratch/s1732775/SSA/experiments/EXP-25-IY001/data/combined_traj_1199_1200_SS.csv"
 
 # Load data with an explicit validation split
 X_train, X_val, X_test, y_train, y_val, y_test = load_and_split_data(
