@@ -7,8 +7,6 @@ experiments/EXP-25-IY004/var_v_accuracy_plot/data_03_04_2025/steady_state_trajec
 experiments/EXP-25-IY004/var_v_accuracy_plot/data_12_04_2025/mRNA*
 **/mRNA*
 **/m_traj*
-# virtual environment
-.env
 
 *.pyc
 *.pyo
@@ -17,5 +15,6 @@ src/*/__pycache__/*
 src/*.egg-info/*
 src/*/*.egg-info/*
 **/debug.ipynb
-# virtual environments
-micromamba/
+# virtual environment
+.env
+**/micromamba/**
