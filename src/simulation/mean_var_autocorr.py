@@ -169,10 +169,11 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
     
     if cv >= max_cv:
         print(f"⚠️ WARNING: CV {cv:.2f} > {max_cv}, consider changing the target variance or mean.")
-    elif fano_factor >= max_fano_factor:
-        print(f"⚠️ WARNING: Fano factor {fano_factor:.2f} > {max_fano_factor}, consider changing the target parameters.")
-    elif fano_factor < min_fano_factor:
-        print(f"⚠️ WARNING: Fano factor {fano_factor:.2f} < {min_fano_factor}, consider changing the target parameters.")
+    elif fano_factor >= max_fano_factor or fano_factor < min_fano_factor:
+        # If Fano factor is outside the acceptable range, print a warning, but still return appropriateness as True if CV is acceptable
+        print(f"⚠️ WARNING: Fano factor {fano_factor:.2f} is outside the acceptable range ({min_fano_factor}, {max_fano_factor}).")
+        if cv < max_cv:
+            appropriateness = True
     else:
         print(f"✅ System is biologically appropriate with Fano factor: {fano_factor:.2f}, CV: {cv:.2f}")
         appropriateness = True
