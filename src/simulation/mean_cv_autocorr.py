@@ -26,22 +26,19 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
         raise ValueError("quick_find_parameters requires mu_target, cv_target, and autocorr_target to be specified")
     
     # Step 1: Find d using numerical root finding with exponential transformation
-    # Use d = exp(D) to ensure d is always positive
-    def d_equation_exp(D):
+    def d_equation(D):
         # Convert D to d using exponential transformation
-        d_val = np.exp(D)
+        d_val = D
         
         # we use CV^2 to make calculations easier for the solvers
         cv_sq_target = cv_target ** 2
         # Use np.exp consistently for numerical calculations
         return -1/np.exp(1) + (-(d_val*mu_target*(1 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target))) + (-1 + cv_sq_target*mu_target**2 + cv_sq_target**2*mu_target**2 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target)**2)*sigma_b)/(cv_sq_target*np.exp(autocorr_target*d_val)*mu_target*(-(d_val*mu_target) + (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))
-
-
-    def d_equation_exp_sq_minus_sigma_u(D):
+    
+    def d_equation_sq_minus_sigma_u(D):
         '''This is f(d)^2 - sigma_u'''
-        
-        # Convert D to d using exponential transformation
-        d_val = np.exp(D)
+
+        d_val = D
         
         # we use CV^2 to make calculations easier for the solvers
         cv_sq_target = cv_target ** 2
@@ -50,74 +47,46 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
         
         # Use np.exp consistently for numerical calculations
         return (-1/np.exp(1) + (-(d_val*mu_target*(1 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target))) + (-1 + cv_sq_target*mu_target**2 + cv_sq_target**2*mu_target**2 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target)**2)*sigma_b)/(cv_sq_target*np.exp(autocorr_target*d_val)*mu_target*(-(d_val*mu_target) + (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b)))**2 - sigma_u
-
-    # Use a more robust solver with multiple initial guesses in log space
-    # Try values around log(1/autocorr_target)
-    D_guess = np.log(1.0 / autocorr_target)
+    
+    # Square the equation for solutions where f(d) = 0
+    d_equation_sq = lambda D: d_equation(D) ** 2
+    
+    D_guess = 1.0 / autocorr_target
     d_value = None
     rho = None
     sigma_u = None
 
     try:
-        # # Square the equation for solutions where f(d) = 0
-        d_equation_exp_sq = lambda D: d_equation_exp(D) ** 2 
-        result = fsolve(d_equation_exp_sq, D_guess, full_output=True)
-        
-        #DEBUG: Print the result of fsolve
-        # print(f"fsolve result: {result}")
-        if result[2] == 1:  # Check if converged
-            D_solution = result[0][0]
-            d_candidate = np.exp(D_solution)  # Transform back to d
-            # d is guaranteed to be positive due to exp transform
-            d_value = d_candidate
-            #DEBUG: Print the found d value
-            # print(f"Found d: {d_value:.4f} from D={D_solution:.4f}")
+        ################ Use minimization on d_equation_sq ##################
+        result = minimize_scalar(d_equation_sq, method='bounded', bounds=(1e-3, 1e3))
+        if result.success:
+            D_solution = result.x
+            d_value = D_solution
 
-            # Step 2: Calculate the corresponding sigma and rho
-            # need to use cv_sq_target so it's easier to solve
+            # Compute sigma_u safely
             cv_sq_target = cv_target ** 2
             sigma_u = -(((-1 + cv_sq_target*mu_target)*sigma_b*(d_value + sigma_b))/(-(d_value*mu_target) + (-1 + cv_sq_target*mu_target)*sigma_b))
 
-            # Step 3: Calculate rho using the mean equation
+            if sigma_u < 0:
+                raise ValueError(f"Minimization led to negative sigma_u: {sigma_u:.4f}")
+
+            # Compute rho from mean constraint
             rho = (d_value * mu_target * (sigma_b + sigma_u)) / sigma_b
 
-        ################ Use minimization on d_equation_exp_sq ##################
-        # result = minimize_scalar(d_equation_exp_sq, method='bounded', bounds=(np.log(1e-3), np.log(1e3)))
-        # if result.success:
-        #     D_solution = result.x
-        #     d_candidate = np.exp(D_solution)
-        #     d_value = d_candidate
-
-        #     # Compute sigma_u safely
-        #     cv_sq_target = cv_target ** 2
-        #     sigma_u = -(((-1 + cv_sq_target*mu_target)*sigma_b*(d_value + sigma_b))/(-(d_value*mu_target) + (-1 + cv_sq_target*mu_target)*sigma_b))
-
-        #     if sigma_u < 0:
-        #         raise ValueError(f"Minimization led to negative sigma_u: {sigma_u:.4f}")
-
-        #     # Compute rho from mean constraint
-        #     rho = (d_value * mu_target * (sigma_b + sigma_u)) / sigma_b
-
-        #     if rho <= 0:
-        #         raise ValueError(f"Invalid rho computed: {rho:.4f}")
-        # else:
-        #     raise ValueError(f"Minimize_scalar routine failed: {result.message}")
-        
-        
-        ################ Use minimization on d_equation_exp_sq ##################
-        
+            if rho <= 0:
+                raise ValueError(f"Invalid rho computed: {rho:.4f}")
+        ################ Use minimization on d_equation_sq ##################
+    
             # Check if the solutions are valid (all parameters positive), if not, try the next guess
             if sigma_u <= 0 or rho <= 0:
                 print(f"Warning: Invalid solution for D={D_guess}: rho={rho}, sigma_u={sigma_u}, d={d_value}")
                 ########### MINIMIZATION ROUTINE ###########
                 print("Trying bounded minimization...")
-                # Use bounded minimization for stability and positivity
-                result = minimize_scalar(d_equation_exp_sq_minus_sigma_u, method='bounded', bounds=(np.log(1e-3), np.log(1e3)))
+                result = minimize_scalar(d_equation_sq_minus_sigma_u, method='bounded', bounds=(1e-3, 1e3))
 
                 if result.success:
                     D_solution = result.x
-                    d_candidate = np.exp(D_solution)
-                    d_value = d_candidate
+                    d_value = D_solution
 
                     # Compute sigma_u safely
                     cv_sq_target = cv_target ** 2
@@ -140,21 +109,20 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
         print(f"Warning: Error during solving for D={D_guess}: {str(e)}")
 
     # DEBUG 
-    print(f"Final d_value: {d_value}, rho: {rho}, sigma_u: {sigma_u}")
+    # print(f"Final d_value: {d_value}, rho: {rho}, sigma_u: {sigma_u}")
     if d_value is None or rho is None or sigma_u is None:
         print(f"One of the following values is None: final d_value: {d_value}, rho: {rho}, sigma_u: {sigma_u}")
         try:
             ########### MINIMIZATION ROUTINE ###########
             print("Trying bounded minimization...")
-            # Use bounded minimization for stability and positivity
-            result = minimize_scalar(d_equation_exp_sq_minus_sigma_u, method='bounded', bounds=(np.log(1e-3), np.log(1e3)))
+            result = minimize_scalar(d_equation_sq_minus_sigma_u, method='bounded', bounds=(1e-3, 1e3))
+            
             #DEBUG: Print the result of minimization
             print(f'res.fun for minimize_scalar: {result.fun}')
 
             if result.success:
                 D_solution = result.x
-                d_candidate = np.exp(D_solution)
-                d_value = d_candidate
+                d_value = D_solution
 
                 # Compute sigma_u safely
                 cv_sq_target = cv_target ** 2
@@ -174,7 +142,6 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
         except Exception as e:
             raise ValueError("Could not find a valid solution for parameter d")
         
-
     # Return the solution as a tuple
     solution = (rho, sigma_u, d_value)
     
