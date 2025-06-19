@@ -1,0 +1,500 @@
+Starting comparison of parameter finding methods...
+Starting comparison with:
+Normal CV: 0.25, Mean: 50.00, Autocorrelation Time: 5.00
+Comparing methods across CV ratios:   0%|          | 0/15 [00:00<?, ?it/s]/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:48: RuntimeWarning: invalid value encountered in multiply
+  ACmRNA_eq = sp.exp(-d_val * t) * (
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:49: RuntimeWarning: invalid value encountered in multiply
+  d_val * sp.exp((d_val - sigma_u_val - sigma_b) * t) * rho_val * sigma_u_val
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:309: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/src/simulation/mean_var_autocorr.py:309: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  solution = fsolve(
+Comparing methods across CV ratios:   7%|▋         | 1/15 [1:03:01<14:42:27, 3781.93s/it]Comparing methods across CV ratios:  13%|█▎        | 2/15 [1:32:16<9:21:00, 2589.24s/it] /home/ianyang/stochastic_simulations/src/simulation/mean_cv_autocorr.py:37: RuntimeWarning: overflow encountered in exp
+  return -1/np.exp(1) + (-(d_val*mu_target*(1 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target))) + (-1 + cv_sq_target*mu_target**2 + cv_sq_target**2*mu_target**2 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target)**2)*sigma_b)/(cv_sq_target*np.exp(autocorr_target*d_val)*mu_target*(-(d_val*mu_target) + (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))
+/home/ianyang/stochastic_simulations/src/simulation/mean_cv_autocorr.py:37: RuntimeWarning: invalid value encountered in scalar add
+  return -1/np.exp(1) + (-(d_val*mu_target*(1 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target))) + (-1 + cv_sq_target*mu_target**2 + cv_sq_target**2*mu_target**2 + np.exp((autocorr_target*d_val*(d_val*mu_target - (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))/(d_val*mu_target + sigma_b - cv_sq_target*mu_target*sigma_b))*(-1 + cv_sq_target*mu_target)**2)*sigma_b)/(cv_sq_target*np.exp(autocorr_target*d_val)*mu_target*(-(d_val*mu_target) + (-2 + mu_target + 2*cv_sq_target*mu_target)*sigma_b))
+/home/ianyang/stochastic_simulations/src/simulation/mean_cv_autocorr.py:63: RuntimeWarning: overflow encountered in scalar power
+  d_equation_exp_sq = lambda D: d_equation_exp(D) ** 2
+Comparing methods across CV ratios:  20%|██        | 3/15 [2:34:11<10:20:42, 3103.52s/it]Comparing methods across CV ratios:  27%|██▋       | 4/15 [3:34:31<10:06:20, 3307.36s/it]Comparing methods across CV ratios:  33%|███▎      | 5/15 [4:34:03<9:27:05, 3402.56s/it] Comparing methods across CV ratios:  40%|████      | 6/15 [5:32:07<8:34:32, 3430.26s/it]
+CV ratio: 0.50, Stress CV: 0.12, Normal CV: 0.25
+⚠️ WARNING: Fano factor 0.78 is outside the acceptable range (1, 20).
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Warning: Error during solving for D=-1.6094379124341003: Minimization led to negative sigma_u: -0.2112
+One of the following values is None: final d_value: 13.992650425557988, rho: None, sigma_u: -0.21124468292876583
+Trying bounded minimization...
+res.fun for minimize_scalar: 3.1081044036078397e-15
+[stress] Quick method failed: Could not find a valid solution for parameter d
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 0.60, Stress CV: 0.15, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 1.12, CV: 0.15
+Attempt 1/10
+✅ System is biologically appropriate with Fano factor: 1.12, CV: 0.15
+[stress] Standard method: 6.2476s, parameters: [13.37413622  6.72587316  0.20016762]
+Found valid solution for D=-1.6094379124341003: rho=703.8968402997161, sigma_u=0.12190168077011442, d=13.992650425728078
+Warning: Solution found but residuals are high: [-7.105427357601002e-15, -0.36787944117144233, 3.469446951953614e-18]
+[stress] Quick method: 0.0029s, parameters: (703.8968402997161, 0.12190168077011442, 13.992650425728078)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 0.70, Stress CV: 0.17, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 1.53, CV: 0.17
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+One of the following values is None: final d_value: None, rho: None, sigma_u: None
+Trying bounded minimization...
+res.fun for minimize_scalar: nan
+[stress] Quick method failed: Could not find a valid solution for parameter d
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0030s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 0.80, Stress CV: 0.20, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.00, CV: 0.20
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=734.6254960652136, sigma_u=1.0003244213032836, d=13.9926504243904
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 6.938893903907228e-18]
+[stress] Quick method: 0.0029s, parameters: (734.6254960652136, 1.0003244213032836, 13.9926504243904)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 0.90, Stress CV: 0.22, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 2.53, CV: 0.22
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=754.0665048298558, sigma_u=1.5560735660329992, d=13.9926504243904
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 6.938893903907228e-18]
+[stress] Quick method: 0.0030s, parameters: (754.0665048298558, 1.5560735660329992, 13.9926504243904)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.00, Stress CV: 0.25, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 3.12, CV: 0.25
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=776.5386570014323, sigma_u=2.1984722965095544, d=13.9926504243904
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, -6.938893903907228e-18]
+[stress] Quick method: 0.0029s, parameters: (776.5386570014323, 2.1984722965095544, 13.9926504243904)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.10, Stress CV: 0.27, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 3.78, CV: 0.27
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=802.3404817867938, sigma_u=2.936054498674392, d=13.9926504243904Comparing methods across CV ratios:  47%|████▋     | 7/15 [6:30:30<7:40:32, 3454.04s/it]Comparing methods across CV ratios:  53%|█████▎    | 8/15 [7:28:29<6:43:53, 3461.99s/it]Comparing methods across CV ratios:  60%|██████    | 9/15 [8:26:51<5:47:28, 3474.68s/it]Comparing methods across CV ratios:  67%|██████▋   | 10/15 [9:24:50<4:49:40, 3476.10s/it]Comparing methods across CV ratios:  73%|███████▎  | 11/15 [10:22:50<3:51:48, 3477.13s/it]Comparing methods across CV ratios:  80%|████████  | 12/15 [11:20:29<2:53:35, 3471.74s/it]
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 0.0]
+[stress] Quick method: 0.0030s, parameters: (802.3404817867938, 2.936054498674392, 13.9926504243904)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.20, Stress CV: 0.30, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 4.50, CV: 0.30
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=831.8338771096238, sigma_u=3.7791655442107057, d=13.9926504243904
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 0.0]
+[stress] Quick method: 0.0029s, parameters: (831.8338771096238, 3.7791655442107057, 13.9926504243904)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0031s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.30, Stress CV: 0.32, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 5.28, CV: 0.32
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=865.4582499846003, sigma_u=4.740366513438556, d=13.992650424390405
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 0.0]
+[stress] Quick method: 0.0031s, parameters: (865.4582499846003, 4.740366513438556, 13.992650424390405)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.40, Stress CV: 0.35, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 6.12, CV: 0.35
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=903.7490443201993, sigma_u=5.834963839156085, d=13.992650424390467
+Warning: Solution found but residuals are high: [-7.105427357601002e-15, -0.36787944117144233, 1.3877787807814457e-17]
+[stress] Quick method: 0.0029s, parameters: (903.7490443201993, 5.834963839156085, 13.992650424390467)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.50, Stress CV: 0.37, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 7.03, CV: 0.37
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=947.3622586160731, sigma_u=7.081710180216175, d=13.992650424390753
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 0.0]
+[stress] Quick method: 0.0029s, parameters: (947.3622586160731, 7.081710180216175, 13.992650424390753)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.60, Stress CV: 0.40, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 8.00, CV: 0.40
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=997.1072742462159, sigma_u=8.503742865128439, d=13.992650424391524
+Warning: Solution found but residuals are high: [0.0, -0.36787944117144233, 5.551115123125783e-17]
+[stress] Quick method: 0.0030s, parameters: (997.1072742462159, 8.503742865128439, 13.992650424391524)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0028s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.70, Stress CV: 0.42, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 9.03, CV: 0.42
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=1053.9914143736637, sigma_u=10.129857672603901, d=13.992650424393126
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, 5.551115123125783e-17]
+[stress] Quick method: 0.0028s, parameters: (1053.9914143736637, 10.129857672603901, 13.992650424393126)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.Comparing methods across CV ratios:  87%|████████▋ | 13/15 [12:17:34<1:55:14, 3457.40s/it]Comparing methods across CV ratios:  93%|█████████▎| 14/15 [13:14:48<57:30, 3450.34s/it]  Comparing methods across CV ratios: 100%|██████████| 15/15 [14:11:51<00:00, 3442.09s/it]Comparing methods across CV ratios: 100%|██████████| 15/15 [14:11:51<00:00, 3407.41s/it]
+
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0030s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.80, Stress CV: 0.45, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 10.12, CV: 0.45
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=1119.2813733695361, sigma_u=11.99626487968554, d=13.992650424395867
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -2.7755575615628914e-17]
+[stress] Quick method: 0.0030s, parameters: (1119.2813733695361, 11.99626487968554, 13.992650424395867)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+CV ratio: 1.90, Stress CV: 0.47, Normal CV: 0.25
+✅ System is biologically appropriate with Fano factor: 11.28, CV: 0.47
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[stress] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=1194.5894125360555, sigma_u=14.149053290232217, d=13.992650424399887
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -2.7755575615628914e-17]
+[stress] Quick method: 0.0029s, parameters: (1194.5894125360555, 14.149053290232217, 13.992650424399887)
+Attempt 1/10
+Attempt 2/10
+Attempt 3/10
+Attempt 4/10
+Attempt 5/10
+Attempt 6/10
+Attempt 7/10
+Attempt 8/10
+Attempt 9/10
+Attempt 10/10
+[normal] Standard method failed: No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.
+Found valid solution for D=-1.6094379124341003: rho=752.2139641546651, sigma_u=0.7515580156778744, d=13.9926504243904
+Warning: Solution found but residuals are high: [7.105427357601002e-15, -0.36787944117144233, -6.938893903907228e-18]
+[normal] Quick method: 0.0029s, parameters: (752.2139641546651, 0.7515580156778744, 13.9926504243904)
+
+============================================================
+PERFORMANCE COMPARISON SUMMARY
+============================================================
+Total test cases: 30
+Standard method successes: 1 (3.3%)
+Quick method successes: 28 (93.3%)
+Average speedup (standard/quick): 2122.50x
+
+Average parameter differences:
+  rho: 5163.12%
+  sigma_u: 98.19%
+  d: 6890.47%
+
+Detailed Results:
++------------+-------------+-----------------+--------------+-----------+------------+-------------+------------+
+|   CV Ratio | Condition   | Standard Time   | Quick Time   | Speedup   | ρ Diff %   | σᵤ Diff %   | d Diff %   |
++============+=============+=================+==============+===========+============+=============+============+
+|        0.6 | stress      | 6.2476s         | 0.0029s      | 2122.50x  | 5163.12%   | 98.19%      | 6890.47%   |
++------------+-------------+-----------------+--------------+-----------+------------+-------------+------------+

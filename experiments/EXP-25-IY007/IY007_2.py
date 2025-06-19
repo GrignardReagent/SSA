@@ -22,39 +22,6 @@ from classifiers.mlp_classifier import mlp_classifier
 from classifiers.random_classifier import random_classifier
 from classifiers.transformer_classifier import transformer_classifier
 
-
-#############################################################################
-# Benchmarking
-# 1) Use the best hyperparameters from IY001
-#############################################################################
-# read in the finetuning results
-df_finetune_results = pd.read_csv("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY001/data/IY001A.csv")
-
-df_finetune_results = df_finetune_results.sort_values(by='test_acc', ascending=False)
-
-# get the best parameters
-best_params = df_finetune_results.iloc[0][
-    ['architecture', 'hidden_size', 'num_layers', 'dropout_rate', 'learning_rate', 'batch_size', 'epochs']
-    ]
-
-architectures = [
-    {"name": "Vanilla LSTM", "conv1d": False, "attention": False, "multihead": False, "aux": False},
-    {"name": "Conv1D Only", "conv1d": True,  "attention": False, "multihead": False, "aux": False},
-    {"name": "Conv1D + Attention", "conv1d": True,  "attention": True, "multihead": False, "aux": False},
-    {"name": "Conv1D + MultiHead", "conv1d": True,  "attention": True, "multihead": True,  "aux": False},
-    {"name": "Full Model", "conv1d": True,  "attention": True, "multihead": True,  "aux": True},
-]
-
-# map the best architecture name to its config
-best_arch_name = best_params['architecture']
-best_arch_config = next((arch for arch in architectures if arch['name'] == best_arch_name), None)
-
-if best_arch_config is None:
-    raise ValueError(f"Architecture '{best_arch_name}' not found in predefined architectures.")
-
-
-
-
 ###############################################################################
 # Generate Synthetic Data
 # 1) Define target mean, CV and autocorrelations, and some parameters to start with
@@ -62,12 +29,8 @@ if best_arch_config is None:
 
 # Set initial parameters based on our testing in the notebook
 target_cv_normal = 0.5  # initial CV for normal condition
-mu_target = 12   # Try a higher initial mean
-autocorr_target = 0.5    # Autocorrelation (same for both conditions)
-
-# checking if the normal parameters are biologically appropriate                        
-# variance_normal = (target_cv_normal * mu_target)**2
-# is_normal_appropriate = check_biological_appropriateness(variance_normal, mu_target)
+mu_target = 20
+autocorr_target = 1     # Autocorrelation time (same for both conditions)
 
 # Try to find parameters that work for all CV ratios
 print("Finding parameters where all CV ratios are biologically appropriate...")
@@ -76,8 +39,8 @@ cv_ratio = np.arange(0.5, 2.0, 0.01)  # Narrower range that's more likely to be 
 
 # Initial parameters
 parameters = {
-    "stress": {"sigma_b": 46.7},
-    "normal": {"sigma_b": 5.4}
+    "stress": {"sigma_b": 2.0},
+    "normal": {"sigma_b": 1.0}
 }
 
 print(f"\nStarting simulations with:")
@@ -93,11 +56,9 @@ inappropriate_ratios = []
 for ratio in tqdm.tqdm(cv_ratio, desc="Running CV Ratio Simulations"):
     # For the stress condition, we define CV by ratio
     target_cv_stress = ratio * target_cv_normal
-    
     # Calculate corresponding variance values for reporting only
     variance_stress = (target_cv_stress * mu_target)**2
-
-    
+    variance_normal = (target_cv_normal * mu_target)**2
     print(f"\nTesting CV ratio: {ratio:.2f}, Stress CV: {target_cv_stress:.2f}, Normal CV: {target_cv_normal:.2f}")
     print(f"Corresponding variances - Stress: {variance_stress:.2f}, Normal: {variance_normal:.2f}")
     
@@ -124,7 +85,8 @@ for ratio in tqdm.tqdm(cv_ratio, desc="Running CV Ratio Simulations"):
         try:
             # Fix mean, CV, and autocorrelation
             rho, sigma_u, d = quick_find_parameters(
-                param, mu_target=mu_target, autocorr_target=autocorr_target, 
+                param.get('sigma_b'), # Pass the sigma_b value from the param dictionary, not the whole dictionary 
+                mu_target=mu_target, autocorr_target=autocorr_target, 
                 cv_target=cv_for_condition
             )
 
@@ -199,8 +161,42 @@ for ratio in tqdm.tqdm(cv_ratio, desc="Running CV Ratio Simulations"):
         #######################################################################
         # 4) Analysis & classification (updated to reuse IY002A model)
         #######################################################################
-        stress_trajectories = steady_state_series[steady_state_series['label'] == 0].iloc[:, 1:].values
-        normal_trajectories = steady_state_series[steady_state_series['label'] == 1].iloc[:, 1:].values
+        # Load the steady state data with explicit check for duplicate columns
+        steady_state_series = pd.read_csv(steady_state_file)
+        
+        # Check for duplicate column names and handle them
+        if len(steady_state_series.columns) != len(set(steady_state_series.columns)):
+            print("Warning: Duplicate column names detected in steady state data")
+            # Create a dictionary mapping original column names to unique ones
+            col_map = {}
+            for col in steady_state_series.columns:
+                if col in col_map:
+                    count = col_map[col]["count"] + 1
+                    col_map[col]["count"] = count
+                    col_map[col]["names"].append(f"{col}_{count}")
+                else:
+                    col_map[col] = {"count": 0, "names": [col]}
+            
+            # Create a flat list of new column names
+            new_columns = []
+            for col in steady_state_series.columns:
+                new_columns.append(col_map[col]["names"].pop(0))
+            
+            # Rename columns
+            steady_state_series.columns = new_columns
+        
+        # Make sure 'label' is correctly formatted
+        if 'label' in steady_state_series.columns:
+            stress_trajectories = steady_state_series[steady_state_series['label'] == 0].iloc[:, 1:].values
+            normal_trajectories = steady_state_series[steady_state_series['label'] == 1].iloc[:, 1:].values
+        else:
+            # If 'label' is missing, look for a column that might contain label information
+            # This assumes labels are in the first column if not explicitly named 'label'
+            label_col = steady_state_series.columns[0]
+            print(f"'label' column not found, using '{label_col}' as label column")
+            stress_trajectories = steady_state_series[steady_state_series[label_col] == 0].iloc[:, 1:].values
+            normal_trajectories = steady_state_series[steady_state_series[label_col] == 1].iloc[:, 1:].values
+        
         stats = statistical_report(parameter_sets, stress_trajectories, normal_trajectories)
 
         # classifiers
@@ -215,19 +211,28 @@ for ratio in tqdm.tqdm(cv_ratio, desc="Running CV Ratio Simulations"):
         # vanilla LSTM, not finetuned
         lstm_accuracy = lstm_classifier(X_train, X_val, X_test, y_train, y_val, y_test, epochs=50,
                                         use_conv1d=False, use_attention=False, use_auxiliary=False)
-        # Train and evaluate model using best hyperparams and architecture from IY001
+        # Train and evaluate model using best hyperparams from IY001A
         iy001a_lstm_accuracy = lstm_classifier(
             X_train, X_val, X_test, y_train, y_val, y_test,
-            epochs=int(best_params['epochs']),
-            hidden_size=int(best_params['hidden_size']),
-            num_layers=int(best_params['num_layers']),
-            dropout_rate=float(best_params['dropout_rate']),
-            learning_rate=float(best_params['learning_rate']),
-            batch_size=int(best_params['batch_size']),
-            use_conv1d=best_arch_config['conv1d'],
-            use_attention=best_arch_config['attention'],
-            num_attention_heads=4 if best_arch_config['attention'] else 0,
-            use_auxiliary=best_arch_config['aux'],
+            epochs=100,
+            hidden_size=128,
+            num_layers=4,
+            dropout_rate=0.2,
+            learning_rate=0.001,
+            batch_size=64,
+            use_conv1d=True,
+            use_attention=True,
+            num_attention_heads=4,
+            use_auxiliary=True,
+        )
+        # IY006C-Transformer benchmark - using best configuration from IY006C
+        iy006c_transformer_accuracy = transformer_classifier(
+            X_train, X_val, X_test, y_train, y_val, y_test, 
+            d_model=128, nhead=4, num_layers=2, 
+            dropout_rate=0.1, learning_rate=0.01, batch_size=64,
+            epochs=50, pooling_strategy='last', 
+            use_conv1d=True, use_auxiliary=False,
+            gradient_clip=1.0
         )
         # Vanilla Transformer, not finetuned
         transformer_accuracy = transformer_classifier(
@@ -258,12 +263,13 @@ for ratio in tqdm.tqdm(cv_ratio, desc="Running CV Ratio Simulations"):
             "Random Classifier Accuracy": [random_accuracy],
             "Vanilla LSTM Accuracy": [lstm_accuracy],
             "IY001A Accuracy": [iy001a_lstm_accuracy],
+            "IY006C-Transformer Accuracy": [iy006c_transformer_accuracy],
             "Vanilla Transformer Accuracy": [transformer_accuracy],
             "Full Transformer Accuracy": [transformer_full_accuracy],
         })
 
         # Save results
-        results_file = "data/IY007B.csv"
+        results_file = "data/IY007D.csv"
         if not os.path.isfile(results_file):
             df_acc_results.to_csv(results_file, index=False)
         else:
