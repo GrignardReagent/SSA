@@ -51,6 +51,7 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
     # Square the equation for solutions where f(d) = 0
     d_equation_sq = lambda D: d_equation(D) ** 2
     
+    # initialise system parameters
     D_guess = 1.0 / autocorr_target
     d_value = None
     rho = None
@@ -59,9 +60,14 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
     try:
         ################ Use minimization on d_equation_sq ##################
         result = minimize_scalar(d_equation_sq, method='bounded', bounds=(1e-3, 1e3))
+        
         if result.success:
             D_solution = result.x
             d_value = D_solution
+            # error trap for no solution found for d
+            if result.fun > 1e-6 or d_value is None or d_value <= 0 or np.isclose(d_value, 1e3, atol=1e-4):
+                print(f'⚠️ WARNING: No solution found for d')
+                raise ValueError("No valid solution found for parameter d")
 
             # Compute sigma_u safely
             cv_sq_target = cv_target ** 2
@@ -87,6 +93,11 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
                 if result.success:
                     D_solution = result.x
                     d_value = D_solution
+                    
+                    # error trap for no solution found for d
+                    if result.fun > 1e-6 or d_value is None or d_value <= 0 or np.isclose(d_value, 1e3, atol=1e-4):
+                        print(f'⚠️ WARNING: No solution found for d')
+                        raise ValueError("No valid solution found for parameter d")
 
                     # Compute sigma_u safely
                     cv_sq_target = cv_target ** 2
@@ -123,6 +134,11 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
             if result.success:
                 D_solution = result.x
                 d_value = D_solution
+                
+                # error trap for no solution found for d
+                if result.fun > 1e-6 or d_value is None or d_value <= 0 or np.isclose(d_value, 1e3, atol=1e-4):
+                    print(f'⚠️ WARNING: No solution found for d')
+                    raise ValueError("No valid solution found for parameter d")
 
                 # Compute sigma_u safely
                 cv_sq_target = cv_target ** 2
