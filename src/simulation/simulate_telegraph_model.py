@@ -84,3 +84,36 @@ def simulate_one_telegraph_model_system(parameter_set, time_points, size, num_co
         pd.DataFrame: DataFrame containing simulation results.
     """
     return simulate_two_telegraph_model_systems([parameter_set], time_points, size, num_cores)
+
+def extract_integer_timepoints_from_df(df: pd.DataFrame):
+    """
+    Extract only the columns corresponding to integer time points
+    from a wide-format DataFrame where columns are 'time_X.Y' etc.
+
+    Parameters
+    ----------
+    df : pandas DataFrame
+        Wide-form results, with columns like 'time_0.0', 'time_0.1', ...
+        and optionally a 'label' or index column.
+
+    Returns
+    -------
+    extracted_df : pandas DataFrame
+        The same DataFrame but with only integer time point columns kept.
+    """
+
+    # keep non-time columns
+    non_time_columns = [col for col in df.columns if not col.startswith('time_')]
+
+    # identify time columns that are exactly integer:
+    integer_time_columns = [
+        col for col in df.columns
+        if col.startswith("time_")
+        and abs(float(col.split("_")[1]) - round(float(col.split("_")[1]))) < 1e-8
+    ]
+
+    # rebuild a dataframe with label + integer time columns
+    extracted_df = df[non_time_columns + integer_time_columns]
+
+    return extracted_df
+
