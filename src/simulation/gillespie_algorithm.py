@@ -91,7 +91,7 @@ def gillespie_draw(propensity_func, propensities, population, t, args=()):
     
     return rxn, time
 
-def gillespie_ssa(propensity_func, update, population_0, time_points, time_interval=1, args=()):
+def gillespie_ssa(propensity_func, update, population_0, time_points, args=()):
     """
     Uses the Gillespie stochastic simulation algorithm to sample
     from probability distribution of particle counts over time.
@@ -109,8 +109,9 @@ def gillespie_ssa(propensity_func, update, population_0, time_points, time_inter
         Array of initial populations of all chemical species.
     time_points : array_like, shape (num_time_points,)
         Array of points in time for which to sample the probability
-        distribution.
-    time_interval: int, default 1, the time interval between the simulated time points. If specifying the autocorrelation, time_interval should be set to at least a tenth of the autocorrelation time, so that there's enough data point for the autocorrelation calculation.
+        distribution. 
+        !!! Time interval is determined by this parameter. To set equal time intervals, you should use np.arange(start, stop, step) to generate the time_points. !!!
+        If specifying the autocorrelation, the 'step' parameter should be set to at least a tenth of the autocorrelation time, so that there's enough data point for the autocorrelation calculation.
     args : tuple, default ()
         The set of parameters to be passed to propensity_func.        
 
@@ -125,13 +126,14 @@ def gillespie_ssa(propensity_func, update, population_0, time_points, time_inter
     pop_out = np.empty((len(time_points), update.shape[1]), dtype=int)
 
     # Initialize and perform simulation
+    i_time = 1 # this is NOT the time interval, but the index of the next time point to update
     i = 0
     t = time_points[0]
     population = population_0.copy()
     pop_out[0,:] = population
     propensities = np.zeros(update.shape[0])
     while i < len(time_points):
-        while t < time_points[time_interval]:
+        while t < time_points[i_time]:
             # draw the event and time step
             event, dt = gillespie_draw(propensity_func, propensities, population, t, args)
                 
@@ -141,13 +143,14 @@ def gillespie_ssa(propensity_func, update, population_0, time_points, time_inter
                 
             # Increment time
             t += dt
+
         # Update the index
         i = np.searchsorted(time_points > t, True)
         
         # Update the population
-        pop_out[time_interval:min(i,len(time_points))] = population_previous
+        pop_out[i_time:min(i,len(time_points))] = population_previous
         
         # Increment index
-        time_interval = i
+        i_time = i
                            
-    return pop_out
+    return pop_out # output shape: (num_time_points, num_chemical_species)

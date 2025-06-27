@@ -12,7 +12,7 @@ def run_simulation(args):
     """
     Runs a single simulation for a given parameter set.
     """
-    param_set, time_points, size, time_interval = args
+    param_set, time_points, size = args
     sigma_u, sigma_b, rho, d, label = param_set.values()
     population_0 = np.array([1, 0, 0], dtype=int)
 
@@ -22,13 +22,13 @@ def run_simulation(args):
     # for the size of the simulation traj defined, run the simulation with the specified parameters.
     for i in range(size):
         samples[i, :] = gillespie_ssa(
-            telegraph_model_propensity, update_matrix, population_0, time_points, time_interval,
+            telegraph_model_propensity, update_matrix, population_0, time_points,
             args=(sigma_u, sigma_b, rho, d))[:, 2]
 
     # Save each trajectory as a row with label
     return [[label] + list(trajectory) for trajectory in samples]
 
-def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, time_interval=1, num_cores=None):
+def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, num_cores=None):
     """
     Simulates two systems using stochastic gene expression model without forcing steady-state extension.
     
@@ -36,7 +36,6 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, time
         parameter_sets (list): List of parameter dictionaries for each system.
         time_points (numpy array): Array of time points for the simulation.
         size (int): Number of simulations per condition.
-        time_interval (int, optional): Time interval between simulated time points. Defaults to 1.
         num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
     
     Returns:
@@ -49,7 +48,7 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, time
     for system_index, param_set in tqdm.tqdm(enumerate(parameter_sets), total=len(parameter_sets), desc="Simulating Telegraph Model Systems"):
         with multiprocessing.Pool(num_cores) as pool:
             print(f"Running simulations on {num_cores} cores...\nSystem {system_index + 1} parameters: {param_set}")
-            results = pool.map(run_simulation, [(param_set, time_points, size, time_interval)])
+            results = pool.map(run_simulation, [(param_set, time_points, size)])
 
         # Flatten results
         results = [item for sublist in results for item in sublist]
