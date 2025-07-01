@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import numpy as np
+from scipy.interpolate import interp1d
 
 ############# Autocorrelation and Cross-correlation ##############
 def autocrosscorr(
@@ -115,3 +116,40 @@ def _dev(y, nr, nt, stationary=False):
     # standard deviation calculated for each replicate
     stdy = np.sqrt(np.nanmean(dy**2, axis=1).reshape((nr, 1)))
     return dy, stdy
+
+# Function to calculate autocorrelation for a dataset
+def calculate_autocorrelation(df):
+    # Separate by label (0 = stress, 1 = normal)
+    stress_df = df[df['label'] == 0]
+    normal_df = df[df['label'] == 1]
+    
+    # Remove 'label' column and convert to numpy array
+    stress_data = stress_df.drop('label', axis=1).values
+    normal_data = normal_df.drop('label', axis=1).values
+    
+    # Calculate autocorrelation
+    stress_ac, stress_lags = autocrosscorr(stress_data)
+    normal_ac, normal_lags = autocrosscorr(normal_data)
+    
+    return {
+        'stress_ac': stress_ac,
+        'stress_lags': stress_lags,
+        'normal_ac': normal_ac,
+        'normal_lags': normal_lags
+    }
+
+def calculate_ac_time_interp1d(ac_values, lags):
+    """
+    Interpolate to find the autocorrelation time where autocorrelation = 1/np.exp(1).
+    
+    Parameters:
+    - ac_values: Autocorrelation values.
+    - lags: Corresponding lags.
+    
+    Returns:
+    - ac_time: Interpolated autocorrelation time.
+    """
+    # Interpolate using interp1d
+    f_interp = interp1d(ac_values, lags, kind='linear')
+    ac_time = f_interp(1/np.e)
+    return ac_time

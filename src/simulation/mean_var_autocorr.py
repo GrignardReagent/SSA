@@ -4,8 +4,8 @@ import sympy as sp
 from sympy import init_printing
 import numpy as np
 from scipy.optimize import fsolve, check_grad, minimize_scalar
-from utils.fano_factor import calculate_fano_factor,calculate_fano_factor_from_params
-from utils.cv import calculate_cv
+from stats.fano_factor import calculate_fano_factor,calculate_fano_factor_from_params
+from stats.cv import calculate_cv
 
 # Define symbols globally for reuse
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
