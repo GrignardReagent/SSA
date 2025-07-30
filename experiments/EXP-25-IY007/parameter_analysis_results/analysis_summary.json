@@ -1,0 +1,9 @@
+{
+  "total_combinations": 3332,
+  "successful_combinations": 814,
+  "bio_appropriate_combinations": 3332,
+  "both_successful_and_bio": 814,
+  "success_rate": 0.24429771908763506,
+  "bio_appropriate_rate": 1.0,
+  "combined_success_rate": 0.24429771908763506
+}

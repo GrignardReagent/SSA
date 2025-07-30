@@ -10,8 +10,8 @@ from simulation.simulate_telegraph_model import simulate_two_telegraph_model_sys
 from stats.report import statistical_report
 from utils.load_data import load_and_split_data
 from utils.steady_state import save_steady_state
-from utils.cv import calculate_cv
-from utils.fano_factor import calculate_fano_factor, calculate_fano_factor_from_params
+from stats.cv import calculate_cv
+from stats.fano_factor import calculate_fano_factor, calculate_fano_factor_from_params
 from simulation.mean_var_autocorr import find_biological_variance_mean, check_biological_appropriateness
 from simulation.mean_cv_autocorr import quick_find_parameters
 from classifiers.lstm_classifier import lstm_classifier

@@ -1,0 +1,73 @@
+Running CV Parameter Finding:   0%|          | 0/3 [00:00<?, ?it/s]/home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/IY007_cv_ac_parameter_finder.py:138: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last ten iterations.
+  solution = fsolve(
+/home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/IY007_cv_ac_parameter_finder.py:138: RuntimeWarning: The iteration is not making good progress, as measured by the 
+ improvement from the last five Jacobian evaluations.
+  solution = fsolve(
+Running CV Parameter Finding:  33%|███▎      | 1/3 [08:38<17:17, 518.79s/it]Running CV Parameter Finding:  67%|██████▋   | 2/3 [16:07<07:57, 477.67s/it]Running CV Parameter Finding: 100%|██████████| 3/3 [22:59<00:00, 447.62s/it]Running CV Parameter Finding: 100%|██████████| 3/3 [22:59<00:00, 459.85s/it]
+
+--- Processing CV = 0.500 ---
+Finding parameters for stress condition...
+  ⚠️  Best solution for stress: rho=332792.5984, sigma_u=0.0016, d=30711.0902
+     Best residuals: [0.0117439809707367, 0.07311002132005395, 0.07434548792833058]
+Finding parameters for normal condition...
+  ⚠️  Best solution for normal: rho=332792.5984, sigma_u=0.0016, d=30711.0902
+     Best residuals: [0.0117439809707367, 0.07311002132005395, 0.07434548792833058]
+  Verification for stress:
+    Target mean: 10.0000, Actual mean: 10.0117
+    Target CV: 0.5000, Actual CV: 0.4269
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+  Verification for normal:
+    Target mean: 10.0000, Actual mean: 10.0117
+    Target CV: 0.5000, Actual CV: 0.4269
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+✅ Successfully found parameters for CV=0.500
+
+--- Processing CV = 0.700 ---
+Finding parameters for stress condition...
+  ⚠️  Best solution for stress: rho=2980.0463, sigma_u=0.0029, d=260.6249
+     Best residuals: [0.0056846598017621375, 0.20734938257336138, 0.20709024912072282]
+Finding parameters for normal condition...
+  ⚠️  Best solution for normal: rho=2980.0463, sigma_u=0.0029, d=260.6249
+     Best residuals: [0.0056846598017621375, 0.20734938257336138, 0.20709024912072282]
+  Verification for stress:
+    Target mean: 10.0000, Actual mean: 10.0057
+    Target CV: 0.7000, Actual CV: 0.4927
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+  Verification for normal:
+    Target mean: 10.0000, Actual mean: 10.0057
+    Target CV: 0.7000, Actual CV: 0.4927
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+✅ Successfully found parameters for CV=0.700
+
+--- Processing CV = 1.000 ---
+Finding parameters for stress condition...
+  ⚠️  Best solution for stress: rho=9600.6108, sigma_u=0.0061, d=737.4560
+     Best residuals: [0.018438111888094966, 0.3640486066593196, 0.3650609599340544]
+Finding parameters for normal condition...
+  ⚠️  Best solution for normal: rho=9600.6108, sigma_u=0.0061, d=737.4560
+     Best residuals: [0.018438111888094966, 0.3640486066593196, 0.3650609599340544]
+  Verification for stress:
+    Target mean: 10.0000, Actual mean: 9.9816
+    Target CV: 1.0000, Actual CV: 0.6360
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+  Verification for normal:
+    Target mean: 10.0000, Actual mean: 9.9816
+    Target CV: 1.0000, Actual CV: 0.6360
+    Target AC at t=1.0: 0.3679, Actual: 0.0000
+✅ Successfully found parameters for CV=1.000
+
+============================================================
+FINAL SUMMARY
+============================================================
+total_cv_values_tested: 3
+successful_parameter_sets: 3
+success_rate: 100.0
+cv_range_tested: 0.500 to 1.000
+mean_target: 10.0
+autocorr_target: 1.0
+sigma_b_fixed: 0.02
+
+Results saved to: data_cv_ac_parameter_sweep/
+- cv_ac_parameter_results_final.csv: Complete parameter sets
+- summary_stats.csv: Summary statistics

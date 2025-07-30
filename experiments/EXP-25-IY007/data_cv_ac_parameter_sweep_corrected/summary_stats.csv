@@ -1,0 +1,9 @@
+,0
+total_cv_values_tested,10
+successful_parameter_sets,10
+success_rate,100.0
+cv_range_tested,0.500 to 1.400
+mean_target,10.0
+autocorr_target,1.0
+sigma_b_fixed,0.02
+method,Simplified equations with complex autocorrelation verification

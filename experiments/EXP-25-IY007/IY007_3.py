@@ -12,8 +12,8 @@ from simulation.simulate_telegraph_model import simulate_two_telegraph_model_sys
 from stats.report import statistical_report
 from utils.load_data import load_and_split_data
 from utils.steady_state import save_steady_state
-from utils.cv import calculate_cv
-from utils.fano_factor import calculate_fano_factor, calculate_fano_factor_from_params
+from stats.cv import calculate_cv
+from stats.fano_factor import calculate_fano_factor, calculate_fano_factor_from_params
 from classifiers.lstm_classifier import lstm_classifier
 from classifiers.svm_classifier import svm_classifier
 from classifiers.random_forest_classifier import random_forest_classifier
