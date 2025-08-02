@@ -6,6 +6,10 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import torch.nn.functional as F
 import math
+import warnings
+
+# Suppress the nested tensor warning for norm_first=True
+warnings.filterwarnings("ignore", message="enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True")
 
 class PositionalEncoding(nn.Module):
     """
@@ -43,12 +47,35 @@ class PositionalEncoding(nn.Module):
         x = x + self.pe[:, :x.size(1), :]
         return self.dropout(x)
 
+# ---TODO Masking Utility -------------------------------------------------------
+def mask_series(x, mask_prob=0.15, mask_value=0.0):
+    """
+    Self-supervised masking for time-series inputs (BERT-style).
+    Randomly zeroes out a fraction of actual data points to force the
+    Transformer encoder to learn contextual representations that can
+    reconstruct missing values. This pre-training greatly improves feature
+    quality under limited labelled data.
+
+    Args:
+        x: Tensor of shape (batch, seq_len, features)
+        mask_prob: Fraction of time-steps to mask
+        mask_value: Value to replace masked entries (typically 0)
+    Returns:
+        x_masked: Tensor same shape as x, with masked entries zeroed
+        mask: Boolean tensor of shape (batch, seq_len, features), True where masked
+    """
+    # Create a mask per time-step, broadcast over features
+    mask = torch.rand_like(x[:, :, :1]) < mask_prob
+    x_masked = x.clone()
+    x_masked[mask.expand_as(x)] = mask_value
+    return x_masked, mask.expand_as(x)
+
 class TransformerClassifier(nn.Module):
     def __init__(self, input_size, d_model, nhead, num_layers, output_size,
                  dropout_rate=0.2, learning_rate=0.001, optimizer='Adam', 
                  use_conv1d=False, use_auxiliary=False, aux_weight=0.1,
                  pooling_strategy='last', use_mask=False, gradient_clip=1.0,
-                 device=None):
+                 device=None, verbose=False):
         """
         Transformer model for time series classification.
         
@@ -65,21 +92,23 @@ class TransformerClassifier(nn.Module):
             use_auxiliary: Whether to use auxiliary task
             aux_weight: Weight for auxiliary loss
             pooling_strategy: How to pool sequence outputs ('last', 'mean', 'learnable')
-            use_mask: Whether to use attention masking for variable length sequences
+            use_mask: Whether to use attention masking (so that the Transformer's attention block knows which time-steps to ignore) for variable length sequences. Effect: prevents the model from attending to non-data positions.
             gradient_clip: Value for gradient clipping
             device: Device to run model on
+            verbose: Whether to print debug information
         """
-        super(TransformerClassifier, self).__init__()
+        super().__init__()
         self.use_conv1d = use_conv1d
         self.use_auxiliary = use_auxiliary
         self.aux_weight = aux_weight
         self.pooling_strategy = pooling_strategy
         self.use_mask = use_mask
         self.gradient_clip = gradient_clip
-        
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.verbose = verbose
         num_gpus = torch.cuda.device_count()
-        print(f"🔄 Using device: {self.device} ({num_gpus} GPUs available)")
+        if self.verbose:
+            print(f"🔄 Using device: {self.device} ({num_gpus} GPUs available)")
         
         # Add Conv1D pre-processing to extract local temporal features
         if self.use_conv1d:
@@ -111,6 +140,7 @@ class TransformerClassifier(nn.Module):
             dropout=dropout_rate, 
             batch_first=True,
             norm_first=True  # Apply normalization before attention - helps training stability
+                            # Note: This disables nested tensor optimization but improves training
         )
         self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers=num_layers)
         
@@ -118,13 +148,17 @@ class TransformerClassifier(nn.Module):
         if pooling_strategy == 'learnable':
             self.pool_weights = nn.Parameter(torch.ones(1) / d_model)
         
-        # Fully connected layers for classification with ReLU instead of Softmax
+        # Fully connected layers for classification with ReLU activations.
+        # This head maps the pooled transformer output (context vector) to the final class logits.
+        # - First Linear: d_model → 128, followed by ReLU and dropout for regularization.
+        # - Second Linear: 128 → 64, again with ReLU and dropout.
+        # - Final Linear: 64 → output_size (number of classes).
         self.fc_layers = nn.Sequential(
             nn.Linear(d_model, 128),
             nn.ReLU(),
             nn.Dropout(dropout_rate),
             nn.Linear(128, 64),
-            nn.ReLU(),  # Using ReLU instead of Softmax here
+            nn.ReLU(), 
             nn.Dropout(dropout_rate),
             nn.Linear(64, output_size)
         )
@@ -146,6 +180,7 @@ class TransformerClassifier(nn.Module):
             self = nn.DataParallel(self)
             
         # Set up optimizer and loss functions
+        # for when we have multiple GPUs
         if isinstance(self, nn.DataParallel):
             if optimizer == "Adam":
                 self.module.optimizer = optim.Adam(self.module.parameters(), lr=learning_rate)
@@ -174,9 +209,10 @@ class TransformerClassifier(nn.Module):
             self.scheduler = self._get_lr_scheduler(self.optimizer)
             self.criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
             self.aux_criterion = nn.MSELoss()
-            
-        print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
-        
+
+        if self.verbose:
+            print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
+
     def _get_lr_scheduler(self, optimizer):
         """
         Create a learning rate scheduler with warmup and cosine decay.
@@ -211,7 +247,7 @@ class TransformerClassifier(nn.Module):
                 if m.bias is not None:
                     nn.init.zeros_(m.bias)
                     
-    def forward(self, x, mask=None):
+    def forward(self, x, mask=None):       
         # Apply Conv1D preprocessing if needed
         if self.use_conv1d:
             # Change from [batch, seq_len, features] to [batch, features, seq_len]
@@ -226,8 +262,10 @@ class TransformerClassifier(nn.Module):
         # Add positional encoding
         x = self.pos_encoder(x)
         
+        #TODO Complete this feature
         # Generate attention mask if needed
-        if self.use_mask and mask is None:
+        # This is to guide the model's attention during processing. It helps the model focus on the most relevant parts of the input data by selectively masking out or assigning zero weight to certain tokens or positions
+        if self.use_mask and mask is None: 
             # Create a simple padding mask (all tokens attended to)
             # In real usage, you'd compute this from actual sequence lengths
             mask = torch.zeros(x.size(0), x.size(1), dtype=torch.bool, device=x.device)
@@ -274,7 +312,8 @@ class TransformerClassifier(nn.Module):
         '''
         
         torch.cuda.empty_cache()
-        print("✅ Running on CUDA!" if self.device.type == 'cuda' else "❌ Still on CPU...")
+        if self.verbose:
+            print("✅ Running on CUDA!" if self.device.type == 'cuda' else "❌ Still on CPU...")
         
         history = {'train_loss': [], 'train_acc': [], 'val_acc': []}
         best_val_acc = 0.0
@@ -354,13 +393,15 @@ class TransformerClassifier(nn.Module):
             avg_loss = total_loss / len(train_loader)
             history['train_loss'].append(avg_loss)
             history['train_acc'].append(train_acc)
-            print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
-            
+            if self.verbose:
+                print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
+
             # Validation step
             if val_loader is not None:
                 val_acc = self.evaluate(val_loader)
                 history['val_acc'].append(val_acc)
-                print(f"Validation Acc: {val_acc:.4f}")
+                if self.verbose:
+                    print(f"Validation Acc: {val_acc:.4f}")
                 
                 # Update learning rate for ReduceLROnPlateau scheduler
                 if hasattr(model, 'scheduler') and isinstance(model.scheduler, optim.lr_scheduler.ReduceLROnPlateau):
@@ -375,13 +416,16 @@ class TransformerClassifier(nn.Module):
                         print(f"✅ Model saved at {save_path} (Best Val Acc: {best_val_acc:.4f})")
                 else:
                     epochs_no_improve += 1
-                    print(f"No improvement ({epochs_no_improve}/{patience}).")
+                    if self.verbose:
+                        print(f"No improvement ({epochs_no_improve}/{patience}).")
                     
                 if epochs_no_improve >= patience:
-                    print(f"Stopping early! No improvement for {patience} epochs.")
+                    if self.verbose:
+                        print(f"Stopping early! No improvement for {patience} epochs.")
                     break
-                    
-        print("Training complete!")
+        
+        if self.verbose:               
+            print("Training complete!")
         return history
         
     def evaluate(self, data_loader):
@@ -408,6 +452,79 @@ class TransformerClassifier(nn.Module):
             if isinstance(outputs, tuple):
                 outputs = outputs[0]  # Get class predictions if auxiliary is used
             return torch.argmax(outputs, dim=1)
+
+# TODO
+class PretrainTransformer(nn.Module):
+    """
+    Wraps the existing TransformerClassifier to perform masked reconstruction.
+    Shares conv1d, projection, positional encoding, and encoder layers.
+    Adds a reconstructor head to map back to original features.
+    
+    Note: 
+    1. This is a self-supervised pre-training model that learns to reconstruct
+    the original time-series data from masked inputs. It is not used for classification.
+    2. This is different from saving (i.e., `torch.save(model.state_dict(), path)`) the weights of a trained TransformerClassifier and loading them into a new TransformerClassifier for fine-tuning.
+
+    === Usage Example ===
+    >>> base = TransformerClassifier(
+    >>>     input_size=1,
+    >>>     d_model=64,
+    >>>     nhead=4,
+    >>>     num_layers=2,
+    >>>     output_size=10,
+    >>>     dropout_rate=0.2,
+    >>>     learning_rate=0.001,
+    >>>     use_conv1d=True,
+    >>>     pooling_strategy='last',
+    >>>     use_auxiliary=False,
+    >>>     gradient_clip=1.0,
+    >>> )
+    >>> pretrain_model = PretrainTransformer(
+    >>>     base_model=base,
+    >>>     input_features=1
+    >>> )
+    >>> optimizer = torch.optim.Adam(pretrain_model.parameters(), lr=1e-3)
+    >>> pretrain_model.train()
+    >>>
+    >>> for x_batch, _ in pretrain_loader:
+    >>>     x_batch = x_batch.to(device)                # shape (B, T, 1)
+    >>>     x_hat, mask = pretrain_model(x_batch)       # x_hat same shape
+    >>>     loss = F.mse_loss(x_hat[mask], x_batch[mask])
+    >>>     optimizer.zero_grad()
+    >>>     loss.backward()
+    >>>     optimizer.step()
+    >>>
+    >>> model = TransformerClassifier( ... same args as before ... )
+    >>> model.encoder.load_state_dict(
+    >>>     pretrain_model.encoder.state_dict()
+    >>> )
+    =====================
+    """
+    def __init__(self, base_model: TransformerClassifier, input_features: int):
+        super().__init__()
+        # reuse modules from base_model
+        self.use_conv1d       = base_model.use_conv1d
+        self.conv1d           = base_model.conv1d
+        self.input_projection = base_model.input_projection
+        self.pos_encoder      = base_model.pos_encoder
+        self.dropout          = base_model.dropout
+        self.encoder          = base_model.transformer_encoder
+        # reconstruction head: d_model → input_features
+        d_model = base_model.input_projection.out_features
+        self.reconstructor    = nn.Linear(d_model, input_features)
+
+    def forward(self, x):
+        # generate masked input
+        x_masked, mask = mask_series(x, mask_prob=0.15)
+        if self.use_conv1d:
+            x_masked = self.conv1d(x_masked.transpose(1,2)).transpose(1,2)
+        h = self.input_projection(x_masked)
+        h = self.pos_encoder(h)
+        h = self.dropout(h)
+        h = self.encoder(h)
+        # reconstruct original features at each time-step
+        x_hat = self.reconstructor(h)
+        return x_hat, mask
 
 class TransformerRegressor(nn.Module):
     """Transformer model for time series regression tasks."""

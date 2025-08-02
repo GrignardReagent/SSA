@@ -10,18 +10,19 @@ class LSTMClassifier(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, output_size,
                  dropout_rate=0.3, learning_rate=0.001, optimizer='Adam', bidirectional=True, use_conv1d=False,
                  use_attention=True, num_attention_heads=4, use_auxiliary=False, aux_weight=0.1,
-                 device=None):
-        super(LSTMClassifier, self).__init__()
+                 device=None, verbose=False):
+        super().__init__()
         self.bidirectional = bidirectional
         self.use_attention = use_attention
         self.use_auxiliary = use_auxiliary
         self.num_attention_heads = num_attention_heads
         self.aux_weight = aux_weight
         self.use_conv1d = use_conv1d
-
+        self.verbose = verbose
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         num_gpus = torch.cuda.device_count()
-        print(f"🔄 Using device: {self.device} ({num_gpus} GPUs available)")
+        if self.verbose:
+            print(f"🔄 Using device: {self.device} ({num_gpus} GPUs available)")
 
         # Add Conv1D pre-processing to highlight bursts
         if self.use_conv1d:
@@ -61,7 +62,6 @@ class LSTMClassifier(nn.Module):
             nn.ReLU(),
             nn.Dropout(dropout_rate),
             nn.Linear(128, 64),
-            nn.Softmax(),
             nn.Dropout(dropout_rate),
             nn.Linear(64, output_size)
         )
@@ -96,11 +96,12 @@ class LSTMClassifier(nn.Module):
         # Apply DataParallel after moving to device and initializing optimizer
         self.is_parallel = False
         if num_gpus > 1:
-            print(f"🚀 Enabling data parallel training on {num_gpus} GPUs")
+            if self.verbose:
+                print(f"🚀 Enabling data parallel training on {num_gpus} GPUs")
             self.model = nn.DataParallel(self)
             self.is_parallel = True
-
-        print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
+        if self.verbose:
+            print(f"DEBUG: Optimizer initialized? {'optimizer' in self.__dict__}")
 
     def initialize_weights(self):
         """
@@ -155,10 +156,12 @@ class LSTMClassifier(nn.Module):
         '''
         
         torch.cuda.empty_cache()
-        print("✅ Running on CUDA!" if self.device.type == 'cuda' else "❌ Still on CPU...")
+        if self.verbose:
+            print("✅ Running on CUDA!" if self.device.type == 'cuda' else "❌ Still on CPU...")
         
         if self.is_parallel:
-            print(f"🔄 Training with DataParallel on multiple GPUs")
+            if self.verbose:
+                print(f"🔄 Training with DataParallel on multiple GPUs")
             # Use the wrapper model for forward pass when in parallel mode
             training_model = self.model
         else:
@@ -203,12 +206,14 @@ class LSTMClassifier(nn.Module):
             avg_loss = total_loss / len(train_loader)
             history['train_loss'].append(avg_loss)
             history['train_acc'].append(train_acc)
-            print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
+            if self.verbose:
+                print(f"Epoch [{epoch+1}/{epochs}], Loss: {avg_loss:.4f}, Train Acc: {train_acc:.4f}")
 
             if val_loader is not None:
                 val_acc = self.evaluate(val_loader)
                 history['val_acc'].append(val_acc)
-                print(f"Validation Acc: {val_acc:.4f}")
+                if self.verbose:
+                    print(f"Validation Acc: {val_acc:.4f}")
 
                 self.scheduler.step(val_acc)  # Fixed: Changed from model.scheduler to self.scheduler
 
@@ -220,13 +225,16 @@ class LSTMClassifier(nn.Module):
                         print(f"✅ Model saved at {save_path} (Best Validation Acc: {best_val_acc:.4f})")
                 else:
                     epochs_no_improve += 1
-                    print(f"No improvement ({epochs_no_improve}/{patience}).")
+                    if self.verbose:
+                        print(f"No improvement ({epochs_no_improve}/{patience}).")
 
                 if epochs_no_improve >= patience:
-                    print(f"Stopping early! No improvement for {patience} epochs.")
+                    if self.verbose:
+                        print(f"Stopping early! No improvement for {patience} epochs.")
                     break
 
-        print("Training complete!")
+        if self.verbose:
+            print("Training complete!")
         return history
 
     def evaluate(self, data_loader):
