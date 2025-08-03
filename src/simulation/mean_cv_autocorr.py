@@ -10,6 +10,7 @@ from simulation.mean_var_autocorr import equations
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
 init_printing(use_unicode=True)
 
+################## EXPERIMENTAL, THIS IS NOT WORKING VERY WELL #####################
 #  a quick version of find_parameters, to fix mean, autocorrelation and CV ONLY
 def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_target=None):
     ''' Providing we are only fixing CV, mean and autocorrelation.
@@ -170,3 +171,5 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
     else:
         print(f"Warning: Solution found but residuals are high: {residuals}")
         return solution
+    
+################## EXPERIMENTAL, THIS IS NOT WORKING VERY WELL #####################

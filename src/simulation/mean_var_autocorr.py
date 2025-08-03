@@ -57,13 +57,26 @@ def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targ
     
     # Coefficient of Variation (CV)
     if cv_target is not None:
+        # use cv^2 to make calculations easier for the solvers
+        # This may be slow!
         cv_sq_target = cv_target ** 2
-        cv_sq_eqn = - cv_sq_target + (d_val**2 * (sigma_b + sigma_u_val)**2 * (
+        cv_sq_eqn = (d_val**2 * (sigma_b + sigma_u_val)**2 * (
             (rho_val * sigma_b) / (d_val * (sigma_b + sigma_u_val)) +
             (rho_val**2 * sigma_b * sigma_u_val) / (d_val * (sigma_b + sigma_u_val)**2 * (d_val + sigma_b + sigma_u_val))
-        )) / (rho_val**2 * sigma_b**2)
+        )) / (rho_val**2 * sigma_b**2) - cv_sq_target
         eqs.append(cv_sq_eqn if symbolic else float(cv_sq_eqn))
-    
+        
+        
+        ############### EXPERIMENTAL ################
+        # # wrap the variance equation for ease of calculation
+        # variance_target = cv_target ** 2 * mu_target ** 2
+        # variance_eqn = (
+        #     sigma_b * rho / (d * (sigma_b + sigma_u)) +
+        #     ((sigma_u * sigma_b) * rho**2 / (d * (sigma_b + sigma_u + d) * (sigma_u + sigma_b)**2))
+        # ) - variance_target
+        # eqs.append(variance_eqn if symbolic else float(variance_eqn))
+        ############### EXPERIMENTAL ################
+        
     # Fano Factor
     if fano_factor_target is not None:
         fano_factor_eqn = 1 + (rho_val * sigma_u_val) / ((sigma_b + sigma_u_val) * (sigma_b + d_val + sigma_u_val)) - fano_factor_target
@@ -180,6 +193,8 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
     
     return appropriateness
 
+
+################## EXPERIMENTAL, THIS IS WORKING VERY SLOWLY #####################
 def find_parameters(parameter_set, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None,
                     rho_range=(1, 1000), sigma_u_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000, 
                     check_biological=True, max_fano_factor=20, max_cv=5.0):
@@ -247,9 +262,9 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     if variance_target is not None or cv_target is not None:
         to_solve.append("sigma_u")
     else:
-        fixed["sigma_b"] = parameter_set.get("sigma_b")
-        if fixed["sigma_b"] is None:
-            raise ValueError("sigma_b must be in parameter_set if neither variance_target nor cv_target is specified.")
+        fixed["sigma_u"] = parameter_set.get("sigma_u")
+        if fixed["sigma_u"] is None:
+            raise ValueError("sigma_u must be in parameter_set if neither variance_target nor cv_target is specified.")
     
     # Autocorrelation or Fano factor -> d
     # Cannot specify both autocorrelation and Fano factor
@@ -337,6 +352,8 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
                 continue
 
     raise ValueError("No suitable solution found after multiple attempts. Try increasing num_guesses or widening the ranges.")
+
+################## EXPERIMENTAL, THIS IS WORKING VERY SLOWLY #####################
 
 def find_biological_variance_mean(desired_fano_factor, desired_cv, max_fano_factor=20, max_cv=5.0):
     """
