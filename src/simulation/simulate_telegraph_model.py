@@ -83,7 +83,7 @@ def simulate_one_telegraph_model_system(parameter_set, time_points, size, num_co
     Returns:
         pd.DataFrame: DataFrame containing simulation results.
     """
-    return simulate_two_telegraph_model_systems([parameter_set], time_points, size, num_cores)
+    return simulate_two_telegraph_model_systems(parameter_set, time_points, size, num_cores)
 
 def extract_integer_timepoints_from_df(df: pd.DataFrame):
     """
