@@ -149,7 +149,23 @@ def calculate_ac_time_interp1d(ac_values, lags):
     Returns:
     - ac_time: Interpolated autocorrelation time.
     """
-    # Interpolate using interp1d
-    f_interp = interp1d(ac_values, lags, kind='linear')
-    ac_time = f_interp(1/np.e)
-    return ac_time
+    try:
+        # Only use positive lags and corresponding autocorrelation values
+        positive_mask = lags >= 0
+        pos_lags = lags[positive_mask]
+        pos_ac = ac_values[positive_mask]
+        
+        # Check if 1/e is within the range of autocorrelation values
+        threshold = 1/np.e
+        if threshold < np.min(pos_ac) or threshold > np.max(pos_ac):
+            print(f"Warning: 1/e threshold ({threshold:.3f}) is outside the range of AC values [{np.min(pos_ac):.3f}, {np.max(pos_ac):.3f}]")
+            return np.nan
+        
+        # Interpolate using interp1d with correct parameter order (x, y)
+        f_interp = interp1d(pos_ac, pos_lags, kind='linear', bounds_error=False, fill_value=np.nan)
+        ac_time = f_interp(threshold)
+        return ac_time
+            
+    except Exception as e:
+        print(f"Error calculating autocorrelation time: {e}")
+        return np.nan
