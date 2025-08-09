@@ -169,3 +169,24 @@ def calculate_ac_time_interp1d(ac_values, lags):
     except Exception as e:
         print(f"Error calculating autocorrelation time: {e}")
         return np.nan
+
+def calculate_ac_from_params(rho, d, sigma_b, sigma_u, t):
+    """
+    Calculate the autocorrelation at a specific time t using the parameters rho, d, sigma_b, and sigma_u.
+    
+    Parameters:
+    - rho: Autocorrelation coefficient.
+    - d: Parameter related to the system dynamics.
+    - sigma_b: Baseline noise level.
+    - sigma_u: Uncorrelated noise level.
+    - t: Time at which to calculate the autocorrelation.
+    
+    Returns:
+    - Autocorrelation value at time t.
+    
+    """
+    sigma_sum = sigma_b + sigma_u
+    # numerator: d·ρ·σu·e^{-Σ t}  + (Σ)·(d^2 - ρ·σu - Σ^2)
+    numerator = d * np.exp(d - (sigma_sum) * t) * rho * sigma_u - sigma_sum * ((-d**2) + rho * sigma_u + (sigma_sum ** 2))
+    denominator = (d - sigma_sum) * (rho * sigma_u + d * sigma_sum + (sigma_sum**2))
+    return np.exp(-d * t) * numerator / denominator
