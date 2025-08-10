@@ -13,10 +13,8 @@ def test_find_tilda_parameters_analytical():
     mu_target = 10
     autocorr_target = 2
     cv_target = 0.5
-    sigma_sum = 5
-    
     # Get the parameters using the scaled equations
-    rho, d, sigma_b, sigma_u = find_tilda_parameters(sigma_sum, mu_target, autocorr_target, cv_target)
+    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, autocorr_target, cv_target)
     print('Parameters found:', rho, d, sigma_b, sigma_u)
     
     # Plug back in to verify
@@ -40,23 +38,25 @@ def test_find_tilda_parameters_simulation():
     mu_target = 10
     autocorr_target = 2
     cv_target = 0.5
-    sigma_sum = 5
-    
     # Get the parameters using the scaled equations
-    rho, d, sigma_b, sigma_u = find_tilda_parameters(sigma_sum, mu_target, autocorr_target, cv_target)
+    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, autocorr_target, cv_target)
     
     # Create parameter set for simulation
-    parameter_set = [{'sigmab': sigma_b,
-                      'sigma_u': sigma_u,
-                      'rho': rho,
-                      'd': d,
-                      'label': 0
-                      }]
-    
+    parameter_set = [
+        {
+            'sigma_b': sigma_b,
+            'sigma_u': sigma_u,
+            'rho': rho,
+            'd': d,
+            'label': 0
+        }
+    ]
+
     # Run simulation
     time_points = np.arange(0, 144.0, 1.0)
     size = 200
-    df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size)
+    # Use a single core to avoid multiprocessing overhead during tests
+    df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size, num_cores=1)
     
     # Extract trajectories (remove label column and convert to numpy array)
     trajectories = df_results[df_results['label'] == 0].drop('label', axis=1).values

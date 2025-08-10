@@ -53,47 +53,49 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
 # t_tilda = t * (sigma_b + sigma_u)
 
 ############## EXPERIMENTAL #####################
-# Version 2 of quick_find_parameters, to fix mean, autocorrelation and CV ONLY, but rescalling parameters so it's easier to solve
-def find_tilda_parameters(sigma_sum: float,
-                          mu_target: float,
-                          t_ac_target: float,
-                          cv_target: float,
-                          ac_target: float = np.exp(-1),
-                          check_biological: bool = False,
-                          max_fano_factor: float = 20,
-                          min_fano_factor: float = 1,
-                          max_cv: float = 5.0
-                          ):
-    ''''
-    Find the rescaled parameters rho_tilda, d_tilda, sigma_b_tilda, sigma_u_tilda given target mean, autocorrelation, CV and the scaling factor sigma_sum.
-    v = sigma_u_tilda * rho_tilda / (1 + d_tilda) # may add to computational cost...
-    
-    Equation A: mean
-    mean_eqn = (sigma_b_tilda * rho_tilda / d_tilda) - mu_target
-    
-    Equation B: CV^2 ; 
-    cv_sq_eqn = ((1 + v) / mu_target) - cv_target ** 2
-    
-    Equation C: AC(t_tilda) ; solved by d_tilda
-    ac_eqn = ((d_tilda* v * sp.exp(-t_tilda) + (d_tilda - v - 1) * sp.exp(-d_tilda * t_tilda)) / ((d_tilda -1) * (v + 1))) - sp.exp(-1)
-    
-    Parameters:
-        sigma_sum (float): The sum of sigma_b and sigma_u, scaling factor used to simplify the mu, autocorr and cv equations.
-        mu_target (float): Target mean of the system.
-        ac_target (float): Target autocorrelation value, default is exp(-1) for steady state.
-        t_ac_target (float): Target autocorrelation time.
-        cv_target (float): Target coefficient of variation.
-        check_biological (bool): Whether to check if the solution is biologically appropriate.
-        max_fano_factor (float): Maximum allowed Fano factor for biological appropriateness.
-        min_fano_factor (float): Minimum allowed Fano factor for biological appropriateness.
-        max_cv (float): Maximum allowed coefficient of variation for biological appropriateness.
-        
-    Returns:
-        tuple: A tuple containing the found parameters (rho, d, sigma_b, sigma_u).
-        
-    Raises:
-        ValueError: If parameters are invalid or if biological check fails when enabled.
-    '''
+# Compute rescaled parameters for a fixed ``sigma_sum``.
+#
+# This helper solves the mean, CV and autocorrelation equations in the
+# rescaled space assuming a known sum of switching rates ``sigma_sum``.
+# It is intentionally kept private; the public :func:`find_tilda_parameters`
+# routine wraps this function and automatically searches for an appropriate
+# ``sigma_sum``.
+def _solve_tilda_parameters(
+    sigma_sum: float,
+    mu_target: float,
+    t_ac_target: float,
+    cv_target: float,
+    ac_target: float = np.exp(-1),
+):
+    """Solve for ``rho``, ``d``, ``sigma_b`` and ``sigma_u`` given ``sigma_sum``.
+
+    The equations are expressed in a rescaled space where all parameters are
+    divided by ``sigma_sum`` to simplify the algebra.  ``_solve_tilda_parameters``
+    inverts these relationships to recover the original parameters.
+
+    Parameters
+    ----------
+    sigma_sum : float
+        The sum ``sigma_b + sigma_u`` used to scale the system.
+    mu_target : float
+        Target mean of the system.
+    t_ac_target : float
+        Target autocorrelation time.
+    cv_target : float
+        Desired coefficient of variation.
+    ac_target : float, optional
+        Target autocorrelation value at ``t_ac_target``. Defaults to ``exp(-1)``.
+
+    Returns
+    -------
+    tuple
+        ``(rho, d, sigma_b, sigma_u)`` that reproduce the requested targets.
+
+    Raises
+    ------
+    ValueError
+        If no valid solution for ``d`` can be found.
+    """
     
     # using equation B, we find v via mu_target & cv_target^2
     v = (mu_target * (cv_target ** 2)) - 1
@@ -159,22 +161,231 @@ def find_tilda_parameters(sigma_sum: float,
     # find sigma_b by scaling back
     sigma_b = sigma_b_tilda * sigma_sum
     sigma_u = sigma_u_tilda * sigma_sum
-    rho = rho_tilda * sigma_sum 
+    rho = rho_tilda * sigma_sum
     d = d_tilda * sigma_sum
 
-    # Perform biological check if requested
+    return rho, d, sigma_b, sigma_u
+
+
+def find_sigma_sum(
+    mu_target: float,
+    t_ac_target: float,
+    cv_target: float,
+    ac_target: float = np.exp(-1),
+    tolerance: float = 1e-3,
+    initial_guess: float = 1.0,
+    max_iter: int = 100,
+    max_sigma_sum: float = 1e6,
+):
+    """Find a suitable ``sigma_sum`` for the given targets.
+
+    ``_solve_tilda_parameters`` requires the sum of the switching rates
+    (``sigma_b + sigma_u``) as an input. For some parameter combinations
+    only sufficiently large values of ``sigma_sum`` yield parameters that
+    reproduce the desired mean, CV and autocorrelation when plugged back
+    into the original equations. This helper searches for the smallest
+    ``sigma_sum`` that achieves the requested accuracy.
+
+    The search proceeds in two phases:
+
+    1. **Expansion phase** – repeatedly double ``sigma_sum`` until the
+       parameters returned by :func:`_solve_tilda_parameters` reproduce the
+       targets within the specified tolerance.
+    2. **Refinement phase** – perform a binary search between the last
+       invalid and valid ``sigma_sum`` to locate the minimal value that
+       still satisfies all constraints.
+
+    Parameters
+    ----------
+    mu_target : float
+        Target mean of the system.
+    t_ac_target : float
+        Desired autocorrelation time.
+    cv_target : float
+        Target coefficient of variation.
+    ac_target : float, optional
+        Target autocorrelation value at ``t_ac_target``. Defaults to
+        ``exp(-1)``.
+    tolerance : float, optional
+        Acceptable absolute error between the obtained mean, CV and
+        autocorrelation and their targets. Defaults to ``1e-3``.
+    initial_guess : float, optional
+        Starting value for ``sigma_sum``. Defaults to ``1.0``.
+    max_iter : int, optional
+        Maximum number of refinement iterations. Defaults to ``100``.
+    max_sigma_sum : float, optional
+        Upper bound while searching. Defaults to ``1e6``.
+
+    Returns
+    -------
+    tuple
+        ``(sigma_sum, rho, d, sigma_b, sigma_u)`` where ``sigma_sum``
+        is the found switching-rate sum and the remaining values are the
+        parameters returned by :func:`_solve_tilda_parameters`.
+
+    Raises
+    ------
+    ValueError
+        If a suitable ``sigma_sum`` cannot be found within ``max_sigma_sum``
+        or if ``_solve_tilda_parameters`` fails for all tested values.
+    """
+
+    def _errors(sigma_sum: float):
+        """Return mean, CV and autocorrelation errors for ``sigma_sum``."""
+
+        # Attempt to derive parameters for the current ``sigma_sum``. Any
+        # failure (e.g., no solution) is treated as an infinite error so the
+        # caller knows this value is invalid.
+        try:
+            params = _solve_tilda_parameters(
+                sigma_sum, mu_target, t_ac_target, cv_target, ac_target
+            )
+        except ValueError:
+            return np.inf, np.inf, np.inf, None
+
+        # Evaluate how far the resulting parameters deviate from the targets.
+        rho, d, sigma_b, sigma_u = params
+        mu_val = calculate_mean_from_params(rho, d, sigma_b, sigma_u)
+        cv_val = calculate_cv_from_params(rho, d, sigma_b, sigma_u)
+        ac_val = calculate_ac_from_params(
+            rho, d, sigma_b, sigma_u, t_ac_target, ac_target
+        )
+        return (
+            mu_val - mu_target,
+            cv_val - cv_target,
+            ac_val - ac_target,
+            params,
+        )
+
+    # ----------
+    # Phase 1: find an upper bound where all three metrics are within
+    # tolerance by repeatedly doubling ``sigma_sum``.
+    # ----------
+    sigma_high = initial_guess
+    mu_err_high, cv_err_high, ac_err_high, params_high = _errors(sigma_high)
+    iterations = 0
+    def _within_tol(m_err, c_err, a_err):
+        """Check if all errors are finite and within the requested tolerance."""
+        return (
+            np.isfinite(m_err)
+            and np.isfinite(c_err)
+            and np.isfinite(a_err)
+            and abs(m_err) <= tolerance
+            and abs(c_err) <= tolerance
+            and abs(a_err) <= tolerance
+        )
+
+    while not _within_tol(mu_err_high, cv_err_high, ac_err_high) and iterations < max_iter:
+        sigma_high *= 2
+        if sigma_high > max_sigma_sum:
+            raise ValueError("Could not find a valid sigma_sum within bounds.")
+        mu_err_high, cv_err_high, ac_err_high, params_high = _errors(sigma_high)
+        iterations += 1
+
+    if not _within_tol(mu_err_high, cv_err_high, ac_err_high):
+        raise ValueError(
+            "Unable to determine sigma_sum that satisfies mean, CV and autocorrelation tolerances."
+        )
+
+    # ----------
+    # Phase 2: refine using a binary search between the last failing value and
+    # the successful ``sigma_high`` to find the minimal acceptable ``sigma_sum``.
+    # ----------
+    sigma_low = sigma_high / 2
+    for _ in range(max_iter):
+        if sigma_high - sigma_low <= 1e-6:
+            break
+        sigma_mid = 0.5 * (sigma_low + sigma_high)
+        mu_err_mid, cv_err_mid, ac_err_mid, params_mid = _errors(sigma_mid)
+
+        if _within_tol(mu_err_mid, cv_err_mid, ac_err_mid):
+            sigma_high = sigma_mid
+            mu_err_high, cv_err_high, ac_err_high, params_high = (
+                mu_err_mid,
+                cv_err_mid,
+                ac_err_mid,
+                params_mid,
+            )
+        else:
+            sigma_low = sigma_mid
+
+    return sigma_high, *params_high
+
+
+def find_tilda_parameters(
+    mu_target: float,
+    t_ac_target: float,
+    cv_target: float,
+    ac_target: float = np.exp(-1),
+    sigma_sum_seed: float = 1.0,
+    tolerance: float = 1e-3,
+    check_biological: bool = False,
+    max_fano_factor: float = 20,
+    min_fano_factor: float = 1,
+    max_cv: float = 5.0,
+    max_iter: int = 100,
+    max_sigma_sum: float = 1e6,
+):
+    """Find parameters matching ``mu``, ``CV`` and autocorrelation targets.
+
+    This is the primary entry point for users.  The function searches for
+    a suitable switching-rate sum ``sigma_sum`` starting from
+    ``sigma_sum_seed`` and refines it until the resulting parameters
+    reproduce the requested mean, CV and autocorrelation within
+    ``tolerance``.
+
+    Parameters
+    ----------
+    mu_target : float
+        Desired mean of the system.
+    t_ac_target : float
+        Target autocorrelation time.
+    cv_target : float
+        Desired coefficient of variation.
+    ac_target : float, optional
+        Target autocorrelation value at ``t_ac_target``. Defaults to
+        ``exp(-1)``.
+    sigma_sum_seed : float, optional
+        Initial guess for ``sigma_sum``. Defaults to ``1.0``.
+    tolerance : float, optional
+        Acceptable absolute error for mean, CV and autocorrelation.
+    check_biological : bool, optional
+        Whether to verify that the solution is biologically plausible via
+        :func:`check_biological_appropriateness`.
+    max_fano_factor, min_fano_factor, max_cv : float, optional
+        Thresholds passed to :func:`check_biological_appropriateness` when
+        ``check_biological`` is ``True``.
+    max_iter : int, optional
+        Maximum refinement iterations for the ``sigma_sum`` search.
+    max_sigma_sum : float, optional
+        Upper bound while searching for ``sigma_sum``.
+
+    Returns
+    -------
+    tuple
+        ``(rho, d, sigma_b, sigma_u)`` satisfying the targets. The optimal
+        switching-rate sum is searched internally and not returned.
+    """
+
+    _sigma_sum, rho, d, sigma_b, sigma_u = find_sigma_sum(
+        mu_target,
+        t_ac_target,
+        cv_target,
+        ac_target=ac_target,
+        tolerance=tolerance,
+        initial_guess=sigma_sum_seed,
+        max_iter=max_iter,
+        max_sigma_sum=max_sigma_sum,
+    )
+
     if check_biological:
-        # Calculate the implied variance from CV and mean
         variance_target = (cv_target * mu_target) ** 2
-        
-        # Check biological appropriateness
         is_appropriate = check_biological_appropriateness(
             variance_target, mu_target, max_fano_factor, min_fano_factor, max_cv
         )
-        
         if not is_appropriate:
             raise ValueError(
-                f"Solution is not biologically appropriate. "
+                "Solution is not biologically appropriate. "
                 f"Consider adjusting target parameters: mu={mu_target}, cv={cv_target}, "
                 f"which gives variance={variance_target:.2f}"
             )
