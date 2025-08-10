@@ -109,7 +109,9 @@ def _solve_tilda_parameters(
     
     # find d_tilda from equation C, via t_tilda, v
     def scaled_ac_equation(d_tilda):
-        '''Equation C: AC(t_tilda)'''
+        '''
+        AC(t_tilda), rescaled equation of AC(t) to find d_tilda:
+        '''
         
         scaled_ACmRNA_eq = ((d_tilda * v * np.exp(- t_tilda) + (d_tilda - v - 1) * np.exp(- d_tilda * t_tilda)) / ((d_tilda -1) * (v + 1)))
 
@@ -274,7 +276,7 @@ def find_sigma_sum(
             and abs(c_err) <= tolerance
             and abs(a_err) <= tolerance
         )
-
+    # while the guess doesn't produce finite and within-tolerance errors, expand guess value for sigma_sum, do this till we reach max_iter, else raise error. 
     while not _within_tol(mu_err_high, cv_err_high, ac_err_high) and iterations < max_iter:
         sigma_high *= 2
         if sigma_high > max_sigma_sum:
@@ -298,6 +300,7 @@ def find_sigma_sum(
         sigma_mid = 0.5 * (sigma_low + sigma_high)
         mu_err_mid, cv_err_mid, ac_err_mid, params_mid = _errors(sigma_mid)
 
+        # if sigma_mid is within tolerance, we have found the minimal ascceptable sigma_sum!
         if _within_tol(mu_err_mid, cv_err_mid, ac_err_mid):
             sigma_high = sigma_mid
             mu_err_high, cv_err_high, ac_err_high, params_high = (
@@ -319,7 +322,7 @@ def find_tilda_parameters(
     ac_target: float = np.exp(-1),
     sigma_sum_seed: float = 1.0,
     tolerance: float = 1e-3,
-    check_biological: bool = False,
+    check_biological: bool = True,
     max_fano_factor: float = 20,
     min_fano_factor: float = 1,
     max_cv: float = 5.0,
