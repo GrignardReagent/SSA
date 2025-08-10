@@ -8,21 +8,41 @@ from simulation.gillespie_algorithm import gillespie_ssa, telegraph_model_propen
 
 # Worker function must be at the top level to be picklable
 def run_simulation(args):
+    """Run ``size`` trajectories for a single parameter set.
+
+    Parameters
+    ----------
+    args : tuple
+        ``(param_set, time_points, size)`` where ``param_set`` is a dictionary
+        containing the kinetic rates.  Dictionary keys are accessed explicitly
+        to avoid any reliance on insertion order which previously caused the
+        activation and inactivation rates to be swapped.
     """
-    Runs a single simulation for a given parameter set.
-    """
+
     param_set, time_points, size = args
-    sigma_u, sigma_b, rho, d, label = param_set.values()
+
+    # Extract parameters explicitly by key; ``label`` is optional and defaults
+    # to 0 if not provided.
+    sigma_b = param_set["sigma_b"]
+    sigma_u = param_set["sigma_u"]
+    rho = param_set["rho"]
+    d = param_set["d"]
+    label = param_set.get("label", 0)
+
     population_0 = np.array([1, 0, 0], dtype=int)
 
     # Store mRNA trajectories
     samples = np.empty((size, len(time_points)), dtype=int)
 
-    # for the size of the simulation traj defined, run the simulation with the specified parameters.
+    # Simulate each trajectory independently
     for i in range(size):
         samples[i, :] = gillespie_ssa(
-            telegraph_model_propensity, update_matrix, population_0, time_points,
-            args=(sigma_u, sigma_b, rho, d))[:, 2]
+            telegraph_model_propensity,
+            update_matrix,
+            population_0,
+            time_points,
+            args=(sigma_u, sigma_b, rho, d),
+        )[:, 2]
 
     # Save each trajectory as a row with label
     return [[label] + list(trajectory) for trajectory in samples]
@@ -48,10 +68,27 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, num_
         num_cores = multiprocessing.cpu_count()
     df_results = None  # Store simulation results
 
-    for system_index, param_set in tqdm.tqdm(enumerate(parameter_sets), total=len(parameter_sets), desc="Simulating Telegraph Model Systems"):
-        with multiprocessing.Pool(num_cores) as pool:
-            print(f"Running simulations on {num_cores} cores...\nSystem {system_index + 1} parameters: {param_set}")
-            results = pool.map(run_simulation, [(param_set, time_points, size)])
+    for system_index, param_set in tqdm.tqdm(
+        enumerate(parameter_sets),
+        total=len(parameter_sets),
+        desc="Simulating Telegraph Model Systems",
+    ):
+
+        # Multiprocessing introduces overhead which is unnecessary during unit
+        # tests.  Allow callers to request a single-core run that executes the
+        # worker directly.
+        if num_cores == 1:
+            print(
+                f"Running simulations on 1 core...\nSystem {system_index + 1} parameters: {param_set}"
+            )
+            results = run_simulation((param_set, time_points, size))
+            results = [results]  # mimic pool.map output structure
+        else:
+            with multiprocessing.Pool(num_cores) as pool:
+                print(
+                    f"Running simulations on {num_cores} cores...\nSystem {system_index + 1} parameters: {param_set}"
+                )
+                results = pool.map(run_simulation, [(param_set, time_points, size)])
 
         # Flatten results
         results = [item for sublist in results for item in sublist]
