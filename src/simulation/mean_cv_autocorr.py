@@ -67,8 +67,8 @@ def quick_find_parameters(sigma_b, mu_target=None, autocorr_target=None, cv_targ
             d_value = D_solution
             # error trap for no solution found for d
             if result.fun > 1e-6 or d_value is None or d_value <= 0 or np.isclose(d_value, 1e3, atol=1e-4):
-                print(f'⚠️ WARNING: No solution found for d')
-                raise ValueError("No valid solution found for parameter d")
+                # print(f'⚠️ WARNING: No solution found for d')
+                raise ValueError("⚠️No valid solution found for parameter d")
 
             # Compute sigma_u safely
             cv_sq_target = cv_target ** 2

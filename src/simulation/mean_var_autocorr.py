@@ -52,7 +52,7 @@ def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targ
             (d_val - sigma_u_val - sigma_b) * (rho_val * sigma_u_val + d_val * (sigma_u_val + sigma_b) + (sigma_u_val + sigma_b) ** 2)
         )
         # Evaluate autocorrelation at t= autocorr_target
-        autocorr_eqn = ACmRNA_eq.subs(t, autocorr_target) - 1/sp.exp(1)
+        autocorr_eqn = ACmRNA_eq.subs(t, autocorr_target) - sp.exp(-1)
         eqs.append(autocorr_eqn if symbolic else float(autocorr_eqn))
     
     # Coefficient of Variation (CV)
@@ -194,7 +194,7 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
     return appropriateness
 
 
-################## EXPERIMENTAL, THIS IS WORKING VERY SLOWLY #####################
+################## THIS IS WORKING VERY SLOWLY #####################
 def find_parameters(parameter_set, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None,
                     rho_range=(1, 1000), sigma_u_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000, 
                     check_biological=True, max_fano_factor=20, max_cv=5.0):

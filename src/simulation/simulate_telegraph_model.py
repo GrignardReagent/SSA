@@ -1,4 +1,3 @@
-
 import multiprocessing
 import tqdm
 import numpy as np
@@ -40,6 +39,10 @@ def simulate_two_telegraph_model_systems(parameter_sets, time_points, size, num_
     
     Returns:
         pd.DataFrame: DataFrame containing simulation results.
+        
+    Usage:
+        df_results = simulate_two_telegraph_model_systems(parameter_sets, time_points, size, num_cores)
+        # where parameter_sets is a list of dictionaries with keys like 'sigma_u', 'sigma_b', 'rho', 'd', and 'label'.
     """
     if num_cores is None:
         num_cores = multiprocessing.cpu_count()
@@ -81,7 +84,7 @@ def simulate_one_telegraph_model_system(parameter_set, time_points, size, num_co
         num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
     
     Returns:
-        pd.DataFrame: DataFrame containing simulation results.
+        pd.DataFrame: DataFrame containing simulation results.   
     """
     return simulate_two_telegraph_model_systems(parameter_set, time_points, size, num_cores)
 
