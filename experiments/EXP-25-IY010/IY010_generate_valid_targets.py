@@ -72,10 +72,11 @@ if __name__ == "__main__":
     # persist them to ``data/valid_targets.csv`` so they can be reused by other
     # experiments.
     combos = generate_valid_targets()
-    np.savetxt(
-        "experiments/EXP-25-IY010/data/valid_targets.csv",
-        combos,
-        delimiter=",",
-        header="mu,t_ac,cv",
-        comments="",
-    )
+    # uncomment to save data
+    # np.savetxt(
+    #     "experiments/EXP-25-IY010/data/valid_targets.csv",
+    #     combos,
+    #     delimiter=",",
+    #     header="mu,t_ac,cv",
+    #     comments="",
+    # )
