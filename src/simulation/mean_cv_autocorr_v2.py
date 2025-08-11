@@ -49,8 +49,8 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
 # d_tilda = d / (sigma_b + sigma_u)
 # sigma_b_tilda = sigma_b / (sigma_b + sigma_u)
 # sigma_u_tilda = sigma_u / (sigma_b + sigma_u)
-# # t_tilda is the only one that's multiplied by the scaling factor 
-# t_tilda = t * (sigma_b + sigma_u)
+# # t_ac_tilda is the only one that's multiplied by the scaling factor 
+# t_ac_tilda = t_ac * (sigma_b + sigma_u)
 
 ############## EXPERIMENTAL #####################
 # Compute rescaled parameters for a fixed ``sigma_sum``.
@@ -66,6 +66,7 @@ def _solve_tilda_parameters(
     t_ac_target: float,
     cv_target: float,
     ac_target: float = np.exp(-1),
+    res_limit=1e-3,
 ):
     """Solve for ``rho``, ``d``, ``sigma_b`` and ``sigma_u`` given ``sigma_sum``.
 
@@ -104,23 +105,23 @@ def _solve_tilda_parameters(
     if v <= 0:
         raise ValueError(f"Invalid parameters: v = (mu_target * cv_target ** 2) - 1 must be positive, got v = {v}. Reconsider mu_target and cv_target choices.")
     
-    # t_tilda = (sigma_b + sigma_u) * t; 
-    t_tilda = t_ac_target * sigma_sum
+    # t_ac_tilda = (sigma_b + sigma_u) * t; 
+    t_ac_tilda = t_ac_target * sigma_sum
     
-    # find d_tilda from equation C, via t_tilda, v
+    # find d_tilda from equation C, via t_ac_tilda, v
     def scaled_ac_equation(d_tilda):
         '''
-        AC(t_tilda), rescaled equation of AC(t) to find d_tilda:
+        AC(t_ac_tilda), rescaled equation of AC(t) to find d_tilda:
         '''
         
-        scaled_ACmRNA_eq = ((d_tilda * v * np.exp(- t_tilda) + (d_tilda - v - 1) * np.exp(- d_tilda * t_tilda)) / ((d_tilda -1) * (v + 1)))
+        scaled_ACmRNA_eq = ((d_tilda * v * np.exp(- t_ac_tilda) + (d_tilda - v - 1) * np.exp(- d_tilda * t_ac_tilda)) / ((d_tilda -1) * (v + 1)))
 
         
         return float(scaled_ACmRNA_eq - ac_target)
     
-    ################ Use root scalar to find d_tilda, AC(t_tilda) - AC_target = 0  is a root-finding problem, so root_scalar is more appropriate ##################
+    ################ Use root scalar to find d_tilda, AC(t_ac_tilda) - AC_target = 0  is a root-finding problem, so root_scalar is more appropriate ##################
     
-    # the AC(t_tilda) formula has the denominator (d_tilda -1)(v + 1), and d_tilda = 1 is undefined, so the search space needs to exclude 1.0
+    # the AC(t_ac_tilda) formula has the denominator (d_tilda -1)(v + 1), and d_tilda = 1 is undefined, so the search space needs to exclude 1.0
     lower, upper = 1e-3, 1e3
     candidates = [(lower, 0.999), (1.001, upper)] if (lower < 1.0 < upper) else [(lower, upper)]
     
@@ -138,7 +139,8 @@ def _solve_tilda_parameters(
                 # 2. checks that d_tilda_solution is not None
                 # 3. checks that the value of d_tilda_solution is not close to the bounds plus/minus the absolute tolerance (atol)
                 residue = scaled_ac_equation(d_tilda_solution)
-                if abs(residue) > 1e-6 or d_tilda_solution is None or np.isclose(d_tilda_solution, 1e3, atol=1e-4):
+                # TODO: 1e-6 may be too strict? 
+                if abs(residue) > res_limit or d_tilda_solution is None or np.isclose(d_tilda_solution, 1e3, atol=1e-4):
                     raise  ValueError(f"⚠️No valid solution found for parameter d_tilda: residual={residue:.2e}, d_tilda={d_tilda_solution:.4f}")
                 
                 d_tilda = d_tilda_solution
@@ -149,6 +151,55 @@ def _solve_tilda_parameters(
         raise ValueError(f'Could not find a valid solution for d_tilda using root_scalar method.')
     
     ################ Use root scalar to find d_tilda ##################
+    
+    ################ Use fsolve + rearranged AC(t_ac_tilda) equation to find d_tilda ##################
+    # find d_tilda from equation C, via t_ac_tilda, v
+    # def rearranged_scaled_ac_equation(d_tilda):
+    #     '''
+    #     Rearranged version of scaled_ac_equation:
+    #     '''
+        
+    #     rearranged_scaled_ACmRNA_eq = ((d_tilda * v * np.exp(- t_ac_tilda) + (d_tilda - v - 1) * np.exp(- d_tilda * t_ac_tilda)) - ac_target * ((d_tilda -1) * (v + 1))) 
+
+    #     return float(rearranged_scaled_ACmRNA_eq)
+    
+    # d_tilda = None 
+    
+    # # Define initial guesses, avoiding d_tilda = 1 where the equation is undefined
+    # guesses = [0.1, 0.5, 2.0, 5.0, 10.0, 50.0, 100.0]
+    
+    # for guess in guesses:
+    #     try:
+    #         solution = fsolve(
+    #             rearranged_scaled_ac_equation, guess, 
+    #             xtol=1e-10, maxfev=1000
+    #         )[0]
+            
+    #         d_tilda_candidate = solution
+            
+    #         # Verify the solution
+    #         residue = abs(rearranged_scaled_ac_equation(d_tilda_candidate))
+            
+    #         # Check if solution is valid:
+    #         # 1. Residue is small enough
+    #         # 2. d_tilda is not too close to 1 (undefined point)
+    #         # 3. d_tilda is positive and reasonable
+    #         if (residue < res_limit and 
+    #             not np.isclose(d_tilda_candidate, 1.0, atol=1e-4) and
+    #             d_tilda_candidate > 0 and 
+    #             d_tilda_candidate < res_limit):
+                
+    #             d_tilda = d_tilda_candidate
+    #             break
+                
+    #     except Exception:
+    #         continue
+    
+    # if d_tilda is None:
+    #     raise ValueError(f'Could not find a valid solution for d_tilda using fsolve method.')
+        
+    ################ Use fsolve + rearranged AC(t_ac_tilda) equation to find d_tilda ##################
+    
             
     # find rho_tilda from mu_target, d_tilda and v; by rearranging Equation A, definition of v in terms of tilda_params.
     #TODO: explanation of maths...
