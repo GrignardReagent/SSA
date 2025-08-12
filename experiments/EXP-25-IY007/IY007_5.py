@@ -5,7 +5,8 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from tabulate import tabulate
-from simulation.mean_var_autocorr import check_biological_appropriateness, find_parameters
+from simulation.mean_var_autocorr import find_parameters
+from utils.biological import check_biological_appropriateness
 from simulation.mean_cv_autocorr import quick_find_parameters
 
 def compare_parameter_finding_methods():

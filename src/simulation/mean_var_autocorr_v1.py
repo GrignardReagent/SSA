@@ -2,12 +2,16 @@
 
 ###### mean_var_autocorr and mean_cv_autocorr are very messy right now and so I'm writing a new one to start fresh. Some of the codes are taken from mean_var_autocorr.py from commit e92cd52 , where sigma_u was fixed ######
 
+# NOTE: check_biological_appropriateness and find_biological_variance_mean have been moved to utils.biological
+# They are imported below for backward compatibility, but new code should import directly from utils.biological
+
 import sympy as sp
 from sympy import init_printing
 import numpy as np
 from scipy.optimize import fsolve, check_grad
 from stats.fano_factor import calculate_fano_factor,calculate_fano_factor_from_params
 from stats.cv import calculate_cv
+from utils.biological import check_biological_appropriateness, find_biological_variance_mean
 
 # Define symbols globally for reuse
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)

@@ -9,40 +9,7 @@ from stats.cv import calculate_cv, calculate_cv_from_params
 from stats.mean import calculate_mean_from_params
 from stats.variance import calculate_variance_from_params
 from stats.autocorrelation import calculate_ac_from_params
-
-def check_biological_appropriateness(variance_target, mu_target, max_fano_factor=20, min_fano_factor=1, max_cv=5.0):
-    '''
-    Check if the solution is biologically appropriate based on Fano factor and CV.
-    Args:
-        variance_target (float): Target variance.
-        mu_target (float): Target mean.
-        max_fano_factor (float): Maximum allowed Fano factor.
-        min_fano_factor (float): Minimum allowed Fano factor.
-        max_cv (float): Maximum allowed coefficient of variation.
-    Returns:
-        bool: True if the system is biologically appropriate, False otherwise.
-    '''
-    
-    # Check Fano factor
-    fano_factor = calculate_fano_factor(variance_target, mu_target)
-    
-    # Check coefficient of variation 
-    cv = calculate_cv(variance_target, mu_target)
-    
-    # Initialize appropriateness as False
-    appropriateness = False
-    
-    if cv >= max_cv:
-        print(f"⚠️ WARNING: CV {cv:.2f} > {max_cv}, consider changing the target variance or mean.")
-    elif fano_factor >= max_fano_factor:
-        print(f"⚠️ WARNING: Fano factor {fano_factor:.2f} > {max_fano_factor}, consider changing the target parameters.")
-    elif fano_factor < min_fano_factor:
-        print(f"⚠️ WARNING: Fano factor {fano_factor:.2f} < {min_fano_factor}, consider changing the target parameters.")
-    else:
-        print(f"✅ System is biologically appropriate with Fano factor: {fano_factor:.2f}, CV: {cv:.2f}")
-        appropriateness = True
-    
-    return appropriateness
+from utils.biological import check_biological_appropriateness
 
 # # Rescale parameters
 # rho_tilda = rho / (sigma_b + sigma_u)
@@ -52,7 +19,6 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
 # # t_ac_tilda is the only one that's multiplied by the scaling factor 
 # t_ac_tilda = t_ac * (sigma_b + sigma_u)
 
-############## EXPERIMENTAL #####################
 # Compute rescaled parameters for a fixed ``sigma_sum``.
 #
 # This helper solves the mean, CV and autocorrelation equations in the
@@ -60,11 +26,11 @@ def check_biological_appropriateness(variance_target, mu_target, max_fano_factor
 # It is intentionally kept private; the public :func:`find_tilda_parameters`
 # routine wraps this function and automatically searches for an appropriate
 # ``sigma_sum``.
-def _solve_tilda_parameters(
-    sigma_sum: float,
+def find_tilda_parameters(
     mu_target: float,
     t_ac_target: float,
     cv_target: float,
+    sigma_sum: float = 1.0,
     ac_target: float = np.exp(-1),
     res_limit=1e-3,
 ):
@@ -76,16 +42,18 @@ def _solve_tilda_parameters(
 
     Parameters
     ----------
-    sigma_sum : float
-        The sum ``sigma_b + sigma_u`` used to scale the system.
     mu_target : float
         Target mean of the system.
     t_ac_target : float
         Target autocorrelation time.
     cv_target : float
         Desired coefficient of variation.
+    sigma_sum : float, optional
+        The sum ``sigma_b + sigma_u`` used to scale the system. Default to be 1.0. Changing this might lead to unexpected bahaviours!
     ac_target : float, optional
         Target autocorrelation value at ``t_ac_target``. Defaults to ``exp(-1)``.
+    res_limit : float, optional
+        Residual limit for root-finding. Defaults to ``1e-3``. This is used to check if the solution found is valid or not.
 
     Returns
     -------
@@ -151,55 +119,6 @@ def _solve_tilda_parameters(
         raise ValueError(f'Could not find a valid solution for d_tilda using root_scalar method.')
     
     ################ Use root scalar to find d_tilda ##################
-    
-    ################ Use fsolve + rearranged AC(t_ac_tilda) equation to find d_tilda ##################
-    # find d_tilda from equation C, via t_ac_tilda, v
-    # def rearranged_scaled_ac_equation(d_tilda):
-    #     '''
-    #     Rearranged version of scaled_ac_equation:
-    #     '''
-        
-    #     rearranged_scaled_ACmRNA_eq = ((d_tilda * v * np.exp(- t_ac_tilda) + (d_tilda - v - 1) * np.exp(- d_tilda * t_ac_tilda)) - ac_target * ((d_tilda -1) * (v + 1))) 
-
-    #     return float(rearranged_scaled_ACmRNA_eq)
-    
-    # d_tilda = None 
-    
-    # # Define initial guesses, avoiding d_tilda = 1 where the equation is undefined
-    # guesses = [0.1, 0.5, 2.0, 5.0, 10.0, 50.0, 100.0]
-    
-    # for guess in guesses:
-    #     try:
-    #         solution = fsolve(
-    #             rearranged_scaled_ac_equation, guess, 
-    #             xtol=1e-10, maxfev=1000
-    #         )[0]
-            
-    #         d_tilda_candidate = solution
-            
-    #         # Verify the solution
-    #         residue = abs(rearranged_scaled_ac_equation(d_tilda_candidate))
-            
-    #         # Check if solution is valid:
-    #         # 1. Residue is small enough
-    #         # 2. d_tilda is not too close to 1 (undefined point)
-    #         # 3. d_tilda is positive and reasonable
-    #         if (residue < res_limit and 
-    #             not np.isclose(d_tilda_candidate, 1.0, atol=1e-4) and
-    #             d_tilda_candidate > 0 and 
-    #             d_tilda_candidate < res_limit):
-                
-    #             d_tilda = d_tilda_candidate
-    #             break
-                
-    #     except Exception:
-    #         continue
-    
-    # if d_tilda is None:
-    #     raise ValueError(f'Could not find a valid solution for d_tilda using fsolve method.')
-        
-    ################ Use fsolve + rearranged AC(t_ac_tilda) equation to find d_tilda ##################
-    
             
     # find rho_tilda from mu_target, d_tilda and v; by rearranging Equation A, definition of v in terms of tilda_params.
     #TODO: explanation of maths...
@@ -220,7 +139,9 @@ def _solve_tilda_parameters(
     return rho, d, sigma_b, sigma_u
 
 
-def find_sigma_sum(
+
+####################### DO NOT USE #######################
+def _find_sigma_sum(
     mu_target: float,
     t_ac_target: float,
     cv_target: float,
@@ -290,8 +211,8 @@ def find_sigma_sum(
         # failure (e.g., no solution) is treated as an infinite error so the
         # caller knows this value is invalid.
         try:
-            params = _solve_tilda_parameters(
-                sigma_sum, mu_target, t_ac_target, cv_target, ac_target
+            params = find_tilda_parameters(
+                mu_target, t_ac_target, cv_target, ac_target,sigma_sum=sigma_sum
             )
         except ValueError:
             return np.inf, np.inf, np.inf, None
@@ -366,7 +287,7 @@ def find_sigma_sum(
     return sigma_high, *params_high
 
 
-def find_tilda_parameters(
+def _find_tila_parameters(
     mu_target: float,
     t_ac_target: float,
     cv_target: float,
@@ -421,7 +342,7 @@ def find_tilda_parameters(
         switching-rate sum is searched internally and not returned.
     """
 
-    _sigma_sum, rho, d, sigma_b, sigma_u = find_sigma_sum(
+    _sigma_sum, rho, d, sigma_b, sigma_u = _find_sigma_sum(
         mu_target,
         t_ac_target,
         cv_target,
@@ -445,3 +366,5 @@ def find_tilda_parameters(
             )
 
     return rho, d, sigma_b, sigma_u
+
+####################### DO NOT USE #######################
