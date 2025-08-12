@@ -70,7 +70,7 @@ if results is not None:
     for i in range(num_iterations):
         df_results = simulate_one_telegraph_model_system(parameter_sets, extended_time_points, size)
 
-        output_dir = f"data/mRNA_trajectories_{int(cv_target)}"
+        output_dir = f"data/mRNA_trajectories_{cv_target}_{mu_target}_{autocorr_target}"
         os.makedirs(output_dir, exist_ok=True)
         
         # save full time series

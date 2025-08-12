@@ -12,7 +12,7 @@ def _worker_process(q, parameter_set, mu, cv, autocorr):
     """
     Calls the real find_parameters and sends result or exception via Queue.
     """
-    from simulation.mean_var_autocorr_v1 import find_parameters
+    from simulation.mean_var_autocorr_sigma_u import find_parameters
     try:
         rho, sigma_b, d = find_parameters(
             parameter_set,

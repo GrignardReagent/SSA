@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import os
 import tqdm
-from simulation.mean_var_autocorr_v1 import find_parameters
+from simulation.mean_var_autocorr_sigma_u import find_parameters
 from simulation.simulate_telegraph_model import simulate_two_telegraph_model_systems
 from utils.steady_state import save_steady_state
 

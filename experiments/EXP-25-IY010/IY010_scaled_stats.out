@@ -7,46 +7,46 @@
   solution = fsolve(
 Attempt 1/10
 ✅ System is biologically appropriate with Fano factor: 8.45, CV: 1.30
-✅ Found: {'rho': 40.77878566205262, 'sigma_u': 1.4149215936921358, 'd': 2.1295276937042966}
-Updated Parameter Sets: [{'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}]
+✅ Found: {'rho': 40.77878567661217, 'sigma_u': 1.4149215953936936, 'd': 2.129527693169585}
+Updated Parameter Sets: [{'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}]
 Saved 1 parameter sets to data/parameter_sets_1.3_5_1.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.85s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.85s/it]
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.31s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.31s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_0_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.72s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.72s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_0_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.24s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.24s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_1_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.88s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.88s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_1_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.01s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.02s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_2_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.80s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.80s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_2_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.98s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.98s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_3_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.55s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.55s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_3_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.06s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.06s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_4_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.64s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.64s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_4_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.40s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.40s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_5_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.77s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.77s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_5_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.09s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.09s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_6_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.00s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.00s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_6_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.23s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:17<00:00, 17.23s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_7_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.92s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.92s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_7_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.98s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.98s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_8_SS.csv
-Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.82s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.82s/it]
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_8_SS.csv
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.90s/it]Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:16<00:00, 16.90s/it]
 Running simulations on 12 cores...
-System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215936921358, 'rho': 40.77878566205262, 'd': 2.1295276937042966, 'label': 0}
-Steady state series saved to data/mRNA_trajectories_1/steady_state_trajectories/m_traj_1.3_9_SS.csv
+System 1 parameters: {'sigma_b': 0.5, 'sigma_u': 1.4149215953936936, 'rho': 40.77878567661217, 'd': 2.129527693169585, 'label': 0}
+Steady state series saved to data/mRNA_trajectories_1.3_5_1/steady_state_trajectories/m_traj_1.3_9_SS.csv

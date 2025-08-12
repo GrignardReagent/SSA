@@ -1,4 +1,4 @@
-from simulation.mean_cv_autocorr_v2 import find_tilda_parameters
+from simulation.mean_cv_t_ac import find_tilda_parameters
 from stats.mean import calculate_mean_from_params, calculate_mean
 from stats.variance import calculate_variance_from_params, calculate_variance
 from stats.cv import calculate_cv_from_params, calculate_cv

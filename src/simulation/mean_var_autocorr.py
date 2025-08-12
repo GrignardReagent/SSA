@@ -10,7 +10,7 @@ from utils.biological import check_biological_appropriateness
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
 init_printing(use_unicode=True)
 
-def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None, symbolic=False):
+def equations(vars, sigma_b, mu_target=None, variance_target=None, t_ac_target=None, ac_target = np.exp(-1), cv_target=None, fano_factor_target=None, symbolic=False):
     '''
     Define the equations for the telegraph model based on the given parameters.
     Args:
@@ -18,7 +18,7 @@ def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targ
         sigma_b (float): Value of sigma_b.
         mu_target (float, optional): Target mean.
         variance_target (float, optional): Target variance.
-        autocorr_target (float, optional): Target autocorrelation time.
+        t_ac_target (float, optional): Target autocorrelation time.
         cv_target (float, optional): Target coefficient of variation.
         fano_factor_target (float, optional): Target Fano factor.
         symbolic (bool, optional): Whether to return symbolic expressions (for Jacobian calculation).
@@ -43,15 +43,15 @@ def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targ
         eqs.append(variance_eqn if symbolic else float(variance_eqn))
 
     # Autocorrelation
-    if autocorr_target is not None:
-        ACmRNA_eq = sp.exp(-d_val * t) * (
-            d_val * sp.exp((d_val - sigma_u_val - sigma_b) * t) * rho_val * sigma_u_val
+    if t_ac_target is not None:
+        ACmRNA_eq = np.exp(-d_val * t) * (
+            d_val * np.exp((d_val - sigma_u_val - sigma_b) * t) * rho_val * sigma_u_val
             - (sigma_u_val + sigma_b) * (-d_val**2 + rho_val * sigma_u_val + (sigma_u_val + sigma_b) ** 2)
         ) / (
             (d_val - sigma_u_val - sigma_b) * (rho_val * sigma_u_val + d_val * (sigma_u_val + sigma_b) + (sigma_u_val + sigma_b) ** 2)
         )
-        # Evaluate autocorrelation at t= autocorr_target
-        autocorr_eqn = ACmRNA_eq.subs(t, autocorr_target) - sp.exp(-1)
+        # Evaluate autocorrelation at t= t_ac_target
+        autocorr_eqn = ACmRNA_eq.subs(t, t_ac_target) - ac_target 
         eqs.append(autocorr_eqn if symbolic else float(autocorr_eqn))
     
     # Coefficient of Variation (CV)
@@ -83,7 +83,7 @@ def equations(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targ
 
     return eqs
 
-def jacobian(vars, sigma_b, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
+def jacobian(vars, sigma_b, mu_target=None, variance_target=None, t_ac_target=None, cv_target=None, fano_factor_target=None):
     ''' 
     Calculate the Jacobian matrix for the equations defined above.
     Args:
@@ -91,7 +91,7 @@ def jacobian(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targe
         sigma_b (float): Value of sigma_b.
         mu_target (float, optional): Target mean.
         variance_target (float, optional): Target variance.
-        autocorr_target (float, optional): Target autocorrelation at t=1.
+        t_ac_target (float, optional): Target autocorrelation time.
         cv_target (float, optional): Target coefficient of variation.
         fano_factor_target (float, optional): Target Fano factor.
     Returns:
@@ -105,7 +105,7 @@ def jacobian(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targe
     
     # Get symbolic equations from the equations function
     eqs = equations(sym_vars, sigma_b, mu_target, variance_target, 
-                    autocorr_target, cv_target, fano_factor_target, symbolic=True)
+                    t_ac_target, cv_target, fano_factor_target, symbolic=True)
     
     # Calculate the Jacobian matrix
     J = sp.Matrix(eqs).jacobian([rho_sym, sigma_u_sym, d_sym])
@@ -116,13 +116,13 @@ def jacobian(vars, sigma_b, mu_target=None, variance_target=None, autocorr_targe
     # Evaluate the Jacobian at the given point
     return np.array(J_func(rho_val, sigma_u_val, d_val)).astype(np.float64)
 
-def validate_jacobian(sigma_b_val, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None):
+def validate_jacobian(sigma_b_val, mu_target=None, variance_target=None, t_ac_target=None, cv_target=None, fano_factor_target=None):
     """
     Validate the Jacobian function using scipy.optimize.check_grad.
     
     Args:
         sigma_b_val (float): Value of sigma_b.
-        mu_target, variance_target, autocorr_target, cv_target, fano_factor_target: Target values.
+        mu_target, variance_target, t_ac_target, cv_target, fano_factor_target: Target values.
         
     Returns:
         float: The difference between numerical and analytical Jacobians.
@@ -130,15 +130,15 @@ def validate_jacobian(sigma_b_val, mu_target=None, variance_target=None, autocor
     # Define a scalar objective function (sum of squared residuals)
     def objective(vars):
         residuals = equations(vars, sigma_b_val, mu_target, variance_target, 
-                             autocorr_target, cv_target, fano_factor_target)
+                             t_ac_target, cv_target, fano_factor_target)
         return np.sum(np.square(residuals))
     
     # Define gradient of the objective function using our analytical Jacobian
     def gradient(vars):
         J = jacobian(vars, sigma_b_val, mu_target, variance_target, 
-                    autocorr_target, cv_target, fano_factor_target)
+                    t_ac_target, cv_target, fano_factor_target)
         residuals = equations(vars, sigma_b_val, mu_target, variance_target, 
-                             autocorr_target, cv_target, fano_factor_target)
+                             t_ac_target, cv_target, fano_factor_target)
         # Gradient of sum of squared residuals is 2 * J^T * residuals
         return 2 * np.dot(J.T, residuals)
     
@@ -158,7 +158,7 @@ def validate_jacobian(sigma_b_val, mu_target=None, variance_target=None, autocor
     return diff
 
 ################## THIS IS WORKING VERY SLOWLY #####################
-def find_parameters(parameter_set, mu_target=None, variance_target=None, autocorr_target=None, cv_target=None, fano_factor_target=None,
+def find_parameters(parameter_set, mu_target=None, variance_target=None, t_ac_target=None, cv_target=None, fano_factor_target=None,
                     rho_range=(1, 1000), sigma_u_range=(0.1, 1000), d_range=(0.1, 5), num_guesses=1000, 
                     check_biological=True, max_fano_factor=20, max_cv=5.0):
     """
@@ -173,13 +173,13 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     Statistical properties map to model parameters as follows:
     - Mean (mu_target) → rho
     - Variance (variance_target) or CV (cv_target) → sigma_u
-    - Autocorrelation (autocorr_target) or Fano factor (fano_factor_target) → d
+    - Autocorrelation time (t_ac_target) or Fano factor (fano_factor_target) → d
     
     Args:
         parameter_set (dict): Dictionary with at least a 'sigma_u' key.
         mu_target (float, optional): Target mean.
         variance_target (float, optional): Target variance.
-        autocorr_target (float, optional): Target autocorrelation at t=1.
+        t_ac_target (float, optional): Target autocorrelation time.
         cv_target (float, optional): Target coefficient of variation.
         fano_factor_target (float, optional): Target Fano factor.
         rho_range (tuple): Range for rho initial guesses.
@@ -203,7 +203,7 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
 
     # Count how many statistical properties we're trying to fix
     # We can only solve for 3 parameters (rho, sigma_u, d), so we can only fix 3 properties
-    target_count = sum(1 for target in [mu_target, variance_target, autocorr_target, cv_target, fano_factor_target] if target is not None)
+    target_count = sum(1 for target in [mu_target, variance_target, t_ac_target, cv_target, fano_factor_target] if target is not None)
     if target_count > 3:
         raise ValueError(f"Cannot fix more than 3 statistical properties (you specified {target_count})")
     
@@ -231,18 +231,18 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
     
     # Autocorrelation or Fano factor -> d
     # Cannot specify both autocorrelation and Fano factor
-    if autocorr_target is not None and fano_factor_target is not None:
-        raise ValueError("Cannot specify both autocorr_target and fano_factor_target (would over-constrain the system)")
+    if t_ac_target is not None and fano_factor_target is not None:
+        raise ValueError("Cannot specify both t_ac_target and fano_factor_target (would over-constrain the system)")
     
-    if autocorr_target is not None or fano_factor_target is not None:
+    if t_ac_target is not None or fano_factor_target is not None:
         to_solve.append("d")
     else:
         fixed["d"] = parameter_set.get("d")
         if fixed["d"] is None:
-            raise ValueError("d must be in parameter_set if neither autocorr_target nor fano_factor_target is specified.")
+            raise ValueError("d must be in parameter_set if neither t_ac_target nor fano_factor_target is specified.")
 
-    if all(target is None for target in [mu_target, variance_target, autocorr_target, cv_target, fano_factor_target]):
-        raise ValueError("At least one of mu_target, variance_target, autocorr_target, cv_target, or fano_factor_target must be specified.")
+    if all(target is None for target in [mu_target, variance_target, t_ac_target, cv_target, fano_factor_target]):
+        raise ValueError("At least one of mu_target, variance_target, t_ac_target, cv_target, or fano_factor_target must be specified.")
 
     max_attempts = 10
     max_factor = 2.0
@@ -286,12 +286,12 @@ def find_parameters(parameter_set, mu_target=None, variance_target=None, autocor
             try:
                 solution = fsolve(
                     equations, initial_guess,
-                    args=(sigma_b_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target),
+                    args=(sigma_b_val, mu_target, variance_target, t_ac_target, cv_target, fano_factor_target),
                     fprime=jacobian,  # Always use the main jacobian function
                     xtol=1e-8
                 )
 
-                residuals = equations(solution, sigma_b_val, mu_target, variance_target, autocorr_target, cv_target, fano_factor_target)
+                residuals = equations(solution, sigma_b_val, mu_target, variance_target, t_ac_target, cv_target, fano_factor_target)
                 residuals = np.abs(residuals)
 
                 if all(res < 1e-4 for res in residuals) and all(x > 0 for x in solution):

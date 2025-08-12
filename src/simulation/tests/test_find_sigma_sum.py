@@ -1,5 +1,5 @@
 import numpy as np
-from simulation.mean_cv_autocorr_v2 import find_sigma_sum
+from simulation.mean_cv_t_ac import find_sigma_sum
 from stats.mean import calculate_mean_from_params
 from stats.cv import calculate_cv_from_params
 from stats.autocorrelation import calculate_ac_from_params

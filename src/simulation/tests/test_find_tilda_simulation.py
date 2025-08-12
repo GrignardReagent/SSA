@@ -1,5 +1,5 @@
 import numpy as np
-from simulation.mean_cv_autocorr_v2 import find_tilda_parameters
+from simulation.mean_cv_t_ac import find_tilda_parameters
 from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
 from stats.mean import calculate_mean
 from stats.variance import calculate_variance

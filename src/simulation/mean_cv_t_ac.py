@@ -3,11 +3,9 @@
 import sympy as sp
 from sympy import init_printing
 import numpy as np
-from scipy.optimize import fsolve, check_grad, minimize_scalar, root_scalar
-from stats.fano_factor import calculate_fano_factor, calculate_fano_factor_from_params
-from stats.cv import calculate_cv, calculate_cv_from_params
+from scipy.optimize import root_scalar
+from stats.cv import calculate_cv_from_params
 from stats.mean import calculate_mean_from_params
-from stats.variance import calculate_variance_from_params
 from stats.autocorrelation import calculate_ac_from_params
 from utils.biological import check_biological_appropriateness
 
@@ -21,8 +19,8 @@ from utils.biological import check_biological_appropriateness
 
 # Compute rescaled parameters for a fixed ``sigma_sum``.
 #
-# This helper solves the mean, CV and autocorrelation equations in the
-# rescaled space assuming a known sum of switching rates ``sigma_sum``.
+# This helper solves the mean, CV and autocorrelation time equations in the
+# rescaled space assuming a known sum of switching rates ``sigma_sum`` (default = 1).
 # It is intentionally kept private; the public :func:`find_tilda_parameters`
 # routine wraps this function and automatically searches for an appropriate
 # ``sigma_sum``.
@@ -36,9 +34,7 @@ def find_tilda_parameters(
 ):
     """Solve for ``rho``, ``d``, ``sigma_b`` and ``sigma_u`` given ``sigma_sum``.
 
-    The equations are expressed in a rescaled space where all parameters are
-    divided by ``sigma_sum`` to simplify the algebra.  ``_solve_tilda_parameters``
-    inverts these relationships to recover the original parameters.
+    The equations are expressed in a rescaled space where all parameters are divided by ``sigma_sum`` to simplify the algebra.  
 
     Parameters
     ----------
@@ -91,7 +87,7 @@ def find_tilda_parameters(
     
     # the AC(t_ac_tilda) formula has the denominator (d_tilda -1)(v + 1), and d_tilda = 1 is undefined, so the search space needs to exclude 1.0
     lower, upper = 1e-3, 1e3
-    candidates = [(lower, 0.999), (1.001, upper)] if (lower < 1.0 < upper) else [(lower, upper)]
+    candidates = [(lower, 0.999), (1.001, upper)] if (lower < 1.0 < upper) else [(lower, upper)]  # several decimal places are intentionally used here to avoid values close to 1.0
     
     d_tilda = None
     for a, b in candidates:
