@@ -1,10 +1,4 @@
 # large data files 
-experiments/EXP-25-IY004/var_v_accuracy_plot/data/mRNA*
-experiments/EXP-25-IY004/var_v_accuracy_plot/data_22_03_2025/mRNA*
-experiments/EXP-25-IY004/var_v_accuracy_plot/data_26_03_2025/mRNA*
-experiments/EXP-25-IY004/var_v_accuracy_plot/data_03_04_2025/mRNA*
-experiments/EXP-25-IY004/var_v_accuracy_plot/data_03_04_2025/steady_state_trajectories/m_traj*
-experiments/EXP-25-IY004/var_v_accuracy_plot/data_12_04_2025/mRNA*
 **/mRNA*
 **/m_traj*
 
@@ -17,4 +11,5 @@ src/*/*.egg-info/*
 **/debug.ipynb
 # virtual environment
 .env
+**/micromamba*
 **/micromamba/**
