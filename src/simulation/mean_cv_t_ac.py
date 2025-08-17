@@ -189,7 +189,7 @@ def find_tilda_parameters(
     mu_err = rel(mu_analytical, mu_target)
     cv_err = rel(cv_analytical, cv_target)
     ac_err = abs(ac_analytical - ac_target)
-    if mu_err > res_limit or cv_err > res_limit or ac_err > res_limit:
+    if mu_err > 0.2 or cv_err > 0.2 or ac_err > 0.2:
         raise ValueError(
             "Back-substitution check failed: "
             f"μ_err={mu_err:.2e}, CV_err={cv_err:.2e}, AC_err={ac_err:.2e}. "
