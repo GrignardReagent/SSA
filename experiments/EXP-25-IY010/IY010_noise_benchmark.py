@@ -19,7 +19,7 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, TensorDataset
 
-from models.simple_transformer import TFTransformer, ModelCfg
+from models.TF_transformer import TFTransformer, ModelCfg
 from simulation.simulate_telegraph_model import simulate_two_telegraph_model_systems
 
 
