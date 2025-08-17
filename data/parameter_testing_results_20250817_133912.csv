@@ -1,0 +1,2 @@
+mu_target,t_ac_target,cv_target,sigma_sum,success,error_message,rho,d,sigma_b,sigma_u,mu_observed,cv_observed,t_ac_observed,variance_observed,mean_rel_error_pct,cv_rel_error_pct,ac_rel_error_pct,trajectory_filename
+10,1,1,1,True,,199.0,10.0,0.5025125628140703,0.49748743718592964,10.177972027972029,0.9867585190863805,1.0895814291383892,100.86587840481197,1.7797202797202871,1.324148091361954,8.958142913838918,mRNA_trajectories_10.000_1.000_1.000.csv
