@@ -5,7 +5,7 @@ from scipy.optimize import root_scalar
 from utils.biological import check_biological_appropriateness
 from stats.mean import calculate_mean_from_params
 from stats.variance import calculate_variance_from_params
-from stats.autocorrelation import calculate_ac_from_param
+from stats.autocorrelation import calculate_ac_from_params
 import warnings
 
 # # Rescale parameters
@@ -182,7 +182,7 @@ def find_tilda_parameters(
     mu_analytical = calculate_mean_from_params(rho, d, sigma_b, sigma_u)
     var_analytical = calculate_variance_from_params(rho, d, sigma_b, sigma_u)
     cv_analytical = np.sqrt(var_analytical) / mu_analytical
-    ac_analytical = calculate_ac_from_param(rho, d, sigma_b, sigma_u, t_ac_target)
+    ac_analytical = calculate_ac_from_params(rho, d, sigma_b, sigma_u, t_ac_target)
     
     # relative/absolute residuals
     rel = lambda x, y: abs(x - y) / max(1.0, abs(y)) # behaves like a relative error when abs(y) >= 1 and like an absolute error when abs(y) < 1. In contrastm, using just abs(y) in the denominator blows up (or becomes overly strict) when y is tiny or zero.
