@@ -16,13 +16,50 @@ import os
 import numpy as np
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
+
 from simulation.mean_cv_t_ac import find_tilda_parameters
 from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
 from stats.mean import calculate_mean
 from stats.variance import calculate_variance
 from stats.cv import calculate_cv
 from stats.autocorrelation import calculate_autocorrelation, calculate_ac_time_interp1d
-    
+
+# ---------------------------------------------------------------------------
+# Julia-based simulation helper
+# ---------------------------------------------------------------------------
+def simulate_one_telegraph_model_system_julia(parameter_set, time_points, size, num_cores=None):
+    """Simulate telegraph-model trajectories using the Julia implementation.
+
+    This mirrors :func:`simulate_one_telegraph_model_system` but calls the
+    Julia/Catalyst version defined in ``src/simulation/simulate_telegraph_model.jl``.
+
+    Parameters
+    ----------
+    parameter_set : list of dict
+        Parameter dictionaries describing each condition to simulate.
+    time_points : array-like
+        Time points at which to record mRNA counts.
+    size : int
+        Number of trajectories per parameter set.
+    num_cores : int, optional
+        Number of Julia threads to use.  Defaults to Julia's thread count.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Wide-format DataFrame with one row per trajectory.
+    """
+
+    from juliacall import Main as jl
+
+    sim_path = Path(__file__).resolve().parents[2] / "src" / "simulation" / "simulate_telegraph_model.jl"
+    jl.include(str(sim_path))
+    julia_sim = jl.JuliaTelegraphSimulation.simulate_telegraph_model
+
+    df = julia_sim(parameter_set, list(time_points), size, num_cores=num_cores)
+    return pd.DataFrame(df)
+
 # Create data directory if it doesn't exist
 data_dir = "data"
 os.makedirs(data_dir, exist_ok=True)
