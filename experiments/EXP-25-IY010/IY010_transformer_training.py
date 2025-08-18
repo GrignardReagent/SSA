@@ -5,19 +5,19 @@ data.
 This mirrors the intended workflow for CVmCherry trajectory classification:
 
 1. **Pre‑train** on a large synthetic dataset produced by the telegraph model
-   (see ``IY010.py``) to learn generic representations.
+   (see ``IY010.py``) to learn generic representations.  The simulation script
+   emits many CSV files, each containing a batch of trajectories with a
+   ``label`` column.
 2. **Fine‑tune** on a smaller experimental dataset by freezing the encoder and
-   re‑initialising the classifier head.
+   re‑initialising the classifier head.  The experimental measurements are
+   stored in a TSV file with columns ``id``, ``group`` (class label), ``time``
+   and ``CV_mCherry`` which are reshaped into trajectories.
 
-Both datasets are expected as CSV files with one trajectory per row, the first
-column named ``label`` and the remaining columns containing the time series.
-Trailing zeros are interpreted as padding and ignored via a key padding mask.
-
-The file locations are hard‑coded below to match the output of
-``IY010_simulation.py``.  Adjust the paths to point at the synthetic
-telegraph‑model trajectories and the experimental recordings before running the
-script.  If a dataset is absent the corresponding phase is skipped and a
-warning is issued.  Models are saved alongside this script as
+Trailing zeros in the final wide-form tables denote padding and are ignored via
+an attention mask.  The file locations are hard‑coded below to match the output
+of ``IY010_simulation.py`` and the provided experimental recording.  Adjust as
+necessary for your environment.  If a dataset is absent the corresponding phase
+is skipped and a warning is issued.  Models are saved alongside this script as
 ``IY010_pretrained.pt`` and ``IY010_finetuned.pt``.
 """
 
@@ -41,30 +41,31 @@ from models.TF_transformer import TFTransformer, ModelCfg
 # necessary for your environment.
 # ---------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent
-SYNTHETIC_CSV = BASE_DIR / "data" / "synthetic_trajectories.csv"
-EXPERIMENTAL_CSV = BASE_DIR / "data" / "experimental_trajectories.csv"
+# Directory containing many CSV files produced by ``IY010_simulation.py``
+SYNTHETIC_DIR = BASE_DIR / "data"
+# Experimental measurements are stored in a TSV file
+EXPERIMENTAL_TSV = (
+    BASE_DIR
+    / "data"
+    / "19316_2020_10_26_steadystate_glucose_144m_2w2_00_post_media_switch.tsv"
+)
 OUT_DIR = BASE_DIR
 EPOCHS = 5
 BATCH_SIZE = 32
 LR = 1e-3
 
 
-def _load_csv(path: Path) -> TensorDataset:
-    """Return trajectories and labels stored in ``path``.
+def _prepare_dataset(df: pd.DataFrame) -> TensorDataset:
+    """Convert a DataFrame into a :class:`TensorDataset`.
 
-    The resulting dataset yields tuples ``(x, lengths, y)``.  ``x`` has shape
-    ``[T, 1]`` and ``lengths`` counts the non-zero entries in each sequence,
-    allowing the Transformer to mask padded positions.
+    The DataFrame must contain a ``label`` column followed by time-series
+    columns representing the trajectory.  Trailing zeros are interpreted as
+    padding and ignored via a key-padding mask.
     """
 
-    df = pd.read_csv(path)
     labels = torch.tensor(df["label"].values, dtype=torch.long)
     series = torch.tensor(df.drop(columns=["label"]).values, dtype=torch.float32)
 
-    # Trailing zeros denote padding; ``lengths`` counts the valid entries for
-    # each trajectory.  EDA of the synthetic set revealed large differences in
-    # mean expression between classes, so we normalise each sequence to zero
-    # mean and unit variance before training.
     lengths = (series != 0).sum(dim=1)
     max_len = series.size(1)
     mask = torch.arange(max_len).unsqueeze(0) < lengths.unsqueeze(1)
@@ -75,6 +76,43 @@ def _load_csv(path: Path) -> TensorDataset:
     series[~mask] = 0.0
     series = series.unsqueeze(-1)
     return TensorDataset(series, lengths, labels)
+
+
+def _load_synthetic_dataset(path: Path) -> Tuple[TensorDataset, int]:
+    """Load and concatenate all synthetic CSV files in ``path``.
+
+    Each CSV should contain a ``label`` column and time-series columns.  The
+    returned tuple contains the prepared dataset and the number of distinct
+    labels observed.
+    """
+
+    csv_files = sorted(p for p in path.glob("*.csv"))
+    if not csv_files:
+        raise FileNotFoundError(f"no synthetic CSV files found in {path}")
+    df = pd.concat((pd.read_csv(p) for p in csv_files), ignore_index=True)
+    if "label" not in df.columns:
+        raise ValueError("synthetic CSVs must include a 'label' column")
+    return _prepare_dataset(df), df["label"].nunique()
+
+
+def _load_experimental_dataset(path: Path) -> Tuple[TensorDataset, int]:
+    """Load experimental TSV data and convert to trajectories.
+
+    The TSV file contains measurements in tidy format with columns ``id``,
+    ``group``, ``time`` and ``CV_mCherry``.  Each unique ``id`` corresponds to a
+    trajectory.  ``group`` is mapped to integer class labels.
+    """
+
+    df = pd.read_csv(path, sep="\t", usecols=["id", "group", "time", "CV_mCherry"])
+    df = df.pivot_table(index=["group", "id"], columns="time", values="CV_mCherry")
+    df = df.sort_index(axis=1).reset_index()
+    labels = df["group"]
+    label_map = {g: i for i, g in enumerate(sorted(labels.unique()))}
+    df["label"] = labels.map(label_map)
+    df = df.drop(columns=["group", "id"])
+    df = df.fillna(0)
+    df.insert(0, "label", df.pop("label"))
+    return _prepare_dataset(df), len(label_map)
 
 
 def _run_epoch(
@@ -117,28 +155,39 @@ def _train(
 
 
 def main() -> None:
-    cfg = ModelCfg(n_classes=2)
+    syn_data: TensorDataset | None = None
+    syn_classes = 0
+    try:
+        syn_data, syn_classes = _load_synthetic_dataset(SYNTHETIC_DIR)
+    except FileNotFoundError:
+        print("[WARN] synthetic CSV not found; skipping pre-training")
+    except ValueError as e:
+        print(f"[WARN] {e}; skipping pre-training")
+
+    exp_data: TensorDataset | None = None
+    exp_classes = 0
+    if EXPERIMENTAL_TSV.exists():
+        exp_data, exp_classes = _load_experimental_dataset(EXPERIMENTAL_TSV)
+    else:
+        print("[WARN] experimental TSV not found; skipping fine-tuning")
+
+    n_classes = max(syn_classes, exp_classes, 1)
+    cfg = ModelCfg(n_classes=n_classes)
     model = TFTransformer(cfg)
     model.train()
 
-    if SYNTHETIC_CSV.exists():
+    if syn_data is not None:
         print("=== Pre-training on synthetic data ===")
-        syn_data = _load_csv(SYNTHETIC_CSV)
         _train(model, syn_data, EPOCHS, LR, BATCH_SIZE)
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         torch.save(model.state_dict(), OUT_DIR / "IY010_pretrained.pt")
-    else:
-        print("[WARN] synthetic CSV not found; skipping pre-training")
 
-    if EXPERIMENTAL_CSV.exists():
+    if exp_data is not None:
         print("=== Fine-tuning on experimental data ===")
         model.freeze_encoder(True)
         model.reset_classifier()
-        exp_data = _load_csv(EXPERIMENTAL_CSV)
         _train(model, exp_data, EPOCHS, LR, BATCH_SIZE)
         torch.save(model.state_dict(), OUT_DIR / "IY010_finetuned.pt")
-    else:
-        print("[WARN] experimental CSV not found; skipping fine-tuning")
 
 
 if __name__ == "__main__":
