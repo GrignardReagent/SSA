@@ -24,13 +24,13 @@ from stats.cv import calculate_cv
 from stats.autocorrelation import calculate_autocorrelation, calculate_ac_time_interp1d
     
 # Create data directory if it doesn't exist
-data_dir = "data"
+data_dir = "data_1" # different folder to the first attempt.
 os.makedirs(data_dir, exist_ok=True)
 
 # Define parameter ranges
 mu_target = np.logspace(0, 4, 10)  # 1 to 10000
 t_ac_target = np.logspace(-0.3, 2, 10)  # ~0.5 to 100
-cv_target = np.logspace(-0.3, 0.7, 20)  # ~0.5 to 5
+cv_target = np.logspace(-0.3, 0.7, 10)  # ~0.5 to 5
 sigma_sum = 1
 
 # Track success/failure
