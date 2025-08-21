@@ -8,93 +8,6 @@ from stats.variance import calculate_variance_from_params
 from stats.autocorrelation import calculate_ac_from_params
 import warnings
 
-
-def ac_limit_at_one(t_ac_tilda: float, v: float) -> float:
-    """Autocorrelation value as ``d`` approaches one."""
-
-    return float(np.exp(-t_ac_tilda) * (1.0 + v + t_ac_tilda * v) / (1.0 + v))
-
-
-def d_ac_dd_at_one(t_ac_tilda: float, v: float) -> float:
-    """Derivative of the autocorrelation with respect to ``d`` at ``d=1``."""
-
-    return float(
-        -np.exp(-t_ac_tilda)
-        * t_ac_tilda
-        * (t_ac_tilda * v + 2.0)
-        / (2.0 * (1.0 + v))
-    )
-
-
-def _solve_d_tilda_limit(
-    ac_target: float,
-    t_ac_tilda: float,
-    v: float,
-    a: float,
-    b: float,
-    res_limit: float,
-    scaled_ac_equation,
-) -> float:
-    """Linearised recovery of ``d_tilda`` when Brent's root hits a boundary.
-
-    Parameters
-    ----------
-    ac_target, t_ac_tilda, v
-        Problem parameters used for the Taylor expansion around ``d=1``.
-    a, b
-        Original bracket edges.
-    res_limit
-        Maximum allowed absolute residual of the autocorrelation equation.
-    scaled_ac_equation
-        Callable evaluating the full scaled autocorrelation residual.
-
-    Returns
-    -------
-    float
-        A valid ``d_tilda`` estimate inside ``(a, b)``.
-
-    Raises
-    ------
-    ValueError
-        If the linearised path or optional Newton refinement fails to
-        produce a valid solution.
-    """
-
-    print("[d_tilda] Boundary hit → using linearised l’Hôpital/Taylor solve around d=1")
-
-    AC1 = ac_limit_at_one(t_ac_tilda, v)
-    dAC_dd_1 = d_ac_dd_at_one(t_ac_tilda, v)
-    if np.isclose(dAC_dd_1, 0.0, atol=1e-14):
-        raise ValueError("Slope at d=1 is ~0; cannot linearise to recover d_tilda.")
-
-    edge_tol = 1e-4
-    inner_a = a + 2 * edge_tol
-    inner_b = b - 2 * edge_tol
-
-    d_est = 1.0 + (ac_target - AC1) / dAC_dd_1
-    d_est = float(np.clip(d_est, inner_a, inner_b))
-    res_est = scaled_ac_equation(d_est)
-    if abs(res_est) <= res_limit:
-        return d_est
-
-    def num_deriv(x: float) -> float:
-        h = 1e-6
-        return (scaled_ac_equation(x + h) - scaled_ac_equation(x - h)) / (2 * h)
-
-    df_est = num_deriv(d_est)
-    if np.isclose(df_est, 0.0, atol=1e-14):
-        raise ValueError("Slope at Newton start is ~0; cannot refine d_tilda.")
-
-    d_new = d_est - res_est / df_est
-    d_new = float(np.clip(d_new, inner_a, inner_b))
-    res_new = scaled_ac_equation(d_new)
-    if abs(res_new) <= res_limit:
-        return d_new
-
-    raise ValueError(
-        f"⚠️No valid solution found for parameter d_tilda: residual={res_new:.2e}, d_tilda={d_new:.4f}"
-    )
-
 # # Rescale parameters
 # rho_tilda = rho / (sigma_b + sigma_u)
 # d_tilda = d / (sigma_b + sigma_u)
@@ -218,36 +131,16 @@ def find_tilda_parameters(
             
             if result.converged:
                 d_tilda_solution = result.root
-
+                
                 # error trap for no solution found for d_tilda_solution
                 # 1. checks that absolute value of residue is less than res_limit
                 # 2. checks that d_tilda_solution is not None
+                # 3. checks that the value of d_tilda_solution is not close to the upper bounds plus/minus the absolute tolerance (atol)
                 residue = scaled_ac_equation(d_tilda_solution)
-                if abs(residue) > res_limit or d_tilda_solution is None:
-                    raise ValueError(
-                        f"⚠️No valid solution found for parameter d_tilda: residual={residue:.2e}, d_tilda={d_tilda_solution:.4f}"
-                    )
-
-                # If the root lies extremely close to a bracket edge, use a
-                # linearised l'Hôpital/Taylor expansion around d=1. This avoids
-                # the singular behaviour of the original autocorrelation
-                # equation.
-                if np.isclose(d_tilda_solution, a, atol=1e-4) or np.isclose(
-                    d_tilda_solution, b, atol=1e-4
-                ):
-                    d_tilda = _solve_d_tilda_limit(
-                        ac_target,
-                        t_ac_tilda,
-                        v,
-                        a,
-                        b,
-                        res_limit,
-                        scaled_ac_equation,
-                    )
-                else:
-                    d_tilda = d_tilda_solution
-
-                break
+                if abs(residue) > res_limit or d_tilda_solution is None or np.isclose(d_tilda_solution, b, atol=1e-4):
+                    raise  ValueError(f"⚠️No valid solution found for parameter d_tilda: residual={residue:.2e}, d_tilda={d_tilda_solution:.4f}")
+                
+                d_tilda = d_tilda_solution
                 
         except ValueError:
             pass
