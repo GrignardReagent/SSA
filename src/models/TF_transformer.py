@@ -40,9 +40,13 @@ torch.Size([4, 2])
 from dataclasses import dataclass
 from typing import Optional
 import math
+import warnings
 
 import torch
 import torch.nn as nn
+
+# Suppress the nested tensor warning from PyTorch transformer
+warnings.filterwarnings("ignore", message="enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True")
 
 
 @dataclass
@@ -62,6 +66,7 @@ class ModelCfg:
     d_ff: int = 128  # width of the feed-forward sublayers
     dropout: float = 0.1  # dropout probability used throughout
     max_len: int = 8192  # maximum sequence length (excluding [CLS])
+    verbose: bool = False  # whether to print verbose logging information
 
 
 class PositionalEncoding(nn.Module):
@@ -100,6 +105,18 @@ class TFTransformer(nn.Module):
     def __init__(self, cfg: ModelCfg) -> None:
         super().__init__()
         self.cfg = cfg
+        self.verbose = cfg.verbose
+        
+        # Device detection and setup
+        self.device = self._setup_device()
+        
+        if self.verbose:
+            print(f"🔧 Initializing TFTransformer with config: {cfg}")
+            print(f"🖥️  Using device: {self.device}")
+            if torch.cuda.is_available():
+                print(f"🚀 CUDA available with {torch.cuda.device_count()} GPU(s)")
+                for i in range(torch.cuda.device_count()):
+                    print(f"   GPU {i}: {torch.cuda.get_device_name(i)}")
 
         # Project the single input channel to ``d_model`` dimensions.
         self.proj = nn.Linear(1, cfg.d_model)
@@ -129,21 +146,79 @@ class TFTransformer(nn.Module):
         nn.init.zeros_(self.classifier.bias)
 
         self.cls_dropout = nn.Dropout(cfg.dropout)
+        
+        # Move model to device and setup multi-GPU if available
+        self.to(self.device)
+        self._setup_multi_gpu()
+        
+        if self.verbose:
+            total_params = sum(p.numel() for p in self.parameters())
+            trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
+            print(f"📊 Model initialized with {total_params:,} total parameters ({trainable_params:,} trainable)")
+
+    def _setup_device(self) -> torch.device:
+        """Setup the appropriate device (CPU/GPU)."""
+        if torch.cuda.is_available():
+            device = torch.device("cuda")
+            if self.verbose:
+                print(f"✅ CUDA detected, using GPU: {torch.cuda.get_device_name()}")
+        else:
+            device = torch.device("cpu")
+            if self.verbose:
+                print("⚠️  No CUDA available, using CPU")
+        return device
+    
+    def _setup_multi_gpu(self) -> None:
+        """Setup multi-GPU training if multiple GPUs are available."""
+        if torch.cuda.device_count() > 1:
+            if self.verbose:
+                print(f"🔄 Setting up DataParallel for {torch.cuda.device_count()} GPUs")
+            # Note: We'll apply DataParallel to the core components but keep the main module structure
+            # This allows for proper state_dict saving/loading
+            self.encoder = nn.DataParallel(self.encoder)
+            self.proj = nn.DataParallel(self.proj)
+            self.classifier = nn.DataParallel(self.classifier)
+            if self.verbose:
+                print("✅ Multi-GPU setup complete")
+        elif self.verbose and torch.cuda.is_available():
+            print("ℹ️  Single GPU detected, using single GPU training")
 
     def freeze_encoder(self, freeze: bool = True) -> None:
         """Freeze or unfreeze the projection and encoder for transfer learning."""
+        
+        if self.verbose:
+            action = "Freezing" if freeze else "Unfreezing"
+            print(f"🔒 {action} encoder components for transfer learning")
 
-        for p in self.proj.parameters():
+        # Handle DataParallel wrapped modules
+        proj_module = self.proj.module if isinstance(self.proj, nn.DataParallel) else self.proj
+        encoder_module = self.encoder.module if isinstance(self.encoder, nn.DataParallel) else self.encoder
+        
+        for p in proj_module.parameters():
             p.requires_grad = not freeze
         self.cls_token.requires_grad = not freeze
-        for p in self.encoder.parameters():
+        for p in encoder_module.parameters():
             p.requires_grad = not freeze
+            
+        if self.verbose:
+            frozen_params = sum(1 for p in self.parameters() if not p.requires_grad)
+            total_params = sum(1 for p in self.parameters())
+            print(f"📊 {frozen_params}/{total_params} parameters frozen")
 
     def reset_classifier(self) -> None:
         """Reinitialise the classifier head (useful before fine-tuning)."""
-
-        nn.init.trunc_normal_(self.classifier.weight, std=0.02)
-        nn.init.zeros_(self.classifier.bias)
+        
+        if self.verbose:
+            print("🔄 Resetting classifier head weights")
+            
+        # Handle DataParallel wrapped classifier
+        classifier_module = self.classifier.module if isinstance(self.classifier, nn.DataParallel) else self.classifier
+        
+        nn.init.trunc_normal_(classifier_module.weight, std=0.02)
+        nn.init.zeros_(classifier_module.bias)
+        
+        if self.verbose:
+            print("✅ Classifier head reset complete")
 
     @staticmethod
     def make_padding_mask(lengths: torch.Tensor, max_len: int) -> torch.Tensor:
@@ -174,6 +249,17 @@ class TFTransformer(nn.Module):
             provided, padding positions are masked so they do not influence the
             attention mechanism.
         """
+        
+        if self.verbose and hasattr(self, '_forward_calls'):
+            self._forward_calls += 1
+        elif self.verbose:
+            self._forward_calls = 1
+            print(f"🔄 Starting forward pass (batch size: {x.shape[0]}, seq length: {x.shape[1]})")
+
+        # Ensure input is on the correct device
+        x = x.to(self.device)
+        if lengths is not None:
+            lengths = lengths.to(self.device)
 
         b, t, _ = x.shape
         x = self.proj(x)  # [B, T, d_model]
@@ -191,17 +277,80 @@ class TFTransformer(nn.Module):
             padding = self.make_padding_mask(lengths, t)
             cls_pad = torch.zeros(b, 1, dtype=torch.bool, device=x.device)
             mask = torch.cat([cls_pad, padding], dim=1)
+            
+            if self.verbose and self._forward_calls <= 3:  # Only log for first few calls
+                masked_positions = mask.sum().item() if mask is not None else 0
+                print(f"🎭 Applied attention mask with {masked_positions} masked positions")
 
         x = self.encoder(x, src_key_padding_mask=mask)
 
         # Classifier operates on the ``[CLS]`` representation.
         cls_state = x[:, 0]
         cls_state = self.cls_dropout(cls_state)
-        return self.classifier(cls_state)
+        output = self.classifier(cls_state)
+        
+        if self.verbose and self._forward_calls <= 3:  # Only log for first few calls
+            print(f"📤 Forward pass complete, output shape: {output.shape}")
+            
+        return output
+
+
+    def save_model(self, filepath: str) -> None:
+        """Save model state dict, handling DataParallel correctly."""
+        if self.verbose:
+            print(f"💾 Saving model to {filepath}")
+            
+        # Get the actual state dict, unwrapping DataParallel if necessary
+        state_dict = self.state_dict()
+        
+        # Remove 'module.' prefix from DataParallel wrapped modules
+        cleaned_state_dict = {}
+        for key, value in state_dict.items():
+            if key.startswith('proj.module.'):
+                cleaned_state_dict[key.replace('proj.module.', 'proj.')] = value
+            elif key.startswith('encoder.module.'):
+                cleaned_state_dict[key.replace('encoder.module.', 'encoder.')] = value
+            elif key.startswith('classifier.module.'):
+                cleaned_state_dict[key.replace('classifier.module.', 'classifier.')] = value
+            else:
+                cleaned_state_dict[key] = value
+        
+        torch.save(cleaned_state_dict, filepath)
+        
+        if self.verbose:
+            print(f"✅ Model saved successfully")
+    
+    def load_model(self, filepath: str) -> None:
+        """Load model state dict, handling DataParallel correctly."""
+        if self.verbose:
+            print(f"📥 Loading model from {filepath}")
+            
+        state_dict = torch.load(filepath, map_location=self.device)
+        
+        # Handle loading into DataParallel modules if necessary
+        if isinstance(self.proj, nn.DataParallel):
+            # Add 'module.' prefix for DataParallel wrapped modules
+            adjusted_state_dict = {}
+            for key, value in state_dict.items():
+                if key.startswith('proj.') and not key.startswith('proj.module.'):
+                    adjusted_state_dict[key.replace('proj.', 'proj.module.')] = value
+                elif key.startswith('encoder.') and not key.startswith('encoder.module.'):
+                    adjusted_state_dict[key.replace('encoder.', 'encoder.module.')] = value
+                elif key.startswith('classifier.') and not key.startswith('classifier.module.'):
+                    adjusted_state_dict[key.replace('classifier.', 'classifier.module.')] = value
+                else:
+                    adjusted_state_dict[key] = value
+            state_dict = adjusted_state_dict
+        
+        self.load_state_dict(state_dict)
+        
+        if self.verbose:
+            print(f"✅ Model loaded successfully")
 
 
 if __name__ == "__main__":
-    cfg = ModelCfg(n_classes=2)
+    # Test with verbose mode
+    cfg = ModelCfg(n_classes=2, verbose=True)
     model = TFTransformer(cfg)
     batch = torch.randn(4, 10, 1)
     print("No lengths:", model(batch).shape)
