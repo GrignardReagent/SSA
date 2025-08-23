@@ -5,8 +5,106 @@ from scipy.optimize import root_scalar
 from utils.biological import check_biological_appropriateness
 from stats.mean import calculate_mean_from_params
 from stats.variance import calculate_variance_from_params
+from stats.cv import (
+    calculate_cv, calculate_cv_from_params
+)
 from stats.autocorrelation import calculate_ac_from_params
 import warnings
+
+# Specialised root solver for d_tilda when the solution lies near the bracket
+# edges and the standard autocorrelation equation becomes singular.
+def ac_limit_at_one(t_ac_tilda: float, v: float) -> float:
+    """Autocorrelation value as ``d`` approaches one."""
+
+    return float(np.exp(-t_ac_tilda) * (1.0 + v + t_ac_tilda * v) / (1.0 + v))
+
+
+def d_ac_dd_at_one(t_ac_tilda: float, v: float) -> float:
+    """Derivative of the autocorrelation with respect to ``d`` at ``d=1``."""
+
+    return float(
+        -np.exp(-t_ac_tilda)
+        * t_ac_tilda
+        * (t_ac_tilda * v + 2.0)
+        / (2.0 * (1.0 + v))
+    )
+
+
+def _solve_d_tilda_limit(
+    ac_target: float,
+    t_ac_tilda: float,
+    v: float,
+    a: float,
+    b: float,
+    res_limit: float,
+    scaled_ac_equation,
+) -> float:
+    """Linearised recovery of ``d_tilda`` when Brent's root hits a boundary.
+
+    Parameters
+    ----------
+    ac_target, t_ac_tilda, v
+        Problem parameters used for the Taylor expansion around ``d=1``.
+    a, b
+        Original bracket edges.
+    res_limit
+        Maximum allowed absolute residual of the autocorrelation equation.
+    scaled_ac_equation
+        Callable evaluating the full scaled autocorrelation residual.
+
+    Returns
+    -------
+    float
+        A valid ``d_tilda`` estimate inside ``(a, b)``.
+
+    Raises
+    ------
+    ValueError
+        If the linearised path or optional Newton refinement fails to
+        produce a valid solution.
+    """
+
+    print("[d_tilda] Boundary hit → using linearised l’Hôpital/Taylor solve around d=1")
+
+    AC1 = ac_limit_at_one(t_ac_tilda, v)
+    dAC_dd_1 = d_ac_dd_at_one(t_ac_tilda, v)
+    if np.isclose(dAC_dd_1, 0.0, atol=1e-14):
+        raise ValueError("Slope at d=1 is ~0; cannot linearise to recover d_tilda.")
+
+    # shrink a and b so they're not near the edges of singularity
+    edge_tol = 1e-4
+    inner_a = a + 2 * edge_tol
+    inner_b = b - 2 * edge_tol
+
+    d_est = 1.0 + (ac_target - AC1) / dAC_dd_1
+    # force d_est to stay within inner_a and inner_b, prevents solver from triggering singularities
+    d_est = float(np.clip(d_est, inner_a, inner_b))
+    res_est = scaled_ac_equation(d_est)
+    # double check residue by back-substitution then return
+    if abs(res_est) <= res_limit:
+        return d_est
+
+    # Newton polish step: central finite difference approximation of the derivative - this estimates the slope of the equation at d_est, if the slope is flat i.e. near 0, then Newton's method would not work. 
+    def num_deriv(x: float) -> float:
+        h = 1e-6
+        return (scaled_ac_equation(x + h) - scaled_ac_equation(x - h)) / (2 * h)
+    # if the derivative is too close to 0, then dividing by it in Newton's update would cause issues.
+    df_est = num_deriv(d_est)
+    if np.isclose(df_est, 0.0, atol=1e-14):
+        raise ValueError("Slope at Newton start is ~0; cannot refine d_tilda.")
+
+    # Newton-Raphson method
+    d_new = d_est - res_est / df_est
+    d_new = float(np.clip(d_new, inner_a, inner_b))
+    res_new = scaled_ac_equation(d_new)
+    # check residue of Newton-refined d
+    if abs(res_new) <= res_limit:
+        return d_new
+
+    raise ValueError(
+        f"⚠️No valid solution found for parameter d_tilda: residual={res_new:.2e}, d_tilda={d_new:.4f}"
+    )
+
 
 # # Rescale parameters
 # rho_tilda = rho / (sigma_b + sigma_u)
@@ -18,7 +116,7 @@ import warnings
 
 # Compute rescaled parameters for a fixed ``sigma_sum``.
 #
-# This helper solves the mean, CV and autocorrelation time equations in the
+# This solves the mean, CV and autocorrelation time equations in the
 # rescaled space assuming a known sum of switching rates ``sigma_sum`` (default = 1).
 # It is intentionally kept private; the public :func:`find_tilda_parameters`
 # routine wraps this function and automatically searches for an appropriate
@@ -32,6 +130,8 @@ def find_tilda_parameters(
     res_limit: float = 1e-3,
     lower: float = 1e-3,
     upper: float = 1e3,
+    epsilon: float = 1e-6,
+    max_rel_err: float = 0.2, 
     check_biological: bool = False,
     max_fano_factor: float = 20,
     min_fano_factor: float = 1.0,
@@ -59,6 +159,13 @@ def find_tilda_parameters(
         Lower bound for the root-finding search space for d_tilda. Defaults to ``1e-3``
     upper : float, optional
         Upper bound for the root-finding search space for d_tilda. Defaults to ``1e3``.
+    epsilon : float, optional
+        Small value to avoid numerical issues when searching for roots for d_tilda. (singularity for d_tilda at 1)
+        Defaults to ``1e-6``.
+    max_rel_err : float, optional
+        Maximum allowed relative error for the solution. 
+        This is used to check the relative error between the analytical solutions for the statistics against the target statistics.
+        Defaults to ``0.2`` (20%).
     check_biological : bool, optional
         If True, checks if the solution is biologically appropriate. Defaults to False.
     max_fano_factor : float, optional
@@ -121,7 +228,8 @@ def find_tilda_parameters(
     ################ Use root scalar to find d_tilda, AC(t_ac_tilda) - AC_target = 0  is a root-finding problem, so root_scalar is more appropriate ##################
     
     # the AC(t_ac_tilda) formula has the denominator (d_tilda -1)(v + 1), and d_tilda = 1 is undefined, so the search space needs to exclude 1.0; multiple decimal places to bracket away from 1.0
-    candidates = [(lower, 0.999), (1.001, upper)] if (lower < 1.0 < upper) else [(lower, upper)]  # several decimal places are intentionally used here to avoid values close to 1.0
+    candidates = [(lower, float(1 - epsilon)), (float(1 + epsilon), upper)] if (lower < 1.0 < upper) else [(lower, upper)]  # several decimal places are intentionally used here to avoid values close to 1.0
+    # TODO: Warning if close to 1.0, use limit eqn if 1.0, check AC(t) - 1/e is close to 0
     
     d_tilda = None
     for a, b in candidates:
@@ -135,13 +243,31 @@ def find_tilda_parameters(
                 # error trap for no solution found for d_tilda_solution
                 # 1. checks that absolute value of residue is less than res_limit
                 # 2. checks that d_tilda_solution is not None
-                # 3. checks that the value of d_tilda_solution is not close to the upper bounds plus/minus the absolute tolerance (atol)
                 residue = scaled_ac_equation(d_tilda_solution)
-                if abs(residue) > res_limit or d_tilda_solution is None or np.isclose(d_tilda_solution, b, atol=1e-4):
+                if abs(residue) > res_limit or d_tilda_solution is None:
                     raise  ValueError(f"⚠️No valid solution found for parameter d_tilda: residual={residue:.2e}, d_tilda={d_tilda_solution:.4f}")
                 
-                d_tilda = d_tilda_solution
-                
+                # If the root lies extremely close to a bracket edge, use a
+                # linearised l'Hôpital/Taylor expansion around d=1. This avoids
+                # the singular behaviour of the original autocorrelation
+                # equation.
+                if np.isclose(d_tilda_solution, a, atol=1e-4) or np.isclose(
+                    d_tilda_solution, b, atol=1e-4
+                ):
+                    d_tilda = _solve_d_tilda_limit(
+                        ac_target,
+                        t_ac_tilda,
+                        v,
+                        a,
+                        b,
+                        res_limit,
+                        scaled_ac_equation,
+                    )
+                else:
+                    d_tilda = d_tilda_solution
+
+                break
+            
         except ValueError:
             pass
     if d_tilda is None: 
@@ -150,7 +276,6 @@ def find_tilda_parameters(
     ################ Use root scalar to find d_tilda ##################
             
     # find rho_tilda from mu_target, d_tilda and v; by rearranging Equation A, definition of v in terms of tilda_params.
-    #TODO: explanation of maths...
     rho_tilda = mu_target * d_tilda + (d_tilda + 1) * v
     
     # find sigma_b_tilda using solved parameters
@@ -180,16 +305,15 @@ def find_tilda_parameters(
         
     # back-substitution verification against original formulas
     mu_analytical = calculate_mean_from_params(rho, d, sigma_b, sigma_u)
-    var_analytical = calculate_variance_from_params(rho, d, sigma_b, sigma_u)
-    cv_analytical = np.sqrt(var_analytical) / mu_analytical
-    ac_analytical = calculate_ac_from_params(rho, d, sigma_b, sigma_u, t_ac_target)
+    cv_analytical = calculate_cv_from_params(rho, d, sigma_b, sigma_u)
+    ac_analytical = calculate_ac_from_params(rho, d, sigma_b, sigma_u, t_ac_target) # note this is autocorrelation
     
     # relative/absolute residuals
     rel = lambda x, y: abs(x - y) / max(1.0, abs(y)) # behaves like a relative error when abs(y) >= 1 and like an absolute error when abs(y) < 1. In contrastm, using just abs(y) in the denominator blows up (or becomes overly strict) when y is tiny or zero.
     mu_err = rel(mu_analytical, mu_target)
     cv_err = rel(cv_analytical, cv_target)
-    ac_err = abs(ac_analytical - ac_target)
-    if mu_err > res_limit or cv_err > res_limit or ac_err > res_limit:
+    ac_err = abs(ac_analytical - ac_target) # note this is autocorrelation
+    if mu_err > max_rel_err or cv_err > max_rel_err or ac_err > max_rel_err:
         raise ValueError(
             "Back-substitution check failed: "
             f"μ_err={mu_err:.2e}, CV_err={cv_err:.2e}, AC_err={ac_err:.2e}. "

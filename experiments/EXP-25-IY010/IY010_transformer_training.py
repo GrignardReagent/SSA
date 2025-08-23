@@ -135,6 +135,7 @@ def _load_synthetic_dataset(path: Path) -> Tuple[TensorDataset, int]:
 
     If the files lack a ``label`` column they are automatically paired and
     labelled using :func:`_add_pair_labels`.
+
     """
 
     csv_files = sorted(p for p in path.glob("*.csv"))
