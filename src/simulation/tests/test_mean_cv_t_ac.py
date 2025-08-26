@@ -11,21 +11,21 @@ def test_find_tilda_parameters_analytical():
     """Test Case 1: Plug Computed Parameters Back into Original Equations to Verify"""
     # Set up test parameters
     mu_target = 10
-    autocorr_target = 2
+    t_ac_target = 2
     cv_target = 0.5
     # Get the parameters using the scaled equations
-    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, autocorr_target, cv_target)
+    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, t_ac_target, cv_target)
     print('Parameters found:', rho, d, sigma_b, sigma_u)
     
     # Plug back in to verify
     mu_est = calculate_mean_from_params(rho, d, sigma_b, sigma_u)
     cv_est = calculate_cv_from_params(rho, d, sigma_b, sigma_u)
-    ac_est = calculate_ac_from_params(rho, d, sigma_b, sigma_u, autocorr_target)
+    ac_est = calculate_ac_from_params(rho, d, sigma_b, sigma_u, t_ac_target)
     
     # Print comparison
     print(f"Mean:   target={mu_target:.4f},   analytic={mu_est:.4f},   error={100*(mu_est-mu_target)/mu_target:.2f}%")
     print(f"CV:     target={cv_target:.4f},    analytic={cv_est:.4f},    error={100*(cv_est-cv_target)/cv_target:.2f}%")
-    print(f"AC({autocorr_target!r}): target={np.exp(-1):.4f}, analytic={ac_est:.4f}, error={100*(ac_est-np.exp(-1))/np.exp(-1):.2f}%")
+    print(f"AC({t_ac_target!r}): target={np.exp(-1):.4f}, analytic={ac_est:.4f}, error={100*(ac_est-np.exp(-1))/np.exp(-1):.2f}%")
     
     # Assert that parameters are close to targets
     assert abs((mu_est - mu_target) / mu_target) < 0.01, f"Mean error too large: {100*(mu_est-mu_target)/mu_target:.2f}%"

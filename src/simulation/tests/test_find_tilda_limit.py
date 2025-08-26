@@ -38,9 +38,11 @@ def test_boundary_solver_used(capsys):
     cv = np.sqrt(1.001)
     rho, d, sigma_b, sigma_u = find_tilda_parameters(mu, 1.0, cv)
     captured = capsys.readouterr()
+    # this message would be printed if the condition is triggered
     assert "Boundary hit" in captured.out
     assert 1.001 < d < 1.002
 
+    # simulate the system to check that we get back the stats properties we asked for
     param_set = [
         {"sigma_b": sigma_b, "sigma_u": sigma_u, "rho": rho, "d": d, "label": 0}
     ]
@@ -61,8 +63,6 @@ def test_boundary_solver_used(capsys):
     assert abs(mean_obs - mu) / mu < 0.2
     assert abs(cv_obs - cv) / cv < 0.2
     assert abs(ac_time_obs - 1.0) / 1.0 < 0.2
-
-
 
 
 def test_no_valid_root():
