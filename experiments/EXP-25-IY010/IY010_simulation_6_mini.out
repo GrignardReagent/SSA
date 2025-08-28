@@ -1,0 +1,948 @@
+Testing 64 parameter combinations...
+Started at: 2025-08-26 15:43:30.310762
+Simulating Sobol samples:   0%|          | 0/64 [00:00<?, ?it/s]Testing mu=4310.86, t_ac=81.53, cv=1.71
+  Parameters: rho=12808.7789, d=0.0124, sigma_b=0.0042, sigma_u=0.9958
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:42<00:00, 102.54s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:42<00:00, 102.54s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   2%|▏         | 1/64 [01:47<1:52:52, 107.50s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.004179595873199511, 'sigma_u': 0.9958204041268005, 'rho': 12808.7788721089, 'd': 0.012418745491496195, 'label': 0}
+  Target: mu=4310.864, cv=1.710, t_ac=81.530
+  Observed: mu=4848.580, cv=1.696, t_ac=82.863
+  Errors: mean=12.5%, cv=0.8%, ac=1.6%
+  ✅ All assertions passed
+Testing mu=8698.27, t_ac=44.03, cv=1.25
+  Parameters: rho=14065.9442, d=0.0232, sigma_b=0.0144, sigma_u=0.9856
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:48<00:00, 168.67s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:48<00:00, 168.67s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   3%|▎         | 2/64 [04:37<2:29:10, 144.36s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.014374867144701245, 'sigma_u': 0.9856251328552987, 'rho': 14065.944178292766, 'd': 0.02324556291088613, 'label': 0}
+  Target: mu=8698.266, cv=1.248, t_ac=44.031
+  Observed: mu=8887.513, cv=1.317, t_ac=42.350
+  Errors: mean=2.2%, cv=5.5%, ac=3.8%
+  ✅ All assertions passed
+Testing mu=5779.58, t_ac=51.26, cv=1.59
+  Parameters: rho=15010.5823, d=0.0199, sigma_b=0.0077, sigma_u=0.9923
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:18<00:00, 138.39s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:18<00:00, 138.39s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   5%|▍         | 3/64 [06:58<2:24:58, 142.59s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.007662202859407543, 'sigma_u': 0.9923377971405924, 'rho': 15010.582278539969, 'd': 0.019900095562781016, 'label': 0}
+  Target: mu=5779.577, cv=1.590, t_ac=51.261
+  Observed: mu=6067.794, cv=1.584, t_ac=51.911
+  Errors: mean=5.0%, cv=0.4%, ac=1.3%
+  ✅ All assertions passed
+Testing mu=1369.53, t_ac=24.25, cv=0.55
+  Parameters: rho=486.4836, d=0.0430, sigma_b=0.1212, sigma_u=0.8788
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:27<00:00, 27.76s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:27<00:00, 27.76s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   6%|▋         | 4/64 [07:26<1:37:27, 97.46s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.12117604020001156, 'sigma_u': 0.8788239597999885, 'rho': 486.48362299711226, 'd': 0.04304412982182339, 'label': 0}
+  Target: mu=1369.528, cv=0.548, t_ac=24.252
+  Observed: mu=1381.730, cv=0.540, t_ac=23.787
+  Errors: mean=0.9%, cv=1.5%, ac=1.9%
+  ✅ All assertions passed
+Testing mu=434.90, t_ac=71.64, cv=1.03
+  Parameters: rho=476.9421, d=0.0142, sigma_b=0.0129, sigma_u=0.9871
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:09<00:00,  9.19s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:09<00:00,  9.19s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   8%|▊         | 5/64 [07:39<1:05:58, 67.09s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.012909260373939394, 'sigma_u': 0.9870907396260606, 'rho': 476.9421119624654, 'd': 0.014157220517704763, 'label': 0}
+  Target: mu=434.900, cv=1.034, t_ac=71.640
+  Observed: mu=401.777, cv=1.058, t_ac=64.573
+  Errors: mean=7.6%, cv=2.3%, ac=9.9%
+  ✅ All assertions passed
+Testing mu=7339.14, t_ac=3.82, cv=1.88
+  Parameters: rho=38306.4949, d=0.3755, sigma_b=0.0719, sigma_u=0.9281
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [06:27<00:00, 387.67s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [06:27<00:00, 387.67s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   9%|▉         | 6/64 [14:07<2:50:14, 176.11s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.07194032278485378, 'sigma_u': 0.9280596772151462, 'rho': 38306.4948742888, 'd': 0.3754911603862427, 'label': 0}
+  Target: mu=7339.138, cv=1.877, t_ac=3.823
+  Observed: mu=6755.370, cv=1.942, t_ac=3.729
+  Errors: mean=8.0%, cv=3.5%, ac=2.5%
+  ✅ All assertions passed
+Testing mu=9638.45, t_ac=89.86, cv=0.76
+  Parameters: rho=5761.4380, d=0.0113, sigma_b=0.0188, sigma_u=0.9812
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:06<00:00, 186.03s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:06<00:00, 186.03s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  11%|█         | 7/64 [17:19<2:52:16, 181.33s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.018827026746859297, 'sigma_u': 0.9811729732531408, 'rho': 5761.438031249216, 'd': 0.011253957439616224, 'label': 0}
+  Target: mu=9638.454, cv=0.762, t_ac=89.863
+  Observed: mu=9834.160, cv=0.789, t_ac=80.938
+  Errors: mean=2.0%, cv=3.6%, ac=9.9%
+  ✅ All assertions passed
+Testing mu=2745.74, t_ac=35.65, cv=1.42
+  Parameters: rho=5796.5556, d=0.0289, sigma_b=0.0137, sigma_u=0.9863
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:01<00:00, 61.23s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:01<00:00, 61.23s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  12%|█▎        | 8/64 [18:21<2:13:51, 143.42s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.013676988209722976, 'sigma_u': 0.986323011790277, 'rho': 5796.5555661730195, 'd': 0.028873582060663688, 'label': 0}
+  Target: mu=2745.743, cv=1.423, t_ac=35.648
+  Observed: mu=2744.825, cv=1.487, t_ac=35.455
+  Errors: mean=0.0%, cv=4.5%, ac=0.5%
+  ✅ All assertions passed
+Testing mu=3192.16, t_ac=59.30, cv=0.79
+  Parameters: rho=2062.9982, d=0.0172, sigma_b=0.0265, sigma_u=0.9735
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:03<00:00, 63.73s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:03<00:00, 63.73s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  14%|█▍        | 9/64 [19:28<1:49:25, 119.37s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.026545332860358428, 'sigma_u': 0.9734546671396416, 'rho': 2062.998210110454, 'd': 0.01715543864585279, 'label': 0}
+  Target: mu=3192.164, cv=0.787, t_ac=59.299
+  Observed: mu=3159.575, cv=0.823, t_ac=65.272
+  Errors: mean=1.0%, cv=4.6%, ac=10.1%
+  ✅ All assertions passed
+Testing mu=8800.23, t_ac=16.34, cv=1.26
+  Parameters: rho=15390.2302, d=0.0653, sigma_b=0.0374, sigma_u=0.9626
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:13<00:00, 193.08s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:13<00:00, 193.08s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  16%|█▌        | 10/64 [22:41<2:07:58, 142.20s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.03735432945734746, 'sigma_u': 0.9626456705426526, 'rho': 15390.23020937216, 'd': 0.06532693075833644, 'label': 0}
+  Target: mu=8800.226, cv=1.257, t_ac=16.342
+  Observed: mu=9131.237, cv=1.277, t_ac=18.276
+  Errors: mean=3.8%, cv=1.6%, ac=11.8%
+  ✅ All assertions passed
+Testing mu=6722.44, t_ac=77.32, cv=0.92
+  Parameters: rho=5829.9978, d=0.0131, sigma_b=0.0151, sigma_u=0.9849
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:14<00:00, 134.92s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:14<00:00, 134.92s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  17%|█▋        | 11/64 [25:00<2:04:51, 141.35s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.015110106786257417, 'sigma_u': 0.9848898932137427, 'rho': 5829.997849897342, 'd': 0.013104161521823351, 'label': 0}
+  Target: mu=6722.436, cv=0.918, t_ac=77.318
+  Observed: mu=6593.412, cv=0.864, t_ac=71.355
+  Errors: mean=1.9%, cv=6.0%, ac=7.7%
+  ✅ All assertions passed
+Testing mu=1130.94, t_ac=47.97, cv=1.95
+  Parameters: rho=4396.0406, d=0.0213, sigma_b=0.0055, sigma_u=0.9945
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:29<00:00, 29.94s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:29<00:00, 29.94s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  19%|█▉        | 12/64 [25:32<1:33:35, 108.00s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.005478516046289623, 'sigma_u': 0.9945214839537104, 'rho': 4396.040571210042, 'd': 0.02129537272237929, 'label': 0}
+  Target: mu=1130.940, cv=1.946, t_ac=47.969
+  Observed: mu=1207.033, cv=1.897, t_ac=51.260
+  Errors: mean=6.7%, cv=2.5%, ac=6.9%
+  ✅ All assertions passed
+Testing mu=2071.05, t_ac=93.86, cv=1.47
+  Parameters: rho=4550.5602, d=0.0108, sigma_b=0.0049, sigma_u=0.9951
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.45s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.45s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  20%|██        | 13/64 [26:25<1:17:38, 91.34s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.004901297502972956, 'sigma_u': 0.995098702497027, 'rho': 4550.560170243118, 'd': 0.010769239808653906, 'label': 0}
+  Target: mu=2071.051, cv=1.471, t_ac=93.862
+  Observed: mu=2180.501, cv=1.475, t_ac=107.257
+  Errors: mean=5.3%, cv=0.3%, ac=14.3%
+  ✅ All assertions passed
+Testing mu=5157.39, t_ac=31.47, cv=0.62
+  Parameters: rho=2213.1420, d=0.0328, sigma_b=0.0765, sigma_u=0.9235
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:39<00:00, 99.47s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:39<00:00, 99.47s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  22%|██▏       | 14/64 [28:05<1:18:21, 94.04s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0765129877224906, 'sigma_u': 0.9234870122775095, 'rho': 2213.1420007257084, 'd': 0.03283328660372854, 'label': 0}
+  Target: mu=5157.391, cv=0.620, t_ac=31.473
+  Observed: mu=5214.629, cv=0.672, t_ac=32.547
+  Errors: mean=1.1%, cv=8.4%, ac=3.4%
+  ✅ All assertions passed
+Testing mu=7865.52, t_ac=63.79, cv=1.73
+  Parameters: rho=24091.0710, d=0.0159, sigma_b=0.0052, sigma_u=0.9948
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:13<00:00, 193.85s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:13<00:00, 193.85s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  23%|██▎       | 15/64 [31:23<1:42:09, 125.10s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.005200306828106484, 'sigma_u': 0.9947996931718934, 'rho': 24091.070957094693, 'd': 0.015927866497882588, 'label': 0}
+  Target: mu=7865.521, cv=1.732, t_ac=63.791
+  Observed: mu=8781.025, cv=1.656, t_ac=67.645
+  Errors: mean=11.6%, cv=4.4%, ac=6.0%
+  ✅ All assertions passed
+Testing mu=4751.80, t_ac=11.90, cv=1.09
+  Parameters: rho=6548.8721, d=0.0922, sigma_b=0.0669, sigma_u=0.9331
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:42<00:00, 102.33s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:42<00:00, 102.33s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  25%|██▌       | 16/64 [33:05<1:34:37, 118.29s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.06688280661616183, 'sigma_u': 0.9331171933838381, 'rho': 6548.8720948802375, 'd': 0.09217701683531293, 'label': 0}
+  Target: mu=4751.802, cv=1.085, t_ac=11.898
+  Observed: mu=4537.221, cv=1.076, t_ac=11.084
+  Errors: mean=4.5%, cv=0.8%, ac=6.8%
+  ✅ All assertions passed
+Testing mu=4552.96, t_ac=67.11, cv=1.31
+  Parameters: rho=8005.1812, d=0.0151, sigma_b=0.0086, sigma_u=0.9914
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:34<00:00, 94.43s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:34<00:00, 94.43s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  27%|██▋       | 17/64 [34:43<1:27:50, 112.14s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.008603441445876669, 'sigma_u': 0.9913965585541232, 'rho': 8005.181221046308, 'd': 0.01512690056379186, 'label': 0}
+  Target: mu=4552.956, cv=1.310, t_ac=67.115
+  Observed: mu=4673.121, cv=1.359, t_ac=71.841
+  Errors: mean=2.6%, cv=3.7%, ac=7.0%
+  ✅ All assertions passed
+Testing mu=7673.77, t_ac=8.62, cv=0.85
+  Parameters: rho=7279.8730, d=0.1325, sigma_b=0.1397, sigma_u=0.8603
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:45<00:00, 165.74s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:45<00:00, 165.74s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  28%|██▊       | 18/64 [37:29<1:38:20, 128.27s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.1397205817171261, 'sigma_u': 0.8602794182828739, 'rho': 7279.872989405791, 'd': 0.13254874439636488, 'label': 0}
+  Target: mu=7673.766, cv=0.849, t_ac=8.616
+  Observed: mu=7404.131, cv=0.919, t_ac=9.087
+  Errors: mean=3.5%, cv=8.3%, ac=5.5%
+  ✅ All assertions passed
+Testing mu=5359.21, t_ac=97.49, cv=1.99
+  Parameters: rho=21442.0336, d=0.0104, sigma_b=0.0026, sigma_u=0.9974
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:00<00:00, 120.67s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:00<00:00, 120.67s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  30%|██▉       | 19/64 [39:36<1:36:05, 128.11s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0025905833260482483, 'sigma_u': 0.9974094166739517, 'rho': 21442.033596004057, 'd': 0.010364837851662435, 'label': 0}
+  Target: mu=5359.213, cv=1.987, t_ac=97.485
+  Observed: mu=4427.822, cv=2.167, t_ac=1819.589
+  Errors: mean=17.4%, cv=9.0%, ac=1766.5%
+  ❌ Tolerance check failed
+Testing mu=2259.83, t_ac=27.71, cv=0.95
+  Parameters: rho=2179.3620, d=0.0375, sigma_b=0.0388, sigma_u=0.9612
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.52s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.52s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  31%|███▏      | 20/64 [40:24<1:16:07, 103.80s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0388477424702899, 'sigma_u': 0.9611522575297101, 'rho': 2179.361962242094, 'd': 0.03746444165417219, 'label': 0}
+  Target: mu=2259.831, cv=0.945, t_ac=27.711
+  Observed: mu=2253.230, cv=0.929, t_ac=24.141
+  Errors: mean=0.3%, cv=1.7%, ac=12.9%
+  ✅ All assertions passed
+Testing mu=695.32, t_ac=79.82, cv=0.68
+  Parameters: rho=335.2659, d=0.0127, sigma_b=0.0263, sigma_u=0.9737
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:13<00:00, 13.97s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:13<00:00, 13.97s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  33%|███▎      | 21/64 [40:42<56:06, 78.29s/it]   Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0263123001552424, 'sigma_u': 0.9736876998447577, 'rho': 335.26592420346435, 'd': 0.012687144369765528, 'label': 0}
+  Target: mu=695.319, cv=0.682, t_ac=79.823
+  Observed: mu=680.804, cv=0.675, t_ac=75.633
+  Errors: mean=2.1%, cv=1.0%, ac=5.2%
+  ✅ All assertions passed
+Testing mu=6298.79, t_ac=45.42, cv=1.52
+  Parameters: rho=15105.9083, d=0.0225, sigma_b=0.0094, sigma_u=0.9906
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:15<00:00, 135.83s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:15<00:00, 135.83s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  34%|███▍      | 22/64 [43:00<1:07:13, 96.04s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.00938931730203508, 'sigma_u': 0.9906106826979649, 'rho': 15105.908341301569, 'd': 0.02251768222981279, 'label': 0}
+  Target: mu=6298.791, cv=1.524, t_ac=45.421
+  Observed: mu=6025.362, cv=1.710, t_ac=42.758
+  Errors: mean=4.3%, cv=12.2%, ac=5.9%
+  ✅ All assertions passed
+Testing mu=9233.94, t_ac=62.28, cv=1.11
+  Parameters: rho=11763.3236, d=0.0163, sigma_b=0.0128, sigma_u=0.9872
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:22<00:00, 202.55s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:22<00:00, 202.55s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  36%|███▌      | 23/64 [46:25<1:28:04, 128.89s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.012810933908643502, 'sigma_u': 0.9871890660913565, 'rho': 11763.32358057254, 'd': 0.016320138731016495, 'label': 0}
+  Target: mu=9233.939, cv=1.112, t_ac=62.282
+  Observed: mu=11110.785, cv=1.061, t_ac=54.788
+  Errors: mean=20.3%, cv=4.6%, ac=12.0%
+  ❌ Tolerance check failed
+Testing mu=3617.72, t_ac=13.50, cv=1.77
+  Parameters: rho=12582.3289, d=0.0803, sigma_b=0.0231, sigma_u=0.9769
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:32<00:00, 92.52s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:32<00:00, 92.52s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  38%|███▊      | 24/64 [47:58<1:18:40, 118.02s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.023084824991319777, 'sigma_u': 0.9769151750086802, 'rho': 12582.3289068766, 'd': 0.08028844447171649, 'label': 0}
+  Target: mu=3617.717, cv=1.774, t_ac=13.497
+  Observed: mu=3834.661, cv=1.831, t_ac=13.433
+  Errors: mean=6.0%, cv=3.2%, ac=0.5%
+  ✅ All assertions passed
+Testing mu=2947.32, t_ac=92.36, cv=1.18
+  Parameters: rho=4210.1522, d=0.0109, sigma_b=0.0077, sigma_u=0.9923
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:00<00:00, 60.71s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:00<00:00, 60.71s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  39%|███▉      | 25/64 [49:05<1:06:48, 102.78s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0076627535360975435, 'sigma_u': 0.9923372464639025, 'rho': 4210.152177229336, 'd': 0.01094601137635399, 'label': 0}
+  Target: mu=2947.316, cv=1.184, t_ac=92.363
+  Observed: mu=2721.461, cv=1.229, t_ac=84.736
+  Errors: mean=7.7%, cv=3.7%, ac=8.3%
+  ✅ All assertions passed
+Testing mu=9827.44, t_ac=33.09, cv=1.65
+  Parameters: rho=28054.2600, d=0.0312, sigma_b=0.0109, sigma_u=0.9891
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:40<00:00, 220.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:40<00:00, 220.70s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  41%|████      | 26/64 [52:47<1:27:39, 138.42s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.010920083616398265, 'sigma_u': 0.9890799163836018, 'rho': 28054.259978372305, 'd': 0.031173406359025713, 'label': 0}
+  Target: mu=9827.443, cv=1.655, t_ac=33.095
+  Observed: mu=10973.334, cv=1.611, t_ac=35.720
+  Errors: mean=11.7%, cv=2.6%, ac=7.9%
+  ✅ All assertions passed
+Testing mu=7140.69, t_ac=74.63, cv=0.52
+  Parameters: rho=2045.9228, d=0.0136, sigma_b=0.0474, sigma_u=0.9526
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:18<00:00, 138.93s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:18<00:00, 138.93s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  42%|████▏     | 27/64 [55:10<1:26:14, 139.85s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.047405808496731525, 'sigma_u': 0.9525941915032685, 'rho': 2045.9228224488477, 'd': 0.01358252383291788, 'label': 0}
+  Target: mu=7140.692, cv=0.519, t_ac=74.630
+  Observed: mu=7284.842, cv=0.547, t_ac=75.432
+  Errors: mean=2.0%, cv=5.4%, ac=1.1%
+  ✅ All assertions passed
+  FAILED: mu=242.78, t_ac=0.99, cv=1.55 - Error: Could not find a valid solution for d_tilda using root_scalar method.
+Testing mu=1803.03, t_ac=54.59, cv=1.82
+  Parameters: rho=6128.7317, d=0.0187, sigma_b=0.0055, sigma_u=0.9945
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:39<00:00, 39.09s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:39<00:00, 39.09s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  45%|████▌     | 29/64 [55:51<49:29, 84.86s/it]   Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.005490572513775784, 'sigma_u': 0.9945094274862243, 'rho': 6128.731704756647, 'd': 0.01866314657427847, 'label': 0}
+  Target: mu=1803.032, cv=1.822, t_ac=54.591
+  Observed: mu=1713.743, cv=2.063, t_ac=55.936
+  Errors: mean=5.0%, cv=13.3%, ac=2.5%
+  ✅ All assertions passed
+Testing mu=6205.38, t_ac=20.98, cv=0.97
+  Parameters: rho=6447.4256, d=0.0501, sigma_b=0.0482, sigma_u=0.9518
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:57<00:00, 117.80s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:57<00:00, 117.80s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  47%|████▋     | 30/64 [57:50<52:45, 93.12s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04824189248262336, 'sigma_u': 0.9517581075173766, 'rho': 6447.425613052041, 'd': 0.05012362564986623, 'label': 0}
+  Target: mu=6205.377, cv=0.970, t_ac=20.976
+  Observed: mu=5690.360, cv=1.002, t_ac=20.674
+  Errors: mean=8.3%, cv=3.3%, ac=1.4%
+  ✅ All assertions passed
+Testing mu=8263.01, t_ac=85.15, cv=1.38
+  Parameters: rho=16011.5443, d=0.0119, sigma_b=0.0061, sigma_u=0.9939
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:57<00:00, 177.54s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:57<00:00, 177.54s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  48%|████▊     | 31/64 [1:00:53<1:04:08, 116.62s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0061333855012048735, 'sigma_u': 0.9938666144987952, 'rho': 16011.54432669833, 'd': 0.011884894255741308, 'label': 0}
+  Target: mu=8263.008, cv=1.380, t_ac=85.146
+  Observed: mu=9048.001, cv=1.462, t_ac=87.024
+  Errors: mean=9.5%, cv=5.9%, ac=2.2%
+  ✅ All assertions passed
+Testing mu=3886.82, t_ac=40.26, cv=0.73
+  Parameters: rho=2239.4603, d=0.0255, sigma_b=0.0442, sigma_u=0.9558
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:17<00:00, 77.93s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:17<00:00, 77.93s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  50%|█████     | 32/64 [1:02:12<56:46, 106.44s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04421976976219733, 'sigma_u': 0.9557802302378028, 'rho': 2239.460296878915, 'd': 0.02547802010529548, 'label': 0}
+  Target: mu=3886.818, cv=0.733, t_ac=40.262
+  Observed: mu=3816.843, cv=0.765, t_ac=37.616
+  Errors: mean=1.8%, cv=4.3%, ac=6.6%
+  ✅ All assertions passed
+Testing mu=4046.74, t_ac=53.26, cv=0.90
+  Parameters: rho=3389.1643, d=0.0191, sigma_b=0.0229, sigma_u=0.9771
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:24<00:00, 84.36s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:24<00:00, 84.36s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  52%|█████▏    | 33/64 [1:03:38<52:06, 100.87s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.02285359879459575, 'sigma_u': 0.9771464012054042, 'rho': 3389.1642906468214, 'd': 0.019139984450818933, 'label': 0}
+  Target: mu=4046.743, cv=0.896, t_ac=53.256
+  Observed: mu=4100.045, cv=0.863, t_ac=50.472
+  Errors: mean=1.3%, cv=3.7%, ac=5.2%
+  ✅ All assertions passed
+Testing mu=8415.57, t_ac=22.36, cv=1.92
+  Parameters: rho=32854.4305, d=0.0469, sigma_b=0.0120, sigma_u=0.9880
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:53<00:00, 173.19s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:53<00:00, 173.19s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  53%|█████▎    | 34/64 [1:06:32<1:00:49, 121.65s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.012005494173393123, 'sigma_u': 0.9879945058266068, 'rho': 32854.430457828246, 'd': 0.046869510995013186, 'label': 0}
+  Target: mu=8415.570, cv=1.920, t_ac=22.360
+  Observed: mu=7001.270, cv=1.969, t_ac=25.493
+  Errors: mean=16.8%, cv=2.6%, ac=14.0%
+  ✅ All assertions passed
+Testing mu=6023.56, t_ac=83.42, cv=0.81
+  Parameters: rho=4024.9577, d=0.0121, sigma_b=0.0182, sigma_u=0.9818
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:02<00:00, 122.27s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:02<00:00, 122.27s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  55%|█████▍    | 35/64 [1:08:39<59:36, 123.34s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.018158621097507977, 'sigma_u': 0.981841378902492, 'rho': 4024.9576970997805, 'd': 0.012133638273370209, 'label': 0}
+  Target: mu=6023.559, cv=0.805, t_ac=83.421
+  Observed: mu=6106.191, cv=0.824, t_ac=79.697
+  Errors: mean=1.4%, cv=2.3%, ac=4.5%
+  ✅ All assertions passed
+Testing mu=1672.36, t_ac=42.04, cv=1.28
+  Parameters: rho=2863.8500, d=0.0244, sigma_b=0.0142, sigma_u=0.9858
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:37<00:00, 37.30s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:37<00:00, 37.30s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  56%|█████▋    | 36/64 [1:09:18<45:59, 98.55s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.014234589579848363, 'sigma_u': 0.9857654104201516, 'rho': 2863.8500070938385, 'd': 0.02437614200137343, 'label': 0}
+  Target: mu=1672.362, cv=1.284, t_ac=42.036
+  Observed: mu=1820.640, cv=1.271, t_ac=47.494
+  Errors: mean=8.9%, cv=1.0%, ac=13.0%
+  ✅ All assertions passed
+Testing mu=112.19, t_ac=87.87, cv=1.76
+  Parameters: rho=351.1281, d=0.0115, sigma_b=0.0037, sigma_u=0.9963
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:03<00:00,  3.14s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:03<00:00,  3.14s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  58%|█████▊    | 37/64 [1:09:27<32:26, 72.11s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.003678263550666363, 'sigma_u': 0.9963217364493336, 'rho': 351.1280999432332, 'd': 0.011512091230744741, 'label': 0}
+  Target: mu=112.190, cv=1.758, t_ac=87.868
+  Observed: mu=121.113, cv=1.736, t_ac=102.068
+  Errors: mean=8.0%, cv=1.2%, ac=16.2%
+  ✅ All assertions passed
+Testing mu=6958.80, t_ac=37.54, cv=1.10
+  Parameters: rho=8905.8985, d=0.0274, sigma_b=0.0214, sigma_u=0.9786
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:24<00:00, 144.16s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:24<00:00, 144.16s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  59%|█████▉    | 38/64 [1:11:52<40:38, 93.80s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.02139204941924064, 'sigma_u': 0.9786079505807593, 'rho': 8905.898489030224, 'd': 0.02737763321735903, 'label': 0}
+  Target: mu=6958.798, cv=1.104, t_ac=37.540
+  Observed: mu=7259.999, cv=1.061, t_ac=35.848
+  Errors: mean=4.3%, cv=3.9%, ac=4.5%
+  ✅ All assertions passed
+Testing mu=9980.08, t_ac=69.75, cv=1.45
+  Parameters: rho=21286.3808, d=0.0145, sigma_b=0.0068, sigma_u=0.9932
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:59<00:00, 239.73s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:59<00:00, 239.73s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  61%|██████    | 39/64 [1:15:56<57:38, 138.32s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.006820476749696379, 'sigma_u': 0.9931795232503036, 'rho': 21286.380797260284, 'd': 0.014547303152181825, 'label': 0}
+  Target: mu=9980.081, cv=1.445, t_ac=69.749
+  Observed: mu=10899.516, cv=1.430, t_ac=67.747
+  Errors: mean=9.2%, cv=1.1%, ac=2.9%
+  ✅ All assertions passed
+Testing mu=3107.16, t_ac=5.82, cv=0.60
+  Parameters: rho=2002.5534, d=0.2125, sigma_b=0.3298, sigma_u=0.6702
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:32<00:00, 92.49s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:32<00:00, 92.49s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  62%|██████▎   | 40/64 [1:17:28<49:52, 124.67s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.32975072563865865, 'sigma_u': 0.6702492743613413, 'rho': 2002.553424675902, 'd': 0.21252281371761367, 'label': 0}
+  Target: mu=3107.165, cv=0.597, t_ac=5.818
+  Observed: mu=3114.966, cv=0.607, t_ac=5.773
+  Errors: mean=0.3%, cv=1.6%, ac=0.8%
+  ✅ All assertions passed
+Testing mu=3455.33, t_ac=75.33, cv=1.61
+  Parameters: rho=9094.8111, d=0.0135, sigma_b=0.0051, sigma_u=0.9949
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:18<00:00, 78.45s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:18<00:00, 78.45s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  64%|██████▍   | 41/64 [1:18:51<42:59, 112.13s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.005111822351599103, 'sigma_u': 0.9948881776484009, 'rho': 9094.81106100377, 'd': 0.013454873700399371, 'label': 0}
+  Target: mu=3455.332, cv=1.608, t_ac=75.329
+  Observed: mu=3576.587, cv=1.744, t_ac=81.189
+  Errors: mean=3.5%, cv=8.5%, ac=7.8%
+  ✅ All assertions passed
+Testing mu=9083.87, t_ac=49.87, cv=0.58
+  Parameters: rho=3252.7308, d=0.0205, sigma_b=0.0572, sigma_u=0.9428
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:01<00:00, 181.62s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:01<00:00, 181.62s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  66%|██████▌   | 42/64 [1:21:54<48:56, 133.50s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.05716062344377619, 'sigma_u': 0.9428393765562239, 'rho': 3252.730790368444, 'd': 0.020467934618653465, 'label': 0}
+  Target: mu=9083.873, cv=0.575, t_ac=49.867
+  Observed: mu=9328.115, cv=0.560, t_ac=42.169
+  Errors: mean=2.7%, cv=2.7%, ac=15.4%
+  ✅ All assertions passed
+Testing mu=6478.19, t_ac=57.40, cv=1.69
+  Parameters: rho=18874.0181, d=0.0177, sigma_b=0.0061, sigma_u=0.9939
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:16<00:00, 136.92s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:16<00:00, 136.92s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  67%|██████▋   | 43/64 [1:24:14<47:20, 135.28s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.006086554881762415, 'sigma_u': 0.9939134451182375, 'rho': 18874.018083940453, 'd': 0.017733005067061224, 'label': 0}
+  Target: mu=6478.188, cv=1.687, t_ac=57.401
+  Observed: mu=5919.179, cv=1.610, t_ac=64.197
+  Errors: mean=8.6%, cv=4.6%, ac=11.8%
+  ✅ All assertions passed
+Testing mu=828.37, t_ac=18.33, cv=1.22
+  Parameters: rho=1356.5522, d=0.0578, sigma_b=0.0353, sigma_u=0.9647
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:18<00:00, 18.95s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:18<00:00, 18.95s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  69%|██████▉   | 44/64 [1:24:33<33:30, 100.52s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.03529459252913994, 'sigma_u': 0.96470540747086, 'rho': 1356.5522464630885, 'd': 0.05779886689148158, 'label': 0}
+  Target: mu=828.372, cv=1.223, t_ac=18.331
+  Observed: mu=880.304, cv=1.225, t_ac=19.235
+  Errors: mean=6.3%, cv=0.2%, ac=4.9%
+  ✅ All assertions passed
+Testing mu=2392.81, t_ac=65.78, cv=0.74
+  Parameters: rho=1353.6957, d=0.0154, sigma_b=0.0273, sigma_u=0.9727
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:49<00:00, 49.36s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:49<00:00, 49.36s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  70%|███████   | 45/64 [1:25:26<27:17, 86.18s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.027289339209697925, 'sigma_u': 0.9727106607903021, 'rho': 1353.6956783182372, 'd': 0.01543855073441693, 'label': 0}
+  Target: mu=2392.806, cv=0.736, t_ac=65.780
+  Observed: mu=2421.897, cv=0.738, t_ac=63.028
+  Errors: mean=1.2%, cv=0.2%, ac=4.2%
+  ✅ All assertions passed
+Testing mu=5538.69, t_ac=10.00, cv=1.40
+  Parameters: rho=12681.0493, d=0.1119, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:06<00:00, 126.65s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:06<00:00, 126.65s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  72%|███████▏  | 46/64 [1:27:33<29:30, 98.34s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885812878480893, 'sigma_u': 0.9511418712151911, 'rho': 12681.049314972319, 'd': 0.11186268540063739, 'label': 0}
+  Target: mu=5538.686, cv=1.400, t_ac=10.000
+  Observed: mu=5288.162, cv=1.491, t_ac=10.821
+  Errors: mean=4.5%, cv=6.5%, ac=8.2%
+  ✅ All assertions passed
+Testing mu=7523.62, t_ac=95.76, cv=1.06
+  Parameters: rho=8644.7604, d=0.0106, sigma_b=0.0092, sigma_u=0.9908
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:33<00:00, 153.48s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:33<00:00, 153.48s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  73%|███████▎  | 47/64 [1:30:13<33:07, 116.94s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.009184862548678572, 'sigma_u': 0.9908151374513213, 'rho': 8644.76038595539, 'd': 0.010553547864574304, 'label': 0}
+  Target: mu=7523.625, cv=1.061, t_ac=95.760
+  Observed: mu=8275.028, cv=1.049, t_ac=92.643
+  Errors: mean=10.0%, cv=1.2%, ac=3.3%
+  ✅ All assertions passed
+Testing mu=4390.65, t_ac=29.48, cv=1.89
+  Parameters: rho=16471.7410, d=0.0351, sigma_b=0.0094, sigma_u=0.9906
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:56<00:00, 116.44s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:56<00:00, 116.44s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  75%|███████▌  | 48/64 [1:32:10<31:11, 117.00s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.009363922619716912, 'sigma_u': 0.9906360773802831, 'rho': 16471.7410139035, 'd': 0.03512923663939025, 'label': 0}
+  Target: mu=4390.648, cv=1.895, t_ac=29.484
+  Observed: mu=4556.876, cv=1.871, t_ac=33.783
+  Errors: mean=3.8%, cv=1.3%, ac=14.6%
+  ✅ All assertions passed
+Testing mu=4894.54, t_ac=98.70, cv=0.55
+  Parameters: rho=1519.5621, d=0.0102, sigma_b=0.0330, sigma_u=0.9670
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:33<00:00, 93.64s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:33<00:00, 93.64s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  77%|███████▋  | 49/64 [1:33:51<28:02, 112.16s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.03297108751154947, 'sigma_u': 0.9670289124884506, 'rho': 1519.5621016620707, 'd': 0.01023621750469042, 'label': 0}
+  Target: mu=4894.544, cv=0.545, t_ac=98.697
+  Observed: mu=4791.512, cv=0.537, t_ac=88.636
+  Errors: mean=2.1%, cv=1.5%, ac=10.2%
+  ✅ All assertions passed
+Testing mu=8035.23, t_ac=26.59, cv=1.57
+  Parameters: rho=20857.5573, d=0.0391, sigma_b=0.0151, sigma_u=0.9849
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:46<00:00, 166.26s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:46<00:00, 166.26s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  78%|███████▊  | 50/64 [1:36:38<29:59, 128.56s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.015066086061284805, 'sigma_u': 0.9849339139387153, 'rho': 20857.557325492897, 'd': 0.03910800625080643, 'label': 0}
+  Target: mu=8035.228, cv=1.569, t_ac=26.590
+  Observed: mu=7285.684, cv=1.700, t_ac=28.934
+  Errors: mean=9.3%, cv=8.4%, ac=8.8%
+  ✅ All assertions passed
+Testing mu=5036.55, t_ac=68.24, cv=1.16
+  Parameters: rho=6921.6828, d=0.0149, sigma_b=0.0108, sigma_u=0.9892
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:44<00:00, 104.60s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:44<00:00, 104.60s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  80%|███████▉  | 51/64 [1:38:26<26:31, 122.42s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.010823571613520955, 'sigma_u': 0.989176428386479, 'rho': 6921.682781597311, 'd': 0.014874745521532931, 'label': 0}
+  Target: mu=5036.545, cv=1.157, t_ac=68.235
+  Observed: mu=5136.197, cv=1.138, t_ac=69.714
+  Errors: mean=2.0%, cv=1.7%, ac=2.2%
+  ✅ All assertions passed
+Testing mu=1879.45, t_ac=7.40, cv=1.64
+  Parameters: rho=6124.0512, d=0.1583, sigma_b=0.0486, sigma_u=0.9514
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:46<00:00, 46.70s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  81%|████████▏ | 52/64 [1:39:13<19:56, 99.73s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048571641613375814, 'sigma_u': 0.9514283583866242, 'rho': 6124.051224964762, 'd': 0.15826728288973907, 'label': 0}
+  Target: mu=1879.449, cv=1.636, t_ac=7.405
+  Observed: mu=1809.472, cv=1.704, t_ac=7.268
+  Errors: mean=3.7%, cv=4.1%, ac=1.8%
+  ✅ All assertions passed
+Testing mu=939.26, t_ac=61.07, cv=1.36
+  Parameters: rho=1782.5770, d=0.0166, sigma_b=0.0088, sigma_u=0.9912
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:20<00:00, 20.49s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:20<00:00, 20.49s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  83%|████████▎ | 53/64 [1:39:36<14:04, 76.81s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.008772681549584462, 'sigma_u': 0.9912273184504156, 'rho': 1782.5769908416296, 'd': 0.016649259374330604, 'label': 0}
+  Target: mu=939.260, cv=1.361, t_ac=61.071
+  Observed: mu=804.529, cv=1.355, t_ac=61.992
+  Errors: mean=14.3%, cv=0.4%, ac=1.5%
+  ✅ All assertions passed
+Testing mu=6601.67, t_ac=14.62, cv=0.71
+  Parameters: rho=4023.3017, d=0.0736, sigma_b=0.1208, sigma_u=0.8792
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:16<00:00, 136.84s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:16<00:00, 136.84s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  84%|████████▍ | 54/64 [1:41:53<15:48, 94.88s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.12083393037923741, 'sigma_u': 0.8791660696207626, 'rho': 4023.301738734028, 'd': 0.07364071008161133, 'label': 0}
+  Target: mu=6601.666, cv=0.707, t_ac=14.618
+  Observed: mu=6847.584, cv=0.689, t_ac=13.448
+  Errors: mean=3.7%, cv=2.5%, ac=8.0%
+  ✅ All assertions passed
+Testing mu=8969.86, t_ac=78.70, cv=1.84
+  Parameters: rho=31015.9407, d=0.0129, sigma_b=0.0037, sigma_u=0.9963
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:19<00:00, 199.19s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:19<00:00, 199.19s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  86%|████████▌ | 55/64 [1:45:17<19:08, 127.57s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.003722204411709934, 'sigma_u': 0.99627779558829, 'rho': 31015.94071737396, 'd': 0.012870624817409807, 'label': 0}
+  Target: mu=8969.858, cv=1.844, t_ac=78.703
+  Observed: mu=9084.077, cv=1.781, t_ac=90.691
+  Errors: mean=1.3%, cv=3.4%, ac=15.2%
+  ✅ All assertions passed
+Testing mu=3334.98, t_ac=46.63, cv=1.00
+  Parameters: rho=3455.5399, d=0.0219, sigma_b=0.0212, sigma_u=0.9788
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:05<00:00, 65.43s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:05<00:00, 65.43s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  88%|████████▊ | 56/64 [1:46:24<14:35, 109.44s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.021154703905152405, 'sigma_u': 0.9788452960948475, 'rho': 3455.539852638348, 'd': 0.021919431658149146, 'label': 0}
+  Target: mu=3334.983, cv=0.996, t_ac=46.632
+  Observed: mu=3197.886, cv=1.042, t_ac=44.983
+  Errors: mean=4.1%, cv=4.5%, ac=3.5%
+  ✅ All assertions passed
+Testing mu=2605.39, t_ac=73.41, cv=1.96
+  Parameters: rho=10180.6346, d=0.0138, sigma_b=0.0035, sigma_u=0.9965
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:56<00:00, 56.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:56<00:00, 56.70s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  89%|████████▉ | 57/64 [1:47:25<11:03, 94.84s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.003534463288155397, 'sigma_u': 0.9964655367118447, 'rho': 10180.63462615891, 'd': 0.013811035045630745, 'label': 0}
+  Target: mu=2605.386, cv=1.960, t_ac=73.413
+  Observed: mu=2250.249, cv=2.096, t_ac=1133.467
+  Errors: mean=13.6%, cv=7.0%, ac=1444.0%
+  ❌ Tolerance check failed
+  FAILED: mu=9466.32, t_ac=2.10, cv=0.93 - Error: Back-substitution check failed: μ_err=0.00e+00, CV_err=1.11e-16, AC_err=1.96e+00. Try adjusting Σ so that t̃≈1, or relax targets.
+Testing mu=7462.48, t_ac=91.25, cv=1.34
+  Parameters: rho=13549.5548, d=0.0111, sigma_b=0.0061, sigma_u=0.9939
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:29<00:00, 149.18s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:29<00:00, 149.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  92%|█████████▏| 59/64 [1:50:00<07:14, 86.95s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.00610303008163978, 'sigma_u': 0.9938969699183602, 'rho': 13549.554841171366, 'd': 0.011081208192321126, 'label': 0}
+  Target: mu=7462.484, cv=1.336, t_ac=91.248
+  Observed: mu=7275.012, cv=1.502, t_ac=97.181
+  Errors: mean=2.5%, cv=12.4%, ac=6.5%
+  ✅ All assertions passed
+Testing mu=624.04, t_ac=34.31, cv=0.87
+  Parameters: rho=506.2041, d=0.0300, sigma_b=0.0370, sigma_u=0.9630
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:12<00:00, 12.87s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:12<00:00, 12.87s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  94%|█████████▍| 60/64 [1:50:14<04:35, 68.82s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.03702175215248962, 'sigma_u': 0.9629782478475104, 'rho': 506.20405063109007, 'd': 0.030030969129204322, 'label': 0}
+  Target: mu=624.041, cv=0.872, t_ac=34.312
+  Observed: mu=631.419, cv=0.861, t_ac=32.261
+  Errors: mean=1.2%, cv=1.3%, ac=6.0%
+  ✅ All assertions passed
+Testing mu=1558.75, t_ac=86.36, cv=1.14
+  Parameters: rho=2050.8878, d=0.0117, sigma_b=0.0089, sigma_u=0.9911
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:33<00:00, 33.18s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:33<00:00, 33.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  95%|█████████▌| 61/64 [1:50:53<03:03, 61.09s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.00890403177398798, 'sigma_u': 0.991095968226012, 'rho': 2050.8877853897775, 'd': 0.011715289063745289, 'label': 0}
+  Target: mu=1558.747, cv=1.136, t_ac=86.364
+  Observed: mu=1543.660, cv=1.111, t_ac=89.617
+  Errors: mean=1.0%, cv=2.2%, ac=3.8%
+  ✅ All assertions passed
+Testing mu=5902.85, t_ac=39.15, cv=1.80
+  Parameters: rho=19752.2214, d=0.0262, sigma_b=0.0078, sigma_u=0.9922
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:13<00:00, 133.41s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:13<00:00, 133.41s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  97%|█████████▋| 62/64 [1:53:08<02:42, 81.09s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.007836640321802455, 'sigma_u': 0.9921633596781976, 'rho': 19752.221418564142, 'd': 0.026223119734734575, 'label': 0}
+  Target: mu=5902.847, cv=1.799, t_ac=39.148
+  Observed: mu=6400.269, cv=1.797, t_ac=41.971
+  Errors: mean=8.4%, cv=0.1%, ac=7.2%
+  ✅ All assertions passed
+Testing mu=8526.21, t_ac=55.71, cv=0.66
+  Parameters: rho=3979.7353, d=0.0183, sigma_b=0.0392, sigma_u=0.9608
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:54<00:00, 174.71s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:54<00:00, 174.71s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  98%|█████████▊| 63/64 [1:56:05<01:47, 107.97s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.03916920701582841, 'sigma_u': 0.9608307929841716, 'rho': 3979.7352944592376, 'd': 0.01828280879532356, 'label': 0}
+  Target: mu=8526.210, cv=0.664, t_ac=55.705
+  Observed: mu=9100.257, cv=0.646, t_ac=50.816
+  Errors: mean=6.7%, cv=2.7%, ac=8.8%
+  ✅ All assertions passed
+Testing mu=4170.43, t_ac=19.76, cv=1.50
+  Parameters: rho=10068.3838, d=0.0534, sigma_b=0.0221, sigma_u=0.9779
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:30<00:00, 90.67s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:30<00:00, 90.67s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples: 100%|██████████| 64/64 [1:57:36<00:00, 103.13s/it]Simulating Sobol samples: 100%|██████████| 64/64 [1:57:36<00:00, 110.26s/it]
+Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.02211339882612053, 'sigma_u': 0.9778866011738795, 'rho': 10068.383764531474, 'd': 0.05338685956128651, 'label': 0}
+  Target: mu=4170.430, cv=1.497, t_ac=19.759
+  Observed: mu=3998.709, cv=1.618, t_ac=18.996
+  Errors: mean=4.1%, cv=8.1%, ac=3.9%
+  ✅ All assertions passed
+
+=== Final Results ===
+Total combinations tested: 64
+Successful runs: 59
+Failed runs: 5
+Success rate: 92.2%
+Results saved to: data_6_mini/IY010_simulation_parameters_6_mini.csv
+Completed at: 2025-08-26 17:41:06.981383
+
+=== Error Statistics (Successful Runs Only) ===
+Mean error - Mean: 5.57%, Std: 4.60%
+CV error - Mean: 3.80%, Std: 3.11%
+AC error - Mean: 58.17%, Std: 286.29%
