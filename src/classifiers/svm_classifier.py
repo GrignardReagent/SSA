@@ -1,16 +1,25 @@
 #!/usr/bin/python
 
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import (accuracy_score, 
+                             classification_report, 
+                             confusion_matrix)
 
-def svm_classifier(X_train, X_test, y_train, y_test, svm_C=1.0, svm_gamma='scale', svm_kernel='rbf'):
+
+def svm_classifier(X_train, X_test, y_train, y_test, 
+                   svm_C=1.0, 
+                   svm_gamma='scale', 
+                   svm_kernel='rbf',
+                   print_classification_report=False,
+                   print_confusion_matrix=False,
+                   ):
     """
     Trains a basic SVM model for classification and evaluates the model.
     
     Parameters:
         X_train, X_test, y_train, y_test: Split data
         svm_C: Regularization parameter (default: 1.0)
-        svm_gamma: Kernel coefficient for 'rbf', 'poly', and 'sigmoid' (default: 'scale')
+        svm_gamma: Kernel coefficient for 'rbf', 'poly', and 'sigmoid' (default: 'scale') 
         svm_kernel: Specifies the kernel type to be used in the algorithm (default: 'rbf')
     
     Returns:
@@ -37,4 +46,13 @@ def svm_classifier(X_train, X_test, y_train, y_test, svm_C=1.0, svm_gamma='scale
         print(f"=== SVM (RBF Kernel) Classification Accuracy: {svm_acc:.2f} ===")
     elif svm_kernel == 'linear':
         print(f"=== SVM (Linear Kernel) Classification Accuracy: {svm_acc:.2f} ===")
+
+    if print_classification_report:
+        print("\nClassification Report:")
+        print(classification_report(y_test, y_pred))
+
+    if print_confusion_matrix:
+        print("\nConfusion Matrix:")
+        print(confusion_matrix(y_test, y_pred))
+
     return svm_acc
