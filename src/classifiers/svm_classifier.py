@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
 from sklearn.svm import SVC
+from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.metrics import (accuracy_score, 
                              classification_report, 
                              confusion_matrix)
+import pandas as pd
+from typing import Dict, Optional
 
 
 def svm_classifier(X_train, X_test, y_train, y_test, 
@@ -56,3 +59,52 @@ def svm_classifier(X_train, X_test, y_train, y_test,
         print(confusion_matrix(y_test, y_pred))
 
     return svm_acc
+
+
+def grid_search_svm(
+    df: pd.DataFrame,
+    param_grid: Optional[Dict[str, list[float]]] = None,
+) -> Dict[str, Dict[str, float]]:
+    """Grid search SVM hyperparameters for RBF and linear kernels."""
+   
+    # Extract labels
+    y = df["label"].values
+
+    # Extract features (all columns except 'label')
+    X = df.drop(columns=["label"]).values
+    
+    # Split data into training and testing sets with stratification to maintain class balance
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
+    
+    # Define default hyperparameter grid if none provided
+    # C: regularization parameter (controls overfitting)
+    # gamma: kernel coefficient for RBF kernel (controls decision boundary complexity)
+    param_grid = param_grid or {
+        "C": [0.1, 1, 10],
+        "gamma": [0.01, 0.1, 1],
+    }
+    
+    results = {}
+    
+    # Test both RBF (radial basis function) and linear kernels
+    for kernel in ("rbf",
+                #    "linear"
+                   ):
+        # Perform 5-fold cross-validation grid search to find optimal hyperparameters
+        search = GridSearchCV(SVC(kernel=kernel), param_grid, cv=5)
+        
+        # Fit the grid search on training data
+        search.fit(X_train, y_train)
+        
+        # Make predictions on test set using the best found parameters
+        predictions = search.best_estimator_.predict(X_test)
+        
+        # Store results including accuracy and best hyperparameters
+        results[kernel] = {
+            "accuracy": accuracy_score(y_test, predictions),
+            "C": search.best_params_["C"],
+            "gamma": search.best_params_["gamma"],
+        }
+    return results
