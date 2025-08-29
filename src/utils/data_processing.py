@@ -28,6 +28,14 @@ def add_binary_labels(df: pd.DataFrame, column: str) -> pd.DataFrame:
     """
     labelled = df.copy()
     
+    # Check if all values are the same
+    if labelled[column].nunique() == 1:
+        print(f"Warning: All values in column '{column}' are identical.")
+        # Return random 50/50 split
+        labels = np.random.choice([0, 1], size=len(labelled))
+        labelled["label"] = labels
+        return labelled
+    
     # Sort the values in the specified column to find the median split point
     order = np.argsort(labelled[column].values)
     
