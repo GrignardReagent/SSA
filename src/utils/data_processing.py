@@ -3,54 +3,180 @@ Data processing utilities for labelling and processing time series data.
 """
 import re
 from collections import defaultdict
-import pandas as pd 
+import pandas as pd
 import numpy as np
 import torch
 from torch.utils.data import TensorDataset
 from pathlib import Path
 
 
-def add_binary_labels(df: pd.DataFrame, column: str) -> pd.DataFrame:
-    """Return a copy of ``df`` with a new ``label`` column.
+def add_binary_labels(df: pd.DataFrame, column: str = "mu_target") -> pd.DataFrame:
+    """Return a copy of ``df`` with a ``label`` column using a median split.
 
     Parameters
     ----------
-    df:
-        DataFrame containing the simulation results.
-    column:
-        Column on which to base the 50/50 split.  Values greater than the
-        halfway point of the sorted column are labelled ``1``; the rest are
-        labelled ``0``.
+    df : pd.DataFrame
+        DataFrame containing simulation results.
+    column : str, default ``"mu_target"``
+        Column used to determine the split; the lower half receives ``0`` and
+        the upper half ``1``. If all values are identical, labels are assigned
+        randomly to keep the 50/50 balance.
+
     Returns
     -------
     pd.DataFrame
-        DataFrame with the new ``label`` column added.
+        Copy of ``df`` with a ``label`` column added.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({'mu_target': [1.0, 2.0, 3.0, 4.0]})
+    >>> add_binary_labels(df)['label'].tolist()
+    [0, 0, 1, 1]
     """
+
     labelled = df.copy()
-    
-    # Check if all values are the same
     if labelled[column].nunique() == 1:
         print(f"Warning: All values in column '{column}' are identical.")
-        # Return random 50/50 split
-        labels = np.random.choice([0, 1], size=len(labelled))
-        labelled["label"] = labels
+        labelled["label"] = np.random.choice([0, 1], size=len(labelled))
         return labelled
-    
-    # Sort the values in the specified column to find the median split point
+
     order = np.argsort(labelled[column].values)
-    
-    # Calculate the midpoint index for a 50/50 binary classification split
     midpoint = len(labelled) // 2
-    
-    # Initialize all labels as 0 (lower half of sorted values)
     labels = np.zeros(len(labelled), dtype=int)
-    
-    # Assign label 1 to the upper half (values above median)
     labels[order[midpoint:]] = 1
     labelled["label"] = labels
     return labelled
 
 
+def add_nearest_neighbour_labels(
+    df: pd.DataFrame,
+    mu_col: str = "mu_target",
+    cv_col: str = "cv_target",
+    tac_col: str = "t_ac_target",
+    *,
+    positive_on: str | None = None,
+) -> pd.DataFrame:
+    """Label rows by pairing nearest neighbours in parameter space.
+
+    Rows are greedily paired based on Euclidean distance in the
+    ``(mu_col, cv_col, tac_col)`` parameter space. Within each pair, the row with
+    the larger ``positive_on`` value receives label ``1``. If there is an odd
+    row out, it is compared against the median of ``positive_on``.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        DataFrame containing simulation results.
+    mu_col, cv_col, tac_col : str, optional
+        Column names representing the parameter space. ``tac_col`` defaults to
+        ``"t_ac_target"``.
+    positive_on : str, optional
+        Column used to determine which element of a pair receives label ``1``.
+        Defaults to ``mu_col``.
+
+    Returns
+    -------
+    pd.DataFrame
+        Copy of ``df`` with a ``label`` column added.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({
+    ...     'mu_target': [1.0, 1.1, 2.0, 2.05],
+    ...     'cv_target': [0.1, 0.1, 0.2, 0.2],
+    ...     't_ac_target': [0.5, 0.5, 0.6, 0.6],
+    ... })
+    >>> add_nearest_neighbour_labels(df)['label'].tolist()
+    [0, 1, 0, 1]
+    """
+
+    labelled = df.copy()
+    if positive_on is None:
+        positive_on = mu_col
+
+    coords = labelled[[mu_col, cv_col, tac_col]].to_numpy(dtype=float)
+    n = len(coords)
+    if n == 0:
+        labelled["label"] = np.array([], dtype=int)
+        return labelled
+
+    # Precompute pairwise Euclidean distances in parameter space
+    diff = coords[:, None, :] - coords[None, :, :]
+    dist = np.sqrt((diff**2).sum(axis=2))
+    np.fill_diagonal(dist, np.inf)
+
+    unused = set(range(n))
+    labels = np.zeros(n, dtype=int)
+    pos_vals = labelled[positive_on].to_numpy()
+
+    # Greedily build pairs: pick smallest unused index and match to its nearest neighbour
+    while len(unused) >= 2:
+        i = min(unused)
+        remaining = list(unused - {i})
+        j = remaining[np.argmin(dist[i, remaining])]
+
+        # Assign labels within the pair based on positive_on column
+        if pos_vals[i] > pos_vals[j]:
+            labels[i], labels[j] = 1, 0
+        elif pos_vals[i] < pos_vals[j]:
+            labels[i], labels[j] = 0, 1
+        else:  # deterministic tie-break for stability
+            labels[i], labels[j] = (0, 1) if i < j else (1, 0)
+
+        unused.remove(i)
+        unused.remove(j)
+
+    # If one row remains, label relative to column median
+    if unused:
+        k = unused.pop()
+        median_val = float(np.median(pos_vals))
+        labels[k] = 1 if pos_vals[k] >= median_val else 0
+
+    labelled["label"] = labels
+    return labelled
+
+
+def add_labels(
+    df: pd.DataFrame,
+    labeling_regime: str = "binary",
+    *,
+    column: str = "mu_target",
+    mu_col: str = "mu_target",
+    cv_col: str = "cv_target",
+    tac_col: str = "t_ac_target",
+    positive_on: str | None = None,
+) -> pd.DataFrame:
+    """Wrapper selecting between :func:`add_binary_labels` and
+    :func:`add_nearest_neighbour_labels`.
+
+    Parameters mirror those of the underlying functions. ``labeling_regime``
+    chooses which labelling strategy to apply.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({
+    ...     'mu_target': [1.0, 1.1, 2.0, 2.05],
+    ...     'cv_target': [0.1, 0.1, 0.2, 0.2],
+    ...     't_ac_target': [0.5, 0.5, 0.6, 0.6],
+    ... })
+    >>> add_labels(df, labeling_regime='binary')['label'].tolist()
+    [0, 0, 1, 1]
+    >>> add_labels(df, labeling_regime='nearest_neighbour')['label'].tolist()
+    [0, 1, 0, 1]
+    """
+
+    if labeling_regime == "binary":
+        return add_binary_labels(df, column=column)
+    if labeling_regime == "nearest_neighbour":
+        return add_nearest_neighbour_labels(
+            df, mu_col=mu_col, cv_col=cv_col, tac_col=tac_col, positive_on=positive_on
+        )
+    raise ValueError(
+        f"Unknown labeling_regime '{labeling_regime}'. Choose 'binary' or 'nearest_neighbour'."
+    )
 # helper function to extract the path stem and append as a new column in the df
 # def _
 
