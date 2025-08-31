@@ -1,0 +1,532 @@
+Testing 48 parameter combinations...
+Started at: 2025-08-30 18:34:35.929859
+Simulating Sobol samples:   0%|          | 0/48 [00:00<?, ?it/s]Testing mu=4310.86, t_ac=5.00, cv=2.00
+  Parameters: rho=22815.1614, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [15:37<00:00, 937.68s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [15:37<00:00, 937.68s/it]
+Simulating Sobol samples:   2%|▏         | 1/48 [15:37<12:14:31, 937.69s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885317257437643, 'sigma_u': 0.9511468274256235, 'rho': 22815.16138423977, 'd': 0.2585544545881158, 'label': 0}
+  FAILED: mu=4310.86, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=9615.83, t_ac=5.00, cv=2.00
+  Parameters: rho=50893.2258, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [34:35<00:00, 2075.02s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [34:35<00:00, 2075.02s/it]
+Simulating Sobol samples:   4%|▍         | 2/48 [50:12<20:31:48, 1606.71s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048851998603228856, 'sigma_u': 0.9511480013967711, 'rho': 50893.22582958244, 'd': 0.25855664470341466, 'label': 0}
+  FAILED: mu=9615.83, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=5645.75, t_ac=5.00, cv=2.00
+  Parameters: rho=29880.4617, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [19:44<00:00, 1184.95s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [19:44<00:00, 1184.95s/it]
+Simulating Sobol samples:   6%|▋         | 3/48 [1:09:57<17:40:35, 1414.13s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885266942918931, 'sigma_u': 0.9511473305708107, 'rho': 29880.461733269585, 'd': 0.25855539321694737, 'label': 0}
+  FAILED: mu=5645.75, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=351.44, t_ac=5.00, cv=2.00
+  Parameters: rho=1858.7451, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [01:12<00:00, 72.18s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [01:12<00:00, 72.18s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:   8%|▊         | 4/48 [1:11:09<10:48:33, 884.39s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04887716303037437, 'sigma_u': 0.9511228369696256, 'rho': 1858.745100816692, 'd': 0.2585097336381094, 'label': 0}
+  Target: mu=351.438, cv=2.000, t_ac=5.000
+  Observed: mu=335.230, cv=2.037, t_ac=4.833
+  Errors: mean=4.6%, cv=1.8%, ac=3.3%
+  ✅ All assertions passed
+Testing mu=2381.43, t_ac=5.00, cv=2.00
+  Parameters: rho=12603.0947, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [08:58<00:00, 538.23s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [08:58<00:00, 538.23s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  10%|█         | 5/48 [1:20:08<9:04:22, 759.60s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048854896766491754, 'sigma_u': 0.9511451032335082, 'rho': 12603.094654974399, 'd': 0.25855123828937526, 'label': 0}
+  Target: mu=2381.435, cv=2.000, t_ac=5.000
+  Observed: mu=2444.204, cv=2.016, t_ac=5.022
+  Errors: mean=2.6%, cv=0.8%, ac=0.4%
+  ✅ All assertions passed
+Testing mu=6427.98, t_ac=5.00, cv=2.00
+  Parameters: rho=34020.6116, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [22:02<00:00, 1322.75s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [22:02<00:00, 1322.76s/it]
+Simulating Sobol samples:  12%|█▎        | 6/48 [1:42:11<11:05:45, 951.08s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885247170471225, 'sigma_u': 0.9511475282952877, 'rho': 34020.6116272256, 'd': 0.25855576208444836, 'label': 0}
+  FAILED: mu=6427.98, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=7583.73, t_ac=5.00, cv=2.00
+  Parameters: rho=40137.7474, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [25:05<00:00, 1505.96s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [25:05<00:00, 1505.96s/it]
+Simulating Sobol samples:  15%|█▍        | 7/48 [2:07:17<12:53:51, 1132.48s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885225422089584, 'sigma_u': 0.9511477457791041, 'rho': 40137.74738209899, 'd': 0.2585561678194422, 'label': 0}
+  FAILED: mu=7583.73, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=3530.74, t_ac=5.00, cv=2.00
+  Parameters: rho=18686.1403, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [13:15<00:00, 795.84s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [13:15<00:00, 795.84s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  17%|█▋        | 8/48 [2:20:32<11:23:33, 1025.35s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885364276844247, 'sigma_u': 0.9511463572315575, 'rho': 18686.14033568834, 'd': 0.25855357745669133, 'label': 0}
+  Target: mu=3530.742, cv=2.000, t_ac=5.000
+  Observed: mu=3643.253, cv=1.967, t_ac=4.872
+  Errors: mean=3.2%, cv=1.6%, ac=2.6%
+  ✅ All assertions passed
+Testing mu=2565.11, t_ac=5.00, cv=2.00
+  Parameters: rho=13575.2404, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [09:36<00:00, 576.90s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [09:36<00:00, 576.90s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  19%|█▉        | 9/48 [2:30:09<9:35:22, 885.19s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885462091274288, 'sigma_u': 0.951145379087257, 'rho': 13575.240393603928, 'd': 0.2585517528424903, 'label': 0}
+  Target: mu=2565.108, cv=2.000, t_ac=5.000
+  Observed: mu=2645.103, cv=1.987, t_ac=5.080
+  Errors: mean=3.1%, cv=0.7%, ac=1.6%
+  ✅ All assertions passed
+Testing mu=8509.69, t_ac=5.00, cv=2.00
+  Parameters: rho=45038.6880, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [29:32<00:00, 1772.49s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [29:32<00:00, 1772.49s/it]
+Simulating Sobol samples:  21%|██        | 10/48 [2:59:42<12:14:06, 1159.12s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852122603051086, 'sigma_u': 0.951147877396949, 'rho': 45038.68797070166, 'd': 0.2585564133666349, 'label': 0}
+  FAILED: mu=8509.69, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=7479.35, t_ac=5.00, cv=2.00
+  Parameters: rho=39585.3210, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [25:20<00:00, 1520.27s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [25:20<00:00, 1520.27s/it]
+Simulating Sobol samples:  23%|██▎       | 11/48 [3:25:02<13:02:57, 1269.65s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885227110046, 'sigma_u': 0.9511477288995399, 'rho': 39585.321032768654, 'd': 0.2585561363289508, 'label': 0}
+  FAILED: mu=7479.35, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=1525.96, t_ac=5.00, cv=2.00
+  Parameters: rho=8075.2603, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [05:24<00:00, 324.83s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [05:24<00:00, 324.83s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  25%|██▌       | 12/48 [3:30:27<9:49:21, 982.26s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885705663932354, 'sigma_u': 0.9511429433606764, 'rho': 8075.260284004899, 'd': 0.2585472097568757, 'label': 0}
+  Target: mu=1525.963, cv=2.000, t_ac=5.000
+  Observed: mu=1514.521, cv=2.016, t_ac=4.845
+  Errors: mean=0.7%, cv=0.8%, ac=3.1%
+  ✅ All assertions passed
+Testing mu=743.70, t_ac=5.00, cv=2.00
+  Parameters: rho=3934.9085, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [02:48<00:00, 168.56s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [02:48<00:00, 168.56s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  27%|██▋       | 13/48 [3:33:16<7:09:12, 735.79s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048863382424534765, 'sigma_u': 0.9511366175754652, 'rho': 3934.9085197568475, 'd': 0.2585354141725253, 'label': 0}
+  Target: mu=743.701, cv=2.000, t_ac=5.000
+  Observed: mu=784.234, cv=1.975, t_ac=4.897
+  Errors: mean=5.5%, cv=1.2%, ac=2.1%
+  ✅ All assertions passed
+Testing mu=5449.40, t_ac=5.00, cv=2.00
+  Parameters: rho=28841.1733, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [19:21<00:00, 1161.82s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [19:21<00:00, 1161.82s/it]
+Simulating Sobol samples:  29%|██▉       | 14/48 [3:52:38<8:09:52, 864.47s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852727976851765, 'sigma_u': 0.9511472720231483, 'rho': 28841.17331433866, 'd': 0.2585552839934485, 'label': 0}
+  FAILED: mu=5449.40, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=9289.78, t_ac=5.00, cv=2.00
+  Parameters: rho=49167.5071, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [32:36<00:00, 1956.62s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [32:36<00:00, 1956.62s/it]
+Simulating Sobol samples:  31%|███▏      | 15/48 [4:25:14<10:56:31, 1193.68s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885203208481474, 'sigma_u': 0.9511479679151853, 'rho': 49167.50713628476, 'd': 0.25855658223926153, 'label': 0}
+  FAILED: mu=9289.78, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=4597.25, t_ac=5.00, cv=2.00
+  Parameters: rho=24330.9207, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [16:33<00:00, 993.74s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [16:33<00:00, 993.74s/it]
+Simulating Sobol samples:  33%|███▎      | 16/48 [4:41:48<10:04:32, 1133.50s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048853040011604815, 'sigma_u': 0.9511469599883952, 'rho': 24330.920721969644, 'd': 0.25855470188416485, 'label': 0}
+  FAILED: mu=4597.25, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=4813.96, t_ac=5.00, cv=2.00
+  Parameters: rho=25477.9399, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [17:04<00:00, 1024.16s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [17:04<00:00, 1024.16s/it]
+Simulating Sobol samples:  35%|███▌      | 17/48 [4:58:52<9:28:39, 1100.62s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852950181619594, 'sigma_u': 0.9511470498183804, 'rho': 25477.939928954707, 'd': 0.2585548694632867, 'label': 0}
+  FAILED: mu=4813.96, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=8877.78, t_ac=5.00, cv=2.00
+  Parameters: rho=46986.8819, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [31:59<00:00, 1919.24s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [31:59<00:00, 1919.24s/it]
+Simulating Sobol samples:  38%|███▊      | 18/48 [5:30:51<11:13:18, 1346.61s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885207790959387, 'sigma_u': 0.9511479220904061, 'rho': 46986.88187882053, 'd': 0.2585564967475219, 'label': 0}
+  FAILED: mu=8877.78, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=5231.73, t_ac=5.00, cv=2.00
+  Parameters: rho=27689.1066, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [18:03<00:00, 1083.34s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [18:03<00:00, 1083.34s/it]
+Simulating Sobol samples:  40%|███▉      | 19/48 [5:48:55<10:12:38, 1267.54s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885279801415413, 'sigma_u': 0.9511472019858459, 'rho': 27689.106617856658, 'd': 0.25855515333598844, 'label': 0}
+  FAILED: mu=5231.73, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=1156.65, t_ac=5.00, cv=2.00
+  Parameters: rho=6120.5805, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [04:20<00:00, 260.50s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [04:20<00:00, 260.50s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  42%|████▏     | 20/48 [5:53:15<7:30:26, 965.22s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885897661805754, 'sigma_u': 0.9511410233819424, 'rho': 6120.580468451342, 'd': 0.25854362911857853, 'label': 0}
+  Target: mu=1156.653, cv=2.000, t_ac=5.000
+  Observed: mu=1207.916, cv=1.953, t_ac=4.936
+  Errors: mean=4.4%, cv=2.3%, ac=1.3%
+  ✅ All assertions passed
+Testing mu=1626.71, t_ac=5.00, cv=2.00
+  Parameters: rho=8608.5022, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [06:03<00:00, 363.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [06:03<00:00, 363.70s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  44%|████▍     | 21/48 [5:59:19<5:53:06, 784.70s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885668423823871, 'sigma_u': 0.9511433157617614, 'rho': 8608.502249300744, 'd': 0.258547904310338, 'label': 0}
+  Target: mu=1626.712, cv=2.000, t_ac=5.000
+  Observed: mu=1582.704, cv=2.024, t_ac=4.773
+  Errors: mean=2.7%, cv=1.2%, ac=4.5%
+  ✅ All assertions passed
+Testing mu=6948.95, t_ac=5.00, cv=2.00
+  Parameters: rho=36777.9980, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [23:40<00:00, 1420.55s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [23:40<00:00, 1420.55s/it]
+Simulating Sobol samples:  46%|████▌     | 22/48 [6:23:00<7:02:43, 975.53s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885236471517265, 'sigma_u': 0.9511476352848273, 'rho': 36777.997970762524, 'd': 0.2585559616820686, 'label': 0}
+  FAILED: mu=6948.95, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=8410.43, t_ac=5.00, cv=2.00
+  Parameters: rho=44513.3191, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [28:26<00:00, 1706.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [28:26<00:00, 1706.70s/it]
+Simulating Sobol samples:  48%|████▊     | 23/48 [6:51:27<8:17:53, 1194.94s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852135325266666, 'sigma_u': 0.9511478646747332, 'rho': 44513.31907874056, 'd': 0.2585563896318915, 'label': 0}
+  FAILED: mu=8410.43, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=3094.03, t_ac=5.00, cv=2.00
+  Parameters: rho=16374.6896, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [10:51<00:00, 651.85s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [10:51<00:00, 651.85s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  50%|█████     | 24/48 [7:02:18<6:52:48, 1032.02s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048854009514000846, 'sigma_u': 0.9511459904859991, 'rho': 16374.689591731114, 'd': 0.25855289332268877, 'label': 0}
+  Target: mu=3094.025, cv=2.000, t_ac=5.000
+  Observed: mu=3028.960, cv=2.021, t_ac=4.978
+  Errors: mean=2.1%, cv=1.0%, ac=0.4%
+  ✅ All assertions passed
+Testing mu=3312.97, t_ac=5.00, cv=2.00
+  Parameters: rho=17533.5185, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [12:03<00:00, 723.41s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [12:03<00:00, 723.41s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  52%|█████▏    | 25/48 [7:14:22<6:00:07, 939.46s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885381356186773, 'sigma_u': 0.9511461864381323, 'rho': 17533.518458962226, 'd': 0.2585532588535255, 'label': 0}
+  Target: mu=3312.970, cv=2.000, t_ac=5.000
+  Observed: mu=3399.950, cv=1.965, t_ac=4.933
+  Errors: mean=2.6%, cv=1.8%, ac=1.3%
+  ✅ All assertions passed
+Testing mu=7996.80, t_ac=5.00, cv=2.00
+  Parameters: rho=42324.0755, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [26:35<00:00, 1595.33s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [26:35<00:00, 1595.33s/it]
+Simulating Sobol samples:  54%|█████▍    | 26/48 [7:40:57<6:56:37, 1136.24s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0488521917397629, 'sigma_u': 0.9511478082602371, 'rho': 42324.0754627405, 'd': 0.2585562843844422, 'label': 0}
+  FAILED: mu=7996.80, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=6644.87, t_ac=5.00, cv=2.00
+  Parameters: rho=35168.5898, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [22:46<00:00, 1366.73s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [22:46<00:00, 1366.73s/it]
+Simulating Sobol samples:  56%|█████▋    | 27/48 [8:03:44<7:01:53, 1205.39s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885242512353811, 'sigma_u': 0.9511475748764618, 'rho': 35168.58978238437, 'd': 0.25855584898522593, 'label': 0}
+  FAILED: mu=6644.87, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=1969.24, t_ac=5.00, cv=2.00
+  Parameters: rho=10421.4095, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [07:20<00:00, 440.38s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [07:20<00:00, 440.38s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  58%|█████▊    | 28/48 [8:11:05<5:25:18, 975.91s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885570318460085, 'sigma_u': 0.9511442968153991, 'rho': 10421.409509206696, 'd': 0.25854973411878274, 'label': 0}
+  Target: mu=1969.235, cv=2.000, t_ac=5.000
+  Observed: mu=2035.937, cv=1.966, t_ac=4.870
+  Errors: mean=3.4%, cv=1.7%, ac=2.6%
+  ✅ All assertions passed
+Testing mu=252.05, t_ac=5.00, cv=2.00
+  Parameters: rho=1332.7201, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:52<00:00, 52.37s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:52<00:00, 52.37s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  60%|██████    | 29/48 [8:11:57<3:41:18, 698.87s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04888747164550767, 'sigma_u': 0.9511125283544922, 'rho': 1332.7201091613447, 'd': 0.25849053751434997, 'label': 0}
+  Target: mu=252.053, cv=2.000, t_ac=5.000
+  Observed: mu=248.853, cv=1.971, t_ac=4.696
+  Errors: mean=1.3%, cv=1.4%, ac=6.1%
+  ✅ All assertions passed
+Testing mu=6174.78, t_ac=5.00, cv=2.00
+  Parameters: rho=32680.4661, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [21:40<00:00, 1300.08s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [21:40<00:00, 1300.08s/it]
+Simulating Sobol samples:  62%|██████▎   | 30/48 [8:33:37<4:23:46, 879.24s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852530223515926, 'sigma_u': 0.951147469776484, 'rho': 32680.466112904818, 'd': 0.258555652913455, 'label': 0}
+  FAILED: mu=6174.78, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=9716.78, t_ac=5.00, cv=2.00
+  Parameters: rho=51427.5277, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [34:33<00:00, 2073.02s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [34:33<00:00, 2073.02s/it]
+Simulating Sobol samples:  65%|██████▍   | 31/48 [9:08:10<5:50:35, 1237.38s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885198869250768, 'sigma_u': 0.9511480113074923, 'rho': 51427.52768565913, 'd': 0.25855666319314924, 'label': 0}
+  FAILED: mu=9716.78, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=3780.28, t_ac=5.00, cv=2.00
+  Parameters: rho=20006.8794, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [13:09<00:00, 789.49s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [13:09<00:00, 789.49s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  67%|██████▋   | 32/48 [9:21:20<4:54:08, 1103.05s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885347125777078, 'sigma_u': 0.9511465287422292, 'rho': 20006.87937460775, 'd': 0.25855389740120877, 'label': 0}
+  Target: mu=3780.278, cv=2.000, t_ac=5.000
+  Observed: mu=3607.844, cv=2.004, t_ac=4.754
+  Errors: mean=4.6%, cv=0.2%, ac=4.9%
+  ✅ All assertions passed
+Testing mu=3934.69, t_ac=5.00, cv=2.00
+  Parameters: rho=20824.1280, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [13:50<00:00, 830.63s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [13:50<00:00, 830.63s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  69%|██████▉   | 33/48 [9:35:10<4:15:20, 1021.35s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885337602613874, 'sigma_u': 0.9511466239738613, 'rho': 20824.128038432544, 'd': 0.2585540750524826, 'label': 0}
+  Target: mu=3934.685, cv=2.000, t_ac=5.000
+  Observed: mu=4002.408, cv=1.957, t_ac=4.809
+  Errors: mean=1.7%, cv=2.2%, ac=3.8%
+  ✅ All assertions passed
+Testing mu=9874.83, t_ac=5.00, cv=2.00
+  Parameters: rho=52264.0593, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [34:33<00:00, 2073.35s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [34:33<00:00, 2073.35s/it]
+Simulating Sobol samples:  71%|███████   | 34/48 [10:09:44<5:11:57, 1336.95s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885197358273995, 'sigma_u': 0.95114802641726, 'rho': 52264.05930898814, 'd': 0.25855669138240056, 'label': 0}
+  FAILED: mu=9874.83, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=6031.39, t_ac=5.00, cv=2.00
+  Parameters: rho=31921.5590, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [18:51<00:00, 1131.34s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [18:51<00:00, 1131.34s/it]
+Simulating Sobol samples:  73%|███████▎  | 35/48 [10:28:35<4:36:18, 1275.27s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852565541026974, 'sigma_u': 0.9511474344589731, 'rho': 31921.559010163677, 'd': 0.2585555870263151, 'label': 0}
+  FAILED: mu=6031.39, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=82.98, t_ac=5.00, cv=2.00
+  Parameters: rho=437.8475, d=0.2584, sigma_b=0.0490, sigma_u=0.9510
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [00:18<00:00, 18.13s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [00:18<00:00, 18.13s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  75%|███████▌  | 36/48 [10:28:53<2:59:37, 898.16s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04896191437536364, 'sigma_u': 0.9510380856246363, 'rho': 437.8474824194375, 'd': 0.2583522756855999, 'label': 0}
+  Target: mu=82.979, cv=2.000, t_ac=5.000
+  Observed: mu=83.495, cv=2.000, t_ac=4.928
+  Errors: mean=0.6%, cv=0.0%, ac=1.4%
+  ✅ All assertions passed
+Testing mu=2112.67, t_ac=5.00, cv=2.00
+  Parameters: rho=11180.5692, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [07:36<00:00, 456.52s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [07:36<00:00, 456.52s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  77%|███████▋  | 37/48 [10:36:30<2:20:22, 765.70s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885538687350399, 'sigma_u': 0.951144613126496, 'rho': 11180.569163237604, 'd': 0.25855032410882783, 'label': 0}
+  Target: mu=2112.668, cv=2.000, t_ac=5.000
+  Observed: mu=2234.379, cv=1.990, t_ac=4.912
+  Errors: mean=5.8%, cv=0.5%, ac=1.8%
+  ✅ All assertions passed
+Testing mu=6813.92, t_ac=5.00, cv=2.00
+  Parameters: rho=36063.3114, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [22:06<00:00, 1326.02s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [22:06<00:00, 1326.02s/it]
+Simulating Sobol samples:  79%|███████▉  | 38/48 [10:58:36<2:35:37, 933.80s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885239087506126, 'sigma_u': 0.9511476091249387, 'rho': 36063.31135688035, 'd': 0.25855591287856355, 'label': 0}
+  FAILED: mu=6813.92, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=7842.42, t_ac=5.00, cv=2.00
+  Parameters: rho=41506.9784, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [24:24<00:00, 1464.29s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [24:24<00:00, 1464.29s/it]
+Simulating Sobol samples:  81%|████████▏ | 39/48 [11:23:00<2:43:56, 1092.95s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852214320551125, 'sigma_u': 0.9511477856794489, 'rho': 41506.97840876204, 'd': 0.25855624225760004, 'label': 0}
+  FAILED: mu=7842.42, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=3154.87, t_ac=5.00, cv=2.00
+  Parameters: rho=16696.7347, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [10:33<00:00, 633.78s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [10:33<00:00, 633.78s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  83%|████████▎ | 40/48 [11:33:34<2:07:21, 955.23s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885395232864243, 'sigma_u': 0.9511460476713577, 'rho': 16696.734678300727, 'd': 0.2585529999963039, 'label': 0}
+  Target: mu=3154.871, cv=2.000, t_ac=5.000
+  Observed: mu=3049.588, cv=2.015, t_ac=4.855
+  Errors: mean=3.3%, cv=0.8%, ac=2.9%
+  ✅ All assertions passed
+Testing mu=2940.81, t_ac=5.00, cv=2.00
+  Parameters: rho=15563.7470, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [10:17<00:00, 617.44s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [10:17<00:00, 617.44s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  85%|████████▌ | 41/48 [11:43:52<1:39:37, 853.92s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885416399517743, 'sigma_u': 0.9511458360048226, 'rho': 15563.747036843073, 'd': 0.2585526051552553, 'label': 0}
+  Target: mu=2940.809, cv=2.000, t_ac=5.000
+  Observed: mu=3026.853, cv=1.957, t_ac=4.837
+  Errors: mean=2.9%, cv=2.1%, ac=3.3%
+  ✅ All assertions passed
+Testing mu=8251.17, t_ac=5.00, cv=2.00
+  Parameters: rho=43670.3812, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [25:51<00:00, 1551.52s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [25:51<00:00, 1551.52s/it]
+Simulating Sobol samples:  88%|████████▊ | 42/48 [12:09:43<1:46:19, 1063.20s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.048852156377234876, 'sigma_u': 0.9511478436227652, 'rho': 43670.381193324254, 'd': 0.25855635035708585, 'label': 0}
+  FAILED: mu=8251.17, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=7093.58, t_ac=5.00, cv=2.00
+  Parameters: rho=37543.5140, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [23:10<00:00, 1390.89s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [23:10<00:00, 1390.89s/it]
+Simulating Sobol samples:  90%|████████▉ | 43/48 [12:32:54<1:36:47, 1161.51s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885233779950005, 'sigma_u': 0.9511476622005, 'rho': 37543.51400803719, 'd': 0.2585560118956355, 'label': 0}
+  FAILED: mu=7093.58, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=1794.56, t_ac=5.00, cv=2.00
+  Parameters: rho=9496.8678, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [06:19<00:00, 379.01s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [06:19<00:00, 379.01s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  92%|█████████▏| 44/48 [12:39:13<1:01:47, 926.80s/it] Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885615669896477, 'sigma_u': 0.9511438433010352, 'rho': 9496.867834407574, 'd': 0.2585488882344342, 'label': 0}
+  Target: mu=1794.556, cv=2.000, t_ac=5.000
+  Observed: mu=1786.150, cv=1.959, t_ac=4.771
+  Errors: mean=0.5%, cv=2.1%, ac=4.6%
+  ✅ All assertions passed
+Testing mu=1011.99, t_ac=5.00, cv=2.00
+  Parameters: rho=5354.9136, d=0.2585, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [03:34<00:00, 214.14s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [03:34<00:00, 214.14s/it]
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/numpy/core/_methods.py:121: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Simulating Sobol samples:  94%|█████████▍| 45/48 [12:42:48<35:39, 713.03s/it]  Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.0488601107500893, 'sigma_u': 0.9511398892499108, 'rho': 5354.913612220474, 'd': 0.2585415142336707, 'label': 0}
+  Target: mu=1011.991, cv=2.000, t_ac=5.000
+  Observed: mu=1049.411, cv=1.986, t_ac=4.840
+  Errors: mean=3.7%, cv=0.7%, ac=3.2%
+  ✅ All assertions passed
+Testing mu=5063.93, t_ac=5.00, cv=2.00
+  Parameters: rho=26800.9940, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [16:28<00:00, 988.70s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [16:28<00:00, 988.70s/it]
+Simulating Sobol samples:  96%|█████████▌| 46/48 [12:59:16<26:31, 795.73s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885285611491455, 'sigma_u': 0.9511471438850854, 'rho': 26800.993977928287, 'd': 0.25855504494706544, 'label': 0}
+  FAILED: mu=5063.93, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=9030.95, t_ac=5.00, cv=2.00
+  Parameters: rho=47797.5727, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [28:49<00:00, 1729.47s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [28:49<00:00, 1729.47s/it]
+Simulating Sobol samples:  98%|█████████▊| 47/48 [13:28:06<17:55, 1075.85s/it]Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885206038504206, 'sigma_u': 0.9511479396149579, 'rho': 47797.572670709735, 'd': 0.25855652944169183, 'label': 0}
+  FAILED: mu=9030.95, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+Testing mu=4973.25, t_ac=5.00, cv=2.00
+  Parameters: rho=26321.0298, d=0.2586, sigma_b=0.0489, sigma_u=0.9511
+
+Simulating Telegraph Model Systems:   0%|          | 0/1 [00:00<?, ?it/s][A
+Simulating Telegraph Model Systems: 100%|██████████| 1/1 [16:47<00:00, 1007.58s/it][ASimulating Telegraph Model Systems: 100%|██████████| 1/1 [16:47<00:00, 1007.58s/it]
+Simulating Sobol samples: 100%|██████████| 48/48 [13:44:53<00:00, 1055.37s/it]Simulating Sobol samples: 100%|██████████| 48/48 [13:44:53<00:00, 1031.12s/it]
+Running simulations on 12 cores...
+System 1 parameters: {'sigma_b': 0.04885288914643826, 'sigma_u': 0.9511471108535617, 'rho': 26321.02981859373, 'd': 0.25855498332582005, 'label': 0}
+  FAILED: mu=4973.25, t_ac=5.00, cv=2.00 - Error: simulate_one_telegraph_model_system exceeded the runtime limit of 900 s.
+
+=== Final Results ===
+Total combinations tested: 48
+Successful runs: 20
+Failed runs: 28
