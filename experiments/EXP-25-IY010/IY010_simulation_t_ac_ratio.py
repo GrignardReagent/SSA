@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Simulate a mini batch of Sobol sequence samples with varying mu ratios.
+Simulate a mini batch of Sobol sequence samples with varying autocorrelation time (t_ac) ratios.
 
-This script is adapted from ``IY010_simulation_7_mu.py``. The difference
-is that the target mean ``mu`` varies over ratios from 0.1 to 2.0 (with 0.1 intervals)
-of a base value, while the other statistics (coefficient of variation ``cv`` and
-autocorrelation time ``t_ac``) are sampled using a Sobol sequence.
+This script is adapted from ``IY010_simulation_7_mu_ratios.py``. The difference
+is that the target autocorrelation time ``t_ac`` varies over ratios from 0.1 to 2.0 (with 0.1 intervals)
+of a base value, while the other statistics (mean ``mu`` and coefficient of variation ``cv``)
+are sampled using a Sobol sequence.
 
-- ``mu`` varies as ``MU_FIXED * ratio`` where ratio ∈ [0.1, 0.2, ..., 2.0]
+- ``t_ac`` varies as ``T_AC_FIXED * ratio`` where ratio ∈ [0.1, 0.2, ..., 2.0]
+- ``mu`` sampled from 1 to 10,000
 - ``cv`` sampled from 0.5 to 2.0
-- ``t_ac`` sampled from 0.5 to 100
-- Uses 24 Sobol samples per mu ratio
+- Uses 24 Sobol samples per t_ac ratio
 - Each parameter set simulates 50 trajectories
 
 Results (parameters and trajectories) are saved in a dedicated folder for this
@@ -37,23 +37,23 @@ np.random.seed(42)  # for reproducibility
 # -----------------------------------------------------------------------------
 # Configuration
 # -----------------------------------------------------------------------------
-MU_FIXED = 1000  # base mean value
-MU_RATIOS = np.arange(0.1, 2.1, 0.1)  # ratios from 0.1 to 2.0 with 0.1 intervals
+T_AC_FIXED = 50.0  # base autocorrelation time value
+T_AC_RATIOS = np.arange(0.1, 2.1, 0.1)  # ratios from 0.1 to 2.0 with 0.1 intervals
 
 # Create data directory if it doesn't exist
 # Each simulation script writes to its own folder to avoid overwriting results
 # from other experiments.
-data_dir = "data_7_mu_ratios"
+data_dir = "data_t_ac_ratio"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define parameter ranges and other simulation parameters
-N = 24  # number of Sobol samples per mu ratio (reduced for faster runtime)
+N = 24  # number of Sobol samples per t_ac ratio (reduced for faster runtime)
 sobol = qmc.Sobol(d=2, scramble=True, seed=42)  # two varying parameters
 U = sobol.random_base2(int(np.ceil(np.log2(N))))[:N]  # N points in [0,1)^2
 
 # Map Sobol sequence to parameter ranges
-# ``t_ac`` in [0.5, 100], ``cv`` in [0.5, 2.0]
-t_ac_base = qmc.scale(U[:, 0:1], [0.5], [100]).flatten()
+# ``mu`` in [1, 10_000], ``cv`` in [0.5, 2.0]
+mu_base = qmc.scale(U[:, 0:1], [1], [10_000]).flatten()
 cv_base = qmc.scale(U[:, 1:2], [0.5], [2.0]).flatten()
 
 # Create full parameter combinations
@@ -62,11 +62,11 @@ t_ac_target = []
 cv_target = []
 ratio_target = []
 
-for ratio in MU_RATIOS:
-    mu_values = np.full(N, MU_FIXED * ratio)
-    mu_target.extend(mu_values)
-    t_ac_target.extend(t_ac_base)
+for ratio in T_AC_RATIOS:
+    mu_target.extend(mu_base)
     cv_target.extend(cv_base)
+    t_ac_values = np.full(N, T_AC_FIXED * ratio)
+    t_ac_target.extend(t_ac_values)
     ratio_target.extend(np.full(N, ratio))
 
 # Convert to numpy arrays
@@ -87,7 +87,7 @@ total_combinations = len(mu_target)
 all_records = []
 
 print(f"Testing {total_combinations} parameter combinations...")
-print(f"Mu ratios: {MU_RATIOS.tolist()}")
+print(f"t_ac ratios: {T_AC_RATIOS.tolist()}")
 print(f"Sobol samples per ratio: {N}")
 print(f"Started at: {datetime.now()}")
 
@@ -128,7 +128,7 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
         rho, d, sigma_b, sigma_u = find_tilda_parameters(mu, t_ac, cv)
         result_record.update({"rho": rho, "d": d, "sigma_b": sigma_b, "sigma_u": sigma_u})
 
-        print(f"Testing mu ratio={ratio:.1f}, mu={mu:.2f}, t_ac={t_ac:.2f}, cv={cv:.2f}")
+        print(f"Testing t_ac ratio={ratio:.1f}, mu={mu:.2f}, t_ac={t_ac:.2f}, cv={cv:.2f}")
         print(f"  Parameters: rho={rho:.4f}, d={d:.4f}, sigma_b={sigma_b:.4f}, sigma_u={sigma_u:.4f}")
 
         # Build simulation parameter set
@@ -185,7 +185,7 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
         trajectory_df.to_csv(trajectory_path, index=False)
         result_record["trajectory_filename"] = trajectory_filename
 
-        print(f"  Target: mu ratio={ratio:.1f}, mu={mu:.3f}, cv={cv:.3f}, t_ac={t_ac:.3f}")
+        print(f"  Target: mu={mu:.3f}, cv={cv:.3f}, t_ac={t_ac:.3f}")
         print(
             f"  Observed: mu={mean_observed:.3f}, cv={cv_observed:.3f}, t_ac={ac_time_observed:.3f}"
         )
@@ -212,7 +212,7 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
     # Append record and persist to CSV after each run
     all_records.append(result_record)
     results_df = pd.DataFrame([result_record])
-    results_path = os.path.join(data_dir, "IY010_simulation_parameters_7_mu_ratios.csv")
+    results_path = os.path.join(data_dir, "IY010_simulation_parameters_t_ac_ratio.csv")
     write_header = not os.path.exists(results_path)
     results_df.to_csv(results_path, mode="a", header=write_header, index=False)
 
@@ -221,7 +221,7 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
 # -----------------------------------------------------------------------------
 print("\n=== Final Results ===")
 print(f"Total combinations tested: {total_combinations}")
-print(f"Mu ratios tested: {len(MU_RATIOS)}")
+print(f"t_ac ratios tested: {len(T_AC_RATIOS)}")
 print(f"Sobol samples per ratio: {N}")
 print(f"Successful runs: {success_count}")
 print(f"Failed runs: {failure_count}")
