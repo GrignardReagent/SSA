@@ -43,7 +43,7 @@ T_AC_RATIOS = np.arange(0.1, 2.1, 0.1)  # ratios from 0.1 to 2.0 with 0.1 interv
 # Create data directory if it doesn't exist
 # Each simulation script writes to its own folder to avoid overwriting results
 # from other experiments.
-data_dir = "data_t_ac_ratio"
+data_dir = "data_7_t_ac_ratio"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define parameter ranges and other simulation parameters
@@ -137,8 +137,8 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
         ]
 
         # Ensure enough time points for autocorrelation estimation
-        time_points = np.arange(0, max(144, int(t_ac * 20)), 1.0)
-        size = 50  # number of trajectories
+        time_points = np.arange(0, 2000, 1.0)
+        size = 200  # number of trajectories
 
         start_time = time.time()
         df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size)
@@ -212,7 +212,7 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
     # Append record and persist to CSV after each run
     all_records.append(result_record)
     results_df = pd.DataFrame([result_record])
-    results_path = os.path.join(data_dir, "IY010_simulation_parameters_t_ac_ratio.csv")
+    results_path = os.path.join(data_dir, "IY010_simulation_parameters_7_t_ac_ratio.csv")
     write_header = not os.path.exists(results_path)
     results_df.to_csv(results_path, mode="a", header=write_header, index=False)
 
