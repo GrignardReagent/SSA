@@ -8,7 +8,8 @@ def shuffle_time_series(
     preserve_columns: Optional[List[str]] = None,
     axis: int = 1,
     random_state: Optional[int] = None,
-    inplace: bool = False
+    inplace: bool = False,
+    strategy: str = "per_sample",
 ) -> Union[pd.DataFrame, np.ndarray]:
     """
     Shuffle time series data along the temporal axis for each sample.
@@ -34,6 +35,15 @@ def shuffle_time_series(
         Random seed for reproducible shuffling.
     inplace : bool, default=False
         If True, modify the original data. If False, return a copy.
+    strategy : {"per_sample", "global"}, default="per_sample"
+        - "per_sample": independently permute each sample (row) when axis=1,
+          or each column vector when axis=0. This destroys cross-sample
+          alignment and temporal structure; good for testing sequence models.
+        - "global": apply a single, consistent permutation across all samples
+          along the chosen axis. For axis=1, this is equivalent to reordering
+          feature columns uniformly for all rows; good for testing that a
+          non-sequence model (e.g., SVM) is invariant to a relabeling of
+          feature indices.
         
     Returns
     -------
@@ -62,9 +72,8 @@ def shuffle_time_series(
     >>> shuffled_samples = shuffle_time_series(arr, axis=0, random_state=42)
     """
     
-    # Set random seed if provided
-    if random_state is not None:
-        np.random.seed(random_state)
+    # Local RNG for reproducibility without touching global state
+    rng = np.random.default_rng(random_state)
     
     # Handle DataFrame input
     if isinstance(data, pd.DataFrame):
@@ -78,21 +87,42 @@ def shuffle_time_series(
         shuffle_columns = [col for col in result.columns if col not in preserve_columns]
         
         if axis == 1:
-            # Shuffle columns (time points) within each row (sample)
-            for i in range(len(result)):
-                # Extract row values for columns to shuffle
-                row_values = result.loc[i, shuffle_columns].values
-                # Shuffle in-place
-                np.random.shuffle(row_values)
-                # Assign back to dataframe
-                result.loc[i, shuffle_columns] = row_values
-                
+            if strategy == "per_sample":
+                # Shuffle columns (time points) within each row (sample)
+                for i in range(len(result)):
+                    # Extract row values for columns to shuffle (positional)
+                    row_values = result.loc[result.index[i], shuffle_columns].values
+                    # Apply per-row permutation
+                    permuted = rng.permutation(row_values)
+                    # Assign back to dataframe
+                    result.loc[result.index[i], shuffle_columns] = permuted
+            elif strategy == "global":
+                # Apply the same permutation of columns to all rows.
+                # Compute a permutation of the shuffle_columns order, and then
+                # reorder those columns consistently while leaving preserved
+                # columns untouched and in place.
+                col_order = list(result.columns)
+                # Indices of the columns we are shuffling (by name)
+                shuffle_idx = [col_order.index(c) for c in shuffle_columns]
+                permuted_names = [shuffle_columns[k] for k in rng.permutation(len(shuffle_columns))]
+                new_order = col_order[:]
+                for idx, new_name in zip(shuffle_idx, permuted_names):
+                    new_order[idx] = new_name
+                result = result[new_order]
+            else:
+                raise ValueError("strategy must be 'per_sample' or 'global'")
         elif axis == 0:
-            # Shuffle rows (samples) within each column (time point)
-            for col in shuffle_columns:
-                col_values = result[col].values
-                np.random.shuffle(col_values)
-                result[col] = col_values
+            if strategy == "per_sample":
+                # Shuffle rows (samples) within each column (time point)
+                for col in shuffle_columns:
+                    col_values = result[col].values
+                    result[col] = rng.permutation(col_values)
+            elif strategy == "global":
+                # Apply the same permutation of rows to all columns
+                perm = rng.permutation(len(result))
+                result = result.iloc[perm].reset_index(drop=True)
+            else:
+                raise ValueError("strategy must be 'per_sample' or 'global'")
         else:
             raise ValueError("axis must be 0 or 1")
             
@@ -104,14 +134,27 @@ def shuffle_time_series(
         result = data if inplace else data.copy()
         
         if axis == 1:
-            # Shuffle columns within each row
-            for i in range(result.shape[0]):
-                np.random.shuffle(result[i, :])
-                
+            if strategy == "per_sample":
+                # Shuffle columns within each row independently
+                for i in range(result.shape[0]):
+                    result[i, :] = rng.permutation(result[i, :])
+            elif strategy == "global":
+                # Apply the same column permutation for all rows
+                perm = rng.permutation(result.shape[1])
+                result = result[:, perm]
+            else:
+                raise ValueError("strategy must be 'per_sample' or 'global'")
         elif axis == 0:
-            # Shuffle rows within each column
-            for j in range(result.shape[1]):
-                np.random.shuffle(result[:, j])
+            if strategy == "per_sample":
+                # Shuffle rows within each column independently
+                for j in range(result.shape[1]):
+                    result[:, j] = rng.permutation(result[:, j])
+            elif strategy == "global":
+                # Apply the same row permutation for all columns
+                perm = rng.permutation(result.shape[0])
+                result = result[perm, :]
+            else:
+                raise ValueError("strategy must be 'per_sample' or 'global'")
         else:
             raise ValueError("axis must be 0 or 1")
             
