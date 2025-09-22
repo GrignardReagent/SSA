@@ -1,0 +1,9 @@
+t_ac_ratio,model,best_test_accuracy,best_params
+1.2,LSTM,0.9925,"{'batch_size': 64, 'epochs': 45, 'patience': 6, 'bidirectional': True, 'use_conv1d': True, 'hidden_size': 96, 'num_layers': 2, 'dropout_rate': 0.2, 'learning_rate': 0.001, 'use_attention': True, 'num_attention_heads': 4}"
+1.2,Transformer,0.8875,"{'nhead': 4, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW', 'd_model': 160, 'num_layers': 2, 'dropout_rate': 0.1, 'learning_rate': 0.0009, 'use_conv1d': True}"
+1.4,LSTM,0.96625,"{'batch_size': 64, 'epochs': 45, 'patience': 6, 'bidirectional': True, 'use_conv1d': True, 'hidden_size': 96, 'num_layers': 1, 'dropout_rate': 0.3, 'learning_rate': 0.001, 'use_attention': True, 'num_attention_heads': 4}"
+1.4,Transformer,0.935,"{'nhead': 4, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW', 'd_model': 160, 'num_layers': 3, 'dropout_rate': 0.1, 'learning_rate': 0.0008, 'use_conv1d': True}"
+1.6,LSTM,0.99625,"{'batch_size': 64, 'epochs': 45, 'patience': 6, 'bidirectional': True, 'use_conv1d': True, 'hidden_size': 64, 'num_layers': 2, 'dropout_rate': 0.2, 'learning_rate': 0.001, 'use_attention': True, 'num_attention_heads': 2}"
+1.6,Transformer,0.93875,"{'nhead': 6, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW', 'd_model': 192, 'num_layers': 2, 'dropout_rate': 0.1, 'learning_rate': 0.0008, 'use_conv1d': True}"
+1.8,LSTM,0.99,"{'batch_size': 64, 'epochs': 45, 'patience': 6, 'bidirectional': True, 'use_conv1d': True, 'hidden_size': 96, 'num_layers': 1, 'dropout_rate': 0.3, 'learning_rate': 0.00075, 'use_attention': True, 'num_attention_heads': 4}"
+1.8,Transformer,0.9775,"{'nhead': 4, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW', 'd_model': 128, 'num_layers': 2, 'dropout_rate': 0.1, 'learning_rate': 0.0006, 'use_conv1d': True}"

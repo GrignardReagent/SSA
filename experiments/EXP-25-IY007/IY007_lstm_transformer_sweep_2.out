@@ -1,0 +1,1747 @@
+
+=== Processing t_ac ratio 1.20 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.72 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.66 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.88 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.51 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.89 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.47 ===
+=== LSTM with Conv1D Accuracy: 0.70 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.89 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.51 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.91 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.55 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.81 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.52 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.88 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.63 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.70 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.51 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.51 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.56 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.80 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.71 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.71 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.71 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.94 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.89 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.49 ===
+=== LSTM with Conv1D Accuracy: 0.77 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.56 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.49 ===
+=== LSTM with Conv1D Accuracy: 0.81 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.65 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.48 ===
+=== LSTM with Conv1D Accuracy: 0.94 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.74 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.51 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.51 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.49 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.90 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.94 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.71 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.67 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.85 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.73 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.66 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.63 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.81 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.77 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.73 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.69 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.46 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.63 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.62 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.86 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.79 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.75 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.71 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.68 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.69 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.71 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.62 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.79 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.77 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.69 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.67 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.68 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.46 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+Best LSTM test accuracy: 0.996 with {'batch_size': 64, 'epochs': 45, 'bidirectional': True, 'hidden_size': 128, 'num_layers': 1, 'dropout_rate': 0.2, 'learning_rate': 0.01, 'use_attention': True, 'use_conv1d': True, 'num_attention_heads': 4}
+Best Transformer test accuracy: 0.986 with {'nhead': 4, 'batch_size': 64, 'epochs': 50, 'd_model': 128, 'num_layers': 3, 'dropout_rate': 0.1, 'learning_rate': 0.01, 'use_conv1d': True, 'pooling_strategy': 'mean'}
+
+=== Processing t_ac ratio 1.40 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.94 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.55 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.55 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.62 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.91 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.91 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.94 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.54 ===
+=== LSTM with Conv1D Accuracy: 0.86 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.88 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.95 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.95 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.56 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.79 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.52 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.75 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.86 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.63 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.54 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.51 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.74 ===
+=== LSTM with Conv1D Accuracy: 0.61 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.56 ===
+=== LSTM with Conv1D Accuracy: 0.67 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.82 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.70 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.55 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.58 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.79 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.76 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.47 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.77 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Vanilla Transformer Accuracy: 0.82 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.78 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.75 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.75 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Vanilla Transformer Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Vanilla Transformer Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.80 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+Best LSTM test accuracy: 0.991 with {'batch_size': 64, 'epochs': 45, 'bidirectional': True, 'hidden_size': 64, 'num_layers': 4, 'dropout_rate': 0.3, 'learning_rate': 0.01, 'use_attention': True, 'use_conv1d': True, 'num_attention_heads': 2}
+Best Transformer test accuracy: 0.981 with {'nhead': 4, 'batch_size': 64, 'epochs': 50, 'd_model': 128, 'num_layers': 2, 'dropout_rate': 0.1, 'learning_rate': 0.01, 'use_conv1d': True, 'pooling_strategy': 'mean'}
+
+=== Processing t_ac ratio 1.60 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.80 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.63 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.89 ===
+=== LSTM with Conv1D Accuracy: 0.81 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.82 ===
+=== LSTM with Conv1D Accuracy: 0.86 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.90 ===
+=== LSTM with Conv1D Accuracy: 0.68 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.54 ===
+=== LSTM with Conv1D Accuracy: 0.88 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.94 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.94 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.88 ===
+=== LSTM with Conv1D Accuracy: 0.70 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.91 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.83 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.53 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.69 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.60 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.89 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.90 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.88 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.91 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.93 ===
+=== LSTM with Conv1D Accuracy: 0.78 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.95 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.89 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.58 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.56 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.56 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.91 ===
+=== LSTM with Conv1D Accuracy: 0.84 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.83 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.56 ===
+=== LSTM with Conv1D Accuracy: 0.64 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.82 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.73 ===
+=== LSTM with Conv1D Accuracy: 0.86 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.91 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.91 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.58 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.89 ===
+=== LSTM with Conv1D Accuracy: 0.80 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Transformer Accuracy: 0.78 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.79 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.76 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Vanilla Transformer Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.81 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Vanilla Transformer Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.74 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 1.00 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 1.00 ===
+=== Vanilla Transformer Accuracy: 0.74 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.85 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.78 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.79 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Vanilla Transformer Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.86 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.56 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.80 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+Best LSTM test accuracy: 1.000 with {'batch_size': 64, 'epochs': 45, 'bidirectional': True, 'hidden_size': 64, 'num_layers': 2, 'dropout_rate': 0.2, 'learning_rate': 0.01, 'use_attention': True, 'use_conv1d': True, 'num_attention_heads': 2}
+Best Transformer test accuracy: 0.996 with {'nhead': 4, 'batch_size': 64, 'epochs': 50, 'd_model': 128, 'num_layers': 2, 'dropout_rate': 0.1, 'learning_rate': 0.01, 'use_conv1d': True, 'pooling_strategy': 'mean'}
+
+=== Processing t_ac ratio 1.80 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.56 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.54 ===
+=== LSTM with Conv1D Accuracy: 0.90 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.59 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.80 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.99 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.54 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.62 ===
+=== LSTM with Conv1D Accuracy: 0.92 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.60 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 1.00 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.54 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.70 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.59 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.80 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.96 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.53 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.51 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.69 ===
+=== LSTM with Conv1D Accuracy: 0.95 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.56 ===
+=== LSTM with Conv1D Accuracy: 0.51 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.57 ===
+=== LSTM with Conv1D Accuracy: 0.59 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.54 ===
+=== LSTM with Conv1D Accuracy: 0.93 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.87 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D Accuracy: 0.79 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.50 ===
+=== LSTM with Conv1D Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.50 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.53 ===
+=== LSTM with Conv1D Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Vanilla Transformer Accuracy: 0.77 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.59 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.75 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.46 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.46 ===
+=== Vanilla Transformer Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.84 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.79 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Vanilla Transformer Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.80 ===
+=== Vanilla Transformer Accuracy: 0.55 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.56 ===
+=== Vanilla Transformer Accuracy: 0.74 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.88 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.89 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.76 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Vanilla Transformer Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.61 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.58 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.57 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.47 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.65 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.66 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.48 ===
+=== Vanilla Transformer Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.86 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.77 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.80 ===
+=== Vanilla Transformer Accuracy: 0.91 ===
+=== Vanilla Transformer Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.54 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.63 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.64 ===
+=== Vanilla Transformer Accuracy: 0.49 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.75 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Vanilla Transformer Accuracy: 0.81 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.87 ===
+=== Vanilla Transformer Accuracy: 0.82 ===
+=== Vanilla Transformer Accuracy: 0.73 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.68 ===
+=== Vanilla Transformer Accuracy: 0.60 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.59 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.61 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.87 ===
+=== Vanilla Transformer Accuracy: 0.81 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.50 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.52 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+=== Vanilla Transformer Accuracy: 0.96 ===
+=== Vanilla Transformer Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.84 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.83 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.93 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Vanilla Transformer Accuracy: 0.72 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.96 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.94 ===
+=== Vanilla Transformer Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.95 ===
+=== Vanilla Transformer Accuracy: 0.75 ===
+=== Vanilla Transformer Accuracy: 0.53 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.58 ===
+=== Vanilla Transformer Accuracy: 0.71 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.57 ===
+=== Vanilla Transformer Accuracy: 0.74 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+=== Vanilla Transformer Accuracy: 0.88 ===
+=== Vanilla Transformer Accuracy: 0.85 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.99 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Vanilla Transformer Accuracy: 0.51 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.51 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.48 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.49 ===
+=== Vanilla Transformer Accuracy: 0.67 ===
+=== Vanilla Transformer Accuracy: 0.52 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.91 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.50 ===
+Best LSTM test accuracy: 0.999 with {'batch_size': 64, 'epochs': 45, 'bidirectional': True, 'hidden_size': 64, 'num_layers': 1, 'dropout_rate': 0.3, 'learning_rate': 0.01, 'use_attention': True, 'use_conv1d': True, 'num_attention_heads': 2}
+Best Transformer test accuracy: 0.993 with {'nhead': 4, 'batch_size': 64, 'epochs': 50, 'd_model': 128, 'num_layers': 3, 'dropout_rate': 0.1, 'learning_rate': 0.01, 'use_conv1d': True, 'pooling_strategy': 'mean'}
+
+Saved summary to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/results_simple_sweep/lstm_vs_transformer_simple_results_2.csv
+Saved accuracy trend plot to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/results_simple_sweep/lstm_vs_transformer_accuracy_trend_2.png

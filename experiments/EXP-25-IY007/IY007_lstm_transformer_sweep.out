@@ -1,0 +1,42 @@
+
+=== Processing t_ac ratio 1.20 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.51 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.99 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.99 ===
+=== Vanilla Transformer Accuracy: 0.62 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.83 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.55 ===
+Best LSTM test accuracy: 0.990 with {'hidden_size': 96, 'num_layers': 2, 'dropout_rate': 0.25, 'learning_rate': 0.00075, 'use_conv1d': True, 'use_attention': True, 'num_attention_heads': 4, 'batch_size': 72, 'epochs': 50, 'patience': 7, 'bidirectional': True}
+Best Transformer test accuracy: 0.830 with {'d_model': 160, 'nhead': 5, 'num_layers': 2, 'dropout_rate': 0.12, 'learning_rate': 0.0009, 'use_conv1d': True, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW'}
+
+=== Processing t_ac ratio 1.40 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.52 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.92 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.87 ===
+=== Vanilla Transformer Accuracy: 0.70 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.92 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.53 ===
+Best LSTM test accuracy: 0.924 with {'hidden_size': 64, 'num_layers': 2, 'dropout_rate': 0.3, 'learning_rate': 0.001, 'use_conv1d': True, 'use_attention': True, 'num_attention_heads': 2, 'batch_size': 64, 'epochs': 45, 'patience': 6, 'bidirectional': True}
+Best Transformer test accuracy: 0.917 with {'d_model': 160, 'nhead': 5, 'num_layers': 2, 'dropout_rate': 0.12, 'learning_rate': 0.0009, 'use_conv1d': True, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW'}
+
+=== Processing t_ac ratio 1.60 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.55 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.97 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.69 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.90 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.60 ===
+Best LSTM test accuracy: 0.984 with {'hidden_size': 96, 'num_layers': 2, 'dropout_rate': 0.25, 'learning_rate': 0.00075, 'use_conv1d': True, 'use_attention': True, 'num_attention_heads': 4, 'batch_size': 72, 'epochs': 50, 'patience': 7, 'bidirectional': True}
+Best Transformer test accuracy: 0.902 with {'d_model': 160, 'nhead': 5, 'num_layers': 2, 'dropout_rate': 0.12, 'learning_rate': 0.0009, 'use_conv1d': True, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW'}
+
+=== Processing t_ac ratio 1.80 ===
+=== Vanilla Long-Short Term Memory (LSTM) Accuracy: 0.56 ===
+=== LSTM with Conv1D and 2-Head Attention Accuracy: 0.96 ===
+=== LSTM with Conv1D and 4-Head Attention Accuracy: 0.98 ===
+=== Vanilla Transformer Accuracy: 0.79 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.97 ===
+=== Transformer with Conv1D Preprocessing Accuracy: 0.66 ===
+Best LSTM test accuracy: 0.978 with {'hidden_size': 96, 'num_layers': 2, 'dropout_rate': 0.25, 'learning_rate': 0.00075, 'use_conv1d': True, 'use_attention': True, 'num_attention_heads': 4, 'batch_size': 72, 'epochs': 50, 'patience': 7, 'bidirectional': True}
+Best Transformer test accuracy: 0.970 with {'d_model': 160, 'nhead': 5, 'num_layers': 2, 'dropout_rate': 0.12, 'learning_rate': 0.0009, 'use_conv1d': True, 'pooling_strategy': 'mean', 'batch_size': 64, 'epochs': 50, 'patience': 7, 'optimizer': 'AdamW'}
+
+Saved summary to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY007/results_simple_sweep/lstm_vs_transformer_simple_results.csv
