@@ -84,7 +84,7 @@ function main(; traj::Int=1, tstop::Float64=1000.0,
         end
 
         savefig(plt, savepng)
-    end
+    end # time
     println("Saved plot to $(savepng)")
 end
 
