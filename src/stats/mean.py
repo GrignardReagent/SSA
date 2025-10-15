@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from utils.steady_state import find_steady_state
+from utils.data_processing import _ensure_numpy, _safe_slice
 
 def calculate_mean(trajectories, parameter_set, use_steady_state=True):
     """
@@ -19,7 +20,7 @@ def calculate_mean(trajectories, parameter_set, use_steady_state=True):
         _, steady_state_index = find_steady_state(parameter_set[0])
         
         # Extract steady state trajectories
-        steady_state_trajectories = trajectories[:, steady_state_index:]
+        steady_state_trajectories = _safe_slice(trajectories, steady_state_index)
         
         # Calculate and return mean
         return steady_state_trajectories.mean()

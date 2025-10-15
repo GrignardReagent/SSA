@@ -9,6 +9,29 @@ import torch
 from torch.utils.data import TensorDataset
 from pathlib import Path
 
+################## Helper function to capture type mismatch errors between pd.DataFrame and np.ndarray ############
+def _ensure_numpy(data):
+    """Convert pandas DataFrame to numpy array if needed."""
+    if isinstance(data, pd.DataFrame):
+        return data.values
+    return data
+
+def _safe_slice(data, start_idx=None, end_idx=None, axis=1):
+    """Safely slice data whether it's DataFrame or numpy array."""
+    if isinstance(data, pd.DataFrame):
+        if axis == 1:  # column-wise slicing
+            return data.iloc[:, start_idx:end_idx].values
+        else:  # row-wise slicing
+            return data.iloc[start_idx:end_idx, :].values
+    else:
+        if axis == 1:
+            return data[:, start_idx:end_idx]
+        else:
+            return data[start_idx:end_idx, :]
+
+################## Helper function to capture type mismatch errors between pd.DataFrame and np.ndarray ############
+
+# Labelling functions
 
 def add_binary_labels(df: pd.DataFrame, column: str) -> pd.DataFrame:
     """Return a copy of ``df`` with a new ``label`` column.
@@ -154,3 +177,86 @@ def add_nearest_neighbour_labels(
 
     labelled["label"] = labels
     return labelled
+
+def handle_missing_values(time_series_df: pd.DataFrame) -> pd.DataFrame:
+    """Impute missing values in a time‑series DataFrame using IterativeImputer.
+
+    - Input must be a pandas DataFrame where each row is one time series and
+      each column is a time step/feature.
+    - Returns a DataFrame with the same index and columns where missing values
+      have been imputed. If no values are missing, a float copy of the input is
+      returned.
+
+    Example
+    -------
+    >>> import pandas as pd
+    >>> import numpy as np
+    >>> from utils.data_processing import handle_missing_values
+    >>> df = pd.DataFrame(
+    ...     {
+    ...         "t0": [1.0, np.nan, 3.0],
+    ...         "t1": [2.0, 2.5, np.nan],
+    ...         "t2": [np.nan, 3.5, 1.5],
+    ...     },
+    ...     index=["trajA", "trajB", "trajC"],
+    ... )
+    >>> imputed = handle_missing_values(df)
+    >>> imputed.shape == df.shape
+    True
+    >>> imputed.index.equals(df.index) and imputed.columns.equals(df.columns)
+    True
+    >>> imputed.isna().sum().sum()  # all missing values imputed
+    0
+    """
+    from sklearn.experimental import enable_iterative_imputer
+    from sklearn.impute import IterativeImputer
+    if not isinstance(time_series_df, pd.DataFrame):
+        raise TypeError(
+            "time_series_df must be a pandas DataFrame with rows as samples and columns as time steps"
+        )
+
+    df_in = time_series_df
+    index = df_in.index
+    columns = df_in.columns
+
+    # Convert to matrix (samples × features)
+    data_matrix = df_in.to_numpy(dtype=float, copy=False)
+
+    print(f"  Data matrix shape before imputation: {data_matrix.shape}")
+    print(f"  Missing values: {np.isnan(data_matrix).sum()} ({np.isnan(data_matrix).mean()*100:.1f}%)")
+
+    if np.isnan(data_matrix).any():
+        print("  Applying IterativeImputer for missing value imputation...")
+        imputer = IterativeImputer(
+            estimator=None,
+            missing_values=np.nan,
+            max_iter=10,
+            tol=1e-3,
+            n_nearest_features=None,
+            initial_strategy='mean',
+            imputation_order='ascending',
+            skip_complete=False,
+            min_value=None,
+            max_value=None,
+            verbose=0,
+            random_state=42,
+        )
+        imputed_matrix = imputer.fit_transform(data_matrix)
+        print(f"  Imputation completed. Remaining NaN values: {np.isnan(imputed_matrix).sum()}")
+    else:
+        print("  No missing values detected, using original data")
+        imputed_matrix = data_matrix.astype(float, copy=True)
+
+    df_out = pd.DataFrame(imputed_matrix, index=index, columns=columns)
+
+    # Final check and fallback interpolation across time (axis=1)
+    if df_out.isna().any().any():
+        print("  Warning: Remaining NaNs detected, applying row-wise interpolation...")
+        df_interp = df_out.interpolate(method='linear', axis=1, limit_direction='both')
+        df_interp = df_interp.ffill(axis=1).bfill(axis=1)
+        if df_interp.isna().any().any():
+            global_mean = np.nanmean(df_out.to_numpy())
+            df_interp = df_interp.fillna(global_mean)
+        df_out = df_interp
+
+    return df_out

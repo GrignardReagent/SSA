@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
 from utils.steady_state import find_steady_state
+from utils.data_processing import _ensure_numpy, _safe_slice
 from stats.autocorrelation import autocrosscorr
 
 ################## Mean mRNA counts over time
@@ -44,12 +45,13 @@ def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories,
     # Labels and legend
     ax.set_xlabel("Time")
     ax.set_ylabel("mRNA Count")
-    ax.set_title(f"Yeast mRNA Trajectories Under Different Conditions (Mean for {stress_trajectories.shape[0]} cells)")
+    ax.set_title(f"mRNA Trajectories (Mean for {stress_trajectories.shape[0]} cells)")
     ax.legend()
     ax.grid(True)
-
-    # Show plot
     plt.show()
+    
+    # return the plot object
+    return fig, ax
 
 ################## Plot variance of mRNA counts over time
 def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, normal_trajectories=None):
@@ -66,7 +68,7 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     steady_state_time_stress, steady_state_index_stress = find_steady_state(parameter_sets[0])
 
     # Extract steady-state portions
-    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
+    steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
 
     # Compute mean and variance at steady state for stressed condition
     stress_mean_ss = steady_state_traj_stress.mean()
@@ -87,7 +89,7 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     # Handle normal condition if provided
     if normal_trajectories is not None:
         steady_state_time_normal, steady_state_index_normal = find_steady_state(parameter_sets[1])
-        steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
+        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_mean_ss = steady_state_traj_normal.mean()
         normal_var_ss = steady_state_traj_normal.var()
         normal_var_over_time = normal_trajectories.var(axis=0)
@@ -112,16 +114,11 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     if normal_trajectories is not None:
         print(f"  Normal Condition (after {steady_state_time_normal:.1f} min): Mean = {normal_mean_ss:.2f}, Variance = {normal_var_ss:.2f}")
 
-    # return {
-    #     "Stress Variance at Steady State": stress_var_ss,
-    #     "Normal Variance at Steady State": normal_var_ss,
-    #     "Stress Mean at Steady State": stress_mean_ss,
-    #     "Normal Mean at Steady State": normal_mean_ss,
-    #     "Steady State Time": {"Stress": steady_state_time_stress, "Normal": steady_state_time_normal}
-    # }
+    return fig, ax
+
 
 ################## Plot distribution of mRNA counts after reaching steady state (data from all the timepoints)
-def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectories=None, steady_state=False):
+def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectories=None, bins=None, kde=True):
     """
     Plot the probability density function (PDF) of mRNA counts at steady state.
     
@@ -129,56 +126,49 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
         parameter_sets (list): List of parameter sets (dict) for the simulation.
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
-        steady_state (bool): If True, the data is already at steady state, otherwise the time index for steady state will be calculated from the parameter sets.
     """
     # Find the time index at which steady state is reached, if data is not already steady state
-    if not steady_state:
-        _, steady_state_index_stress = find_steady_state(parameter_sets[0])
+    _, steady_state_index_stress = find_steady_state(parameter_sets[0])
+    steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
+    # Flatten to get all mRNA counts from all trajectories and time points
+    stress_ss_flat = steady_state_traj_stress.flatten()
 
-        # Extract mRNA counts after steady state is reached
-        stress_ss = stress_trajectories[:, steady_state_index_stress:].flatten()
-        
-        if normal_trajectories is not None:
-            _, steady_state_index_normal = find_steady_state(parameter_sets[1])
-            normal_ss = normal_trajectories[:, steady_state_index_normal:].flatten()
+    fig, ax = plt.subplots(figsize=(10, 6))
+    if kde:
+        # Plot KDE (smooth curve)
+        sns.kdeplot(stress_ss_flat, fill=True, color='blue', label='Stressed Condition', linewidth=2)
     else:
-        # Data is already at steady state
-        stress_ss = stress_trajectories.flatten()
-        if normal_trajectories is not None:
-            normal_ss = normal_trajectories.flatten()
-
-    # Plot KDE (smooth curve)
-    # fig, ax = plt.subplots(figsize=(10, 6))
-    # sns.kdeplot(stress_ss, fill=True, color='blue', label='Stressed Condition', linewidth=2)
-    # sns.kdeplot(normal_ss, fill=True, color='green', label='Normal Condition', linewidth=2)
-        # Labels and title
-    # ax.set_xlabel("mRNA Count at Steady-State")
-    # ax.set_ylabel("Probability Density")
-    # ax.set_title("Distribution of mRNA Counts at Steady-State")
-    # ax.legend()
-    # ax.grid(True)
-
-    # Plot histogram (recommended for Poisson-distributed data)
-    # # Determine maximum mRNA count to set bin range
-    # max_count = max(stress_ss.max(), normal_ss.max())
-
-    # # Set up bins explicitly for integer values (Poisson data)
-    # bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
-
-    # Plot histograms
-    plt.figure(figsize=(10, 6))
-    plt.hist(stress_ss, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
-    
+        if bins is None:
+            # Determine maximum mRNA count to set bin range
+            max_count = stress_ss_flat.max()
+            # Set up bins explicitly for integer values (Poisson data)
+            bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
+        # Plot histograms
+        ax.hist(stress_ss_flat, bins=bins, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
+    #------------------------ Normal condition if provided ------------------------#
     if normal_trajectories is not None:
-        plt.hist(normal_ss, density=True, alpha=0.6, color='green', label='Normal Condition', edgecolor='black')
+        _, steady_state_index_normal = find_steady_state(parameter_sets[1])
+        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
+        normal_ss_flat = steady_state_traj_normal.flatten()
+        
+        if kde:
+            # Plot KDE (smooth curve)
+            sns.kdeplot(normal_ss_flat, fill=True, color='red', label='Normal Condition', linewidth=2)
+        else:
+            if bins is None:
+                max_count = max(stress_ss_flat.max(), normal_ss_flat.max())
+                bins = np.arange(0, max_count + 1.5) - 0.5
+            ax.hist(normal_ss_flat, bins=bins, density=True, alpha=0.6, color='red', label='Normal Condition', edgecolor='black')
 
     # Labels and title
-    plt.xlabel("mRNA Count at Steady-State")
-    plt.ylabel("Probability Density")
-    plt.title("Distribution of mRNA Counts at Steady-State")
-    plt.legend()
-    plt.grid(True)
+    ax.set_xlabel("mRNA Count at Steady-State")
+    ax.set_ylabel("Probability Density")
+    ax.set_title("Distribution of mRNA Counts at Steady-State")
+    ax.legend()
+    ax.grid(True)
     plt.show()
+
+    return fig, ax
 
 #### Autocorrelation and Cross-correlation of mRNA counts over time
 def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories=None):
@@ -192,29 +182,34 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
     """
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
+    
+    # Use safe slicing helper
+    steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
 
-    # Extract steady-state portions
-    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
-
-    # Compute autocorrelation for stressed condition
+    # Compute autocorrelation for stressed condition 
+    # (!! The input for this function must be a numpy array!!)
     stress_autocorr, lags_stress = autocrosscorr(steady_state_traj_stress)
 
     # Plot the autocorrelation of mRNA counts over time for each condition
-    plt.figure()
-    plt.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
-    
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
+
     if normal_trajectories is not None:
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
-        steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
+        # Use safe slicing helper
+        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
+        
         normal_autocorr, lags_normal = autocrosscorr(steady_state_traj_normal)
-        plt.plot(lags_normal, np.nanmean(normal_autocorr, axis=0), color='green', label='Normal Condition')
+        ax.plot(lags_normal, np.nanmean(normal_autocorr, axis=0), color='green', label='Normal Condition')
     
-    plt.title('Autocorrelation of mRNA Counts at Steady-State')
-    plt.xlabel('Lag')
-    plt.ylabel('Autocorrelation')
-    plt.legend()
-    plt.grid(True)
+    ax.set_title('Autocorrelation of mRNA Counts at Steady-State')
+    ax.set_xlabel('Lag')
+    ax.set_ylabel('Autocorrelation')
+    ax.legend()
+    ax.grid(True)
     plt.show()
+    
+    return fig, ax
 
 def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectories=None):
     """
@@ -234,9 +229,9 @@ def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectorie
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     _, steady_state_index_normal = find_steady_state(parameter_sets[1])
 
-    # Extract steady-state portions
-    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
-    steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
+    # Slice steady-state portions
+    steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
+    steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
 
     # Compute cross-correlation
     crosscorr, lags_crosscorr = autocrosscorr(steady_state_traj_stress, steady_state_traj_normal)
@@ -262,19 +257,19 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
     """
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
-
-    # Extract steady-state portions
-    steady_state_traj_stress = stress_trajectories[:, steady_state_index_stress:]
+    
+    # Use safe slicing helper
+    steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
 
     # Compute autocorrelation for stressed condition
+    # (!! The input for this function must be a numpy array!!)
     stress_autocorr, lags_stress = autocrosscorr(steady_state_traj_stress)
     
     # Determine the figure layout based on whether normal trajectories are provided
     if normal_trajectories is not None:
         # Both autocorrelation and cross-correlation plots
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
-        steady_state_traj_normal = normal_trajectories[:, steady_state_index_normal:]
-        
+        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_autocorr, lags_normal = autocrosscorr(steady_state_traj_normal)
         stress_crosscorr, lags_crosscorr = autocrosscorr(steady_state_traj_stress, steady_state_traj_normal)
         
@@ -308,8 +303,11 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
     
     plt.tight_layout()
     plt.show()
+    
+    return fig, ax
 
 ########## PCA for Visualization ##########
+# TODO: consider getting rid of this - not sure how this is helpful? 
 def pca_plot(mRNA_traj_file):
     """
     Load the mRNA trajectories dataset and perform PCA for visualization.
