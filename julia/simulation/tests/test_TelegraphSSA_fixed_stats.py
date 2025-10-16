@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 # import the simulation functions
+import os
+os.environ.setdefault("PYTHON_JULIACALL_HANDLE_SIGNALS", "yes")
+os.environ["JULIA_NUM_THREADS"] = "8"  # or set to desired number of threads
 from juliacall import Main as jl
 import numpy as np
 import pandas as pd 
@@ -13,10 +16,9 @@ from stats.autocorrelation import calculate_autocorrelation, calculate_ac_time_i
 # plotting modules
 import matplotlib.pyplot as plt
 from visualisation.plots import plot_mRNA_trajectory, plot_mRNA_dist
-import os
 
 '''
-Test script: testing whether the julia implementation of the telegraph SSA can produce trajectories matching a set of prescribed stats.
+Test script: testing whether the julia implementation of the telegraph SSA can produce trajectorie s matching a set of prescribed stats.
 '''
 
 def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
@@ -91,7 +93,7 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
     # Plotting 
     ###############################################################
     # Create output directory if it doesn't exist
-    output_dir = "telegraph_test_results"
+    output_dir = "test_telegraph_fixed_stats_results"
     os.makedirs(output_dir, exist_ok=True)
     
     # Create and save traj plot
@@ -161,9 +163,13 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
 # Initialize Julia environment once
 print("Initializing Julia environment...")
 jl.seval('using Pkg; Pkg.activate("/home/ianyang/stochastic_simulations/julia"); Pkg.instantiate()')
-jl.seval('using DataFrames, NPZ')
+jl.seval('using DataFrames, NPZ, Base.Threads')
 jl.include("/home/ianyang/stochastic_simulations/julia/simulation/TelegraphSSA.jl")
 jl.seval('using .TelegraphSSA')
+
+# sanity check: how many threads did we get?
+nthreads = int(jl.seval('nthreads()'))
+print(f"Julia nthreads = {nthreads}")
 
 # Define test targets
 mu_targets = [10, 100, 1000]
@@ -200,9 +206,9 @@ if not summary_df.empty:
                      'mean_error_pct', 'cv_error_pct', 't_ac_error_pct']].round(3))
 
     # Save summary to CSV
-    summary_df.to_csv("telegraph_test_results/summary_results.csv", index=False)
-    print(f"\nSummary saved to: telegraph_test_results/summary_results.csv")
-    
+    summary_df.to_csv("test_telegraph_fixed_stats_results/summary_results.csv", index=False)
+    print(f"\nSummary saved to: test_telegraph_fixed_stats_results/summary_results.csv")
+
     # Print overall statistics
     print(f"\nOverall Error Statistics:")
     print(f"Mean Error: {summary_df['mean_error_pct'].mean():.2f}% ± {summary_df['mean_error_pct'].std():.2f}%")
