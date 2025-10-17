@@ -118,7 +118,7 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
 
 
 ################## Plot distribution of mRNA counts after reaching steady state (data from all the timepoints)
-def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectories=None, bins=None, kde=True):
+def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectories=None, bins=None, kde=False):
     """
     Plot the probability density function (PDF) of mRNA counts at steady state.
     

@@ -38,6 +38,7 @@ function simulate_telegraph_model(parameter_sets, time_points, traj::Int; num_co
     rows = Vector{Vector{Any}}()  # Any to allow String or Int labels
 
     @threads for ps in parameter_sets
+        println("Using $num_cores threads for Julia simulation..")
         # parameters in the order rn.ps (Catalyst guarantees param order in rn.ps)
         params = Dict(
             :sigma_u => ps["sigma_u"],
@@ -46,7 +47,7 @@ function simulate_telegraph_model(parameter_sets, time_points, traj::Int; num_co
             :d       => ps["d"],
         )
 
-        label = Int32(get(ps, "label", 0))
+        label = Int64(get(ps, "label", 0))
 
         if traj == 1
             # single traj

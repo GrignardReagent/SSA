@@ -1,4 +1,5 @@
 Initializing Julia environment...
+Julia nthreads = 12
 
 Running test 1/27
 
@@ -6,13 +7,13 @@ Running test 1/27
 Testing: μ=10, t_ac=1, CV=0.5
 ============================================================
 Parameters: ρ=30.250000, d=2.500000, σ_b=0.826446, σ_u=0.173554
-Mean: Target = 10, Observed = 10.004 (Error: 0.0%)
-CV: Target = 0.5, Observed = 0.499 (Error: 0.1%)
-Variance: Observed = 24.960
-AC Time: Target = 1, Observed = 0.999 (Error: 0.1%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv0.5_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv0.5_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv0.5_tac.png
+Mean: Target = 10, Observed = 10.000 (Error: 0.0%)
+CV: Target = 0.5, Observed = 0.500 (Error: 0.0%)
+Variance: Observed = 25.000
+AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv0.5_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv0.5_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv0.5_tac.png
 
 Running test 2/27
 
@@ -20,13 +21,13 @@ Running test 2/27
 Testing: μ=10, t_ac=1, CV=1.0
 ============================================================
 Parameters: ρ=199.000000, d=10.000000, σ_b=0.502513, σ_u=0.497487
-Mean: Target = 10, Observed = 10.001 (Error: 0.0%)
+Mean: Target = 10, Observed = 10.002 (Error: 0.0%)
 CV: Target = 1.0, Observed = 1.000 (Error: 0.0%)
-Variance: Observed = 99.991
+Variance: Observed = 99.996
 AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv1.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv1.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv1.0_tac.png
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv1.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv1.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv1.0_tac.png
 
 Running test 3/27
 
@@ -34,13 +35,13 @@ Running test 3/27
 Testing: μ=10, t_ac=1, CV=2.0
 ============================================================
 Parameters: ρ=1999.000000, d=40.000000, σ_b=0.200100, σ_u=0.799900
-Mean: Target = 10, Observed = 10.002 (Error: 0.0%)
-CV: Target = 2.0, Observed = 2.001 (Error: 0.0%)
-Variance: Observed = 400.003
-AC Time: Target = 1, Observed = 0.999 (Error: 0.1%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv2.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv2.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac1_cv2.0_tac.png
+Mean: Target = 10, Observed = 10.005 (Error: 0.0%)
+CV: Target = 2.0, Observed = 2.000 (Error: 0.0%)
+Variance: Observed = 400.197
+AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv2.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv2.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv2.0_tac.png
 
 Running test 4/27
 
@@ -48,13 +49,13 @@ Running test 4/27
 Testing: μ=10, t_ac=5, CV=0.5
 ============================================================
 Parameters: ρ=4.177016, d=0.232784, σ_b=0.557297, σ_u=0.442703
-Mean: Target = 10, Observed = 10.000 (Error: 0.0%)
-CV: Target = 0.5, Observed = 0.500 (Error: 0.1%)
-Variance: Observed = 25.029
-AC Time: Target = 5, Observed = 5.010 (Error: 0.2%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv0.5_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv0.5_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv0.5_tac.png
+Mean: Target = 10, Observed = 9.988 (Error: 0.1%)
+CV: Target = 0.5, Observed = 0.501 (Error: 0.1%)
+Variance: Observed = 24.990
+AC Time: Target = 5, Observed = 4.996 (Error: 0.1%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv0.5_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv0.5_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv0.5_tac.png
 
 Running test 5/27
 
@@ -62,13 +63,13 @@ Running test 5/27
 Testing: μ=10, t_ac=5, CV=1.0
 ============================================================
 Parameters: ρ=13.784452, d=0.251813, σ_b=0.182679, σ_u=0.817321
-Mean: Target = 10, Observed = 10.013 (Error: 0.1%)
-CV: Target = 1.0, Observed = 0.999 (Error: 0.1%)
-Variance: Observed = 100.014
-AC Time: Target = 5, Observed = 4.998 (Error: 0.0%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv1.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv1.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv1.0_tac.png
+Mean: Target = 10, Observed = 9.999 (Error: 0.0%)
+CV: Target = 1.0, Observed = 1.000 (Error: 0.0%)
+Variance: Observed = 100.004
+AC Time: Target = 5, Observed = 5.002 (Error: 0.0%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv1.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv1.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv1.0_tac.png
 
 Running test 6/27
 
@@ -76,13 +77,13 @@ Running test 6/27
 Testing: μ=10, t_ac=5, CV=2.0
 ============================================================
 Parameters: ρ=51.585813, d=0.256853, σ_b=0.049791, σ_u=0.950209
-Mean: Target = 10, Observed = 10.044 (Error: 0.4%)
-CV: Target = 2.0, Observed = 1.996 (Error: 0.2%)
-Variance: Observed = 401.621
-AC Time: Target = 5, Observed = 4.987 (Error: 0.3%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv2.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv2.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac5_cv2.0_tac.png
+Mean: Target = 10, Observed = 10.026 (Error: 0.3%)
+CV: Target = 2.0, Observed = 1.998 (Error: 0.1%)
+Variance: Observed = 401.246
+AC Time: Target = 5, Observed = 4.996 (Error: 0.1%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv2.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv2.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv2.0_tac.png
 
 Running test 7/27
 
@@ -90,13 +91,13 @@ Running test 7/27
 Testing: μ=10, t_ac=10, CV=0.5
 ============================================================
 Parameters: ρ=2.729779, d=0.106937, σ_b=0.391743, σ_u=0.608257
-Mean: Target = 10, Observed = 9.998 (Error: 0.0%)
+Mean: Target = 10, Observed = 9.997 (Error: 0.0%)
 CV: Target = 0.5, Observed = 0.500 (Error: 0.0%)
-Variance: Observed = 24.973
-AC Time: Target = 10, Observed = 10.023 (Error: 0.2%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv0.5_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv0.5_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv0.5_tac.png
+Variance: Observed = 24.981
+AC Time: Target = 10, Observed = 9.973 (Error: 0.3%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv0.5_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv0.5_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv0.5_tac.png
 
 Running test 8/27
 
@@ -104,13 +105,13 @@ Running test 8/27
 Testing: μ=10, t_ac=10, CV=1.0
 ============================================================
 Parameters: ρ=11.101554, d=0.110608, σ_b=0.099633, σ_u=0.900367
-Mean: Target = 10, Observed = 10.010 (Error: 0.1%)
-CV: Target = 1.0, Observed = 0.998 (Error: 0.2%)
-Variance: Observed = 99.798
-AC Time: Target = 10, Observed = 9.979 (Error: 0.2%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv1.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv1.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv1.0_tac.png
+Mean: Target = 10, Observed = 9.983 (Error: 0.2%)
+CV: Target = 1.0, Observed = 0.999 (Error: 0.1%)
+Variance: Observed = 99.395
+AC Time: Target = 10, Observed = 9.973 (Error: 0.3%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv1.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv1.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv1.0_tac.png
 
 Running test 9/27
 
@@ -118,13 +119,13 @@ Running test 9/27
 Testing: μ=10, t_ac=10, CV=2.0
 ============================================================
 Parameters: ρ=44.465780, d=0.111547, σ_b=0.025086, σ_u=0.974914
-Mean: Target = 10, Observed = 10.022 (Error: 0.2%)
-CV: Target = 2.0, Observed = 1.992 (Error: 0.4%)
-Variance: Observed = 398.895
-AC Time: Target = 10, Observed = 9.977 (Error: 0.2%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv2.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv2.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu10_tac10_cv2.0_tac.png
+Mean: Target = 10, Observed = 10.055 (Error: 0.5%)
+CV: Target = 2.0, Observed = 1.989 (Error: 0.5%)
+Variance: Observed = 400.049
+AC Time: Target = 10, Observed = 9.961 (Error: 0.4%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv2.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv2.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu10_tac10_cv2.0_tac.png
 
 Running test 10/27
 
@@ -132,13 +133,13 @@ Running test 10/27
 Testing: μ=100, t_ac=1, CV=0.5
 ============================================================
 Parameters: ρ=3124.000000, d=25.000000, σ_b=0.800256, σ_u=0.199744
-Mean: Target = 100, Observed = 100.006 (Error: 0.0%)
+Mean: Target = 100, Observed = 99.996 (Error: 0.0%)
 CV: Target = 0.5, Observed = 0.500 (Error: 0.0%)
-Variance: Observed = 2499.875
-AC Time: Target = 1, Observed = 0.999 (Error: 0.1%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv0.5_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv0.5_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv0.5_tac.png
+Variance: Observed = 2499.914
+AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv0.5_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv0.5_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv0.5_tac.png
 
 Running test 11/27
 
@@ -146,21 +147,14 @@ Running test 11/27
 Testing: μ=100, t_ac=1, CV=1.0
 ============================================================
 Parameters: ρ=19999.000000, d=100.000000, σ_b=0.500025, σ_u=0.499975
-Mean: Target = 100, Observed = 100.027 (Error: 0.0%)
+Mean: Target = 100, Observed = 99.980 (Error: 0.0%)
 CV: Target = 1.0, Observed = 1.000 (Error: 0.0%)
-Variance: Observed = 9997.979
-AC Time: Target = 1, Observed = 0.999 (Error: 0.1%)
-Trajectory plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv1.0_traj.png
-Data distribution plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv1.0_dist.png
-Autocorrelation plot saved to: telegraph_test_results/telegraph_test_mu100_tac1_cv1.0_tac.png
+Variance: Observed = 9998.418
+AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)
+Trajectory plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv1.0_traj.png
+Data distribution plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv1.0_dist.png
+Autocorrelation plot saved to: test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv1.0_tac.png
 
 Running test 12/27
 
 ============================================================
-Testing: μ=100, t_ac=1, CV=2.0
-============================================================
-Parameters: ρ=199999.000000, d=400.000000, σ_b=0.200001, σ_u=0.799999
-Mean: Target = 100, Observed = 100.021 (Error: 0.0%)
-CV: Target = 2.0, Observed = 2.001 (Error: 0.0%)
-Variance: Observed = 40003.899
-AC Time: Target = 1, Observed = 1.000 (Error: 0.0%)

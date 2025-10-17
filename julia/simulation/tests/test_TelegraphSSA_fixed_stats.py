@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 # import the simulation functions
+import multiprocessing
 import os
 os.environ.setdefault("PYTHON_JULIACALL_HANDLE_SIGNALS", "yes")
-os.environ["JULIA_NUM_THREADS"] = "8"  # or set to desired number of threads
+num_cores = multiprocessing.cpu_count()
+os.environ["JULIA_NUM_THREADS"] = str(num_cores)  # or set to desired number of threads
 from juliacall import Main as jl
 import numpy as np
 import pandas as pd 
@@ -105,7 +107,7 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
     print(f"Trajectory plot saved to: {traj_filename}")
 
     # Plot data distribution
-    fig, ax = plot_mRNA_dist(parameter_sets, df_counts)
+    fig, ax = plot_mRNA_dist(parameter_sets, df_counts, kde=False)
     # Save figure with descriptive filename
     dist_filename = f"{output_dir}/telegraph_test_mu{mu_target}_tac{t_ac_target}_cv{cv_target}_dist.png"
     fig.savefig(dist_filename, dpi=300, bbox_inches='tight')
