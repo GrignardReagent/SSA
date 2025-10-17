@@ -1,7 +1,7 @@
 # large data files 
 **/mRNA*
 **/m_traj*
-/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data/IY011_synth_shard*
+experiments/EXP-25-IY011/data/IY011_synth_shard*
 
 *.pyc
 *.pyo

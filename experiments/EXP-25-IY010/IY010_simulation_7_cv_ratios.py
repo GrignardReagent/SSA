@@ -137,8 +137,8 @@ for combination_idx, (mu, t_ac, cv, ratio) in enumerate(
         ]
 
         # Ensure enough time points for autocorrelation estimation
-        time_points = np.arange(0, max(144, int(t_ac * 20)), 1.0)
-        size = 50  # number of trajectories
+        time_points = np.arange(0, 2000, 1.0)
+        size = 200  # number of trajectories
 
         start_time = time.time()
         df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size)
