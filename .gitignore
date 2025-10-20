@@ -18,4 +18,5 @@ src/*/*.egg-info/*
 .env
 **/micromamba*
 **/micromamba/**
+**/.CondaPkg/**
 

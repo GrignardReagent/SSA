@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import numpy as np
+import pandas as pd
 from scipy.interpolate import interp1d
 from utils.data_processing import _ensure_numpy, _safe_slice
 
@@ -126,11 +127,16 @@ def calculate_autocorrelation(df):
     Returns:
     - Dictionary with autocorrelation results for available conditions
     """
-    # Separate by label (0 = stress, 1 = normal)
-    stress_df = df[df['label'] == 0]
+    # if there's a 'label' column, then we take that to separate stress/normal
+    if 'label' in df.columns:
+        # Separate by label (0 = stress, 1 = normal)
+        stress_df = df[df['label'] == 0]
+        # Remove 'label' column and convert to numpy array using safe conversion
+        stress_data = _ensure_numpy(stress_df.drop('label', axis=1))
+    else:
+        stress_df = df.copy()  # If no label, consider all as stress condition
+        stress_data = _ensure_numpy(stress_df)
     results = {}
-    # Remove 'label' column and convert to numpy array using safe conversion
-    stress_data = _ensure_numpy(stress_df.drop('label', axis=1))
     # Calculate autocorrelation
     stress_ac, stress_lags = autocrosscorr(stress_data)
     results.update({
@@ -139,7 +145,7 @@ def calculate_autocorrelation(df):
     })
     
     # Process normal condition (label = 1) - only if it exists
-    normal_df = df[df['label'] == 1]
+    normal_df = df[df['label'] == 1] if 'label' in df.columns else pd.DataFrame()
     if not normal_df.empty:
         normal_data = _ensure_numpy(normal_df.drop('label', axis=1))
         normal_ac, normal_lags = autocrosscorr(normal_data)
