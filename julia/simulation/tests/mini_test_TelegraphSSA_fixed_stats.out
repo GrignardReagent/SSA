@@ -1,0 +1,84 @@
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/juliacall/__init__.py:61: UserWarning: torch was imported before juliacall. This may cause a segfault. To avoid this, import juliacall before importing torch. For updates, see https://github.com/pytorch/pytorch/issues/78829.
+  warnings.warn(
+
+Running test 1/8
+
+============================================================
+Testing: μ=10, t_ac=1, CV=0.5
+============================================================
+Parameters: ρ=30.250000, d=2.500000, σ_b=0.826446, σ_u=0.173554
+Initializing Julia environment...
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv0.5_dist.png
+
+Running test 2/8
+
+============================================================
+Testing: μ=10, t_ac=1, CV=1.0
+============================================================
+Parameters: ρ=199.000000, d=10.000000, σ_b=0.502513, σ_u=0.497487
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu10_tac1_cv1.0_dist.png
+
+Running test 3/8
+
+============================================================
+Testing: μ=10, t_ac=5, CV=0.5
+============================================================
+Parameters: ρ=4.177016, d=0.232784, σ_b=0.557297, σ_u=0.442703
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv0.5_dist.png
+
+Running test 4/8
+
+============================================================
+Testing: μ=10, t_ac=5, CV=1.0
+============================================================
+Parameters: ρ=13.784452, d=0.251813, σ_b=0.182679, σ_u=0.817321
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu10_tac5_cv1.0_dist.png
+
+Running test 5/8
+
+============================================================
+Testing: μ=100, t_ac=1, CV=0.5
+============================================================
+Parameters: ρ=3124.000000, d=25.000000, σ_b=0.800256, σ_u=0.199744
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv0.5_dist.png
+
+Running test 6/8
+
+============================================================
+Testing: μ=100, t_ac=1, CV=1.0
+============================================================
+Parameters: ρ=19999.000000, d=100.000000, σ_b=0.500025, σ_u=0.499975
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu100_tac1_cv1.0_dist.png
+
+Running test 7/8
+
+============================================================
+Testing: μ=100, t_ac=5, CV=0.5
+============================================================
+Parameters: ρ=55.723698, d=0.255836, σ_b=0.459116, σ_u=0.540884
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu100_tac5_cv0.5_dist.png
+
+Running test 8/8
+
+============================================================
+Testing: μ=100, t_ac=5, CV=1.0
+============================================================
+Parameters: ρ=150.317101, d=0.257875, σ_b=0.171554, σ_u=0.828446
+Data distribution plot saved to: mini_test_telegraph_fixed_stats_results/telegraph_test_mu100_tac5_cv1.0_dist.png
+
+================================================================================
+SUMMARY OF ALL TESTS
+================================================================================
+
+Summary saved to: mini_test_telegraph_fixed_stats_results/summary_results.csv
+
+All tests completed. Results saved in 'mini_test_telegraph_fixed_stats_results' directory.
+  Activating project at `~/stochastic_simulations/julia`
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
