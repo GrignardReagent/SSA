@@ -116,6 +116,27 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
 
     return fig, ax
 
+import mpmath as mp
+# helper function to compute the analytical stationary PMF of the telegraph model
+def telegraph_mrna_pmf(rho, sigma_b, sigma_u, d, max_m=2000, tol=1e-10):
+    lam = rho / d
+    a, b = sigma_b / d, sigma_u / d            # scaled shape parameters
+    B = mp.beta(a, b)
+
+    def Pm(m):
+        m_fact = mp.factorial(m)
+        integrand = lambda x: mp.e**(-lam*x) * (lam*x)**m / m_fact * x**(a-1) * (1-x)**(b-1) / B
+        return mp.quad(integrand, [0, 1])
+
+    pmf, total = [], mp.mpf('0')
+    for m in range(max_m):
+        p = Pm(m)
+        pmf.append(p)
+        total += p
+        if total > (1 - tol) and m > 10:
+            break
+    pmf = [float(p/total) for p in pmf]
+    return np.arange(len(pmf)), np.array(pmf)
 
 ################## Plot distribution of mRNA counts after reaching steady state (data from all the timepoints)
 def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectories=None, bins=None, kde=False):
@@ -127,6 +148,8 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    # check that the trajectories don't have a 'label' column, if they do, remove it (or else the label column may be mis-interpreted as mRNA counts)
+    stress_trajectories.drop(columns=['label'], errors='ignore', inplace=True) # drop in-place if it exists, do nothing otherwise
     # Find the time index at which steady state is reached, if data is not already steady state
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
@@ -145,8 +168,20 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
             bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
         # Plot histograms
         ax.hist(stress_ss_flat, bins=bins, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
+    
+    # ---- Analytical overlay ----
+    max_m_plot = int((bins[-1] + 1) if bins is not None else (
+        (max(stress_ss_flat.max(), normal_ss_flat.max()) if normal_trajectories is not None else stress_ss_flat.max()) + 10))
+
+    n_s, pmf_s = telegraph_mrna_pmf(
+        parameter_sets[0]['rho'], parameter_sets[0]['sigma_b'], parameter_sets[0]['sigma_u'], parameter_sets[0]['d'],
+        max_m=max_m_plot
+    )
+    ax.plot(n_s, pmf_s, lw=2.2, color='deepskyblue', label='Analytical Solution for Telegraph Model (stressed)')
+    
     #------------------------ Normal condition if provided ------------------------#
     if normal_trajectories is not None:
+        normal_trajectories.drop(columns=['label'], errors='ignore', inplace=True) 
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_ss_flat = steady_state_traj_normal.flatten()
@@ -159,6 +194,13 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
                 max_count = max(stress_ss_flat.max(), normal_ss_flat.max())
                 bins = np.arange(0, max_count + 1.5) - 0.5
             ax.hist(normal_ss_flat, bins=bins, density=True, alpha=0.6, color='red', label='Normal Condition', edgecolor='black')
+        
+        # ---- Analytical overlay ----
+        n_n, pmf_n = telegraph_mrna_pmf(
+            parameter_sets[1]['rho'], parameter_sets[1]['sigma_b'], parameter_sets[1]['sigma_u'], parameter_sets[1]['d'],
+            max_m=max_m_plot
+        )
+        ax.plot(n_n, pmf_n, lw=1.8, color='lightcoral', ls='--', label='Analytical Solution for Telegraph Model (normal)')
 
     # Labels and title
     ax.set_xlabel("mRNA Count at Steady-State")
