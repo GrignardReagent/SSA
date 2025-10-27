@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 
 def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None, split_random_state=42):
@@ -15,12 +16,19 @@ def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None
     Returns:
         X_train, X_test, y_train, y_test [, X_val, y_val]: Split data
     """
-    # Load dataset
-    df_results = pd.read_csv(mRNA_traj_file)
+    # Load dataset if given as CSV
+    if mRNA_traj_file.endswith(".csv"):
+        df_results = pd.read_csv(mRNA_traj_file)
+        # Extract features and labels
+        X = df_results.iloc[:, 1:].values
+        y = df_results["label"].values
 
-    # Extract features and labels
-    X = df_results.iloc[:, 1:].values
-    y = df_results["label"].values
+        
+    # load from npz
+    elif mRNA_traj_file.endswith(".npz"):
+        data = np.load(mRNA_traj_file)
+        X = data['X']
+        y = data['y']
 
     # Split data into train/test
     X_train, X_test, y_train, y_test = train_test_split(
