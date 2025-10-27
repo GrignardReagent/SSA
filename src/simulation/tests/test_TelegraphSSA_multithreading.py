@@ -7,8 +7,7 @@ import pytest
 from juliacall import Main as jl
 
 
-TEST_DIR = Path(__file__).resolve().parent
-SIMULATION_DIR = TEST_DIR.parent
+SIMULATION_DIR = Path("/home/ianyang/stochastic_simulations/julia/simulation")
 JULIA_PROJECT_DIR = SIMULATION_DIR.parent
 TELEGRAPHSSA_PATH = SIMULATION_DIR / "TelegraphSSA.jl"
 
