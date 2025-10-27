@@ -7,11 +7,11 @@ from models.transformer import TransformerClassifier
 from utils.set_seed import set_seed
 
 def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test, 
-                          input_size=None, d_model=64, nhead=4, num_layers=2,
-                          output_size=None, dropout_rate=0.2, learning_rate=0.001, 
-                          batch_size=64, epochs=50, patience=10, optimizer='Adam',
-                          use_conv1d=False, use_auxiliary=False, aux_weight=0.1,
-                          pooling_strategy='last', use_mask=False, gradient_clip=1.0, 
+                          input_size=None, d_model=128, nhead=4, num_layers=2,
+                          output_size=None, dropout_rate=0.1, learning_rate=0.01, 
+                          batch_size=64, num_workers=4,epochs=50, patience=10, optimizer='Adam',
+                          use_conv1d=True, use_auxiliary=False, aux_weight=0.1,
+                          pooling_strategy='last', use_mask=False, gradient_clip=1.0, verbose=False,
                           save_path=None):
     """ 
     Trains a Transformer model for classification and evaluates it. 
@@ -28,6 +28,7 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
         dropout_rate: Dropout probability (default: 0.2)
         learning_rate: Learning rate (default: 0.001)
         batch_size: Batch size for training (default: 64)
+        num_workers: Number of DataLoader workers (default: 4)
         epochs: Maximum number of training epochs (default: 50)
         patience: Early stopping patience (default: 10)
         optimizer: Optimizer type - 'Adam', 'SGD', or 'AdamW' (default: 'Adam')
@@ -93,9 +94,9 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
     X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
     y_test_tensor = torch.tensor(y_test, dtype=torch.long)
 
-    train_loader = DataLoader(TensorDataset(X_train_tensor, y_train_tensor), batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(TensorDataset(X_val_tensor, y_val_tensor), batch_size=batch_size, shuffle=False)
-    test_loader = DataLoader(TensorDataset(X_test_tensor, y_test_tensor), batch_size=batch_size, shuffle=False)
+    train_loader = DataLoader(TensorDataset(X_train_tensor, y_train_tensor), batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=True)
+    val_loader = DataLoader(TensorDataset(X_val_tensor, y_val_tensor), batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
+    test_loader = DataLoader(TensorDataset(X_test_tensor, y_test_tensor), batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
 
     # === Initialize and train model ===
     model = TransformerClassifier(
@@ -112,7 +113,8 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
         aux_weight=aux_weight,
         pooling_strategy=pooling_strategy,
         use_mask=use_mask,
-        gradient_clip=gradient_clip
+        gradient_clip=gradient_clip,
+        verbose=verbose
     )
 
     model.train_model(train_loader, val_loader, epochs=epochs, patience=patience, save_path=save_path)
