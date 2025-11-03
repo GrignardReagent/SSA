@@ -1,0 +1,93 @@
+🚀 TF Transformer Training Pipeline
+==================================================
+📊 Loading 1577 synthetic CSV files...
+📈 Loaded 315400 trajectories from synthetic data
+📊 Loading experimental data from 19316_2020_10_26_steadystate_glucose_144m_2w2_00_post_media_switch.tsv...
+📈 Loaded 233 trajectories from experimental data
+🏷️  Classes: ['1344_6', '1346_4', '1347'] → [0, 1, 2]
+✅ CUDA detected, using GPU: NVIDIA GeForce RTX 2080 SUPER
+🔧 Initializing TFTransformer with config: ModelCfg(n_classes=3, d_model=128, n_heads=4, n_layers=2, d_ff=128, dropout=0.1, max_len=2048, verbose=True, learning_rate=0.01, optimizer='AdamW', gradient_clip=1.0, label_smoothing=0.0)
+🖥️  Using device: cuda
+🚀 CUDA available with 1 GPU(s)
+   GPU 0: NVIDIA GeForce RTX 2080 SUPER
+ℹ️  Single GPU detected, using single GPU training
+🔧 Training setup complete with AdamW optimizer
+📊 Model initialized with 199,939 total parameters (199,939 trainable)
+🏗️  Model created with 3 classes
+
+🎭 === PRE-TRAINING ON SYNTHETIC DATA ===
+📊 Training set: 252320 samples
+📊 Validation set: 63080 samples
+🔧 Training setup complete with AdamW optimizer
+✅ Running on CUDA!
+🔄 Starting forward pass (batch size: 64, seq length: 2000)
+📤 Forward pass complete, output shape: torch.Size([64, 3])
+📤 Forward pass complete, output shape: torch.Size([64, 3])
+📤 Forward pass complete, output shape: torch.Size([64, 3])
+Epoch [1/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+💾 Saving model to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY010/IY010_pretrained.pt
+✅ Model saved successfully
+💾 Best model saved (Val Acc: 0.5011)
+Epoch [2/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+No improvement (1/5)
+Epoch [3/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+No improvement (2/5)
+Epoch [4/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+No improvement (3/5)
+Epoch [5/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+No improvement (4/5)
+Epoch [6/50], Loss: nan, Train Acc: 0.5001
+Validation Acc: 0.5011
+No improvement (5/5)
+🛑 Early stopping after 5 epochs without improvement
+🎉 Training complete!
+✅ Pretraining complete! Best validation accuracy: 0.5011
+
+🔧 === FINE-TUNING ON EXPERIMENTAL DATA ===
+🔒 Freezing encoder components for transfer learning
+📊 27/29 parameters frozen
+🔄 Resetting classifier head weights
+✅ Classifier head reset complete
+📊 Training set: 187 samples
+📊 Validation set: 46 samples
+🔧 Training setup complete with AdamW optimizer
+✅ Running on CUDA!
+Epoch [1/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+💾 Saving model to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY010/IY010_finetuned.pt
+✅ Model saved successfully
+💾 Best model saved (Val Acc: 0.2826)
+Epoch [2/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+No improvement (1/5)
+Epoch [3/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+No improvement (2/5)
+Epoch [4/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+No improvement (3/5)
+Epoch [5/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+No improvement (4/5)
+Epoch [6/10], Loss: nan, Train Acc: 0.3102
+Validation Acc: 0.2826
+No improvement (5/5)
+🛑 Early stopping after 5 epochs without improvement
+🎉 Training complete!
+✅ Fine-tuning complete! Best validation accuracy: 0.2826
+
+📋 === TRAINING SUMMARY ===
+🎭 Pretraining: 6 epochs
+   Best training accuracy: 0.5001
+   Best validation accuracy: 0.5011
+🔧 Fine-tuning: 6 epochs
+   Best training accuracy: 0.3102
+   Best validation accuracy: 0.2826
+
+💾 Models saved in: /home/ianyang/stochastic_simulations/experiments/EXP-25-IY010
+🎉 Training pipeline complete!

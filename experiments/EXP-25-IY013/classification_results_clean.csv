@@ -1,0 +1,2 @@
+Experiment_1,Experiment_2,Total_Series,Timepoints,SVM_Accuracy,LSTM_Accuracy,Transformer_Accuracy,Best_Model,Best_Accuracy,P_Value,Significant
+19316_2020_10_26_steadystate_glucose_144m_2w2_00,20213_2021_09_07_steady_0p01glc_1344_1346_1347_00,426,450,0.9302325581395349,0.9767441860465116,0.7674418604651163,LSTM,0.9767441860465116,3.230362420481924e-63,True

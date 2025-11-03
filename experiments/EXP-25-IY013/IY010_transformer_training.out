@@ -1,0 +1,36 @@
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py:382: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+✅ CUDA detected, using GPU: NVIDIA GeForce RTX 2080 SUPER
+🔧 Initializing TFTransformer with config: ModelCfg(n_classes=3, d_model=64, n_heads=4, n_layers=2, d_ff=128, dropout=0.1, max_len=8192, verbose=True)
+🖥️  Using device: cuda
+🚀 CUDA available with 1 GPU(s)
+   GPU 0: NVIDIA GeForce RTX 2080 SUPER
+ℹ️  Single GPU detected, using single GPU training
+📊 Model initialized with 67,331 total parameters (67,331 trainable)
+=== Pre-training on synthetic data ===
+🔄 Starting forward pass (batch size: 32, seq length: 2000)
+🎭 Applied attention mask with 4729 masked positions
+📤 Forward pass complete, output shape: torch.Size([32, 3])
+🎭 Applied attention mask with 1613 masked positions
+📤 Forward pass complete, output shape: torch.Size([32, 3])
+🎭 Applied attention mask with 4182 masked positions
+📤 Forward pass complete, output shape: torch.Size([32, 3])
+epoch 01 loss=nan acc=0.500
+epoch 02 loss=nan acc=0.500
+epoch 03 loss=nan acc=0.500
+epoch 04 loss=nan acc=0.500
+epoch 05 loss=nan acc=0.500
+💾 Saving model to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY010/IY010_pretrained.pt
+✅ Model saved successfully
+=== Fine-tuning on experimental data ===
+🔒 Freezing encoder components for transfer learning
+📊 27/29 parameters frozen
+🔄 Resetting classifier head weights
+✅ Classifier head reset complete
+epoch 01 loss=nan acc=0.305
+epoch 02 loss=nan acc=0.305
+epoch 03 loss=nan acc=0.305
+epoch 04 loss=nan acc=0.305
+epoch 05 loss=nan acc=0.305
+💾 Saving model to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY010/IY010_finetuned.pt
+✅ Model saved successfully
