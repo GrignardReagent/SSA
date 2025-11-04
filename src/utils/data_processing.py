@@ -29,25 +29,46 @@ def _safe_slice(data, start_idx=None, end_idx=None, axis=1):
         else:
             return data[start_idx:end_idx, :]
 
+def _return_no_label_df(df: pd.DataFrame):
+    """Print warning if 'label' column exists in DataFrame, and drop the column if it does."""
+    if 'label' in df.columns:
+        print("Warning: 'label' column exists in DataFrame.")
+        df = df.drop(columns=['label'], errors='ignore')
+    return df
+
 ################## Helper function to capture type mismatch errors between pd.DataFrame and np.ndarray ############
 
 # Labelling functions
-
 def add_binary_labels(df: pd.DataFrame, column: str) -> pd.DataFrame:
     """Return a copy of ``df`` with a new ``label`` column.
 
     Parameters
     ----------
     df:
-        DataFrame containing the simulation results.
+        DataFrame containing the simulation parameters & results.
     column:
-        Column on which to base the 50/50 split.  Values greater than the
+        Column of the csv file with all the statistical properties used to simulate df, on which to base the 50/50 split.  Values greater than the
         halfway point of the sorted column are labelled ``1``; the rest are
         labelled ``0``.
     Returns
     -------
     pd.DataFrame
         DataFrame with the new ``label`` column added.
+        
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({
+    ...     'mu_target': [1.0, 1.2, 0.8, 1.1],
+    ...     'cv_target': [0.10, 0.15, 0.12, 0.14],
+    ...     't_ac_target': [5, 5, 5, 5],
+    ... })
+    >>> labelled = add_binary_labels(df, 'mu_target')
+       mu_target  cv_target  t_ac_target  label
+    0        1.0       0.10               5      0
+    1        1.2       0.15               5      1
+    2        0.8       0.12               5      0
+    3        1.1       0.14               5      1      
     """
     labelled = df.copy()
     
@@ -72,7 +93,6 @@ def add_binary_labels(df: pd.DataFrame, column: str) -> pd.DataFrame:
     labels[order[midpoint:]] = 1
     labelled["label"] = labels
     return labelled
-
 
 def add_nearest_neighbour_labels(
     df: pd.DataFrame,
@@ -177,6 +197,137 @@ def add_nearest_neighbour_labels(
 
     labelled["label"] = labels
     return labelled
+
+
+# def build_pairs(
+#         traj_paths, 
+#         num_pairs=2,
+#         k_traj=10, 
+#         preprocess_fn=lambda traj: traj.reshape(-1, 1) # reshape to (seq_len, features)
+#                 ):
+#     from collections import defaultdict
+#     from tqdm import tqdm
+#     import random
+
+#     # Group trajectories by file
+#     grouped = defaultdict(list)
+#     for path in traj_paths:
+#         data = np.load(path, allow_pickle=True)
+#         # assume trajectories array shape (n_realizations, time)
+#         for traj in data["trajectories"]:
+#             grouped[path].append(traj)
+    
+#     files = list(grouped)
+#     assert len(files) >= 2, "Need at least 2 different files to build positive and negative pairs."
+    
+#     pairs = []
+#     for _ in tqdm(range(num_pairs)):
+#         # positive pair (same dataset)
+#         f = random.choice(files)
+#         file_id = random.choice(list(grouped))
+#         traj1, traj2 = random.sample(grouped[file_id], k_traj)
+#         label = 1
+#     for _ in tqdm(range(num_pairs)):
+#         # negative pair (different datasets)
+#         file_a, file_b = random.sample(list(grouped), k_traj)
+#         traj1 = random.choice(grouped[file_a])
+#         traj2 = random.choice(grouped[file_b])
+#         label = 0
+
+#     X_1 = preprocess_fn(traj1)  # -> (seq_len, features)
+#     X_2 = preprocess_fn(traj2)
+#     pairs.append((X_1, X_2, label))
+#     return pairs
+
+
+def build_groups(
+    traj_paths,
+    num_groups=2, # a pair of positive and negative groups
+    num_traj=10,
+    pos_ratio=0.5,
+    preprocess_fn=lambda traj: traj.reshape(-1, 1)  # -> (seq_len, 1)
+):
+    """
+    Returns: list of (X, y) where
+      - X: (seq_len, K)   # K trajectories stacked as K-channels
+      - y: 1 for 'all from same file' (positive), 0 for 'mixed files' (negative)
+    Assumes all trajectories have the same seq_len (pad/trim if needed).
+    """
+    from collections import defaultdict
+    from tqdm import tqdm
+    import random
+    
+    files = list(traj_paths)
+    assert len(files) >= 2, "Need at least two files to build negative groups."
+    
+    groups = []
+    n_pos = num_groups // 2 if pos_ratio == 0.5 else int(num_groups * pos_ratio)
+    n_neg = num_groups - n_pos
+    
+    # Pre-sample (without replacement) which files / pairs we'll need so we only load those files
+    pos_files = random.sample(files, n_pos)
+    neg_pairs = random.sample(files, 2 * n_neg)
+    
+    pos_files = [random.choice(files) for _ in range(n_pos)]
+    # pair the first half with the second half to get n_neg disjoint pairs
+    neg_sel = random.sample(files, 2 * n_neg)
+    neg_pairs = [(neg_sel[i], neg_sel[i + n_neg]) for i in range(n_neg)]
+
+    needed_files = set(pos_files)
+    for fa, fb in neg_pairs:
+        needed_files.add(fa)
+        needed_files.add(fb)
+
+    # Load only the needed files
+    grouped = defaultdict(list)
+    for path in sorted(needed_files):
+        data = np.load(path, allow_pickle=True)
+        for traj in data["trajectories"]:
+            grouped[path].append(traj)
+
+    # Helper: stack trajs preprocessed trajectories into (seq_len, num_traj)
+    def _stack_trajs(trajs):
+        proc = [preprocess_fn(t) for t in trajs]  # each -> (seq_len, 1)
+        seq_lens = [p.shape[0] for p in proc]
+        # unify length (truncate to min length to avoid padding headaches)
+        L = min(seq_lens)
+        proc = [p[:L] for p in proc]
+        X = np.concatenate(proc, axis=1)  # (L, num_traj)
+        return X
+
+    # Build positive groups using the pre-sampled pos_files
+    for f in tqdm(pos_files, desc="Building positive groups"):
+        if len(grouped[f]) < num_traj:
+            trajs = [random.choice(grouped[f]) for _ in range(num_traj)]
+            print(f"Warning: File {f} has only {len(grouped[f])} trajectories; sampling {num_traj} trajectories with replacement.")
+        else:
+            trajs = random.sample(grouped[f], num_traj)
+
+        X = _stack_trajs(trajs)
+        groups.append((X, 1))  # label 1 for positive
+
+    # Build negative groups using the pre-sampled neg_pairs
+    for fa, fb in tqdm(neg_pairs, desc="Building negative groups"):
+        num_traj_a = num_traj // 2
+        num_traj_b = num_traj - num_traj_a
+
+        if len(grouped[fa]) < num_traj_a:
+            traj_a = [random.choice(grouped[fa]) for _ in range(num_traj_a)]
+            print(f"Warning: File {fa} has only {len(grouped[fa])} trajectories; sampling {num_traj_a} trajectories with replacement.")
+        else:
+            traj_a = random.sample(grouped[fa], num_traj_a)
+
+        if len(grouped[fb]) < num_traj_b:
+            traj_b = [random.choice(grouped[fb]) for _ in range(num_traj_b)]
+            print(f"Warning: File {fb} has only {len(grouped[fb])} trajectories; sampling {num_traj_b} trajectories with replacement.")
+        else:
+            traj_b = random.sample(grouped[fb], num_traj_b)
+
+        X = _stack_trajs(traj_a + traj_b)
+        groups.append((X, 0))  # label 0 for negative
+
+    random.shuffle(groups)
+    return groups
 
 def handle_missing_values(time_series_df: pd.DataFrame) -> pd.DataFrame:
     """Impute missing values in a time‑series DataFrame using IterativeImputer.
