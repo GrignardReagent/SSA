@@ -20,3 +20,6 @@ src/*/*.egg-info/*
 **/micromamba/**
 **/.CondaPkg/**
 
+# wandb files
+**/wandb/**
+

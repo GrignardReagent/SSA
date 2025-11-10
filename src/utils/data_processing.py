@@ -198,54 +198,13 @@ def add_nearest_neighbour_labels(
     labelled["label"] = labels
     return labelled
 
-
-# def build_pairs(
-#         traj_paths, 
-#         num_pairs=2,
-#         k_traj=10, 
-#         preprocess_fn=lambda traj: traj.reshape(-1, 1) # reshape to (seq_len, features)
-#                 ):
-#     from collections import defaultdict
-#     from tqdm import tqdm
-#     import random
-
-#     # Group trajectories by file
-#     grouped = defaultdict(list)
-#     for path in traj_paths:
-#         data = np.load(path, allow_pickle=True)
-#         # assume trajectories array shape (n_realizations, time)
-#         for traj in data["trajectories"]:
-#             grouped[path].append(traj)
-    
-#     files = list(grouped)
-#     assert len(files) >= 2, "Need at least 2 different files to build positive and negative pairs."
-    
-#     pairs = []
-#     for _ in tqdm(range(num_pairs)):
-#         # positive pair (same dataset)
-#         f = random.choice(files)
-#         file_id = random.choice(list(grouped))
-#         traj1, traj2 = random.sample(grouped[file_id], k_traj)
-#         label = 1
-#     for _ in tqdm(range(num_pairs)):
-#         # negative pair (different datasets)
-#         file_a, file_b = random.sample(list(grouped), k_traj)
-#         traj1 = random.choice(grouped[file_a])
-#         traj2 = random.choice(grouped[file_b])
-#         label = 0
-
-#     X_1 = preprocess_fn(traj1)  # -> (seq_len, features)
-#     X_2 = preprocess_fn(traj2)
-#     pairs.append((X_1, X_2, label))
-#     return pairs
-
-
 def build_groups(
     traj_paths,
     num_groups=2, # a pair of positive and negative groups
     num_traj=10,
     pos_ratio=0.5,
-    preprocess_fn=lambda traj: traj.reshape(-1, 1)  # -> (seq_len, 1)
+    preprocess_fn=lambda traj: traj.reshape(-1, 1),  # -> (seq_len, 1)
+    seed=42,
 ):
     """
     Returns: list of (X, y) where
@@ -257,6 +216,10 @@ def build_groups(
     from tqdm import tqdm
     import random
     
+    # reproducibility
+    rng = random.Random(seed)
+    np.random.seed(seed)
+    
     files = list(traj_paths)
     assert len(files) >= 2, "Need at least two files to build negative groups."
     
@@ -265,12 +228,11 @@ def build_groups(
     n_neg = num_groups - n_pos
     
     # Pre-sample (without replacement) which files / pairs we'll need so we only load those files
-    pos_files = random.sample(files, n_pos)
-    neg_pairs = random.sample(files, 2 * n_neg)
-    
-    pos_files = [random.choice(files) for _ in range(n_pos)]
+    pos_files = rng.sample(files, n_pos)
+    neg_pairs = rng.sample(files, 2 * n_neg)
+
     # pair the first half with the second half to get n_neg disjoint pairs
-    neg_sel = random.sample(files, 2 * n_neg)
+    neg_sel = rng.sample(files, 2 * n_neg)
     neg_pairs = [(neg_sel[i], neg_sel[i + n_neg]) for i in range(n_neg)]
 
     needed_files = set(pos_files)
@@ -298,10 +260,10 @@ def build_groups(
     # Build positive groups using the pre-sampled pos_files
     for f in tqdm(pos_files, desc="Building positive groups"):
         if len(grouped[f]) < num_traj:
-            trajs = [random.choice(grouped[f]) for _ in range(num_traj)]
+            trajs = [rng.choice(grouped[f]) for _ in range(num_traj)]
             print(f"Warning: File {f} has only {len(grouped[f])} trajectories; sampling {num_traj} trajectories with replacement.")
         else:
-            trajs = random.sample(grouped[f], num_traj)
+            trajs = rng.sample(grouped[f], num_traj)
 
         X = _stack_trajs(trajs)
         groups.append((X, 1))  # label 1 for positive
@@ -312,21 +274,21 @@ def build_groups(
         num_traj_b = num_traj - num_traj_a
 
         if len(grouped[fa]) < num_traj_a:
-            traj_a = [random.choice(grouped[fa]) for _ in range(num_traj_a)]
+            traj_a = [rng.choice(grouped[fa]) for _ in range(num_traj_a)]
             print(f"Warning: File {fa} has only {len(grouped[fa])} trajectories; sampling {num_traj_a} trajectories with replacement.")
         else:
-            traj_a = random.sample(grouped[fa], num_traj_a)
+            traj_a = rng.sample(grouped[fa], num_traj_a)
 
         if len(grouped[fb]) < num_traj_b:
-            traj_b = [random.choice(grouped[fb]) for _ in range(num_traj_b)]
+            traj_b = [rng.choice(grouped[fb]) for _ in range(num_traj_b)]
             print(f"Warning: File {fb} has only {len(grouped[fb])} trajectories; sampling {num_traj_b} trajectories with replacement.")
         else:
-            traj_b = random.sample(grouped[fb], num_traj_b)
+            traj_b = rng.sample(grouped[fb], num_traj_b)
 
         X = _stack_trajs(traj_a + traj_b)
         groups.append((X, 0))  # label 0 for negative
 
-    random.shuffle(groups)
+    rng.shuffle(groups)
     return groups
 
 def handle_missing_values(time_series_df: pd.DataFrame) -> pd.DataFrame:
