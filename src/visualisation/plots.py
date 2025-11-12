@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
 from utils.steady_state import find_steady_state
-from utils.data_processing import _ensure_numpy, _safe_slice
+from utils.data_processing import _ensure_numpy, _safe_slice, _return_no_label_df
 from stats.autocorrelation import autocrosscorr
 
 ################## Mean mRNA counts over time
@@ -20,6 +20,8 @@ def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories,
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    stress_trajectories = _return_no_label_df(stress_trajectories)
+    
     # Compute mean trajectories
     mean_stress = stress_trajectories.mean(axis=0)
     
@@ -37,6 +39,7 @@ def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories,
     
     # Plot normal condition if provided
     if normal_trajectories is not None:
+        normal_trajectories = _return_no_label_df(normal_trajectories)
         mean_normal = normal_trajectories.mean(axis=0)
         steady_state_time_normal, _ = find_steady_state(parameter_sets[1])
         ax.plot(time_points, mean_normal, color='green', label='Normal Condition (Mean)', linewidth=2)
@@ -64,6 +67,7 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    stress_trajectories = _return_no_label_df(stress_trajectories)
     # Find the time index at which steady state is reached
     steady_state_time_stress, steady_state_index_stress = find_steady_state(parameter_sets[0])
 
@@ -88,6 +92,7 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     
     # Handle normal condition if provided
     if normal_trajectories is not None:
+        normal_trajectories = _return_no_label_df(normal_trajectories)
         steady_state_time_normal, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_mean_ss = steady_state_traj_normal.mean()
@@ -149,7 +154,7 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
     # check that the trajectories don't have a 'label' column, if they do, remove it (or else the label column may be mis-interpreted as mRNA counts)
-    stress_trajectories.drop(columns=['label'], errors='ignore', inplace=True) # drop in-place if it exists, do nothing otherwise
+    stress_trajectories = _return_no_label_df(stress_trajectories)
     # Find the time index at which steady state is reached, if data is not already steady state
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
@@ -181,7 +186,7 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
     
     #------------------------ Normal condition if provided ------------------------#
     if normal_trajectories is not None:
-        normal_trajectories.drop(columns=['label'], errors='ignore', inplace=True) 
+        normal_trajectories = _return_no_label_df(normal_trajectories)
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_ss_flat = steady_state_traj_normal.flatten()
@@ -222,6 +227,7 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    stress_trajectories = _return_no_label_df(stress_trajectories)
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     
@@ -237,6 +243,7 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
     ax.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
 
     if normal_trajectories is not None:
+        normal_trajectories = _return_no_label_df(normal_trajectories)
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         # Use safe slicing helper
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
@@ -267,6 +274,9 @@ def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectorie
         print("Warning: Cross-correlation requires both stress and normal trajectories. Skipping plot.")
         return
     
+    stress_trajectories = _return_no_label_df(stress_trajectories)
+    normal_trajectories = _return_no_label_df(normal_trajectories)
+
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     _, steady_state_index_normal = find_steady_state(parameter_sets[1])
@@ -297,6 +307,8 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    stress_trajectories = _return_no_label_df(stress_trajectories)
+    
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     
@@ -309,7 +321,9 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
     
     # Determine the figure layout based on whether normal trajectories are provided
     if normal_trajectories is not None:
+        
         # Both autocorrelation and cross-correlation plots
+        normal_trajectories = _return_no_label_df(normal_trajectories)
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_autocorr, lags_normal = autocrosscorr(steady_state_traj_normal)
