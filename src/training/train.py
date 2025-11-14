@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from training.eval import evaluate_model
+from training.eval import evaluate_model, _compute_loss_and_accuracy
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -10,17 +10,17 @@ def train_model(
     val_loader=None,
     epochs=50,
     patience=10,
-    lr=1e-2,
+    lr=1e-3,
     optimizer=None,
     loss_fn=None,
     device=None,
     grad_clip=1.0,
     save_path=None,
+    scheduler=None, #TODO
     verbose=True,
 ):
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
-
     optimizer = optimizer or optim.Adam(model.parameters(), lr=lr)
     loss_fn = loss_fn or nn.CrossEntropyLoss()
 
@@ -41,13 +41,15 @@ def train_model(
             outputs = model(X_batch)
 
             #TODO: adjust targets if BCE-type loss
-            y_batch_mod = y_batch
-            if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-                y_batch_mod = y_batch_mod.float().unsqueeze(1) if y_batch_mod.dim() == 1 else y_batch_mod.float()
-                if outputs.dim() == 2 and outputs.size(1) == 2 and y_batch_mod.size(1) == 1:
-                    outputs = outputs[:, 1].unsqueeze(1)
-
-            loss = loss_fn(outputs, y_batch_mod)
+            # y_batch_mod = y_batch
+            # if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
+            #     y_batch_mod = y_batch_mod.float().unsqueeze(1) if y_batch_mod.dim() == 1 else y_batch_mod.float()
+            #     if outputs.dim() == 2 and outputs.size(1) == 2 and y_batch_mod.size(1) == 1:
+            #         outputs = outputs[:, 1].unsqueeze(1)
+            # loss = loss_fn(outputs, y_batch_mod)
+            
+            loss, preds, tgt = _compute_loss_and_accuracy(outputs, y_batch, loss_fn)
+            
             loss.backward()
             if grad_clip:
                 nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
@@ -55,14 +57,14 @@ def train_model(
 
             total_loss += loss.item() * X_batch.size(0)
 
-            # compute accuracy
-            if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-                probs = torch.sigmoid(outputs).view(-1)
-                preds = (probs > 0.5).long()
-                tgt = y_batch.view(-1).long()
-            else:
-                preds = outputs.argmax(1)
-                tgt = y_batch
+            # # compute accuracy
+            # if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
+            #     probs = torch.sigmoid(outputs).view(-1)
+            #     preds = (probs > 0.5).long()
+            #     tgt = y_batch.view(-1).long()
+            # else:
+            #     preds = outputs.argmax(1)
+            #     tgt = y_batch
             correct += (preds == tgt).sum().item()
             total += tgt.size(0)
 
@@ -95,9 +97,9 @@ def train_model(
         history["val_acc"].append(val_acc)
 
         if verbose:
-            msg = f"Epoch [{epoch+1}/{epochs}] | train_loss {train_loss:.2f} | train_acc {train_acc:.2f}"
+            msg = f"Epoch [{epoch+1}/{epochs}] | train_loss {train_loss:.4f} | train_acc {train_acc:.4f}"
             if val_loader is not None:
-                msg += f" | val_loss {val_loss:.2f} | val_acc {val_acc:.2f}"
+                msg += f" | val_loss {val_loss:.4f} | val_acc {val_acc:.4f}"
             print(msg)
             
     print("Training complete.")
