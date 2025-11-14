@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from typing import Optional, Tuple 
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -11,32 +12,50 @@ def evaluate_model(
     device=None, 
     verbose=True
     ):
+    """
+    Supports batches shaped:
+      - (X, y)
+      - (X, y, mask)  -> passed as src_key_padding_mask=mask
+    Handles BCE/BCEWithLogits and CrossEntropy.
+    """
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device).eval()
 
     total_loss, correct, total = 0.0, 0, 0
-    for X_batch, y_batch in test_loader:
-        X_batch, y_batch = X_batch.to(device), y_batch.to(device)
-        outputs = model(X_batch)
-
-        # compute loss
-        if loss_fn is not None:
-            y_batch_mod = y_batch
-            #TODO: adjust targets if BCE-type loss
-            if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-                y_batch_mod = y_batch_mod.float().unsqueeze(1) if y_batch_mod.dim() == 1 else y_batch_mod.float()
-                if outputs.dim() == 2 and outputs.size(1) == 2 and y_batch_mod.size(1) == 1:
-                    outputs = outputs[:, 1].unsqueeze(1)
-            total_loss += loss_fn(outputs, y_batch_mod).item() * X_batch.size(0)
-
-        # compute accuracy
-        if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-            probs = torch.sigmoid(outputs).view(-1)
-            preds = (probs > 0.5).long()
-            tgt = y_batch.view(-1).long()
+    
+    for batch in test_loader:
+        if len(batch) == 2: # handle (X, y)
+            X_batch, y_batch = batch
+            mask = None
+        elif len(batch) >= 3: # handle (X, y, mask)
+            X_batch, y_batch, mask = batch[0], batch[1], batch[2]
         else:
-            preds = outputs.argmax(1)
-            tgt = y_batch
+            raise ValueError("Batch must be (X,y) or (X,y,mask, ...).")
+        
+        X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+        outputs = model(X_batch) if mask is None else model(X_batch, src_key_padding_mask=mask.to(device))
+
+        # # compute loss 
+        # if loss_fn is not None:
+        #     y_batch_mod = y_batch
+        #     if isinstance(loss_fn, (nn.BCEWithLogitsLoss)):
+        #         y_batch_mod = y_batch_mod.float().unsqueeze(1) if y_batch_mod.dim() == 1 else y_batch_mod.float()
+        #         if outputs.dim() == 2 and outputs.size(1) == 2 and y_batch_mod.size(1) == 1:
+        #             outputs = outputs[:, 1].unsqueeze(1)
+        #     total_loss += loss_fn(outputs, y_batch_mod).item() * X_batch.size(0)
+
+        # # compute accuracy
+        # if isinstance(loss_fn, (nn.BCEWithLogitsLoss)):
+        #     probs = torch.sigmoid(outputs).view(-1)
+        #     preds = (probs > 0.5).long()
+        #     tgt = y_batch.view(-1).long()
+        # else:
+        #     preds = outputs.argmax(1)
+        #     tgt = y_batch
+        
+        
+        loss, preds, tgt = _compute_loss_and_accuracy(outputs, y_batch, loss_fn)
+        total_loss += loss.item() * X_batch.size(0)
         correct += (preds == tgt).sum().item()
         total += tgt.size(0)
 
@@ -47,3 +66,172 @@ def evaluate_model(
         loss_str = f"{loss:.2f}" if loss is not None else "N/A"
         print(f"Test — loss: {loss_str} | acc: {acc:.2f}")
     return loss, acc
+
+
+def _compute_loss_and_accuracy(
+    outputs: torch.Tensor,
+    targets: torch.Tensor,
+    loss_fn: Optional[nn.Module],
+) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    """
+    Unified helper for computing loss + predictions + targets
+    that supports:
+      - nn.BCEWithLogitsLoss (logits)
+      - nn.BCELoss (probabilities)
+      - nn.CrossEntropyLoss (logits)
+    Returns:
+        loss: scalar tensor (or 0 if loss_fn=None)
+        preds: tensor of predicted class indices (N,)
+        tgt: tensor of target class indices (N,)
+    """
+    if loss_fn is None:
+        # no loss function — skip
+        loss = torch.tensor(0.0, device=outputs.device)
+        preds = outputs.argmax(dim=1)
+        tgt = targets
+        return loss, preds, tgt
+
+    y_batch_mod = targets
+    outputs_mod = outputs
+    
+    # -------- BCEWithLogitsLoss --------  
+    if isinstance(loss_fn, nn.BCEWithLogitsLoss):  
+        # make targets float, shape (N,1) when needed  
+        y_batch_mod = y_batch_mod.float()
+        if y_batch_mod.dim() == 1:
+            y_batch_mod = y_batch_mod.unsqueeze(1)               # (N,1)
+
+        # special case: model outputs 2 logits (N,2) → take positive class  
+        if outputs_mod.dim() == 2 and outputs_mod.size(1) == 2 and y_batch_mod.size(1) == 1:
+            outputs_mod = outputs_mod[:, 1].unsqueeze(1)     # (N,1)
+            
+        # compute loss
+        loss = loss_fn(outputs_mod, y_batch_mod)
+        
+        preds = (outputs_mod.view(-1) > 0).long()
+        tgt = targets.view(-1).long()
+        return loss, preds, tgt
+    
+    # -------- BCELoss --------
+    elif isinstance(loss_fn, nn.BCELoss):
+        # force float targets
+        y_batch_mod = y_batch_mod.float()
+
+        # match shapes (N,1)
+        if y_batch_mod.dim() == 1:
+            y_batch_mod = y_batch_mod.unsqueeze(1)
+
+        # Convert model outputs → probabilities
+        # Case A: model outputs (N,) or (N,1) single logit → use sigmoid
+        if outputs_mod.dim() == 1 or (outputs_mod.dim() == 2 and outputs_mod.size(1) == 1):
+            m = nn.Sigmoid()
+            probs = m(outputs_mod.view(-1, 1))      # (N,1)
+
+        # Case B: model outputs (N,2) → take positive class prob via softmax
+        elif outputs_mod.dim() == 2 and outputs_mod.size(1) == 2:
+            probs = torch.softmax(outputs_mod, dim=1)[:, 1].unsqueeze(1)  # (N,1)
+
+        # compute loss
+        loss = loss_fn(probs, y_batch_mod)
+
+        # predictions: threshold probs
+        preds = (probs.view(-1) > 0.5).long()
+        tgt = targets.view(-1).long()
+        return loss, preds, tgt
+
+    # -------- CrossEntropy or others --------
+    else:
+        loss = loss_fn(outputs, targets)
+        preds = outputs.argmax(dim=1)
+        tgt = targets
+        return loss, preds, tgt
+
+# # def _align_outputs_and_targets(outputs: torch.Tensor, y: torch.Tensor, loss_fn: nn.Module):
+# #     # BCE-family: float targets (N,1); allow model to output (N,2) — take pos logit
+# #     if isinstance(loss_fn, (nn.BCEWithLogitsLoss)):
+# #         yf = y.float()
+# #         if yf.dim() == 1:
+# #             yf = yf.unsqueeze(1)          # (N,1)
+# #         out = outputs
+# #         if out.dim() == 2 and out.size(1) == 2:
+# #             out = out[:, 1:2]             # positive class
+# #         return yf, out
+    
+# #     # if isinstance(loss_fn, (nn.BCELoss)):
+# #     #     ...
+# #     # CrossEntropy: class indices (N,) and logits (N,C)
+# #     return y.long(), outputs
+
+
+# # def _predict_from_outputs(outputs: torch.Tensor, loss_fn: Optional[nn.Module]): 
+# #     if isinstance(loss_fn, (nn.BCEWithLogitsLoss)):
+# #         logits = outputs
+# #         if logits.dim() == 2 and logits.size(1) == 2:
+# #             logits = logits[:, 1:2]
+# #         probs = torch.sigmoid(logits).view(-1)
+# #         return (probs > 0.5).long()
+
+# #     # if isinstance(loss_fn, (nn.BCELoss)):
+# #     #     ...
+# #     return outputs.argmax(dim=1).long()
+
+
+
+
+
+# from typing import Optional, Tuple            # <<< NEW
+# import torch
+# import torch.nn as nn
+
+# @torch.no_grad()
+# def evaluate_model(
+#     model: torch.nn.Module,                  # <<< CHANGED (typed)
+#     data_loader,                             # <<< CHANGED (generic name; supports (X,y) or (X,y,mask))
+#     loss_fn: Optional[nn.Module] = None,     # <<< CHANGED (typed)
+#     device: Optional[torch.device] = None,   # <<< CHANGED (typed)
+#     verbose: bool = True,                    # <<< CHANGED (typed)
+# ) -> Tuple[Optional[float], float]:          # <<< NEW (typed return)
+#     """
+#     Supports batches shaped:
+#       - (X, y)
+#       - (X, y, mask)  -> passed as src_key_padding_mask=mask
+#     Handles BCE/BCEWithLogits and CrossEntropy seamlessly.
+#     """                                     # <<< NEW
+#     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#     model.to(device).eval()
+
+#     total_loss, correct, total = 0.0, 0, 0
+
+#     for batch in data_loader:                # <<< CHANGED (generic batch handling)
+#         if isinstance(batch, (tuple, list)): # <<< NEW
+#             if len(batch) == 2:
+#                 X, y = batch
+#                 mask = None
+#             elif len(batch) >= 3:
+#                 X, y, mask = batch[0], batch[1], batch[2]
+#             else:
+#                 raise ValueError("Batch must be (X,y) or (X,y,mask, ...).")
+#         else:
+#             raise ValueError("Expect batch as tuple/list.")
+
+#         X, y = X.to(device), y.to(device)
+#         outputs = model(X) if mask is None else model(X, src_key_padding_mask=mask.to(device))  # <<< NEW
+
+#         # loss (optional)
+#         loss_val = None                        # <<< CHANGED
+#         if loss_fn is not None:
+#             y_for_loss, out_for_loss = _align_outputs_and_targets(outputs, y, loss_fn)  # <<< NEW
+#             loss_val = loss_fn(out_for_loss, y_for_loss).item()
+#             total_loss += loss_val * X.size(0)
+
+#         # accuracy
+#         preds = _predict_from_outputs(outputs, loss_fn)  # <<< NEW
+#         correct += (preds == y.view(-1).long()).sum().item()
+#         total += y.size(0)
+
+#     loss = (total_loss / total) if (loss_fn is not None and total > 0) else None
+#     acc = correct / max(total, 1)
+
+#     if verbose:
+#         print(f"Eval — loss: {loss if loss is not None else 'N/A'} | acc: {acc:.4f}")
+#     return loss, acc
