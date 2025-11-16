@@ -1,5 +1,7 @@
 #!/usr/bin/python
+import time
 from training.eval import evaluate_model, _compute_loss_and_accuracy
+from training.wandb_utils import init_wandb_run, wandb_log, finish_wandb_run
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -16,6 +18,8 @@ def train_model(
     device=None,
     grad_clip=1.0,
     save_path=None,
+    wandb_logging=True,
+    wandb_config=None,
     scheduler=None, #TODO
     verbose=True,
 ):
@@ -23,6 +27,15 @@ def train_model(
     model.to(device)
     optimizer = optimizer or optim.Adam(model.parameters(), lr=lr)
     loss_fn = loss_fn or nn.CrossEntropyLoss()
+    
+    # -------- initialize wandb (optional) --------
+    run, start_time = None, None
+    if wandb_logging:
+        if wandb_config is None:
+            raise ValueError("wandb_logging=True but no wandb_config provided.")
+        run = init_wandb_run(wandb_config)
+        start_time = time.time()
+    # --------------------------------------------
 
     if verbose:
         print("Starting training...")
@@ -39,14 +52,6 @@ def train_model(
 
             optimizer.zero_grad()
             outputs = model(X_batch)
-
-            #TODO: adjust targets if BCE-type loss
-            # y_batch_mod = y_batch
-            # if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-            #     y_batch_mod = y_batch_mod.float().unsqueeze(1) if y_batch_mod.dim() == 1 else y_batch_mod.float()
-            #     if outputs.dim() == 2 and outputs.size(1) == 2 and y_batch_mod.size(1) == 1:
-            #         outputs = outputs[:, 1].unsqueeze(1)
-            # loss = loss_fn(outputs, y_batch_mod)
             
             loss, preds, tgt = _compute_loss_and_accuracy(outputs, y_batch, loss_fn)
             
@@ -56,20 +61,12 @@ def train_model(
             optimizer.step()
 
             total_loss += loss.item() * X_batch.size(0)
-
-            # # compute accuracy
-            # if isinstance(loss_fn, (nn.BCEWithLogitsLoss, nn.BCELoss)):
-            #     probs = torch.sigmoid(outputs).view(-1)
-            #     preds = (probs > 0.5).long()
-            #     tgt = y_batch.view(-1).long()
-            # else:
-            #     preds = outputs.argmax(1)
-            #     tgt = y_batch
             correct += (preds == tgt).sum().item()
             total += tgt.size(0)
 
         train_loss = total_loss / len(train_loader.dataset)
         train_acc = correct / total
+        
         history["train_loss"].append(train_loss)
         history["train_acc"].append(train_acc)
         
@@ -95,12 +92,45 @@ def train_model(
 
         history["val_loss"].append(val_loss)
         history["val_acc"].append(val_acc)
+        
+        # -------- wandb logging --------
+        if wandb_logging and run is not None:
+            log_dict = {
+                "epoch": epoch + 1,
+                "train/loss": float(train_loss),
+                "train/acc": float(train_acc),
+            }
+            if val_loss is not None:
+                log_dict["val/loss"] = float(val_loss)
+                log_dict["val/acc"] = float(val_acc)
+
+            # learning rate
+            try:
+                log_dict["lr"] = optimizer.param_groups[0]["lr"]
+            except Exception:
+                pass
+
+            # gradient norm
+            total_grad_norm = 0.0
+            for p in model.parameters():
+                if p.grad is not None:
+                    total_grad_norm += p.grad.data.norm(2).item() ** 2
+            log_dict["grad/norm"] = total_grad_norm ** 0.5 if total_grad_norm > 0 else 0.0
+
+            wandb_log(run, log_dict)
+        # --------------------------------
 
         if verbose:
             msg = f"Epoch [{epoch+1}/{epochs}] | train_loss {train_loss:.4f} | train_acc {train_acc:.4f}"
             if val_loader is not None:
                 msg += f" | val_loss {val_loss:.4f} | val_acc {val_acc:.4f}"
             print(msg)
+            
+    # -------- finish wandb --------
+    if wandb_logging and run is not None:
+        finish_wandb_run(run, best_val_acc, start_time)
+    # ------------------------------
+   
             
     print("Training complete.")
     return history
