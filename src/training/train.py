@@ -14,13 +14,13 @@ def train_model(
     patience=10,
     lr=1e-3,
     optimizer=None,
+    scheduler=None, 
     loss_fn=None,
     device=None,
     grad_clip=1.0,
     save_path=None,
-    wandb_logging=True,
+    wandb_logging=False,
     wandb_config=None,
-    scheduler=None, #TODO
     verbose=True,
 ):
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -57,7 +57,7 @@ def train_model(
             
             loss.backward()
             if grad_clip:
-                nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+                nn.utils.clip_grad_norm_(model.parameters(), grad_clip) # This rescales all gradients so their total norm never exceeds grad_clip
             optimizer.step()
 
             total_loss += loss.item() * X_batch.size(0)
@@ -92,6 +92,16 @@ def train_model(
 
         history["val_loss"].append(val_loss)
         history["val_acc"].append(val_acc)
+        
+        # ---- LR scheduler step ----
+        if scheduler is not None:
+            # schedulers that depend on val_loss (e.g., ReduceLROnPlateau)
+            if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
+                scheduler.step(val_loss)
+            else:
+                scheduler.step()
+        # ----------------------------
+
         
         # -------- wandb logging --------
         if wandb_logging and run is not None:
@@ -134,3 +144,7 @@ def train_model(
             
     print("Training complete.")
     return history
+
+# TODO: Cosine scheduler class
+
+# TODO: Plateau scheduler class
