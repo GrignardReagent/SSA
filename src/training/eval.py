@@ -105,8 +105,7 @@ def _compute_loss_and_accuracy(
         # Convert model outputs → probabilities
         # Case A: model outputs (N,) or (N,1) single logit → use sigmoid
         if outputs_mod.dim() == 1 or (outputs_mod.dim() == 2 and outputs_mod.size(1) == 1):
-            m = nn.Sigmoid()
-            probs = m(outputs_mod.view(-1, 1))      # (N,1)
+            probs = torch.sigmoid(outputs_mod.view(-1, 1))      # (N,1)
 
         # Case B: model outputs (N,2) → take positive class prob via softmax
         elif outputs_mod.dim() == 2 and outputs_mod.size(1) == 2:
@@ -126,3 +125,57 @@ def _compute_loss_and_accuracy(
         preds = outputs.argmax(dim=1)
         tgt = targets
         return loss, preds, tgt
+
+
+@torch.no_grad()
+def predict_proba(model, loader, loss_fn, device):
+    model.eval()
+    all_probs, all_targets = [], []
+
+    for X, y in loader:
+        X = X.to(device)
+        y = y.to(device)
+        logits = model(X)
+        probs = _compute_probabilities(logits, loss_fn)
+
+        all_probs.append(probs.cpu())
+        all_targets.append(y.cpu())
+
+    return torch.cat(all_probs), torch.cat(all_targets)
+
+def _compute_probabilities(
+    outputs: torch.Tensor,
+    loss_fn: Optional[nn.Module],
+) -> torch.Tensor:
+    """
+    Convert raw model outputs to probabilities in (0,1) or (0,1)^C.
+    For:
+      - BCEWithLogitsLoss: expects logits -> use sigmoid on positive logit
+      - BCELoss: expects probs already; if you passed logits, we sigmoid them
+      - CrossEntropyLoss: expects logits -> use softmax
+    Returns:
+      probs: (N,) for binary, (N,C) for multiclass
+    """
+    
+    # No loss_fn: make a best-effort guess based on shape
+    if loss_fn is None:
+        if outputs.dim() == 2 and outputs.size(1) > 1:
+            return torch.softmax(outputs, dim=1)       # (N,C)
+        else:
+            return torch.sigmoid(outputs.view(-1))     # (N,)
+
+    # Binary with logits
+    if isinstance(loss_fn, nn.BCEWithLogitsLoss):
+        if outputs.dim() == 2 and outputs.size(1) == 2:
+            logits_pos = outputs[:, 1]                 # (N,)
+        else:
+            logits_pos = outputs.view(-1)              # (N,)
+        return torch.sigmoid(logits_pos)               # (N,)
+
+    # Binary with BCELoss (we treat outputs as logits for consistency)
+    if isinstance(loss_fn, nn.BCELoss):
+        return torch.sigmoid(outputs.view(-1))         # (N,)
+
+    # Multiclass CE
+    if isinstance(loss_fn, nn.CrossEntropyLoss):
+        return torch.softmax(outputs, dim=1)           # (N,C)
