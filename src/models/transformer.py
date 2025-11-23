@@ -63,7 +63,21 @@ class TransformerClassifier(nn.Module):
         self.encoder = nn.TransformerEncoder(enc_layer, num_layers=num_layers)
 
         self.dropout = nn.Dropout(dropout)
-        self.head = nn.Linear(d_model, num_classes)
+        self.head = nn.Linear(d_model, num_classes) 
+        
+    # encode() returns pooled embedding [B, D] (no final head)
+    def encode(self, x, src_key_padding_mask=None):
+        # x: [B,T,F]
+        if self.stem is not None: # Conv1D stem
+            x = x.permute(0, 2, 1)          # [B,F,T]
+            x = self.stem(x)
+            x = x.permute(0, 2, 1)          # [B,T,F]
+
+        x = self.input_proj(x)               # [B,T,D] → unbounded
+        x = self.pe(x)                       # add positions → unbounded
+        x = self.encoder(x, src_key_padding_mask=src_key_padding_mask)  # mask: [B,T] boolean True = ignore this position
+        x = x.mean(dim=1)                    # mean pool over time → [B,D]
+        return x
 
     def forward(self, x, src_key_padding_mask=None):
         # x: [B,T,F]
@@ -72,10 +86,12 @@ class TransformerClassifier(nn.Module):
             x = self.stem(x)
             x = x.permute(0, 2, 1)          # [B,T,F]
 
-        x = self.input_proj(x)               # [B,T,D]
-        x = self.pe(x)                       # add positions
-        x = self.encoder(x, src_key_padding_mask=src_key_padding_mask)  # mask: [B,T] bool
+        x = self.input_proj(x)               # [B,T,D] → unbounded
+        x = self.pe(x)                       # add positions → unbounded
+        x = self.encoder(x, src_key_padding_mask=src_key_padding_mask)  # mask: [B,T] boolean True = ignore this position
+        # print("Encoder output shape:", x.shape)  # should be [B,T,D] → unbounded
 
-        x = x.mean(dim=1)                    # mean pool over time
+        x = x.mean(dim=1)                    # mean pool over time → unbounded
         # x = self.dropout(x)
-        return self.head(x)                  # [B,C]
+        out = self.head(x)                  # [B, num_classes] → unbounded
+        return out
