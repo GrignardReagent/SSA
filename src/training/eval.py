@@ -27,8 +27,16 @@ def evaluate_model(
         if len(batch) == 2: # handle (X, y)
             X_batch, y_batch = batch
             mask = None
-        elif len(batch) >= 3: # handle (X, y, mask)
+            
+        elif len(batch) >= 3 and isinstance(batch[2], torch.Tensor): # handle (X, y, mask)
             X_batch, y_batch, mask = batch[0], batch[1], batch[2]
+            
+        elif len(batch) >=3: # handle (X1, X2, y) - pairwise
+            X1_batch, X2_batch, y_batch = batch[0], batch[1], batch[2]
+            X_batch = (X1_batch.to(device), X2_batch.to(device))
+            y_batch = y_batch.to(device)
+            mask = None
+        
         else:
             raise ValueError("Batch must be (X,y) or (X,y,mask, ...).")
         
@@ -47,6 +55,50 @@ def evaluate_model(
         loss_str = f"{loss:.2f}" if loss is not None else "N/A"
         print(f"Test — loss: {loss_str} | acc: {acc:.2f}")
     return loss, acc
+
+def _handle_different_batch_shapes(
+    model: torch.nn.Module,
+    batch,
+    loss_fn: torch.nn.Module,
+    device: torch.device,
+):
+    """
+    Handle different batch shapes:
+
+      - (X, y)
+      - (X, y, mask)           -> src_key_padding_mask=mask
+      - (X1, X2, y)            -> pairwise model: model(X1, X2)
+
+    Returns:
+        outputs: model outputs tensor
+        y_batch: target tensor
+    """
+    # (X, y)
+    if len(batch) == 2:
+        X_batch, y_batch = batch
+        X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+        outputs = model(X_batch)
+
+    # 3-item batch: either (X, y, mask) or (X1, X2, y)
+    elif len(batch) == 3:
+        a, b, c = batch
+
+        # Heuristic: if third tensor looks like a mask (bool / byte and 2D), treat as (X, y, mask)
+        if isinstance(c, torch.Tensor) and c.dtype in (torch.bool, torch.uint8) and c.dim() == 2:
+            X_batch, y_batch, mask = a, b, c
+            X_batch, y_batch = X_batch.to(device), y_batch.to(device)
+            mask = mask.to(device)
+            outputs = model(X_batch, src_key_padding_mask=mask)
+        else:
+            # Assume pairwise batch: (X1, X2, y)
+            X1_batch, X2_batch, y_batch = a, b, c
+            X1_batch, X2_batch, y_batch = X1_batch.to(device), X2_batch.to(device), y_batch.to(device)
+            outputs = model(X1_batch, X2_batch)
+
+    else:
+        raise ValueError("Batch must be (X,y), (X,y,mask) or (X1,X2,y).")
+    
+    return outputs, y_batch
 
 
 def _compute_loss_and_accuracy(
