@@ -198,10 +198,67 @@ def add_nearest_neighbour_labels(
     labelled["label"] = labels
     return labelled
 
+
+def _sample_files_for_groups(rng, files, n_pos, n_neg):
+    """
+    Helper to select files for positive and negative groups.
+    Handles cases where requested groups > available files by switching to replacement.
+    """
+    # --- 1. Select files for Positive Groups ---
+    if n_pos <= len(files):
+        pos_files = rng.sample(files, n_pos) if n_pos > 0 else []
+    else:
+        print(f"Warning: Requested {n_pos} positive groups but only {len(files)} files available. "
+              f"Sampling files with replacement.")
+        pos_files = rng.choices(files, k=n_pos) if n_pos > 0 else []
+
+    # --- 2. Select files for Negative Groups ---
+    neg_files = []
+    if n_neg > 0:
+        needed_for_disjoint = 2 * n_neg
+        
+        if needed_for_disjoint <= len(files):
+            # Unique disjoint pairs (no file reused across any pair)
+            pool = rng.sample(files, needed_for_disjoint)
+            neg_files = [(pool[i], pool[i + n_neg]) for i in range(n_neg)]
+        else:
+            print(f"Warning: Requested {n_neg} negative groups (needs {needed_for_disjoint} unique files) "
+                  f"but only {len(files)} files available. Sampling pairs with replacement.")
+            # Sample pairs one by one, ensuring (a != b) inside each pair
+            for _ in range(n_neg):
+                neg_files.append(tuple(rng.sample(files, 2)))
+                
+    return pos_files, neg_files
+
+
+# Helper: stack trajs preprocessed trajectories into (seq_len, num_traj)
+def _stack_trajs(trajs, preprocess_fn):
+    """
+    Stack a list of raw trajectories into a single array (seq_len, K).
+    """
+    proc = [preprocess_fn(t) for t in trajs]  # each -> (seq_len, 1)
+    seq_lens = [p.shape[0] for p in proc]
+    # unify length (truncate to min length to avoid padding headaches)
+    L = min(seq_lens)
+    proc = [p[:L] for p in proc]
+    X = np.concatenate(proc, axis=1)  # (L, num_traj) 
+    return X
+
+def _sample_trajs(rng, pool, k, label, file_id):
+    """
+    Prefer no-replacement; fallback to replacement with warning.
+    """
+    if len(pool) >= k:
+        return rng.sample(pool, k)
+    # failsafe
+    print(f"Warning: {label} file {file_id} has only {len(pool)} trajectories; "
+            f"sampling {k} with replacement.")
+    return [rng.choice(pool) for _ in range(k)]
+
 def build_groups(
     traj_paths,
     num_groups=2, # a pair of positive and negative groups
-    num_traj=10,
+    num_traj=2, # trajectories per group, 2 for pairs by default
     pos_ratio=0.5,
     preprocess_fn=lambda traj: traj.reshape(-1, 1),  # -> (seq_len, 1)
     seed=42,
@@ -227,13 +284,10 @@ def build_groups(
     n_pos = int(round(num_groups * pos_ratio))
     n_neg = num_groups - n_pos
     
-    # Pre-sample (without replacement) which files / pairs we'll need so we only load those files
-    pos_files = rng.sample(files, n_pos) if n_pos > 0 else []
+    # --- Step 1: Select Files (using helper) ---    
+    pos_files, neg_files = _sample_files_for_groups(rng, files, n_pos, n_neg)
 
-    # pair the first half with the second half to get n_neg disjoint pairs
-    neg_sel = rng.sample(files, 2 * n_neg)
-    neg_files = [(neg_sel[i], neg_sel[i + n_neg]) for i in range(n_neg)]
-
+    # --- Step 2: Load Data ---
     needed_files = set(pos_files)
     for fa, fb in neg_files:
         needed_files.add(fa)
@@ -242,43 +296,26 @@ def build_groups(
     # Load only the needed files
     grouped = defaultdict(list)
     for path in sorted(needed_files):
-        data = np.load(path, allow_pickle=True)
-        if "trajectories" not in data:
-            raise KeyError(f"{path} missing key 'trajectories'.")
-        for traj in data["trajectories"]:
-            grouped[path].append(traj)
-
-    # Helper: stack trajs preprocessed trajectories into (seq_len, num_traj)
-    def _stack_trajs(trajs):
-        proc = [preprocess_fn(t) for t in trajs]  # each -> (seq_len, 1)
-        seq_lens = [p.shape[0] for p in proc]
-        # unify length (truncate to min length to avoid padding headaches)
-        L = min(seq_lens)
-        proc = [p[:L] for p in proc]
-        X = np.concatenate(proc, axis=1)  # (L, num_traj)
-        return X
-    
-    def _sample_trajs(pool, k, label, file_id):
-        """Prefer no-replacement; fallback to replacement with warning."""
-        if len(pool) >= k:
-            return rng.sample(pool, k)
-        # failsafe
-        print(f"Warning: {label} file {file_id} has only {len(pool)} trajectories; "
-              f"sampling {k} with replacement.")
-        return [rng.choice(pool) for _ in range(k)]
-
+            try:
+                data = np.load(path, allow_pickle=True)
+                if "trajectories" not in data:
+                    raise KeyError(f"{path} missing key 'trajectories'.")
+                grouped[path] = list(data["trajectories"])
+            except Exception as e:
+                raise RuntimeError(f"Failed to load {path}: {e}")
+            
     groups = []
     
-    # Build positive groups using the pre-sampled pos_files
+    # --- Step 3: Build Positive Groups using the pre-sampled pos_files ---
     for f in tqdm(pos_files, desc="Building positive groups"):
         pool = grouped[f]
         if len(pool) == 0:
             raise ValueError(f"Positive file {f} has 0 trajectories.")
-        trajs = _sample_trajs(pool, num_traj, "positive", f)
-        X = _stack_trajs(trajs)
+        trajs = _sample_trajs(rng, pool, num_traj, "positive", f)
+        X = _stack_trajs(trajs, preprocess_fn)
         groups.append((X, 1)) # label 1 for positive
 
-    # Build negative groups using the pre-sampled neg_files
+    # --- Step 4: Build Negative Groups using the pre-sampled neg_files ---
     for fa, fb in tqdm(neg_files, desc="Building negative groups"):
         # For each negative group, draw a random feasible split k_a∈[1, num_traj-1] (subject to pool sizes) so proportions vary
         # That gives the model more realistic variety and prevents it from memorising trivial cues like “negatives always contain exactly half from each file.”
@@ -296,33 +333,15 @@ def build_groups(
         k_a = rng.randint(k_min, k_max)
         k_b = num_traj - k_a
 
-        traj_a = _sample_trajs(pool_a, k_a, "negative(A)", fa)
-        traj_b = _sample_trajs(pool_b, k_b, "negative(B)", fb)
+        traj_a = _sample_trajs(rng, pool_a, k_a, "negative(A)", fa)
+        traj_b = _sample_trajs(rng, pool_b, k_b, "negative(B)", fb)
         
-        X = _stack_trajs(traj_a + traj_b)
+        X = _stack_trajs(traj_a + traj_b, preprocess_fn)
         groups.append((X, 0))  # label 0 for negative
-        
-        # 50/50 split for trajs from each file
-        # num_traj_a = num_traj // 2
-        # num_traj_b = num_traj - num_traj_a
-
-        # if len(grouped[fa]) < num_traj_a:
-        #     traj_a = [rng.choice(grouped[fa]) for _ in range(num_traj_a)]
-        #     print(f"Warning: File {fa} has only {len(grouped[fa])} trajectories; sampling {num_traj_a} trajectories with replacement.")
-        # else:
-        #     traj_a = rng.sample(grouped[fa], num_traj_a)
-
-        # if len(grouped[fb]) < num_traj_b:
-        #     traj_b = [rng.choice(grouped[fb]) for _ in range(num_traj_b)]
-        #     print(f"Warning: File {fb} has only {len(grouped[fb])} trajectories; sampling {num_traj_b} trajectories with replacement.")
-        # else:
-        #     traj_b = rng.sample(grouped[fb], num_traj_b)
-
-        # X = _stack_trajs(traj_a + traj_b)
-        # groups.append((X, 0))  # label 0 for negative
 
     rng.shuffle(groups)
     return groups
+
 
 def handle_missing_values(time_series_df: pd.DataFrame) -> pd.DataFrame:
     """Impute missing values in a time‑series DataFrame using IterativeImputer.
