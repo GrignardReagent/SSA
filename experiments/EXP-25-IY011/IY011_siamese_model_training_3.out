@@ -1,0 +1,132 @@
+Files split: 655 Train, 164 Val, 205 Test
+Generating 160000 training pairs...
+Warning: Requested 80000 positive groups but only 655 files available. Sampling files with replacement.
+Warning: Requested 80000 negative groups (needs 160000 unique files) but only 655 files available. Sampling pairs with replacement.
+Building positive groups:   0%|          | 0/80000 [00:00<?, ?it/s]Building positive groups:   3%|▎         | 2538/80000 [00:00<00:03, 25370.41it/s]Building positive groups:   6%|▋         | 5076/80000 [00:00<00:03, 24731.24it/s]Building positive groups:  10%|▉         | 7614/80000 [00:00<00:02, 25019.72it/s]Building positive groups:  13%|█▎        | 10154/80000 [00:00<00:02, 25165.11it/s]Building positive groups:  16%|█▌        | 12716/80000 [00:00<00:02, 25326.00it/s]Building positive groups:  19%|█▉        | 15262/80000 [00:00<00:02, 25369.15it/s]Building positive groups:  22%|██▏       | 17801/80000 [00:00<00:02, 25373.63it/s]Building positive groups:  25%|██▌       | 20359/80000 [00:00<00:02, 25436.75it/s]Building positive groups:  29%|██▊       | 22932/80000 [00:00<00:02, 25525.19it/s]Building positive groups:  32%|███▏      | 25512/80000 [00:01<00:02, 25609.75it/s]Building positive groups:  35%|███▌      | 28074/80000 [00:01<00:02, 25595.94it/s]Building positive groups:  38%|███▊      | 30634/80000 [00:01<00:01, 25567.19it/s]Building positive groups:  41%|████▏     | 33191/80000 [00:01<00:01, 25558.43it/s]Building positive groups:  45%|████▍     | 35772/80000 [00:01<00:01, 25633.95it/s]Building positive groups:  48%|████▊     | 38340/80000 [00:01<00:01, 25645.34it/s]Building positive groups:  51%|█████     | 40905/80000 [00:01<00:01, 25554.57it/s]Building positive groups:  54%|█████▍    | 43463/80000 [00:01<00:01, 25561.27it/s]Building positive groups:  58%|█████▊    | 46025/80000 [00:01<00:01, 25576.91it/s]Building positive groups:  61%|██████    | 48602/80000 [00:01<00:01, 25633.28it/s]Building positive groups:  64%|██████▍   | 51168/80000 [00:02<00:01, 25638.86it/s]Building positive groups:  67%|██████▋   | 53732/80000 [00:02<00:01, 25617.80it/s]Building positive groups:  70%|███████   | 56316/80000 [00:02<00:00, 25681.92it/s]Building positive groups:  74%|███████▎  | 58891/80000 [00:02<00:00, 25699.65it/s]Building positive groups:  77%|███████▋  | 61461/80000 [00:02<00:00, 25611.95it/s]Building positive groups:  80%|████████  | 64033/80000 [00:02<00:00, 25643.61it/s]Building positive groups:  83%|████████▎ | 66598/80000 [00:02<00:00, 25601.01it/s]Building positive groups:  86%|████████▋ | 69159/80000 [00:02<00:00, 25596.31it/s]Building positive groups:  90%|████████▉ | 71719/80000 [00:02<00:00, 25574.44it/s]Building positive groups:  93%|█████████▎| 74285/80000 [00:02<00:00, 25599.26it/s]Building positive groups:  96%|█████████▌| 76851/80000 [00:03<00:00, 25616.64it/s]Building positive groups:  99%|█████████▉| 79432/80000 [00:03<00:00, 25673.95it/s]Building positive groups: 100%|██████████| 80000/80000 [00:03<00:00, 25549.71it/s]
+Building negative groups:   0%|          | 0/80000 [00:00<?, ?it/s]Building negative groups:   3%|▎         | 2190/80000 [00:00<00:03, 21893.34it/s]Building negative groups:   6%|▌         | 4410/80000 [00:00<00:03, 22070.93it/s]Building negative groups:   8%|▊         | 6652/80000 [00:00<00:03, 22227.00it/s]Building negative groups:  11%|█         | 8875/80000 [00:00<00:03, 22216.50it/s]Building negative groups:  14%|█▍        | 11097/80000 [00:00<00:03, 22194.31it/s]Building negative groups:  17%|█▋        | 13317/80000 [00:00<00:03, 22182.89it/s]Building negative groups:  19%|█▉        | 15536/80000 [00:00<00:02, 22152.15it/s]Building negative groups:  22%|██▏       | 17773/80000 [00:00<00:02, 22219.20it/s]Building negative groups:  25%|██▌       | 20009/80000 [00:00<00:02, 22262.50it/s]Building negative groups:  28%|██▊       | 22236/80000 [00:01<00:02, 22256.64it/s]Building negative groups:  31%|███       | 24462/80000 [00:01<00:02, 22228.46it/s]Building negative groups:  33%|███▎      | 26702/80000 [00:01<00:02, 22279.08it/s]Building negative groups:  36%|███▌      | 28930/80000 [00:01<00:02, 22263.66it/s]Building negative groups:  39%|███▉      | 31157/80000 [00:01<00:02, 22241.90it/s]Building negative groups:  42%|████▏     | 33384/80000 [00:01<00:02, 22249.10it/s]Building negative groups:  45%|████▍     | 35609/80000 [00:01<00:01, 22203.18it/s]Building negative groups:  47%|████▋     | 37842/80000 [00:01<00:01, 22238.81it/s]Building negative groups:  50%|█████     | 40066/80000 [00:01<00:01, 22236.20it/s]Building negative groups:  53%|█████▎    | 42301/80000 [00:01<00:01, 22267.99it/s]Building negative groups:  56%|█████▌    | 44530/80000 [00:02<00:01, 22274.31it/s]Building negative groups:  58%|█████▊    | 46758/80000 [00:02<00:01, 22230.85it/s]Building negative groups:  61%|██████    | 48986/80000 [00:02<00:01, 22243.95it/s]Building negative groups:  64%|██████▍   | 51211/80000 [00:02<00:01, 22206.91it/s]Building negative groups:  67%|██████▋   | 53432/80000 [00:02<00:01, 22180.47it/s]Building negative groups:  70%|██████▉   | 55651/80000 [00:02<00:01, 22101.94it/s]Building negative groups:  72%|███████▏  | 57864/80000 [00:02<00:01, 22107.90it/s]Building negative groups:  75%|███████▌  | 60075/80000 [00:02<00:00, 22080.29it/s]Building negative groups:  78%|███████▊  | 62309/80000 [00:02<00:00, 22156.41it/s]Building negative groups:  81%|████████  | 64525/80000 [00:02<00:00, 22140.57it/s]Building negative groups:  83%|████████▎ | 66758/80000 [00:03<00:00, 22196.65it/s]Building negative groups:  86%|████████▌ | 68985/80000 [00:03<00:00, 22217.19it/s]Building negative groups:  89%|████████▉ | 71207/80000 [00:03<00:00, 22179.89it/s]Building negative groups:  92%|█████████▏| 73439/80000 [00:03<00:00, 22221.12it/s]Building negative groups:  95%|█████████▍| 75662/80000 [00:03<00:00, 22197.85it/s]Building negative groups:  97%|█████████▋| 77883/80000 [00:03<00:00, 22201.13it/s]Building negative groups: 100%|██████████| 80000/80000 [00:03<00:00, 22200.53it/s]
+Generating validation/test pairs...
+Warning: Requested 8000 positive groups but only 164 files available. Sampling files with replacement.
+Warning: Requested 8000 negative groups (needs 16000 unique files) but only 164 files available. Sampling pairs with replacement.
+Building positive groups:   0%|          | 0/8000 [00:00<?, ?it/s]Building positive groups:  33%|███▎      | 2627/8000 [00:00<00:00, 26268.65it/s]Building positive groups:  66%|██████▌   | 5254/8000 [00:00<00:00, 25772.55it/s]Building positive groups:  98%|█████████▊| 7849/8000 [00:00<00:00, 25850.85it/s]Building positive groups: 100%|██████████| 8000/8000 [00:00<00:00, 25865.84it/s]
+Building negative groups:   0%|          | 0/8000 [00:00<?, ?it/s]Building negative groups:  28%|██▊       | 2243/8000 [00:00<00:00, 22422.11it/s]Building negative groups:  56%|█████▋    | 4505/8000 [00:00<00:00, 22538.04it/s]Building negative groups:  85%|████████▍ | 6763/8000 [00:00<00:00, 22555.98it/s]Building negative groups: 100%|██████████| 8000/8000 [00:00<00:00, 22547.23it/s]
+Warning: Requested 8000 positive groups but only 205 files available. Sampling files with replacement.
+Warning: Requested 8000 negative groups (needs 16000 unique files) but only 205 files available. Sampling pairs with replacement.
+Building positive groups:   0%|          | 0/8000 [00:00<?, ?it/s]Building positive groups:  32%|███▏      | 2587/8000 [00:00<00:00, 25863.12it/s]Building positive groups:  65%|██████▍   | 5174/8000 [00:00<00:00, 25490.39it/s]Building positive groups:  97%|█████████▋| 7758/8000 [00:00<00:00, 25646.76it/s]Building positive groups: 100%|██████████| 8000/8000 [00:00<00:00, 25637.95it/s]
+Building negative groups:   0%|          | 0/8000 [00:00<?, ?it/s]Building negative groups:  28%|██▊       | 2238/8000 [00:00<00:00, 22375.33it/s]Building negative groups:  56%|█████▌    | 4476/8000 [00:00<00:00, 22313.10it/s]Building negative groups:  84%|████████▍ | 6731/8000 [00:00<00:00, 22418.57it/s]Building negative groups: 100%|██████████| 8000/8000 [00:00<00:00, 22384.62it/s]
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run w4jru4pi
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/wandb/run-20251126_113651-w4jru4pi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run batch_size_512_num_train_groups_160000
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY011-siamese-transformer
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY011-siamese-transformer/runs/w4jru4pi
+Fitting scaler on Log-Transformed training data...
+Applying Log-Scaling to all groups...
+Starting siamese training...
+[Siamese] Epoch [1/100] | train_loss 0.5123 | train_acc 0.7392 | val_loss 0.4242 | val_acc 0.7961
+[Siamese] Epoch [2/100] | train_loss 0.3822 | train_acc 0.8252 | val_loss 0.3474 | val_acc 0.8444
+[Siamese] Epoch [3/100] | train_loss 0.3403 | train_acc 0.8496 | val_loss 0.3289 | val_acc 0.8541
+[Siamese] Epoch [4/100] | train_loss 0.3176 | train_acc 0.8634 | val_loss 0.3227 | val_acc 0.8598
+[Siamese] Epoch [5/100] | train_loss 0.3060 | train_acc 0.8695 | val_loss 0.2950 | val_acc 0.8758
+[Siamese] Epoch [6/100] | train_loss 0.2704 | train_acc 0.8864 | val_loss 0.2763 | val_acc 0.8912
+[Siamese] Epoch [7/100] | train_loss 0.2622 | train_acc 0.8913 | val_loss 0.2586 | val_acc 0.8938
+[Siamese] Epoch [8/100] | train_loss 0.2549 | train_acc 0.8952 | val_loss 0.2453 | val_acc 0.9004
+No improvement (1/10).
+[Siamese] Epoch [9/100] | train_loss 0.2493 | train_acc 0.8982 | val_loss 0.2627 | val_acc 0.8911
+[Siamese] Epoch [10/100] | train_loss 0.2299 | train_acc 0.9077 | val_loss 0.2240 | val_acc 0.9137
+No improvement (1/10).
+[Siamese] Epoch [11/100] | train_loss 0.2258 | train_acc 0.9090 | val_loss 0.2263 | val_acc 0.9110
+[Siamese] Epoch [12/100] | train_loss 0.2230 | train_acc 0.9097 | val_loss 0.2171 | val_acc 0.9174
+No improvement (1/10).
+[Siamese] Epoch [13/100] | train_loss 0.2198 | train_acc 0.9129 | val_loss 0.2109 | val_acc 0.9154
+[Siamese] Epoch [14/100] | train_loss 0.2087 | train_acc 0.9172 | val_loss 0.2087 | val_acc 0.9190
+[Siamese] Epoch [15/100] | train_loss 0.2079 | train_acc 0.9177 | val_loss 0.2024 | val_acc 0.9229
+No improvement (1/10).
+[Siamese] Epoch [16/100] | train_loss 0.2066 | train_acc 0.9190 | val_loss 0.2053 | val_acc 0.9208
+No improvement (2/10).
+[Siamese] Epoch [17/100] | train_loss 0.2049 | train_acc 0.9182 | val_loss 0.2023 | val_acc 0.9213
+[Siamese] Epoch [18/100] | train_loss 0.1993 | train_acc 0.9225 | val_loss 0.1949 | val_acc 0.9257
+No improvement (1/10).
+[Siamese] Epoch [19/100] | train_loss 0.1994 | train_acc 0.9213 | val_loss 0.1922 | val_acc 0.9253
+[Siamese] Epoch [20/100] | train_loss 0.1968 | train_acc 0.9235 | val_loss 0.1902 | val_acc 0.9269
+No improvement (1/10).
+[Siamese] Epoch [21/100] | train_loss 0.1942 | train_acc 0.9241 | val_loss 0.1941 | val_acc 0.9242
+No improvement (2/10).
+[Siamese] Epoch [22/100] | train_loss 0.1922 | train_acc 0.9252 | val_loss 0.1892 | val_acc 0.9264
+No improvement (3/10).
+[Siamese] Epoch [23/100] | train_loss 0.1909 | train_acc 0.9255 | val_loss 0.1873 | val_acc 0.9261
+No improvement (4/10).
+[Siamese] Epoch [24/100] | train_loss 0.1910 | train_acc 0.9251 | val_loss 0.1886 | val_acc 0.9264
+[Siamese] Epoch [25/100] | train_loss 0.1911 | train_acc 0.9249 | val_loss 0.1875 | val_acc 0.9279
+No improvement (1/10).
+[Siamese] Epoch [26/100] | train_loss 0.1893 | train_acc 0.9266 | val_loss 0.1874 | val_acc 0.9274
+No improvement (2/10).
+[Siamese] Epoch [27/100] | train_loss 0.1880 | train_acc 0.9267 | val_loss 0.1864 | val_acc 0.9274
+[Siamese] Epoch [28/100] | train_loss 0.1897 | train_acc 0.9262 | val_loss 0.1857 | val_acc 0.9281
+[Siamese] Epoch [29/100] | train_loss 0.1890 | train_acc 0.9256 | val_loss 0.1863 | val_acc 0.9283
+No improvement (1/10).
+[Siamese] Epoch [30/100] | train_loss 0.1882 | train_acc 0.9266 | val_loss 0.1857 | val_acc 0.9283
+No improvement (2/10).
+[Siamese] Epoch [31/100] | train_loss 0.1879 | train_acc 0.9272 | val_loss 0.1851 | val_acc 0.9281
+No improvement (3/10).
+[Siamese] Epoch [32/100] | train_loss 0.1871 | train_acc 0.9274 | val_loss 0.1849 | val_acc 0.9281
+[Siamese] Epoch [33/100] | train_loss 0.1883 | train_acc 0.9266 | val_loss 0.1851 | val_acc 0.9292
+No improvement (1/10).
+[Siamese] Epoch [34/100] | train_loss 0.1874 | train_acc 0.9266 | val_loss 0.1845 | val_acc 0.9288
+No improvement (2/10).
+[Siamese] Epoch [35/100] | train_loss 0.1870 | train_acc 0.9268 | val_loss 0.1848 | val_acc 0.9287
+No improvement (3/10).
+[Siamese] Epoch [36/100] | train_loss 0.1874 | train_acc 0.9267 | val_loss 0.1839 | val_acc 0.9291
+No improvement (4/10).
+[Siamese] Epoch [37/100] | train_loss 0.1876 | train_acc 0.9278 | val_loss 0.1843 | val_acc 0.9290
+[Siamese] Epoch [38/100] | train_loss 0.1861 | train_acc 0.9273 | val_loss 0.1838 | val_acc 0.9297
+No improvement (1/10).
+[Siamese] Epoch [39/100] | train_loss 0.1855 | train_acc 0.9284 | val_loss 0.1837 | val_acc 0.9293
+No improvement (2/10).
+[Siamese] Epoch [40/100] | train_loss 0.1865 | train_acc 0.9276 | val_loss 0.1839 | val_acc 0.9290
+No improvement (3/10).
+[Siamese] Epoch [41/100] | train_loss 0.1874 | train_acc 0.9266 | val_loss 0.1839 | val_acc 0.9290
+No improvement (4/10).
+[Siamese] Epoch [42/100] | train_loss 0.1867 | train_acc 0.9270 | val_loss 0.1838 | val_acc 0.9286
+No improvement (5/10).
+[Siamese] Epoch [43/100] | train_loss 0.1865 | train_acc 0.9272 | val_loss 0.1837 | val_acc 0.9289
+No improvement (6/10).
+[Siamese] Epoch [44/100] | train_loss 0.1856 | train_acc 0.9278 | val_loss 0.1838 | val_acc 0.9293
+No improvement (7/10).
+[Siamese] Epoch [45/100] | train_loss 0.1863 | train_acc 0.9278 | val_loss 0.1838 | val_acc 0.9295
+No improvement (8/10).
+[Siamese] Epoch [46/100] | train_loss 0.1860 | train_acc 0.9280 | val_loss 0.1838 | val_acc 0.9295
+No improvement (9/10).
+[Siamese] Epoch [47/100] | train_loss 0.1860 | train_acc 0.9276 | val_loss 0.1837 | val_acc 0.9293
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm █▃█▄▆█▄▄█▇▇█▂▆▅▅▆█▄▅▇▂▄▃█▄▅▃▅▅██▆▃▁█▆▄█▆
+wandb:         lr ████▄▄▄▃▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▅▆▆▆▇▇▇▇▇▇████████████████████████████
+wandb: train/loss █▅▄▄▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▄▄▅▆▆▆▇▇▇▇████████████████████████████
+wandb:   val/loss █▆▅▅▄▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.92969
+wandb:             epoch 47
+wandb:         grad/norm 0.85833
+wandb:                lr 0.0
+wandb:         train/acc 0.92764
+wandb:        train/loss 0.18603
+wandb: training_time_sec 2513.00133
+wandb:           val/acc 0.92931
+wandb:          val/loss 0.18375
+wandb: 
+wandb: 🚀 View run batch_size_512_num_train_groups_160000 at: https://wandb.ai/grignard-reagent/IY011-siamese-transformer/runs/w4jru4pi
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY011-siamese-transformer
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20251126_113651-w4jru4pi/logs
+No improvement (10/10).
+🛑 Early stopping.
+Siamese training complete.
+Test — loss: 0.1844 | acc: 0.9274
