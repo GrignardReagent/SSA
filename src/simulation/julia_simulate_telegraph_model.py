@@ -29,10 +29,34 @@ def simulate_telegraph_model(parameter_sets, time_points, size, num_cores=None):
     # Initialize Julia environment once (only if not already done)
     if not hasattr(simulate_telegraph_model, '_julia_initialized'):
         print("Initializing Julia environment...")
-        jl.seval('using Pkg; Pkg.activate("/home/ianyang/stochastic_simulations/julia"); Pkg.instantiate()')
+        
+        # 1. Get the directory where this script is located
+        current_script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 2. Resolve the absolute path to the 'julia' folder relative to this script
+        #    Go up 2 levels (src/ -> simulation/) to get to the project root
+        project_root = os.path.abspath(os.path.join(current_script_dir, "../../"))
+        julia_env_path = os.path.join(project_root, "julia")
+        
+        # 3. Resolve path to the Julia source file
+        julia_src_file = os.path.join(julia_env_path, "simulation/TelegraphSSA.jl")
+
+        # Check if paths exist to provide a helpful error if the structure is wrong
+        if not os.path.exists(julia_env_path):
+            raise FileNotFoundError(f"Could not find Julia environment at: {julia_env_path}")
+        if not os.path.exists(julia_src_file):
+            raise FileNotFoundError(f"Could not find Julia source file at: {julia_src_file}")
+
+        # 4. Pass the dynamic paths to Julia (using formatted strings)
+        #    We replace backslashes with forward slashes for Windows compatibility
+        jl_env_cmd = f'using Pkg; Pkg.activate("{julia_env_path.replace(os.sep, "/")}"); Pkg.instantiate()'
+        jl_include_cmd = f'include("{julia_src_file.replace(os.sep, "/")}")'
+
+        jl.seval(jl_env_cmd)
         jl.seval('using DataFrames, NPZ')
-        jl.include("/home/ianyang/stochastic_simulations/julia/simulation/TelegraphSSA.jl")
+        jl.seval(jl_include_cmd)
         jl.seval('using .TelegraphSSA')
+        
         simulate_telegraph_model._julia_initialized = True
 
     # Python → Julia conversion handled automatically
