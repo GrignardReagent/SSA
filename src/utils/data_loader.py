@@ -86,13 +86,31 @@ def _load_and_concat(files, num_traj, preprocess_fn, rng):
     # Sample without replacement if possible
     selected_trajs = rng.sample(pool, num_traj)
     
-    # Preprocess and Stack
-    proc = [preprocess_fn(traj) for traj in selected_trajs]
+    # # === OPTION A: CONCATENATE ALONG FEATURE DIMENSION ===
+    # # Preprocess and Stack
+    # proc = [preprocess_fn(traj) for traj in selected_trajs]
+    # L = min(p.shape[0] for p in proc)
+    # proc = [p[:L] for p in proc]
+    
+    # # Stack along the feature dimension (axis 1)
+    # return np.concatenate(proc, axis=1)
+
+    # === OPTION B: CONCATENATE ALONG TIME DIMENSION ===
+    # Preprocess -> Stack
+    proc = []
+    for traj in selected_trajs:
+        # Reshape
+        t = preprocess_fn(traj) # (Time, 1)
+        proc.append(t)
+
+    # Crop to same length before stacking (optional, keeps segments regular)
     L = min(p.shape[0] for p in proc)
     proc = [p[:L] for p in proc]
     
-    # Stack along the feature dimension (axis 1)
-    return np.concatenate(proc, axis=1)
+    # Concatenate along TIME (Axis 0)
+    # Result: (num_traj * L, 1)
+    return np.concatenate(proc, axis=0)
+
 
 def make_groups(
     traj_paths,
@@ -135,9 +153,15 @@ def make_groups(
         X_b = _load_and_concat([file_b], count_b, preprocess_fn, rng)
         
         if X_a is not None and X_b is not None:
-            # Truncate to matching lengths (Time dimension)
-            L = min(X_a.shape[0], X_b.shape[0])
-            X = np.concatenate([X_a[:L], X_b[:L]], axis=1)
+            # # === OPTION A: CONCATENATE ALONG FEATURE DIMENSION ===
+            # # Truncate to matching lengths (Time dimension)
+            # L = min(X_a.shape[0], X_b.shape[0])
+            # X = np.concatenate([X_a[:L], X_b[:L]], axis=1)
+            
+            # === OPTION B: CONCATENATE ALONG TIME DIMENSION ===
+            # Concatenate A and B along TIME (Axis 0)
+            X = np.concatenate([X_a, X_b], axis=0)
+            
         else:
             X = None
 
@@ -151,12 +175,31 @@ class BaselineDataset(Dataset):
         return len(self.groups)
     
     def __getitem__(self, idx):
-        X, y = self.groups[idx]
+        # X, y = self.groups[idx]
         
-        return (
-            torch.tensor(X, dtype=torch.float32),
-            torch.tensor(y, dtype=torch.float32).unsqueeze(0)
-        )
+        # return (
+        #     torch.tensor(X, dtype=torch.float32),
+        #     torch.tensor(y, dtype=torch.float32).unsqueeze(0)
+        # )
+        
+        # X shape: (Time_Steps, num_traj)
+        X, y = self.groups[idx]
+
+        # Convert to Tensor
+        X_tensor = torch.tensor(X, dtype=torch.float32)
+        y_tensor = torch.tensor(y, dtype=torch.float32).unsqueeze(0)
+
+        # === INSTANCE NORMALIZATION ===
+        # Calculate mean/std for EACH trajectory (column) independently
+        # dim=0 is Time, so we want statistics per column.
+        mean = X_tensor.mean(dim=0, keepdim=True)
+        std = X_tensor.std(dim=0, keepdim=True) + 1e-8  # Add epsilon to avoid div by zero
+
+        X_norm = (X_tensor - mean) / std
+        # print(f"Instance Normalisation - Mean: {mean.flatten().tolist()}, Std: {std.flatten().tolist()}")
+        # ==============================
+
+        return X_norm, y_tensor
 
 def baseline_data_prep(
     all_file_paths, 
@@ -196,34 +239,40 @@ def baseline_data_prep(
         for _ in tqdm(range(num_groups_test))
     ]
 
-    # 3. Standard Scaling (Fit on Train Only)
-    scaler = StandardScaler()
+    # # 3. Standard Scaling (Fit on Train Only)
+    # print("Fitting StandardScaler on training data... (GLOBAL Scaling)")
+    # scaler = StandardScaler()
     
-    if len(train_groups) > 0:
-        print("Fitting StandardScaler on training data...")
-        # Stack all X arrays to shape (N*Seq*num_traj, 1) for global scaling
-        all_train_values = np.vstack([g[0] for g in train_groups]) 
-        scaler.fit(all_train_values.reshape(-1, 1))
+    # if len(train_groups) > 0:
+    #     print("Fitting StandardScaler on training data...")
+    #     # Stack all X arrays to shape (N*Seq*num_traj, 1) for global scaling
+    #     all_train_values = np.vstack([g[0] for g in train_groups]) 
+    #     scaler.fit(all_train_values.reshape(-1, 1))
     
-    def scale_list(group_list):
-        scaled = []
-        for X, y in group_list:
-            shape = X.shape
-            # Scale -> Reshape back to (Seq_Len, num_traj)
-            X_sc = scaler.transform(X.reshape(-1, 1)).reshape(shape)
-            scaled.append((X_sc, y))
-        return scaled
+    # def scale_list(group_list):
+    #     scaled = []
+    #     for X, y in group_list:
+    #         shape = X.shape
+    #         # Scale -> Reshape back to (Seq_Len, num_traj)
+    #         X_sc = scaler.transform(X.reshape(-1, 1)).reshape(shape)
+    #         scaled.append((X_sc, y))
+    #     return scaled
 
-    train_groups = scale_list(train_groups)
-    val_groups   = scale_list(val_groups)
-    test_groups  = scale_list(test_groups)
+    # train_groups = scale_list(train_groups)
+    # val_groups   = scale_list(val_groups)
+    # test_groups  = scale_list(test_groups)
 
     # 4. DataLoaders
     train_loader = DataLoader(BaselineDataset(train_groups), batch_size=batch_size, shuffle=True)
     val_loader   = DataLoader(BaselineDataset(val_groups),   batch_size=batch_size, shuffle=False)
     test_loader  = DataLoader(BaselineDataset(test_groups),  batch_size=batch_size, shuffle=False)
     
-    return train_loader, val_loader, test_loader, scaler
+    batch_X, _ = next(iter(train_loader))
+    print(f"Batch Mean (should be ~0): {batch_X.mean():.4f}")
+    print(f"Batch Std  (should be ~1): {batch_X.std():.4f}")
+    print(f"Min Value: {batch_X.min():.2f}, Max Value: {batch_X.max():.2f}")
+    
+    return train_loader, val_loader, test_loader, None
 
 
 # -----------------------------------------------------------------------------
