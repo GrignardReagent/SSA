@@ -8,7 +8,8 @@ from utils.data_processing import add_binary_labels
 import subprocess
 import tempfile
 
-DATA_ROOT = Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data")
+script_dir = Path(__file__).resolve().parent
+DATA_ROOT = script_dir / "data"
 RESULTS_PATH = DATA_ROOT / "IY011_simulation_parameters_sobol.csv" #  this csv file stores all the simulation parameters used
 df_params = pd.read_csv(RESULTS_PATH) 
 # TRAJ_PATH = [DATA_ROOT / f"mRNA_trajectories_mu{row['mu_target']:.3f}_cv{row['cv_target']:.3f}_tac{row['t_ac_target']:.3f}.csv" for idx, row in df_params.iterrows()] # the trajectories 
