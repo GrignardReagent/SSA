@@ -12,7 +12,7 @@ warnings.filterwarnings("ignore", message="enable_nested_tensor is True, but sel
 
 class PositionalEncoding(nn.Module):
     """Fixed sin/cos positional encodings; buffer has shape [max_len, d_model]."""
-    def __init__(self, d_model, max_seq_length=4096):
+    def __init__(self, d_model, max_seq_length=8192):
         super().__init__()
         pe = torch.zeros(max_seq_length, d_model)
         position = torch.arange(max_seq_length, dtype=torch.float).unsqueeze(1)
@@ -37,7 +37,8 @@ class TransformerClassifier(nn.Module):
         num_layers=2, 
         num_classes=2,
         dropout=1e-3, 
-        use_conv1d=False
+        use_conv1d=False,
+        max_seq_length=8192
         ):
         super().__init__()
         self.use_conv1d = use_conv1d
@@ -54,7 +55,7 @@ class TransformerClassifier(nn.Module):
             self.stem = None
 
         self.input_proj = nn.Linear(input_size, d_model)
-        self.pe = PositionalEncoding(d_model)
+        self.pe = PositionalEncoding(d_model, max_seq_length)
 
         enc_layer = nn.TransformerEncoderLayer(
             d_model=d_model, nhead=nhead, dim_feedforward=4*d_model,
