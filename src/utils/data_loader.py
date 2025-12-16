@@ -64,7 +64,7 @@ def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None
 # Baseline Data Pipeline
 # -----------------------------------------------------------------------------
 
-def _load_and_concat(files, num_traj, preprocess_fn, rng):
+def _load_and_concat(files, num_traj, preprocess_fn, rng, separator_len=1, separator_val=-10.0):
     """
     Helper to load files and concatenate 'num_traj' trajectories.
     """
@@ -107,6 +107,20 @@ def _load_and_concat(files, num_traj, preprocess_fn, rng):
     L = min(p.shape[0] for p in proc)
     proc = [p[:L] for p in proc]
     
+    # Insert separator if requested
+    if separator_len > 0:
+        # Create separator of shape (sep_len, num_features)
+        # Assuming channel dim is 1 based on default preprocess_fn
+        n_features = proc[0].shape[1]
+        separator = np.full((separator_len, n_features), separator_val, dtype=proc[0].dtype)
+        
+        proc_with_separators = []
+        for i, p in enumerate(proc):
+            proc_with_separators.append(p)
+            # add separator except after last
+            proc_with_separators.append(separator) if i < len(proc) - 1 else None
+        return np.concatenate(proc_with_separators, axis=0)
+        
     # Concatenate along TIME (Axis 0)
     # Result: (num_traj * L, 1)
     return np.concatenate(proc, axis=0)
@@ -117,7 +131,10 @@ def make_groups(
     num_traj=2, 
     pos_ratio=0.5,
     preprocess_fn=lambda traj: traj.reshape(-1, 1),
-    rng=None
+    rng=None,
+    separator_len=1,
+    separator_val=-10.0,
+    verbose=False
 ):
     """
     Generates A SINGLE group (set of trajectories).
@@ -133,24 +150,33 @@ def make_groups(
     
     # --- 2. Select Files ---
     if is_positive:
+        if verbose:
+            print("Generating POSITIVE group.")
         # POSITIVE: All trajectories from ONE file
         file_a = rng.choice(traj_paths)
+        if verbose:
+            print(f"Chosen file for POSITIVE group: {file_a.name}")
+        
         label = 1.0
         # --- 3. Load num_traj trajectories from the chosen files and concatenate them --- 
-        X = _load_and_concat([file_a], num_traj, preprocess_fn, rng)
+        X = _load_and_concat([file_a], num_traj, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
         
     else:
+        if verbose:
+            print("Generating NEGATIVE group.")
         # NEGATIVE: Trajectories split between TWO different files
         file_a, file_b = rng.sample(traj_paths, 2)
+        if verbose:
+            print(f"Chosen files for NEGATIVE group: {file_a.name}, {file_b.name}")
         label = 0.0
         
         # Determine how many from A and how many from B
-        count_a = num_traj // 2
-        count_b = num_traj - count_a  # Handles odd numbers (e.g., 3 -> 1 and 2)
+        num_traj_a = num_traj // 2
+        num_traj_b = num_traj - num_traj_a  # Handles odd numbers (e.g., 3 -> 1 and 2)
         
         # --- 3. Load num_traj trajectories from the chosen files and concatenate them --- 
-        X_a = _load_and_concat([file_a], count_a, preprocess_fn, rng)
-        X_b = _load_and_concat([file_b], count_b, preprocess_fn, rng)
+        X_a = _load_and_concat([file_a], num_traj_a, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val) 
+        X_b = _load_and_concat([file_b], num_traj_b, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val) 
         
         if X_a is not None and X_b is not None:
             # # === OPTION A: CONCATENATE ALONG FEATURE DIMENSION ===
@@ -160,7 +186,12 @@ def make_groups(
             
             # === OPTION B: CONCATENATE ALONG TIME DIMENSION ===
             # Concatenate A and B along TIME (Axis 0)
-            X = np.concatenate([X_a, X_b], axis=0)
+            if separator_len > 0:
+                n_features = X_a.shape[1]
+                separator = np.full((separator_len, n_features), separator_val, dtype=X_a.dtype)
+                X = np.concatenate([X_a, separator, X_b], axis=0)
+            else:
+                X = np.concatenate([X_a, X_b], axis=0)
             
         else:
             X = None
@@ -182,6 +213,7 @@ class BaselineDataset(Dataset):
         #     torch.tensor(y, dtype=torch.float32).unsqueeze(0)
         # )
         
+        # === INSTANCE NORMALIZATION ===
         # X shape: (Time_Steps, num_traj)
         X, y = self.groups[idx]
 
@@ -189,7 +221,6 @@ class BaselineDataset(Dataset):
         X_tensor = torch.tensor(X, dtype=torch.float32)
         y_tensor = torch.tensor(y, dtype=torch.float32).unsqueeze(0)
 
-        # === INSTANCE NORMALIZATION ===
         # Calculate mean/std for EACH trajectory (column) independently
         # dim=0 is Time, so we want statistics per column.
         mean = X_tensor.mean(dim=0, keepdim=True)
@@ -209,7 +240,10 @@ def baseline_data_prep(
     num_groups_test=1000, 
     num_traj=2,
     pos_ratio=0.5,
-    seed=42
+    seed=42,
+    separator_len=1,
+    separator_val=-100.0,
+    verbose=False
 ):
     # 1. Split FILES first (Zero Leakage)
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
@@ -223,19 +257,19 @@ def baseline_data_prep(
     # 2. Iteratively Generate Groups
     print(f"Generating {num_groups_train} training groups...")
     train_groups = [
-        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng) 
+        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
         for _ in tqdm(range(num_groups_train))
     ]
     
     print(f"Generating validation groups...")
     val_groups = [
-        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng) 
+        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
         for _ in tqdm(range(num_groups_val))
     ]
     
     print(f"Generating test groups...")
     test_groups = [
-        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng) 
+        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
         for _ in tqdm(range(num_groups_test))
     ]
 
