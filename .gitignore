@@ -25,3 +25,6 @@ src/*/*.egg-info/*
 # wandb files
 **/wandb/**
 
+# other IDE files
+.vscode/
+.idea/

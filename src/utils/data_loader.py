@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 import random
@@ -85,17 +86,8 @@ def _load_and_concat(files, num_traj, preprocess_fn, rng, separator_len=1, separ
             
     # Sample without replacement if possible
     selected_trajs = rng.sample(pool, num_traj)
-    
-    # # === OPTION A: CONCATENATE ALONG FEATURE DIMENSION ===
-    # # Preprocess and Stack
-    # proc = [preprocess_fn(traj) for traj in selected_trajs]
-    # L = min(p.shape[0] for p in proc)
-    # proc = [p[:L] for p in proc]
-    
-    # # Stack along the feature dimension (axis 1)
-    # return np.concatenate(proc, axis=1)
 
-    # === OPTION B: CONCATENATE ALONG TIME DIMENSION ===
+    # === CONCATENATE ALONG TIME DIMENSION ===
     # Preprocess -> Stack
     proc = []
     for traj in selected_trajs:
@@ -125,6 +117,23 @@ def _load_and_concat(files, num_traj, preprocess_fn, rng, separator_len=1, separ
     # Result: (num_traj * L, 1)
     return np.concatenate(proc, axis=0)
 
+def _get_params_from_filename(filepath):
+    """
+    Extracts parameters (mu, cv, t_ac) from the filename.
+    Expected filepath format: 'mRNA_trajectories_mu_cv_t_ac.npz'
+    """
+    try:
+        name = Path(filepath).stem
+        parts = name.split('_')
+        # Expected format: ['mRNA', 'trajectories', mu, cv, t_ac]
+        if len(parts) >= 5:
+            mu = float(parts[2])
+            cv = float(parts[3])
+            t_ac = float(parts[4])
+            return np.array([mu, cv, t_ac])
+    except Exception:
+        pass
+    return None
 
 def make_groups(
     traj_paths,
@@ -132,15 +141,16 @@ def make_groups(
     pos_ratio=0.5,
     preprocess_fn=lambda traj: traj.reshape(-1, 1),
     rng=None,
+    verbose=False,
     separator_len=1,
-    separator_val=-10.0,
-    verbose=False
+    separator_val=-100.0,
+    param_dist_threshold=0.7 
 ):
     """
     Generates A SINGLE group (set of trajectories).
     
     Args:
-        num_traj: Total number of trajectories in the group (channels).
+        param_dist_threshold: Minimum LOG Euclidean distance required between parameters for negative pairs. Default to roughly 0.7 (which corresponds to a ~2x change in any single parameter, since ln(2) =~ 0.69)
     """
     if rng is None:
         rng = random.Random()
@@ -150,53 +160,76 @@ def make_groups(
     
     # --- 2. Select Files ---
     if is_positive:
-        if verbose:
-            print("Generating POSITIVE group.")
-        # POSITIVE: All trajectories from ONE file
+        if verbose: print("Generating POSITIVE group.")
         file_a = rng.choice(traj_paths)
-        if verbose:
-            print(f"Chosen file for POSITIVE group: {file_a.name}")
-        
         label = 1.0
-        # --- 3. Load num_traj trajectories from the chosen files and concatenate them --- 
         X = _load_and_concat([file_a], num_traj, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
         
     else:
-        if verbose:
-            print("Generating NEGATIVE group.")
-        # NEGATIVE: Trajectories split between TWO different files
-        file_a, file_b = rng.sample(traj_paths, 2)
-        if verbose:
-            print(f"Chosen files for NEGATIVE group: {file_a.name}, {file_b.name}")
+        if verbose: print("Generating NEGATIVE group.")
+        
+        # Pick first file
+        file_a = rng.choice(traj_paths)
+        params_a = _get_params_from_filename(file_a)
+        
+        # Pick second file with sufficient parameter distance away from file_a
+        file_b = None
+        max_attempts = 100
+        
+        for _ in range(max_attempts):
+            candidate = rng.choice(traj_paths)
+            if candidate == file_a:
+                continue
+                
+            # Check physical distance
+            params_b = _get_params_from_filename(candidate)
+            
+            if params_a is not None and params_b is not None:
+                # Calculate Log-Euclidean Distance
+                # 1. Take log of both (add small epsilon to avoid log(0))
+                log_a = np.log(params_a + 1e-9)
+                log_b = np.log(params_b + 1e-9)
+
+                # 2. Euclidean Distance in Log-Space
+                # This yields a single scalar "distance"
+                dist = np.linalg.norm(log_a - log_b)
+                
+                if dist > param_dist_threshold:
+                    file_b = candidate
+                    break # Found a separable pair
+            else:
+                # Fallback if filename parsing fails: just ensure different files
+                file_b = candidate
+                break
+        
+        # Fallback if loop exhausted (unlikely with sparse data, but safe)
+        if file_b is None:
+            if verbose: print(f"⚠️ Warning: Could not find distinct pair for {file_a.name} after {max_attempts} tries. Picking random.")
+            
+            while True:
+                file_b = rng.choice(traj_paths)
+                if file_b != file_a: break
+
+        if verbose: print(f"Selected files:\n A: {file_a.name}\n B: {file_b.name}")
         label = 0.0
         
-        # Determine how many from A and how many from B
         num_traj_a = num_traj // 2
-        num_traj_b = num_traj - num_traj_a  # Handles odd numbers (e.g., 3 -> 1 and 2)
+        num_traj_b = num_traj - num_traj_a
         
-        # --- 3. Load num_traj trajectories from the chosen files and concatenate them --- 
-        X_a = _load_and_concat([file_a], num_traj_a, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val) 
-        X_b = _load_and_concat([file_b], num_traj_b, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val) 
+        X_a = _load_and_concat([file_a], num_traj_a, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
+        X_b = _load_and_concat([file_b], num_traj_b, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
         
         if X_a is not None and X_b is not None:
-            # # === OPTION A: CONCATENATE ALONG FEATURE DIMENSION ===
-            # # Truncate to matching lengths (Time dimension)
-            # L = min(X_a.shape[0], X_b.shape[0])
-            # X = np.concatenate([X_a[:L], X_b[:L]], axis=1)
-            
-            # === OPTION B: CONCATENATE ALONG TIME DIMENSION ===
-            # Concatenate A and B along TIME (Axis 0)
             if separator_len > 0:
                 n_features = X_a.shape[1]
                 separator = np.full((separator_len, n_features), separator_val, dtype=X_a.dtype)
                 X = np.concatenate([X_a, separator, X_b], axis=0)
             else:
                 X = np.concatenate([X_a, X_b], axis=0)
-            
         else:
             X = None
-
-    return (X, label) 
+            
+    return (X, label)
 
 class BaselineDataset(Dataset):
     def __init__(self, groups):
