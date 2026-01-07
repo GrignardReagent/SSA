@@ -4,7 +4,7 @@ import numpy as np
 import random
 from tqdm import tqdm
 import torch
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import TensorDataset, Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from utils.data_processing import build_groups
@@ -239,13 +239,6 @@ class BaselineDataset(Dataset):
         return len(self.groups)
     
     def __getitem__(self, idx):
-        # X, y = self.groups[idx]
-        
-        # return (
-        #     torch.tensor(X, dtype=torch.float32),
-        #     torch.tensor(y, dtype=torch.float32).unsqueeze(0)
-        # )
-        
         # === INSTANCE NORMALIZATION ===
         # X shape: (Time_Steps, num_traj)
         X, y = self.groups[idx]
@@ -305,31 +298,8 @@ def baseline_data_prep(
         make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
         for _ in tqdm(range(num_groups_test))
     ]
-
-    # # 3. Standard Scaling (Fit on Train Only)
-    # print("Fitting StandardScaler on training data... (GLOBAL Scaling)")
-    # scaler = StandardScaler()
     
-    # if len(train_groups) > 0:
-    #     print("Fitting StandardScaler on training data...")
-    #     # Stack all X arrays to shape (N*Seq*num_traj, 1) for global scaling
-    #     all_train_values = np.vstack([g[0] for g in train_groups]) 
-    #     scaler.fit(all_train_values.reshape(-1, 1))
-    
-    # def scale_list(group_list):
-    #     scaled = []
-    #     for X, y in group_list:
-    #         shape = X.shape
-    #         # Scale -> Reshape back to (Seq_Len, num_traj)
-    #         X_sc = scaler.transform(X.reshape(-1, 1)).reshape(shape)
-    #         scaled.append((X_sc, y))
-    #     return scaled
-
-    # train_groups = scale_list(train_groups)
-    # val_groups   = scale_list(val_groups)
-    # test_groups  = scale_list(test_groups)
-
-    # 4. DataLoaders
+    # 3. DataLoaders
     train_loader = DataLoader(BaselineDataset(train_groups), batch_size=batch_size, shuffle=True)
     val_loader   = DataLoader(BaselineDataset(val_groups),   batch_size=batch_size, shuffle=False)
     test_loader  = DataLoader(BaselineDataset(test_groups),  batch_size=batch_size, shuffle=False)
@@ -340,6 +310,65 @@ def baseline_data_prep(
     print(f"Min Value: {batch_X.min():.2f}, Max Value: {batch_X.max():.2f}")
     
     return train_loader, val_loader, test_loader, None
+
+
+def save_loader_to_disk(loader, save_path):
+    """
+    Iterates through a dynamic loader (which generates data on-the-fly),
+    collects ALL samples, and saves them as a static .pt file.
+    
+    Args:
+        loader: The dynamic DataLoader instance.
+        save_path: Path to save the .pt file (e.g., 'data/train_data.pt').
+    """
+    print(f"❄️  Freezing and saving loader to {save_path}...")
+    all_X = []
+    all_y = []
+    
+    # Disable gradient tracking for speed
+    with torch.no_grad():
+        for i, (X, y) in enumerate(tqdm(loader, desc="Materializing Data")):
+            all_X.append(X)
+            all_y.append(y)
+    
+    # Concatenate all batches into large tensors
+    # X shape: (Total_Samples, Time, 1)
+    # y shape: (Total_Samples, 1)
+    full_X = torch.cat(all_X, dim=0)
+    full_y = torch.cat(all_y, dim=0)
+    
+    # Save dictionary
+    torch.save({
+        'X': full_X,
+        'y': full_y
+    }, save_path)
+    
+    print(f"✅ Saved {full_X.shape[0]} samples to {save_path}")
+
+
+def load_loader_from_disk(load_path, batch_size=64, shuffle=False):
+    """
+    Loads a saved .pt file and returns a standard DataLoader.
+    This reconstructs the exact dataset saved by save_loader_to_disk.
+    
+    Args:
+        load_path: Path to the .pt file.
+        batch_size: Batch size for the new loader.
+        shuffle: Whether to shuffle the data (set False for exact reproducibility).
+    """
+    if not Path(load_path).exists():
+        raise FileNotFoundError(f"❌ File not found: {load_path}")
+        
+    print(f"📂 Loading static data from {load_path}...")
+    data = torch.load(load_path)
+    
+    # Create standard TensorDataset
+    dataset = TensorDataset(data['X'], data['y'])
+    
+    # Create DataLoader
+    loader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+    
+    return loader
 
 
 # -----------------------------------------------------------------------------
