@@ -15,7 +15,7 @@ from sklearn.svm import SVC
 
 # data handling
 from sklearn.preprocessing import StandardScaler
-from utils.data_loader import baseline_data_prep
+from utils.data_loader import baseline_data_prep, save_loader_to_disk
 
 # simulation
 from simulation.mean_cv_t_ac import find_tilda_parameters
@@ -24,7 +24,7 @@ from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 
 # Get the absolute path of the directory containing this script
 script_dir = Path(__file__).resolve().parent
-DATA_ROOT = script_dir / "data"
+DATA_ROOT = script_dir / "temp_data"
 RESULTS_PATH = DATA_ROOT / "IY011_simulation_parameters_sobol.csv" #  this csv file stores all the simulation parameters used
 df_params = pd.read_csv(RESULTS_PATH) 
 TRAJ_PATH = [DATA_ROOT / df_params['trajectory_filename'].values[i] for i in range(len(df_params))]
@@ -32,7 +32,7 @@ TRAJ_NPZ_PATH = [traj_file.with_suffix('.npz') for traj_file in TRAJ_PATH]
 
 # === Dataloader hyperparams & data prep ===
 batch_size = 64
-num_groups_train=20000 
+num_groups_train=3000 
 num_groups_val=int(num_groups_train * 0.2)
 num_groups_test=int(num_groups_train * 0.2)
 num_traj=2
@@ -46,6 +46,24 @@ train_loader, val_loader, test_loader, scaler = baseline_data_prep(
 )
 # === Dataloader hyperparams & data prep ===
 
+# === Save data for debugging later === 
+# 1. Define paths
+train_save_path = DATA_ROOT / "static_train.pt"
+val_save_path   = DATA_ROOT / "static_val.pt"
+test_save_path  = DATA_ROOT / "static_test.pt"
+
+# 2. Check if static data already exists
+if not train_save_path.exists():
+    print("Static data not found. Saving...")
+    
+    # Save them to disk
+    save_loader_to_disk(train_loader, train_save_path)
+    save_loader_to_disk(val_loader, val_save_path)
+    save_loader_to_disk(test_loader, test_save_path)
+else:
+    print("Found existing static data on disk, the simulated data will not be saved, to prevent overwriting existing data.")
+# === Save data for debugging later === 
+
 X_b, y_b = next(iter(train_loader))
 print(X_b.shape, y_b.shape) # (Batch, Seq_Len, num_traj), (Batch, 1)
 
@@ -57,6 +75,7 @@ nhead=4
 num_layers=2
 dropout=0.001
 use_conv1d=False 
+max_seq_length = X_b.shape[1] + 100  # e.g., 5020 + 100 = 5120
 
 model = TransformerClassifier(
     input_size=input_size,
@@ -65,8 +84,11 @@ model = TransformerClassifier(
     num_layers=num_layers,
     num_classes=num_classes,
     dropout=dropout, 
-    use_conv1d=use_conv1d 
+    use_conv1d=use_conv1d,
+    max_seq_length=max_seq_length,
 )
+
+model_path = 'IY011_baseline_transformer_model_7.pth'
 # === Model hyperparams ===
 
 # === Training hyperparams ===
@@ -92,7 +114,7 @@ model.to(device)
 wandb_config = {
     "entity": "grignard-reagent",
     "project": "IY011-baseline-model",
-    "name": f"num_groups_train_{num_groups_train}_traj_{num_traj}_batch_size_{batch_size} (B, T*N, 1)", # change this to what you want
+    "name": f"num_groups_train_{num_groups_train}_traj_{num_traj}_batch_size_{batch_size} (all-varying dataset)", # change this to what you want
     "dataset": DATA_ROOT.name,
     "batch_size": batch_size,
     "input_size": input_size,
@@ -114,6 +136,7 @@ wandb_config = {
     "num_groups_train": num_groups_train,
     "num_groups_val": num_groups_val,
     "num_groups_test": num_groups_test,
+    "model_path": model_path,
 }
 # === wandb config === 
 
@@ -136,7 +159,6 @@ history = train_model(
 )
 
 # save the trained model
-model_path = 'IY011_baseline_transformer_model_4.pth'
 torch.save(model.state_dict(), model_path)
 print('Model saved to', model_path)
 
@@ -214,9 +236,9 @@ def generate_unseen_classes(n_classes=5, n_trajs_per_class=20, seq_len=3000):
     
     # Randomly sample parameters (Mu, CV, Tac)
     # We pick ranges similar to your training data to ensure they are valid biological possibilities
-    mus = np.random.uniform(10, 100, n_classes)
+    mus = np.random.uniform(1, 10000, n_classes)
     cvs = np.random.uniform(0.5, 2.0, n_classes)
-    tacs = np.random.uniform(5, 50, n_classes)
+    tacs = np.random.uniform(5, 120, n_classes)
     
     time_points = np.arange(0, seq_len, 1.0)
 
@@ -451,13 +473,13 @@ acc_svm_few_shot = test_svm_few_shot(unseen_datasets)
 # PERMUTATION TESTS
 # ==========================================
 
-def run_permutation_test(model, test_loader, device='cpu'):
+def run_permutation_test(model, test_loader, device=torch.device("cuda" if torch.cuda.is_available() else "cpu"), sep_len=1, num_traj=2):
     """
     Evaluates the model on:
     1. Original Data (Preserves Temporal Patterns)
-    2. Shuffled Data (Destroys Temporal Patterns, Preserves Stats)
+    2. Shuffled Data (Destroys Temporal Patterns, Preserves Stats & Structure)
     
-    This determines if the model is learning "physics" (dynamics) or just "identity" (mean intensity).
+    Generalized to handle any num_traj (2, 4, etc.).
     """
     model.eval()
     model.to(device)
@@ -466,21 +488,19 @@ def run_permutation_test(model, test_loader, device='cpu'):
     correct_shuffled = 0
     total = 0
     
-    print("Running Permutation Test...")
+    print(f"Running Permutation Test (num_traj={num_traj}, sep_len={sep_len})...")
     
     with torch.no_grad():
         for X, y in test_loader:
             # Move to device
             X = X.to(device)
-            y = y.to(device).squeeze() # Fix: Flatten y from (B, 1) to (B)
+            y = y.to(device).squeeze() 
             
             # --- Helper to get predictions ---
             def get_preds(logits):
                 if logits.shape[1] > 1:
-                    # Multi-class (e.g. 2 output nodes for Pos/Neg)
                     return torch.argmax(logits, dim=1)
                 else:
-                    # Binary (1 output node + Sigmoid)
                     return (torch.sigmoid(logits) > 0.5).float().squeeze()
 
             # --- 1. Test on ORIGINAL (Ordered) ---
@@ -488,15 +508,45 @@ def run_permutation_test(model, test_loader, device='cpu'):
             preds_orig = get_preds(logits_orig)
             correct_original += (preds_orig == y).sum().item()
             
-            # --- 2. Test on SHUFFLED (Scrambled) ---
-            # We shuffle the time dimension (axis 1) for each sample independently
-            # This breaks temporal dependency but keeps mean/variance identical.
+            # --- 2. Test on SHUFFLED (Structure Preserved) ---
             X_shuffled = X.clone()
             B, T, C = X.shape
             
-            for i in range(B):
-                idx = torch.randperm(T)
-                X_shuffled[i] = X[i, idx, :] # Shuffle time, keep channels aligned
+            # Logic to determine Segment Length (L) for any num_traj
+            # T = (num_traj * L) + ((num_traj - 1) * sep_len)
+            
+            if num_traj > 1:
+                total_sep_space = (num_traj - 1) * sep_len
+                remaining_space = T - total_sep_space
+                L = remaining_space // num_traj
+                
+                # Validation: Check if the math adds up perfectly
+                if L * num_traj + total_sep_space != T:
+                    print(f"⚠️ Warning: Dimension mismatch! T={T} doesn't fit num_traj={num_traj}, sep={sep_len}. Shuffling globally.")
+                    # Fallback: Global Shuffle
+                    for i in range(B):
+                        idx = torch.randperm(T)
+                        X_shuffled[i] = X[i, idx, :]
+                else:
+                    # Component-wise Shuffle Loop
+                    for i in range(B):
+                        current_pos = 0
+                        for k in range(num_traj):
+                            # Define start and end of the k-th trajectory segment
+                            seg_start = current_pos
+                            seg_end = current_pos + L
+                            
+                            # Shuffle this specific segment
+                            idx_segment = torch.randperm(L)
+                            X_shuffled[i, seg_start:seg_end, :] = X[i, seg_start:seg_end, :][idx_segment]
+                            
+                            # Move pointer: Skip the segment we just shuffled + the separator
+                            current_pos = seg_end + sep_len
+            else:
+                # num_traj=1 case (Simple global shuffle)
+                for i in range(B):
+                    idx = torch.randperm(T)
+                    X_shuffled[i] = X[i, idx, :]
             
             logits_shuff = model(X_shuffled)
             preds_shuff = get_preds(logits_shuff)
@@ -510,7 +560,7 @@ def run_permutation_test(model, test_loader, device='cpu'):
     
     print(f"------------------------------------------------")
     print(f"Accuracy on ORIGINAL Data:  {acc_orig:.2%}")
-    print(f"Accuracy on SHUFFLED Data:  {acc_shuff:.2%}")
+    print(f"Accuracy on SHUFFLED Data:  {acc_shuff:.2%} (Structure Preserved)")
     print(f"------------------------------------------------")
     
     return acc_orig, acc_shuff
@@ -518,29 +568,5 @@ def run_permutation_test(model, test_loader, device='cpu'):
 print("\n=== Running Permutation Test ===")
 acc_orig, acc_shuff = run_permutation_test(model, test_loader, device=device)
 
-def test_baseline_with_shuffling(model, unseen_data, scaler, num_traj, crop_len=1811):
-    """
-    Runs the baseline evaluation but SHUFFLES the query data first.
-    If Accuracy stays high (~90%), the model is 100% cheating (ignoring time).
-    """
-    # ... [Copy setup from original function] ...
-    
-    # Create SHUFFLED copy of data for testing
-    shuffled_data = []
-    for data in unseen_data:
-        # Shuffle time axis (axis 1) for each trajectory
-        clean_traj = data['trajectories']
-        shuffled_traj = np.array([np.random.permutation(t) for t in clean_traj])
-        
-        shuffled_data.append({
-            'class_id': data['class_id'],
-            'trajectories': shuffled_traj 
-        })
-        
-    print("⚠️ Running Baseline Eval on TIME-SCRAMBLED data...")
-    # Pass shuffled data to your original evaluation function
-    return test_baseline_performance(model, shuffled_data, scaler, num_traj, crop_len)
-
 # Test baseline performance on unseen data, both original and shuffled
 acc = test_baseline_performance(model, unseen_datasets, scaler, num_traj=num_traj)
-acc_shuffled = test_baseline_with_shuffling(model, unseen_datasets, scaler, num_traj=num_traj)

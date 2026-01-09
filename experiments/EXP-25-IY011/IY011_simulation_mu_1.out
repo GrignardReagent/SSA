@@ -1,0 +1,309 @@
+=== Generating MEAN Control Dataset ===
+Fixed Parameters: t_ac=10.0, CV=0.5
+Varying Mu: [1.0, 10000.0] via Sobol sampling
+Total Datasets: 48
+Started at: 2025-12-16 17:17:34.267035
+Simulating Sobol samples (mu variation):   0%|          | 0/48 [00:00<?, ?it/s]Simulating Sobol samples (mu variation):   2%|▏         | 1/48 [01:56<1:31:10, 116.40s/it]Simulating Sobol samples (mu variation):   4%|▍         | 2/48 [03:18<1:13:41, 96.13s/it] Simulating Sobol samples (mu variation):   6%|▋         | 3/48 [04:45<1:09:08, 92.18s/it]Simulating Sobol samples (mu variation):   8%|▊         | 4/48 [05:41<57:01, 77.77s/it]  Simulating Sobol samples (mu variation):  10%|█         | 5/48 [06:38<50:27, 70.41s/it]Simulating Sobol samples (mu variation):  12%|█▎        | 6/48 [08:11<54:30, 77.87s/it]Simulating Sobol samples (mu variation):  15%|█▍        | 7/48 [09:28<53:00, 77.56s/it]Simulating Sobol samples (mu variation):  17%|█▋        | 8/48 [10:33<49:10, 73.75s/it]Simulating Sobol samples (mu variation):  19%|█▉        | 9/48 [11:39<46:22, 71.35s/it]Simulating Sobol samples (mu variation):  21%|██        | 10/48 [12:55<45:56, 72.54s/it]Simulating Sobol samples (mu variation):  23%|██▎       | 11/48 [14:34<49:47, 80.74s/it]Simulating Sobol samples (mu variation):  25%|██▌       | 12/48 [15:33<44:32, 74.23s/it]Simulating Sobol samples (mu variation):  27%|██▋       | 13/48 [16:26<39:25, 67.59s/it]Simulating Sobol samples (mu variation):  29%|██▉       | 14/48 [17:51<41:23, 73.03s/it]Simulating Sobol samples (mu variation):  31%|███▏      | 15/48 [19:14<41:52, 76.13s/it]Simulating Sobol samples (mu variation):  33%|███▎      | 16/48 [20:27<39:58, 74.95s/it]Simulating Sobol samples (mu variation):  35%|███▌      | 17/48 [21:37<38:02, 73.61s/it]Simulating Sobol samples (mu variation):  38%|███▊      | 18/48 [23:01<38:18, 76.62s/it]Simulating Sobol samples (mu variation):  40%|███▉      | 19/48 [24:28<38:33, 79.79s/it]Simulating Sobol samples (mu variation):  42%|████▏     | 20/48 [25:20<33:20, 71.44s/it]Simulating Sobol samples (mu variation):  44%|████▍     | 21/48 [26:21<30:43, 68.29s/it]Simulating Sobol samples (mu variation):  46%|████▌     | 22/48 [27:55<32:54, 75.96s/it]Simulating Sobol samples (mu variation):  48%|████▊     | 23/48 [29:09<31:28, 75.56s/it]Simulating Sobol samples (mu variation):  50%|█████     | 24/48 [30:13<28:47, 71.96s/it]Simulating Sobol samples (mu variation):  52%|█████▏    | 25/48 [31:20<26:59, 70.43s/it]Simulating Sobol samples (mu variation):  54%|█████▍    | 26/48 [32:36<26:27, 72.14s/it]Simulating Sobol samples (mu variation):  56%|█████▋    | 27/48 [34:06<27:05, 77.42s/it]Simulating Sobol samples (mu variation):  58%|█████▊    | 28/48 [35:04<23:54, 71.74s/it]Simulating Sobol samples (mu variation):  60%|██████    | 29/48 [35:59<21:05, 66.61s/it]Simulating Sobol samples (mu variation):  62%|██████▎   | 30/48 [37:27<21:56, 73.14s/it]Simulating Sobol samples (mu variation):  65%|██████▍   | 31/48 [38:48<21:21, 75.35s/it]Simulating Sobol samples (mu variation):  67%|██████▋   | 32/48 [39:56<19:31, 73.24s/it]Simulating Sobol samples (mu variation):  69%|██████▉   | 33/48 [41:04<17:53, 71.60s/it]Testing mu=4310.86, t_ac=10.00, cv=0.50
+Parameters found: rho=1679.3139, d=0.1118, sigma_b=0.2871, sigma_u=0.7129
+Initializing Julia environment...
+  Target: mu=4310.864, cv=0.500, t_ac=10.000
+  Observed: mu=4315.196, cv=0.500, t_ac=10.023
+  Errors: mean=0.1%, cv=0.0%, ac=0.2%
+Testing mu=6344.52, t_ac=10.00, cv=0.50
+Parameters found: rho=2472.0858, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=6344.517, cv=0.500, t_ac=10.000
+  Observed: mu=6353.459, cv=0.499, t_ac=9.929
+  Errors: mean=0.1%, cv=0.2%, ac=0.7%
+Testing mu=8173.80, t_ac=10.00, cv=0.50
+Parameters found: rho=3185.1888, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8173.800, cv=0.500, t_ac=10.000
+  Observed: mu=8184.459, cv=0.500, t_ac=9.976
+  Errors: mean=0.1%, cv=0.1%, ac=0.2%
+Testing mu=1133.76, t_ac=10.00, cv=0.50
+Parameters found: rho=440.7948, d=0.1118, sigma_b=0.2876, sigma_u=0.7124
+  Target: mu=1133.760, cv=0.500, t_ac=10.000
+  Observed: mu=1135.379, cv=0.500, t_ac=9.947
+  Errors: mean=0.1%, cv=0.1%, ac=0.5%
+Testing mu=1525.04, t_ac=10.00, cv=0.50
+Parameters found: rho=593.3271, d=0.1118, sigma_b=0.2874, sigma_u=0.7126
+  Target: mu=1525.043, cv=0.500, t_ac=10.000
+  Observed: mu=1525.713, cv=0.499, t_ac=9.873
+  Errors: mean=0.0%, cv=0.2%, ac=1.3%
+Testing mu=9188.63, t_ac=10.00, cv=0.50
+Parameters found: rho=3580.7946, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=9188.626, cv=0.500, t_ac=10.000
+  Observed: mu=9211.714, cv=0.499, t_ac=9.922
+  Errors: mean=0.3%, cv=0.1%, ac=0.8%
+Testing mu=5954.63, t_ac=10.00, cv=0.50
+Parameters found: rho=2320.0972, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5954.629, cv=0.500, t_ac=10.000
+  Observed: mu=5958.459, cv=0.500, t_ac=9.935
+  Errors: mean=0.1%, cv=0.1%, ac=0.7%
+Testing mu=3294.64, t_ac=10.00, cv=0.50
+Parameters found: rho=1283.1644, d=0.1118, sigma_b=0.2872, sigma_u=0.7128
+  Target: mu=3294.644, cv=0.500, t_ac=10.000
+  Observed: mu=3294.655, cv=0.500, t_ac=9.967
+  Errors: mean=0.0%, cv=0.1%, ac=0.3%
+Testing mu=2566.49, t_ac=10.00, cv=0.50
+Parameters found: rho=999.3115, d=0.1118, sigma_b=0.2872, sigma_u=0.7128
+  Target: mu=2566.492, cv=0.500, t_ac=10.000
+  Observed: mu=2565.051, cv=0.500, t_ac=9.908
+  Errors: mean=0.1%, cv=0.1%, ac=0.9%
+Testing mu=5530.25, t_ac=10.00, cv=0.50
+Parameters found: rho=2154.6620, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5530.248, cv=0.500, t_ac=10.000
+  Observed: mu=5526.441, cv=0.500, t_ac=9.949
+  Errors: mean=0.1%, cv=0.1%, ac=0.5%
+Testing mu=9952.33, t_ac=10.00, cv=0.50
+Parameters found: rho=3878.5066, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=9952.330, cv=0.500, t_ac=10.000
+  Observed: mu=9957.670, cv=0.500, t_ac=9.989
+  Errors: mean=0.1%, cv=0.0%, ac=0.1%
+Testing mu=1991.99, t_ac=10.00, cv=0.50
+Parameters found: rho=775.3554, d=0.1118, sigma_b=0.2873, sigma_u=0.7127
+  Target: mu=1991.990, cv=0.500, t_ac=10.000
+  Observed: mu=1989.467, cv=0.501, t_ac=10.017
+  Errors: mean=0.1%, cv=0.2%, ac=0.2%
+Testing mu=352.21, t_ac=10.00, cv=0.50
+Parameters found: rho=136.1251, d=0.1117, sigma_b=0.2891, sigma_u=0.7109
+  Target: mu=352.208, cv=0.500, t_ac=10.000
+  Observed: mu=352.099, cv=0.499, t_ac=9.866
+  Errors: mean=0.0%, cv=0.1%, ac=1.3%
+Testing mu=7686.25, t_ac=10.00, cv=0.50
+Parameters found: rho=2995.1302, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=7686.254, cv=0.500, t_ac=10.000
+  Observed: mu=7678.102, cv=0.500, t_ac=9.899
+  Errors: mean=0.1%, cv=0.1%, ac=1.0%
+Testing mu=7171.39, t_ac=10.00, cv=0.50
+Parameters found: rho=2794.4212, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=7171.386, cv=0.500, t_ac=10.000
+  Observed: mu=7171.564, cv=0.500, t_ac=9.955
+  Errors: mean=0.0%, cv=0.0%, ac=0.5%
+Testing mu=4831.21, t_ac=10.00, cv=0.50
+Parameters found: rho=1882.1591, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=4831.211, cv=0.500, t_ac=10.000
+  Observed: mu=4837.250, cv=0.499, t_ac=9.964
+  Errors: mean=0.1%, cv=0.1%, ac=0.4%
+Testing mu=4409.84, t_ac=10.00, cv=0.50
+Parameters found: rho=1717.8965, d=0.1118, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=4409.838, cv=0.500, t_ac=10.000
+  Observed: mu=4400.807, cv=0.500, t_ac=9.951
+  Errors: mean=0.2%, cv=0.1%, ac=0.5%
+Testing mu=7377.94, t_ac=10.00, cv=0.50
+Parameters found: rho=2874.9428, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=7377.944, cv=0.500, t_ac=10.000
+  Observed: mu=7374.800, cv=0.501, t_ac=9.941
+  Errors: mean=0.0%, cv=0.2%, ac=0.6%
+Testing mu=8107.15, t_ac=10.00, cv=0.50
+Parameters found: rho=3159.2069, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8107.151, cv=0.500, t_ac=10.000
+  Observed: mu=8119.396, cv=0.499, t_ac=9.943
+  Errors: mean=0.2%, cv=0.2%, ac=0.6%
+Testing mu=146.13, t_ac=10.00, cv=0.50
+Parameters found: rho=55.7897, d=0.1115, sigma_b=0.2921, sigma_u=0.7079
+  Target: mu=146.127, cv=0.500, t_ac=10.000
+  Observed: mu=146.088, cv=0.501, t_ac=9.976
+  Errors: mean=0.0%, cv=0.2%, ac=0.2%
+Testing mu=2254.75, t_ac=10.00, cv=0.50
+Parameters found: rho=877.7851, d=0.1118, sigma_b=0.2873, sigma_u=0.7127
+  Target: mu=2254.747, cv=0.500, t_ac=10.000
+  Observed: mu=2256.296, cv=0.500, t_ac=9.953
+  Errors: mean=0.1%, cv=0.0%, ac=0.5%
+Testing mu=9591.92, t_ac=10.00, cv=0.50
+Parameters found: rho=3738.0103, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=9591.923, cv=0.500, t_ac=10.000
+  Observed: mu=9591.296, cv=0.500, t_ac=9.945
+  Errors: mean=0.0%, cv=0.1%, ac=0.6%
+Testing mu=5268.23, t_ac=10.00, cv=0.50
+Parameters found: rho=2052.5222, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5268.234, cv=0.500, t_ac=10.000
+  Observed: mu=5272.915, cv=0.500, t_ac=9.908
+  Errors: mean=0.1%, cv=0.0%, ac=0.9%
+Testing mu=2926.15, t_ac=10.00, cv=0.50
+Parameters found: rho=1139.5178, d=0.1118, sigma_b=0.2872, sigma_u=0.7128
+  Target: mu=2926.155, cv=0.500, t_ac=10.000
+  Observed: mu=2935.870, cv=0.499, t_ac=9.974
+  Errors: mean=0.3%, cv=0.1%, ac=0.3%
+Testing mu=3715.49, t_ac=10.00, cv=0.50
+Parameters found: rho=1447.2207, d=0.1118, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=3715.488, cv=0.500, t_ac=10.000
+  Observed: mu=3721.013, cv=0.500, t_ac=9.973
+  Errors: mean=0.1%, cv=0.1%, ac=0.3%
+Testing mu=5748.61, t_ac=10.00, cv=0.50
+Parameters found: rho=2239.7856, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5748.611, cv=0.500, t_ac=10.000
+  Observed: mu=5750.844, cv=0.500, t_ac=9.924
+  Errors: mean=0.0%, cv=0.1%, ac=0.8%
+Testing mu=8767.34, t_ac=10.00, cv=0.50
+Parameters found: rho=3416.5673, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8767.343, cv=0.500, t_ac=10.000
+  Observed: mu=8782.141, cv=0.499, t_ac=9.922
+  Errors: mean=0.2%, cv=0.2%, ac=0.8%
+Testing mu=1731.50, t_ac=10.00, cv=0.50
+Parameters found: rho=673.8096, d=0.1118, sigma_b=0.2874, sigma_u=0.7126
+  Target: mu=1731.500, cv=0.500, t_ac=10.000
+  Observed: mu=1732.768, cv=0.500, t_ac=9.946
+  Errors: mean=0.1%, cv=0.1%, ac=0.5%
+Testing mu=871.68, t_ac=10.00, cv=0.50
+Parameters found: rho=338.6309, d=0.1118, sigma_b=0.2878, sigma_u=0.7122
+  Target: mu=871.684, cv=0.500, t_ac=10.000
+  Observed: mu=871.933, cv=0.500, t_ac=9.940
+  Errors: mean=0.0%, cv=0.0%, ac=0.6%
+Testing mu=8533.52, t_ac=10.00, cv=0.50
+Parameters found: rho=3325.4155, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8533.516, cv=0.500, t_ac=10.000
+  Observed: mu=8569.525, cv=0.499, t_ac=10.006
+  Errors: mean=0.4%, cv=0.2%, ac=0.1%
+Testing mu=6607.37, t_ac=10.00, cv=0.50
+Parameters found: rho=2574.5546, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=6607.375, cv=0.500, t_ac=10.000
+  Observed: mu=6608.154, cv=0.500, t_ac=9.902
+  Errors: mean=0.0%, cv=0.0%, ac=1.0%
+Testing mu=3950.37, t_ac=10.00, cv=0.50
+Parameters found: rho=1538.7823, d=0.1118, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=3950.366, cv=0.500, t_ac=10.000
+  Observed: mu=3952.017, cv=0.500, t_ac=9.936
+  Errors: mean=0.0%, cv=0.0%, ac=0.6%
+Testing mu=3795.67, t_ac=10.00, cv=0.50
+Parameters found: rho=1478.4775, d=0.1118, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=3795.669, cv=0.500, t_ac=10.000
+  Observed: mu=3795.970, cv=0.500, t_ac=9.971
+  Errors: mean=0.0%, cv=0.1%, ac=0.3%
+Testing mu=6762.07, t_ac=10.00, cv=0.50
+Parameters found: rho=2634.8575, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=6762.066, cv=0.500, t_ac=10.000Simulating Sobol samples (mu variation):  71%|███████   | 34/48 [42:25<17:22, 74.45s/it]Simulating Sobol samples (mu variation):  73%|███████▎  | 35/48 [43:55<17:07, 79.02s/it]Simulating Sobol samples (mu variation):  75%|███████▌  | 36/48 [44:48<14:17, 71.47s/it]Simulating Sobol samples (mu variation):  77%|███████▋  | 37/48 [45:46<12:21, 67.37s/it]Simulating Sobol samples (mu variation):  79%|███████▉  | 38/48 [47:17<12:23, 74.35s/it]Simulating Sobol samples (mu variation):  81%|████████▏ | 39/48 [48:34<11:16, 75.16s/it]Simulating Sobol samples (mu variation):  83%|████████▎ | 40/48 [49:41<09:40, 72.62s/it]Simulating Sobol samples (mu variation):  85%|████████▌ | 41/48 [50:45<08:10, 70.13s/it]Simulating Sobol samples (mu variation):  88%|████████▊ | 42/48 [51:58<07:06, 71.11s/it]Simulating Sobol samples (mu variation):  90%|████████▉ | 43/48 [53:31<06:28, 77.68s/it]Simulating Sobol samples (mu variation):  92%|█████████▏| 44/48 [54:33<04:51, 72.85s/it]Simulating Sobol samples (mu variation):  94%|█████████▍| 45/48 [55:24<03:19, 66.46s/it]Simulating Sobol samples (mu variation):  96%|█████████▌| 46/48 [56:51<02:24, 72.38s/it]Simulating Sobol samples (mu variation):  98%|█████████▊| 47/48 [58:14<01:15, 75.64s/it]Simulating Sobol samples (mu variation): 100%|██████████| 48/48 [59:25<00:00, 74.25s/it]Simulating Sobol samples (mu variation): 100%|██████████| 48/48 [59:25<00:00, 74.28s/it]
+
+  Observed: mu=6752.502, cv=0.502, t_ac=10.015
+  Errors: mean=0.1%, cv=0.3%, ac=0.1%
+Testing mu=8683.96, t_ac=10.00, cv=0.50
+Parameters found: rho=3384.0626, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8683.960, cv=0.500, t_ac=10.000
+  Observed: mu=8693.837, cv=0.501, t_ac=10.000
+  Errors: mean=0.1%, cv=0.2%, ac=0.0%
+Testing mu=721.25, t_ac=10.00, cv=0.50
+Parameters found: rho=279.9858, d=0.1118, sigma_b=0.2880, sigma_u=0.7120
+  Target: mu=721.245, cv=0.500, t_ac=10.000
+  Observed: mu=720.998, cv=0.500, t_ac=9.899
+  Errors: mean=0.0%, cv=0.1%, ac=1.0%
+Testing mu=1581.08, t_ac=10.00, cv=0.50
+Parameters found: rho=615.1719, d=0.1118, sigma_b=0.2874, sigma_u=0.7126
+  Target: mu=1581.080, cv=0.500, t_ac=10.000
+  Observed: mu=1580.397, cv=0.502, t_ac=10.006
+  Errors: mean=0.0%, cv=0.3%, ac=0.1%
+Testing mu=8917.77, t_ac=10.00, cv=0.50
+Parameters found: rho=3475.2069, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=8917.768, cv=0.500, t_ac=10.000
+  Observed: mu=8937.887, cv=0.499, t_ac=9.947
+  Errors: mean=0.2%, cv=0.2%, ac=0.5%
+Testing mu=5903.32, t_ac=10.00, cv=0.50
+Parameters found: rho=2300.0961, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5903.322, cv=0.500, t_ac=10.000
+  Observed: mu=5907.903, cv=0.500, t_ac=9.931
+  Errors: mean=0.1%, cv=0.0%, ac=0.7%
+Testing mu=3560.77, t_ac=10.00, cv=0.50
+Parameters found: rho=1386.9085, d=0.1118, sigma_b=0.2872, sigma_u=0.7128
+  Target: mu=3560.772, cv=0.500, t_ac=10.000
+  Observed: mu=3554.768, cv=0.500, t_ac=9.906
+  Errors: mean=0.2%, cv=0.0%, ac=0.9%
+Testing mu=3081.47, t_ac=10.00, cv=0.50
+Parameters found: rho=1200.0625, d=0.1118, sigma_b=0.2872, sigma_u=0.7128
+  Target: mu=3081.467, cv=0.500, t_ac=10.000
+  Observed: mu=3077.430, cv=0.501, t_ac=9.992
+  Errors: mean=0.1%, cv=0.2%, ac=0.1%
+Testing mu=5112.92, t_ac=10.00, cv=0.50
+Parameters found: rho=1991.9757, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=5112.918, cv=0.500, t_ac=10.000
+  Observed: mu=5109.907, cv=0.500, t_ac=9.938
+  Errors: mean=0.1%, cv=0.1%, ac=0.6%
+Testing mu=9442.08, t_ac=10.00, cv=0.50
+Parameters found: rho=3679.5994, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=9442.084, cv=0.500, t_ac=10.000
+  Observed: mu=9439.884, cv=0.500, t_ac=9.919
+  Errors: mean=0.0%, cv=0.1%, ac=0.8%
+Testing mu=2404.59, t_ac=10.00, cv=0.50
+Parameters found: rho=936.1978, d=0.1118, sigma_b=0.2873, sigma_u=0.7127
+  Target: mu=2404.590, cv=0.500, t_ac=10.000
+  Observed: mu=2405.554, cv=0.501, t_ac=9.988
+  Errors: mean=0.0%, cv=0.2%, ac=0.1%
+Testing mu=295.95, t_ac=10.00, cv=0.50
+Parameters found: rho=114.1948, d=0.1117, sigma_b=0.2895, sigma_u=0.7105
+  Target: mu=295.951, cv=0.500, t_ac=10.000
+  Observed: mu=296.171, cv=0.500, t_ac=9.921
+  Errors: mean=0.1%, cv=0.1%, ac=0.8%
+Testing mu=7957.33, t_ac=10.00, cv=0.50
+Parameters found: rho=3100.8035, d=0.1119, sigma_b=0.2870, sigma_u=0.7130
+  Target: mu=7957.332, cv=0.500, t_ac=10.000
+  Observed: mu=7955.574, cv=0.500, t_ac=9.953
+  Errors: mean=0.0%, cv=0.0%, ac=0.5%
+Testing mu=7222.61, t_ac=10.00, cv=0.50
+Parameters found: rho=2814.3887, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=7222.608, cv=0.500, t_ac=10.000
+  Observed: mu=7228.933, cv=0.500, t_ac=9.923
+  Errors: mean=0.1%, cv=0.1%, ac=0.8%
+Testing mu=4565.17, t_ac=10.00, cv=0.50
+Parameters found: rho=1778.4486, d=0.1119, sigma_b=0.2871, sigma_u=0.7129
+  Target: mu=4565.168, cv=0.500, t_ac=10.000
+  Observed: mu=4566.906, cv=0.500, t_ac=9.917
+  Errors: mean=0.0%, cv=0.1%, ac=0.8%
+
+=== Control Data Generation Complete ===
+Total combinations: 48
+Successful runs: 48
+Failed runs: 0
+Data saved to: temp_data_mu_variation
+
+=== Starting Data Processing for ML ===
+Calculating steady state indices for alignment...
+Max steady state index determined: 89
+Processing 48 files into .npz format...
+Saving NPZs:   0%|          | 0/48 [00:00<?, ?it/s]Saving NPZs:   2%|▏         | 1/48 [00:01<01:11,  1.53s/it]Saving NPZs:   4%|▍         | 2/48 [00:03<01:12,  1.57s/it]Saving NPZs:   6%|▋         | 3/48 [00:04<01:14,  1.65s/it]Saving NPZs:   8%|▊         | 4/48 [00:06<01:14,  1.68s/it]Saving NPZs:  10%|█         | 5/48 [00:08<01:13,  1.70s/it]Saving NPZs:  12%|█▎        | 6/48 [00:10<01:12,  1.72s/it]Saving NPZs:  15%|█▍        | 7/48 [00:11<01:08,  1.66s/it]Saving NPZs:  17%|█▋        | 8/48 [00:13<01:05,  1.65s/it]Saving NPZs:  19%|█▉        | 9/48 [00:14<01:05,  1.68s/it]Saving NPZs:  21%|██        | 10/48 [00:16<01:02,  1.63s/it]Saving NPZs:  23%|██▎       | 11/48 [00:18<01:01,  1.66s/it]Saving NPZs:  25%|██▌       | 12/48 [00:20<01:01,  1.71s/it]Saving NPZs:  27%|██▋       | 13/48 [00:21<00:59,  1.71s/it]Saving NPZs:  29%|██▉       | 14/48 [00:23<00:58,  1.71s/it]Saving NPZs:  31%|███▏      | 15/48 [00:25<00:56,  1.70s/it]Saving NPZs:  33%|███▎      | 16/48 [00:26<00:52,  1.65s/it]Saving NPZs:  35%|███▌      | 17/48 [00:28<00:49,  1.61s/it]Saving NPZs:  38%|███▊      | 18/48 [00:29<00:48,  1.63s/it]Saving NPZs:  40%|███▉      | 19/48 [00:31<00:48,  1.67s/it]Saving NPZs:  42%|████▏     | 20/48 [00:33<00:47,  1.71s/it]Saving NPZs:  44%|████▍     | 21/48 [00:35<00:46,  1.74s/it]Saving NPZs:  46%|████▌     | 22/48 [00:37<00:45,  1.74s/it]Saving NPZs:  48%|████▊     | 23/48 [00:38<00:41,  1.67s/it]Saving NPZs:  50%|█████     | 24/48 [00:40<00:40,  1.67s/it]Saving NPZs:  52%|█████▏    | 25/48 [00:41<00:37,  1.64s/it]Saving NPZs:  54%|█████▍    | 26/48 [00:43<00:35,  1.62s/it]Saving NPZs:  56%|█████▋    | 27/48 [00:45<00:34,  1.66s/it]Saving NPZs:  58%|█████▊    | 28/48 [00:46<00:33,  1.70s/it]Saving NPZs:  60%|██████    | 29/48 [00:48<00:32,  1.73s/it]Saving NPZs:  62%|██████▎   | 30/48 [00:50<00:31,  1.74s/it]Saving NPZs:  65%|██████▍   | 31/48 [00:52<00:28,  1.71s/it]Saving NPZs:  67%|██████▋   | 32/48 [00:53<00:26,  1.66s/it]Saving NPZs:  69%|██████▉   | 33/48 [00:55<00:24,  1.63s/it]Saving NPZs:  71%|███████   | 34/48 [00:56<00:22,  1.63s/it]Saving NPZs:  73%|███████▎  | 35/48 [00:58<00:21,  1.66s/it]Saving NPZs:  75%|███████▌  | 36/48 [01:00<00:20,  1.74s/it]Saving NPZs:  77%|███████▋  | 37/48 [01:02<00:19,  1.74s/it]Saving NPZs:  79%|███████▉  | 38/48 [01:03<00:17,  1.75s/it]Saving NPZs:  81%|████████▏ | 39/48 [01:05<00:15,  1.69s/it]Saving NPZs:  83%|████████▎ | 40/48 [01:07<00:13,  1.66s/it]Saving NPZs:  85%|████████▌ | 41/48 [01:08<00:11,  1.65s/it]Saving NPZs:  88%|████████▊ | 42/48 [01:10<00:09,  1.62s/it]Saving NPZs:  90%|████████▉ | 43/48 [01:12<00:08,  1.65s/it]Saving NPZs:  92%|█████████▏| 44/48 [01:13<00:06,  1.69s/it]Saving NPZs:  94%|█████████▍| 45/48 [01:15<00:05,  1.69s/it]Saving NPZs:  96%|█████████▌| 46/48 [01:17<00:03,  1.70s/it]Saving NPZs:  98%|█████████▊| 47/48 [01:18<00:01,  1.70s/it]Saving NPZs: 100%|██████████| 48/48 [01:20<00:00,  1.64s/it]Saving NPZs: 100%|██████████| 48/48 [01:20<00:00,  1.68s/it]
+Data processing complete.
+  Activating project at `~/stochastic_simulations/julia`
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..

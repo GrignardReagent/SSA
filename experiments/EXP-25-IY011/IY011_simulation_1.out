@@ -1,0 +1,305 @@
+Testing 48 parameter combinations...
+Started at: 2025-12-17 16:41:26.812011
+Simulating Sobol samples:   0%|          | 0/48 [00:00<?, ?it/s]Simulating Sobol samples:   2%|▏         | 1/48 [01:47<1:24:08, 107.42s/it]Simulating Sobol samples:   4%|▍         | 2/48 [02:51<1:02:42, 81.80s/it] Simulating Sobol samples:   6%|▋         | 3/48 [03:51<54:02, 72.06s/it]  Simulating Sobol samples:   8%|▊         | 4/48 [04:57<50:56, 69.48s/it]Simulating Sobol samples:  10%|█         | 5/48 [05:55<46:49, 65.35s/it]Simulating Sobol samples:  12%|█▎        | 6/48 [06:55<44:38, 63.77s/it]Simulating Sobol samples:  15%|█▍        | 7/48 [08:11<46:18, 67.76s/it]Simulating Sobol samples:  17%|█▋        | 8/48 [09:11<43:28, 65.20s/it]Simulating Sobol samples:  19%|█▉        | 9/48 [10:14<41:55, 64.49s/it]Simulating Sobol samples:  21%|██        | 10/48 [11:18<40:41, 64.25s/it]Simulating Sobol samples:  23%|██▎       | 11/48 [12:24<39:53, 64.69s/it]Simulating Sobol samples:  25%|██▌       | 12/48 [13:22<37:38, 62.73s/it]Simulating Sobol samples:  27%|██▋       | 13/48 [14:21<35:54, 61.56s/it]Simulating Sobol samples:  29%|██▉       | 14/48 [15:35<37:06, 65.49s/it]Simulating Sobol samples:  31%|███▏      | 15/48 [16:37<35:22, 64.33s/it]Simulating Sobol samples:  33%|███▎      | 16/48 [17:39<33:56, 63.65s/it]Simulating Sobol samples:  35%|███▌      | 17/48 [18:40<32:33, 63.01s/it]Simulating Sobol samples:  38%|███▊      | 18/48 [19:49<32:23, 64.78s/it]Simulating Sobol samples:  40%|███▉      | 19/48 [20:49<30:34, 63.27s/it]Simulating Sobol samples:  42%|████▏     | 20/48 [21:49<29:06, 62.38s/it]Simulating Sobol samples:  44%|████▍     | 21/48 [22:50<27:46, 61.72s/it]Simulating Sobol samples:  46%|████▌     | 22/48 [23:51<26:42, 61.63s/it]Simulating Sobol samples:  48%|████▊     | 23/48 [24:56<26:07, 62.71s/it]Simulating Sobol samples:  50%|█████     | 24/48 [25:56<24:40, 61.69s/it]Simulating Sobol samples:  52%|█████▏    | 25/48 [26:56<23:31, 61.37s/it]Simulating Sobol samples:  54%|█████▍    | 26/48 [27:59<22:39, 61.80s/it]Simulating Sobol samples:  56%|█████▋    | 27/48 [29:57<27:31, 78.64s/it]Simulating Sobol samples:  58%|█████▊    | 28/48 [30:55<24:08, 72.43s/it]Simulating Sobol samples:  60%|██████    | 29/48 [31:53<21:37, 68.29s/it]Simulating Sobol samples:  62%|██████▎   | 30/48 [32:58<20:10, 67.26s/it]Simulating Sobol samples:  65%|██████▍   | 31/48 [34:01<18:42, 66.03s/it]Simulating Sobol samples:  67%|██████▋   | 32/48 [35:07<17:33, 65.85s/it]Simulating Sobol samples:  69%|██████▉   | 33/48 [36:10<16:13, 64.91s/it]Testing mu=4310.86, t_ac=97.74, cv=1.72
+Parameters found: rho=12951.9174, d=0.0103, sigma_b=0.0034, sigma_u=0.9966
+Initializing Julia environment...
+  Target: mu=4310.864, cv=1.722, t_ac=97.737
+  Observed: mu=4317.857, cv=1.727, t_ac=98.910
+  Errors: mean=0.2%, cv=0.3%, ac=1.2%
+Testing mu=8698.27, t_ac=62.35, cv=1.16
+Parameters found: rho=11958.9960, d=0.0163, sigma_b=0.0119, sigma_u=0.9881
+  Target: mu=8698.266, cv=1.156, t_ac=62.354
+  Observed: mu=8649.172, cv=1.156, t_ac=62.007
+  Errors: mean=0.6%, cv=0.0%, ac=0.6%
+Testing mu=5779.58, t_ac=88.54, cv=1.27
+Parameters found: rho=9422.8615, d=0.0114, sigma_b=0.0070, sigma_u=0.9930
+  Target: mu=5779.577, cv=1.265, t_ac=88.544
+  Observed: mu=5802.946, cv=1.258, t_ac=87.118
+  Errors: mean=0.4%, cv=0.5%, ac=1.6%
+Testing mu=1369.53, t_ac=8.66, cv=0.86
+Parameters found: rho=1320.5294, d=0.1318, sigma_b=0.1366, sigma_u=0.8634
+  Target: mu=1369.528, cv=0.858, t_ac=8.660
+  Observed: mu=1367.922, cv=0.859, t_ac=8.648
+  Errors: mean=0.1%, cv=0.2%, ac=0.1%
+Testing mu=434.90, t_ac=45.96, cv=1.57
+Parameters found: rho=1107.9324, d=0.0222, sigma_b=0.0087, sigma_u=0.9913
+  Target: mu=434.900, cv=1.572, t_ac=45.960
+  Observed: mu=431.513, cv=1.563, t_ac=45.156
+  Errors: mean=0.8%, cv=0.6%, ac=1.7%
+Testing mu=7339.14, t_ac=110.54, cv=0.55
+Parameters found: rho=2307.1864, d=0.0091, sigma_b=0.0290, sigma_u=0.9710
+  Target: mu=7339.138, cv=0.550, t_ac=110.542
+  Observed: mu=7304.711, cv=0.549, t_ac=103.994
+  Errors: mean=0.5%, cv=0.2%, ac=5.9%
+Testing mu=9638.45, t_ac=25.06, cv=1.85
+Parameters found: rho=34655.3608, d=0.0416, sigma_b=0.0116, sigma_u=0.9884
+  Target: mu=9638.454, cv=1.847, t_ac=25.058
+  Observed: mu=9592.251, cv=1.854, t_ac=24.766
+  Errors: mean=0.5%, cv=0.4%, ac=1.2%
+Testing mu=2745.74, t_ac=75.74, cv=1.03
+Parameters found: rho=2986.9355, d=0.0134, sigma_b=0.0123, sigma_u=0.9877
+  Target: mu=2745.743, cv=1.030, t_ac=75.743
+  Observed: mu=2757.842, cv=1.025, t_ac=73.373
+  Errors: mean=0.4%, cv=0.5%, ac=3.1%
+Testing mu=3192.16, t_ac=26.98, cv=1.39
+Parameters found: rho=6494.1145, d=0.0385, sigma_b=0.0189, sigma_u=0.9811
+  Target: mu=3192.164, cv=1.386, t_ac=26.976
+  Observed: mu=3177.808, cv=1.384, t_ac=26.579
+  Errors: mean=0.4%, cv=0.1%, ac=1.5%
+Testing mu=8800.23, t_ac=63.05, cv=0.74
+Parameters found: rho=5021.9059, d=0.0161, sigma_b=0.0282, sigma_u=0.9718
+  Target: mu=8800.226, cv=0.739, t_ac=63.047
+  Observed: mu=8784.638, cv=0.740, t_ac=60.843
+  Errors: mean=0.2%, cv=0.2%, ac=3.5%
+Testing mu=6722.44, t_ac=37.07, cv=1.66
+Parameters found: rho=19179.1209, d=0.0277, sigma_b=0.0097, sigma_u=0.9903
+  Target: mu=6722.436, cv=1.658, t_ac=37.068
+  Observed: mu=6842.037, cv=1.656, t_ac=36.381
+  Errors: mean=1.8%, cv=0.1%, ac=1.9%
+Testing mu=1130.94, t_ac=115.84, cv=1.22
+Parameters found: rho=1694.6036, d=0.0087, sigma_b=0.0058, sigma_u=0.9942
+  Target: mu=1130.940, cv=1.216, t_ac=115.843
+  Observed: mu=1136.496, cv=1.217, t_ac=113.999
+  Errors: mean=0.5%, cv=0.1%, ac=1.6%
+Testing mu=2071.05, t_ac=79.44, cv=1.91
+Parameters found: rho=7656.8795, d=0.0127, sigma_b=0.0034, sigma_u=0.9966
+  Target: mu=2071.051, cv=1.907, t_ac=79.438
+  Observed: mu=2110.041, cv=1.899, t_ac=81.531
+  Errors: mean=1.9%, cv=0.4%, ac=2.6%
+Testing mu=5157.39, t_ac=14.17, cv=0.97
+Parameters found: rho=5581.0186, d=0.0762, sigma_b=0.0704, sigma_u=0.9296
+  Target: mu=5157.391, cv=0.967, t_ac=14.168
+  Observed: mu=5163.072, cv=0.966, t_ac=14.031
+  Errors: mean=0.1%, cv=0.1%, ac=1.0%
+Testing mu=7865.52, t_ac=99.44, cv=1.45
+Parameters found: rho=16879.5982, d=0.0102, sigma_b=0.0047, sigma_u=0.9953
+  Target: mu=7865.521, cv=1.454, t_ac=99.442
+  Observed: mu=7880.520, cv=1.456, t_ac=98.904
+  Errors: mean=0.2%, cv=0.1%, ac=0.5%
+Testing mu=4751.80, t_ac=49.87, cv=0.67
+Parameters found: rho=2284.8493, d=0.0205, sigma_b=0.0426, sigma_u=0.9574
+  Target: mu=4751.802, cv=0.672, t_ac=49.866
+  Observed: mu=4758.484, cv=0.672, t_ac=48.390
+  Errors: mean=0.1%, cv=0.0%, ac=3.0%
+Testing mu=4552.96, t_ac=67.14, cv=1.50
+Parameters found: rho=10525.8356, d=0.0151, sigma_b=0.0065, sigma_u=0.9935
+  Target: mu=4552.956, cv=1.504, t_ac=67.137
+  Observed: mu=4548.647, cv=1.512, t_ac=66.714
+  Errors: mean=0.1%, cv=0.5%, ac=0.6%
+Testing mu=7673.77, t_ac=31.75, cv=0.62
+Parameters found: rho=3317.5996, d=0.0325, sigma_b=0.0753, sigma_u=0.9247
+  Target: mu=7673.766, cv=0.622, t_ac=31.754
+  Observed: mu=7646.109, cv=0.620, t_ac=30.748
+  Errors: mean=0.4%, cv=0.4%, ac=3.2%
+Testing mu=5359.21, t_ac=119.04, cv=1.96
+Parameters found: rho=20851.0510, d=0.0085, sigma_b=0.0022, sigma_u=0.9978
+  Target: mu=5359.213, cv=1.962, t_ac=119.036
+  Observed: mu=5202.005, cv=1.980, t_ac=126.150
+  Errors: mean=2.9%, cv=0.9%, ac=6.0%
+Testing mu=2259.83, t_ac=39.15, cv=0.91
+Parameters found: rho=1979.5511, d=0.0262, sigma_b=0.0299, sigma_u=0.9701
+  Target: mu=2259.831, cv=0.910, t_ac=39.152
+  Observed: mu=2260.305, cv=0.910, t_ac=38.475
+  Errors: mean=0.0%, cv=0.0%, ac=1.7%
+Testing mu=695.32, t_ac=18.95, cv=1.70
+Parameters found: rho=2148.9502, d=0.0558, sigma_b=0.0181, sigma_u=0.9819
+  Target: mu=695.319, cv=1.696, t_ac=18.949
+  Observed: mu=688.814, cv=1.685, t_ac=18.562
+  Errors: mean=0.9%, cv=0.6%, ac=2.0%
+Testing mu=6298.79, t_ac=83.53, cv=1.18
+Parameters found: rho=8909.9429, d=0.0121, sigma_b=0.0086, sigma_u=0.9914
+  Target: mu=6298.791, cv=1.177, t_ac=83.531
+  Observed: mu=6170.729, cv=1.176, t_ac=81.369
+  Errors: mean=2.0%, cv=0.1%, ac=2.6%
+Testing mu=9233.94, t_ac=51.95, cv=1.43
+Parameters found: rho=19470.8005, d=0.0196, sigma_b=0.0093, sigma_u=0.9907
+  Target: mu=9233.939, cv=1.431, t_ac=51.954
+  Observed: mu=9183.017, cv=1.437, t_ac=51.396
+  Errors: mean=0.6%, cv=0.4%, ac=1.1%
+Testing mu=3617.72, t_ac=102.64, cv=0.70
+Parameters found: rho=1804.0098, d=0.0098, sigma_b=0.0197, sigma_u=0.9803
+  Target: mu=3617.717, cv=0.696, t_ac=102.638
+  Observed: mu=3621.621, cv=0.695, t_ac=98.809
+  Errors: mean=0.1%, cv=0.2%, ac=3.7%
+Testing mu=2947.32, t_ac=57.46, cv=1.88
+Parameters found: rho=10707.6590, d=0.0177, sigma_b=0.0049, sigma_u=0.9951
+  Target: mu=2947.316, cv=1.885, t_ac=57.461
+  Observed: mu=2935.879, cv=1.895, t_ac=57.528
+  Errors: mean=0.4%, cv=0.6%, ac=0.1%
+Testing mu=9827.44, t_ac=93.53, cv=0.99
+Parameters found: rho=9868.2282, d=0.0108, sigma_b=0.0108, sigma_u=0.9892
+  Target: mu=9827.443, cv=0.991, t_ac=93.532
+  Observed: mu=9823.057, cv=1.002, t_ac=90.955
+  Errors: mean=0.0%, cv=1.1%, ac=2.8%
+Testing mu=7140.69, t_ac=6.46, cv=1.62
+Parameters found: rho=23500.6636, d=0.1866, sigma_b=0.0567, sigma_u=0.9433
+  Target: mu=7140.692, cv=1.618, t_ac=6.461
+  Observed: mu=7110.871, cv=1.619, t_ac=6.456
+  Errors: mean=0.4%, cv=0.1%, ac=0.1%
+Testing mu=242.78, t_ac=85.24, cv=0.51
+Parameters found: rho=65.0986, d=0.0119, sigma_b=0.0443, sigma_u=0.9557
+  Target: mu=242.783, cv=0.507, t_ac=85.235
+  Observed: mu=241.267, cv=0.511, t_ac=81.550
+  Errors: mean=0.6%, cv=0.7%, ac=4.3%
+Testing mu=1803.03, t_ac=106.34, cv=1.32
+Parameters found: rho=3165.6579, d=0.0095, sigma_b=0.0054, sigma_u=0.9946
+  Target: mu=1803.032, cv=1.315, t_ac=106.341
+  Observed: mu=1774.703, cv=1.318, t_ac=105.293
+  Errors: mean=1.6%, cv=0.2%, ac=1.0%
+Testing mu=6205.38, t_ac=41.07, cv=0.81
+Parameters found: rho=4313.3808, d=0.0250, sigma_b=0.0359, sigma_u=0.9641
+  Target: mu=6205.377, cv=0.809, t_ac=41.071
+  Observed: mu=6199.508, cv=0.808, t_ac=40.293
+  Errors: mean=0.1%, cv=0.1%, ac=1.9%
+Testing mu=8263.01, t_ac=72.44, cv=1.78
+Parameters found: rho=26544.7665, d=0.0140, sigma_b=0.0044, sigma_u=0.9956
+  Target: mu=8263.008, cv=1.776, t_ac=72.438
+  Observed: mu=8078.101, cv=1.780, t_ac=71.438
+  Errors: mean=2.2%, cv=0.2%, ac=1.4%
+Testing mu=3886.82, t_ac=22.86, cv=1.10
+Parameters found: rho=5090.2143, d=0.0458, sigma_b=0.0350, sigma_u=0.9650
+  Target: mu=3886.818, cv=1.099, t_ac=22.862
+  Observed: mu=3916.658, cv=1.099, t_ac=22.700
+  Errors: mean=0.8%, cv=0.0%, ac=0.7%
+Testing mu=4046.74, t_ac=35.38, cv=1.30
+Parameters found: rho=7104.1345, d=0.0291, sigma_b=0.0166, sigma_u=0.9834
+  Target: mu=4046.743, cv=1.295, t_ac=35.378
+  Observed: mu=4010.712, cv=1.295, t_ac=34.721
+  Errors: mean=0.9%, cv=0.0%, ac=1.9%
+Testing mu=8415.57, t_ac=113.83, cv=0.83
+Parameters found: rho=5916.0774, d=0.0089, sigma_b=0.0126, sigma_u=0.9874Simulating Sobol samples:  71%|███████   | 34/48 [37:12<14:57, 64.10s/it]Simulating Sobol samples:  73%|███████▎  | 35/48 [38:19<14:04, 64.95s/it]Simulating Sobol samples:  75%|███████▌  | 36/48 [39:23<12:56, 64.73s/it]Simulating Sobol samples:  77%|███████▋  | 37/48 [41:05<13:53, 75.77s/it]Simulating Sobol samples:  79%|███████▉  | 38/48 [42:27<12:57, 77.77s/it]Simulating Sobol samples:  81%|████████▏ | 39/48 [43:47<11:44, 78.30s/it]Simulating Sobol samples:  83%|████████▎ | 40/48 [45:10<10:37, 79.72s/it]Simulating Sobol samples:  85%|████████▌ | 41/48 [46:08<08:33, 73.30s/it]Simulating Sobol samples:  88%|████████▊ | 42/48 [47:41<07:54, 79.12s/it]Simulating Sobol samples:  90%|████████▉ | 43/48 [48:35<05:59, 71.83s/it]Simulating Sobol samples:  92%|█████████▏| 44/48 [49:28<04:24, 66.04s/it]Simulating Sobol samples:  94%|█████████▍| 45/48 [50:25<03:09, 63.25s/it]Simulating Sobol samples:  96%|█████████▌| 46/48 [51:20<02:01, 60.76s/it]Simulating Sobol samples:  98%|█████████▊| 47/48 [52:18<01:00, 60.08s/it]Simulating Sobol samples: 100%|██████████| 48/48 [53:12<00:00, 58.15s/it]Simulating Sobol samples: 100%|██████████| 48/48 [53:12<00:00, 66.51s/it]
+
+  Target: mu=8415.570, cv=0.830, t_ac=113.830
+  Observed: mu=8317.450, cv=0.823, t_ac=104.920
+  Errors: mean=1.2%, cv=0.8%, ac=7.8%
+Testing mu=6023.56, t_ac=28.40, cv=1.75
+Parameters found: rho=19341.3700, d=0.0365, sigma_b=0.0114, sigma_u=0.9886
+  Target: mu=6023.559, cv=1.750, t_ac=28.400
+  Observed: mu=6067.799, cv=1.751, t_ac=28.262
+  Errors: mean=0.7%, cv=0.0%, ac=0.5%
+Testing mu=1672.36, t_ac=65.10, cv=1.13
+Parameters found: rho=2179.1441, d=0.0156, sigma_b=0.0120, sigma_u=0.9880
+  Target: mu=1672.362, cv=1.126, t_ac=65.102
+  Observed: mu=1657.819, cv=1.119, t_ac=62.884
+  Errors: mean=0.9%, cv=0.6%, ac=3.4%
+Testing mu=112.19, t_ac=101.47, cv=1.82
+Parameters found: rho=374.2316, d=0.0100, sigma_b=0.0030, sigma_u=0.9970
+  Target: mu=112.190, cv=1.817, t_ac=101.471
+  Observed: mu=111.305, cv=1.816, t_ac=101.931
+  Errors: mean=0.8%, cv=0.1%, ac=0.5%
+Testing mu=6958.80, t_ac=51.32, cv=1.06
+Parameters found: rho=8087.4415, d=0.0199, sigma_b=0.0171, sigma_u=0.9829
+  Target: mu=6958.798, cv=1.058, t_ac=51.320
+  Observed: mu=7085.990, cv=1.062, t_ac=50.534
+  Errors: mean=1.8%, cv=0.4%, ac=1.5%
+Testing mu=9980.08, t_ac=77.45, cv=1.54
+Parameters found: rho=24231.0266, d=0.0131, sigma_b=0.0054, sigma_u=0.9946
+  Target: mu=9980.081, cv=1.544, t_ac=77.451
+  Observed: mu=9778.322, cv=1.544, t_ac=75.117
+  Errors: mean=2.0%, cv=0.0%, ac=3.0%
+Testing mu=3107.16, t_ac=12.45, cv=0.58
+Parameters found: rho=1409.0392, d=0.0877, sigma_b=0.1934, sigma_u=0.8066
+  Target: mu=3107.165, cv=0.580, t_ac=12.448
+  Observed: mu=3106.271, cv=0.580, t_ac=12.352
+  Errors: mean=0.0%, cv=0.0%, ac=0.8%
+Testing mu=3455.33, t_ac=89.91, cv=1.63
+Parameters found: rho=9299.7084, d=0.0112, sigma_b=0.0042, sigma_u=0.9958
+  Target: mu=3455.332, cv=1.628, t_ac=89.911
+  Observed: mu=3372.924, cv=1.635, t_ac=91.837
+  Errors: mean=2.4%, cv=0.5%, ac=2.1%
+Testing mu=9083.87, t_ac=10.77, cv=1.24
+Parameters found: rho=16443.8350, d=0.1029, sigma_b=0.0569, sigma_u=0.9431
+  Target: mu=9083.873, cv=1.244, t_ac=10.772
+  Observed: mu=9101.809, cv=1.242, t_ac=10.695
+  Errors: mean=0.2%, cv=0.1%, ac=0.7%
+Testing mu=6478.19, t_ac=95.99, cv=1.36
+Parameters found: rho=12136.3070, d=0.0105, sigma_b=0.0056, sigma_u=0.9944
+  Target: mu=6478.188, cv=1.358, t_ac=95.991
+  Observed: mu=6385.940, cv=1.373, t_ac=96.090
+  Errors: mean=1.4%, cv=1.1%, ac=0.1%
+Testing mu=828.37, t_ac=60.40, cv=0.77
+Parameters found: rho=510.7914, d=0.0168, sigma_b=0.0273, sigma_u=0.9727
+  Target: mu=828.372, cv=0.769, t_ac=60.398
+  Observed: mu=834.697, cv=0.773, t_ac=59.101
+  Errors: mean=0.8%, cv=0.5%, ac=2.1%
+Testing mu=2392.81, t_ac=23.13, cv=1.48
+Parameters found: rho=5616.0648, d=0.0452, sigma_b=0.0193, sigma_u=0.9807
+  Target: mu=2392.806, cv=1.484, t_ac=23.127
+  Observed: mu=2378.556, cv=1.485, t_ac=22.546
+  Errors: mean=0.6%, cv=0.1%, ac=2.5%
+Testing mu=5538.69, t_ac=73.97, cv=0.64
+Parameters found: rho=2397.7889, d=0.0137, sigma_b=0.0317, sigma_u=0.9683
+  Target: mu=5538.686, cv=0.643, t_ac=73.966
+  Observed: mu=5523.182, cv=0.643, t_ac=71.510
+  Errors: mean=0.3%, cv=0.1%, ac=3.3%
+Testing mu=7523.62, t_ac=48.05, cv=1.94
+Parameters found: rho=28960.1658, d=0.0213, sigma_b=0.0055, sigma_u=0.9945
+  Target: mu=7523.625, cv=1.936, t_ac=48.046
+  Observed: mu=7561.598, cv=1.933, t_ac=47.845
+  Errors: mean=0.5%, cv=0.1%, ac=0.4%
+Testing mu=4390.65, t_ac=111.94, cv=0.94
+Parameters found: rho=3927.7419, d=0.0090, sigma_b=0.0101, sigma_u=0.9899
+  Target: mu=4390.648, cv=0.937, t_ac=111.940
+  Observed: mu=4412.612, cv=0.939, t_ac=106.514
+  Errors: mean=0.5%, cv=0.3%, ac=4.8%
+
+=== Final Results ===
+Total combinations tested: 48
+Successful runs: 48
+Failed runs: 0
+
+=== Starting Data Processing for ML ===
+Calculating steady state indices for alignment...
+Max steady state index determined: 1180
+Processing 48 files into .npz format...
+Saving NPZs:   0%|          | 0/48 [00:00<?, ?it/s]Saving NPZs:   2%|▏         | 1/48 [00:00<00:45,  1.04it/s]Saving NPZs:   4%|▍         | 2/48 [00:01<00:46,  1.00s/it]Saving NPZs:   6%|▋         | 3/48 [00:03<00:45,  1.02s/it]Saving NPZs:   8%|▊         | 4/48 [00:04<00:47,  1.08s/it]Saving NPZs:  10%|█         | 5/48 [00:05<00:46,  1.08s/it]Saving NPZs:  12%|█▎        | 6/48 [00:06<00:46,  1.10s/it]Saving NPZs:  15%|█▍        | 7/48 [00:07<00:43,  1.05s/it]Saving NPZs:  17%|█▋        | 8/48 [00:08<00:42,  1.07s/it]Saving NPZs:  19%|█▉        | 9/48 [00:09<00:41,  1.06s/it]Saving NPZs:  21%|██        | 10/48 [00:10<00:41,  1.09s/it]Saving NPZs:  23%|██▎       | 11/48 [00:11<00:39,  1.06s/it]Saving NPZs:  25%|██▌       | 12/48 [00:12<00:38,  1.08s/it]Saving NPZs:  27%|██▋       | 13/48 [00:13<00:36,  1.03s/it]Saving NPZs:  29%|██▉       | 14/48 [00:14<00:35,  1.05s/it]Saving NPZs:  31%|███▏      | 15/48 [00:15<00:33,  1.03s/it]Saving NPZs:  33%|███▎      | 16/48 [00:16<00:33,  1.04s/it]Saving NPZs:  35%|███▌      | 17/48 [00:17<00:32,  1.03s/it]Saving NPZs:  38%|███▊      | 18/48 [00:19<00:32,  1.07s/it]Saving NPZs:  40%|███▉      | 19/48 [00:19<00:29,  1.03s/it]Saving NPZs:  42%|████▏     | 20/48 [00:21<00:29,  1.06s/it]Saving NPZs:  44%|████▍     | 21/48 [00:22<00:28,  1.06s/it]Saving NPZs:  46%|████▌     | 22/48 [00:23<00:27,  1.06s/it]Saving NPZs:  48%|████▊     | 23/48 [00:24<00:25,  1.04s/it]Saving NPZs:  50%|█████     | 24/48 [00:25<00:25,  1.06s/it]Saving NPZs:  52%|█████▏    | 25/48 [00:26<00:23,  1.02s/it]Saving NPZs:  54%|█████▍    | 26/48 [00:27<00:22,  1.04s/it]Saving NPZs:  56%|█████▋    | 27/48 [00:28<00:21,  1.03s/it]Saving NPZs:  58%|█████▊    | 28/48 [00:29<00:21,  1.05s/it]Saving NPZs:  60%|██████    | 29/48 [00:30<00:20,  1.06s/it]Saving NPZs:  62%|██████▎   | 30/48 [00:31<00:19,  1.07s/it]Saving NPZs:  65%|██████▍   | 31/48 [00:32<00:17,  1.04s/it]Saving NPZs:  67%|██████▋   | 32/48 [00:33<00:16,  1.05s/it]Saving NPZs:  69%|██████▉   | 33/48 [00:34<00:15,  1.05s/it]Saving NPZs:  71%|███████   | 34/48 [00:35<00:15,  1.07s/it]Saving NPZs:  73%|███████▎  | 35/48 [00:36<00:13,  1.05s/it]Saving NPZs:  75%|███████▌  | 36/48 [00:37<00:12,  1.07s/it]Saving NPZs:  77%|███████▋  | 37/48 [00:38<00:10,  1.03it/s]Saving NPZs:  79%|███████▉  | 38/48 [00:39<00:09,  1.00it/s]Saving NPZs:  81%|████████▏ | 39/48 [00:40<00:08,  1.01it/s]Saving NPZs:  83%|████████▎ | 40/48 [00:41<00:08,  1.04s/it]Saving NPZs:  85%|████████▌ | 41/48 [00:42<00:07,  1.02s/it]Saving NPZs:  88%|████████▊ | 42/48 [00:43<00:06,  1.03s/it]Saving NPZs:  90%|████████▉ | 43/48 [00:44<00:05,  1.02s/it]Saving NPZs:  92%|█████████▏| 44/48 [00:46<00:04,  1.10s/it]Saving NPZs:  94%|█████████▍| 45/48 [00:47<00:03,  1.09s/it]Saving NPZs:  96%|█████████▌| 46/48 [00:48<00:02,  1.08s/it]Saving NPZs:  98%|█████████▊| 47/48 [00:49<00:01,  1.04s/it]Saving NPZs: 100%|██████████| 48/48 [00:50<00:00,  1.06s/it]Saving NPZs: 100%|██████████| 48/48 [00:50<00:00,  1.05s/it]
+Data processing complete.
+  Activating project at `~/stochastic_simulations/julia`
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..

@@ -43,14 +43,14 @@ data_dir = "temp_data_cv_variation"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define Fixed Parameters 
-TAC_FIXED = 50.0
-MU_FIXED = 100.0
+TAC_FIXED = 10.0
+MU_FIXED = 1000.0
 
 # 2. Define Variable Parameter Bounds (The "Physics")
-CV_MIN = 0.1
-CV_MAX = 5.0
+CV_MIN = 0.5
+CV_MAX = 2.0
 # Sobol coverage
-N = 1024
+N = 48
 sobol = qmc.Sobol(d=1, scramble=True, seed=GLOBAL_SEED)
 U = sobol.random_base2(int(np.ceil(np.log2(N))))[:N]   # shape (N, 1)
 
@@ -192,7 +192,9 @@ for combination_idx, (mu, t_ac, cv) in enumerate(
     except Exception as e:
         failure_count += 1
         error_msg = str(e)
-        record["error_message"] = error_msg
+        record.update({"success": False,
+                       "error_message": error_msg
+                       })
         print(f"  FAILED: mu={mu:.2f}, t_ac={t_ac:.2f}, cv={cv:.2f} - Error: {error_msg}")
 
     # append results to rolling CSV

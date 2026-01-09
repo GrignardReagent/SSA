@@ -44,15 +44,15 @@ data_dir = "temp_data_t_ac_variation"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define Fixed Parameters 
-MU_FIXED = 100.0
-CV_FIXED = 1.0
+MU_FIXED = 1000.0
+CV_FIXED = 0.5
 
 # 2. Define Variable Parameter Bounds (The "Physics")
 TAC_MIN = 5.0
-TAC_MAX = 100.0
+TAC_MAX = 120.0
 
 # Sobol coverage
-N = 1024
+N = 48
 sobol = qmc.Sobol(d=1, scramble=True, seed=GLOBAL_SEED)
 U = sobol.random_base2(int(np.ceil(np.log2(N))))[:N]   # shape (N, 1)
 
