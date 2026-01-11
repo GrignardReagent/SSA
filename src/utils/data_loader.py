@@ -269,6 +269,7 @@ def baseline_data_prep(
     seed=42,
     separator_len=1,
     separator_val=-100.0,
+    param_dist_threshold=0.7,
     verbose=False
 ):
     # 1. Split FILES first (Zero Leakage)
@@ -283,19 +284,19 @@ def baseline_data_prep(
     # 2. Iteratively Generate Groups
     print(f"Generating {num_groups_train} training groups...")
     train_groups = [
-        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
+        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
         for _ in tqdm(range(num_groups_train))
     ]
     
     print(f"Generating validation groups...")
     val_groups = [
-        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
+        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
         for _ in tqdm(range(num_groups_val))
     ]
     
     print(f"Generating test groups...")
     test_groups = [
-        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val) 
+        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
         for _ in tqdm(range(num_groups_test))
     ]
     
