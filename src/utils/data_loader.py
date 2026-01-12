@@ -168,47 +168,128 @@ def make_groups(
     else:
         if verbose: print("Generating NEGATIVE group.")
         
-        # Pick first file
-        file_a = rng.choice(traj_paths)
-        params_a = _get_params_from_filename(file_a)
+        # # Pick first file
+        # file_a = rng.choice(traj_paths)
+        # params_a = _get_params_from_filename(file_a)
         
-        # Pick second file with sufficient parameter distance away from file_a
-        file_b = None
-        max_attempts = 100
+        # # Pick second file with sufficient parameter distance away from file_a
+        # file_b = None
+        # max_attempts = 1000
         
-        for _ in range(max_attempts):
-            candidate = rng.choice(traj_paths)
-            if candidate == file_a:
-                continue
+        # for _ in range(max_attempts):
+        #     candidate = rng.choice(traj_paths)
+        #     if candidate == file_a:
+        #         continue
                 
-            # Check physical distance
-            params_b = _get_params_from_filename(candidate)
+        #     # Check physical distance
+        #     params_b = _get_params_from_filename(candidate)
             
-            if params_a is not None and params_b is not None:
-                # Calculate Log-Euclidean Distance
-                # 1. Take log of both (add small epsilon to avoid log(0))
-                log_a = np.log(params_a + 1e-9)
-                log_b = np.log(params_b + 1e-9)
+        #     if params_a is not None and params_b is not None:
+        #         # Calculate Log-Euclidean Distance
+        #         # 1. Take log of both (add small epsilon to avoid log(0))
+        #         log_a = np.log(params_a + 1e-9)
+        #         log_b = np.log(params_b + 1e-9)
 
-                # 2. Euclidean Distance in Log-Space
-                # This yields a single scalar "distance"
-                dist = np.linalg.norm(log_a - log_b)
+        #         # 2. Euclidean Distance in Log-Space
+        #         # This yields a single scalar "distance"
+        #         dist = np.linalg.norm(log_a - log_b)
                 
-                if dist > param_dist_threshold:
-                    file_b = candidate
-                    break # Found a separable pair
-            else:
-                # Fallback if filename parsing fails: just ensure different files
-                file_b = candidate
+        #         if dist > param_dist_threshold:
+        #             file_b = candidate
+        #             break # Found a separable pair
+        #     else:
+        #         # Fallback if filename parsing fails: just ensure different files
+        #         file_b = candidate
+        #         break
+        
+        file_a = None
+        file_b = None
+        
+        # --- ITERATIVE RETRY LOGIC ---
+        # Try up to 10 different 'File A' candidates. 
+        # If we can't find a distant 'File B' for a specific 'A', we pick a NEW 'A'.
+        max_pair_attempts = 10 
+        
+        for _ in range(max_pair_attempts):
+            # 1. Pick a Candidate for A
+            candidate_a = rng.choice(traj_paths)
+            params_a = _get_params_from_filename(candidate_a)
+            
+            # 2. Try to find a valid B for this specific A
+            found_b = False
+            max_b_attempts = 100 # Attempts to find a B for the current A
+            
+            for _ in range(max_b_attempts):
+                candidate_b = rng.choice(traj_paths)
+                if candidate_b == candidate_a: 
+                    continue
+                
+                params_b = _get_params_from_filename(candidate_b)
+                
+                # Check Distance
+                if params_a is not None and params_b is not None:
+                    # Log-Euclidean Distance
+                    log_a = np.log(params_a + 1e-9)
+                    log_b = np.log(params_b + 1e-9)
+                    dist = np.linalg.norm(log_a - log_b)
+                    
+                    if dist > param_dist_threshold:
+                        # Success: We found a valid B for this A
+                        file_b = candidate_b
+                        found_b = True
+                        break 
+                else:
+                    # Fallback if params cannot be parsed: accept if files are different
+                    if candidate_b != candidate_a:
+                        file_b = candidate_b
+                        found_b = True
+                        break
+            
+            # If we found a B, lock in A and break the outer loop
+            if found_b:
+                file_a = candidate_a
                 break
         
-        # Fallback if loop exhausted (unlikely with sparse data, but safe)
-        if file_b is None:
-            if verbose: print(f"⚠️ Warning: Could not find distinct pair for {file_a.name} after {max_attempts} tries. Picking random.")
-            
+        # --- FALLBACK SAFETY NET (Last resort) ---
+        # If we exhausted all retries (very rare), just pick random distinct files
+        if file_a is None or file_b is None:
+            if verbose: print("⚠️ Warning: Could not find distinct pair after retries. Picking random.")
+            file_a = rng.choice(traj_paths)
             while True:
                 file_b = rng.choice(traj_paths)
                 if file_b != file_a: break
+        
+        
+        # # Fallback if loop exhausted (unlikely with sparse data, but safe)
+        # if file_b is None:
+        #     # pick a new file_a if file_b couldn't be found
+        #     file_a = rng.choice(traj_paths)
+        #     params_a = _get_params_from_filename(file_a)
+        #     for _ in range(max_attempts):
+        #         candidate = rng.choice(traj_paths)
+        #         if candidate == file_a:
+        #             continue
+                    
+        #         params_b = _get_params_from_filename(candidate)
+                
+        #         if params_a is not None and params_b is not None:
+        #             log_a = np.log(params_a + 1e-9)
+        #             log_b = np.log(params_b + 1e-9)
+        #             dist = np.linalg.norm(log_a - log_b)
+                    
+        #             if dist > param_dist_threshold:
+        #                 file_b = candidate
+        #                 break
+        #         else:
+        #             file_b = candidate
+        #             break
+
+        #     if file_b is None:
+        #         if verbose: print(f"⚠️ Warning: Could not find distinct pair for {file_a.name} after {max_attempts} tries. Picking random.")
+                
+        #         while True:
+        #             file_b = rng.choice(traj_paths)
+        #             if file_b != file_a: break
 
         if verbose: print(f"Selected files:\n A: {file_a.name}\n B: {file_b.name}")
         label = 0.0
