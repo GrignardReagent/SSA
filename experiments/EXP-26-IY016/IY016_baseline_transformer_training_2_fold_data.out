@@ -1,0 +1,505 @@
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run s5r7yjpi
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY016/wandb/run-20260116_155934-s5r7yjpi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run num_groups_train_3000_traj_2 (baseline)
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/s5r7yjpi
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▁▂▆██████▇██▆█▄█▅█▇███
+wandb:         lr ██████▄▄▄▄▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▂▄▄▄▄▅▅▅▆▆▇▇▇▇▇▇█████
+wandb: train/loss █▇▆▅▆▅▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁
+wandb:    val/acc ▁▃▃▄▆▆▆▄▇▇▇▇██▇█████▇█
+wandb:   val/loss ▇▇█▅▃▄▅▅▃▂▂▂▁▂▂▂▂▁▂▂▁▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.74833
+wandb:             epoch 22
+wandb:         grad/norm 1.0
+wandb:                lr 0.00063
+wandb:         train/acc 0.83367
+wandb:        train/loss 0.37303
+wandb: training_time_sec 1564.54439
+wandb:           val/acc 0.73333
+wandb:          val/loss 0.54908
+wandb: 
+wandb: 🚀 View run num_groups_train_3000_traj_2 (baseline) at: https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/s5r7yjpi
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260116_155934-s5r7yjpi/logs
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py:1408: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/juliacall/__init__.py:61: UserWarning: torch was imported before juliacall. This may cause a segfault. To avoid this, import juliacall before importing torch. For updates, see https://github.com/pytorch/pytorch/issues/78829.
+  warnings.warn(
+wandb: setting up run 22dpx6hm
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY016/wandb/run-20260116_162703-22dpx6hm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run num_groups_train_3000_traj_2 (mu-variation)
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/22dpx6hm
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading output.log
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:  grad/norm █▅▄▆▅▅▆▂▁▃█▂▄▄▄▂▂▃█▅▂██▆
+wandb:         lr █████▄▄▄▄▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁
+wandb:  train/acc ▁▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇███████
+wandb: train/loss █▄▄▄▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:    val/acc ▄▁▂▄▄▃▆▆▅▄▇▇█▇████▇▇██▇█
+wandb:   val/loss ▆█▇▅▅▆▃▄▄▅▂▂▂▁▁▁▁▂▄▂▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.90167
+wandb:             epoch 24
+wandb:         grad/norm 0.79598
+wandb:                lr 0.00031
+wandb:         train/acc 0.976
+wandb:        train/loss 0.07489
+wandb: training_time_sec 3175.79799
+wandb:           val/acc 0.89833
+wandb:          val/loss 0.31075
+wandb: 
+wandb: 🚀 View run num_groups_train_3000_traj_2 (mu-variation) at: https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/22dpx6hm
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260116_162703-22dpx6hm/logs
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py:1408: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+wandb: setting up run js0bjws9
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY016/wandb/run-20260116_172104-js0bjws9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run num_groups_train_3000_traj_2 (cv-variation)
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/js0bjws9
+📂 Loading static data from ../EXP-25-IY011/data/IY011_static_train.pt...
+📂 Loading static data from ../EXP-25-IY011/data/IY011_static_val.pt...
+📂 Loading static data from ../EXP-25-IY011/data/IY011_static_test.pt...
+📂 Loading static data from ../EXP-25-IY011/data_cv_variation/IY011_static_train.pt...
+📂 Loading static data from ../EXP-25-IY011/data_cv_variation/IY011_static_val.pt...
+📂 Loading static data from ../EXP-25-IY011/data_cv_variation/IY011_static_test.pt...
+📂 Loading static data from ../EXP-25-IY011/data_t_ac_variation/IY011_static_train.pt...
+📂 Loading static data from ../EXP-25-IY011/data_t_ac_variation/IY011_static_val.pt...
+📂 Loading static data from ../EXP-25-IY011/data_t_ac_variation/IY011_static_test.pt...
+📂 Loading static data from ../EXP-25-IY011/data_mu_variation/IY011_static_train.pt...
+📂 Loading static data from ../EXP-25-IY011/data_mu_variation/IY011_static_val.pt...
+📂 Loading static data from ../EXP-25-IY011/data_mu_variation/IY011_static_test.pt...
+torch.Size([64, 3623, 1]) torch.Size([64, 1])
+Starting training...
+Epoch [1/100] | train_loss 0.7486 | train_acc 0.5450 | val_loss 0.6950 | val_acc 0.5067
+Epoch [2/100] | train_loss 0.6758 | train_acc 0.5813 | val_loss 0.7049 | val_acc 0.5700
+No improvement (1/10).
+Epoch [3/100] | train_loss 0.6305 | train_acc 0.6487 | val_loss 0.7311 | val_acc 0.5633
+Epoch [4/100] | train_loss 0.6135 | train_acc 0.6637 | val_loss 0.6535 | val_acc 0.6183
+Epoch [5/100] | train_loss 0.6179 | train_acc 0.6603 | val_loss 0.6013 | val_acc 0.6650
+Epoch [6/100] | train_loss 0.5858 | train_acc 0.6870 | val_loss 0.6102 | val_acc 0.6800
+No improvement (1/10).
+Epoch [7/100] | train_loss 0.5517 | train_acc 0.7237 | val_loss 0.6345 | val_acc 0.6800
+No improvement (2/10).
+Epoch [8/100] | train_loss 0.5584 | train_acc 0.7220 | val_loss 0.6449 | val_acc 0.6233
+Epoch [9/100] | train_loss 0.5530 | train_acc 0.7163 | val_loss 0.5787 | val_acc 0.7183
+Epoch [10/100] | train_loss 0.5018 | train_acc 0.7510 | val_loss 0.5555 | val_acc 0.7283
+No improvement (1/10).
+Epoch [11/100] | train_loss 0.4886 | train_acc 0.7590 | val_loss 0.5514 | val_acc 0.7267
+Epoch [12/100] | train_loss 0.4722 | train_acc 0.7723 | val_loss 0.5587 | val_acc 0.7300
+Epoch [13/100] | train_loss 0.4581 | train_acc 0.7767 | val_loss 0.5309 | val_acc 0.7483
+No improvement (1/10).
+Epoch [14/100] | train_loss 0.4431 | train_acc 0.7883 | val_loss 0.5631 | val_acc 0.7417
+No improvement (2/10).
+Epoch [15/100] | train_loss 0.4296 | train_acc 0.7917 | val_loss 0.5549 | val_acc 0.7300
+No improvement (3/10).
+Epoch [16/100] | train_loss 0.4082 | train_acc 0.8067 | val_loss 0.5457 | val_acc 0.7333
+No improvement (4/10).
+Epoch [17/100] | train_loss 0.4085 | train_acc 0.8113 | val_loss 0.5549 | val_acc 0.7317
+No improvement (5/10).
+Epoch [18/100] | train_loss 0.4032 | train_acc 0.8147 | val_loss 0.5400 | val_acc 0.7483
+No improvement (6/10).
+Epoch [19/100] | train_loss 0.3959 | train_acc 0.8180 | val_loss 0.5624 | val_acc 0.7417
+No improvement (7/10).
+Epoch [20/100] | train_loss 0.3848 | train_acc 0.8237 | val_loss 0.5514 | val_acc 0.7333
+No improvement (8/10).
+Epoch [21/100] | train_loss 0.3740 | train_acc 0.8310 | val_loss 0.5412 | val_acc 0.7283
+No improvement (9/10).
+Epoch [22/100] | train_loss 0.3730 | train_acc 0.8337 | val_loss 0.5491 | val_acc 0.7333
+No improvement (10/10).
+🛑 Early stopping.
+Training complete.
+Model saved to IY011_baseline_transformer_model_baseline.pth
+
+=== Evaluating on Test Set ===
+Test — loss: 0.54 | acc: 0.74
+Extracting data from loader for SVM...
+Extracting data from loader for SVM...
+SVM Train Shape: (3000, 3623)
+SVM Test Shape:  (600, 3623)
+=== SVM (RBF Kernel) Classification Accuracy: 0.71 ===
+Generating 5 unseen classes...
+Initializing Julia environment...
+  Generated Class 0: Mu=5858.6, CV=1.08
+  Generated Class 1: Mu=4081.9, CV=0.81
+  Generated Class 2: Mu=7890.7, CV=1.61
+  Generated Class 3: Mu=1913.1, CV=1.32
+  Generated Class 4: Mu=8315.3, CV=0.82
+
+=== Evaluating SVM Few-Shot on Unseen Classes ===
+
+=== Testing SVM Few-Shot Baseline (Raw Data) ===
+✅ Trained SVM on 25 support samples.
+SVM Few-Shot Accuracy: 18.67%
+
+=== Running Permutation Test ===
+Running Permutation Test (num_traj=2, sep_len=1)...
+------------------------------------------------
+Accuracy on ORIGINAL Data:  74.67%
+Accuracy on SHUFFLED Data:  70.83% (Structure Preserved)
+------------------------------------------------
+torch.Size([64, 5021, 1]) torch.Size([64, 1])
+Starting training...
+Epoch [1/100] | train_loss 0.7187 | train_acc 0.6603 | val_loss 0.3545 | val_acc 0.8467
+No improvement (1/10).
+Epoch [2/100] | train_loss 0.3383 | train_acc 0.8603 | val_loss 0.4002 | val_acc 0.8083
+No improvement (2/10).
+Epoch [3/100] | train_loss 0.3580 | train_acc 0.8457 | val_loss 0.3882 | val_acc 0.8200
+No improvement (3/10).
+Epoch [4/100] | train_loss 0.3069 | train_acc 0.8730 | val_loss 0.3355 | val_acc 0.8467
+No improvement (4/10).
+Epoch [5/100] | train_loss 0.2947 | train_acc 0.8810 | val_loss 0.3252 | val_acc 0.8467
+No improvement (5/10).
+Epoch [6/100] | train_loss 0.2710 | train_acc 0.8863 | val_loss 0.3583 | val_acc 0.8367
+Epoch [7/100] | train_loss 0.2750 | train_acc 0.8880 | val_loss 0.2868 | val_acc 0.8767
+No improvement (1/10).
+Epoch [8/100] | train_loss 0.2300 | train_acc 0.9097 | val_loss 0.3166 | val_acc 0.8683
+No improvement (2/10).
+Epoch [9/100] | train_loss 0.2201 | train_acc 0.9127 | val_loss 0.3153 | val_acc 0.8633
+No improvement (3/10).
+Epoch [10/100] | train_loss 0.2264 | train_acc 0.9090 | val_loss 0.3402 | val_acc 0.8500
+Epoch [11/100] | train_loss 0.2256 | train_acc 0.9150 | val_loss 0.2549 | val_acc 0.8867
+Epoch [12/100] | train_loss 0.1986 | train_acc 0.9210 | val_loss 0.2531 | val_acc 0.8917
+Epoch [13/100] | train_loss 0.1805 | train_acc 0.9310 | val_loss 0.2535 | val_acc 0.8950
+No improvement (1/10).
+Epoch [14/100] | train_loss 0.1846 | train_acc 0.9290 | val_loss 0.2398 | val_acc 0.8883
+Epoch [15/100] | train_loss 0.1500 | train_acc 0.9443 | val_loss 0.2439 | val_acc 0.9017
+No improvement (1/10).
+Epoch [16/100] | train_loss 0.1464 | train_acc 0.9453 | val_loss 0.2498 | val_acc 0.8983
+No improvement (2/10).
+Epoch [17/100] | train_loss 0.1342 | train_acc 0.9473 | val_loss 0.2509 | val_acc 0.9000
+No improvement (3/10).
+Epoch [18/100] | train_loss 0.1214 | train_acc 0.9553 | val_loss 0.2697 | val_acc 0.8983
+No improvement (4/10).
+Epoch [19/100] | train_loss 0.1121 | train_acc 0.9580 | val_loss 0.3080 | val_acc 0.8933
+No improvement (5/10).
+Epoch [20/100] | train_loss 0.1136 | train_acc 0.9593 | val_loss 0.2669 | val_acc 0.8933
+No improvement (6/10).
+Epoch [21/100] | train_loss 0.0963 | train_acc 0.9673 | val_loss 0.3000 | val_acc 0.9017
+No improvement (7/10).
+Epoch [22/100] | train_loss 0.0922 | train_acc 0.9683 | val_loss 0.2994 | val_acc 0.9017
+No improvement (8/10).
+Epoch [23/100] | train_loss 0.0778 | train_acc 0.9740 | val_loss 0.3138 | val_acc 0.8917
+No improvement (9/10).
+Epoch [24/100] | train_loss 0.0749 | train_acc 0.9760 | val_loss 0.3108 | val_acc 0.8983
+No improvement (10/10).
+🛑 Early stopping.
+Training complete.
+Model saved to IY011_baseline_transformer_model_mu-variation.pth
+
+=== Evaluating on Test Set ===
+Test — loss: 0.34 | acc: 0.90
+Extracting data from loader for SVM...
+Extracting data from loader for SVM...
+SVM Train Shape: (3000, 5021)
+SVM Test Shape:  (600, 5021)
+=== SVM (RBF Kernel) Classification Accuracy: 0.94 ===
+Generating 5 unseen classes...
+  Generated Class 0: Mu=418.6, CV=0.88
+  Generated Class 1: Mu=230.8, CV=1.54
+  Generated Class 2: Mu=9314.3, CV=1.88
+  Generated Class 3: Mu=918.9, CV=0.65
+  Generated Class 4: Mu=1335.3, CV=1.89
+
+=== Evaluating SVM Few-Shot on Unseen Classes ===
+
+=== Testing SVM Few-Shot Baseline (Raw Data) ===
+✅ Trained SVM on 25 support samples.
+SVM Few-Shot Accuracy: 26.67%
+
+=== Running Permutation Test ===
+Running Permutation Test (num_traj=2, sep_len=1)...
+------------------------------------------------
+Accuracy on ORIGINAL Data:  91.17%
+Accuracy on SHUFFLED Data:  92.17% (Structure Preserved)
+------------------------------------------------
+torch.Size([64, 5003, 1]) torch.Size([64, 1])
+Starting training...
+Epoch [1/100] | train_loss 0.8665 | train_acc 0.5257 | val_loss 0.6485 | val_acc 0.6383wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ██████████████████▁█████████████████████
+wandb:         lr █████▄▄▄▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▄▄▅▄▅▆▇▇▇▇▇▇▇█████████████████████████
+wandb: train/loss █▆▅▅▄▅▄▄▂▂▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▃▁▅▅▅▃▅▆▇▇▇▆▇▇█▇████████████████████████
+wandb:   val/loss ▇█▅▆▅▆▄▃▂▂▂▄▂▂▁▂▁▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.92833
+wandb:             epoch 45
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.96667
+wandb:        train/loss 0.09708
+wandb: training_time_sec 5840.82
+wandb:           val/acc 0.92667
+wandb:          val/loss 0.20824
+wandb: 
+wandb: 🚀 View run num_groups_train_3000_traj_2 (cv-variation) at: https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/js0bjws9
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260116_172104-js0bjws9/logs
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py:1408: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+wandb: setting up run 6xvnkmh4
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY016/wandb/run-20260116_190003-6xvnkmh4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run num_groups_train_3000_traj_2 (t_ac-variation)
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/6xvnkmh4
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▃▅▂▂▅▁▂▂▄▄▇▇▇▆▆▆▆▆▇▇█
+wandb:         lr █████▄▄▄▄▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▂▁▁▁▂▂▃▄▄▅▅▅▆▆▇▇▇▇██
+wandb: train/loss █▄▄▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▅▄▄▇████▇▆▆▇▅▅
+wandb:   val/loss ██▇█▅▅▄▂▅▆▂▁▁▁▃▄▄▅▆▇▇
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.575
+wandb:             epoch 21
+wandb:         grad/norm 0.50988
+wandb:                lr 0.00063
+wandb:         train/acc 0.652
+wandb:        train/loss 0.61074
+wandb: training_time_sec 1895.90015
+wandb:           val/acc 0.545
+wandb:          val/loss 0.71488
+wandb: 
+wandb: 🚀 View run num_groups_train_3000_traj_2 (t_ac-variation) at: https://wandb.ai/grignard-reagent/IY016-baseline-model/runs/6xvnkmh4
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY016-baseline-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260116_190003-6xvnkmh4/logs
+
+No improvement (1/10).
+Epoch [2/100] | train_loss 0.6460 | train_acc 0.6587 | val_loss 0.7027 | val_acc 0.5383
+Epoch [3/100] | train_loss 0.5739 | train_acc 0.6913 | val_loss 0.5113 | val_acc 0.7550
+No improvement (1/10).
+Epoch [4/100] | train_loss 0.5155 | train_acc 0.7443 | val_loss 0.5454 | val_acc 0.7417
+Epoch [5/100] | train_loss 0.4625 | train_acc 0.7747 | val_loss 0.4995 | val_acc 0.7600
+No improvement (1/10).
+Epoch [6/100] | train_loss 0.5376 | train_acc 0.7277 | val_loss 0.5507 | val_acc 0.6700
+Epoch [7/100] | train_loss 0.4641 | train_acc 0.7820 | val_loss 0.4519 | val_acc 0.7883
+Epoch [8/100] | train_loss 0.3718 | train_acc 0.8333 | val_loss 0.3645 | val_acc 0.8267
+No improvement (1/10).
+Epoch [9/100] | train_loss 0.3155 | train_acc 0.8600 | val_loss 0.3958 | val_acc 0.8017
+Epoch [10/100] | train_loss 0.2525 | train_acc 0.8903 | val_loss 0.3039 | val_acc 0.8750
+No improvement (1/10).
+Epoch [11/100] | train_loss 0.2265 | train_acc 0.9047 | val_loss 0.2913 | val_acc 0.8733
+No improvement (2/10).
+Epoch [12/100] | train_loss 0.2609 | train_acc 0.8983 | val_loss 0.3044 | val_acc 0.8633
+No improvement (3/10).
+Epoch [13/100] | train_loss 0.2542 | train_acc 0.8867 | val_loss 0.4036 | val_acc 0.8300
+Epoch [14/100] | train_loss 0.2422 | train_acc 0.8953 | val_loss 0.3110 | val_acc 0.8783
+Epoch [15/100] | train_loss 0.1640 | train_acc 0.9327 | val_loss 0.2984 | val_acc 0.8883
+Epoch [16/100] | train_loss 0.1628 | train_acc 0.9330 | val_loss 0.2306 | val_acc 0.9100
+No improvement (1/10).
+Epoch [17/100] | train_loss 0.1417 | train_acc 0.9480 | val_loss 0.2461 | val_acc 0.8967
+No improvement (2/10).
+Epoch [18/100] | train_loss 0.1526 | train_acc 0.9423 | val_loss 0.2519 | val_acc 0.9000
+Epoch [19/100] | train_loss 0.1275 | train_acc 0.9470 | val_loss 0.2284 | val_acc 0.9117
+No improvement (1/10).
+Epoch [20/100] | train_loss 0.1216 | train_acc 0.9573 | val_loss 0.2375 | val_acc 0.9117
+No improvement (2/10).
+Epoch [21/100] | train_loss 0.1305 | train_acc 0.9500 | val_loss 0.2478 | val_acc 0.9050
+No improvement (3/10).
+Epoch [22/100] | train_loss 0.1259 | train_acc 0.9543 | val_loss 0.2539 | val_acc 0.9033
+No improvement (4/10).
+Epoch [23/100] | train_loss 0.1205 | train_acc 0.9570 | val_loss 0.2502 | val_acc 0.9100
+Epoch [24/100] | train_loss 0.1112 | train_acc 0.9600 | val_loss 0.2164 | val_acc 0.9250
+No improvement (1/10).
+Epoch [25/100] | train_loss 0.1131 | train_acc 0.9637 | val_loss 0.2072 | val_acc 0.9233
+No improvement (2/10).
+Epoch [26/100] | train_loss 0.1082 | train_acc 0.9613 | val_loss 0.2340 | val_acc 0.9183
+No improvement (3/10).
+Epoch [27/100] | train_loss 0.1108 | train_acc 0.9640 | val_loss 0.2079 | val_acc 0.9233
+No improvement (4/10).
+Epoch [28/100] | train_loss 0.1006 | train_acc 0.9657 | val_loss 0.2143 | val_acc 0.9250
+No improvement (5/10).
+Epoch [29/100] | train_loss 0.1017 | train_acc 0.9657 | val_loss 0.2107 | val_acc 0.9250
+Epoch [30/100] | train_loss 0.1041 | train_acc 0.9627 | val_loss 0.2113 | val_acc 0.9267
+No improvement (1/10).
+Epoch [31/100] | train_loss 0.1005 | train_acc 0.9657 | val_loss 0.2087 | val_acc 0.9250
+No improvement (2/10).
+Epoch [32/100] | train_loss 0.1010 | train_acc 0.9650 | val_loss 0.2192 | val_acc 0.9250
+No improvement (3/10).
+Epoch [33/100] | train_loss 0.0992 | train_acc 0.9663 | val_loss 0.2130 | val_acc 0.9250
+No improvement (4/10).
+Epoch [34/100] | train_loss 0.0986 | train_acc 0.9657 | val_loss 0.2083 | val_acc 0.9267
+No improvement (5/10).
+Epoch [35/100] | train_loss 0.0981 | train_acc 0.9627 | val_loss 0.2098 | val_acc 0.9250
+Epoch [36/100] | train_loss 0.0967 | train_acc 0.9660 | val_loss 0.2106 | val_acc 0.9283
+No improvement (1/10).
+Epoch [37/100] | train_loss 0.0971 | train_acc 0.9670 | val_loss 0.2108 | val_acc 0.9250
+No improvement (2/10).
+Epoch [38/100] | train_loss 0.0950 | train_acc 0.9673 | val_loss 0.2088 | val_acc 0.9283
+No improvement (3/10).
+Epoch [39/100] | train_loss 0.0977 | train_acc 0.9683 | val_loss 0.2097 | val_acc 0.9267
+No improvement (4/10).
+Epoch [40/100] | train_loss 0.0974 | train_acc 0.9670 | val_loss 0.2123 | val_acc 0.9250
+No improvement (5/10).
+Epoch [41/100] | train_loss 0.0981 | train_acc 0.9667 | val_loss 0.2080 | val_acc 0.9267
+No improvement (6/10).
+Epoch [42/100] | train_loss 0.0979 | train_acc 0.9680 | val_loss 0.2092 | val_acc 0.9283
+No improvement (7/10).
+Epoch [43/100] | train_loss 0.0929 | train_acc 0.9683 | val_loss 0.2109 | val_acc 0.9283
+No improvement (8/10).
+Epoch [44/100] | train_loss 0.0920 | train_acc 0.9687 | val_loss 0.2081 | val_acc 0.9283
+No improvement (9/10).
+Epoch [45/100] | train_loss 0.0971 | train_acc 0.9667 | val_loss 0.2082 | val_acc 0.9267
+No improvement (10/10).
+🛑 Early stopping.
+Training complete.
+Model saved to IY011_baseline_transformer_model_cv-variation.pth
+
+=== Evaluating on Test Set ===
+Test — loss: 0.14 | acc: 0.95
+Extracting data from loader for SVM...
+Extracting data from loader for SVM...
+SVM Train Shape: (3000, 5003)
+SVM Test Shape:  (600, 5003)
+=== SVM (RBF Kernel) Classification Accuracy: 0.62 ===
+Generating 5 unseen classes...
+  Generated Class 0: Mu=9732.9, CV=1.27
+  Generated Class 1: Mu=6906.1, CV=0.92
+  Generated Class 2: Mu=4344.9, CV=1.22
+  Generated Class 3: Mu=5799.3, CV=1.36
+  Generated Class 4: Mu=5853.8, CV=1.59
+
+=== Evaluating SVM Few-Shot on Unseen Classes ===
+
+=== Testing SVM Few-Shot Baseline (Raw Data) ===
+✅ Trained SVM on 25 support samples.
+SVM Few-Shot Accuracy: 22.67%
+
+=== Running Permutation Test ===
+Running Permutation Test (num_traj=2, sep_len=1)...
+------------------------------------------------
+Accuracy on ORIGINAL Data:  93.50%
+Accuracy on SHUFFLED Data:  92.33% (Structure Preserved)
+------------------------------------------------
+torch.Size([64, 4023, 1]) torch.Size([64, 1])
+Starting training...
+Epoch [1/100] | train_loss 0.8043 | train_acc 0.5170 | val_loss 0.7215 | val_acc 0.4967
+No improvement (1/10).
+Epoch [2/100] | train_loss 0.6947 | train_acc 0.5197 | val_loss 0.7225 | val_acc 0.4967
+No improvement (2/10).
+Epoch [3/100] | train_loss 0.6949 | train_acc 0.5173 | val_loss 0.7151 | val_acc 0.4967
+No improvement (3/10).
+Epoch [4/100] | train_loss 0.6946 | train_acc 0.5090 | val_loss 0.7201 | val_acc 0.4967
+No improvement (4/10).
+Epoch [5/100] | train_loss 0.6942 | train_acc 0.5190 | val_loss 0.7030 | val_acc 0.4967
+No improvement (5/10).
+Epoch [6/100] | train_loss 0.6951 | train_acc 0.5220 | val_loss 0.7041 | val_acc 0.4967
+No improvement (6/10).
+Epoch [7/100] | train_loss 0.6920 | train_acc 0.5207 | val_loss 0.6943 | val_acc 0.4967
+Epoch [8/100] | train_loss 0.6855 | train_acc 0.5493 | val_loss 0.6859 | val_acc 0.5467
+No improvement (1/10).
+Epoch [9/100] | train_loss 0.6807 | train_acc 0.5730 | val_loss 0.7046 | val_acc 0.5333
+No improvement (2/10).
+Epoch [10/100] | train_loss 0.6767 | train_acc 0.5657 | val_loss 0.7075 | val_acc 0.5300
+Epoch [11/100] | train_loss 0.6750 | train_acc 0.5853 | val_loss 0.6794 | val_acc 0.5600
+Epoch [12/100] | train_loss 0.6674 | train_acc 0.5860 | val_loss 0.6760 | val_acc 0.5750
+No improvement (1/10).
+Epoch [13/100] | train_loss 0.6612 | train_acc 0.5953 | val_loss 0.6771 | val_acc 0.5733
+No improvement (2/10).
+Epoch [14/100] | train_loss 0.6558 | train_acc 0.6017 | val_loss 0.6788 | val_acc 0.5717
+No improvement (3/10).
+Epoch [15/100] | train_loss 0.6467 | train_acc 0.6147 | val_loss 0.6905 | val_acc 0.5717
+No improvement (4/10).
+Epoch [16/100] | train_loss 0.6403 | train_acc 0.6237 | val_loss 0.6961 | val_acc 0.5617
+No improvement (5/10).
+Epoch [17/100] | train_loss 0.6379 | train_acc 0.6287 | val_loss 0.6976 | val_acc 0.5550
+No improvement (6/10).
+Epoch [18/100] | train_loss 0.6319 | train_acc 0.6283 | val_loss 0.7009 | val_acc 0.5567
+No improvement (7/10).
+Epoch [19/100] | train_loss 0.6240 | train_acc 0.6380 | val_loss 0.7069 | val_acc 0.5583
+No improvement (8/10).
+Epoch [20/100] | train_loss 0.6168 | train_acc 0.6463 | val_loss 0.7126 | val_acc 0.5433
+No improvement (9/10).
+Epoch [21/100] | train_loss 0.6107 | train_acc 0.6520 | val_loss 0.7149 | val_acc 0.5450
+No improvement (10/10).
+🛑 Early stopping.
+Training complete.
+Model saved to IY011_baseline_transformer_model_t_ac-variation.pth
+
+=== Evaluating on Test Set ===
+Test — loss: 0.70 | acc: 0.59/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py:1408: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+
+Extracting data from loader for SVM...
+Extracting data from loader for SVM...
+SVM Train Shape: (3000, 4023)
+SVM Test Shape:  (600, 4023)
+=== SVM (RBF Kernel) Classification Accuracy: 0.53 ===
+Generating 5 unseen classes...
+  Generated Class 0: Mu=370.3, CV=1.22
+  Generated Class 1: Mu=1241.1, CV=0.86
+  Generated Class 2: Mu=9704.6, CV=0.58
+  Generated Class 3: Mu=2145.3, CV=1.66
+  Generated Class 4: Mu=9572.8, CV=1.96
+
+=== Evaluating SVM Few-Shot on Unseen Classes ===
+
+=== Testing SVM Few-Shot Baseline (Raw Data) ===
+✅ Trained SVM on 25 support samples.
+SVM Few-Shot Accuracy: 26.67%
+
+=== Running Permutation Test ===
+Running Permutation Test (num_traj=2, sep_len=1)...
+------------------------------------------------
+Accuracy on ORIGINAL Data:  59.50%
+Accuracy on SHUFFLED Data:  53.17% (Structure Preserved)
+------------------------------------------------
+  Activating project at `~/stochastic_simulations/julia`
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
