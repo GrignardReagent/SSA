@@ -65,7 +65,7 @@ def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None
 # Baseline Data Pipeline
 # -----------------------------------------------------------------------------
 
-def _load_and_concat(files, num_traj, preprocess_fn, rng, separator_len=1, separator_val=-10.0):
+def _load_and_concat(files, num_traj, preprocess_fn, rng, sample_len = None, separator_len=1, separator_val=-10.0):
     """
     Helper to load files and concatenate 'num_traj' trajectories.
     """
@@ -93,6 +93,15 @@ def _load_and_concat(files, num_traj, preprocess_fn, rng, separator_len=1, separ
     for traj in selected_trajs:
         # Reshape
         t = preprocess_fn(traj) # (Time, 1)
+        # random crop to sample_len if specified
+        if sample_len is not None:
+            curr_len = t.shape[0]
+            if curr_len > sample_len:
+                # Random crop
+                start = rng.randint(0, curr_len - sample_len)
+                t = t[start : start + sample_len]
+            # If shorter, we handle it in the next step (L = min)
+        
         proc.append(t)
 
     # Crop to same length before stacking (optional, keeps segments regular)
@@ -144,7 +153,8 @@ def make_groups(
     verbose=False,
     separator_len=1,
     separator_val=-100.0,
-    param_dist_threshold=0.7 
+    param_dist_threshold=0.7,
+    sample_len=None
 ):
     """
     Generates A SINGLE group (set of trajectories).
@@ -163,7 +173,7 @@ def make_groups(
         if verbose: print("Generating POSITIVE group.")
         file_a = rng.choice(traj_paths)
         label = 1.0
-        X = _load_and_concat([file_a], num_traj, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
+        X = _load_and_concat([file_a], num_traj, preprocess_fn, rng, sample_len=sample_len, separator_len=separator_len, separator_val=separator_val)
         
     else:
         if verbose: print("Generating NEGATIVE group.")
@@ -230,8 +240,8 @@ def make_groups(
         num_traj_a = num_traj // 2
         num_traj_b = num_traj - num_traj_a
         
-        X_a = _load_and_concat([file_a], num_traj_a, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
-        X_b = _load_and_concat([file_b], num_traj_b, preprocess_fn, rng, separator_len=separator_len, separator_val=separator_val)
+        X_a = _load_and_concat([file_a], num_traj_a, preprocess_fn, rng, sample_len=sample_len, separator_len=separator_len, separator_val=separator_val)
+        X_b = _load_and_concat([file_b], num_traj_b, preprocess_fn, rng, sample_len=sample_len, separator_len=separator_len, separator_val=separator_val)
         
         if X_a is not None and X_b is not None:
             if separator_len > 0:
@@ -283,8 +293,9 @@ def baseline_data_prep(
     seed=42,
     separator_len=1,
     separator_val=-100.0,
+    sample_len=None,
     param_dist_threshold=0.7,
-    verbose=False
+    verbose=True
 ):
     # 1. Split FILES first (Zero Leakage)
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
@@ -298,19 +309,19 @@ def baseline_data_prep(
     # 2. Iteratively Generate Groups
     print(f"Generating {num_groups_train} training groups...")
     train_groups = [
-        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
+        make_groups(train_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, sample_len=sample_len,param_dist_threshold=param_dist_threshold)
         for _ in tqdm(range(num_groups_train))
     ]
     
     print(f"Generating validation groups...")
     val_groups = [
-        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
+        make_groups(val_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, sample_len=sample_len,param_dist_threshold=param_dist_threshold) 
         for _ in tqdm(range(num_groups_val))
     ]
     
     print(f"Generating test groups...")
     test_groups = [
-        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, param_dist_threshold=param_dist_threshold) 
+        make_groups(test_files, num_traj=num_traj, pos_ratio=pos_ratio, rng=rng, verbose=verbose, separator_len=separator_len, separator_val=separator_val, sample_len=sample_len,param_dist_threshold=param_dist_threshold) 
         for _ in tqdm(range(num_groups_test))
     ]
     
