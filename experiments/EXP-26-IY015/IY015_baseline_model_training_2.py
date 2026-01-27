@@ -20,7 +20,7 @@ from sklearn.svm import SVC
 
 # data handling
 from sklearn.preprocessing import StandardScaler
-from dataloaders import baseline_data_prep, save_loader_to_disk
+from dataloaders import baseline_data_prep, save_loader_to_disk, load_loader_from_disk
 
 # simulation
 from simulation.mean_cv_t_ac import find_tilda_parameters
@@ -45,17 +45,17 @@ num_groups_test=int(num_groups_train * 0.2)
 num_traj=10 # provide more trajectories per group for easier task
 param_dist_threshold=0.7 # 2-fold change
 sample_len=300 # randomly crop each time series sample to this length
-train_loader, val_loader, test_loader, scaler = baseline_data_prep(
-    TRAJ_NPZ_PATH,
-    batch_size=batch_size,
-    num_groups_train=num_groups_train,
-    num_groups_val=num_groups_val,
-    num_groups_test=num_groups_test,
-    num_traj=num_traj,
-    sample_len=sample_len,
-    param_dist_threshold=param_dist_threshold,
-    verbose=True,
-)
+# train_loader, val_loader, test_loader, scaler = baseline_data_prep(
+#     TRAJ_NPZ_PATH,
+#     batch_size=batch_size,
+#     num_groups_train=num_groups_train,
+#     num_groups_val=num_groups_val,
+#     num_groups_test=num_groups_test,
+#     num_traj=num_traj,
+#     sample_len=sample_len,
+#     param_dist_threshold=param_dist_threshold,
+#     verbose=True,
+# )
 # === Dataloader hyperparams & data prep ===
 
 # === Save data for debugging later === 
@@ -65,17 +65,21 @@ val_save_path   = DATA_ROOT / "IY015_static_val.pt"
 test_save_path  = DATA_ROOT / "IY015_static_test.pt"
 
 # 2. Check if static data already exists
-if not train_save_path.exists():
-    print("Static data not found. Saving...")
+# if not train_save_path.exists():
+#     print("Static data not found. Saving...")
     
-    # Save them to disk
-    save_loader_to_disk(train_loader, train_save_path)
-    save_loader_to_disk(val_loader, val_save_path)
-    save_loader_to_disk(test_loader, test_save_path)
-else:
-    print("Found existing static data on disk, the simulated data will not be saved, to prevent overwriting existing data.")
+#     # Save them to disk
+#     save_loader_to_disk(train_loader, train_save_path)
+#     save_loader_to_disk(val_loader, val_save_path)
+#     save_loader_to_disk(test_loader, test_save_path)
+# else:
+#     print("Found existing static data on disk, the simulated data will not be saved, to prevent overwriting existing data.")
 # === Save data for debugging later === 
 
+# === Load static data from disk ===
+train_loader = load_loader_from_disk(train_save_path, batch_size=batch_size)
+val_loader   = load_loader_from_disk(val_save_path, batch_size=batch_size)
+test_loader  = load_loader_from_disk(test_save_path, batch_size=batch_size)
 X_b, y_b = next(iter(train_loader))
 print(X_b.shape, y_b.shape) # (Batch, Seq_Len, num_traj), (Batch, 1)
 
@@ -100,18 +104,18 @@ model = TransformerClassifier(
     max_seq_length=max_seq_length,
 )
 
-model_path = 'IY015_baseline_transformer_model_1.pth'
+model_path = 'IY015_baseline_transformer_model_2.pth'
 # === Model hyperparams ===
 
 # === Training hyperparams ===
 epochs = 100
-patience = 10 
+patience = 100 
 lr = 1e-2
 optimizer = optim.Adam(model.parameters(), lr=lr)
 
 ### schedulers ### 
 # simple scheduler choice
-scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=3, factor=0.5) 
+# scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=3, factor=0.5) 
 
 loss_fn = nn.BCEWithLogitsLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -126,7 +130,7 @@ model.to(device)
 wandb_config = {
     "entity": "grignard-reagent",
     "project": "IY015-baseline-model",
-    "name": f"num_groups_train_{num_groups_train}_traj_{num_traj} (all-varying dataset)", # change this to what you want
+    "name": f"num_groups_train_{num_groups_train}_traj_{num_traj} (all-varying dataset, no scheduler, no early stopping)", # change this to what you want
     "dataset": DATA_ROOT.name,
     "batch_size": batch_size,
     "input_size": input_size,
@@ -140,7 +144,7 @@ wandb_config = {
     "patience": patience,
     "lr": lr,
     "optimizer": type(optimizer).__name__,
-    "scheduler": type(scheduler).__name__,
+    "scheduler": None,
     "loss_fn": type(loss_fn).__name__,
     "model": type(model).__name__,
     "batch_size": train_loader.batch_size,
@@ -162,7 +166,7 @@ history = train_model(
     patience=patience,
     lr=lr,
     optimizer=optimizer,
-    scheduler=scheduler,
+    scheduler=None,
     loss_fn=loss_fn,
     device=device,
     grad_clip=grad_clip,
@@ -402,7 +406,7 @@ def test_baseline_performance(model, unseen_data, scaler=None, num_traj=10, crop
     return acc
 
 print("\n=== Evaluating Baseline Model on Unseen Classes ===")
-acc = test_baseline_performance(model, unseen_datasets, scaler, num_traj=num_traj, crop_len=sample_len)
+# acc = test_baseline_performance(model, unseen_datasets, scaler, num_traj=num_traj, crop_len=sample_len)
 
 # ==========================================
 # SVM ON UNSEEN DATA BENCHMARK
@@ -583,4 +587,4 @@ print("\n=== Running Permutation Test ===")
 acc_orig, acc_shuff = run_permutation_test(model, test_loader, device=device)
 
 # Test baseline performance on unseen data, both original and shuffled
-acc = test_baseline_performance(model, unseen_datasets, scaler, num_traj=num_traj, crop_len=sample_len)
+# acc = test_baseline_performance(model, unseen_datasets, scaler, num_traj=num_traj, crop_len=sample_len)

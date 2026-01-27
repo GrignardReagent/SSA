@@ -1,0 +1,273 @@
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run r74kdrrl
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY015/wandb/run-20260126_145428-r74kdrrl
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run num_groups_train_10000_traj_10 (all-varying dataset, no scheduler, no early stopping)
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY015-baseline-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY015-baseline-model/runs/r74kdrrl
+📂 Loading static data from /home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data/IY015_static_train.pt...
+📂 Loading static data from /home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data/IY015_static_val.pt...
+📂 Loading static data from /home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data/IY015_static_test.pt...
+torch.Size([32, 3009, 1]) torch.Size([32, 1])
+Starting training...
+Epoch [1/100] | train_loss 0.6491 | train_acc 0.6331 | val_loss 0.6363 | val_acc 0.6410
+Epoch [2/100] | train_loss 0.5087 | train_acc 0.7550 | val_loss 0.4651 | val_acc 0.7865
+Epoch [3/100] | train_loss 0.4656 | train_acc 0.7858 | val_loss 0.4544 | val_acc 0.7930
+Epoch [4/100] | train_loss 0.4479 | train_acc 0.7938 | val_loss 0.4490 | val_acc 0.7980
+No improvement (1/100).
+Epoch [5/100] | train_loss 0.4408 | train_acc 0.7975 | val_loss 0.4470 | val_acc 0.7930
+Epoch [6/100] | train_loss 0.4267 | train_acc 0.8063 | val_loss 0.4263 | val_acc 0.8120
+No improvement (1/100).
+Epoch [7/100] | train_loss 0.4149 | train_acc 0.8129 | val_loss 0.4218 | val_acc 0.8110
+Epoch [8/100] | train_loss 0.4090 | train_acc 0.8160 | val_loss 0.4332 | val_acc 0.8125
+Epoch [9/100] | train_loss 0.4059 | train_acc 0.8197 | val_loss 0.4271 | val_acc 0.8160
+No improvement (1/100).
+Epoch [10/100] | train_loss 0.4013 | train_acc 0.8194 | val_loss 0.4213 | val_acc 0.8155
+No improvement (2/100).
+Epoch [11/100] | train_loss 0.4088 | train_acc 0.8183 | val_loss 0.4929 | val_acc 0.7875
+No improvement (3/100).
+Epoch [12/100] | train_loss 0.3978 | train_acc 0.8279 | val_loss 0.4335 | val_acc 0.8115
+Epoch [13/100] | train_loss 0.3924 | train_acc 0.8261 | val_loss 0.4286 | val_acc 0.8185
+Epoch [14/100] | train_loss 0.3875 | train_acc 0.8339 | val_loss 0.4267 | val_acc 0.8255
+No improvement (1/100).
+Epoch [15/100] | train_loss 0.3846 | train_acc 0.8319 | val_loss 0.4317 | val_acc 0.8230
+No improvement (2/100).
+Epoch [16/100] | train_loss 0.3815 | train_acc 0.8319 | val_loss 0.4400 | val_acc 0.8175
+No improvement (3/100).
+Epoch [17/100] | train_loss 0.3789 | train_acc 0.8393 | val_loss 0.4548 | val_acc 0.8170
+No improvement (4/100).
+Epoch [18/100] | train_loss 0.3762 | train_acc 0.8384 | val_loss 0.4515 | val_acc 0.8100
+No improvement (5/100).
+Epoch [19/100] | train_loss 0.3688 | train_acc 0.8409 | val_loss 0.4578 | val_acc 0.8070
+No improvement (6/100).
+Epoch [20/100] | train_loss 0.3680 | train_acc 0.8414 | val_loss 0.4744 | val_acc 0.8120
+No improvement (7/100).
+Epoch [21/100] | train_loss 0.3681 | train_acc 0.8394 | val_loss 0.4761 | val_acc 0.8070
+No improvement (8/100).
+Epoch [22/100] | train_loss 0.3652 | train_acc 0.8423 | val_loss 0.4623 | val_acc 0.8065
+No improvement (9/100).
+Epoch [23/100] | train_loss 0.3635 | train_acc 0.8431 | val_loss 0.4733 | val_acc 0.8085
+No improvement (10/100).
+Epoch [24/100] | train_loss 0.3600 | train_acc 0.8478 | val_loss 0.4497 | val_acc 0.8125
+No improvement (11/100).
+Epoch [25/100] | train_loss 0.3580 | train_acc 0.8451 | val_loss 0.4588 | val_acc 0.8140
+No improvement (12/100).
+Epoch [26/100] | train_loss 0.3632 | train_acc 0.8451 | val_loss 0.4734 | val_acc 0.8150
+No improvement (13/100).
+Epoch [27/100] | train_loss 0.3541 | train_acc 0.8502 | val_loss 0.4561 | val_acc 0.8135
+No improvement (14/100).
+Epoch [28/100] | train_loss 0.3560 | train_acc 0.8504 | val_loss 0.4815 | val_acc 0.7980
+No improvement (15/100).
+Epoch [29/100] | train_loss 0.3552 | train_acc 0.8519 | val_loss 0.4715 | val_acc 0.8045
+No improvement (16/100).
+Epoch [30/100] | train_loss 0.3492 | train_acc 0.8495 | val_loss 0.4773 | val_acc 0.8015
+No improvement (17/100).
+Epoch [31/100] | train_loss 0.3495 | train_acc 0.8495 | val_loss 0.4817 | val_acc 0.8045
+No improvement (18/100).
+Epoch [32/100] | train_loss 0.3497 | train_acc 0.8528 | val_loss 0.4777 | val_acc 0.8100
+No improvement (19/100).
+Epoch [33/100] | train_loss 0.3452 | train_acc 0.8536 | val_loss 0.5003 | val_acc 0.7925
+No improvement (20/100).
+Epoch [34/100] | train_loss 0.3385 | train_acc 0.8575 | val_loss 0.4943 | val_acc 0.7980
+No improvement (21/100).
+Epoch [35/100] | train_loss 0.3368 | train_acc 0.8559 | val_loss 0.5151 | val_acc 0.8080
+No improvement (22/100).
+Epoch [36/100] | train_loss 0.3375 | train_acc 0.8584 | val_loss 0.5299 | val_acc 0.7975
+No improvement (23/100).
+Epoch [37/100] | train_loss 0.3341 | train_acc 0.8632 | val_loss 0.5322 | val_acc 0.8075
+No improvement (24/100).
+Epoch [38/100] | train_loss 0.3348 | train_acc 0.8637 | val_loss 0.5396 | val_acc 0.7985
+No improvement (25/100).
+Epoch [39/100] | train_loss 0.3321 | train_acc 0.8622 | val_loss 0.5331 | val_acc 0.8025
+No improvement (26/100).
+Epoch [40/100] | train_loss 0.3518 | train_acc 0.8497 | val_loss 0.5293 | val_acc 0.7925
+No improvement (27/100).
+Epoch [41/100] | train_loss 0.3334 | train_acc 0.8587 | val_loss 0.5874 | val_acc 0.7975
+No improvement (28/100).
+Epoch [42/100] | train_loss 0.3342 | train_acc 0.8600 | val_loss 0.5456 | val_acc 0.7950
+No improvement (29/100).
+Epoch [43/100] | train_loss 0.3309 | train_acc 0.8600 | val_loss 0.5761 | val_acc 0.7920
+No improvement (30/100).
+Epoch [44/100] | train_loss 0.3231 | train_acc 0.8643 | val_loss 0.6344 | val_acc 0.7830
+No improvement (31/100).
+Epoch [45/100] | train_loss 0.3241 | train_acc 0.8632 | val_loss 0.5665 | val_acc 0.7910
+No improvement (32/100).
+Epoch [46/100] | train_loss 0.3217 | train_acc 0.8652 | val_loss 0.5887 | val_acc 0.7815
+No improvement (33/100).
+Epoch [47/100] | train_loss 0.3245 | train_acc 0.8659 | val_loss 0.5531 | val_acc 0.7920
+No improvement (34/100).
+Epoch [48/100] | train_loss 0.3315 | train_acc 0.8590 | val_loss 0.5619 | val_acc 0.7945
+No improvement (35/100).
+Epoch [49/100] | train_loss 0.3214 | train_acc 0.8661 | val_loss 0.5665 | val_acc 0.7840
+No improvement (36/100).
+Epoch [50/100] | train_loss 0.3251 | train_acc 0.8620 | val_loss 0.5482 | val_acc 0.7945
+No improvement (37/100).
+Epoch [51/100] | train_loss 0.3161 | train_acc 0.8660 | val_loss 0.5844 | val_acc 0.7735
+No improvement (38/100).
+Epoch [52/100] | train_loss 0.3197 | train_acc 0.8640 | val_loss 0.5910 | val_acc 0.7880
+No improvement (39/100).
+Epoch [53/100] | train_loss 0.3157 | train_acc 0.8690 | val_loss 0.6139 | val_acc 0.7925
+No improvement (40/100).
+Epoch [54/100] | train_loss 0.3195 | train_acc 0.8636 | val_loss 0.5428 | val_acc 0.7980
+No improvement (41/100).
+Epoch [55/100] | train_loss 0.3189 | train_acc 0.8656 | val_loss 0.6134 | val_acc 0.7790
+No improvement (42/100).
+Epoch [56/100] | train_loss 0.3181 | train_acc 0.8707 | val_loss 0.5784 | val_acc 0.7960
+No improvement (43/100).
+Epoch [57/100] | train_loss 0.3105 | train_acc 0.8717 | val_loss 0.5768 | val_acc 0.7870
+No improvement (44/100).
+Epoch [58/100] | train_loss 0.3109 | train_acc 0.8739 | val_loss 0.6101 | val_acc 0.8005
+No improvement (45/100).
+Epoch [59/100] | train_loss 0.3169 | train_acc 0.8698 | val_loss 0.6094 | val_acc 0.7865
+No improvement (46/100).
+Epoch [60/100] | train_loss 0.3171 | train_acc 0.8719 | val_loss 0.5780 | val_acc 0.7950
+No improvement (47/100).
+Epoch [61/100] | train_loss 0.3175 | train_acc 0.8711 | val_loss 0.5881 | val_acc 0.7990
+No improvement (48/100).
+Epoch [62/100] | train_loss 0.3010 | train_acc 0.8782 | val_loss 0.5812 | val_acc 0.7875
+No improvement (49/100).
+Epoch [63/100] | train_loss 0.3052 | train_acc 0.8749 | val_loss 0.5460 | val_acc 0.8010
+No improvement (50/100).
+Epoch [64/100] | train_loss 0.3084 | train_acc 0.8731 | val_loss 0.6068 | val_acc 0.7995
+No improvement (51/100).
+Epoch [65/100] | train_loss 0.3026 | train_acc 0.8786 | val_loss 0.5593 | val_acc 0.7885
+No improvement (52/100).
+Epoch [66/100] | train_loss 0.2995 | train_acc 0.8765 | val_loss 0.5416 | val_acc 0.7980
+No improvement (53/100).
+Epoch [67/100] | train_loss 0.2994 | train_acc 0.8783 | val_loss 0.5698 | val_acc 0.7880
+No improvement (54/100).
+Epoch [68/100] | train_loss 0.2986 | train_acc 0.8804 | val_loss 0.5761 | val_acc 0.7975
+No improvement (55/100).
+Epoch [69/100] | train_loss 0.3025 | train_acc 0.8756 | val_loss 0.5691 | val_acc 0.8020
+No improvement (56/100).
+Epoch [70/100] | train_loss 0.2997 | train_acc 0.8747 | val_loss 0.6397 | val_acc 0.7910
+No improvement (57/100).
+Epoch [71/100] | train_loss 0.3003 | train_acc 0.8819 | val_loss 0.6049 | val_acc 0.7975wandb: updating run metadata
+wandb: uploading output.log; uploading history steps 99-99, summary, console lines 190-191; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▇▇▇▇▇▇████
+wandb:  grad/norm ▇▆▆██▇████▇▆█▇█▅▇██▇█████████▆█▁▄▅▄▃████
+wandb:         lr ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇█████▇████████
+wandb: train/loss █▇▆▆▆▅▅▄▅▄▄▄▄▃▄▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▂▁▁▁
+wandb:    val/acc ▁▇▇▇█▇███▇███▇▇▇▇▇▇▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆
+wandb:   val/loss ▆▂▂▁▁▁▃▁▁▂▂▂▂▂▂▂▂▄▄▄▅▄▅▅▄▆▅▄▅▅▇▆▆▆▆█▇▆██
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.8255
+wandb:             epoch 100
+wandb:         grad/norm 1.0
+wandb:                lr 0.01
+wandb:         train/acc 0.885
+wandb:        train/loss 0.27923
+wandb: training_time_sec 15917.33061
+wandb:           val/acc 0.792
+wandb:          val/loss 0.61217
+wandb: 
+wandb: 🚀 View run num_groups_train_10000_traj_10 (all-varying dataset, no scheduler, no early stopping) at: https://wandb.ai/grignard-reagent/IY015-baseline-model/runs/r74kdrrl
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY015-baseline-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260126_145428-r74kdrrl/logs
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py:1408: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  y = column_or_1d(y, warn=True)
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/juliacall/__init__.py:61: UserWarning: torch was imported before juliacall. This may cause a segfault. To avoid this, import juliacall before importing torch. For updates, see https://github.com/pytorch/pytorch/issues/78829.
+  warnings.warn(
+
+No improvement (58/100).
+Epoch [72/100] | train_loss 0.2902 | train_acc 0.8839 | val_loss 0.5983 | val_acc 0.7950
+No improvement (59/100).
+Epoch [73/100] | train_loss 0.2912 | train_acc 0.8837 | val_loss 0.5963 | val_acc 0.8015
+No improvement (60/100).
+Epoch [74/100] | train_loss 0.2956 | train_acc 0.8815 | val_loss 0.5883 | val_acc 0.7960
+No improvement (61/100).
+Epoch [75/100] | train_loss 0.2823 | train_acc 0.8856 | val_loss 0.6226 | val_acc 0.7965
+No improvement (62/100).
+Epoch [76/100] | train_loss 0.2890 | train_acc 0.8822 | val_loss 0.6595 | val_acc 0.7890
+No improvement (63/100).
+Epoch [77/100] | train_loss 0.2818 | train_acc 0.8845 | val_loss 0.6777 | val_acc 0.7845
+No improvement (64/100).
+Epoch [78/100] | train_loss 0.2856 | train_acc 0.8870 | val_loss 0.5996 | val_acc 0.7890
+No improvement (65/100).
+Epoch [79/100] | train_loss 0.2894 | train_acc 0.8811 | val_loss 0.6233 | val_acc 0.7845
+No improvement (66/100).
+Epoch [80/100] | train_loss 0.2912 | train_acc 0.8773 | val_loss 0.6180 | val_acc 0.7720
+No improvement (67/100).
+Epoch [81/100] | train_loss 0.2834 | train_acc 0.8841 | val_loss 0.5836 | val_acc 0.7895
+No improvement (68/100).
+Epoch [82/100] | train_loss 0.2924 | train_acc 0.8773 | val_loss 0.6371 | val_acc 0.8005
+No improvement (69/100).
+Epoch [83/100] | train_loss 0.2783 | train_acc 0.8881 | val_loss 0.6152 | val_acc 0.8015
+No improvement (70/100).
+Epoch [84/100] | train_loss 0.2787 | train_acc 0.8857 | val_loss 0.6234 | val_acc 0.8045
+No improvement (71/100).
+Epoch [85/100] | train_loss 0.2780 | train_acc 0.8866 | val_loss 0.6385 | val_acc 0.7975
+No improvement (72/100).
+Epoch [86/100] | train_loss 0.2804 | train_acc 0.8885 | val_loss 0.7172 | val_acc 0.7840
+No improvement (73/100).
+Epoch [87/100] | train_loss 0.2793 | train_acc 0.8889 | val_loss 0.7126 | val_acc 0.7690
+No improvement (74/100).
+Epoch [88/100] | train_loss 0.2887 | train_acc 0.8847 | val_loss 0.5808 | val_acc 0.7920
+No improvement (75/100).
+Epoch [89/100] | train_loss 0.2875 | train_acc 0.8855 | val_loss 0.7484 | val_acc 0.7855
+No improvement (76/100).
+Epoch [90/100] | train_loss 0.2771 | train_acc 0.8894 | val_loss 0.6932 | val_acc 0.7880
+No improvement (77/100).
+Epoch [91/100] | train_loss 0.2742 | train_acc 0.8912 | val_loss 0.6723 | val_acc 0.7895
+No improvement (78/100).
+Epoch [92/100] | train_loss 0.2764 | train_acc 0.8896 | val_loss 0.6223 | val_acc 0.7855
+No improvement (79/100).
+Epoch [93/100] | train_loss 0.2743 | train_acc 0.8908 | val_loss 0.6322 | val_acc 0.7800
+No improvement (80/100).
+Epoch [94/100] | train_loss 0.2822 | train_acc 0.8855 | val_loss 0.6894 | val_acc 0.7740
+No improvement (81/100).
+Epoch [95/100] | train_loss 0.2798 | train_acc 0.8851 | val_loss 0.6243 | val_acc 0.7825
+No improvement (82/100).
+Epoch [96/100] | train_loss 0.2833 | train_acc 0.8871 | val_loss 0.7057 | val_acc 0.7655
+No improvement (83/100).
+Epoch [97/100] | train_loss 0.2808 | train_acc 0.8856 | val_loss 0.7687 | val_acc 0.7620
+No improvement (84/100).
+Epoch [98/100] | train_loss 0.2801 | train_acc 0.8877 | val_loss 0.7057 | val_acc 0.7855
+No improvement (85/100).
+Epoch [99/100] | train_loss 0.2814 | train_acc 0.8847 | val_loss 0.6186 | val_acc 0.7850
+No improvement (86/100).
+Epoch [100/100] | train_loss 0.2792 | train_acc 0.8850 | val_loss 0.6122 | val_acc 0.7920
+Training complete.
+Model saved to IY015_baseline_transformer_model_2.pth
+
+=== Evaluating on Test Set ===
+Test — loss: 0.62 | acc: 0.79
+Extracting data from loader for SVM...
+Extracting data from loader for SVM...
+SVM Train Shape: (10000, 3009)
+SVM Test Shape:  (2000, 3009)
+=== SVM (RBF Kernel) Classification Accuracy: 0.73 ===
+Generating 5 unseen classes...
+Initializing Julia environment...
+  Generated Class 0: Mu=9196.2, CV=1.13
+  Generated Class 1: Mu=1870.9, CV=1.52
+  Generated Class 2: Mu=4101.9, CV=0.73
+  Generated Class 3: Mu=1417.5, CV=1.90
+  Generated Class 4: Mu=6216.9, CV=1.70
+
+=== Evaluating Baseline Model on Unseen Classes ===
+
+=== Evaluating SVM Few-Shot on Unseen Classes ===
+
+=== Testing SVM Few-Shot Baseline (Raw Data) ===
+✅ Trained SVM on 25 support samples.
+SVM Few-Shot Accuracy: 18.67%
+
+=== Running Permutation Test ===
+Running Permutation Test (num_traj=2, sep_len=1)...
+------------------------------------------------
+Accuracy on ORIGINAL Data:  79.00%
+Accuracy on SHUFFLED Data:  69.45% (Structure Preserved)
+------------------------------------------------
+  Activating project at `~/stochastic_simulations/julia`
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
+Using 12 threads for Julia simulation..
