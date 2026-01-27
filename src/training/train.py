@@ -5,6 +5,7 @@ from training.wandb_utils import init_wandb_run, wandb_log, finish_wandb_run
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import torch.nn.functional as F
 
 def train_model(
     model,
@@ -41,11 +42,14 @@ def train_model(
         print("Starting training...")
 
     best_val_acc = -1.0
-    history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
+    history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": [], "lr": []}
 
     for epoch in range(epochs):
         model.train()
         total_loss, correct, total = 0.0, 0, 0
+        
+        current_lr = optimizer.param_groups[0]['lr']
+        history["lr"].append(current_lr)
         
         for batch in train_loader:
             if len(batch) == 2: # handle (X, y)
@@ -103,7 +107,6 @@ def train_model(
 
         history["val_loss"].append(val_loss)
         history["val_acc"].append(val_acc)
-        
         # ---- LR scheduler step ----
         if scheduler is not None:
             # schedulers that depend on val_loss (e.g., ReduceLROnPlateau)
@@ -120,6 +123,7 @@ def train_model(
                 "epoch": epoch + 1,
                 "train/loss": float(train_loss),
                 "train/acc": float(train_acc),
+                "lr": current_lr,
             }
             if val_loss is not None:
                 log_dict["val/loss"] = float(val_loss)
@@ -156,7 +160,7 @@ def train_model(
     print("Training complete.")
     return history
 
-
+# Siamese / Contrastive Learning Training Loop
 def train_siamese_model(
     model,
     train_loader,
@@ -326,4 +330,201 @@ def train_siamese_model(
     # ------------------------------
 
     print("Siamese training complete.")
+    return history
+
+
+from info_nce import InfoNCE 
+from training.wandb_utils import init_wandb_run, wandb_log, finish_wandb_run
+
+def calculate_batch_accuracy(z1, z2):
+    """
+    Computes top-1 accuracy for the batch.
+    For each sample in z1, checks if the corresponding sample in z2 
+    is the closest neighbor compared to all other z2 samples.
+    """
+    # Normalize for cosine similarity
+    z1 = F.normalize(z1, dim=1)
+    z2 = F.normalize(z2, dim=1)
+    
+    # Compute similarity matrix (Batch x Batch)
+    logits = torch.matmul(z1, z2.T)
+    
+    # The correct match for z1[i] is z2[i] (the diagonal)
+    batch_size = z1.size(0)
+    targets = torch.arange(batch_size).to(z1.device)
+    
+    # Check if the highest score is on the diagonal
+    preds = torch.argmax(logits, dim=1)
+    correct = (preds == targets).float().sum()
+    
+    return correct, batch_size
+
+def train_ssl_model(
+    model,
+    train_loader,
+    val_loader=None,
+    epochs=50,
+    patience=10,
+    lr=1e-3,
+    optimizer=None,
+    scheduler=None,
+    loss_fn=None,
+    device=None,
+    grad_clip=1.0,
+    save_path=None,
+    wandb_logging=False,
+    wandb_config=None,
+    verbose=True,
+):
+    device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+    
+    # Initialize Optimizer
+    optimizer = optimizer or optim.Adam(model.parameters(), lr=lr)
+    
+    # Initialize Loss: Default to InfoNCE with negative_mode='unpaired' (SimCLR style)
+    if loss_fn is None:
+        loss_fn = InfoNCE(negative_mode='unpaired') 
+    
+    # -------- initialize wandb (optional) --------
+    run, start_time = None, None
+    if wandb_logging:
+        if wandb_config is None:
+            raise ValueError("wandb_logging=True but no wandb_config provided.")
+        run = init_wandb_run(wandb_config)
+        start_time = time.time()
+    # --------------------------------------------
+
+    if verbose:
+        print("Starting SSL training...")
+
+    best_val_acc = -1.0  # We will use Contrastive Accuracy for early stopping
+    epochs_no_improve = 0
+    history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
+
+    for epoch in range(epochs):
+        model.train()
+        total_loss, total_correct, total_samples = 0.0, 0, 0
+
+        # ======== TRAIN LOOP (X1, X2, _) ========
+        for batch in train_loader:
+            # We unpack 3 items but IGNORE the label 'y'
+            if len(batch) != 3:
+                raise ValueError("Loader must yield (X1, X2, y).")
+            
+            X1_batch, X2_batch, _ = batch 
+            X1_batch = X1_batch.to(device)
+            X2_batch = X2_batch.to(device)
+
+            optimizer.zero_grad()
+            
+            # Forward Pass: Get Embeddings/Projections
+            z1, z2 = model(X1_batch, X2_batch) 
+
+            # Compute Loss (InfoNCE takes query, positive)
+            loss = loss_fn(z1, z2)
+
+            loss.backward()
+            if grad_clip:
+                nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+            optimizer.step()
+
+            # Track Metrics
+            batch_size = X1_batch.size(0)
+            total_loss += loss.item() * batch_size
+            
+            # Compute Batch Accuracy (Did we match the right pair?)
+            with torch.no_grad():
+                correct, count = calculate_batch_accuracy(z1, z2)
+                total_correct += correct.item()
+                total_samples += count
+
+        train_loss = total_loss / total_samples
+        train_acc = total_correct / total_samples
+        
+        history["train_loss"].append(train_loss)
+        history["train_acc"].append(train_acc)
+
+        # ========= VALIDATION (optional) =========
+        val_loss, val_acc = (None, None)
+        if val_loader is not None:
+            model.eval()
+            val_total_loss, val_correct, val_total = 0.0, 0, 0
+
+            with torch.no_grad():
+                for batch in val_loader:
+                    X1_batch, X2_batch, _ = batch
+                    X1_batch = X1_batch.to(device)
+                    X2_batch = X2_batch.to(device)
+
+                    z1, z2 = model(X1_batch, X2_batch)
+                    
+                    vloss = loss_fn(z1, z2)
+                    vcorrect, vcount = calculate_batch_accuracy(z1, z2)
+
+                    val_total_loss += vloss.item() * vcount
+                    val_correct += vcorrect.item()
+                    val_total += vcount
+
+            val_loss = val_total_loss / val_total
+            val_acc = val_correct / val_total
+            history["val_loss"].append(val_loss)
+            history["val_acc"].append(val_acc)
+
+            # ===== Early stopping based on Contrastive Accuracy =====
+            if val_acc > best_val_acc:
+                best_val_acc = val_acc
+                epochs_no_improve = 0
+                if save_path:
+                    torch.save(model.state_dict(), save_path)
+                    print(f"✅ Model saved at {save_path} (Best Val Acc: {best_val_acc:.4f})")
+            else:
+                epochs_no_improve += 1
+                if verbose:
+                    print(f"No improvement ({epochs_no_improve}/{patience}).")
+
+            if epochs_no_improve >= patience:
+                print("🛑 Early stopping.")
+                break
+        else:
+            history["val_loss"].append(None)
+            history["val_acc"].append(None)
+
+        # ---- LR scheduler step ----
+        if scheduler is not None:
+            if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
+                # Use Validation Loss or Accuracy for scheduler
+                metric = val_loss if val_loss is not None else train_loss
+                scheduler.step(metric)
+            else:
+                scheduler.step()
+
+        # -------- wandb logging --------
+        if wandb_logging and run is not None:
+            log_dict = {
+                "epoch": epoch + 1,
+                "train/loss": float(train_loss),
+                "train/acc": float(train_acc),
+            }
+            if val_loss is not None:
+                log_dict["val/loss"] = float(val_loss)
+                log_dict["val/acc"] = float(val_acc)
+
+            try:
+                log_dict["lr"] = optimizer.param_groups[0]["lr"]
+            except Exception:
+                pass
+
+            wandb_log(run, log_dict)
+
+        if verbose:
+            msg = f"[SSL] Epoch [{epoch+1}/{epochs}] | train_loss {train_loss:.4f} | train_acc {train_acc:.4f}"
+            if val_loader is not None and val_loss is not None:
+                msg += f" | val_loss {val_loss:.4f} | val_acc {val_acc:.4f}"
+            print(msg)
+
+    if wandb_logging and run is not None:
+        finish_wandb_run(run, best_val_acc, start_time)
+
+    print("SSL training complete.")
     return history
