@@ -4,6 +4,7 @@ import torch.nn as nn
 import wandb
 import numpy as np
 import yaml
+import gc
 from pathlib import Path
 
 # Import your existing modules
@@ -55,101 +56,127 @@ def get_data_for_experiment(exp_name):
 # DEFINE TRAINING FUNCTION
 # ==========================================
 def run_sweep_agent():
-    with wandb.init() as run:
-        config = wandb.config
+    # Initialize variables to None so 'finally' block doesn't crash if they weren't created
+    model = None
+    optimizer = None
+    scheduler = None
+    
+    try:
+    
+        with wandb.init() as run:
+            config = wandb.config
 
-        # --- 1. GET DATASET BASED ON CONFIG ---
-        try:
-            exp_name = config.experiment_name
-            train_loader, val_loader, input_size = get_data_for_experiment(exp_name)
-        except AttributeError:
-            # Fallback if experiment_name is missing from parameters
-            print("⚠️ 'experiment_name' not found in config. Defaulting to 'Baseline'.")
-            train_loader, val_loader, input_size = get_data_for_experiment("Baseline")
+            # --- 1. GET DATASET BASED ON CONFIG ---
+            try:
+                exp_name = config.experiment_name
+                train_loader, val_loader, input_size = get_data_for_experiment(exp_name)
+            except AttributeError:
+                # Fallback if experiment_name is missing from parameters
+                print("⚠️ 'experiment_name' not found in config. Defaulting to 'Baseline'.")
+                train_loader, val_loader, input_size = get_data_for_experiment("Baseline")
 
-        # Constants inferred from data
-        max_seq_length = 0
-        # Peek at a batch to get sequence length (safer than hardcoding)
-        X_b, _ = next(iter(train_loader))
-        max_seq_length = X_b.shape[1] + 100
-        num_classes = 2
+            # Constants inferred from data
+            max_seq_length = 0
+            # Peek at a batch to get sequence length (safer than hardcoding)
+            X_b, _ = next(iter(train_loader))
+            max_seq_length = X_b.shape[1] + 100
+            num_classes = 2
 
-        # --- 2. DYNAMIC NAMING ---
-        # Name: Dataset - Hyperparams
-        run_name = f"[{exp_name}] L{config.num_layers}-H{config.nhead}-D{config.d_model}-drop{config.dropout}"
-        if config.use_conv1d:
-            run_name += "-CNN"
-        
-        run.name = run_name
-
-        # --- 3. CONSTRAINT CHECK ---
-        # d_model must be divisible by nhead for PyTorch Transformer
-        if config.d_model % config.nhead != 0:
-            adjusted_d_model = (config.d_model // config.nhead) * config.nhead
-            if adjusted_d_model == 0: adjusted_d_model = config.nhead
-            d_model = adjusted_d_model
-            print(f"⚠️ Adjusted d_model from {config.d_model} to {adjusted_d_model} to match nhead {config.nhead}")
-        else:
-            d_model = config.d_model
-
-        # --- 4. INIT MODEL ---
-        model = TransformerClassifier(
-            input_size=input_size,
-            d_model=d_model,
-            nhead=config.nhead,
-            num_layers=config.num_layers,
-            num_classes=num_classes,
-            dropout=config.dropout,
-            use_conv1d=config.use_conv1d,
-            max_seq_length=max_seq_length,
-        )
-
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        model.to(device)
-
-        # --- 5. SETUP OPTIMIZER ---
-        optimizer = optim.Adam(model.parameters(), lr=config.lr)
-        scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=5, factor=0.5)
-        loss_fn = nn.BCEWithLogitsLoss()
-
-        # --- 6. TRAIN ---
-        history = train_model(
-            model,
-            train_loader,
-            val_loader,
-            epochs=config.epochs,
-            patience=config.patience,
-            lr=config.lr,
-            optimizer=optimizer,
-            scheduler=scheduler,
-            loss_fn=loss_fn,
-            device=device,
-            wandb_logging=False, # Manual logging below
-            verbose=True
-        )
-
-        # --- 7. LOGGING TO SWEEP ---
-        # Use zip to handle mismatched lengths safely (stops at the shortest list)
-        for i, (t_loss, t_acc, v_loss, v_acc, current_lr) in enumerate(zip(
-            history['train_loss'], 
-            history['train_acc'], 
-            history['val_loss'], 
-            history['val_acc'],
-            history['lr']
-        )):
-            wandb.log({
-                "epoch": i + 1,
-                "train_loss": t_loss,
-                "train_acc": t_acc,
-                "val_loss": v_loss,
-                "val_acc": v_acc,
-                "lr": current_lr  # Log the learning rate
-            })
+            # --- 2. DYNAMIC NAMING ---
+            # Name: Dataset - Hyperparams
+            run_name = f"[{exp_name}] L{config.num_layers}-H{config.nhead}-D{config.d_model}-drop{config.dropout}"
+            if config.use_conv1d:
+                run_name += "-CNN"
             
-        # Optional: Log summary of best result
-        if history['val_acc']:
-            print(f"Sweep Run Finished. Best Val Acc: {max(history['val_acc']):.2%}")
+            run.name = run_name
 
+            # --- 3. CONSTRAINT CHECK ---
+            # d_model must be divisible by nhead for PyTorch Transformer
+            if config.d_model % config.nhead != 0:
+                adjusted_d_model = (config.d_model // config.nhead) * config.nhead
+                if adjusted_d_model == 0: adjusted_d_model = config.nhead
+                d_model = adjusted_d_model
+                print(f"⚠️ Adjusted d_model from {config.d_model} to {adjusted_d_model} to match nhead {config.nhead}")
+            else:
+                d_model = config.d_model
+
+            # --- 4. INIT MODEL ---
+            model = TransformerClassifier(
+                input_size=input_size,
+                d_model=d_model,
+                nhead=config.nhead,
+                num_layers=config.num_layers,
+                num_classes=num_classes,
+                dropout=config.dropout,
+                use_conv1d=config.use_conv1d,
+                max_seq_length=max_seq_length,
+            )
+
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            model.to(device)
+
+            # --- 5. SETUP OPTIMIZER ---
+            optimizer = optim.Adam(model.parameters(), lr=config.lr)
+            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=5, factor=0.5)
+            loss_fn = nn.BCEWithLogitsLoss()
+
+            # --- 6. TRAIN ---
+            history = train_model(
+                model,
+                train_loader,
+                val_loader,
+                epochs=config.epochs,
+                patience=config.patience,
+                lr=config.lr,
+                optimizer=optimizer,
+                scheduler=scheduler,
+                loss_fn=loss_fn,
+                device=device,
+                wandb_logging=False, # Manual logging below
+                verbose=True
+            )
+
+            # --- 7. LOGGING TO SWEEP ---
+            # Use zip to handle mismatched lengths safely (stops at the shortest list)
+            for i, (t_loss, t_acc, v_loss, v_acc, current_lr) in enumerate(zip(
+                history['train_loss'], 
+                history['train_acc'], 
+                history['val_loss'], 
+                history['val_acc'],
+                history['lr']
+            )):
+                wandb.log({
+                    "epoch": i + 1,
+                    "train_loss": t_loss,
+                    "train_acc": t_acc,
+                    "val_loss": v_loss,
+                    "val_acc": v_acc,
+                    "lr": current_lr  # Log the learning rate
+                })
+                
+            # Optional: Log summary of best result
+            if history['val_acc']:
+                print(f"Sweep Run Finished. Best Val Acc: {max(history['val_acc']):.2%}")
+                
+    except Exception as e:
+        print(f"❌ Run Failed with error: {e}")
+        raise e  # Re-raise so WandB knows it failed
+        
+    finally:
+        # --- 8. CRITICAL: CLEANUP MEMORY ---
+        # This block runs regardless of success or failure
+        if model is not None:
+            del model
+        if optimizer is not None:
+            del optimizer
+        if scheduler is not None:
+            del scheduler
+            
+        # Force Python's Garbage Collector
+        gc.collect()
+        # Force PyTorch to release cached VRAM
+        torch.cuda.empty_cache()
+        print("🧹 Cleared CUDA Memory")
 # ==========================================
 # EXECUTE SWEEP
 # ==========================================
