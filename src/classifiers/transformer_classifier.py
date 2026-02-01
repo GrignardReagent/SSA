@@ -3,14 +3,14 @@
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
-from models.transformer import TransformerClassifier
+from models.transformer import TransformerClassifier, train_model, evaluate_model
 from utils.set_seed import set_seed
 
 def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test, 
-                          input_size=None, d_model=128, nhead=4, num_layers=2,
-                          output_size=None, dropout_rate=0.1, learning_rate=0.01, 
+                          input_size=None, d_model=128, nhead=2, num_layers=2,
+                          num_classes=None, dropout=0.1, learning_rate=0.01, 
                           batch_size=64, num_workers=4,epochs=50, patience=10, optimizer='Adam',
-                          use_conv1d=True, use_auxiliary=False, aux_weight=0.1,
+                          use_conv1d=False, use_auxiliary=False, aux_weight=0.1,
                           pooling_strategy='last', use_mask=False, gradient_clip=1.0, verbose=False,
                           save_path=None):
     """ 
@@ -24,8 +24,8 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
         d_model: Embedding dimension for transformer (default: 64)
         nhead: Number of attention heads (default: 4)
         num_layers: Number of transformer layers (default: 2)
-        output_size: Number of classes (default: inferred from y_train)
-        dropout_rate: Dropout probability (default: 0.2)
+        num_classes: Number of classes (default: inferred from y_train)
+        dropout: Dropout probability (default: 0.2)
         learning_rate: Learning rate (default: 0.001)
         batch_size: Batch size for training (default: 64)
         num_workers: Number of DataLoader workers (default: 4)
@@ -49,8 +49,8 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
     # Set input/output sizes if not given
     if input_size is None:
         input_size = 1  # each time step is a single value
-    if output_size is None:
-        output_size = len(set(y_train))
+    if num_classes is None:
+        num_classes = len(set(y_train))
 
     # === Standardize ===
     scaler = StandardScaler()
@@ -100,27 +100,19 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
 
     # === Initialize and train model ===
     model = TransformerClassifier(
-        input_size=input_size, 
-        d_model=d_model,
-        nhead=nhead,
-        num_layers=num_layers, 
-        output_size=output_size,
-        dropout_rate=dropout_rate,
-        learning_rate=learning_rate,
-        optimizer=optimizer,
-        use_conv1d=use_conv1d,
-        use_auxiliary=use_auxiliary,
-        aux_weight=aux_weight,
-        pooling_strategy=pooling_strategy,
-        use_mask=use_mask,
-        gradient_clip=gradient_clip,
-        verbose=verbose
-    )
+    input_size=input_size,
+    d_model=d_model,
+    nhead=nhead,
+    num_layers=num_layers,
+    num_classes=num_classes,
+    dropout=dropout, 
+    use_conv1d=use_conv1d 
+)
 
-    model.train_model(train_loader, val_loader, epochs=epochs, patience=patience, save_path=save_path)
+    train_model(model, train_loader, val_loader, epochs=epochs, patience=patience, save_path=save_path)
 
     # === Evaluate ===
-    transformer_acc = model.evaluate(test_loader)
+    transformer_acc = evaluate_model(model, test_loader)
 
     # Print out results based on configuration
     if not use_conv1d and not use_auxiliary:

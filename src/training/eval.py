@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
+# === Model Evaluation ===
 @torch.no_grad()
 def evaluate_model(
     model, 
@@ -41,7 +42,7 @@ def evaluate_model(
             raise ValueError("Batch must be (X,y) or (X,y,mask, ...).")
         
         X_batch, y_batch = X_batch.to(device), y_batch.to(device)
-        outputs = model(X_batch) if mask is None else model(X_batch, src_key_padding_mask=mask.to(device))
+        outputs = model(X_batch) if mask is None else model(X_batch, src_key_padding_mask=mask.to(device)) 
         
         loss, preds, tgt = _compute_loss_and_accuracy(outputs, y_batch, loss_fn)
         total_loss += loss.item() * X_batch.size(0)
@@ -177,14 +178,16 @@ def _compute_loss_and_accuracy(
         preds = outputs.argmax(dim=1)
         tgt = targets
         return loss, preds, tgt
+# === Model Evaluation ===
 
 
+# === Probability Prediction ===
 @torch.no_grad()
 def predict_proba(model, loader, loss_fn, device):
     model.eval()
     all_probs, all_targets = [], []
 
-    for X, y in loader:
+    for X, y in loader: #TODO: Correctly Handle X1, X2, y batches
         X = X.to(device)
         y = y.to(device)
         logits = model(X)
@@ -231,3 +234,4 @@ def _compute_probabilities(
     # Multiclass CE
     if isinstance(loss_fn, nn.CrossEntropyLoss):
         return torch.softmax(outputs, dim=1)           # (N,C)
+# === Probability Prediction ===

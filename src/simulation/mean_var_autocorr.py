@@ -6,6 +6,8 @@ import numpy as np
 from scipy.optimize import fsolve, check_grad
 from utils.biological import check_biological_appropriateness
 
+#TODO fix this functionality and integrate with mean_var_autocorr_sigma_u.py, under a rescaled param space to find params. 
+################## EXPERIMENTAL, THIS IS WORKING VERY SLOWLY #####################
 # Define symbols globally for reuse
 rho, sigma_b, d, sigma_u, t, mu, sigma_sq, ac = sp.symbols('rho sigma_b d sigma_u t mu sigma_sq ac', real=True, positive=True)
 init_printing(use_unicode=True)
