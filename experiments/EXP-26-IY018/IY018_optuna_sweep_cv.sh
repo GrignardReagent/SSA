@@ -2,15 +2,15 @@
 
 # Grid Engine options (lines prefixed with #$)
 # Job name
-#$ -N IY018_baseline_sweep
-#$ -o IY018_baseline_sweep.o$JOB_ID
-#$ -e IY018_baseline_sweep.e$JOB_ID
+#$ -N IY018_optuna_sweep_cv
+#$ -o IY018_optuna_sweep_cv.o$JOB_ID
+#$ -e IY018_optuna_sweep_cv.e$JOB_ID
 
 # Use the current working dir
 #$ -cwd
 
 # Max runtime limit (48h)
-#$ -l h_rt=47:59:59
+#$ -l h_rt=48:00:00
 
 # Request 1 GPUs in the gpu queue
 #$ -q gpu 
@@ -31,7 +31,7 @@ module load anaconda
 conda activate stochastic_sim
 
 # Run Python script and log output
-python IY018_baseline_sweep.py > IY018_baseline_sweep.out 
+python IY018_optuna_sweep_cv.py > IY018_optuna_sweep_cv.out
 
 
 # Deactivate after job is done

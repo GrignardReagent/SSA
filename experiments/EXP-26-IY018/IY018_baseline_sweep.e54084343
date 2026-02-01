@@ -1,0 +1,26 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Agent Starting Run: kcv94h98 with config:
+wandb: 	batch_size: 64
+wandb: 	d_model: 128
+wandb: 	dropout: 0.334360038949837
+wandb: 	epochs: 100
+wandb: 	experiment_name: Baseline
+wandb: 	lr: 0.009776045659514985
+wandb: 	nhead: 4
+wandb: 	num_layers: 3
+wandb: 	patience: 15
+wandb: 	use_conv1d: False
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run kcv94h98
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260129_100633-kcv94h98
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run jolly-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🧹 View sweep at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/sweeps/bmcouxde
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/kcv94h98
+wandb: uploading data
+wandb: ERROR Error while calling W&B API: context deadline exceeded (<Response [500]>)

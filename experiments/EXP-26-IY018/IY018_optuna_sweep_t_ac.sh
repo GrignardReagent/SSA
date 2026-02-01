@@ -2,9 +2,9 @@
 
 # Grid Engine options (lines prefixed with #$)
 # Job name
-#$ -N IY018_baseline_sweep
-#$ -o IY018_baseline_sweep.o$JOB_ID
-#$ -e IY018_baseline_sweep.e$JOB_ID
+#$ -N IY018_optuna_sweep_t_ac
+#$ -o IY018_optuna_sweep_t_ac.o$JOB_ID
+#$ -e IY018_optuna_sweep_t_ac.e$JOB_ID
 
 # Use the current working dir
 #$ -cwd
@@ -31,7 +31,7 @@ module load anaconda
 conda activate stochastic_sim
 
 # Run Python script and log output
-python IY018_baseline_sweep.py > IY018_baseline_sweep.out 
+python IY018_optuna_sweep_t_ac.py > IY018_optuna_sweep_t_ac.out 
 
 
 # Deactivate after job is done

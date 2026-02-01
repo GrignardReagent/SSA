@@ -1,0 +1,9 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/IY018_baseline_transformer_hyperparam_sweep.py", line 88, in <module>
+    cv_train_loader = load_loader_from_disk(cv_train_save_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/eddie/scratch/s1732775/SSA/src/dataloaders/core.py", line 310, in load_loader_from_disk
+    raise FileNotFoundError(f"❌ File not found: {load_path}")
+FileNotFoundError: ❌ File not found: ../EXP-25-IY011/data_cv_variation/IY011_static_train.pt

@@ -1,0 +1,75 @@
+program: IY018_baseline_sweep.py
+method: bayes
+metric:
+  name: val_acc
+  goal: minimize
+
+# === Experiment Data Lookup Table ===
+# This section is read by the Python script to resolve paths based on the 'experiment_name' parameter.
+experiments_definition:
+  - name: "Baseline"
+    data_dir: "../EXP-25-IY011/data"
+    csv_name: "IY011_simulation_parameters_sobol.csv"
+    train_save_path: "IY011_static_train.pt"
+    val_save_path: "IY011_static_val.pt"
+    test_save_path: "IY011_static_test.pt"
+    color: "black"
+
+  - name: "Mu-Variation"
+    data_dir: "../EXP-25-IY011/data_mu_variation"
+    csv_name: "IY011_simulation_mu_parameters_sobol.csv"
+    train_save_path: "IY011_static_train.pt"
+    val_save_path: "IY011_static_val.pt"
+    test_save_path: "IY011_static_test.pt"
+    color: "blue"
+
+  - name: "CV-Variation"
+    data_dir: "../EXP-25-IY011/data_cv_variation"
+    csv_name: "IY011_simulation_cv_parameters_sobol.csv"
+    train_save_path: "IY011_static_train.pt"
+    val_save_path: "IY011_static_val.pt"
+    test_save_path: "IY011_static_test.pt"
+    color: "green"
+
+  - name: "T_ac-Variation"
+    data_dir: "../EXP-25-IY011/data_t_ac_variation"
+    csv_name: "IY011_simulation_t_ac_parameters_sobol.csv"
+    train_save_path: "IY011_static_train.pt"
+    val_save_path: "IY011_static_val.pt"
+    test_save_path: "IY011_static_test.pt"
+    color: "red"
+
+  - name: "Test"
+    data_dir: "../EXP-25-IY011/data"
+    csv_name: "IY011_simulation_parameters_test.csv"
+    train_save_path: "IY018_static_train.pt"
+    val_save_path: "IY018_static_val.pt"
+    test_save_path: "IY018_static_test.pt"
+    color: "orange"
+
+# === Hyperparameters ===
+parameters:
+  # Control the dataset here
+  experiment_name:
+    value: "CV-Variation"
+    
+  nhead:
+    values: [2, 4, 8]
+  num_layers:
+    values: [1, 2, 3, 4]
+  d_model:
+    values: [16, 32, 64, 128]
+  batch_size:
+    values: [32, 64, 128]
+  use_conv1d:
+    values: [true, false]
+  lr:
+    min: 0.0001
+    max: 0.01
+  dropout:
+    min: 0.0
+    max: 0.5
+  patience:
+    value: 15 # 3 times the ReduceLROnPlateau scheduler patience of 5
+  epochs:
+    value: 100
