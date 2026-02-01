@@ -1,0 +1,439 @@
+Files split: 655 Train, 164 Val, 205 Test
+Loading and grouping 655 files...
+Loading Files:   0%|          | 0/655 [00:00<?, ?it/s]Loading Files:   0%|          | 3/655 [00:00<00:24, 26.62it/s]Loading Files:   1%|          | 6/655 [00:00<00:25, 25.74it/s]Loading Files:   1%|▏         | 9/655 [00:00<00:24, 26.25it/s]Loading Files:   2%|▏         | 12/655 [00:00<00:24, 26.20it/s]Loading Files:   2%|▏         | 15/655 [00:00<00:24, 26.01it/s]Loading Files:   3%|▎         | 18/655 [00:00<00:24, 26.20it/s]Loading Files:   3%|▎         | 21/655 [00:00<00:23, 26.64it/s]Loading Files:   4%|▎         | 24/655 [00:00<00:23, 26.82it/s]Loading Files:   4%|▍         | 27/655 [00:01<00:23, 26.83it/s]Loading Files:   5%|▍         | 30/655 [00:01<00:23, 26.45it/s]Loading Files:   5%|▌         | 33/655 [00:01<00:23, 26.07it/s]Loading Files:   5%|▌         | 36/655 [00:01<00:23, 25.82it/s]Loading Files:   6%|▌         | 39/655 [00:01<00:23, 26.05it/s]Loading Files:   6%|▋         | 42/655 [00:01<00:23, 26.54it/s]Loading Files:   7%|▋         | 45/655 [00:01<00:23, 26.29it/s]Loading Files:   7%|▋         | 48/655 [00:01<00:22, 26.65it/s]Loading Files:   8%|▊         | 51/655 [00:01<00:22, 26.27it/s]Loading Files:   8%|▊         | 54/655 [00:02<00:22, 26.22it/s]Loading Files:   9%|▊         | 57/655 [00:02<00:22, 26.08it/s]Loading Files:   9%|▉         | 60/655 [00:02<00:22, 26.38it/s]Loading Files:  10%|▉         | 63/655 [00:02<00:22, 26.41it/s]Loading Files:  10%|█         | 66/655 [00:02<00:22, 26.41it/s]Loading Files:  11%|█         | 69/655 [00:02<00:22, 26.59it/s]Loading Files:  11%|█         | 72/655 [00:02<00:22, 26.45it/s]Loading Files:  11%|█▏        | 75/655 [00:02<00:21, 26.60it/s]Loading Files:  12%|█▏        | 78/655 [00:02<00:21, 26.47it/s]Loading Files:  12%|█▏        | 81/655 [00:03<00:21, 26.37it/s]Loading Files:  13%|█▎        | 84/655 [00:03<00:21, 26.29it/s]Loading Files:  13%|█▎        | 87/655 [00:03<00:21, 26.64it/s]Loading Files:  14%|█▎        | 90/655 [00:03<00:21, 26.09it/s]Loading Files:  14%|█▍        | 93/655 [00:03<00:21, 26.07it/s]Loading Files:  15%|█▍        | 96/655 [00:03<00:21, 26.61it/s]Loading Files:  15%|█▌        | 99/655 [00:03<00:21, 26.27it/s]Loading Files:  16%|█▌        | 102/655 [00:03<00:20, 26.45it/s]Loading Files:  16%|█▌        | 105/655 [00:03<00:20, 26.47it/s]Loading Files:  16%|█▋        | 108/655 [00:04<00:20, 26.08it/s]Loading Files:  17%|█▋        | 111/655 [00:04<00:20, 26.34it/s]Loading Files:  17%|█▋        | 114/655 [00:04<00:20, 26.55it/s]Loading Files:  18%|█▊        | 117/655 [00:04<00:20, 26.17it/s]Loading Files:  18%|█▊        | 120/655 [00:04<00:20, 25.86it/s]Loading Files:  19%|█▉        | 123/655 [00:04<00:20, 26.10it/s]Loading Files:  19%|█▉        | 126/655 [00:04<00:19, 26.56it/s]Loading Files:  20%|█▉        | 129/655 [00:04<00:19, 26.47it/s]Loading Files:  20%|██        | 132/655 [00:05<00:19, 26.58it/s]Loading Files:  21%|██        | 135/655 [00:05<00:19, 26.27it/s]Loading Files:  21%|██        | 138/655 [00:05<00:19, 26.47it/s]Loading Files:  22%|██▏       | 141/655 [00:05<00:19, 26.11it/s]Loading Files:  22%|██▏       | 144/655 [00:05<00:19, 26.87it/s]Loading Files:  22%|██▏       | 147/655 [00:05<00:18, 27.43it/s]Loading Files:  23%|██▎       | 150/655 [00:05<00:18, 27.29it/s]Loading Files:  23%|██▎       | 153/655 [00:05<00:18, 27.01it/s]Loading Files:  24%|██▍       | 156/655 [00:05<00:18, 26.68it/s]Loading Files:  24%|██▍       | 159/655 [00:06<00:18, 26.42it/s]Loading Files:  25%|██▍       | 162/655 [00:06<00:19, 25.90it/s]Loading Files:  25%|██▌       | 165/655 [00:06<00:18, 25.89it/s]Loading Files:  26%|██▌       | 168/655 [00:06<00:18, 26.02it/s]Loading Files:  26%|██▌       | 171/655 [00:06<00:18, 26.25it/s]Loading Files:  27%|██▋       | 174/655 [00:06<00:17, 26.75it/s]Loading Files:  27%|██▋       | 177/655 [00:06<00:17, 26.58it/s]Loading Files:  27%|██▋       | 180/655 [00:06<00:18, 26.36it/s]Loading Files:  28%|██▊       | 183/655 [00:06<00:17, 26.25it/s]Loading Files:  28%|██▊       | 186/655 [00:07<00:17, 26.39it/s]Loading Files:  29%|██▉       | 189/655 [00:07<00:17, 26.38it/s]Loading Files:  29%|██▉       | 192/655 [00:07<00:17, 26.59it/s]Loading Files:  30%|██▉       | 195/655 [00:07<00:17, 26.74it/s]Loading Files:  30%|███       | 198/655 [00:07<00:17, 26.56it/s]Loading Files:  31%|███       | 201/655 [00:07<00:16, 27.17it/s]Loading Files:  31%|███       | 204/655 [00:07<00:16, 27.03it/s]Loading Files:  32%|███▏      | 207/655 [00:07<00:16, 27.23it/s]Loading Files:  32%|███▏      | 210/655 [00:07<00:16, 26.89it/s]Loading Files:  33%|███▎      | 213/655 [00:08<00:16, 27.29it/s]Loading Files:  33%|███▎      | 216/655 [00:08<00:16, 27.21it/s]Loading Files:  33%|███▎      | 219/655 [00:08<00:16, 26.93it/s]Loading Files:  34%|███▍      | 222/655 [00:08<00:16, 26.69it/s]Loading Files:  34%|███▍      | 225/655 [00:08<00:16, 26.58it/s]Loading Files:  35%|███▍      | 228/655 [00:08<00:16, 26.31it/s]Loading Files:  35%|███▌      | 231/655 [00:08<00:16, 26.17it/s]Loading Files:  36%|███▌      | 234/655 [00:08<00:16, 26.14it/s]Loading Files:  36%|███▌      | 237/655 [00:08<00:16, 26.04it/s]Loading Files:  37%|███▋      | 240/655 [00:09<00:16, 25.86it/s]Loading Files:  37%|███▋      | 243/655 [00:09<00:15, 26.09it/s]Loading Files:  38%|███▊      | 246/655 [00:09<00:15, 26.17it/s]Loading Files:  38%|███▊      | 249/655 [00:09<00:15, 26.64it/s]Loading Files:  38%|███▊      | 252/655 [00:09<00:15, 26.25it/s]Loading Files:  39%|███▉      | 255/655 [00:09<00:15, 26.37it/s]Loading Files:  39%|███▉      | 258/655 [00:09<00:15, 26.12it/s]Loading Files:  40%|███▉      | 261/655 [00:09<00:15, 25.96it/s]Loading Files:  40%|████      | 264/655 [00:09<00:15, 25.76it/s]Loading Files:  41%|████      | 267/655 [00:10<00:14, 26.15it/s]Loading Files:  41%|████      | 270/655 [00:10<00:14, 26.18it/s]Loading Files:  42%|████▏     | 273/655 [00:10<00:14, 26.34it/s]Loading Files:  42%|████▏     | 276/655 [00:10<00:14, 25.97it/s]Loading Files:  43%|████▎     | 279/655 [00:10<00:14, 26.01it/s]Loading Files:  43%|████▎     | 282/655 [00:10<00:14, 26.08it/s]Loading Files:  44%|████▎     | 285/655 [00:10<00:14, 26.21it/s]Loading Files:  44%|████▍     | 288/655 [00:10<00:13, 26.59it/s]Loading Files:  44%|████▍     | 291/655 [00:11<00:13, 26.81it/s]Loading Files:  45%|████▍     | 294/655 [00:11<00:13, 26.94it/s]Loading Files:  45%|████▌     | 297/655 [00:11<00:13, 27.20it/s]Loading Files:  46%|████▌     | 300/655 [00:11<00:13, 26.56it/s]Loading Files:  46%|████▋     | 303/655 [00:11<00:13, 26.62it/s]Loading Files:  47%|████▋     | 306/655 [00:11<00:13, 26.48it/s]Loading Files:  47%|████▋     | 309/655 [00:11<00:13, 26.20it/s]Loading Files:  48%|████▊     | 312/655 [00:11<00:13, 26.17it/s]Loading Files:  48%|████▊     | 315/655 [00:11<00:12, 26.18it/s]Loading Files:  49%|████▊     | 318/655 [00:12<00:12, 26.39it/s]Loading Files:  49%|████▉     | 321/655 [00:12<00:12, 26.32it/s]Loading Files:  49%|████▉     | 324/655 [00:12<00:12, 26.94it/s]Loading Files:  50%|████▉     | 327/655 [00:12<00:12, 27.02it/s]Loading Files:  50%|█████     | 330/655 [00:12<00:12, 26.86it/s]Loading Files:  51%|█████     | 333/655 [00:12<00:11, 26.85it/s]Loading Files:  51%|█████▏    | 336/655 [00:12<00:12, 26.19it/s]Loading Files:  52%|█████▏    | 339/655 [00:12<00:11, 26.36it/s]Loading Files:  52%|█████▏    | 342/655 [00:12<00:12, 25.95it/s]Loading Files:  53%|█████▎    | 345/655 [00:13<00:11, 26.36it/s]Loading Files:  53%|█████▎    | 348/655 [00:13<00:11, 26.26it/s]Loading Files:  54%|█████▎    | 351/655 [00:13<00:11, 26.36it/s]Loading Files:  54%|█████▍    | 354/655 [00:13<00:11, 26.74it/s]Loading Files:  55%|█████▍    | 357/655 [00:13<00:11, 27.00it/s]Loading Files:  55%|█████▍    | 360/655 [00:13<00:11, 26.16it/s]Loading Files:  55%|█████▌    | 363/655 [00:13<00:11, 25.71it/s]Loading Files:  56%|█████▌    | 366/655 [00:13<00:11, 24.93it/s]Loading Files:  56%|█████▋    | 369/655 [00:13<00:11, 25.13it/s]Loading Files:  57%|█████▋    | 372/655 [00:14<00:11, 25.45it/s]Loading Files:  57%|█████▋    | 375/655 [00:14<00:10, 25.64it/s]Loading Files:  58%|█████▊    | 378/655 [00:14<00:10, 25.89it/s]Loading Files:  58%|█████▊    | 381/655 [00:14<00:10, 25.77it/s]Loading Files:  59%|█████▊    | 384/655 [00:14<00:10, 25.73it/s]Loading Files:  59%|█████▉    | 387/655 [00:14<00:10, 25.90it/s]Loading Files:  60%|█████▉    | 390/655 [00:14<00:10, 25.69it/s]Loading Files:  60%|██████    | 393/655 [00:14<00:10, 25.68it/s]Loading Files:  60%|██████    | 396/655 [00:15<00:09, 25.90it/s]Loading Files:  61%|██████    | 399/655 [00:15<00:09, 26.34it/s]Loading Files:  61%|██████▏   | 402/655 [00:15<00:09, 26.33it/s]Loading Files:  62%|██████▏   | 405/655 [00:15<00:09, 26.05it/s]Loading Files:  62%|██████▏   | 408/655 [00:15<00:09, 25.72it/s]Loading Files:  63%|██████▎   | 411/655 [00:15<00:09, 26.03it/s]Loading Files:  63%|██████▎   | 414/655 [00:15<00:09, 25.52it/s]Loading Files:  64%|██████▎   | 417/655 [00:15<00:09, 25.64it/s]Loading Files:  64%|██████▍   | 420/655 [00:15<00:09, 25.63it/s]Loading Files:  65%|██████▍   | 423/655 [00:16<00:09, 25.42it/s]Loading Files:  65%|██████▌   | 426/655 [00:16<00:09, 25.34it/s]Loading Files:  65%|██████▌   | 429/655 [00:16<00:08, 25.87it/s]Loading Files:  66%|██████▌   | 432/655 [00:16<00:08, 25.91it/s]Loading Files:  66%|██████▋   | 435/655 [00:16<00:08, 25.88it/s]Loading Files:  67%|██████▋   | 438/655 [00:16<00:08, 26.04it/s]Loading Files:  67%|██████▋   | 441/655 [00:16<00:08, 26.00it/s]Loading Files:  68%|██████▊   | 444/655 [00:16<00:08, 25.98it/s]Loading Files:  68%|██████▊   | 447/655 [00:17<00:08, 25.95it/s]Loading Files:  69%|██████▊   | 450/655 [00:17<00:07, 26.05it/s]Loading Files:  69%|██████▉   | 453/655 [00:17<00:07, 25.90it/s]Loading Files:  70%|██████▉   | 456/655 [00:17<00:07, 26.19it/s]Loading Files:  70%|███████   | 459/655 [00:17<00:07, 25.97it/s]Loading Files:  71%|███████   | 462/655 [00:17<00:07, 25.97it/s]Loading Files:  71%|███████   | 465/655 [00:17<00:07, 26.27it/s]Loading Files:  71%|███████▏  | 468/655 [00:17<00:07, 26.37it/s]Loading Files:  72%|███████▏  | 471/655 [00:17<00:07, 26.17it/s]Loading Files:  72%|███████▏  | 474/655 [00:18<00:06, 25.99it/s]Loading Files:  73%|███████▎  | 477/655 [00:18<00:06, 25.83it/s]Loading Files:  73%|███████▎  | 480/655 [00:18<00:06, 25.77it/s]Loading Files:  74%|███████▎  | 483/655 [00:18<00:06, 26.11it/s]Loading Files:  74%|███████▍  | 486/655 [00:18<00:06, 25.89it/s]Loading Files:  75%|███████▍  | 489/655 [00:18<00:06, 26.09it/s]Loading Files:  75%|███████▌  | 492/655 [00:18<00:06, 26.03it/s]Loading Files:  76%|███████▌  | 495/655 [00:18<00:06, 26.11it/s]Loading Files:  76%|███████▌  | 498/655 [00:18<00:05, 26.40it/s]Loading Files:  76%|███████▋  | 501/655 [00:19<00:05, 26.47it/s]Loading Files:  77%|███████▋  | 504/655 [00:19<00:05, 26.84it/s]Loading Files:  77%|███████▋  | 507/655 [00:19<00:05, 26.38it/s]Loading Files:  78%|███████▊  | 510/655 [00:19<00:05, 26.43it/s]Loading Files:  78%|███████▊  | 513/655 [00:19<00:05, 26.64it/s]Loading Files:  79%|███████▉  | 516/655 [00:19<00:05, 26.64it/s]Loading Files:  79%|███████▉  | 519/655 [00:19<00:05, 26.67it/s]Loading Files:  80%|███████▉  | 522/655 [00:19<00:04, 27.07it/s]Loading Files:  80%|████████  | 525/655 [00:19<00:04, 26.93it/s]Loading Files:  81%|████████  | 528/655 [00:20<00:04, 26.76it/s]Loading Files:  81%|████████  | 531/655 [00:20<00:04, 26.40it/s]Loading Files:  82%|████████▏ | 534/655 [00:20<00:04, 26.79it/s]Loading Files:  82%|████████▏ | 537/655 [00:20<00:04, 26.52it/s]Loading Files:  82%|████████▏ | 540/655 [00:20<00:04, 27.32it/s]Loading Files:  83%|████████▎ | 543/655 [00:20<00:04, 26.77it/s]Loading Files:  83%|████████▎ | 546/655 [00:20<00:04, 26.53it/s]Loading Files:  84%|████████▍ | 549/655 [00:20<00:03, 26.52it/s]Loading Files:  84%|████████▍ | 552/655 [00:20<00:03, 26.19it/s]Loading Files:  85%|████████▍ | 555/655 [00:21<00:03, 26.27it/s]Loading Files:  85%|████████▌ | 558/655 [00:21<00:03, 26.11it/s]Loading Files:  86%|████████▌ | 561/655 [00:21<00:03, 26.19it/s]Loading Files:  86%|████████▌ | 564/655 [00:21<00:03, 26.93it/s]Loading Files:  87%|████████▋ | 567/655 [00:21<00:03, 26.51it/s]Loading Files:  87%|████████▋ | 570/655 [00:21<00:03, 26.37it/s]Loading Files:  87%|████████▋ | 573/655 [00:21<00:03, 26.48it/s]Loading Files:  88%|████████▊ | 576/655 [00:21<00:02, 26.50it/s]Loading Files:  88%|████████▊ | 579/655 [00:22<00:02, 26.34it/s]Loading Files:  89%|████████▉ | 582/655 [00:22<00:02, 26.15it/s]Loading Files:  89%|████████▉ | 585/655 [00:22<00:02, 25.90it/s]Loading Files:  90%|████████▉ | 588/655 [00:22<00:02, 25.62it/s]Loading Files:  90%|█████████ | 591/655 [00:22<00:02, 25.37it/s]Loading Files:  91%|█████████ | 594/655 [00:22<00:02, 25.83it/s]Loading Files:  91%|█████████ | 597/655 [00:22<00:02, 26.25it/s]Loading Files:  92%|█████████▏| 600/655 [00:22<00:02, 25.91it/s]Loading Files:  92%|█████████▏| 603/655 [00:22<00:01, 26.09it/s]Loading Files:  93%|█████████▎| 606/655 [00:23<00:01, 26.23it/s]Loading Files:  93%|█████████▎| 609/655 [00:23<00:01, 26.40it/s]Loading Files:  93%|█████████▎| 612/655 [00:23<00:01, 26.12it/s]Loading Files:  94%|█████████▍| 615/655 [00:23<00:01, 26.19it/s]Loading Files:  94%|█████████▍| 618/655 [00:23<00:01, 25.94it/s]Loading Files:  95%|█████████▍| 621/655 [00:23<00:01, 25.96it/s]Loading Files:  95%|█████████▌| 624/655 [00:23<00:01, 25.98it/s]Loading Files:  96%|█████████▌| 627/655 [00:23<00:01, 25.62it/s]Loading Files:  96%|█████████▌| 630/655 [00:23<00:00, 26.53it/s]Loading Files:  97%|█████████▋| 633/655 [00:24<00:00, 26.38it/s]Loading Files:  97%|█████████▋| 636/655 [00:24<00:00, 26.45it/s]Loading Files:  98%|█████████▊| 639/655 [00:24<00:00, 26.22it/s]Loading Files:  98%|█████████▊| 642/655 [00:24<00:00, 26.60it/s]Loading Files:  98%|█████████▊| 645/655 [00:24<00:00, 27.30it/s]Loading Files:  99%|█████████▉| 648/655 [00:24<00:00, 27.47it/s]Loading Files:  99%|█████████▉| 651/655 [00:24<00:00, 27.90it/s]Loading Files: 100%|█████████▉| 654/655 [00:24<00:00, 27.25it/s]Loading Files: 100%|██████████| 655/655 [00:24<00:00, 26.32it/s]
+Loading and grouping 164 files...
+Loading Files:   0%|          | 0/164 [00:00<?, ?it/s]Loading Files:   2%|▏         | 3/164 [00:00<00:06, 25.38it/s]Loading Files:   4%|▎         | 6/164 [00:00<00:05, 26.53it/s]Loading Files:   5%|▌         | 9/164 [00:00<00:05, 26.07it/s]Loading Files:   7%|▋         | 12/164 [00:00<00:05, 26.00it/s]Loading Files:   9%|▉         | 15/164 [00:00<00:05, 25.59it/s]Loading Files:  11%|█         | 18/164 [00:00<00:05, 25.89it/s]Loading Files:  13%|█▎        | 21/164 [00:00<00:05, 25.76it/s]Loading Files:  15%|█▍        | 24/164 [00:00<00:05, 25.53it/s]Loading Files:  16%|█▋        | 27/164 [00:01<00:05, 25.46it/s]Loading Files:  18%|█▊        | 30/164 [00:01<00:05, 25.90it/s]Loading Files:  20%|██        | 33/164 [00:01<00:05, 26.10it/s]Loading Files:  22%|██▏       | 36/164 [00:01<00:04, 25.72it/s]Loading Files:  24%|██▍       | 39/164 [00:01<00:04, 25.74it/s]Loading Files:  26%|██▌       | 42/164 [00:01<00:04, 26.31it/s]Loading Files:  27%|██▋       | 45/164 [00:01<00:04, 26.60it/s]Loading Files:  29%|██▉       | 48/164 [00:01<00:04, 26.22it/s]Loading Files:  31%|███       | 51/164 [00:01<00:04, 26.45it/s]Loading Files:  33%|███▎      | 54/164 [00:02<00:04, 26.77it/s]Loading Files:  35%|███▍      | 57/164 [00:02<00:04, 26.62it/s]Loading Files:  37%|███▋      | 60/164 [00:02<00:03, 26.50it/s]Loading Files:  38%|███▊      | 63/164 [00:02<00:03, 26.12it/s]Loading Files:  40%|████      | 66/164 [00:02<00:03, 26.56it/s]Loading Files:  42%|████▏     | 69/164 [00:02<00:03, 25.96it/s]Loading Files:  44%|████▍     | 72/164 [00:02<00:03, 25.69it/s]Loading Files:  46%|████▌     | 75/164 [00:02<00:03, 25.70it/s]Loading Files:  48%|████▊     | 78/164 [00:02<00:03, 26.48it/s]Loading Files:  49%|████▉     | 81/164 [00:03<00:03, 26.43it/s]Loading Files:  51%|█████     | 84/164 [00:03<00:03, 26.45it/s]Loading Files:  53%|█████▎    | 87/164 [00:03<00:02, 26.12it/s]Loading Files:  55%|█████▍    | 90/164 [00:03<00:02, 25.95it/s]Loading Files:  57%|█████▋    | 93/164 [00:03<00:02, 25.90it/s]Loading Files:  59%|█████▊    | 96/164 [00:03<00:02, 25.68it/s]Loading Files:  60%|██████    | 99/164 [00:03<00:02, 25.51it/s]Loading Files:  62%|██████▏   | 102/164 [00:03<00:02, 25.55it/s]Loading Files:  64%|██████▍   | 105/164 [00:04<00:02, 25.52it/s]Loading Files:  66%|██████▌   | 108/164 [00:04<00:02, 25.68it/s]Loading Files:  68%|██████▊   | 111/164 [00:04<00:02, 26.08it/s]Loading Files:  70%|██████▉   | 114/164 [00:04<00:01, 26.59it/s]Loading Files:  71%|███████▏  | 117/164 [00:04<00:01, 27.13it/s]Loading Files:  73%|███████▎  | 120/164 [00:04<00:01, 26.49it/s]Loading Files:  75%|███████▌  | 123/164 [00:04<00:01, 26.07it/s]Loading Files:  77%|███████▋  | 126/164 [00:04<00:01, 26.09it/s]Loading Files:  79%|███████▊  | 129/164 [00:04<00:01, 25.81it/s]Loading Files:  80%|████████  | 132/164 [00:05<00:01, 25.71it/s]Loading Files:  82%|████████▏ | 135/164 [00:05<00:01, 25.70it/s]Loading Files:  84%|████████▍ | 138/164 [00:05<00:01, 25.60it/s]Loading Files:  86%|████████▌ | 141/164 [00:05<00:00, 25.73it/s]Loading Files:  88%|████████▊ | 144/164 [00:05<00:00, 25.80it/s]Loading Files:  90%|████████▉ | 147/164 [00:05<00:00, 26.02it/s]Loading Files:  91%|█████████▏| 150/164 [00:05<00:00, 25.82it/s]Loading Files:  93%|█████████▎| 153/164 [00:05<00:00, 26.44it/s]Loading Files:  95%|█████████▌| 156/164 [00:05<00:00, 26.29it/s]Loading Files:  97%|█████████▋| 159/164 [00:06<00:00, 26.50it/s]Loading Files:  99%|█████████▉| 162/164 [00:06<00:00, 26.49it/s]Loading Files: 100%|██████████| 164/164 [00:06<00:00, 26.06it/s]
+Loading and grouping 205 files...
+Loading Files:   0%|          | 0/205 [00:00<?, ?it/s]Loading Files:   1%|▏         | 3/205 [00:00<00:07, 25.43it/s]Loading Files:   3%|▎         | 6/205 [00:00<00:07, 25.74it/s]Loading Files:   4%|▍         | 9/205 [00:00<00:07, 26.44it/s]Loading Files:   6%|▌         | 12/205 [00:00<00:07, 26.24it/s]Loading Files:   7%|▋         | 15/205 [00:00<00:07, 25.64it/s]Loading Files:   9%|▉         | 18/205 [00:00<00:07, 25.52it/s]Loading Files:  10%|█         | 21/205 [00:00<00:07, 25.67it/s]Loading Files:  12%|█▏        | 24/205 [00:00<00:07, 25.64it/s]Loading Files:  13%|█▎        | 27/205 [00:01<00:06, 25.51it/s]Loading Files:  15%|█▍        | 30/205 [00:01<00:06, 25.61it/s]Loading Files:  16%|█▌        | 33/205 [00:01<00:06, 24.67it/s]Loading Files:  18%|█▊        | 36/205 [00:01<00:07, 23.60it/s]Loading Files:  19%|█▉        | 39/205 [00:01<00:07, 23.50it/s]Loading Files:  20%|██        | 42/205 [00:01<00:06, 23.83it/s]Loading Files:  22%|██▏       | 45/205 [00:01<00:06, 24.07it/s]Loading Files:  23%|██▎       | 48/205 [00:01<00:06, 24.53it/s]Loading Files:  25%|██▍       | 51/205 [00:02<00:06, 24.71it/s]Loading Files:  26%|██▋       | 54/205 [00:02<00:05, 25.53it/s]Loading Files:  28%|██▊       | 57/205 [00:02<00:05, 25.52it/s]Loading Files:  29%|██▉       | 60/205 [00:02<00:05, 26.27it/s]Loading Files:  31%|███       | 63/205 [00:02<00:05, 25.94it/s]Loading Files:  32%|███▏      | 66/205 [00:02<00:05, 25.76it/s]Loading Files:  34%|███▎      | 69/205 [00:02<00:05, 25.78it/s]Loading Files:  35%|███▌      | 72/205 [00:02<00:05, 25.82it/s]Loading Files:  37%|███▋      | 75/205 [00:02<00:04, 26.07it/s]Loading Files:  38%|███▊      | 78/205 [00:03<00:04, 25.90it/s]Loading Files:  40%|███▉      | 81/205 [00:03<00:04, 25.95it/s]Loading Files:  41%|████      | 84/205 [00:03<00:04, 26.14it/s]Loading Files:  42%|████▏     | 87/205 [00:03<00:04, 26.33it/s]Loading Files:  44%|████▍     | 90/205 [00:03<00:04, 25.65it/s]Loading Files:  45%|████▌     | 93/205 [00:03<00:04, 25.91it/s]Loading Files:  47%|████▋     | 96/205 [00:03<00:04, 23.76it/s]Loading Files:  48%|████▊     | 99/205 [00:03<00:04, 24.45it/s]Loading Files:  50%|████▉     | 102/205 [00:04<00:04, 24.90it/s]Loading Files:  51%|█████     | 105/205 [00:04<00:03, 25.05it/s]Loading Files:  53%|█████▎    | 108/205 [00:04<00:03, 25.34it/s]Loading Files:  54%|█████▍    | 111/205 [00:04<00:03, 25.31it/s]Loading Files:  56%|█████▌    | 114/205 [00:04<00:03, 25.98it/s]Loading Files:  57%|█████▋    | 117/205 [00:04<00:03, 25.87it/s]Loading Files:  59%|█████▊    | 120/205 [00:04<00:03, 26.12it/s]Loading Files:  60%|██████    | 123/205 [00:04<00:03, 26.14it/s]Loading Files:  61%|██████▏   | 126/205 [00:04<00:03, 26.21it/s]Loading Files:  63%|██████▎   | 129/205 [00:05<00:02, 26.13it/s]Loading Files:  64%|██████▍   | 132/205 [00:05<00:02, 25.94it/s]Loading Files:  66%|██████▌   | 135/205 [00:05<00:02, 26.27it/s]Loading Files:  67%|██████▋   | 138/205 [00:05<00:02, 26.29it/s]Loading Files:  69%|██████▉   | 141/205 [00:05<00:02, 26.31it/s]Loading Files:  70%|███████   | 144/205 [00:05<00:02, 26.38it/s]Loading Files:  72%|███████▏  | 147/205 [00:05<00:02, 26.16it/s]Loading Files:  73%|███████▎  | 150/205 [00:05<00:02, 26.45it/s]Loading Files:  75%|███████▍  | 153/205 [00:05<00:01, 26.59it/s]Loading Files:  76%|███████▌  | 156/205 [00:06<00:01, 26.74it/s]Loading Files:  78%|███████▊  | 159/205 [00:06<00:01, 26.92it/s]Loading Files:  79%|███████▉  | 162/205 [00:06<00:01, 26.91it/s]Loading Files:  80%|████████  | 165/205 [00:06<00:01, 26.73it/s]Loading Files:  82%|████████▏ | 168/205 [00:06<00:01, 26.55it/s]Loading Files:  83%|████████▎ | 171/205 [00:06<00:01, 26.43it/s]Loading Files:  85%|████████▍ | 174/205 [00:06<00:01, 25.93it/s]Loading Files:  86%|████████▋ | 177/205 [00:06<00:01, 26.43it/s]Loading Files:  88%|████████▊ | 180/205 [00:06<00:00, 26.53it/s]Loading Files:  89%|████████▉ | 183/205 [00:07<00:00, 26.73it/s]Loading Files:  91%|█████████ | 186/205 [00:07<00:00, 26.75it/s]Loading Files:  92%|█████████▏| 189/205 [00:07<00:00, 26.67it/s]Loading Files:  94%|█████████▎| 192/205 [00:07<00:00, 26.01it/s]Loading Files:  95%|█████████▌| 195/205 [00:07<00:00, 25.07it/s]Loading Files:  97%|█████████▋| 198/205 [00:07<00:00, 25.30it/s]Loading Files:  98%|█████████▊| 201/205 [00:07<00:00, 22.47it/s]Loading Files: 100%|█████████▉| 204/205 [00:07<00:00, 23.02it/s]Loading Files: 100%|██████████| 205/205 [00:08<00:00, 25.52it/s]
+Total Unique Systems (Files): 655 Train, 164 Val
+Detected/Set Sample Length (per traj): 400
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run udsfh85b
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY017/wandb/run-20260130_142957-udsfh85b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simCLR_b32_lr0.01_L2_H4_D128_trj10 (mu) - no scheduler, no early stopping
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY017-SSL-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY017-SSL-model/runs/udsfh85b
+Starting SSL training...
+[SSL] Epoch [1/200] | train_loss 2.5844 | train_acc 0.2336 | val_loss 2.4013 | val_acc 0.2195
+[SSL] Epoch [2/200] | train_loss 2.3371 | train_acc 0.2244 | val_loss 2.3263 | val_acc 0.2378
+No improvement (1/200).
+[SSL] Epoch [3/200] | train_loss 2.3919 | train_acc 0.2153 | val_loss 2.3828 | val_acc 0.1524
+No improvement (2/200).
+[SSL] Epoch [4/200] | train_loss 2.3083 | train_acc 0.2153 | val_loss 2.3576 | val_acc 0.1585
+No improvement (3/200).
+[SSL] Epoch [5/200] | train_loss 2.3258 | train_acc 0.2168 | val_loss 2.3213 | val_acc 0.2134
+[SSL] Epoch [6/200] | train_loss 2.2709 | train_acc 0.2092 | val_loss 2.2374 | val_acc 0.2439
+No improvement (1/200).
+[SSL] Epoch [7/200] | train_loss 2.4107 | train_acc 0.2092 | val_loss 2.3485 | val_acc 0.2195
+No improvement (2/200).
+[SSL] Epoch [8/200] | train_loss 2.2924 | train_acc 0.2061 | val_loss 2.3995 | val_acc 0.1768
+No improvement (3/200).
+[SSL] Epoch [9/200] | train_loss 2.2757 | train_acc 0.1939 | val_loss 2.2654 | val_acc 0.1768
+No improvement (4/200).
+[SSL] Epoch [10/200] | train_loss 2.3168 | train_acc 0.2015 | val_loss 2.2994 | val_acc 0.2012
+No improvement (5/200).
+[SSL] Epoch [11/200] | train_loss 2.3083 | train_acc 0.1710 | val_loss 2.2737 | val_acc 0.1951
+No improvement (6/200).
+[SSL] Epoch [12/200] | train_loss 2.2656 | train_acc 0.2321 | val_loss 2.2388 | val_acc 0.2256
+No improvement (7/200).
+[SSL] Epoch [13/200] | train_loss 2.2751 | train_acc 0.2183 | val_loss 2.2648 | val_acc 0.1890
+No improvement (8/200).
+[SSL] Epoch [14/200] | train_loss 2.2660 | train_acc 0.2153 | val_loss 2.2723 | val_acc 0.1829
+No improvement (9/200).
+[SSL] Epoch [15/200] | train_loss 2.2752 | train_acc 0.1939 | val_loss 2.1867 | val_acc 0.1829
+No improvement (10/200).
+[SSL] Epoch [16/200] | train_loss 2.2582 | train_acc 0.2092 | val_loss 2.1951 | val_acc 0.2134
+No improvement (11/200).
+[SSL] Epoch [17/200] | train_loss 2.2589 | train_acc 0.2214 | val_loss 2.2149 | val_acc 0.1890
+No improvement (12/200).
+[SSL] Epoch [18/200] | train_loss 2.2434 | train_acc 0.2229 | val_loss 2.2252 | val_acc 0.2378
+No improvement (13/200).
+[SSL] Epoch [19/200] | train_loss 2.2782 | train_acc 0.2244 | val_loss 2.3016 | val_acc 0.2195
+No improvement (14/200).
+[SSL] Epoch [20/200] | train_loss 2.2505 | train_acc 0.2351 | val_loss 2.2719 | val_acc 0.2195
+No improvement (15/200).
+[SSL] Epoch [21/200] | train_loss 2.2340 | train_acc 0.2198 | val_loss 2.3001 | val_acc 0.2195
+No improvement (16/200).
+[SSL] Epoch [22/200] | train_loss 2.1949 | train_acc 0.2305 | val_loss 2.3077 | val_acc 0.2134
+[SSL] Epoch [23/200] | train_loss 2.2441 | train_acc 0.2107 | val_loss 2.2182 | val_acc 0.2500
+No improvement (1/200).
+[SSL] Epoch [24/200] | train_loss 2.2298 | train_acc 0.1954 | val_loss 2.2716 | val_acc 0.2317
+No improvement (2/200).
+[SSL] Epoch [25/200] | train_loss 2.2081 | train_acc 0.2168 | val_loss 2.2508 | val_acc 0.1951
+No improvement (3/200).
+[SSL] Epoch [26/200] | train_loss 2.2542 | train_acc 0.2031 | val_loss 2.3154 | val_acc 0.2195
+No improvement (4/200).
+[SSL] Epoch [27/200] | train_loss 2.2341 | train_acc 0.2000 | val_loss 2.2900 | val_acc 0.2073
+No improvement (5/200).
+[SSL] Epoch [28/200] | train_loss 2.2147 | train_acc 0.2290 | val_loss 2.1716 | val_acc 0.1890
+No improvement (6/200).
+[SSL] Epoch [29/200] | train_loss 2.2101 | train_acc 0.2336 | val_loss 2.2378 | val_acc 0.2500
+No improvement (7/200).
+[SSL] Epoch [30/200] | train_loss 2.1847 | train_acc 0.2305 | val_loss 2.2522 | val_acc 0.2317
+No improvement (8/200).
+[SSL] Epoch [31/200] | train_loss 2.2426 | train_acc 0.2061 | val_loss 2.2957 | val_acc 0.2256
+No improvement (9/200).
+[SSL] Epoch [32/200] | train_loss 2.2364 | train_acc 0.1893 | val_loss 2.3177 | val_acc 0.1707
+No improvement (10/200).
+[SSL] Epoch [33/200] | train_loss 2.2171 | train_acc 0.2122 | val_loss 2.2595 | val_acc 0.1768
+No improvement (11/200).
+[SSL] Epoch [34/200] | train_loss 2.2252 | train_acc 0.2137 | val_loss 2.2255 | val_acc 0.2500
+No improvement (12/200).
+[SSL] Epoch [35/200] | train_loss 2.2605 | train_acc 0.1939 | val_loss 2.3210 | val_acc 0.1829
+No improvement (13/200).
+[SSL] Epoch [36/200] | train_loss 2.2009 | train_acc 0.2122 | val_loss 2.2755 | val_acc 0.2256
+[SSL] Epoch [37/200] | train_loss 2.2301 | train_acc 0.2153 | val_loss 2.2549 | val_acc 0.2866
+No improvement (1/200).
+[SSL] Epoch [38/200] | train_loss 2.2058 | train_acc 0.2183 | val_loss 2.2158 | val_acc 0.2378
+No improvement (2/200).
+[SSL] Epoch [39/200] | train_loss 2.2716 | train_acc 0.1969 | val_loss 2.1912 | val_acc 0.2073
+No improvement (3/200).
+[SSL] Epoch [40/200] | train_loss 2.2043 | train_acc 0.2168 | val_loss 2.2441 | val_acc 0.1768
+No improvement (4/200).
+[SSL] Epoch [41/200] | train_loss 2.2466 | train_acc 0.1954 | val_loss 2.2832 | val_acc 0.1646
+No improvement (5/200).
+[SSL] Epoch [42/200] | train_loss 2.2916 | train_acc 0.2122 | val_loss 2.3162 | val_acc 0.2195
+No improvement (6/200).
+[SSL] Epoch [43/200] | train_loss 2.2184 | train_acc 0.1878 | val_loss 2.2464 | val_acc 0.2195
+No improvement (7/200).
+[SSL] Epoch [44/200] | train_loss 2.2414 | train_acc 0.2031 | val_loss 2.2098 | val_acc 0.1768
+No improvement (8/200).
+[SSL] Epoch [45/200] | train_loss 2.2880 | train_acc 0.1969 | val_loss 2.3272 | val_acc 0.1951
+No improvement (9/200).
+[SSL] Epoch [46/200] | train_loss 2.2698 | train_acc 0.2229 | val_loss 2.1587 | val_acc 0.2134
+No improvement (10/200).
+[SSL] Epoch [47/200] | train_loss 2.2600 | train_acc 0.1771 | val_loss 2.1925 | val_acc 0.1951
+No improvement (11/200).
+[SSL] Epoch [48/200] | train_loss 2.2401 | train_acc 0.2153 | val_loss 2.2090 | val_acc 0.2500
+No improvement (12/200).
+[SSL] Epoch [49/200] | train_loss 2.2307 | train_acc 0.2244 | val_loss 2.2570 | val_acc 0.2561
+No improvement (13/200).
+[SSL] Epoch [50/200] | train_loss 2.3040 | train_acc 0.1924 | val_loss 2.2220 | val_acc 0.2317
+No improvement (14/200).
+[SSL] Epoch [51/200] | train_loss 2.2780 | train_acc 0.2092 | val_loss 2.2621 | val_acc 0.2378
+No improvement (15/200).
+[SSL] Epoch [52/200] | train_loss 2.2348 | train_acc 0.2168 | val_loss 2.2573 | val_acc 0.2256
+No improvement (16/200).
+[SSL] Epoch [53/200] | train_loss 2.2039 | train_acc 0.2122 | val_loss 2.3588 | val_acc 0.2195
+No improvement (17/200).
+[SSL] Epoch [54/200] | train_loss 2.2193 | train_acc 0.2046 | val_loss 2.2252 | val_acc 0.2317
+No improvement (18/200).
+[SSL] Epoch [55/200] | train_loss 2.2592 | train_acc 0.2046 | val_loss 2.2004 | val_acc 0.2378
+No improvement (19/200).
+[SSL] Epoch [56/200] | train_loss 2.2296 | train_acc 0.2061 | val_loss 2.3088 | val_acc 0.1585
+No improvement (20/200).
+[SSL] Epoch [57/200] | train_loss 2.2201 | train_acc 0.2305 | val_loss 2.2556 | val_acc 0.1951
+No improvement (21/200).
+[SSL] Epoch [58/200] | train_loss 2.2133 | train_acc 0.2168 | val_loss 2.2360 | val_acc 0.1890
+No improvement (22/200).
+[SSL] Epoch [59/200] | train_loss 2.2347 | train_acc 0.2015 | val_loss 2.3157 | val_acc 0.2012
+No improvement (23/200).
+[SSL] Epoch [60/200] | train_loss 2.2558 | train_acc 0.2046 | val_loss 2.2720 | val_acc 0.2195
+No improvement (24/200).
+[SSL] Epoch [61/200] | train_loss 2.2489 | train_acc 0.2321 | val_loss 2.2784 | val_acc 0.2134
+No improvement (25/200).
+[SSL] Epoch [62/200] | train_loss 2.2310 | train_acc 0.2168 | val_loss 2.1868 | val_acc 0.2317
+No improvement (26/200).
+[SSL] Epoch [63/200] | train_loss 2.2747 | train_acc 0.2031 | val_loss 2.3685 | val_acc 0.1951
+No improvement (27/200).
+[SSL] Epoch [64/200] | train_loss 2.2686 | train_acc 0.2107 | val_loss 2.3449 | val_acc 0.2195
+No improvement (28/200).
+[SSL] Epoch [65/200] | train_loss 2.3074 | train_acc 0.2153 | val_loss 2.3328 | val_acc 0.2500
+No improvement (29/200).
+[SSL] Epoch [66/200] | train_loss 2.3036 | train_acc 0.2412 | val_loss 2.2046 | val_acc 0.1951
+No improvement (30/200).
+[SSL] Epoch [67/200] | train_loss 2.2714 | train_acc 0.2000 | val_loss 2.3329 | val_acc 0.1951
+No improvement (31/200).
+[SSL] Epoch [68/200] | train_loss 2.2602 | train_acc 0.2031 | val_loss 2.2566 | val_acc 0.1951
+No improvement (32/200).
+[SSL] Epoch [69/200] | train_loss 2.2635 | train_acc 0.1832 | val_loss 2.3037 | val_acc 0.2012
+No improvement (33/200).
+[SSL] Epoch [70/200] | train_loss 2.2560 | train_acc 0.2137 | val_loss 2.2505 | val_acc 0.2134
+No improvement (34/200).
+[SSL] Epoch [71/200] | train_loss 2.2573 | train_acc 0.1969 | val_loss 2.2808 | val_acc 0.1707
+No improvement (35/200).
+[SSL] Epoch [72/200] | train_loss 2.1831 | train_acc 0.2458 | val_loss 2.1499 | val_acc 0.2317
+No improvement (36/200).
+[SSL] Epoch [73/200] | train_loss 2.2366 | train_acc 0.2137 | val_loss 2.2844 | val_acc 0.1646
+No improvement (37/200).
+[SSL] Epoch [74/200] | train_loss 2.2396 | train_acc 0.2336 | val_loss 2.3336 | val_acc 0.2073
+No improvement (38/200).
+[SSL] Epoch [75/200] | train_loss 2.2274 | train_acc 0.2336 | val_loss 2.2395 | val_acc 0.2195
+No improvement (39/200).
+[SSL] Epoch [76/200] | train_loss 2.2357 | train_acc 0.2092 | val_loss 2.3008 | val_acc 0.1890
+No improvement (40/200).
+[SSL] Epoch [77/200] | train_loss 2.2382 | train_acc 0.2046 | val_loss 2.2574 | val_acc 0.2012
+No improvement (41/200).
+[SSL] Epoch [78/200] | train_loss 2.1707 | train_acc 0.2183 | val_loss 2.2418 | val_acc 0.2439
+No improvement (42/200).
+[SSL] Epoch [79/200] | train_loss 2.2112 | train_acc 0.2061 | val_loss 2.3025 | val_acc 0.2073
+No improvement (43/200).
+[SSL] Epoch [80/200] | train_loss 2.2298 | train_acc 0.2290 | val_loss 2.2496 | val_acc 0.2073
+No improvement (44/200).
+[SSL] Epoch [81/200] | train_loss 2.2047 | train_acc 0.2412 | val_loss 2.2036 | val_acc 0.2500
+No improvement (45/200).
+[SSL] Epoch [82/200] | train_loss 2.2597 | train_acc 0.1969 | val_loss 2.2618 | val_acc 0.1768
+No improvement (46/200).
+[SSL] Epoch [83/200] | train_loss 2.2682 | train_acc 0.1985 | val_loss 2.2533 | val_acc 0.2256
+No improvement (47/200).
+[SSL] Epoch [84/200] | train_loss 2.2607 | train_acc 0.2214 | val_loss 2.1655 | val_acc 0.2378
+No improvement (48/200).
+[SSL] Epoch [85/200] | train_loss 2.2362 | train_acc 0.2061 | val_loss 2.2401 | val_acc 0.2317
+No improvement (49/200).
+[SSL] Epoch [86/200] | train_loss 2.2470 | train_acc 0.1863 | val_loss 2.2654 | val_acc 0.2195
+No improvement (50/200).
+[SSL] Epoch [87/200] | train_loss 2.2703 | train_acc 0.2061 | val_loss 2.2016 | val_acc 0.2500
+No improvement (51/200).
+[SSL] Epoch [88/200] | train_loss 2.1828 | train_acc 0.2260 | val_loss 2.2183 | val_acc 0.2134
+No improvement (52/200).
+[SSL] Epoch [89/200] | train_loss 2.1733 | train_acc 0.2275 | val_loss 2.2626 | val_acc 0.2073
+No improvement (53/200).
+[SSL] Epoch [90/200] | train_loss 2.1626 | train_acc 0.2382 | val_loss 2.2484 | val_acc 0.2622
+No improvement (54/200).
+[SSL] Epoch [91/200] | train_loss 2.2086 | train_acc 0.2000 | val_loss 2.2465 | val_acc 0.2378
+No improvement (55/200).
+[SSL] Epoch [92/200] | train_loss 2.2192 | train_acc 0.2153 | val_loss 2.2179 | val_acc 0.1768
+No improvement (56/200).
+[SSL] Epoch [93/200] | train_loss 2.2009 | train_acc 0.2137 | val_loss 2.2149 | val_acc 0.1951
+No improvement (57/200).
+[SSL] Epoch [94/200] | train_loss 2.2014 | train_acc 0.2183 | val_loss 2.3257 | val_acc 0.2012
+No improvement (58/200).
+[SSL] Epoch [95/200] | train_loss 2.2357 | train_acc 0.2244 | val_loss 2.3132 | val_acc 0.2012
+No improvement (59/200).
+[SSL] Epoch [96/200] | train_loss 2.2336 | train_acc 0.2015 | val_loss 2.2626 | val_acc 0.2012
+No improvement (60/200).
+[SSL] Epoch [97/200] | train_loss 2.2163 | train_acc 0.2076 | val_loss 2.2806 | val_acc 0.2378
+No improvement (61/200).
+[SSL] Epoch [98/200] | train_loss 2.2011 | train_acc 0.1954 | val_loss 2.2601 | val_acc 0.2012
+No improvement (62/200).
+[SSL] Epoch [99/200] | train_loss 2.2649 | train_acc 0.2046 | val_loss 2.1770 | val_acc 0.2317
+No improvement (63/200).
+[SSL] Epoch [100/200] | train_loss 2.2086 | train_acc 0.2015 | val_loss 2.2713 | val_acc 0.1768
+No improvement (64/200).
+[SSL] Epoch [101/200] | train_loss 2.2554 | train_acc 0.2015 | val_loss 2.2890 | val_acc 0.2134
+No improvement (65/200).
+[SSL] Epoch [102/200] | train_loss 2.2407 | train_acc 0.1817 | val_loss 2.1560 | val_acc 0.2012
+No improvement (66/200).
+[SSL] Epoch [103/200] | train_loss 2.1965 | train_acc 0.2336 | val_loss 2.3069 | val_acc 0.2012
+No improvement (67/200).
+[SSL] Epoch [104/200] | train_loss 2.2319 | train_acc 0.2137 | val_loss 2.1961 | val_acc 0.2256
+No improvement (68/200).
+[SSL] Epoch [105/200] | train_loss 2.2444 | train_acc 0.2290 | val_loss 2.1724 | val_acc 0.1951
+No improvement (69/200).
+[SSL] Epoch [106/200] | train_loss 2.1935 | train_acc 0.2046 | val_loss 2.1387 | val_acc 0.2256
+No improvement (70/200).
+[SSL] Epoch [107/200] | train_loss 2.2123 | train_acc 0.2214 | val_loss 2.2816 | val_acc 0.2439
+No improvement (71/200).
+[SSL] Epoch [108/200] | train_loss 2.2032 | train_acc 0.2107 | val_loss 2.2079 | val_acc 0.1890
+No improvement (72/200).
+[SSL] Epoch [109/200] | train_loss 2.2249 | train_acc 0.2168 | val_loss 2.2023 | val_acc 0.2439
+No improvement (73/200).
+[SSL] Epoch [110/200] | train_loss 2.2878 | train_acc 0.2092 | val_loss 2.2381 | val_acc 0.1951
+No improvement (74/200).
+[SSL] Epoch [111/200] | train_loss 2.2042 | train_acc 0.2229 | val_loss 2.2895 | val_acc 0.1646
+No improvement (75/200).
+[SSL] Epoch [112/200] | train_loss 2.2393 | train_acc 0.1908 | val_loss 2.2463 | val_acc 0.2134
+No improvement (76/200).
+[SSL] Epoch [113/200] | train_loss 2.2105 | train_acc 0.2076 | val_loss 2.1786 | val_acc 0.2744
+No improvement (77/200).
+[SSL] Epoch [114/200] | train_loss 2.2450 | train_acc 0.2153 | val_loss 2.2003 | val_acc 0.2256
+No improvement (78/200).
+[SSL] Epoch [115/200] | train_loss 2.2313 | train_acc 0.2168 | val_loss 2.2934 | val_acc 0.2012
+No improvement (79/200).
+[SSL] Epoch [116/200] | train_loss 2.2679 | train_acc 0.2275 | val_loss 2.1865 | val_acc 0.1829
+No improvement (80/200).
+[SSL] Epoch [117/200] | train_loss 2.2639 | train_acc 0.2061 | val_loss 2.2790 | val_acc 0.1768
+No improvement (81/200).
+[SSL] Epoch [118/200] | train_loss 2.2355 | train_acc 0.2153 | val_loss 2.2257 | val_acc 0.2317
+No improvement (82/200).
+[SSL] Epoch [119/200] | train_loss 2.2239 | train_acc 0.2382 | val_loss 2.2030 | val_acc 0.2195
+No improvement (83/200).
+[SSL] Epoch [120/200] | train_loss 2.2816 | train_acc 0.2122 | val_loss 2.2560 | val_acc 0.2073
+No improvement (84/200).
+[SSL] Epoch [121/200] | train_loss 2.2574 | train_acc 0.2061 | val_loss 2.1884 | val_acc 0.2439
+No improvement (85/200).
+[SSL] Epoch [122/200] | train_loss 2.2505 | train_acc 0.1817 | val_loss 2.2263 | val_acc 0.2195
+No improvement (86/200).
+[SSL] Epoch [123/200] | train_loss 2.3247 | train_acc 0.2122 | val_loss 2.3370 | val_acc 0.1951
+No improvement (87/200).
+[SSL] Epoch [124/200] | train_loss 2.2176 | train_acc 0.2305 | val_loss 2.2024 | val_acc 0.2622
+No improvement (88/200).
+[SSL] Epoch [125/200] | train_loss 2.2426 | train_acc 0.2031 | val_loss 2.3387 | val_acc 0.1829
+No improvement (89/200).
+[SSL] Epoch [126/200] | train_loss 2.2335 | train_acc 0.2198 | val_loss 2.3103 | val_acc 0.2134
+No improvement (90/200).
+[SSL] Epoch [127/200] | train_loss 2.1893 | train_acc 0.2260 | val_loss 2.2352 | val_acc 0.2500
+No improvement (91/200).
+[SSL] Epoch [128/200] | train_loss 2.2293 | train_acc 0.2076 | val_loss 2.2427 | val_acc 0.2500
+No improvement (92/200).
+[SSL] Epoch [129/200] | train_loss 2.2409 | train_acc 0.2015 | val_loss 2.3642 | val_acc 0.2134
+No improvement (93/200).
+[SSL] Epoch [130/200] | train_loss 2.2400 | train_acc 0.2305 | val_loss 2.1706 | val_acc 0.2378
+No improvement (94/200).
+[SSL] Epoch [131/200] | train_loss 2.2263 | train_acc 0.1954 | val_loss 2.2458 | val_acc 0.2134
+No improvement (95/200).
+[SSL] Epoch [132/200] | train_loss 2.2149 | train_acc 0.2214 | val_loss 2.2175 | val_acc 0.1707
+No improvement (96/200).
+[SSL] Epoch [133/200] | train_loss 2.2210 | train_acc 0.2305 | val_loss 2.3025 | val_acc 0.2195
+No improvement (97/200).
+[SSL] Epoch [134/200] | train_loss 2.2043 | train_acc 0.2198 | val_loss 2.2570 | val_acc 0.2073
+No improvement (98/200).
+[SSL] Epoch [135/200] | train_loss 2.2531 | train_acc 0.2107 | val_loss 2.2022 | val_acc 0.2256
+No improvement (99/200).
+[SSL] Epoch [136/200] | train_loss 2.2015 | train_acc 0.2092 | val_loss 2.2188 | val_acc 0.2378
+No improvement (100/200).
+[SSL] Epoch [137/200] | train_loss 2.2308 | train_acc 0.2168 | val_loss 2.2996 | val_acc 0.1890
+No improvement (101/200).
+[SSL] Epoch [138/200] | train_loss 2.2293 | train_acc 0.2061 | val_loss 2.2121 | val_acc 0.2378
+No improvement (102/200).
+[SSL] Epoch [139/200] | train_loss 2.2313 | train_acc 0.2015 | val_loss 2.2440 | val_acc 0.1890
+No improvement (103/200).
+[SSL] Epoch [140/200] | train_loss 2.2069 | train_acc 0.2168 | val_loss 2.2343 | val_acc 0.2073
+No improvement (104/200).
+[SSL] Epoch [141/200] | train_loss 2.2491 | train_acc 0.2122 | val_loss 2.1795 | val_acc 0.2134
+No improvement (105/200).
+[SSL] Epoch [142/200] | train_loss 2.1791 | train_acc 0.2061 | val_loss 2.2660 | val_acc 0.2073
+No improvement (106/200).
+[SSL] Epoch [143/200] | train_loss 2.2360 | train_acc 0.2183 | val_loss 2.2484 | val_acc 0.2256
+No improvement (107/200).
+[SSL] Epoch [144/200] | train_loss 2.2105 | train_acc 0.2031 | val_loss 2.2998 | val_acc 0.1524
+No improvement (108/200).
+[SSL] Epoch [145/200] | train_loss 2.2256 | train_acc 0.2046 | val_loss 2.2680 | val_acc 0.2256
+No improvement (109/200).
+[SSL] Epoch [146/200] | train_loss 2.2334 | train_acc 0.2214 | val_loss 2.2581 | val_acc 0.1951
+No improvement (110/200).
+[SSL] Epoch [147/200] | train_loss 2.2650 | train_acc 0.2031 | val_loss 2.2456 | val_acc 0.1646
+No improvement (111/200).
+[SSL] Epoch [148/200] | train_loss 2.2704 | train_acc 0.2198 | val_loss 2.2722 | val_acc 0.1890
+No improvement (112/200).
+[SSL] Epoch [149/200] | train_loss 2.2709 | train_acc 0.2000 | val_loss 2.2402 | val_acc 0.2195
+No improvement (113/200).
+[SSL] Epoch [150/200] | train_loss 2.1986 | train_acc 0.2214 | val_loss 2.2697 | val_acc 0.2256
+No improvement (114/200).
+[SSL] Epoch [151/200] | train_loss 2.2547 | train_acc 0.2046 | val_loss 2.2490 | val_acc 0.2256
+No improvement (115/200).
+[SSL] Epoch [152/200] | train_loss 2.2352 | train_acc 0.2107 | val_loss 2.2025 | val_acc 0.2378
+No improvement (116/200).
+[SSL] Epoch [153/200] | train_loss 2.2247 | train_acc 0.2198 | val_loss 2.3366 | val_acc 0.2256
+No improvement (117/200).
+[SSL] Epoch [154/200] | train_loss 2.2301 | train_acc 0.2137 | val_loss 2.1584 | val_acc 0.2378
+No improvement (118/200).
+[SSL] Epoch [155/200] | train_loss 2.2379 | train_acc 0.2244 | val_loss 2.3238 | val_acc 0.1829
+No improvement (119/200).
+[SSL] Epoch [156/200] | train_loss 2.2347 | train_acc 0.2061 | val_loss 2.2700 | val_acc 0.2500
+No improvement (120/200).
+[SSL] Epoch [157/200] | train_loss 2.2117 | train_acc 0.2122 | val_loss 2.2463 | val_acc 0.1951
+No improvement (121/200).
+[SSL] Epoch [158/200] | train_loss 2.1689 | train_acc 0.2015 | val_loss 2.2146 | val_acc 0.2256
+No improvement (122/200).
+[SSL] Epoch [159/200] | train_loss 2.2886 | train_acc 0.1863 | val_loss 2.1663 | val_acc 0.2561
+No improvement (123/200).
+[SSL] Epoch [160/200] | train_loss 2.2839 | train_acc 0.2107 | val_loss 2.3126 | val_acc 0.2561
+No improvement (124/200).
+[SSL] Epoch [161/200] | train_loss 2.2207 | train_acc 0.2183 | val_loss 2.3694 | val_acc 0.2378
+No improvement (125/200).
+[SSL] Epoch [162/200] | train_loss 2.2469 | train_acc 0.1985 | val_loss 2.2604 | val_acc 0.2134
+No improvement (126/200).
+[SSL] Epoch [163/200] | train_loss 2.2308 | train_acc 0.2000 | val_loss 2.3369 | val_acc 0.1890
+No improvement (127/200).
+[SSL] Epoch [164/200] | train_loss 2.2311 | train_acc 0.2183 | val_loss 2.2438 | val_acc 0.2073
+No improvement (128/200).
+[SSL] Epoch [165/200] | train_loss 2.2680 | train_acc 0.2198 | val_loss 2.2457 | val_acc 0.1768
+No improvement (129/200).
+[SSL] Epoch [166/200] | train_loss 2.2359 | train_acc 0.2061 | val_loss 2.1963 | val_acc 0.2378
+No improvement (130/200).
+[SSL] Epoch [167/200] | train_loss 2.2146 | train_acc 0.2107 | val_loss 2.2584 | val_acc 0.1951
+No improvement (131/200).
+[SSL] Epoch [168/200] | train_loss 2.2338 | train_acc 0.1893 | val_loss 2.1995 | val_acc 0.2378
+No improvement (132/200).
+[SSL] Epoch [169/200] | train_loss 2.2450 | train_acc 0.2092 | val_loss 2.2079 | val_acc 0.1768
+No improvement (133/200).
+[SSL] Epoch [170/200] | train_loss 2.2973 | train_acc 0.1939 | val_loss 2.2517 | val_acc 0.1951
+No improvement (134/200).
+[SSL] Epoch [171/200] | train_loss 2.1813 | train_acc 0.2183 | val_loss 2.2475 | val_acc 0.2317
+No improvement (135/200).
+[SSL] Epoch [172/200] | train_loss 2.1874 | train_acc 0.2107 | val_loss 2.3216 | val_acc 0.1951
+No improvement (136/200).
+[SSL] Epoch [173/200] | train_loss 2.2273 | train_acc 0.2336 | val_loss 2.2221 | val_acc 0.1890
+No improvement (137/200).
+[SSL] Epoch [174/200] | train_loss 2.2145 | train_acc 0.2137 | val_loss 2.2025 | val_acc 0.2622
+No improvement (138/200).
+[SSL] Epoch [175/200] | train_loss 2.2300 | train_acc 0.1908 | val_loss 2.2684 | val_acc 0.2317
+No improvement (139/200).
+[SSL] Epoch [176/200] | train_loss 2.2466 | train_acc 0.2153 | val_loss 2.1823 | val_acc 0.2317
+No improvement (140/200).
+[SSL] Epoch [177/200] | train_loss 2.2507 | train_acc 0.1924 | val_loss 2.3246 | val_acc 0.2561
+No improvement (141/200).
+[SSL] Epoch [178/200] | train_loss 2.2523 | train_acc 0.1924 | val_loss 2.2662 | val_acc 0.2195
+No improvement (142/200).
+[SSL] Epoch [179/200] | train_loss 2.2053 | train_acc 0.2015 | val_loss 2.1951 | val_acc 0.2012
+No improvement (143/200).
+[SSL] Epoch [180/200] | train_loss 2.2116 | train_acc 0.2412 | val_loss 2.2611 | val_acc 0.2012
+No improvement (144/200).
+[SSL] Epoch [181/200] | train_loss 2.2360 | train_acc 0.1954 | val_loss 2.2534 | val_acc 0.2134
+No improvement (145/200).
+[SSL] Epoch [182/200] | train_loss 2.2628 | train_acc 0.2076 | val_loss 2.2464 | val_acc 0.2012
+No improvement (146/200).
+[SSL] Epoch [183/200] | train_loss 2.2617 | train_acc 0.1954 | val_loss 2.2106 | val_acc 0.2073
+No improvement (147/200).
+[SSL] Epoch [184/200] | train_loss 2.2235 | train_acc 0.2198 | val_loss 2.2852 | val_acc 0.2561
+No improvement (148/200).
+[SSL] Epoch [185/200] | train_loss 2.1715 | train_acc 0.2321 | val_loss 2.1828 | val_acc 0.2256
+No improvement (149/200).
+[SSL] Epoch [186/200] | train_loss 2.1842 | train_acc 0.2290 | val_loss 2.1789 | val_acc 0.1585
+No improvement (150/200).
+[SSL] Epoch [187/200] | train_loss 2.2358 | train_acc 0.1954 | val_loss 2.2249 | val_acc 0.2683
+No improvement (151/200).
+[SSL] Epoch [188/200] | train_loss 2.2424 | train_acc 0.2290 | val_loss 2.2505 | val_acc 0.2256
+No improvement (152/200).
+[SSL] Epoch [189/200] | train_loss 2.2986 | train_acc 0.2076 | val_loss 2.2733 | val_acc 0.2073
+No improvement (153/200).
+[SSL] Epoch [190/200] | train_loss 2.2877 | train_acc 0.2000 | val_loss 2.2517 | val_acc 0.2012
+No improvement (154/200).
+[SSL] Epoch [191/200] | train_loss 2.1942 | train_acc 0.2061 | val_loss 2.3155 | val_acc 0.1890
+No improvement (155/200).
+[SSL] Epoch [192/200] | train_loss 2.2234 | train_acc 0.2031 | val_loss 2.3426 | val_acc 0.1707
+No improvement (156/200).
+[SSL] Epoch [193/200] | train_loss 2.2163 | train_acc 0.2107 | val_loss 2.2186 | val_acc 0.2012
+No improvement (157/200).
+[SSL] Epoch [194/200] | train_loss 2.2385 | train_acc 0.2260 | val_loss 2.2354 | val_acc 0.2073
+No improvement (158/200).
+[SSL] Epoch [195/200] | train_loss 2.2748 | train_acc 0.2046 | val_loss 2.2143 | val_acc 0.2439
+No improvement (159/200).
+[SSL] Epoch [196/200] | train_loss 2.2206 | train_acc 0.2000 | val_loss 2.2423 | val_acc 0.2195
+No improvement (160/200).
+[SSL] Epoch [197/200] | train_loss 2.2464 | train_acc 0.2076 | val_loss 2.1721 | val_acc 0.2195
+No improvement (161/200).
+[SSL] Epoch [198/200] | train_loss 2.1851 | train_acc 0.2351 | val_loss 2.2770 | val_acc 0.2134
+No improvement (162/200).
+[SSL] Epoch [199/200] | train_loss 2.1942 | train_acc 0.2153 | val_loss 2.2110 | val_acc 0.2012
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇█████
+wandb:         lr ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▆▆▁▆▄▃▃▄▆▂▆▄▅▅▆▅▇▄▂▆█▅▅▇▄▅▅▅▆▅▄▆▅▃▅▇▄▅▇▅
+wandb: train/loss █▃▂▂▂▂▂▁▂▂▂▂▂▃▂▂▂▂▂▁▂▂▂▂▂▂▃▁▁▂▂▂▃▂▂▂▂▂▂▁
+wandb:    val/acc ▅▅▃▅▅▆▇▃▅▆▂▂▆▅▅▂▄▆▂▄▂█▄▆▃▁▅▃▅▅▃▇▇▅▂▇▄▅▅▄
+wandb:   val/loss ▆██▅▄▄▆▁▄▄▁▄▇▆▅▃▃▄▄▄▅▄▂▃▅▄▃▄▄▂▄▂▂▃▅▆▃▃▁▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.28659
+wandb:             epoch 200
+wandb:                lr 0.01
+wandb:         train/acc 0.20611
+wandb:        train/loss 2.21281
+wandb: training_time_sec 8370.13518
+wandb:           val/acc 0.20122
+wandb:          val/loss 2.25786
+wandb: 
+wandb: 🚀 View run simCLR_b32_lr0.01_L2_H4_D128_trj10 (mu) - no scheduler, no early stopping at: https://wandb.ai/grignard-reagent/IY017-SSL-model/runs/udsfh85b
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY017-SSL-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260130_142957-udsfh85b/logs
+No improvement (163/200).
+[SSL] Epoch [200/200] | train_loss 2.2128 | train_acc 0.2061 | val_loss 2.2579 | val_acc 0.2012
+SSL training complete.
