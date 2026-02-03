@@ -2,8 +2,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
 
-DATA_ROOT = Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data")
-RESULTS_PATH = DATA_ROOT / "IY011_simulation_parameters_sobol.csv"
+script_dir = Path(__file__).resolve().parent
+# DATA_ROOT = script_dir / "data"
+# RESULTS_PATH = DATA_ROOT / "IY011_simulation_parameters_sobol.csv"
+# DATA_ROOT = script_dir / "temp_data_cv_variation"
+# RESULTS_PATH = DATA_ROOT / "IY011_simulation_cv_parameters_sobol.csv"
+# DATA_ROOT = script_dir / "temp_data_mu_variation"
+# RESULTS_PATH = DATA_ROOT / "IY011_simulation_mu_parameters_sobol.csv"
+DATA_ROOT = script_dir / "temp_data_t_ac_variation"
+RESULTS_PATH = DATA_ROOT / "IY011_simulation_t_ac_parameters_sobol.csv"
+
 df_params = pd.read_csv(RESULTS_PATH)
 
 #plot mu_target vs mu_observed

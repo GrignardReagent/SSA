@@ -20,7 +20,7 @@ from sklearn.svm import SVC
 
 # data handling
 from sklearn.preprocessing import StandardScaler
-from utils.data_loader import baseline_data_prep, save_loader_to_disk, load_loader_from_disk
+from dataloaders import baseline_data_prep, save_loader_to_disk, load_loader_from_disk
 
 # simulation
 from simulation.mean_cv_t_ac import find_tilda_parameters
