@@ -1,5 +1,5 @@
 from pathlib import Path
-from utils.data_loader import baseline_data_prep, save_loader_to_disk
+from dataloaders import baseline_data_prep, save_loader_to_disk
 import pycatch22
 import pandas as pd
 import numpy as np

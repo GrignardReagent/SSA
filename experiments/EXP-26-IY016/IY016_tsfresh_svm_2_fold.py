@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, classification_report
-from utils.data_loader import load_loader_from_disk
+from dataloaders import load_loader_from_disk
 
 # ==========================================
 # CONFIGURATION
