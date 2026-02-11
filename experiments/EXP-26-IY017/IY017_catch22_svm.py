@@ -15,6 +15,12 @@ def make_loaders(DATA_ROOT: Path, results_csv: str, param_dist_threshold: float)
     # Get the absolute path of the directory containing this script
     RESULTS_PATH = DATA_ROOT / results_csv
     df_params = pd.read_csv(RESULTS_PATH) 
+    # filter out only successful simulations with no error_message, and mean_rel_error_pct < 10, cv_rel_error_pct  < 10, & t_ac_rel_error_pct < 10
+    df_params = df_params[(df_params['success'] == True) & 
+                        (df_params['error_message'].isna()) &
+                        (df_params['mean_rel_error_pct'] < 10) & 
+                        (df_params['cv_rel_error_pct'] < 10) & 
+                        (df_params['t_ac_rel_error_pct'] < 10)]
     TRAJ_PATH = [DATA_ROOT / df_params['trajectory_filename'].values[i] for i in range(len(df_params))]
     TRAJ_NPZ_PATH = [traj_file.with_suffix('.npz') for traj_file in TRAJ_PATH]
 
@@ -38,9 +44,9 @@ def make_loaders(DATA_ROOT: Path, results_csv: str, param_dist_threshold: float)
 
     # === Save data for debugging later === 
     # 1. Define paths
-    train_save_path = DATA_ROOT / "IY011_static_train.pt"
-    val_save_path   = DATA_ROOT / "IY011_static_val.pt"
-    test_save_path  = DATA_ROOT / "IY011_static_test.pt"
+    train_save_path = DATA_ROOT / "IY020_static_train.pt"
+    val_save_path   = DATA_ROOT / "IY020_static_val.pt"
+    test_save_path  = DATA_ROOT / "IY020_static_test.pt"
 
     # 2. Check if static data already exists
     if not train_save_path.exists():
@@ -134,39 +140,39 @@ def run_catch22_svm(train_loader, test_loader, exp_name="Experiment"):
 # ============================================
 # make the loaders
 baseline_train_loader, _, baseline_test_loader = make_loaders(
-    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data"),
-    results_csv="IY011_simulation_parameters_sobol.csv",
-    param_dist_threshold=0.7 # 2-fold difference
+    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY020/data"),
+    results_csv="IY020_simulation_parameters_sobol.csv",
+    param_dist_threshold=0 # we don't care about distance
 )
 
-cv_train_loader, _, cv_test_loader = make_loaders(
-    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_cv_variation"),
-    results_csv="IY011_simulation_cv_parameters_sobol.csv",
-    param_dist_threshold=0.7 # 2-fold difference
-)
+# cv_train_loader, _, cv_test_loader = make_loaders(
+#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_cv_variation"),
+#     results_csv="IY011_simulation_cv_parameters_sobol.csv",
+#     param_dist_threshold=0.7 # 2-fold difference
+# )
 
-mu_train_loader, _, mu_test_loader = make_loaders(
-    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_mu_variation"),
-    results_csv="IY011_simulation_mu_parameters_sobol.csv",
-    param_dist_threshold=0.7 # 2-fold difference
-)   
+# mu_train_loader, _, mu_test_loader = make_loaders(
+#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_mu_variation"),
+#     results_csv="IY011_simulation_mu_parameters_sobol.csv",
+#     param_dist_threshold=0.7 # 2-fold difference
+# )   
 
-tac_train_loader, _, tac_test_loader = make_loaders(
-    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_t_ac_variation"),
-    results_csv="IY011_simulation_t_ac_parameters_sobol.csv",
-    param_dist_threshold=0.7 # 2-fold difference
-)
+# tac_train_loader, _, tac_test_loader = make_loaders(
+#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_t_ac_variation"),
+#     results_csv="IY011_simulation_t_ac_parameters_sobol.csv",
+#     param_dist_threshold=0.7 # 2-fold difference
+# )
 
 
 # catch22 + SVM experiments
 # 1. Baseline
 baseline_catch22_svm_acc = run_catch22_svm(baseline_train_loader, baseline_test_loader, "Baseline")
 
-# 2. CV Variation
-cv_catch22_svm_acc = run_catch22_svm(cv_train_loader, cv_test_loader, "CV Variation")
+# # 2. CV Variation
+# cv_catch22_svm_acc = run_catch22_svm(cv_train_loader, cv_test_loader, "CV Variation")
 
-# 3. Mu Variation
-mu_catch22_svm_acc = run_catch22_svm(mu_train_loader, mu_test_loader, "Mu Variation")
+# # 3. Mu Variation
+# mu_catch22_svm_acc = run_catch22_svm(mu_train_loader, mu_test_loader, "Mu Variation")
 
-# 4. Tac Variation
-tac_catch22_svm_acc = run_catch22_svm(tac_train_loader, tac_test_loader, "Tac Variation")
+# # 4. Tac Variation
+# tac_catch22_svm_acc = run_catch22_svm(tac_train_loader, tac_test_loader, "Tac Variation")
