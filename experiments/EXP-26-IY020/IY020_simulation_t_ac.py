@@ -242,6 +242,8 @@ if not RESULTS_PATH.exists():
     print(f"Warning: Results file not found at {RESULTS_PATH}. Skipping processing.")
 else:
     df_params = pd.read_csv(RESULTS_PATH)
+    # filter out failed simulations to avoid processing errors
+    df_params = df_params[df_params['success'] == True].dropna(subset=['trajectory_filename'])
     
     # Reconstruct the list of file paths and parameter sets from the CSV
     # This ensures we process exactly what was just simulated

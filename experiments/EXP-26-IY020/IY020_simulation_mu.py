@@ -65,9 +65,9 @@ time_points = np.arange(0, 3000, 1.0)
 # Results log CSV
 results_path = os.path.join(data_dir, "IY020_simulation_mu_parameters_sobol.csv")
 # start fresh if exists
-if os.path.exists(results_path):
-    os.remove(results_path)
-    # subprocess.run(['sudo', 'rm', results_path], check=True)
+# if os.path.exists(results_path):
+#     os.remove(results_path)
+#     subprocess.run(['sudo', 'rm', results_path], check=True)
 
 # -----------------------------------------------------------------------------
 # Simulation loop
@@ -169,8 +169,8 @@ for combination_idx, (mu, t_ac, cv) in enumerate(
                 tmp_path = tmp_file.name
                 trajectory_df.to_csv(tmp_path, index=False)
             # Move temp file to final location with sudo
-            # subprocess.run(['sudo', 'mv', tmp_path, trajectory_path], check=True)
-            # subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', trajectory_path], check=True)
+            subprocess.run(['sudo', 'mv', tmp_path, trajectory_path], check=True)
+            subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', trajectory_path], check=True)
         
         record["trajectory_filename"] = trajectory_filename
 
@@ -239,10 +239,12 @@ if not RESULTS_PATH.exists():
     print(f"Warning: Results file not found at {RESULTS_PATH}. Skipping processing.")
 else:
     df_params = pd.read_csv(RESULTS_PATH)
+    #filter for successful simulations only
+    df_params = df_params[df_params["success"] == True].dropna(subset=["trajectory_filename"])
     
     # Reconstruct the list of file paths and parameter sets from the CSV
     # This ensures we process exactly what was just simulated
-    traj_paths = [DATA_ROOT / fname for fname in df_params['trajectory_filename']]
+    traj_paths = [DATA_ROOT / str(fname) for fname in df_params['trajectory_filename']]
     
     # Rebuild the parameter_sets list needed for find_steady_state
     # Structure: List of [ { "sigma_b": ..., "rho": ... } ]
