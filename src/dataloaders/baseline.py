@@ -69,8 +69,8 @@ def baseline_data_prep(
     all_file_paths, 
     batch_size=64, 
     num_groups_train=10000, 
-    num_groups_val=1000, 
-    num_groups_test=1000, 
+    num_groups_val=None,
+    num_groups_test=None,
     num_traj=2,
     pos_ratio=0.5,
     seed=42,
@@ -78,8 +78,13 @@ def baseline_data_prep(
     separator_val=-100.0,
     param_dist_threshold=0.7,
     sample_len=None,
+    stack_axis=0,
     verbose=False
 ):
+    if num_groups_val is None:
+        num_groups_val = num_groups_train // 5
+    if num_groups_test is None: 
+        num_groups_test = num_groups_train // 5
     # 1. Split FILES (Zero Leakage)
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
     train_files, val_files  = train_test_split(train_files, test_size=0.2, random_state=seed)
@@ -95,7 +100,7 @@ def baseline_data_prep(
         num_traj=num_traj, pos_ratio=pos_ratio, 
         separator_len=separator_len, separator_val=separator_val,
         param_dist_threshold=param_dist_threshold, sample_len=sample_len,
-        stack_axis=0 # Baseline always stacks in time (0)
+        stack_axis=stack_axis
     )
     
     val_ds = BaselineDataset(
@@ -103,7 +108,7 @@ def baseline_data_prep(
         num_traj=num_traj, pos_ratio=pos_ratio, 
         separator_len=separator_len, separator_val=separator_val,
         param_dist_threshold=param_dist_threshold, sample_len=sample_len,
-        stack_axis=0
+        stack_axis=stack_axis
     )
     
     test_ds = BaselineDataset(
@@ -111,7 +116,7 @@ def baseline_data_prep(
         num_traj=num_traj, pos_ratio=pos_ratio, 
         separator_len=separator_len, separator_val=separator_val,
         param_dist_threshold=param_dist_threshold, sample_len=sample_len,
-        stack_axis=0
+        stack_axis=stack_axis
     )
     
     # 3. DataLoaders
@@ -120,4 +125,4 @@ def baseline_data_prep(
     val_loader   = DataLoader(val_ds,   batch_size=batch_size, shuffle=False, num_workers=4)
     test_loader  = DataLoader(test_ds,  batch_size=batch_size, shuffle=False, num_workers=4)
     
-    return train_loader, val_loader, test_loader, None
+    return train_loader, val_loader, test_loader

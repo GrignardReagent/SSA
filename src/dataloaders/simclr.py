@@ -13,7 +13,7 @@ class SimCLR_Dataset(Dataset):
     3. Handles corrupt/empty files by retrying with a random file.
     """
     def __init__(self, file_paths, labels=None, training=True, sample_len=400, 
-                 log_scale=True, instance_norm=True, num_traj=1, 
+                 log_scale=False, instance_norm=True, num_traj=1, 
                  separator_len=1, separator_val=-100.0):
         self.file_paths = file_paths
         # If labels aren't provided, just use dummy 0s (SimCLR doesn't use them for training)
