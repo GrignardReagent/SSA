@@ -189,7 +189,7 @@ def ssl_data_prep(
     )
 
     # 4. Loaders
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4)
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, drop_last=True)
     val_loader   = DataLoader(val_ds,   batch_size=batch_size, shuffle=False, num_workers=4)
     test_loader  = DataLoader(test_ds,  batch_size=batch_size, shuffle=False, num_workers=4)
     

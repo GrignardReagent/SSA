@@ -29,11 +29,11 @@ TRAJ_PATH = [DATA_ROOT / df_params['trajectory_filename'].values[i] for i in ran
 TRAJ_NPZ_PATH = [traj_file.with_suffix('.npz') for traj_file in TRAJ_PATH]
 
 # === Dataloader hyperparams & data prep ===
-batch_size = 16
+batch_size = 2048
 num_traj=1 # number of trajectories per view
-sample_len=None
+sample_len=500
 log_scale = False 
-instance_norm = False
+instance_norm = True
 
 train_loader, val_loader, test_loader = ssl_data_prep(
     TRAJ_NPZ_PATH,
@@ -66,42 +66,42 @@ model = SSL_Transformer(
 # === Model hyperparams ===
 
 # === Training hyperparams ===
-epochs = 200
-patience = epochs // 3  # SSL may benefit from high patience
+epochs = 500
+patience = epochs // 3
 lr = 1e-2  # Reduced from 1e-3 to prevent divergence with unnormalized data
 optimizer = optim.Adam(model.parameters(), lr=lr)
 
-scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+# scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
 # simple scheduler choice
 # scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience= patience // 3, factor=0.5) 
 # cosine scheduler with warmup, most commonly used for transformer
-# total_steps = epochs * len(train_loader)
-# warmup_steps = int(0.1 * total_steps)   # 10% warmup (good default)
-# from transformers import get_cosine_schedule_with_warmup
-# scheduler = get_cosine_schedule_with_warmup(
-#     optimizer,
-#     num_warmup_steps=warmup_steps,
-#     num_training_steps=total_steps,
-# ) 
+warmup_steps = int(0.1 * epochs)   # 10% warmup (good default) - LR will increase linearly for the first 10% of training, then follow cosine decay for the remaining 90% of training. This helps stabilize training in the early stages and can lead to better convergence.
+from transformers import get_cosine_schedule_with_warmup
+scheduler = get_cosine_schedule_with_warmup(
+    optimizer,
+    num_warmup_steps=warmup_steps,
+    num_training_steps=epochs,
+) 
 
 nce_temp = 0.2
 loss_fn = InfoNCE(negative_mode='unpaired', temperature=nce_temp)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-grad_clip = 1.0
+grad_clip = None
 verbose = True
 
 model.to(device)
 # === Training hyperparams ===
-
-model_path = f'IY017_simCLR_b{batch_size}_lr{lr}_d{dropout}_L{num_layers}_H{nhead}_D{d_model}_model.pth'
-# checkpoint save path
-save_path = model_path
+from datetime import datetime
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+save_path = f'IY017_simCLR_b{batch_size}_lr{lr}_L{num_layers}_H{nhead}_D{d_model}_{timestamp}_model.pth'
+# # checkpoint save path
+# save_path = model_path
 
 # === wandb config (required for tracking within train_model) ===
 wandb_config = {
     "entity": "grignard-reagent",
     "project": "IY017-SSL-model",
-    "name": f"simCLR_b{batch_size}_lr{lr}_d{dropout}_L{num_layers}_H{nhead}_D{d_model}_trj{num_traj} (no early stopping, no scheduler)", # change this to what you want
+    "name": f"simCLR_b{batch_size}_lr{lr}_d{dropout}_L{num_layers}_H{nhead}_D{d_model}_trj{num_traj}_len{sample_len}_{timestamp}", # change this to what you want
     "dataset": DATA_ROOT.name,
     "batch_size": batch_size,
     "input_size": input_size,
@@ -123,7 +123,7 @@ wandb_config = {
     "sample_len": sample_len,
     "log_scale" : log_scale,
     "instance_norm": instance_norm,
-    "model_path": model_path,
+    "save_path": save_path,
     "nce_temp": nce_temp,
     "grad_clip": grad_clip,
 }
@@ -149,7 +149,7 @@ history = train_ssl_model(
 )
 
 # save the trained model
-torch.save(model.state_dict(), model_path)
+# torch.save(model.state_dict(), model_path)
 
 # clear cuda cache
 torch.cuda.empty_cache()

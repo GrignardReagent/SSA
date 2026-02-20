@@ -1,0 +1,50 @@
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run bja25jq3
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY017/wandb/run-20260220_134220-bja25jq3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simCLR_b2048_lr0.01_d0.01_L2_H4_D16_trj1_len500_20260220_134219
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY017-SSL-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY017-SSL-model/runs/bja25jq3
+Starting SSL training...
+Traceback (most recent call last):
+  File "/home/ianyang/stochastic_simulations/experiments/EXP-26-IY017/IY017_simclr_training_2.py", line 133, in <module>
+    history = train_ssl_model(
+              ^^^^^^^^^^^^^^^^
+  File "/home/ianyang/stochastic_simulations/src/training/train.py", line 478, in train_ssl_model
+    z1, z2 = model(X1_batch, X2_batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/stochastic_simulations/src/models/ssl_transformer.py", line 43, in forward
+    h1 = self.backbone.encode(x1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/stochastic_simulations/src/models/transformer.py", line 79, in encode
+    x = self.encoder(x, src_key_padding_mask=src_key_padding_mask)  # mask: [B,T] boolean True = ignore this position
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py", line 514, in forward
+    output = mod(
+             ^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/torch/nn/modules/transformer.py", line 881, in forward
+    return torch._transformer_encoder_layer_fwd(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.60 GiB. GPU 0 has a total capacity of 7.60 GiB of which 2.48 GiB is free. Including non-PyTorch memory, this process has 5.02 GiB memory in use. Of the allocated memory 247.80 MiB is allocated by PyTorch, and 4.62 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msimCLR_b2048_lr0.01_d0.01_L2_H4_D16_trj1_len500_20260220_134219[0m at: [34mhttps://wandb.ai/grignard-reagent/IY017-SSL-model/runs/bja25jq3[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20260220_134220-bja25jq3/logs[0m
