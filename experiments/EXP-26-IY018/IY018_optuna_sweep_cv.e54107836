@@ -1,0 +1,2792 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+[I 2026-02-03 06:11:47,947] A new study created in memory with name: IY018_Bayesian
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run yaspjrpa
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_061154-yaspjrpa
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial0_[CV-Variation]_L1_H8_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/yaspjrpa
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 70-71
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇██
+wandb:  grad/norm ▁▁▂▂▃▅▆▄▄▅▆▇█▄▄▅▅▅▃▃▃▃▃▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▂▃▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇████████████████
+wandb: train/loss ███▇▇▇▆▆▅▅▅▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▂▂▃▄▅▅▆▆▇▇▇▇▇████████████████████████
+wandb:   val/loss ███▇▇▆▆▆▅▅▄▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.65167
+wandb:             epoch 43
+wandb:         grad/norm 0.35934
+wandb:                lr 0.0
+wandb:         train/acc 0.67533
+wandb:        train/loss 0.62122
+wandb: training_time_sec 1270.65912
+wandb:           val/acc 0.65
+wandb:          val/loss 0.63399
+wandb: 
+wandb: 🚀 View run Trial0_[CV-Variation]_L1_H8_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/yaspjrpa
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_061154-yaspjrpa/logs
+[I 2026-02-03 06:33:08,359] Trial 0 finished with value: 0.6516666666666666 and parameters: {'nhead': 8, 'num_layers': 1, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.00010710947934957557, 'dropout': 0.09848388537631303}. Best is trial 0 with value: 0.6516666666666666.
+wandb: setting up run a50bxoh3
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_063308-a50bxoh3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial1_[CV-Variation]_L3_H4_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a50bxoh3
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb:  grad/norm ▃▁▁▁▁▁▁▁▁▁▃█▇▆▅▆▇█▆████████
+wandb:         lr ███████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▂▁▁▁▂▄▆▇▇▇▇▇▇█████████
+wandb: train/loss █▆▆▆▆▆▆▆▆▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▂▁▁▂▁▅█████████▇█▇▇▇▇▇
+wandb:   val/loss ▅▅▅▅▅▅▅▅▅▅▄▁▁▁▂▂▂▂▃▄▅▅▇▇███
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.72167
+wandb:             epoch 27
+wandb:         grad/norm 1.0
+wandb:                lr 0.00051
+wandb:         train/acc 0.80167
+wandb:        train/loss 0.46048
+wandb: training_time_sec 1272.64955
+wandb:           val/acc 0.69333
+wandb:          val/loss 0.78332
+wandb: 
+wandb: 🚀 View run Trial1_[CV-Variation]_L3_H4_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a50bxoh3
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_063308-a50bxoh3/logs
+[I 2026-02-03 06:54:23,430] Trial 1 finished with value: 0.7216666666666667 and parameters: {'nhead': 4, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.004096825427614156, 'dropout': 0.18399295858399545}. Best is trial 1 with value: 0.7216666666666667.
+wandb: setting up run h3dqe3bz
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_065423-h3dqe3bz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial2_[CV-Variation]_L2_H4_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/h3dqe3bz
+wandb: updating run metadata
+wandb: uploading output.log
+wandb: uploading summary, console lines 33-34
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▃▃▃▄▄▅▅▆▆▆▇▇██
+wandb:  grad/norm ▅▅▅▁▆█▇██████▇██▆█
+wandb:         lr ██████▃▃▃▃▃▃▁▁▁▁▁▁
+wandb:  train/acc ▁▄▇▇▇▇▇▇██████████
+wandb: train/loss █▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▆█▆▆▆▅▅▅▅▅▅▅▆▆▆▆
+wandb:   val/loss █▃▃▁▂▃▃▅▄▄▅▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.84667
+wandb:             epoch 18
+wandb:         grad/norm 1.0
+wandb:                lr 0.00121
+wandb:         train/acc 0.82867
+wandb:        train/loss 0.35477
+wandb: training_time_sec 624.26118
+wandb:           val/acc 0.74667
+wandb:          val/loss 0.56282
+wandb: 
+wandb: 🚀 View run Trial2_[CV-Variation]_L2_H4_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/h3dqe3bz
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_065423-h3dqe3bz/logs
+[I 2026-02-03 07:04:50,201] Trial 2 finished with value: 0.8466666666666667 and parameters: {'nhead': 4, 'num_layers': 2, 'd_model': 128, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.0048228868945328525, 'dropout': 0.04052695118537403}. Best is trial 2 with value: 0.8466666666666667.
+wandb: setting up run xs55h0xc
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_070450-xs55h0xc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial3_[CV-Variation]_L1_H4_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/xs55h0xc
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▁▁▂▄▇██▇▇▇▇▆▆▄▄▄▄▄▄▄▄▄
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁
+wandb:  train/acc ▁▂▅▆▇▇▇▇██▇▇███▇▇▇▇███
+wandb: train/loss ██▇▆▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:    val/acc ▁█▅▅▆▇▇███▇▇▇▇▇▇▇▇█▇▇▇
+wandb:   val/loss ██▇▆▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.61333
+wandb:             epoch 22
+wandb:         grad/norm 0.22614
+wandb:                lr 6e-05
+wandb:         train/acc 0.615
+wandb:        train/loss 0.63433
+wandb: training_time_sec 354.5838
+wandb:           val/acc 0.605
+wandb:          val/loss 0.63563
+wandb: 
+wandb: 🚀 View run Trial3_[CV-Variation]_L1_H4_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/xs55h0xc
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_070450-xs55h0xc/logs
+[I 2026-02-03 07:10:46,942] Trial 3 finished with value: 0.6133333333333333 and parameters: {'nhead': 4, 'num_layers': 1, 'd_model': 16, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.0004548597417446699, 'dropout': 0.28641914845230326}. Best is trial 2 with value: 0.8466666666666667.
+wandb: setting up run 85q5ig5y
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_071047-85q5ig5y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial4_[CV-Variation]_L1_H2_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/85q5ig5y
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇▇▇████
+wandb:  grad/norm ▁▄██████████████████████████████████████
+wandb:         lr ████▄▄▄▄▃▃▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▄▄▅▆▇▇▇▇██████████████████████████████
+wandb: train/loss █▇▇▆▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▂▄▅▆▆▇▇█▇██▇██████████████████████████
+wandb:   val/loss █▇▇▇▅▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.85333
+wandb:             epoch 58
+wandb:         grad/norm 1.0
+wandb:                lr 0.0
+wandb:         train/acc 0.90467
+wandb:        train/loss 0.2596
+wandb: training_time_sec 461.50034
+wandb:           val/acc 0.85333
+wandb:          val/loss 0.41594
+wandb: 
+wandb: 🚀 View run Trial4_[CV-Variation]_L1_H2_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/85q5ig5y
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_071047-85q5ig5y/logs
+[I 2026-02-03 07:18:30,544] Trial 4 finished with value: 0.8533333333333334 and parameters: {'nhead': 2, 'num_layers': 1, 'd_model': 32, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.001138085115448208, 'dropout': 0.4995992054793578}. Best is trial 4 with value: 0.8533333333333334.
+wandb: setting up run 5fjdtbja
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_071830-5fjdtbja
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial5_[CV-Variation]_L1_H2_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5fjdtbja
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▃▃▃▄▅▅▅▆▇▇▇█
+wandb:  grad/norm █▂▂▂▁▂▁▂▁▂▁▁▁▁▁
+wandb:         lr ███████▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁██████████████
+wandb: train/loss █▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   val/loss ▁▇█████████████
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.49
+wandb:             epoch 15
+wandb:         grad/norm 0.05338
+wandb:                lr 8e-05
+wandb:         train/acc 0.51833
+wandb:        train/loss 0.69257
+wandb: training_time_sec 122.65344
+wandb:           val/acc 0.49
+wandb:          val/loss 0.69466
+wandb: 
+wandb: 🚀 View run Trial5_[CV-Variation]_L1_H2_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5fjdtbja
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_071830-5fjdtbja/logs
+[I 2026-02-03 07:20:35,412] Trial 5 finished with value: 0.49 and parameters: {'nhead': 2, 'num_layers': 1, 'd_model': 16, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0001523891649238909, 'dropout': 0.49114479628211216}. Best is trial 4 with value: 0.8533333333333334.
+wandb: setting up run kna0cb0e
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_072035-kna0cb0e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial6_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/kna0cb0e
+wandb: updating run metadata
+wandb: uploading summary, console lines 75-76; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▂▁█████████████████████████████████████
+wandb:         lr ██████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▂▃▃▄▄▅▆▇▇▇▇▇███████████████████████████
+wandb: train/loss ███▇▆▆▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▃▃▄▅▆▇▇▇▇█▇▇▇█████████████████████████
+wandb:   val/loss ██▇▇▆▅▄▃▂▂▃▂▂▂▂▂▁▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.88667
+wandb:             epoch 45
+wandb:         grad/norm 1.0
+wandb:                lr 0.0
+wandb:         train/acc 0.935
+wandb:        train/loss 0.17224
+wandb: training_time_sec 764.58549
+wandb:           val/acc 0.88333
+wandb:          val/loss 0.26911
+wandb: 
+wandb: 🚀 View run Trial6_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/kna0cb0e
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_072035-kna0cb0e/logs
+[I 2026-02-03 07:33:22,082] Trial 6 finished with value: 0.8866666666666667 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.00021149043387329417, 'dropout': 0.05247318690434216}. Best is trial 6 with value: 0.8866666666666667.
+wandb: setting up run 018xq66a
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_073322-018xq66a
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial7_[CV-Variation]_L1_H4_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/018xq66a
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▃▃▄▄▅▅▆▆▇▇██
+wandb:  grad/norm █▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         lr ██████▃▃▃▃▃▃▁▁▁▁
+wandb:  train/acc ▁▂▅▃▃▃▄▄▅▅▆▆▇▇██
+wandb: train/loss █▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▃█▁▁▁▁▃▄▄▅▅▆▆▆▆▇
+wandb:   val/loss █▃▅▅▄▄▃▃▃▃▂▂▂▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.575
+wandb:             epoch 16
+wandb:         grad/norm 0.07165
+wandb:                lr 3e-05
+wandb:         train/acc 0.59
+wandb:        train/loss 0.68707
+wandb: training_time_sec 262.2186
+wandb:           val/acc 0.55833
+wandb:          val/loss 0.68983
+wandb: 
+wandb: 🚀 View run Trial7_[CV-Variation]_L1_H4_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/018xq66a
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_073322-018xq66a/logs
+[I 2026-02-03 07:37:46,525] Trial 7 finished with value: 0.575 and parameters: {'nhead': 4, 'num_layers': 1, 'd_model': 16, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.00013818727411941161, 'dropout': 0.10971031199662734}. Best is trial 6 with value: 0.8866666666666667.
+wandb: setting up run jyy4x1tt
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_073746-jyy4x1tt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial8_[CV-Variation]_L2_H2_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jyy4x1tt
+wandb: uploading data; updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb:  grad/norm ▁▄▃████████████████████████
+wandb:         lr ███████████▃▃▃▃▃▃▃▃▃▃▁▁▁▁▁▁
+wandb:  train/acc ▁▂▃▃▄▆▆▆▇▇▇▇███▇█▇█▇███████
+wandb: train/loss ███▇▆▄▄▄▃▃▂▂▂▂▂▂▂▂▁▂▂▁▁▁▁▁▁
+wandb:    val/acc ▁▂▂▂▄▅▇▇▇▇▇▇███▆█▇█▇▇██████
+wandb:   val/loss ▄▄▄▃▃▅▂▁▃▃▃▄▁▃▃█▃▅▄▇▅▆▅▆▅▅▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.865
+wandb:             epoch 27
+wandb:         grad/norm 1.0
+wandb:                lr 0.00022
+wandb:         train/acc 0.945
+wandb:        train/loss 0.15468
+wandb: training_time_sec 435.09222
+wandb:           val/acc 0.84667
+wandb:          val/loss 0.85701
+wandb: 
+wandb: 🚀 View run Trial8_[CV-Variation]_L2_H2_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jyy4x1tt
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_073746-jyy4x1tt/logs
+[I 2026-02-03 07:45:03,685] Trial 8 finished with value: 0.865 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 32, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.0008649065398459803, 'dropout': 0.44314328207167697}. Best is trial 6 with value: 0.8866666666666667.
+wandb: setting up run 9zoghf58
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_074503-9zoghf58
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial9_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/9zoghf58
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 78-79
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▁▁▁▅▄████████▇█████████████████████
+wandb:         lr ██████▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▁▂▅▇█████████████████████████████
+wandb: train/loss ████████▇▅▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▃▃▇██████████████████████████████
+wandb:   val/loss ████████▇▄▂▁▂▁▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94833
+wandb:             epoch 44
+wandb:         grad/norm 1.0
+wandb:                lr 3e-05
+wandb:         train/acc 0.97567
+wandb:        train/loss 0.07863
+wandb: training_time_sec 4069.52174
+wandb:           val/acc 0.945
+wandb:          val/loss 0.16049
+wandb: 
+wandb: 🚀 View run Trial9_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/9zoghf58
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_074503-9zoghf58/logs
+[I 2026-02-03 08:52:55,523] Trial 9 finished with value: 0.9483333333333334 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0034138975855126106, 'dropout': 0.08694240825984184}. Best is trial 9 with value: 0.9483333333333334.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_085255-559sig0p
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial10_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/559sig0p
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▂▁▅████████████████████████████████▇
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▂▅▆▆▇▇████████████████████████████
+wandb: train/loss █▇▇▇▅▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▃▆▅▆▇█████████████████████████████
+wandb:   val/loss ███▇▅▆▅▃▁▂▂▂▂▁▂▁▂▂▂▂▂▂▂▂▂▂▃▂▃▃▃▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.90833
+wandb:             epoch 37
+wandb:         grad/norm 0.91463
+wandb:                lr 0.00015
+wandb:         train/acc 0.965
+wandb:        train/loss 0.09375
+wandb: training_time_sec 3440.66346
+wandb:           val/acc 0.89333
+wandb:          val/loss 0.45105
+wandb: 
+wandb: 🚀 View run Trial10_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/559sig0p
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_085255-559sig0p/logs
+[I 2026-02-03 09:50:18,403] Trial 10 finished with value: 0.9083333333333333 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.009843718234576858, 'dropout': 0.3018063897323008}. Best is trial 9 with value: 0.9483333333333334.
+wandb: setting up run 45x7l0sj
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_095018-45x7l0sj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial11_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/45x7l0sj
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: uploading summary, console lines 62-63
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▇▆█▅████████▇███████████████████████
+wandb:         lr ██████▄▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▂▃▃▄▄▅▆▆▆▇▆▇▇▇▇█████████████████████
+wandb: train/loss ██▇▇▆▆▆▅▄▄▃▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▃▃▄▄▆▄▅▇▆▅▇▇▆▆▆▇▆█████████████▇▇▇▇▇
+wandb:   val/loss ▆▆▅▅▅▆▄█▇▂▄▆▃▂▄▄▄▄▄▁▁▁▁▁▂▂▂▂▂▂▂▂▄▄▃▃▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.93167
+wandb:             epoch 37
+wandb:         grad/norm 1.0
+wandb:                lr 0.00028
+wandb:         train/acc 0.97467
+wandb:        train/loss 0.06471
+wandb: training_time_sec 3438.52601
+wandb:           val/acc 0.89167
+wandb:          val/loss 0.48579
+wandb: 
+wandb: 🚀 View run Trial11_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/45x7l0sj
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_095018-45x7l0sj/logs
+[I 2026-02-03 10:47:39,474] Trial 11 finished with value: 0.9316666666666666 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.008871069256517082, 'dropout': 0.30661671030363197}. Best is trial 9 with value: 0.9483333333333334.
+wandb: setting up run x28i2pb7
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_104739-x28i2pb7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial12_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/x28i2pb7
+wandb: updating run metadata
+wandb: uploading wandb-summary.json
+wandb: uploading summary, console lines 67-68
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▆█▄████████████████▄█▄▆▇█▇██████
+wandb:         lr ███████████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▂▆▇▇▇▇██████████████████████████
+wandb: train/loss █████▇▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▄▇▇▆▇▇▇▇████████████████████████
+wandb:   val/loss ▅▅▅▅▅█▃▂▄▃▂▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95167
+wandb:             epoch 37
+wandb:         grad/norm 1.0
+wandb:                lr 8e-05
+wandb:         train/acc 0.97033
+wandb:        train/loss 0.08926
+wandb: training_time_sec 4581.24295
+wandb:           val/acc 0.945
+wandb:          val/loss 0.16417
+wandb: 
+wandb: 🚀 View run Trial12_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/x28i2pb7
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_104739-x28i2pb7/logs
+[I 2026-02-03 12:04:03,177] Trial 12 finished with value: 0.9516666666666667 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0026436683742502277, 'dropout': 0.3673965435037523}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run 1ldt6mn2
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_120403-1ldt6mn2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial13_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/1ldt6mn2
+wandb: updating run metadata
+wandb: uploading output.log
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm █▅▃▄▂▄▄▃▃▃▃▃▂▂▂▃▂▁▁▁▁▁▁▁▁
+wandb:         lr ██████████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁
+wandb:  train/acc ▁▅▅▆▇▃▄▅▇▇▇▅█▇█▆█████████
+wandb: train/loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▁▁▁██▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   val/loss ▅▅▆▆█▆▅▂▂▂▁▁▂▁▂▂▁▅▅▅▅▆▅▆▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.51
+wandb:             epoch 25
+wandb:         grad/norm 0.02774
+wandb:                lr 0.00026
+wandb:         train/acc 0.51833
+wandb:        train/loss 0.69258
+wandb: training_time_sec 3136.06301
+wandb:           val/acc 0.49
+wandb:          val/loss 0.69457
+wandb: 
+wandb: 🚀 View run Trial13_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/1ldt6mn2
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_120403-1ldt6mn2/logs
+[I 2026-02-03 12:56:21,666] Trial 13 finished with value: 0.51 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0020880470783897214, 'dropout': 0.3617387930881024}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run a3oddnix
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_125622-a3oddnix
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial14_[CV-Variation]_L4_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a3oddnix
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▃▇▆▁▁▁▁▂██▅███████████████████
+wandb:         lr █████████▃▃▃▃▃▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▂▂▃▇▇█▇███████████▇██▇▅
+wandb: train/loss █▅▅▅▅▅▅▅▆▅▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▃▁▂▂▄
+wandb:    val/acc ▁▁▁▁▁▁▁▁▃▆▇▇▇▆██▇█▇▇▇▇▇▇▆▆▇▇▆▅
+wandb:   val/loss ▅▅▅▅▅▅▅▅▄▃▂▂▂▄▂▁▅▃▅▄▄▄▄▄█▄▄▅▆▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.89333
+wandb:             epoch 30
+wandb:         grad/norm 1.0
+wandb:                lr 0.00066
+wandb:         train/acc 0.73333
+wandb:        train/loss 0.54944
+wandb: training_time_sec 3749.39983
+wandb:           val/acc 0.71333
+wandb:          val/loss 0.6252
+wandb: 
+wandb: 🚀 View run Trial14_[CV-Variation]_L4_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a3oddnix
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_125622-a3oddnix/logs
+[I 2026-02-03 13:58:53,421] Trial 14 finished with value: 0.8933333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 128, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0026319407515734325, 'dropout': 0.21588310006889627}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run hp8gq0q5
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_135853-hp8gq0q5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial15_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/hp8gq0q5
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▁▁▁▂█████████████████████
+wandb:         lr ███████▄▄▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▂▃▄▇▇▇▇████████████████
+wandb: train/loss █████████▆▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▂▄▄▇▇████▇▇▅▅▅▅██████▇▇
+wandb:   val/loss ▅▅▅▅▅▅▅▅▅█▃▃▂▁▁▂▃▃▅▇▇▇▁▁▁▁▁▁▂▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.88167
+wandb:             epoch 30
+wandb:         grad/norm 1.0
+wandb:                lr 9e-05
+wandb:         train/acc 0.94733
+wandb:        train/loss 0.13245
+wandb: training_time_sec 3730.58551
+wandb:           val/acc 0.81
+wandb:          val/loss 0.45243
+wandb: 
+wandb: 🚀 View run Trial15_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/hp8gq0q5
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_135853-hp8gq0q5/logs
+[I 2026-02-03 15:01:06,142] Trial 15 finished with value: 0.8816666666666667 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 32, 'use_conv1d': True, 'lr': 0.0014571308500683714, 'dropout': 0.39866991546733627}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run ljxhiua2
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_150106-ljxhiua2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial16_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ljxhiua2
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▁▂▁▁▁▁███████████████▅▅▅▅████▇█▅▅▅▆▅█▅▆
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▄▇▇██▇███████████████████████████
+wandb: train/loss ██████▇▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▂▂▂▂▂▁▇▇█▇▇████████████████████████████
+wandb:   val/loss ██████▄▃▁▂▃▁▁▁▁▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 39
+wandb:         grad/norm 0.72511
+wandb:                lr 7e-05
+wandb:         train/acc 0.98167
+wandb:        train/loss 0.05978
+wandb: training_time_sec 4820.67904
+wandb:           val/acc 0.945
+wandb:          val/loss 0.17907
+wandb: 
+wandb: 🚀 View run Trial16_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ljxhiua2
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_150106-ljxhiua2/logs
+[I 2026-02-03 16:21:28,997] Trial 16 finished with value: 0.95 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.004541591657152478, 'dropout': 0.16553622831178827}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run 2ctnblj5
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_162129-2ctnblj5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial17_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2ctnblj5
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇██
+wandb:  grad/norm ▂▁▁▁▁▁▁▁▂███▆███████████████████████████
+wandb:         lr ███████▄▄▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▂▂▃▃▃▄▄▆▆▇▇▇▇████████████████████
+wandb: train/loss ██████████▇▇▆▆▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▁▂▂▃▄▄▅▅▄▇▆▆▆▇▆██████▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:   val/loss ██████████▇▆▆▅▅▇▃▄▄▄▂▅▁▁▁▁▁▁▃▄▂▂▂▂▃▃▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.88167
+wandb:             epoch 41
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.91467
+wandb:        train/loss 0.21542
+wandb: training_time_sec 5063.00038
+wandb:           val/acc 0.82833
+wandb:          val/loss 0.40497
+wandb: 
+wandb: 🚀 View run Trial17_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2ctnblj5
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_162129-2ctnblj5/logs
+[I 2026-02-03 17:45:54,275] Trial 17 finished with value: 0.8816666666666667 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0006296031079536644, 'dropout': 0.16819527282704905}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run zf9d9j12
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_174554-zf9d9j12
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial18_[CV-Variation]_L4_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/zf9d9j12
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: uploading summary, console lines 30-31
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▃▃▃▄▅▅▅▆▇▇▇█
+wandb:  grad/norm ▅▃▃▅▁█▂▃▂▁▁▁▁▁▁
+wandb:         lr ███████▃▃▃▃▃▃▁▁
+wandb:  train/acc ▁▂▁▄▂▆▁▅▂▆▇▇▆▆█
+wandb: train/loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ██▁███▁█▁▁▁▁▁▁▁
+wandb:   val/loss ▄█▁▁▁▂▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.51
+wandb:             epoch 15
+wandb:         grad/norm 0.05385
+wandb:                lr 0.0014
+wandb:         train/acc 0.51833
+wandb:        train/loss 0.69268
+wandb: training_time_sec 1937.62724
+wandb:           val/acc 0.49
+wandb:          val/loss 0.69394
+wandb: 
+wandb: 🚀 View run Trial18_[CV-Variation]_L4_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/zf9d9j12
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_174554-zf9d9j12/logs
+[I 2026-02-03 18:18:15,454] Trial 18 finished with value: 0.51 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 128, 'batch_size': 32, 'use_conv1d': True, 'lr': 0.005603337399223414, 'dropout': 0.24890835650729226}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run bwa77w8n
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_181815-bwa77w8n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial19_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/bwa77w8n
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▂▁▁▁▁▃▆▄▅███████████████████████████████
+wandb:         lr ██████████▄▄▄▄▄▄▄▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▂▂▃▄▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇█████████████████
+wandb: train/loss █████▇▇▆▆▆▅▅▄▅▄▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▂▂▂▃▄▄▅▅▅▅▅▅▄▅▆▆▆▆▆▇▇▇▇█▇█████████████
+wandb:   val/loss ▅▅▅▅▅▅▄▄▄▃▄▃▄▄▇█▅█▆▆▆▇▇▄▄▄▄▃▄▁▂▁▁▃▃▁▁▂▂▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.9
+wandb:             epoch 56
+wandb:         grad/norm 1.0
+wandb:                lr 3e-05
+wandb:         train/acc 0.95667
+wandb:        train/loss 0.11549
+wandb: training_time_sec 6866.00867
+wandb:           val/acc 0.895
+wandb:          val/loss 0.46774
+wandb: 
+wandb: 🚀 View run Trial19_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/bwa77w8n
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_181815-bwa77w8n/logs
+[I 2026-02-03 20:12:43,876] Trial 19 finished with value: 0.9 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 128, 'use_conv1d': True, 'lr': 0.0018362313583328667, 'dropout': 0.3614867958796375}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run kz716qdj
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_201244-kz716qdj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial20_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/kz716qdj
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▇███▇▅▇▅████████████████████
+wandb:         lr ███████████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▂▆▇▇▇▇▇▇████████████████████
+wandb: train/loss █▇▇▇▇▄▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▂▅▅▆▇▇█▇▇████████████████████
+wandb:   val/loss ████▆█▆▂▃▁▃▃▁▁▁▁▁▁▂▁▂▂▂▃▂▂▂▂▃▃▁▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.91333
+wandb:             epoch 32
+wandb:         grad/norm 1.0
+wandb:                lr 0.0004
+wandb:         train/acc 0.967
+wandb:        train/loss 0.09215
+wandb: training_time_sec 3973.66778
+wandb:           val/acc 0.91
+wandb:          val/loss 0.31714
+wandb: 
+wandb: 🚀 View run Trial20_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/kz716qdj
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_201244-kz716qdj/logs
+[I 2026-02-03 21:18:59,907] Trial 20 finished with value: 0.9133333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.00640035551700341, 'dropout': 0.360483685276077}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run 5meurfm7
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_211900-5meurfm7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial21_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5meurfm7
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▁▁▁▂██▇██████████████████▇█▇███████
+wandb:         lr █████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▁▂▅▇▇▇█▇█████████████████████████
+wandb: train/loss █████████▅▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▂▁▄▃▆▇█▇██████████████████████████
+wandb:   val/loss █████████▆▄▂▁▂▁▁▁▁▁▂▂▂▂▂▂▂▁▁▁▁▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.90333
+wandb:             epoch 49
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.97067
+wandb:        train/loss 0.08671
+wandb: training_time_sec 4522.44978
+wandb:           val/acc 0.90333
+wandb:          val/loss 0.33476
+wandb: 
+wandb: 🚀 View run Trial21_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5meurfm7
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_211900-5meurfm7/logs
+[I 2026-02-03 22:34:24,623] Trial 21 finished with value: 0.9033333333333333 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0033972492845150146, 'dropout': 0.12707543516208294}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run a71jgezy
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_223424-a71jgezy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial22_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a71jgezy
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:  grad/norm ▁▂▁▁▁███▆███████████████████████████████
+wandb:         lr ██████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▃▄▆▆▆▇▇▇▇▇▇▇███████████████████████
+wandb: train/loss █████▇▆▅▄▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▂▃▆▇▇▇▇▇██▇█████████████████████████
+wandb:   val/loss █████▇▅▂▂▃▂▂▂▂▄▁▁▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.89
+wandb:             epoch 46
+wandb:         grad/norm 1.0
+wandb:                lr 2e-05
+wandb:         train/acc 0.937
+wandb:        train/loss 0.16341
+wandb: training_time_sec 4250.1299
+wandb:           val/acc 0.88667
+wandb:          val/loss 0.30996
+wandb: 
+wandb: 🚀 View run Trial22_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/a71jgezy
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_223424-a71jgezy/logs
+[I 2026-02-03 23:45:17,019] Trial 22 finished with value: 0.89 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.003171117114212903, 'dropout': 0.15339660564038846}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run 6sj3kpo5
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260203_234517-6sj3kpo5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial23_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/6sj3kpo5
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▁▁▁▁▁▁▁▆▇██▇█▇█▇▆██▆▇▇█▇▇▇█
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▁▁▁▁▁▁▅▇██████████████████
+wandb: train/loss ████████████▅▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▂▂▂▂▂▂▂▂▂▂▁▁▇███████████████████
+wandb:   val/loss ████████████▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 32
+wandb:         grad/norm 1.0
+wandb:                lr 8e-05
+wandb:         train/acc 0.966
+wandb:        train/loss 0.09315
+wandb: training_time_sec 3983.12669
+wandb:           val/acc 0.94833
+wandb:          val/loss 0.15371
+wandb: 
+wandb: 🚀 View run Trial23_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/6sj3kpo5
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260203_234517-6sj3kpo5/logs
+[I 2026-02-04 00:51:42,450] Trial 23 finished with value: 0.95 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0025104867526722133, 'dropout': 0.06958715505760873}. Best is trial 12 with value: 0.9516666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_005142-fgzeiroe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial24_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fgzeiroe
+wandb: updating run metadata
+wandb: uploading output.log
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▁▅██████████████████████████████████
+wandb:         lr ███████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▆▆█▇██████████████████████████████
+wandb: train/loss ██████▅▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▂▆▇████████████████████████████████
+wandb:   val/loss █████▇▄▂▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.92333
+wandb:             epoch 45
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.96367
+wandb:        train/loss 0.09236
+wandb: training_time_sec 5551.12156
+wandb:           val/acc 0.92167
+wandb:          val/loss 0.21194
+wandb: 
+wandb: 🚀 View run Trial24_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fgzeiroe
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_005142-fgzeiroe/logs
+[I 2026-02-04 02:24:15,946] Trial 24 finished with value: 0.9233333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0017541969846077733, 'dropout': 0.015204198416965908}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run rqrfmhfn
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_022416-rqrfmhfn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial25_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rqrfmhfn
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▁▁████████████████████████████████
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▃▅▇▇████████████████████████████
+wandb: train/loss ███▆▅▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▆▇█▇████████████████████████████
+wandb:   val/loss ███▅▂▂▃▁▂▃▁▁▂▁▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94333
+wandb:             epoch 35
+wandb:         grad/norm 1.0
+wandb:                lr 7e-05
+wandb:         train/acc 0.97367
+wandb:        train/loss 0.0859
+wandb: training_time_sec 4338.30392
+wandb:           val/acc 0.93833
+wandb:          val/loss 0.16607
+wandb: 
+wandb: 🚀 View run Trial25_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rqrfmhfn
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_022416-rqrfmhfn/logs
+[I 2026-02-04 03:36:37,836] Trial 25 finished with value: 0.9433333333333334 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.002398793754393441, 'dropout': 0.21846232744786195}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run gxi8omeu
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_033638-gxi8omeu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial26_[CV-Variation]_L4_H8_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/gxi8omeu
+wandb: updating run metadata
+wandb: uploading wandb-summary.json
+wandb: uploading summary, console lines 86-87
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm █▄▁▁████████████████████████████████████
+wandb:         lr █████▄▄▄▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▂▄▅▅▆▆▅▆▆▇▇▆▆▇▇▇█████████████▇▇▇▇▇▇▇
+wandb: train/loss █▅▅▅▅▄▄▃▃▃▃▃▂▂▂▂▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▁▂▂▂▁
+wandb:    val/acc ▁▂▁▂▁▂▅▅▅▃▅▆▅▅▇▆▇▆▇▇▇███▆█▇█████▇▇▇▆▇▆▇▇
+wandb:   val/loss ▅▅▅▅▅▅▄▃▃█▃▃▃▃▂▄▂▂▂▂▂▁▁▁▂▁▂▁▁▁▁▁▂▂▂▂▂▂▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.78833
+wandb:             epoch 48
+wandb:         grad/norm 1.0
+wandb:                lr 5e-05
+wandb:         train/acc 0.767
+wandb:        train/loss 0.46989
+wandb: training_time_sec 5642.01222
+wandb:           val/acc 0.74167
+wandb:          val/loss 0.49489
+wandb: 
+wandb: 🚀 View run Trial26_[CV-Variation]_L4_H8_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/gxi8omeu
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_033638-gxi8omeu/logs
+[I 2026-02-04 05:10:43,530] Trial 26 finished with value: 0.7883333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 64, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.007003603008592921, 'dropout': 0.05813311674062499}. Best is trial 12 with value: 0.9516666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_051043-b0slzi5f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial27_[CV-Variation]_L4_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/b0slzi5f
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm █▂▁████████████████▄█▂▃███████
+wandb:         lr ████████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▂▄▄▅▅▆▇▇▇▇█▇███████████████
+wandb: train/loss █▇▇▆▆▆▅▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▄▅▄▅▆▆▇▇█▇▇██████████▇▇▇███
+wandb:   val/loss ███▇▆█▅▅▄▂▂▁▂▃▁▁▂▂▂▂▂▁▂▃▄▅▆▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.93333
+wandb:             epoch 30
+wandb:         grad/norm 1.0
+wandb:                lr 8e-05
+wandb:         train/acc 0.97633
+wandb:        train/loss 0.05884
+wandb: training_time_sec 3748.97083
+wandb:           val/acc 0.90667
+wandb:          val/loss 0.36358
+wandb: 
+wandb: 🚀 View run Trial27_[CV-Variation]_L4_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/b0slzi5f
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_051043-b0slzi5f/logs
+[I 2026-02-04 06:13:16,004] Trial 27 finished with value: 0.9333333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 128, 'batch_size': 32, 'use_conv1d': True, 'lr': 0.0012356914969368338, 'dropout': 0.14440248101784275}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run 07jdsz4o
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_061316-07jdsz4o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial28_[CV-Variation]_L4_H2_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/07jdsz4o
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇██
+wandb:  grad/norm ▆▅▆███▇▆▂▂▂▂▁▁▁▁▁▁▁
+wandb:         lr ███████▃▃▃▃▃▃▁▁▁▁▁▁
+wandb:  train/acc ▁▇▅▆▇▆▇▄▆██████████
+wandb: train/loss █▂▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁████▁▁▁▁▁▁▁▁▁▁▁
+wandb:   val/loss ▇█▅▂▁▁▁▁▄▄▄▄▅▅▆▆▆▆▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.51
+wandb:             epoch 19
+wandb:         grad/norm 0.03971
+wandb:                lr 0.0002
+wandb:         train/acc 0.51833
+wandb:        train/loss 0.69269
+wandb: training_time_sec 607.27883
+wandb:           val/acc 0.49
+wandb:          val/loss 0.69448
+wandb: 
+wandb: 🚀 View run Trial28_[CV-Variation]_L4_H2_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/07jdsz4o
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_061316-07jdsz4o/logs
+[I 2026-02-04 06:23:26,751] Trial 28 finished with value: 0.51 and parameters: {'nhead': 2, 'num_layers': 4, 'd_model': 16, 'batch_size': 128, 'use_conv1d': True, 'lr': 0.0007908482902779376, 'dropout': 0.009062437009901704}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run iy0mrmix
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_062327-iy0mrmix
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial29_[CV-Variation]_L4_H4_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/iy0mrmix
+wandb: uploading data; updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm ▄█▅▄▃▅▃▄▄▄▄▄▃▃▄▃▃▂▁▁▁▁▁▁▁▁
+wandb:         lr ██████████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁
+wandb:  train/acc ▃▁▃▆▆▂▄▅▄▆▇▇▄▂▃▅▄▆████████
+wandb: train/loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▁▁▁▁▁▁██████▁▁▁▁▁▁▁▁▁
+wandb:   val/loss ▇▄▄▅█▆▅▄▂▂▂▁▁▁▁▁▁▂▄▄▄▄▄▅▅▅
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.51
+wandb:             epoch 26
+wandb:         grad/norm 0.04375
+wandb:                lr 5e-05
+wandb:         train/acc 0.51833
+wandb:        train/loss 0.69268
+wandb: training_time_sec 1635.05054
+wandb:           val/acc 0.49
+wandb:          val/loss 0.69452
+wandb: 
+wandb: 🚀 View run Trial29_[CV-Variation]_L4_H4_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/iy0mrmix
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_062327-iy0mrmix/logs
+[I 2026-02-04 06:50:44,079] Trial 29 finished with value: 0.51 and parameters: {'nhead': 4, 'num_layers': 4, 'd_model': 64, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0003749516066243218, 'dropout': 0.08711552288755614}. Best is trial 12 with value: 0.9516666666666667.
+wandb: setting up run g8h5sm0o
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_065044-g8h5sm0o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial30_[CV-Variation]_L4_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g8h5sm0o
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▂▇███▆██████████▆▅▇▆▅█████▇███▇███▇████
+wandb:         lr ███▄▄▄▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▃▇██▇████████████████████████████████
+wandb: train/loss ███▄▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▃▆▇██▇█████▇██████████████████████████
+wandb:   val/loss ███▃▂▁▁▂▁▂▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.91333
+wandb:             epoch 66
+wandb:         grad/norm 1.0
+wandb:                lr 0.0
+wandb:         train/acc 0.96833
+wandb:        train/loss 0.09358
+wandb: training_time_sec 8070.69163
+wandb:           val/acc 0.91167
+wandb:          val/loss 0.32852
+wandb: 
+wandb: 🚀 View run Trial30_[CV-Variation]_L4_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g8h5sm0o
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_065044-g8h5sm0o/logs
+[I 2026-02-04 09:05:18,101] Trial 30 finished with value: 0.9133333333333333 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.004281442256950644, 'dropout': 0.21140737529603304}. Best is trial 12 with value: 0.9516666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_090518-pfx09ngj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial31_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/pfx09ngj
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 81-82
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:  grad/norm ▁▁▁▁▁▁██████████████████████████████████
+wandb:         lr ██████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▃▇▇▇▇▇████████████████████████████
+wandb: train/loss ██████▇▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▂▄▇▇▇██████████████████████████████
+wandb:   val/loss ██████▆▄▃▂▂▂▂▂▂▁▁▁▁▂▂▂▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.91667
+wandb:             epoch 46
+wandb:         grad/norm 1.0
+wandb:                lr 2e-05
+wandb:         train/acc 0.96733
+wandb:        train/loss 0.08962
+wandb: training_time_sec 4250.90474
+wandb:           val/acc 0.91333
+wandb:          val/loss 0.29322
+wandb: 
+wandb: 🚀 View run Trial31_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/pfx09ngj
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_090518-pfx09ngj/logs
+[I 2026-02-04 10:16:12,682] Trial 31 finished with value: 0.9166666666666666 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.002974090974001251, 'dropout': 0.09128448014799573}. Best is trial 12 with value: 0.9516666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_101613-dtkz7v0k
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial32_[CV-Variation]_L3_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dtkz7v0k
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇██
+wandb:  grad/norm ▁▄██████████████████████████████████████
+wandb:         lr █████▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▂▇▇███████████████████████████████████
+wandb: train/loss ███▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▃▇▇▇▇▇▇▇█▇████████████████████████████
+wandb:   val/loss █▂▃▂▂▃▃▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.96167
+wandb:             epoch 57
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.981
+wandb:        train/loss 0.06761
+wandb: training_time_sec 5252.35891
+wandb:           val/acc 0.96167
+wandb:          val/loss 0.12906
+wandb: 
+wandb: 🚀 View run Trial32_[CV-Variation]_L3_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dtkz7v0k
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_101613-dtkz7v0k/logs
+[I 2026-02-04 11:43:47,329] Trial 32 finished with value: 0.9616666666666667 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.00416632924111087, 'dropout': 0.08280685688763903}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run jfr2sa5q
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_114347-jfr2sa5q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial33_[CV-Variation]_L2_H8_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jfr2sa5q
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁▁▁▁▂▇█▃▆▇██████▇███████████████
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▂▃▄▅▆▆▆▆▇▇▇▇▇▇▇█████████████
+wandb: train/loss █████▇▇▆▅▅▄▄▃▂▃▃▂▂▂▂▂▂▁▁▂▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▂▃▃▄▅▅▆▇▇▆▆█▇▇████▇▇▇▇▆▇▇▇▇▇▇
+wandb:   val/loss ▇▇▇▇▇▇▆▅▅▃▃▃▄▅▁▂▄▂▁▂▂▄▄▃▄█▄▄▄▅▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.84333
+wandb:             epoch 32
+wandb:         grad/norm 1.0
+wandb:                lr 0.00015
+wandb:         train/acc 0.87667
+wandb:        train/loss 0.27723
+wandb: training_time_sec 1992.53903
+wandb:           val/acc 0.81
+wandb:          val/loss 0.53337
+wandb: 
+wandb: 🚀 View run Trial33_[CV-Variation]_L2_H8_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jfr2sa5q
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_114347-jfr2sa5q/logs
+[I 2026-02-04 12:17:02,272] Trial 33 finished with value: 0.8433333333333334 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.0046737204306734614, 'dropout': 0.1782191675994848}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 48dfhzzm
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_121702-48dfhzzm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial34_[CV-Variation]_L3_H4_D32
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/48dfhzzm
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb:  grad/norm ▁▁▁▁▁▁▂▄████████████▇███████
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▁▁▁▁▁▂▃▅▆▇▇▇███████████████
+wandb: train/loss ███████▇▆▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▁▁▁▁▂▃▃▆█▇█████████████████
+wandb:   val/loss ███████▇▅▂▃▂▂▂▂▃▃▃▃▁▁▁▂▁▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.91167
+wandb:             epoch 28
+wandb:         grad/norm 1.0
+wandb:                lr 0.00045
+wandb:         train/acc 0.974
+wandb:        train/loss 0.07888
+wandb: training_time_sec 1271.43066
+wandb:           val/acc 0.90833
+wandb:          val/loss 0.34165
+wandb: 
+wandb: 🚀 View run Trial34_[CV-Variation]_L3_H4_D32 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/48dfhzzm
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_121702-48dfhzzm/logs
+[I 2026-02-04 12:38:15,990] Trial 34 finished with value: 0.9116666666666666 and parameters: {'nhead': 4, 'num_layers': 3, 'd_model': 32, 'batch_size': 64, 'use_conv1d': True, 'lr': 0.007190374394762996, 'dropout': 0.11966458523311184}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run rh4h9h1z
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_123816-rh4h9h1z
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial35_[CV-Variation]_L4_H8_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rh4h9h1z
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm █████████████████████▇▇▇▆█▆█▅▁▁▂▁▂▂▁
+wandb:         lr █████████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▅▆▇▇▇▇▇▇▇▇▇▇▇▇████████████████████
+wandb: train/loss █▅▄▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▄▄▄▆▇▅▆▇▇▇▇▆▇▇▇█▇████▇▇▇▇▇█▇█▇▇▇▇▇
+wandb:   val/loss ▇▄▅█▄▂▂▄▂▂▂▂▂▃▂▂▂▁▁▁▂▁▂▃▃▅▅▇▄▅▅▇▇▇██
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95333
+wandb:             epoch 36
+wandb:         grad/norm 0.03343
+wandb:                lr 0.00013
+wandb:         train/acc 0.99933
+wandb:        train/loss 0.00254
+wandb: training_time_sec 4257.87904
+wandb:           val/acc 0.93
+wandb:          val/loss 0.5084
+wandb: 
+wandb: 🚀 View run Trial35_[CV-Variation]_L4_H8_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rh4h9h1z
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_123816-rh4h9h1z/logs
+[I 2026-02-04 13:49:17,236] Trial 35 finished with value: 0.9533333333333334 and parameters: {'nhead': 8, 'num_layers': 4, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.004052408200732749, 'dropout': 0.05606533699413102}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_134917-5zxqbbxo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial36_[CV-Variation]_L1_H4_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5zxqbbxo
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 56-57
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▄██▅███████▆▇▇▄▂▂▃▂▂▁▄▁▂▁▁▁▂▂▂▂▇
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▄▆▆▇▇▇▇███▇███████████████████
+wandb: train/loss █▇▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▇▇█▇▇████████████████████████
+wandb:   val/loss █▆▄▂▂▁▂▂▁▂▁▁▁▂▂▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.945
+wandb:             epoch 32
+wandb:         grad/norm 0.84222
+wandb:                lr 0.00016
+wandb:         train/acc 0.98667
+wandb:        train/loss 0.03438
+wandb: training_time_sec 502.92522
+wandb:           val/acc 0.94167
+wandb:          val/loss 0.37925
+wandb: 
+wandb: 🚀 View run Trial36_[CV-Variation]_L1_H4_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5zxqbbxo
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_134917-5zxqbbxo/logs
+[I 2026-02-04 13:57:43,698] Trial 36 finished with value: 0.945 and parameters: {'nhead': 4, 'num_layers': 1, 'd_model': 64, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.005228131962411244, 'dropout': 0.03216435291957633}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 5c1bez46
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_135744-5c1bez46
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial37_[CV-Variation]_L2_H8_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5c1bez46
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▄█████████▅▇█▂███▆█▄▂▆▁▁▁▃▅▆▂▂▂▁
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▆▆▇▇▇▇▇▇█████████████████████
+wandb: train/loss █▆▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▅▆▇▄▇█▇▇███████████▇▇▇▇███████
+wandb:   val/loss █▇▅▅▂▅▃▁▂▃▂▁▂▂▁▁▁▂▃▄▃▅▄▄▄▂▃▃▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.955
+wandb:             epoch 32
+wandb:         grad/norm 0.05814
+wandb:                lr 0.00013
+wandb:         train/acc 0.99933
+wandb:        train/loss 0.00548
+wandb: training_time_sec 1900.89223
+wandb:           val/acc 0.94
+wandb:          val/loss 0.31348
+wandb: 
+wandb: 🚀 View run Trial37_[CV-Variation]_L2_H8_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5c1bez46
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_135744-5c1bez46/logs
+[I 2026-02-04 14:29:26,923] Trial 37 finished with value: 0.955 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0040252821149158735, 'dropout': 0.24121930298281558}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_142927-ocyhwwee
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial38_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ocyhwwee
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▅▄██▆██████▇██▇▄████▆▄██▁██▂█▂
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▇▇▇▇██▇▇██▇████████████████
+wandb: train/loss █▅▄▃▂▃▂▂▂▂▂▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▇▇█▄██▇▇███████▇▇█████████▇▇
+wandb:   val/loss █▃▂▂▂▆▂▁▂▂▂▁▁▁▁▁▁▂▃▁▁▁▂▂▂▂▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.955
+wandb:             epoch 30
+wandb:         grad/norm 0.30294
+wandb:                lr 0.00025
+wandb:         train/acc 0.98467
+wandb:        train/loss 0.04711
+wandb: training_time_sec 515.11642
+wandb:           val/acc 0.93167
+wandb:          val/loss 0.26638
+wandb: 
+wandb: 🚀 View run Trial38_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ocyhwwee
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_142927-ocyhwwee/logs
+[I 2026-02-04 14:38:04,977] Trial 38 finished with value: 0.955 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.004043931180362148, 'dropout': 0.2675815714999757}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run ji961vxt
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_143805-ji961vxt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial39_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ji961vxt
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm █▄▁▆██████████████████████
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▇▇▇▇▇██████████████████
+wandb: train/loss █▆▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▇▇▇▇▆████████████▇▇▇▇▇▇█
+wandb:   val/loss █▃▁▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.92167
+wandb:             epoch 26
+wandb:         grad/norm 1.0
+wandb:                lr 0.00025
+wandb:         train/acc 0.96633
+wandb:        train/loss 0.08589
+wandb: training_time_sec 448.59042
+wandb:           val/acc 0.90167
+wandb:          val/loss 0.3711
+wandb: 
+wandb: 🚀 View run Trial39_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ji961vxt
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_143805-ji961vxt/logs
+[I 2026-02-04 14:45:35,915] Trial 39 finished with value: 0.9216666666666666 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.004024850661780752, 'dropout': 0.243610416757541}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run rh2qtjqg
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_144536-rh2qtjqg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial40_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rh2qtjqg
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm █▆██▄█████████████▄▃▄█▄█▆▂▁▃▂▄▂▃▂▄▅▃▅▆▁▃
+wandb:         lr ███████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▆▆▇▇▆▇▇▇▇▇▇▇█████████████████████████
+wandb: train/loss █▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▅▆▇▆▇▆▇▇▇▇▇█▇██▇██████████████████████
+wandb:   val/loss ▇▆█▃▂▄▂▄▂▂▂▁▂▁▁▁▂▂▁▂▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.90167
+wandb:             epoch 48
+wandb:         grad/norm 0.52293
+wandb:                lr 6e-05
+wandb:         train/acc 0.95767
+wandb:        train/loss 0.11025
+wandb: training_time_sec 811.15817
+wandb:           val/acc 0.89833
+wandb:          val/loss 0.359
+wandb: 
+wandb: 🚀 View run Trial40_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/rh2qtjqg
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_144536-rh2qtjqg/logs
+[I 2026-02-04 14:59:09,400] Trial 40 finished with value: 0.9016666666666666 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.008231166644972338, 'dropout': 0.2709639065377416}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run fnwqxklc
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_145909-fnwqxklc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial41_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fnwqxklc
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▅████▅██████▇█▆▆█▆▆▇▄▁▃█▆▁▁▁▁▂
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▇▇▇▇▇▇▇▇▇██▇███████████████
+wandb: train/loss █▅▄▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▅▇▇▇▇██▇███▇████████████████
+wandb:   val/loss █▄▅▁▁▃▂▂▁▂▂▂▂▃▁▂▃▃▂▁▂▂▂▂▃▂▂▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94167
+wandb:             epoch 30
+wandb:         grad/norm 0.11799
+wandb:                lr 0.00024
+wandb:         train/acc 0.99467
+wandb:        train/loss 0.02626
+wandb: training_time_sec 514.42963
+wandb:           val/acc 0.93167
+wandb:          val/loss 0.34625
+wandb: 
+wandb: 🚀 View run Trial41_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fnwqxklc
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_145909-fnwqxklc/logs
+[I 2026-02-04 15:07:46,176] Trial 41 finished with value: 0.9416666666666667 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0038881802098458002, 'dropout': 0.34023547165535833}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run g1ervapi
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_150746-g1ervapi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial42_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g1ervapi
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ████▆█████▁█▇█▆▂█▃▅▃█▃▇████▅████████████
+wandb:         lr ██████▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▅▆▆▆▇▇▇▇▇▇▇▇▇▇███████████████████████
+wandb: train/loss █▆▅▅▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▆▆▇▇▇▇▇▇█▇████████████████████████████
+wandb:   val/loss █▂▃▂▂▁▁▁▁▂▁▁▁▁▁▁▁▁▁▂▂▂▁▂▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.89167
+wandb:             epoch 47
+wandb:         grad/norm 1.0
+wandb:                lr 5e-05
+wandb:         train/acc 0.96933
+wandb:        train/loss 0.08065
+wandb: training_time_sec 796.01679
+wandb:           val/acc 0.88667
+wandb:          val/loss 0.47588
+wandb: 
+wandb: 🚀 View run Trial42_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g1ervapi
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_150746-g1ervapi/logs
+[I 2026-02-04 15:21:04,575] Trial 42 finished with value: 0.8916666666666667 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.006062876356847778, 'dropout': 0.4282061983765093}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run uribsbwj
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_152105-uribsbwj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial43_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/uribsbwj
+wandb: updating run metadata
+wandb: uploading output.log
+wandb: uploading summary, console lines 43-44
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:  grad/norm ▁████████████████████▇██
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:  train/acc ▁▂▅▆▇▇▇▇████████████████
+wandb: train/loss █▇▅▃▂▂▃▂▂▂▂▂▁▁▁▂▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▆▇▇▇█▇██▇███▇█▇▇▇█████
+wandb:   val/loss █▇▄▃▃▄▁▄▂▁▂▂▂▂▇▃▄▄▅▂▂▂▁▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 24
+wandb:         grad/norm 1.0
+wandb:                lr 0.0002
+wandb:         train/acc 0.96667
+wandb:        train/loss 0.0921
+wandb: training_time_sec 414.83195
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.22563
+wandb: 
+wandb: 🚀 View run Trial43_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/uribsbwj
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_152105-uribsbwj/logs
+[I 2026-02-04 15:28:02,277] Trial 43 finished with value: 0.95 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0015698643389001265, 'dropout': 0.45785366537629535}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run lq1d4jcy
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_152802-lq1d4jcy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial44_[CV-Variation]_L2_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/lq1d4jcy
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▃▃▃▃▃▄▄▄▅▅▅▅▅▆▆▆▇▇▇▇▇██
+wandb:  grad/norm ▁███████████████▇▄████████▄▄▆
+wandb:         lr ███████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇▇█████████████████████
+wandb: train/loss █▇▄▃▂▂▃▂▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▆▇▆▇█▇▇█▇██████████████████
+wandb:   val/loss ▆█▂▂▄▄▁▁▂▁▂▂▁▂▁▁▁▁▁▂▂▂▂▂▂▂▁▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 29
+wandb:         grad/norm 0.69083
+wandb:                lr 0.00014
+wandb:         train/acc 0.98167
+wandb:        train/loss 0.05185
+wandb: training_time_sec 498.49842
+wandb:           val/acc 0.93833
+wandb:          val/loss 0.23901
+wandb: 
+wandb: 🚀 View run Trial44_[CV-Variation]_L2_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/lq1d4jcy
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_152802-lq1d4jcy/logs
+[I 2026-02-04 15:36:23,082] Trial 44 finished with value: 0.95 and parameters: {'nhead': 2, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0022522837243644455, 'dropout': 0.3282486434285149}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_153623-henkmhld
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial45_[CV-Variation]_L1_H4_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/henkmhld
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: uploading summary, console lines 68-69
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇██
+wandb:  grad/norm ▁▅████████████████▇▃▄▃▃▄▃▃▃▃▂▂▂▁▁▂▂▁▁▅▄▄
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▆▇▇▇▇██▇▇████████████████████████████
+wandb: train/loss █▇▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▆▆▇▇▇▇██▇▇▇██▇████████████████████████
+wandb:   val/loss █▆▃▄▂▂▂▂▁▁▂▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.935
+wandb:             epoch 41
+wandb:         grad/norm 0.53575
+wandb:                lr 5e-05
+wandb:         train/acc 0.98167
+wandb:        train/loss 0.06013
+wandb: training_time_sec 638.69869
+wandb:           val/acc 0.93
+wandb:          val/loss 0.2746
+wandb: 
+wandb: 🚀 View run Trial45_[CV-Variation]_L1_H4_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/henkmhld
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_153623-henkmhld/logs
+[I 2026-02-04 15:47:04,272] Trial 45 finished with value: 0.935 and parameters: {'nhead': 4, 'num_layers': 1, 'd_model': 64, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.002953101666869205, 'dropout': 0.40121258295969386}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 4z0yveft
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_154704-4z0yveft
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial46_[CV-Variation]_L2_H8_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/4z0yveft
+wandb: updating run metadata; uploading wandb-metadata.json; uploading console lines 0-0
+wandb: uploading config.yaml
+wandb: 🚀 View run Trial46_[CV-Variation]_L2_H8_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/4z0yveft
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_154704-4z0yveft/logs
+[I 2026-02-04 15:47:06,579] Trial 46 finished with value: 0.0 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 16, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.003542411913227079, 'dropout': 0.29080008234250976}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 1nwfyqgw
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_154706-1nwfyqgw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial47_[CV-Variation]_L2_H8_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/1nwfyqgw
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm █▆████▄▄█▅▆███▅▅▃███▃▃▁▁▂█▂▂▃▂
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▆▇▇▇▇▇▇▇▇▇█████████████████
+wandb: train/loss █▅▄▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▆▅▇▇▇▇█▇█▇███████▇▇▇▇▇▇█████
+wandb:   val/loss █▆▃▅▂▃▁▁▁▂▁▁▂▃▂▂▂▄▃▄▄▅▅▆▅▃▃▃▃▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.93667
+wandb:             epoch 30
+wandb:         grad/norm 0.17204
+wandb:                lr 0.00033
+wandb:         train/acc 0.998
+wandb:        train/loss 0.00806
+wandb: training_time_sec 1787.85091
+wandb:           val/acc 0.92833
+wandb:          val/loss 0.33954
+wandb: 
+wandb: 🚀 View run Trial47_[CV-Variation]_L2_H8_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/1nwfyqgw
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_154706-1nwfyqgw/logs
+[I 2026-02-04 16:16:56,730] Trial 47 finished with value: 0.9366666666666666 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.00535131794839548, 'dropout': 0.03672097873296431}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 8f0tit6a
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_161657-8f0tit6a
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial48_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/8f0tit6a
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm ▁████████████████▃████▇▇▇▄
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇███████████████████
+wandb: train/loss █▇▄▃▃▂▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▅▇▇████████████████████
+wandb:   val/loss █▇▄▅▂▃▁▁▁▂▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.955
+wandb:             epoch 26
+wandb:         grad/norm 0.50072
+wandb:                lr 0.00013
+wandb:         train/acc 0.97967
+wandb:        train/loss 0.05162
+wandb: training_time_sec 671.41316
+wandb:           val/acc 0.95333
+wandb:          val/loss 0.16386
+wandb: 
+wandb: 🚀 View run Trial48_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/8f0tit6a
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_161657-8f0tit6a/logs
+[I 2026-02-04 16:28:10,447] Trial 48 finished with value: 0.955 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0020361402309497663, 'dropout': 0.2038165653015277}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run zgtn3055
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_162810-zgtn3055
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial49_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/zgtn3055
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▄▃▇▆▅▅▄▇█▇▇██▇███▇█▇▇█▇██▄▅▃▅▂▃▁▂▁
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇▇▇▇▇███████████████████████
+wandb: train/loss █▇▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▇▇▇▇▇▇█████████████████████████
+wandb:   val/loss █▆▃▃▁▂▂▁▂▁▁▂▂▁▂▂▂▂▂▁▂▂▂▂▂▁▁▁▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94333
+wandb:             epoch 34
+wandb:         grad/norm 1.0
+wandb:                lr 4e-05
+wandb:         train/acc 0.98267
+wandb:        train/loss 0.05351
+wandb: training_time_sec 869.89244
+wandb:           val/acc 0.92833
+wandb:          val/loss 0.27919
+wandb: 
+wandb: 🚀 View run Trial49_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/zgtn3055
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_162810-zgtn3055/logs
+[I 2026-02-04 16:42:42,520] Trial 49 finished with value: 0.9433333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0012501453878184278, 'dropout': 0.19500280643513457}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run fwpmguwk
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_164242-fwpmguwk
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial50_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fwpmguwk
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ██▂██▁▆██▅█████████████▆█▅▅▄▅▅██▆▅▅▅████
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▆▆▆▇▇▇▇▇▇▇█▇▇████████████████████████
+wandb: train/loss █▆▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▇▅▆▇▇█████████▇▇▇████▇████████████████
+wandb:   val/loss █▄▃▆▅▃▃▂▂▂▂▁▂▄▄▃▅▅▅▃▃▃▃▄▄▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.91167
+wandb:             epoch 40
+wandb:         grad/norm 1.0
+wandb:                lr 3e-05
+wandb:         train/acc 0.97767
+wandb:        train/loss 0.05539
+wandb: training_time_sec 1019.02538
+wandb:           val/acc 0.90167
+wandb:          val/loss 0.47134
+wandb: 
+wandb: 🚀 View run Trial50_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/fwpmguwk
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_164242-fwpmguwk/logs
+[I 2026-02-04 16:59:43,859] Trial 50 finished with value: 0.9116666666666666 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.001992799528578539, 'dropout': 0.2650829493215645}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run qujy50ic
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_165944-qujy50ic
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial51_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/qujy50ic
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▄███████▄▂█▆▆▆█▄███▃▇▁
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁
+wandb:  train/acc ▁▅▆▇▇▇▇███████▇███████
+wandb: train/loss █▅▃▃▂▂▂▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▇▇▇▇▇██▇██▇█▇█▇█▇███
+wandb:   val/loss █▅▃▂▃▂▂▁▁▂▁▂▂▂▃▂▂▂▃▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.96
+wandb:             epoch 22
+wandb:         grad/norm 0.23946
+wandb:                lr 0.00035
+wandb:         train/acc 0.979
+wandb:        train/loss 0.06025
+wandb: training_time_sec 571.41108
+wandb:           val/acc 0.95667
+wandb:          val/loss 0.18275
+wandb: 
+wandb: 🚀 View run Trial51_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/qujy50ic
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_165944-qujy50ic/logs
+[I 2026-02-04 17:09:17,508] Trial 51 finished with value: 0.96 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0027703029338516, 'dropout': 0.23435721230269113}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run ql6qy3yh
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_170917-ql6qy3yh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial52_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ql6qy3yh
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm █████▅█▆████████████▁▇
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁
+wandb:  train/acc ▁▃▆▆▇▇▇█▇▇████████████
+wandb: train/loss █▆▄▃▂▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▄▆████▇▇████████████
+wandb:   val/loss █▄█▄▁▁▁▁▂▁▁▁▁▁▁▂▂▄▁▂▂▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94833
+wandb:             epoch 22
+wandb:         grad/norm 0.84573
+wandb:                lr 0.00056
+wandb:         train/acc 0.977
+wandb:        train/loss 0.066
+wandb: training_time_sec 571.13535
+wandb:           val/acc 0.93
+wandb:          val/loss 0.30886
+wandb: 
+wandb: 🚀 View run Trial52_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/ql6qy3yh
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_170917-ql6qy3yh/logs
+[I 2026-02-04 17:18:50,916] Trial 52 finished with value: 0.9483333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0044944791750443245, 'dropout': 0.2389399364462963}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run jijje7mf
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_171851-jijje7mf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial53_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jijje7mf
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:  grad/norm ▆███████▆████▄▅█████▆█▁█
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:  train/acc ▁▅▆▇▇▇▇█████████████████
+wandb: train/loss █▅▃▃▃▃▂▂▁▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▅▅▇▇▇█▇█▇▇██████▇████▇
+wandb:   val/loss █▅▆▄▂▂▂▁▂▁▂▂▁▂▂▁▂▂▃▂▂▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95333
+wandb:             epoch 24
+wandb:         grad/norm 1.0
+wandb:                lr 0.00036
+wandb:         train/acc 0.982
+wandb:        train/loss 0.04957
+wandb: training_time_sec 621.17709
+wandb:           val/acc 0.92667
+wandb:          val/loss 0.27829
+wandb: 
+wandb: 🚀 View run Trial53_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jijje7mf
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_171851-jijje7mf/logs
+[I 2026-02-04 17:29:14,429] Trial 53 finished with value: 0.9533333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0028837632287051678, 'dropout': 0.19622342297964834}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run p7nj6j1j
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_172914-p7nj6j1j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial54_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/p7nj6j1j
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇██
+wandb:  grad/norm ▅██████████████▅▁██
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁
+wandb:  train/acc ▁▄▆▇▇▇▇████████████
+wandb: train/loss █▆▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▆▆██▇▇▇▇▇▇▇██████
+wandb:   val/loss █▅▄▅▁▁▂▂▃▁▂▂▃▂▂▂▂▂▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95333
+wandb:             epoch 19
+wandb:         grad/norm 1.0
+wandb:                lr 0.00045
+wandb:         train/acc 0.97133
+wandb:        train/loss 0.08128
+wandb: training_time_sec 497.21441
+wandb:           val/acc 0.93833
+wandb:          val/loss 0.18143
+wandb: 
+wandb: 🚀 View run Trial54_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/p7nj6j1j
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_172914-p7nj6j1j/logs
+[I 2026-02-04 17:37:33,840] Trial 54 finished with value: 0.9533333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.003609208236379773, 'dropout': 0.2719308591169904}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run dk572o5h
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_173734-dk572o5h
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial55_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dk572o5h
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇████
+wandb:  grad/norm ▁▁▂▄▄███████████████████████████████████
+wandb:         lr █████▄▄▄▄▄▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▂▃▄▄▅▆▆▇▇▇▇▇███████████████████████████
+wandb: train/loss ████▇▇▆▅▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▃▄▄▅▅▅▆▆▇▇▇█▇█████████████████████████
+wandb:   val/loss ███▇▇▅▄▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.84667
+wandb:             epoch 61
+wandb:         grad/norm 1.0
+wandb:                lr 0.0
+wandb:         train/acc 0.888
+wandb:        train/loss 0.26905
+wandb: training_time_sec 1540.20112
+wandb:           val/acc 0.84667
+wandb:          val/loss 0.37537
+wandb: 
+wandb: 🚀 View run Trial55_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dk572o5h
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_173734-dk572o5h/logs
+[I 2026-02-04 18:03:16,165] Trial 55 finished with value: 0.8466666666666667 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.00010335937324825863, 'dropout': 0.3139037984037414}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 6vt2ar5f
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_180316-6vt2ar5f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial56_[CV-Variation]_L3_H2_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/6vt2ar5f
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading summary, console lines 48-49
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇██
+wandb:  grad/norm ████████████▄████▅▁▄▆▅▇▄▁▅█
+wandb:         lr ██████████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▄▆▆▆▇▇▇▇▇▇▇███████████████
+wandb: train/loss █▅▄▃▃▃▃▃▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▄▅▃▅▆▆▆▆▅▇███▆████████▇▇█
+wandb:   val/loss ▆▄▆▅█▄▂▃▄▂▅▂▁▂▁▄▁▁▂▂▂▂▂▂▃▂▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94833
+wandb:             epoch 27
+wandb:         grad/norm 1.0
+wandb:                lr 0.0003
+wandb:         train/acc 0.99167
+wandb:        train/loss 0.0229
+wandb: training_time_sec 892.04304
+wandb:           val/acc 0.935
+wandb:          val/loss 0.29055
+wandb: 
+wandb: 🚀 View run Trial56_[CV-Variation]_L3_H2_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/6vt2ar5f
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_180316-6vt2ar5f/logs
+[I 2026-02-04 18:18:10,575] Trial 56 finished with value: 0.9483333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 128, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.00237944042396702, 'dropout': 0.22563402339684377}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 2hq2qisz
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_181810-2hq2qisz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial57_[CV-Variation]_L3_H2_D16
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2hq2qisz
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm ▁█████████▇████▃████▂▄▆▄█
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇██████████████████
+wandb: train/loss █▇▄▃▂▂▂▂▁▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▇▆▆▇▇▇████▇███▇███████
+wandb:   val/loss █▅▃▃▃▄▃▁▂▁▁▁▁▂▁▁▁▂▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94833
+wandb:             epoch 25
+wandb:         grad/norm 1.0
+wandb:                lr 0.00047
+wandb:         train/acc 0.97267
+wandb:        train/loss 0.07818
+wandb: training_time_sec 591.88247
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.17864
+wandb: 
+wandb: 🚀 View run Trial57_[CV-Variation]_L3_H2_D16 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2hq2qisz
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_181810-2hq2qisz/logs
+[I 2026-02-04 18:28:04,897] Trial 57 finished with value: 0.9483333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 16, 'batch_size': 128, 'use_conv1d': False, 'lr': 0.007566502452133138, 'dropout': 0.07001467458080073}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 4xxvvvg2
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_182805-4xxvvvg2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial58_[CV-Variation]_L1_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/4xxvvvg2
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: uploading summary, console lines 57-58
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▃████████████████████▇▇▇▇▇▇▆▆▆▆▆▆▇
+wandb:         lr █████████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▄▄▅▅▆▆▇▇▇▇▇▇█████████████████████
+wandb: train/loss █▇▆▆▅▄▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▄▁▄▅▅▆▆▇▇▇▇▇█▇███████████████████
+wandb:   val/loss ▇▆▅█▅▄▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.905
+wandb:             epoch 35
+wandb:         grad/norm 0.82339
+wandb:                lr 3e-05
+wandb:         train/acc 0.956
+wandb:        train/loss 0.12457
+wandb: training_time_sec 301.31965
+wandb:           val/acc 0.905
+wandb:          val/loss 0.23276
+wandb: 
+wandb: 🚀 View run Trial58_[CV-Variation]_L1_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/4xxvvvg2
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_182805-4xxvvvg2/logs
+[I 2026-02-04 18:33:08,703] Trial 58 finished with value: 0.905 and parameters: {'nhead': 2, 'num_layers': 1, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0009712532941018137, 'dropout': 0.11013409813925479}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run v8n3ar2s
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_183309-v8n3ar2s
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial59_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/v8n3ar2s
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁█████████████████████████████
+wandb:         lr ████████████████▃▃▃▃▃▃▃▃▃▃▁▁▁▁
+wandb:  train/acc ▁▄▃▄▄▄▄▅▅▄▂▁▅▇▆█▆▅▅▆▆▆▇▆▇▇▇██▇
+wandb: train/loss ▆▃▄▃▃▂▃▃▃▄█▇▃▂▂▁▂▃▃▂▂▃▂▂▂▁▁▁▁▁
+wandb:    val/acc ▃▆▂▃▂▅▄▆▃▃▁▂▆▅▇█▄▆▄▄▃▅▄▄▅▄▃▄▃▄
+wandb:   val/loss ▃▂▄▄▃▂▃▂▅▃▅▃▂▂▂▁▂▂▃▄█▃▅▄▄▄▅▅▆▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.79333
+wandb:             epoch 30
+wandb:         grad/norm 1.0
+wandb:                lr 0.00234
+wandb:         train/acc 0.779
+wandb:        train/loss 0.44998
+wandb: training_time_sec 766.43948
+wandb:           val/acc 0.61833
+wandb:          val/loss 0.97341
+wandb: 
+wandb: 🚀 View run Trial59_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/v8n3ar2s
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_183309-v8n3ar2s/logs
+[I 2026-02-04 18:45:57,474] Trial 59 finished with value: 0.7933333333333333 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.009342953723436551, 'dropout': 0.14561611805091393}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 3vvvg43u
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_184557-3vvvg43u
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial60_[CV-Variation]_L2_H4_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/3vvvg43u
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇▇██
+wandb:  grad/norm ████▅▅█▃▃██▃▅██▄▃█▇██▂▇▃▁
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:  train/acc ▁▅▆▆▇▇▇▇███▇▇████████████
+wandb: train/loss █▄▄▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▇▇▇▇▇████▇█▇▇▇▇▇▇▇██▇▇█
+wandb:   val/loss █▃▂▂▂▁▁▁▁▁▁▁▁▁▁▂▁▃▂▂▂▂▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94833
+wandb:             epoch 25
+wandb:         grad/norm 0.15682
+wandb:                lr 0.00036
+wandb:         train/acc 0.97767
+wandb:        train/loss 0.05831
+wandb: training_time_sec 787.00464
+wandb:           val/acc 0.93167
+wandb:          val/loss 0.3436
+wandb: 
+wandb: 🚀 View run Trial60_[CV-Variation]_L2_H4_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/3vvvg43u
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_184557-3vvvg43u/logs
+[I 2026-02-04 18:59:06,910] Trial 60 finished with value: 0.9483333333333334 and parameters: {'nhead': 4, 'num_layers': 2, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.005738698657225059, 'dropout': 0.28395046374337307}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 83dhmx7v
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_185907-83dhmx7v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial61_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/83dhmx7v
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 74-75
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇██
+wandb:  grad/norm ▆███▇█▇████████▆▇██▄▃▃▁▄▁▄█▆██▅▆▆▃▄▇▆███
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▆▇▇▇▇▇▇▇█▇███████████████████████████
+wandb: train/loss █▇▄▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▆█▇▇▇▇█▇█████████████▇████████████████
+wandb:   val/loss █▆▄▁▂▃▂▁▂▂▂▁▁▁▁▂▂▂▁▂▁▂▂▃▂▂▂▂▂▂▂▂▂▃▂▃▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95167
+wandb:             epoch 41
+wandb:         grad/norm 1.0
+wandb:                lr 5e-05
+wandb:         train/acc 0.998
+wandb:        train/loss 0.00888
+wandb: training_time_sec 1043.9679
+wandb:           val/acc 0.94833
+wandb:          val/loss 0.29445
+wandb: 
+wandb: 🚀 View run Trial61_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/83dhmx7v
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_185907-83dhmx7v/logs
+[I 2026-02-04 19:16:33,299] Trial 61 finished with value: 0.9516666666666667 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0032540898408883897, 'dropout': 0.2326264581392312}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run jsb4dd0y
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_191633-jsb4dd0y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial62_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jsb4dd0y
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▃██▅████████▄▆███▅▆█▂▄▁▂▁████▇██▄▅
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▇▇▇▇▇▇▇████████████████████████
+wandb: train/loss █▆▄▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▅▇▆▇▇█▇█████████▇███████████████
+wandb:   val/loss █▅▄▂▃▃▂▁▂▁▂▁▁▂▂▁▂▂▂▁▁▁▂▂▂▂▂▂▂▂▃▂▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 34
+wandb:         grad/norm 0.7198
+wandb:                lr 9e-05
+wandb:         train/acc 0.99267
+wandb:        train/loss 0.02338
+wandb: training_time_sec 869.18153
+wandb:           val/acc 0.945
+wandb:          val/loss 0.28572
+wandb: 
+wandb: 🚀 View run Trial62_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/jsb4dd0y
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_191633-jsb4dd0y/logs
+[I 2026-02-04 19:31:04,771] Trial 62 finished with value: 0.95 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.002871931951470428, 'dropout': 0.19881721618778664}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_193105-hhn8qfxr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial63_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/hhn8qfxr
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:  grad/norm ▁██████████████▆▃▅▄██▄▅▂
+wandb:         lr ███████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇█▇▇████████████████
+wandb: train/loss █▇▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▇██████▇▇████████████
+wandb:   val/loss ██▅▂▁▁▂▂▂▁▂▂▂▂▁▂▂▂▂▃▃▃▃▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.955
+wandb:             epoch 24
+wandb:         grad/norm 0.37609
+wandb:                lr 0.00019
+wandb:         train/acc 0.981
+wandb:        train/loss 0.0483
+wandb: training_time_sec 621.31001
+wandb:           val/acc 0.945
+wandb:          val/loss 0.24606
+wandb: 
+wandb: 🚀 View run Trial63_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/hhn8qfxr
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_193105-hhn8qfxr/logs
+[I 2026-02-04 19:41:28,348] Trial 63 finished with value: 0.955 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0015451380303892824, 'dropout': 0.20419333866650952}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run djov7oia
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_194128-djov7oia
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial64_[CV-Variation]_L3_H2_D64
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/djov7oia
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▁███▆████████████████▁█
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▃▅▇▇▇▇▇███████████████
+wandb: train/loss █▇▅▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▂▆▇▆█▇██▇█▇███▇█▇█▇▇██
+wandb:   val/loss ██▄▃▄▁▁▁▁▂▂▃▂▂▂▆▂▃▁▃▃▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95333
+wandb:             epoch 23
+wandb:         grad/norm 1.0
+wandb:                lr 0.00021
+wandb:         train/acc 0.984
+wandb:        train/loss 0.05429
+wandb: training_time_sec 596.73942
+wandb:           val/acc 0.93333
+wandb:          val/loss 0.28226
+wandb: 
+wandb: 🚀 View run Trial64_[CV-Variation]_L3_H2_D64 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/djov7oia
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_194128-djov7oia/logs
+[I 2026-02-04 19:51:27,220] Trial 64 finished with value: 0.9533333333333334 and parameters: {'nhead': 2, 'num_layers': 3, 'd_model': 64, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.0016640524909513562, 'dropout': 0.25245283379812133}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 300nvxx8
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_195127-300nvxx8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial65_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/300nvxx8
+wandb: updating run metadata
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm █████▇████████████▂█▅▂▁
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▅▆▇▇▇▇▇▇██████████████
+wandb: train/loss █▅▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▅▅▆▆▇▇███▇▇█▇▇▇▇▇▇▇██
+wandb:   val/loss █▃▃▅▂▃▂▂▁▁▁▂▂▂▃▅▃▃▅▅▅▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95833
+wandb:             epoch 23
+wandb:         grad/norm 0.1429
+wandb:                lr 0.00025
+wandb:         train/acc 0.99767
+wandb:        train/loss 0.01058
+wandb: training_time_sec 2174.86553
+wandb:           val/acc 0.94833
+wandb:          val/loss 0.30035
+wandb: 
+wandb: 🚀 View run Trial65_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/300nvxx8
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_195127-300nvxx8/logs
+[I 2026-02-04 20:27:44,417] Trial 65 finished with value: 0.9583333333333334 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 64, 'use_conv1d': False, 'lr': 0.002014254134525255, 'dropout': 0.1790146365428518}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_202744-i9s26qqt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial66_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/i9s26qqt
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇██
+wandb:  grad/norm ▄███▆█▃██▇████▅█▂█▁
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁
+wandb:  train/acc ▁▅▇▇▇▇█████████████
+wandb: train/loss █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▆▇█▇▇▇▇▇▇█▇██▇██▇
+wandb:   val/loss █▅▃▂▁▁▁▂▁▂▂▂▁▂▂▂▁▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.96167
+wandb:             epoch 19
+wandb:         grad/norm 0.38739
+wandb:                lr 0.00018
+wandb:         train/acc 0.97967
+wandb:        train/loss 0.0548
+wandb: training_time_sec 1810.46457
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.21127
+wandb: 
+wandb: 🚀 View run Trial66_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/i9s26qqt
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_202744-i9s26qqt/logs
+[I 2026-02-04 20:57:57,240] Trial 66 finished with value: 0.9616666666666667 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0014289781793399912, 'dropout': 0.17686353335779711}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 3gidln8r
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_205757-3gidln8r
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial67_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/3gidln8r
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▇█▆███████████▅▅▇▂███▆▂▂▇▃▁▁▁▁▁▃▃▁▁▁▂▁▁
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▅▇▇▇▇▇▇▇█▇▇▇▇█████████████████████████
+wandb: train/loss █▅▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▄▇▆▆██▇▇█▇██████▇█▇▇█████████████████
+wandb:   val/loss █▇▆▃▃▄▁▁▂▃▂▁▁▂▁▁▂▃▃▄▄▄▃▃▃▃▄▄▄▄▄▃▃▃▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 39
+wandb:         grad/norm 0.03489
+wandb:                lr 3e-05
+wandb:         train/acc 1
+wandb:        train/loss 0.00113
+wandb: training_time_sec 3624.47966
+wandb:           val/acc 0.945
+wandb:          val/loss 0.29899
+wandb: 
+wandb: 🚀 View run Trial67_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/3gidln8r
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_205757-3gidln8r/logs
+[I 2026-02-04 21:58:24,106] Trial 67 finished with value: 0.95 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0020268867100470896, 'dropout': 0.1739145401694308}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 48r51lo0
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_215824-48r51lo0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial68_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/48r51lo0
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▅██████████▅▅██▂▁▂█▂▂▂▂▄▃▁▁▁▁▁▁▃▃
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▆▇▇▇▇▇▇▇█▇█████████████████████
+wandb: train/loss █▆▄▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▇██▇▇█▇████████████████████████
+wandb:   val/loss █▅▂▁▁▂▃▁▂▁▂▁▂▂▂▃▂▃▂▃▃▃▃▃▃▄▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 33
+wandb:         grad/norm 0.3411
+wandb:                lr 3e-05
+wandb:         train/acc 0.99733
+wandb:        train/loss 0.00644
+wandb: training_time_sec 3082.90304
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.36576
+wandb: 
+wandb: 🚀 View run Trial68_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/48r51lo0
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_215824-48r51lo0/logs
+[I 2026-02-04 22:49:49,313] Trial 68 finished with value: 0.95 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0010760792274120898, 'dropout': 0.16075314769009397}. Best is trial 32 with value: 0.9616666666666667.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_224949-2zrk82xn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial69_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2zrk82xn
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▄▄▄▅▅▅▆▆▇▇▇██
+wandb:  grad/norm ▃████████████▂▇▂▂▁▄█
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁
+wandb:  train/acc ▁▄▆▇▇▇██████████████
+wandb: train/loss █▆▃▃▂▂▂▂▁▁▁▁▁▂▁▁▁▁▁▁
+wandb:    val/acc ▁▇▇▆▇██▇█▇█▇▆███████
+wandb:   val/loss █▂▃▄▂▁▂▃▂▃▂▃▄▂▂▃▃▃▄▄
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95
+wandb:             epoch 20
+wandb:         grad/norm 1.0
+wandb:                lr 0.00016
+wandb:         train/acc 0.99
+wandb:        train/loss 0.02584
+wandb: training_time_sec 1905.18353
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.33725
+wandb: 
+wandb: 🚀 View run Trial69_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/2zrk82xn
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_224949-2zrk82xn/logs
+[I 2026-02-04 23:21:36,761] Trial 69 finished with value: 0.95 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0012984769527174488, 'dropout': 0.1255859701956556}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run 53vdni9x
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_232137-53vdni9x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial70_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/53vdni9x
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▁████████████████████▃
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇████████████████
+wandb: train/loss █▆▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▆▇▇█████████████████
+wandb:   val/loss █▆▄▂▃▁▁▁▁▁▂▁▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.955
+wandb:             epoch 22
+wandb:         grad/norm 0.59788
+wandb:                lr 9e-05
+wandb:         train/acc 0.982
+wandb:        train/loss 0.0463
+wandb: training_time_sec 2086.07833
+wandb:           val/acc 0.94167
+wandb:          val/loss 0.22336
+wandb: 
+wandb: 🚀 View run Trial70_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/53vdni9x
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_232137-53vdni9x/logs
+[I 2026-02-04 23:56:25,134] Trial 70 finished with value: 0.955 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0007570248955572289, 'dropout': 0.18436176028390813}. Best is trial 32 with value: 0.9616666666666667.
+wandb: setting up run m4yzglfb
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260204_235625-m4yzglfb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial71_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/m4yzglfb
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm █▇█████▃▁████▆▃▃▂███▄█▄
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▅▆▇▆▇▇████▇███████████
+wandb: train/loss █▅▄▃▃▃▂▂▂▂▂▂▂▂▁▂▂▁▁▁▁▁▁
+wandb:    val/acc ▁▆▇▇▇▇████████████▇▇█▇▇
+wandb:   val/loss █▃▂▂▃▃▁▂▁▂▁▁▁▁▁▂▂▂▃▃▃▄▅
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.965
+wandb:             epoch 23
+wandb:         grad/norm 0.52827
+wandb:                lr 0.00017
+wandb:         train/acc 0.996
+wandb:        train/loss 0.01646
+wandb: training_time_sec 2176.14592
+wandb:           val/acc 0.93667
+wandb:          val/loss 0.38314
+wandb: 
+wandb: 🚀 View run Trial71_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/m4yzglfb
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260204_235625-m4yzglfb/logs
+[I 2026-02-05 00:32:43,700] Trial 71 finished with value: 0.965 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0013839815371498696, 'dropout': 0.20976861202183797}. Best is trial 71 with value: 0.965.
+wandb: setting up run k03eltek
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_003244-k03eltek
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial72_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/k03eltek
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading summary, console lines 56-57
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ██████████████████▄███████▃▁▁▇▃█
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▆▇▇▇▇▇▇▇▇▇███████████████████
+wandb: train/loss █▆▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▆▅▆▆▇██▇█▇▇▇▇████▇█▇▇▇▇███████
+wandb:   val/loss █▅▄▅▄▂▁▁▁▁▁▂▂▂▂▂▂▂▃▅▄▅▆█▆▅▅▅▅▅▅▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95167
+wandb:             epoch 32
+wandb:         grad/norm 1.0
+wandb:                lr 9e-05
+wandb:         train/acc 0.998
+wandb:        train/loss 0.00578
+wandb: training_time_sec 2992.86769
+wandb:           val/acc 0.93
+wandb:          val/loss 0.56046
+wandb: 
+wandb: 🚀 View run Trial72_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/k03eltek
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_003244-k03eltek/logs
+[I 2026-02-05 01:22:39,014] Trial 72 finished with value: 0.9516666666666667 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0014292299125993587, 'dropout': 0.21895612418462504}. Best is trial 71 with value: 0.965.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_012239-0qfg1hca
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial73_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/0qfg1hca
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:  grad/norm ▂▁▆▅▆▆▆▆▅▆▃▆▆▆▅▆▄▆█▆▅▆▄▅█▅▆▅▅▅▆▃▄▅▆▆▆▆▆▅
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▄▄▅▅▄▅▆▅▆▆▇▇▇▇▇▇██▇████████████████████
+wandb: train/loss █▅▅▄▄▅▅▃▄▃▃▂▃▂▂▂▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▆▆▆▄▆▆▆▇▆▇▇▇██████▇█▇██▇█████████▇█▇▇██
+wandb:   val/loss █▅▃▃▆▄▄▃▂▄▂▃▂▁▁▂▂▂▂▃▂▃▃▃▅▃▃▃▃▃▃▄▅▅▇▆▇▇▇▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.905
+wandb:             epoch 40
+wandb:         grad/norm 1.0
+wandb:                lr 4e-05
+wandb:         train/acc 0.97567
+wandb:        train/loss 0.07962
+wandb: training_time_sec 3718.72076
+wandb:           val/acc 0.88333
+wandb:          val/loss 0.65094
+wandb: 
+wandb: 🚀 View run Trial73_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/0qfg1hca
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_012239-0qfg1hca/logs
+[I 2026-02-05 02:24:40,038] Trial 73 finished with value: 0.905 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0025799263857297027, 'dropout': 0.25524185926384263}. Best is trial 71 with value: 0.965.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_022440-f92vdymo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial74_[CV-Variation]_L3_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/f92vdymo
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ██████████▇█▇▄▅▇███▂▁▁▂▁▅▁▁▁▁▁▁▃▁▁▁
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▅▇▇▇▇▇▇▇▇██▇██████████████████████
+wandb: train/loss █▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▇▇▇▇▇▇▆█▇▇▇▇▇▇▆█▇███████▇▇▇▇▇▇▇▇▇
+wandb:   val/loss █▅▁▁▁▂▂▂▃▁▂▂▂▂▂▂▃▁▂▂▂▂▃▃▄▄▅▅▅▆▆▇▇▆▆
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95167
+wandb:             epoch 35
+wandb:         grad/norm 0.02127
+wandb:                lr 6e-05
+wandb:         train/acc 0.99933
+wandb:        train/loss 0.00389
+wandb: training_time_sec 3263.93047
+wandb:           val/acc 0.935
+wandb:          val/loss 0.40491
+wandb: 
+wandb: 🚀 View run Trial74_[CV-Variation]_L3_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/f92vdymo
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_022440-f92vdymo/logs
+[I 2026-02-05 03:19:06,588] Trial 74 finished with value: 0.9516666666666667 and parameters: {'nhead': 8, 'num_layers': 3, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0018849271308887785, 'dropout': 0.186030177509783}. Best is trial 71 with value: 0.965.
+wandb: setting up run g6uofx34
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_031906-g6uofx34
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial75_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g6uofx34
+wandb: updating run metadata
+wandb: uploading output.log
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▄▅▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▃████████████▇██▆▄█▄▅▁▁
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁▁▁
+wandb:  train/acc ▁▃▆▆▇▇▇████████████████
+wandb: train/loss █▆▅▃▂▂▂▂▁▁▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▅▅▇▇▇▆███▇████████████
+wandb:   val/loss █▅▆▂▃▂▅▁▁▁▂▁▁▁▁▁▁▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.96
+wandb:             epoch 23
+wandb:         grad/norm 0.08057
+wandb:                lr 0.00012
+wandb:         train/acc 0.98233
+wandb:        train/loss 0.05052
+wandb: training_time_sec 1450.3254
+wandb:           val/acc 0.94667
+wandb:          val/loss 0.21994
+wandb: 
+wandb: 🚀 View run Trial75_[CV-Variation]_L2_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/g6uofx34
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_031906-g6uofx34/logs
+[I 2026-02-05 03:43:19,757] Trial 75 finished with value: 0.96 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0009283507667795394, 'dropout': 0.1394345010957768}. Best is trial 71 with value: 0.965.
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_034320-k9vxnqzc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial76_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/k9vxnqzc
+wandb: updating run metadata
+wandb: uploading output.log; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▂▂▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇██
+wandb:  grad/norm ▁▄███████████████████
+wandb:         lr ██████▄▄▄▄▄▄▂▂▂▂▂▂▁▁▁
+wandb:  train/acc ▁▂▅▇▇▇▇██▇███████████
+wandb: train/loss █▇▅▃▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▆▇█▇█▇█████████████
+wandb:   val/loss █▇▃▂▁▂▁▂▁▂▂▁▁▂▂▂▁▁▂▁▁
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95167
+wandb:             epoch 21
+wandb:         grad/norm 1.0
+wandb:                lr 7e-05
+wandb:         train/acc 0.982
+wandb:        train/loss 0.05269
+wandb: training_time_sec 1330.95156
+wandb:           val/acc 0.94333
+wandb:          val/loss 0.17522
+wandb: 
+wandb: 🚀 View run Trial76_[CV-Variation]_L2_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/k9vxnqzc
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_034320-k9vxnqzc/logs
+[I 2026-02-05 04:05:33,083] Trial 76 finished with value: 0.9516666666666667 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0005363562308200802, 'dropout': 0.13301082228135683}. Best is trial 71 with value: 0.965.
+wandb: setting up run qf0t924n
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_040533-qf0t924n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial77_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/qf0t924n
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇██
+wandb:  grad/norm ▄█████████▇████████▃▇▇█▃▇▇▃▁▁▁▄▁▂▂▂▂▁▃▂▁
+wandb:         lr ████████████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇▇▇▇▇▇▇███▇███████████████████████
+wandb: train/loss █▇▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▃▆▆▇▇▃▇▇███▇██▆████████████████████████
+wandb:   val/loss ▅▄▂▃▁▂█▃▂▁▁▁▃▁▂▄▁▂▂▂▂▂▃▂▃▂▂▂▂▃▃▃▃▃▃▃▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.94333
+wandb:             epoch 41
+wandb:         grad/norm 0.06719
+wandb:                lr 3e-05
+wandb:         train/acc 1
+wandb:        train/loss 0.00091
+wandb: training_time_sec 2541.14511
+wandb:           val/acc 0.93833
+wandb:          val/loss 0.43359
+wandb: 
+wandb: 🚀 View run Trial77_[CV-Variation]_L2_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/qf0t924n
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_040533-qf0t924n/logs
+[I 2026-02-05 04:47:56,504] Trial 77 finished with value: 0.9433333333333334 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0009822718858851433, 'dropout': 0.15725627663670103}. Best is trial 71 with value: 0.965.
+wandb: setting up run dh2mobvm
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_044756-dh2mobvm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial78_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dh2mobvm
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 56-57
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:  grad/norm ▁██▅█████████████████████▂▃▁▂▁▁
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▆▇▇▇▇████████████████████████
+wandb: train/loss █▇▃▃▃▂▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆███▇████████████████████████
+wandb:   val/loss █▅▄▂▁▁▄▁▁▁▁▂▁▁▁▁▁▁▂▂▂▂▁▁▂▂▁▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.95667
+wandb:             epoch 31
+wandb:         grad/norm 0.38439
+wandb:                lr 2e-05
+wandb:         train/acc 0.989
+wandb:        train/loss 0.03576
+wandb: training_time_sec 1936.24951
+wandb:           val/acc 0.95167
+wandb:          val/loss 0.20731
+wandb: 
+wandb: 🚀 View run Trial78_[CV-Variation]_L2_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/dh2mobvm
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_044756-dh2mobvm/logs
+[I 2026-02-05 05:20:15,148] Trial 78 finished with value: 0.9566666666666667 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.0006674407761693179, 'dropout': 0.13977396138144024}. Best is trial 71 with value: 0.965.
+wandb: setting up run 5shgrk4o
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_052015-5shgrk4o
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial79_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5shgrk4o
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 65-66
+wandb: 
+wandb: Run history:
+wandb:      epoch ▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇███
+wandb:  grad/norm ▁▃█▂█████████▅▃██▇███████████████████
+wandb:         lr ██████▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  train/acc ▁▃▅▇▇▇▇██████████████████████████████
+wandb: train/loss █▇▅▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    val/acc ▁▄▆▅▇██▇█▇█▇▇████████████████████████
+wandb:   val/loss █▆▄▅▂▁▁▁▁▂▁▁▂▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:      best_val_acc 0.96
+wandb:             epoch 37
+wandb:         grad/norm 1.0
+wandb:                lr 1e-05
+wandb:         train/acc 0.98767
+wandb:        train/loss 0.04173
+wandb: training_time_sec 2299.20626
+wandb:           val/acc 0.94
+wandb:          val/loss 0.24575
+wandb: 
+wandb: 🚀 View run Trial79_[CV-Variation]_L2_H8_D128 at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/5shgrk4o
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260205_052015-5shgrk4o/logs
+[I 2026-02-05 05:58:36,831] Trial 79 finished with value: 0.96 and parameters: {'nhead': 8, 'num_layers': 2, 'd_model': 128, 'batch_size': 32, 'use_conv1d': False, 'lr': 0.000577225582100282, 'dropout': 0.10585220962212075}. Best is trial 71 with value: 0.965.
+wandb: setting up run byef7cba
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/wandb/run-20260205_055837-byef7cba
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Trial80_[CV-Variation]_L2_H8_D128
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY018-baseline-sweep
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY018-baseline-sweep/runs/byef7cba

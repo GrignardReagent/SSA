@@ -1,0 +1,7 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY018/IY018_optuna_sweep_t_ac.py", line 240, in <module>
+    with open(YAML_CONFIG_PATH, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'IY018_sweep_config_t_ac.yaml'
