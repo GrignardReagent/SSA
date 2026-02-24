@@ -62,7 +62,7 @@ cv_target = qmc.scale(U, [CV_MIN], [CV_MAX]).flatten()
 t_ac_target = np.full(N, TAC_FIXED)
 mu_target = np.full(N, MU_FIXED)
 max_runtime = 15 * 60 # seconds
-size = 100  # per parameter set
+size = 10  # per parameter set
 time_points = np.arange(0, 3000, 1.0)
 
 # Results log CSV
@@ -208,13 +208,13 @@ for combination_idx, (mu, t_ac, cv) in enumerate(
             pd.DataFrame([record]).to_csv(tmp_path, index=False, header=True)
         
         # Append temp file to results file with sudo
-        # if os.path.exists(results_path):
-        #     # Append without header if file exists
-        #     subprocess.run(['sudo', 'sh', '-c', f'tail -n +2 "{tmp_path}" >> "{results_path}"'], check=True)
-        # else:
-        #     # Copy entire file if results file doesn't exist yet
-        #     subprocess.run(['sudo', 'cp', tmp_path, results_path], check=True)
-        #     subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', results_path], check=True)
+        if os.path.exists(results_path):
+            # Append without header if file exists
+            subprocess.run(['sudo', 'sh', '-c', f'tail -n +2 "{tmp_path}" >> "{results_path}"'], check=True)
+        else:
+            # Copy entire file if results file doesn't exist yet
+            subprocess.run(['sudo', 'cp', tmp_path, results_path], check=True)
+            subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', results_path], check=True)
         
         # Clean up temp file
         os.unlink(tmp_path)
@@ -244,7 +244,12 @@ if not RESULTS_PATH.exists():
     print(f"Warning: Results file not found at {RESULTS_PATH}. Skipping processing.")
 else:
     df_params = pd.read_csv(RESULTS_PATH)
-    df_params = df_params[df_params['success'] == True].dropna(subset=['trajectory_filename'])
+    # df_params = df_params[df_params['success'] == True].dropna(subset=['trajectory_filename'])
+    df_params = df_params[(df_params['success'] == True) & 
+                    (df_params['error_message'].isna()) &
+                    (df_params['mean_rel_error_pct'] < 10) & 
+                    (df_params['cv_rel_error_pct'] < 10) & 
+                    (df_params['t_ac_rel_error_pct'] < 10)]
     
     # Reconstruct the list of file paths and parameter sets from the CSV
     # This ensures we process exactly what was just simulated
@@ -320,8 +325,8 @@ else:
                         np.savez_compressed(tmp_path, **trajectory_data)
                     
                     # Move temp file to final location with sudo
-                    # subprocess.run(['sudo', 'mv', tmp_path, str(npz_path)], check=True)
-                    # subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', str(npz_path)], check=True)
+                    subprocess.run(['sudo', 'mv', tmp_path, str(npz_path)], check=True)
+                    subprocess.run(['sudo', 'chown', f'{os.getenv("USER")}:{os.getenv("USER")}', str(npz_path)], check=True)
                     
             except Exception as e:
                 print(f"Error processing {traj_file.name}: {e}")
