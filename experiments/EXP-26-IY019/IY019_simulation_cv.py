@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-
 """
-Simulate a MEAN control dataset where t_ac and CV are FIXED, 
-but MEAN varies. This effectively isolates 
-MEAN as the only distinguishing feature.
-10k to give enough dataset for transformer training
+Simulate a batch of Sobol sequence samples - 50k to give enough dataset for transformer training
 """
 
 import os
 import subprocess
-from pathlib import Path
 import tempfile
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from datetime import datetime
@@ -25,7 +21,6 @@ from stats.autocorrelation import calculate_autocorrelation, calculate_ac_time_i
 import traceback
 from tqdm import tqdm
 from utils.steady_state import find_steady_state
-
 # ---------------------------------------------------------------------
 # Reproducibility
 # ---------------------------------------------------------------------
@@ -36,38 +31,34 @@ np.random.seed(GLOBAL_SEED)
 # -----------------------------------------------------------------------------
 # Configuration
 # -----------------------------------------------------------------------------
-data_dir = "data_mu_variation"
+data_dir = "data_cv_variation"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define Fixed Parameters 
 TAC_FIXED = 10.0
-CV_FIXED = 0.5
+MU_FIXED = 1000.0
 
 # 2. Define Variable Parameter Bounds (The "Physics")
-MU_MIN = 1.0
-MU_MAX = 10000.0
+CV_MIN = 0.1
+CV_MAX = 4.0
+
 # Sobol coverage
-N = 10_000
+N = 50_000 
 sobol = qmc.Sobol(d=1, scramble=True, seed=GLOBAL_SEED)
 U = sobol.random_base2(int(np.ceil(np.log2(N))))[:N]   # shape (N, 1)
 
-# Scale mu to range
-mu_target = qmc.scale(U, [MU_MIN], [MU_MAX]).flatten()
+# Scale cv to range
+cv_target = qmc.scale(U, [CV_MIN], [CV_MAX]).flatten()
 
 # Create arrays for fixed parameters
 t_ac_target = np.full(N, TAC_FIXED)
-cv_target = np.full(N, CV_FIXED)
-
+mu_target = np.full(N, MU_FIXED)
 max_runtime = 15 * 60 # seconds
 size = 10  # per parameter set
 time_points = np.arange(0, 3000, 1.0)
 
 # Results log CSV
-results_path = os.path.join(data_dir, "IY020_simulation_mu_parameters_sobol.csv")
-# start fresh if exists
-# if os.path.exists(results_path):
-#     os.remove(results_path)
-#     subprocess.run(['sudo', 'rm', results_path], check=True)
+results_path = os.path.join(data_dir, "IY019_simulation_cv_parameters_sobol.csv")
 
 # -----------------------------------------------------------------------------
 # Simulation loop
@@ -77,15 +68,12 @@ failure_count = 0
 total_combinations = len(mu_target) 
 all_records = []
 
-print(f"=== Generating MEAN Control Dataset ===")
-print(f"Fixed Parameters: t_ac={TAC_FIXED}, CV={CV_FIXED}")
-print(f"Varying Mu: [{MU_MIN}, {MU_MAX}] via Sobol sampling")
-print(f"Total Datasets: {total_combinations}")
+print(f"Testing {total_combinations} parameter combinations...")
 print(f"Started at: {datetime.now()}")
 
 for combination_idx, (mu, t_ac, cv) in enumerate(
     tqdm(zip(mu_target, t_ac_target, cv_target), 
-         total=total_combinations, desc="Simulating Sobol samples (mu variation)"),
+         total=total_combinations, desc="Simulating Sobol samples"),
         start=1,
 ):
     record = {
@@ -122,7 +110,6 @@ for combination_idx, (mu, t_ac, cv) in enumerate(
         # time the simulation 
         start_time = time.time()
         df_results = simulate_telegraph_model(parameter_set, time_points, size)
-        
         if time.time() - start_time > max_runtime:
             raise RuntimeError(
                 f"simulate_telegraph_model exceeded the runtime limit of {max_runtime} s."
@@ -217,11 +204,10 @@ for combination_idx, (mu, t_ac, cv) in enumerate(
 # -----------------------------------------------------------------------------
 # Summary
 # -----------------------------------------------------------------------------
-print("\n=== Control Data Generation Complete ===")
-print(f"Total combinations: {total_combinations}")
+print("\n=== Final Results ===")
+print(f"Total combinations tested: {total_combinations}")
 print(f"Successful runs: {success_count}")
 print(f"Failed runs: {failure_count}")
-print(f"Data saved to: {data_dir}")
 
 
 # -----------------------------------------------------------------------------
@@ -239,17 +225,15 @@ if not RESULTS_PATH.exists():
     print(f"Warning: Results file not found at {RESULTS_PATH}. Skipping processing.")
 else:
     df_params = pd.read_csv(RESULTS_PATH)
-    #filter for successful simulations only
-    # df_params = df_params[df_params["success"] == True].dropna(subset=["trajectory_filename"])
     df_params = df_params[(df_params['success'] == True) & 
-                    (df_params['error_message'].isna()) &
-                    (df_params['mean_rel_error_pct'] < 10) & 
-                    (df_params['cv_rel_error_pct'] < 10) & 
-                    (df_params['t_ac_rel_error_pct'] < 10)]
+                (df_params['error_message'].isna()) &
+                (df_params['mean_rel_error_pct'] < 10) & 
+                (df_params['cv_rel_error_pct'] < 10) & 
+                (df_params['t_ac_rel_error_pct'] < 10)]
     
     # Reconstruct the list of file paths and parameter sets from the CSV
     # This ensures we process exactly what was just simulated
-    traj_paths = [DATA_ROOT / str(fname) for fname in df_params['trajectory_filename']]
+    traj_paths = [DATA_ROOT / fname for fname in df_params['trajectory_filename']]
     
     # Rebuild the parameter_sets list needed for find_steady_state
     # Structure: List of [ { "sigma_b": ..., "rho": ... } ]
@@ -329,7 +313,7 @@ else:
 
     print("Data processing complete.")
     
-
+    
 import matplotlib.pyplot as plt
 df_params = pd.read_csv(RESULTS_PATH)
 
@@ -343,7 +327,7 @@ plt.ylabel('Mu Observed')
 plt.title('Mu Target vs Mu Observed')
 plt.legend()
 plt.grid(True)
-plt.savefig(f'{data_dir}/IY020_mu_target_vs_mu_observed.png', dpi=300)
+plt.savefig(f'{data_dir}/IY019_mu_target_vs_mu_observed.png', dpi=300)
 plt.show()
 
 # plot cv_target vs cv_observed
@@ -356,7 +340,7 @@ plt.ylabel('CV Observed')
 plt.title('CV Target vs CV Observed')
 plt.legend()
 plt.grid(True)
-plt.savefig(f'{data_dir}/IY020_cv_target_vs_cv_observed.png', dpi=300)
+plt.savefig(f'{data_dir}/IY019_cv_target_vs_cv_observed.png', dpi=300)
 plt.show()
 
 # plot t_ac_target vs t_ac_observed
@@ -369,5 +353,5 @@ plt.ylabel('T AC Observed')
 plt.title('T AC Target vs T AC Observed')
 plt.legend()
 plt.grid(True)
-plt.savefig(f'{data_dir}/IY020_t_ac_target_vs_t_ac_observed.png', dpi=300)
+plt.savefig(f'{data_dir}/IY019_t_ac_target_vs_t_ac_observed.png', dpi=300)
 plt.show()
