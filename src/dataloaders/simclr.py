@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+import pandas as pd
 import random
 from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
@@ -12,9 +13,17 @@ class SimCLR_Dataset(Dataset):
     2. Loads simulation data on-the-fly in __getitem__.
     3. Handles corrupt/empty files by retrying with a random file.
     """
-    def __init__(self, file_paths, labels=None, training=True, sample_len=400, 
-                 log_scale=False, instance_norm=True, num_traj=1, 
-                 separator_len=1, separator_val=-100.0):
+    def __init__(self, 
+                 file_paths, 
+                 labels=None, 
+                 training=True, 
+                 sample_len=500, 
+                 log_scale=False, 
+                 instance_norm=False, 
+                 num_traj=1, 
+                 separator_len=1, 
+                 separator_val=-100.0
+                 ):
         self.file_paths = file_paths
         # If labels aren't provided, just use dummy 0s (SimCLR doesn't use them for training)
         self.labels = labels if labels is not None else [0] * len(file_paths)
@@ -41,13 +50,18 @@ class SimCLR_Dataset(Dataset):
         while trajectories is None:
             try:
                 path = self.file_paths[current_idx]
-                data = np.load(path, allow_pickle=True)
-                if "trajectories" in data:
-                    loaded = list(data["trajectories"])
-                    if len(loaded) > 0:
-                        trajectories = loaded
-                        # Use provided label or 0 if dummy
-                        label = self.labels[current_idx]
+                if str(path).endswith(".csv"):
+                    df = pd.read_csv(path)
+                    trajectories = list(df.values)
+                    label = self.labels[current_idx]
+                else:
+                    data = np.load(path, allow_pickle=True)
+                    if "trajectories" in data:
+                        loaded = list(data["trajectories"])
+                        if len(loaded) > 0:
+                            trajectories = loaded
+                            # Use provided label or 0 if dummy
+                            label = self.labels[current_idx]
             except Exception:
                 pass
             
@@ -138,8 +152,8 @@ def ssl_data_prep(
     batch_size=64, 
     seed=42,
     verbose=False,
-    log_scale=True,
-    instance_norm=True,
+    log_scale=False,
+    instance_norm=False,
     sample_len=None,  # Important: Must provide or we guess from 1st file
     num_traj=1,
     separator_len=1,
@@ -158,10 +172,15 @@ def ssl_data_prep(
     # 2. Handle Sample Length (Auto-detect from FIRST file if None)
     if sample_len is None:
         try:
-            # Peek at the first file to guess length
-            temp_data = np.load(train_files[0], allow_pickle=True)
-            traj = list(temp_data["trajectories"])[0]
-            sample_len = len(traj)
+            if str(train_files[0]).endswith(".csv"):
+                temp_data = pd.read_csv(train_files[0])
+                traj = list(temp_data.values)[0]
+                sample_len = len(traj)
+            else: 
+                # Peek at the first file to guess length
+                temp_data = np.load(train_files[0], allow_pickle=True)
+                traj = list(temp_data["trajectories"])[0]
+                sample_len = len(traj)
 
         except Exception as e:
             sample_len = 200 # Fallback

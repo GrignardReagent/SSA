@@ -15,7 +15,7 @@ def pure_math_infonce(z1, z2, temperature=0.1):
     # --- Step 1: Manually Normalize Vectors ---
     def normalize(v):
         magnitude = math.sqrt(sum(val * val for val in v))
-        return [val / magnitude for val in v]
+        return [val / magnitude for val in v] # <-- forces the magnitude of every vector to be 1, so we can use dot product as cosine similarity
     
     z1_norm = [normalize(v) for v in z1.tolist()]
     z2_norm = [normalize(v) for v in z2.tolist()]
@@ -26,14 +26,14 @@ def pure_math_infonce(z1, z2, temperature=0.1):
         
         # Calculate Numerator (Positive Match)
         positive = z2_norm[i]
-        sim_pos = sum(anchor[d] * positive[d] for d in range(vector_dim))        # Manual Dot Product
+        sim_pos = sum(anchor[d] * positive[d] for d in range(vector_dim)) # dot product as cosine similarity: A * B / (|A| * |B|) but since we normalized, |A| and |B| are 1, so it's just A * B
         numerator = math.exp(sim_pos / temperature)
         
         # Calculate Denominator (All Matches)
         denominator = 0.0
         for j in range(batch_size):
             candidate = z2_norm[j]
-            sim_candidate = sum(anchor[d] * candidate[d] for d in range(vector_dim))            # Manual Dot Product
+            sim_candidate = sum(anchor[d] * candidate[d] for d in range(vector_dim)) # dot product as cosine similarity
             denominator += math.exp(sim_candidate / temperature)
             
         # Calculate Probability and Loss

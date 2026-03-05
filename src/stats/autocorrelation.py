@@ -86,14 +86,19 @@ def autocrosscorr(
     # lag r runs over positive lags
     pos_corr = np.nan * np.ones(yA.shape)
     for r in range(nt):
-        prods = [dyA[:, t] * dyB[:, t + r] for t in range(nt - r)]
-        pos_corr[:, r] = np.nanmean(prods, axis=0)
+        # Vectorized calculation over time
+        segment_A = dyA[:, :nt-r]
+        segment_B = dyB[:, r:]
+        pos_corr[:, r] = np.nanmean(segment_A * segment_B, axis=1)
+        
     # lag r runs over negative lags
     # use corr_AB(-k) = corr_BA(k)
     neg_corr = np.nan * np.ones(yA.shape)
     for r in range(nt):
-        prods = [dyB[:, t] * dyA[:, t + r] for t in range(nt - r)]
-        neg_corr[:, r] = np.nanmean(prods, axis=0)
+        segment_B = dyB[:, :nt-r]
+        segment_A = dyA[:, r:]
+        neg_corr[:, r] = np.nanmean(segment_B * segment_A, axis=1)
+        
     if normalised:
         # normalise by standard deviation
         pos_corr = pos_corr / stdA / stdB
@@ -119,36 +124,61 @@ def _dev(y, nr, nt, stationary=False):
     stdy = np.sqrt(np.nanmean(dy**2, axis=1).reshape((nr, 1)))
     return dy, stdy
 
-def calculate_autocorrelation(df):
+def calculate_autocorrelation(df, stationary=False):
     """
     Calculate autocorrelation for stress and normal conditions in the dataset.
     Parameters:
-    - df: DataFrame with 'label' column and time series data
+    - df: DataFrame with 'label' column and time series data, or numpy array
+    - stationary: boolean. If True, assume stationarity (time-average). 
+                  If input has only 1 replicate, forced to True.
     Returns:
     - Dictionary with autocorrelation results for available conditions
     """
-    # if there's a 'label' column, then we take that to separate stress/normal
-    if 'label' in df.columns:
+    results = {}
+    stress_data = None
+    normal_data = None
+
+    # Check if input is DataFrame with 'label' column
+    is_labeled_df = isinstance(df, pd.DataFrame) and 'label' in df.columns
+
+    if is_labeled_df:
         # Separate by label (0 = stress, 1 = normal)
         stress_df = df[df['label'] == 0]
-        # Remove 'label' column and convert to numpy array using safe conversion
-        stress_data = _ensure_numpy(stress_df.drop('label', axis=1))
+        if not stress_df.empty:
+            stress_data = _ensure_numpy(stress_df.drop('label', axis=1))
+        
+        normal_df = df[df['label'] == 1]
+        if not normal_df.empty:
+            normal_data = _ensure_numpy(normal_df.drop('label', axis=1))
     else:
-        stress_df = df.copy()  # If no label, consider all as stress condition
-        stress_data = _ensure_numpy(stress_df)
-    results = {}
-    # Calculate autocorrelation
-    stress_ac, stress_lags = autocrosscorr(stress_data)
-    results.update({
-        'stress_ac': stress_ac,
-        'stress_lags': stress_lags
-    })
+        # If not labeled DataFrame, treat all as stress data
+        stress_data = _ensure_numpy(df)
+
+    # Process stress data
+    if stress_data is not None:
+        # Ensure 2D (num_replicates, time_points)
+        if stress_data.ndim == 1:
+            stress_data = stress_data.reshape(1, -1)
+            
+        # Check if single replicate, force stationary assumption
+        use_stationary = stationary or (stress_data.shape[0] == 1)
+
+        stress_ac, stress_lags = autocrosscorr(stress_data, stationary=use_stationary)
+        results.update({
+            'stress_ac': stress_ac,
+            'stress_lags': stress_lags
+        })
     
     # Process normal condition (label = 1) - only if it exists
-    normal_df = df[df['label'] == 1] if 'label' in df.columns else pd.DataFrame()
-    if not normal_df.empty:
-        normal_data = _ensure_numpy(normal_df.drop('label', axis=1))
-        normal_ac, normal_lags = autocrosscorr(normal_data)
+    if normal_data is not None:
+        # Ensure 2D
+        if normal_data.ndim == 1:
+            normal_data = normal_data.reshape(1, -1)
+            
+        # Check if single replicate
+        use_stationary = stationary or (normal_data.shape[0] == 1)
+
+        normal_ac, normal_lags = autocrosscorr(normal_data, stationary=use_stationary)
         results.update({
             'normal_ac': normal_ac,
             'normal_lags': normal_lags
@@ -158,7 +188,8 @@ def calculate_autocorrelation(df):
 
 def calculate_ac_time_interp1d(ac_values, lags):
     """
-    Interpolate to find the autocorrelation time where autocorrelation = 1/np.exp(1).
+    Interpolate to find the *first* autocorrelation time where autocorrelation drops below 1/np.exp(1).
+    Robust against noise in the tail of the AC function.
     
     Parameters:
     - ac_values: Autocorrelation values.
@@ -173,15 +204,46 @@ def calculate_ac_time_interp1d(ac_values, lags):
         pos_lags = lags[positive_mask]
         pos_ac = ac_values[positive_mask]
         
-        # Check if 1/e is within the range of autocorrelation values
-        threshold = 1/np.e
-        if threshold < np.min(pos_ac) or threshold > np.max(pos_ac):
-            print(f"Warning: 1/e threshold ({threshold:.3f}) is outside the range of AC values [{np.min(pos_ac):.3f}, {np.max(pos_ac):.3f}]")
-            return np.nan
+        target = 1/np.e
         
-        # Interpolate using interp1d with correct parameter order (x, y)
-        f_interp = interp1d(pos_ac, pos_lags, kind='linear', bounds_error=False, fill_value=np.nan)
-        ac_time = f_interp(threshold)
+        # Check if we have enough data
+        if len(pos_ac) < 2:
+            return np.nan
+
+        # Check if it starts below target (unlikely but possible)
+        if pos_ac[0] < target:
+            return pos_lags[0]
+            
+        # Find indices where AC drops below target
+        # Use np.where to find all indices where condition is met
+        below_target_indices = np.where(pos_ac < target)[0]
+        
+        if len(below_target_indices) == 0:
+            # print(f"Warning: AC never drops below 1/e ({target:.3f}). Min AC: {np.min(pos_ac):.3f}")
+            return np.nan
+            
+        # Get the first index where it drops below
+        idx = below_target_indices[0]
+        
+        # Ensure idx is valid for interpolation (needs idx-1)
+        if idx == 0:
+             return pos_lags[0]
+
+        # Linear interpolation between idx-1 and idx
+        # y = mx + c
+        # x = (y - c) / m
+        
+        y1 = pos_ac[idx-1]
+        y2 = pos_ac[idx]
+        x1 = pos_lags[idx-1]
+        x2 = pos_lags[idx]
+        
+        if y1 == y2:
+            return x1 # Should not happen unless flat line exactly at transition
+            
+        # Interpolate x for y=target
+        ac_time = x1 + (target - y1) * (x2 - x1) / (y2 - y1)
+        
         return ac_time
             
     except Exception as e:
