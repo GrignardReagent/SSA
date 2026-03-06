@@ -33,14 +33,14 @@ batch_size = 2048
 num_traj=1 # number of trajectories per view
 sample_len=500
 log_scale = False 
-instance_norm = True
+normalisation = 'instance'
 
 train_loader, val_loader, test_loader = ssl_data_prep(
     TRAJ_NPZ_PATH,
     batch_size=batch_size,
     sample_len=sample_len,
     log_scale=log_scale,
-    instance_norm=instance_norm,
+    normalisation=normalisation,
     num_traj=num_traj,
 )
 # === Dataloader hyperparams & data prep ===
@@ -122,7 +122,7 @@ wandb_config = {
     "num_traj_per_view": num_traj,
     "sample_len": sample_len,
     "log_scale" : log_scale,
-    "instance_norm": instance_norm,
+    "normalisation": normalisation,
     "save_path": save_path,
     "nce_temp": nce_temp,
     "grad_clip": grad_clip,

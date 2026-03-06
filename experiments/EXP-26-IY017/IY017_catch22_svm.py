@@ -145,34 +145,34 @@ baseline_train_loader, _, baseline_test_loader = make_loaders(
     param_dist_threshold=0 # we don't care about distance
 )
 
-# cv_train_loader, _, cv_test_loader = make_loaders(
-#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_cv_variation"),
-#     results_csv="IY011_simulation_cv_parameters_sobol.csv",
-#     param_dist_threshold=0.7 # 2-fold difference
-# )
+cv_train_loader, _, cv_test_loader = make_loaders(
+    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY020/data_cv_variation"),
+    results_csv="IY020_simulation_cv_parameters_sobol.csv",
+    param_dist_threshold=0.7 # 2-fold difference
+)
 
-# mu_train_loader, _, mu_test_loader = make_loaders(
-#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_mu_variation"),
-#     results_csv="IY011_simulation_mu_parameters_sobol.csv",
-#     param_dist_threshold=0.7 # 2-fold difference
-# )   
+mu_train_loader, _, mu_test_loader = make_loaders(
+    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY020/data_mu_variation"),
+    results_csv="IY020_simulation_mu_parameters_sobol.csv",
+    param_dist_threshold=0.7 # 2-fold difference
+)   
 
-# tac_train_loader, _, tac_test_loader = make_loaders(
-#     DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY011/data_t_ac_variation"),
-#     results_csv="IY011_simulation_t_ac_parameters_sobol.csv",
-#     param_dist_threshold=0.7 # 2-fold difference
-# )
+tac_train_loader, _, tac_test_loader = make_loaders(
+    DATA_ROOT=Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY020/data_t_ac_variation"),
+    results_csv="IY020_simulation_t_ac_parameters_sobol.csv",
+    param_dist_threshold=0.7 # 2-fold difference
+)
 
 
 # catch22 + SVM experiments
 # 1. Baseline
 baseline_catch22_svm_acc = run_catch22_svm(baseline_train_loader, baseline_test_loader, "Baseline")
 
-# # 2. CV Variation
-# cv_catch22_svm_acc = run_catch22_svm(cv_train_loader, cv_test_loader, "CV Variation")
+# 2. CV Variation
+cv_catch22_svm_acc = run_catch22_svm(cv_train_loader, cv_test_loader, "CV Variation")
 
-# # 3. Mu Variation
-# mu_catch22_svm_acc = run_catch22_svm(mu_train_loader, mu_test_loader, "Mu Variation")
+# 3. Mu Variation
+mu_catch22_svm_acc = run_catch22_svm(mu_train_loader, mu_test_loader, "Mu Variation")
 
-# # 4. Tac Variation
-# tac_catch22_svm_acc = run_catch22_svm(tac_train_loader, tac_test_loader, "Tac Variation")
+# 4. Tac Variation
+tac_catch22_svm_acc = run_catch22_svm(tac_train_loader, tac_test_loader, "Tac Variation")
