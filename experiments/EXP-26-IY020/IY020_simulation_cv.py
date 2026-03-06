@@ -40,7 +40,7 @@ np.random.seed(GLOBAL_SEED)
 # -----------------------------------------------------------------------------
 # Configuration
 # -----------------------------------------------------------------------------
-data_dir = "data_cv_variation"
+data_dir = "data_cv_variation_2"
 os.makedirs(data_dir, exist_ok=True)
 
 # Define Fixed Parameters 
@@ -68,9 +68,9 @@ time_points = np.arange(0, 3000, 1.0)
 # Results log CSV
 results_path = os.path.join(data_dir, "IY020_simulation_cv_parameters_sobol.csv")
 # start fresh if exists
-if os.path.exists(results_path):
-    os.remove(results_path)
-    # subprocess.run(['sudo', 'rm', results_path], check=True)
+# if os.path.exists(results_path):
+#     os.remove(results_path)
+#     # subprocess.run(['sudo', 'rm', results_path], check=True)
 
 # -----------------------------------------------------------------------------
 # Simulation loop

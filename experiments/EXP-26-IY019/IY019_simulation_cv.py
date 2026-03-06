@@ -40,7 +40,7 @@ MU_FIXED = 1000.0
 
 # 2. Define Variable Parameter Bounds (The "Physics")
 CV_MIN = 0.1
-CV_MAX = 4.0
+CV_MAX = 5.0
 
 # Sobol coverage
 N = 50_000 
