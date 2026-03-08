@@ -13,10 +13,12 @@ class SimCLR_Dataset(Dataset):
     2. Loads simulation data on-the-fly in __getitem__.
     3. Handles corrupt/empty files by retrying with a random file.
 
-    normalisation: None | 'instance' | 'global'
+    normalisation: None | 'instance' | 'global' | 'joint'
         None     - no normalisation
         instance - per-trajectory z-score normalisation
         global   - dataset-level z-score using pre-computed mean/std
+        joint    - z-score computed from the concatenated pair (v1 + v2),
+                   so both views share a single mean/std derived from each other
     """
     def __init__(self,
                  file_paths,
@@ -91,7 +93,7 @@ class SimCLR_Dataset(Dataset):
         indices_v2 = indices[self.num_traj:]
 
         # --- 3. View Creation Helper ---
-        def create_view(subset_indices):
+        def create_view(subset_indices, apply_norm=True):
             segments = []
             for i in subset_indices:
                 t_raw = trajectories[i]
@@ -104,13 +106,14 @@ class SimCLR_Dataset(Dataset):
                 if self.log_scale:
                     t_tensor = torch.log1p(t_tensor)
 
-                # C. Normalisation
-                if self.normalisation == 'instance':
-                    m = t_tensor.mean(dim=0, keepdim=True)
-                    s = t_tensor.std(dim=0, keepdim=True) + 1e-8
-                    t_tensor = (t_tensor - m) / s
-                elif self.normalisation == 'global':
-                    t_tensor = (t_tensor - self.global_mean) / self.global_std
+                # C. Normalisation (skipped for 'joint', applied after both views exist)
+                if apply_norm:
+                    if self.normalisation == 'instance':
+                        m = t_tensor.mean(dim=0, keepdim=True)
+                        s = t_tensor.std(dim=0, keepdim=True) + 1e-8
+                        t_tensor = (t_tensor - m) / s
+                    elif self.normalisation == 'global':
+                        t_tensor = (t_tensor - self.global_mean) / self.global_std
 
                 # D. Crop or Pad
                 curr = t_tensor.shape[0]
@@ -142,8 +145,19 @@ class SimCLR_Dataset(Dataset):
             else:
                 return segments[0]
 
-        t1_tensor = create_view(indices_v1)
-        t2_tensor = create_view(indices_v2)
+        if self.normalisation == 'joint':
+            # Build both views without normalisation, then compute shared stats
+            t1_tensor = create_view(indices_v1, apply_norm=False)
+            t2_tensor = create_view(indices_v2, apply_norm=False)
+            combined = torch.cat([t1_tensor, t2_tensor], dim=0)
+            m = combined.mean(dim=0, keepdim=True)
+            s = combined.std(dim=0, keepdim=True) + 1e-8
+            t1_tensor = (t1_tensor - m) / s
+            t2_tensor = (t2_tensor - m) / s
+        else:
+            t1_tensor = create_view(indices_v1)
+            t2_tensor = create_view(indices_v2)
+
         y_tensor  = torch.tensor(label, dtype=torch.float32).unsqueeze(0)
 
         return t1_tensor, t2_tensor, y_tensor
@@ -163,10 +177,11 @@ def ssl_data_prep(
     """
     Prepares data for SimCLR-style training using Lazy Loading.
 
-    normalisation: None | 'instance' | 'global'
+    normalisation: None | 'instance' | 'global' | 'joint'
         None     - no normalisation
         instance - per-trajectory z-score normalisation
         global   - dataset-level z-score (stats computed from training set)
+        joint    - z-score computed from the concatenated pair (v1 + v2) per sample
     """
     # 1. Split Files
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
