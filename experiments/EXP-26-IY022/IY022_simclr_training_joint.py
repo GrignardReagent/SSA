@@ -16,7 +16,7 @@ from info_nce import InfoNCE
 import wandb
 
 # Setup Configuration
-DATA_ROOT = Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY020/data")
+DATA_ROOT = Path("/home/s1732775/scratch_s1732775/SSA/experiments/EXP-26-IY020/data")
 RESULTS_PATH = DATA_ROOT / "IY020_simulation_parameters_sobol.csv" #  this csv file stores all the simulation parameters used
 df_params = pd.read_csv(RESULTS_PATH) 
 # filter out only successful simulations with no error_message, and mean_rel_error_pct < 10, cv_rel_error_pct  < 10, & t_ac_rel_error_pct < 10
