@@ -33,7 +33,7 @@ batch_size = 64
 num_traj=1 # number of trajectories per view
 sample_len=None
 log_scale = False 
-normalisation = 'global'
+normalisation = 'joint'
 
 train_loader, val_loader, test_loader = ssl_data_prep(
     TRAJ_PATH,

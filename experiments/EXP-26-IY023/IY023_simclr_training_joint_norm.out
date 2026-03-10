@@ -1,0 +1,457 @@
+/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+2026/03/09 09:09:27 ERROR main: failed to get logger path error="error opening log file: open /home/s1732775/.cache/wandb/logs/core-debug-20260309_090927.log: disk quota exceeded"
+2026/03/09 09:09:27 INFO server: accepting connections addr=/local/54494281.1.gpu/wandb-286515-286593-3888556563/socket
+2026/03/09 09:09:27 INFO server: will exit if parent process dies ppid=286515
+2026/03/09 09:09:27 INFO connection: ManageConnectionData: new connection created id=1(@)
+2026/03/09 09:09:27 INFO handleInformInit: received streamId=oaqqo01a id=1(@)
+2026/03/09 09:09:27 INFO handleInformInit: stream started streamId=oaqqo01a id=1(@)
+wandb: setting up run oaqqo01a
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY023/wandb/run-20260309_090926-oaqqo01a
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simCLR_b64_lr0.01_d0.01_L2_H4_D16_trj1_lenNone_20260309_090925
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY023-SSL-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY023-SSL-model/runs/oaqqo01a
+/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Starting SSL training...
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0069)
+[SSL] Epoch [1/500] | train_loss 4.1681 | train_acc 0.0055 | val_loss 4.1675 | val_acc 0.0069
+No improvement (1/166).
+[SSL] Epoch [2/500] | train_loss 4.1601 | train_acc 0.0068 | val_loss 4.1592 | val_acc 0.0050
+No improvement (2/166).
+[SSL] Epoch [3/500] | train_loss 4.1590 | train_acc 0.0068 | val_loss 4.1589 | val_acc 0.0056
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0081)
+[SSL] Epoch [4/500] | train_loss 4.1589 | train_acc 0.0077 | val_loss 4.1589 | val_acc 0.0081
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0119)
+[SSL] Epoch [5/500] | train_loss 4.1589 | train_acc 0.0088 | val_loss 4.1589 | val_acc 0.0119
+No improvement (1/166).
+[SSL] Epoch [6/500] | train_loss 4.1589 | train_acc 0.0122 | val_loss 4.1589 | val_acc 0.0106
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0175)
+[SSL] Epoch [7/500] | train_loss 4.1589 | train_acc 0.0133 | val_loss 4.1589 | val_acc 0.0175
+No improvement (1/166).
+[SSL] Epoch [8/500] | train_loss 4.1589 | train_acc 0.0109 | val_loss 4.1589 | val_acc 0.0094
+No improvement (2/166).
+[SSL] Epoch [9/500] | train_loss 4.1589 | train_acc 0.0196 | val_loss 4.1589 | val_acc 0.0156
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0181)
+[SSL] Epoch [10/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0181
+No improvement (1/166).
+[SSL] Epoch [11/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0150
+No improvement (2/166).
+[SSL] Epoch [12/500] | train_loss 4.1589 | train_acc 0.0136 | val_loss 4.1589 | val_acc 0.0169
+No improvement (3/166).
+[SSL] Epoch [13/500] | train_loss 4.1589 | train_acc 0.0182 | val_loss 4.1589 | val_acc 0.0175
+No improvement (4/166).
+[SSL] Epoch [14/500] | train_loss 4.1589 | train_acc 0.0147 | val_loss 4.1589 | val_acc 0.0150
+No improvement (5/166).
+[SSL] Epoch [15/500] | train_loss 4.1589 | train_acc 0.0153 | val_loss 4.1589 | val_acc 0.0156
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0200)
+[SSL] Epoch [16/500] | train_loss 4.1589 | train_acc 0.0167 | val_loss 4.1588 | val_acc 0.0200
+No improvement (1/166).
+[SSL] Epoch [17/500] | train_loss 4.1595 | train_acc 0.0117 | val_loss 4.1589 | val_acc 0.0050
+No improvement (2/166).
+[SSL] Epoch [18/500] | train_loss 4.1589 | train_acc 0.0063 | val_loss 4.1589 | val_acc 0.0081
+No improvement (3/166).
+[SSL] Epoch [19/500] | train_loss 4.1589 | train_acc 0.0052 | val_loss 4.1589 | val_acc 0.0100
+No improvement (4/166).
+[SSL] Epoch [20/500] | train_loss 4.1589 | train_acc 0.0079 | val_loss 4.1589 | val_acc 0.0075
+No improvement (5/166).
+[SSL] Epoch [21/500] | train_loss 4.1589 | train_acc 0.0066 | val_loss 4.1589 | val_acc 0.0112
+No improvement (6/166).
+[SSL] Epoch [22/500] | train_loss 4.1589 | train_acc 0.0079 | val_loss 4.1589 | val_acc 0.0069
+No improvement (7/166).
+[SSL] Epoch [23/500] | train_loss 4.1589 | train_acc 0.0085 | val_loss 4.1589 | val_acc 0.0025
+No improvement (8/166).
+[SSL] Epoch [24/500] | train_loss 4.1589 | train_acc 0.0092 | val_loss 4.1589 | val_acc 0.0112
+No improvement (9/166).
+[SSL] Epoch [25/500] | train_loss 4.1589 | train_acc 0.0088 | val_loss 4.1589 | val_acc 0.0044
+No improvement (10/166).
+[SSL] Epoch [26/500] | train_loss 4.1589 | train_acc 0.0068 | val_loss 4.1589 | val_acc 0.0100
+No improvement (11/166).
+[SSL] Epoch [27/500] | train_loss 4.1589 | train_acc 0.0098 | val_loss 4.1589 | val_acc 0.0094
+No improvement (12/166).
+[SSL] Epoch [28/500] | train_loss 4.1589 | train_acc 0.0088 | val_loss 4.1589 | val_acc 0.0100
+No improvement (13/166).
+[SSL] Epoch [29/500] | train_loss 4.1589 | train_acc 0.0092 | val_loss 4.1589 | val_acc 0.0050
+No improvement (14/166).
+[SSL] Epoch [30/500] | train_loss 4.1589 | train_acc 0.0099 | val_loss 4.1589 | val_acc 0.0088
+No improvement (15/166).
+[SSL] Epoch [31/500] | train_loss 4.1589 | train_acc 0.0103 | val_loss 4.1589 | val_acc 0.0150
+No improvement (16/166).
+[SSL] Epoch [32/500] | train_loss 4.1589 | train_acc 0.0101 | val_loss 4.1589 | val_acc 0.0150
+No improvement (17/166).
+[SSL] Epoch [33/500] | train_loss 4.1589 | train_acc 0.0110 | val_loss 4.1589 | val_acc 0.0088
+No improvement (18/166).
+[SSL] Epoch [34/500] | train_loss 4.1589 | train_acc 0.0099 | val_loss 4.1589 | val_acc 0.0106
+No improvement (19/166).
+[SSL] Epoch [35/500] | train_loss 4.1589 | train_acc 0.0133 | val_loss 4.1589 | val_acc 0.0112
+No improvement (20/166).
+[SSL] Epoch [36/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0100
+No improvement (21/166).
+[SSL] Epoch [37/500] | train_loss 4.1589 | train_acc 0.0114 | val_loss 4.1589 | val_acc 0.0131
+No improvement (22/166).
+[SSL] Epoch [38/500] | train_loss 4.1589 | train_acc 0.0120 | val_loss 4.1589 | val_acc 0.0131
+No improvement (23/166).
+[SSL] Epoch [39/500] | train_loss 4.1589 | train_acc 0.0117 | val_loss 4.1589 | val_acc 0.0100
+No improvement (24/166).
+[SSL] Epoch [40/500] | train_loss 4.1589 | train_acc 0.0106 | val_loss 4.1589 | val_acc 0.0150
+No improvement (25/166).
+[SSL] Epoch [41/500] | train_loss 4.1589 | train_acc 0.0115 | val_loss 4.1589 | val_acc 0.0125
+No improvement (26/166).
+[SSL] Epoch [42/500] | train_loss 4.1589 | train_acc 0.0114 | val_loss 4.1589 | val_acc 0.0094
+No improvement (27/166).
+[SSL] Epoch [43/500] | train_loss 4.1589 | train_acc 0.0142 | val_loss 4.1589 | val_acc 0.0138
+No improvement (28/166).
+[SSL] Epoch [44/500] | train_loss 4.1589 | train_acc 0.0125 | val_loss 4.1589 | val_acc 0.0100
+No improvement (29/166).
+[SSL] Epoch [45/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0094
+No improvement (30/166).
+[SSL] Epoch [46/500] | train_loss 4.1589 | train_acc 0.0131 | val_loss 4.1589 | val_acc 0.0125
+No improvement (31/166).
+[SSL] Epoch [47/500] | train_loss 4.1589 | train_acc 0.0109 | val_loss 4.1589 | val_acc 0.0119
+No improvement (32/166).
+[SSL] Epoch [48/500] | train_loss 4.1589 | train_acc 0.0118 | val_loss 4.1589 | val_acc 0.0081
+No improvement (33/166).
+[SSL] Epoch [49/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0106
+No improvement (34/166).
+[SSL] Epoch [50/500] | train_loss 4.1589 | train_acc 0.0120 | val_loss 4.1589 | val_acc 0.0175
+No improvement (35/166).
+[SSL] Epoch [51/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0106
+No improvement (36/166).
+[SSL] Epoch [52/500] | train_loss 4.1589 | train_acc 0.0126 | val_loss 4.1589 | val_acc 0.0150
+No improvement (37/166).
+[SSL] Epoch [53/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0131
+No improvement (38/166).
+[SSL] Epoch [54/500] | train_loss 4.1589 | train_acc 0.0136 | val_loss 4.1589 | val_acc 0.0144
+No improvement (39/166).
+[SSL] Epoch [55/500] | train_loss 4.1589 | train_acc 0.0142 | val_loss 4.1589 | val_acc 0.0138
+No improvement (40/166).
+[SSL] Epoch [56/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0156
+No improvement (41/166).
+[SSL] Epoch [57/500] | train_loss 4.1589 | train_acc 0.0134 | val_loss 4.1589 | val_acc 0.0106
+No improvement (42/166).
+[SSL] Epoch [58/500] | train_loss 4.1589 | train_acc 0.0128 | val_loss 4.1589 | val_acc 0.0131
+No improvement (43/166).
+[SSL] Epoch [59/500] | train_loss 4.1589 | train_acc 0.0177 | val_loss 4.1589 | val_acc 0.0144
+No improvement (44/166).
+[SSL] Epoch [60/500] | train_loss 4.1589 | train_acc 0.0177 | val_loss 4.1589 | val_acc 0.0138
+No improvement (45/166).
+[SSL] Epoch [61/500] | train_loss 4.1589 | train_acc 0.0170 | val_loss 4.1589 | val_acc 0.0131
+No improvement (46/166).
+[SSL] Epoch [62/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0119
+No improvement (47/166).
+[SSL] Epoch [63/500] | train_loss 4.1589 | train_acc 0.0167 | val_loss 4.1589 | val_acc 0.0150
+No improvement (48/166).
+[SSL] Epoch [64/500] | train_loss 4.1589 | train_acc 0.0125 | val_loss 4.1589 | val_acc 0.0163
+No improvement (49/166).
+[SSL] Epoch [65/500] | train_loss 4.1589 | train_acc 0.0142 | val_loss 4.1589 | val_acc 0.0144
+No improvement (50/166).
+[SSL] Epoch [66/500] | train_loss 4.1589 | train_acc 0.0156 | val_loss 4.1589 | val_acc 0.0138
+No improvement (51/166).
+[SSL] Epoch [67/500] | train_loss 4.1589 | train_acc 0.0136 | val_loss 4.1589 | val_acc 0.0106
+No improvement (52/166).
+[SSL] Epoch [68/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0100
+No improvement (53/166).
+[SSL] Epoch [69/500] | train_loss 4.1589 | train_acc 0.0172 | val_loss 4.1589 | val_acc 0.0131
+No improvement (54/166).
+[SSL] Epoch [70/500] | train_loss 4.1589 | train_acc 0.0140 | val_loss 4.1589 | val_acc 0.0112
+No improvement (55/166).
+[SSL] Epoch [71/500] | train_loss 4.1589 | train_acc 0.0133 | val_loss 4.1589 | val_acc 0.0163
+No improvement (56/166).
+[SSL] Epoch [72/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0144
+No improvement (57/166).
+[SSL] Epoch [73/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0163
+No improvement (58/166).
+[SSL] Epoch [74/500] | train_loss 4.1589 | train_acc 0.0185 | val_loss 4.1589 | val_acc 0.0156
+No improvement (59/166).
+[SSL] Epoch [75/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0169
+No improvement (60/166).
+[SSL] Epoch [76/500] | train_loss 4.1589 | train_acc 0.0170 | val_loss 4.1589 | val_acc 0.0144
+No improvement (61/166).
+[SSL] Epoch [77/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0144
+No improvement (62/166).
+[SSL] Epoch [78/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0181
+No improvement (63/166).
+[SSL] Epoch [79/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0163
+No improvement (64/166).
+[SSL] Epoch [80/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0169
+No improvement (65/166).
+[SSL] Epoch [81/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0187
+No improvement (66/166).
+[SSL] Epoch [82/500] | train_loss 4.1589 | train_acc 0.0144 | val_loss 4.1589 | val_acc 0.0175
+No improvement (67/166).
+[SSL] Epoch [83/500] | train_loss 4.1589 | train_acc 0.0167 | val_loss 4.1589 | val_acc 0.0150
+No improvement (68/166).
+[SSL] Epoch [84/500] | train_loss 4.1589 | train_acc 0.0180 | val_loss 4.1589 | val_acc 0.0169
+No improvement (69/166).
+[SSL] Epoch [85/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0131
+No improvement (70/166).
+[SSL] Epoch [86/500] | train_loss 4.1589 | train_acc 0.0144 | val_loss 4.1589 | val_acc 0.0181
+No improvement (71/166).
+[SSL] Epoch [87/500] | train_loss 4.1589 | train_acc 0.0167 | val_loss 4.1589 | val_acc 0.0194
+No improvement (72/166).
+[SSL] Epoch [88/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0131
+No improvement (73/166).
+[SSL] Epoch [89/500] | train_loss 4.1589 | train_acc 0.0153 | val_loss 4.1589 | val_acc 0.0175
+No improvement (74/166).
+[SSL] Epoch [90/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0119
+No improvement (75/166).
+[SSL] Epoch [91/500] | train_loss 4.1589 | train_acc 0.0140 | val_loss 4.1589 | val_acc 0.0112
+No improvement (76/166).
+[SSL] Epoch [92/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0169
+No improvement (77/166).
+[SSL] Epoch [93/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0131
+No improvement (78/166).
+[SSL] Epoch [94/500] | train_loss 4.1589 | train_acc 0.0169 | val_loss 4.1589 | val_acc 0.0144
+No improvement (79/166).
+[SSL] Epoch [95/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0094
+No improvement (80/166).
+[SSL] Epoch [96/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0138
+No improvement (81/166).
+[SSL] Epoch [97/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0144
+No improvement (82/166).
+[SSL] Epoch [98/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0156
+No improvement (83/166).
+[SSL] Epoch [99/500] | train_loss 4.1589 | train_acc 0.0136 | val_loss 4.1589 | val_acc 0.0150
+No improvement (84/166).
+[SSL] Epoch [100/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0194
+No improvement (85/166).
+[SSL] Epoch [101/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0187
+No improvement (86/166).
+[SSL] Epoch [102/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0125
+No improvement (87/166).
+[SSL] Epoch [103/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0163
+No improvement (88/166).
+[SSL] Epoch [104/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0194
+No improvement (89/166).
+[SSL] Epoch [105/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0088
+No improvement (90/166).
+[SSL] Epoch [106/500] | train_loss 4.1589 | train_acc 0.0197 | val_loss 4.1589 | val_acc 0.0175
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0206)
+[SSL] Epoch [107/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0206
+No improvement (1/166).
+[SSL] Epoch [108/500] | train_loss 4.1589 | train_acc 0.0150 | val_loss 4.1589 | val_acc 0.0119
+No improvement (2/166).
+[SSL] Epoch [109/500] | train_loss 4.1589 | train_acc 0.0167 | val_loss 4.1589 | val_acc 0.0100
+No improvement (3/166).
+[SSL] Epoch [110/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0200
+No improvement (4/166).
+[SSL] Epoch [111/500] | train_loss 4.1589 | train_acc 0.0150 | val_loss 4.1589 | val_acc 0.0194
+No improvement (5/166).
+[SSL] Epoch [112/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0194
+No improvement (6/166).
+[SSL] Epoch [113/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0181
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0213)
+[SSL] Epoch [114/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0213
+No improvement (1/166).
+[SSL] Epoch [115/500] | train_loss 4.1589 | train_acc 0.0169 | val_loss 4.1589 | val_acc 0.0131
+No improvement (2/166).
+[SSL] Epoch [116/500] | train_loss 4.1589 | train_acc 0.0134 | val_loss 4.1589 | val_acc 0.0169
+No improvement (3/166).
+[SSL] Epoch [117/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0125
+No improvement (4/166).
+[SSL] Epoch [118/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0131
+No improvement (5/166).
+[SSL] Epoch [119/500] | train_loss 4.1589 | train_acc 0.0163 | val_loss 4.1589 | val_acc 0.0163
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0219)
+[SSL] Epoch [120/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0219
+No improvement (1/166).
+[SSL] Epoch [121/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0163
+No improvement (2/166).
+[SSL] Epoch [122/500] | train_loss 4.1589 | train_acc 0.0183 | val_loss 4.1589 | val_acc 0.0156
+No improvement (3/166).
+[SSL] Epoch [123/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0163
+No improvement (4/166).
+[SSL] Epoch [124/500] | train_loss 4.1589 | train_acc 0.0183 | val_loss 4.1589 | val_acc 0.0125
+No improvement (5/166).
+[SSL] Epoch [125/500] | train_loss 4.1589 | train_acc 0.0156 | val_loss 4.1589 | val_acc 0.0194
+No improvement (6/166).
+[SSL] Epoch [126/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0144
+No improvement (7/166).
+[SSL] Epoch [127/500] | train_loss 4.1589 | train_acc 0.0156 | val_loss 4.1589 | val_acc 0.0169
+No improvement (8/166).
+[SSL] Epoch [128/500] | train_loss 4.1589 | train_acc 0.0183 | val_loss 4.1589 | val_acc 0.0194
+✅ Model saved at IY023_simCLR_b64_lr0.01_L2_H4_D16_20260309_090925_model.pth (Best Val Acc: 0.0231)
+[SSL] Epoch [129/500] | train_loss 4.1589 | train_acc 0.0172 | val_loss 4.1589 | val_acc 0.0231
+No improvement (1/166).
+[SSL] Epoch [130/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0219
+No improvement (2/166).
+[SSL] Epoch [131/500] | train_loss 4.1589 | train_acc 0.0133 | val_loss 4.1589 | val_acc 0.0144
+No improvement (3/166).
+[SSL] Epoch [132/500] | train_loss 4.1589 | train_acc 0.0147 | val_loss 4.1589 | val_acc 0.0069
+No improvement (4/166).
+[SSL] Epoch [133/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0187
+No improvement (5/166).
+[SSL] Epoch [134/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0163
+No improvement (6/166).
+[SSL] Epoch [135/500] | train_loss 4.1589 | train_acc 0.0144 | val_loss 4.1589 | val_acc 0.0106
+No improvement (7/166).
+[SSL] Epoch [136/500] | train_loss 4.1589 | train_acc 0.0140 | val_loss 4.1589 | val_acc 0.0094
+No improvement (8/166).
+[SSL] Epoch [137/500] | train_loss 4.1589 | train_acc 0.0117 | val_loss 4.1589 | val_acc 0.0175
+No improvement (9/166).
+[SSL] Epoch [138/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0156
+No improvement (10/166).
+[SSL] Epoch [139/500] | train_loss 4.1589 | train_acc 0.0175 | val_loss 4.1589 | val_acc 0.0144
+No improvement (11/166).
+[SSL] Epoch [140/500] | train_loss 4.1589 | train_acc 0.0178 | val_loss 4.1589 | val_acc 0.0138
+No improvement (12/166).
+[SSL] Epoch [141/500] | train_loss 4.1589 | train_acc 0.0153 | val_loss 4.1589 | val_acc 0.0150
+No improvement (13/166).
+[SSL] Epoch [142/500] | train_loss 4.1589 | train_acc 0.0177 | val_loss 4.1589 | val_acc 0.0181
+No improvement (14/166).
+[SSL] Epoch [143/500] | train_loss 4.1589 | train_acc 0.0169 | val_loss 4.1589 | val_acc 0.0119
+No improvement (15/166).
+[SSL] Epoch [144/500] | train_loss 4.1589 | train_acc 0.0140 | val_loss 4.1589 | val_acc 0.0194
+No improvement (16/166).
+[SSL] Epoch [145/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0150
+No improvement (17/166).
+[SSL] Epoch [146/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0169
+No improvement (18/166).
+[SSL] Epoch [147/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0200
+No improvement (19/166).
+[SSL] Epoch [148/500] | train_loss 4.1589 | train_acc 0.0131 | val_loss 4.1589 | val_acc 0.0163
+No improvement (20/166).
+[SSL] Epoch [149/500] | train_loss 4.1589 | train_acc 0.0136 | val_loss 4.1589 | val_acc 0.0144
+No improvement (21/166).
+[SSL] Epoch [150/500] | train_loss 4.1589 | train_acc 0.0174 | val_loss 4.1589 | val_acc 0.0144
+No improvement (22/166).
+[SSL] Epoch [151/500] | train_loss 4.1589 | train_acc 0.0158 | val_loss 4.1589 | val_acc 0.0144
+No improvement (23/166).
+[SSL] Epoch [152/500] | train_loss 4.1589 | train_acc 0.0147 | val_loss 4.1589 | val_acc 0.0194
+No improvement (24/166).
+[SSL] Epoch [153/500] | train_loss 4.1589 | train_acc 0.0163 | val_loss 4.1589 | val_acc 0.0169
+No improvement (25/166).
+[SSL] Epoch [154/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0169
+No improvement (26/166).
+[SSL] Epoch [155/500] | train_loss 4.1589 | train_acc 0.0193 | val_loss 4.1589 | val_acc 0.0100
+No improvement (27/166).
+[SSL] Epoch [156/500] | train_loss 4.1589 | train_acc 0.0155 | val_loss 4.1589 | val_acc 0.0112
+No improvement (28/166).
+[SSL] Epoch [157/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0187
+No improvement (29/166).
+[SSL] Epoch [158/500] | train_loss 4.1589 | train_acc 0.0131 | val_loss 4.1589 | val_acc 0.0138
+No improvement (30/166).
+[SSL] Epoch [159/500] | train_loss 4.1589 | train_acc 0.0166 | val_loss 4.1589 | val_acc 0.0169
+No improvement (31/166).
+[SSL] Epoch [160/500] | train_loss 4.1589 | train_acc 0.0163 | val_loss 4.1589 | val_acc 0.0181
+No improvement (32/166).
+[SSL] Epoch [161/500] | train_loss 4.1589 | train_acc 0.0170 | val_loss 4.1589 | val_acc 0.0163
+No improvement (33/166).
+[SSL] Epoch [162/500] | train_loss 4.1589 | train_acc 0.0163 | val_loss 4.1589 | val_acc 0.0144
+No improvement (34/166).
+[SSL] Epoch [163/500] | train_loss 4.1589 | train_acc 0.0153 | val_loss 4.1589 | val_acc 0.0163
+No improvement (35/166).
+[SSL] Epoch [164/500] | train_loss 4.1589 | train_acc 0.0170 | val_loss 4.1589 | val_acc 0.0163
+No improvement (36/166).
+[SSL] Epoch [165/500] | train_loss 4.1589 | train_acc 0.0164 | val_loss 4.1589 | val_acc 0.0187
+No improvement (37/166).
+[SSL] Epoch [166/500] | train_loss 4.1589 | train_acc 0.0114 | val_loss 4.1589 | val_acc 0.0081
+No improvement (38/166).
+[SSL] Epoch [167/500] | train_loss 4.1589 | train_acc 0.0147 | val_loss 4.1589 | val_acc 0.0138
+No improvement (39/166).
+[SSL] Epoch [168/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0169
+No improvement (40/166).
+[SSL] Epoch [169/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0144
+No improvement (41/166).
+[SSL] Epoch [170/500] | train_loss 4.1589 | train_acc 0.0183 | val_loss 4.1589 | val_acc 0.0119
+No improvement (42/166).
+[SSL] Epoch [171/500] | train_loss 4.1589 | train_acc 0.0180 | val_loss 4.1589 | val_acc 0.0144
+No improvement (43/166).
+[SSL] Epoch [172/500] | train_loss 4.1589 | train_acc 0.0161 | val_loss 4.1589 | val_acc 0.0194
+No improvement (44/166).
+[SSL] Epoch [173/500] | train_loss 4.1589 | train_acc 0.0137 | val_loss 4.1589 | val_acc 0.0169
+No improvement (45/166).
+[SSL] Epoch [174/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0138
+No improvement (46/166).
+[SSL] Epoch [175/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0156
+No improvement (47/166).
+[SSL] Epoch [176/500] | train_loss 4.1589 | train_acc 0.0128 | val_loss 4.1589 | val_acc 0.0144
+No improvement (48/166).
+[SSL] Epoch [177/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0144
+No improvement (49/166).
+[SSL] Epoch [178/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0144
+No improvement (50/166).
+[SSL] Epoch [179/500] | train_loss 4.1589 | train_acc 0.0150 | val_loss 4.1589 | val_acc 0.0181
+No improvement (51/166).
+[SSL] Epoch [180/500] | train_loss 4.1589 | train_acc 0.0164 | val_loss 4.1589 | val_acc 0.0187
+No improvement (52/166).
+[SSL] Epoch [181/500] | train_loss 4.1589 | train_acc 0.0172 | val_loss 4.1589 | val_acc 0.0163
+No improvement (53/166).
+[SSL] Epoch [182/500] | train_loss 4.1589 | train_acc 0.0178 | val_loss 4.1589 | val_acc 0.0187
+No improvement (54/166).
+[SSL] Epoch [183/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0138
+No improvement (55/166).
+[SSL] Epoch [184/500] | train_loss 4.1589 | train_acc 0.0152 | val_loss 4.1589 | val_acc 0.0131
+No improvement (56/166).
+[SSL] Epoch [185/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0169
+No improvement (57/166).
+[SSL] Epoch [186/500] | train_loss 4.1589 | train_acc 0.0178 | val_loss 4.1589 | val_acc 0.0169
+No improvement (58/166).
+[SSL] Epoch [187/500] | train_loss 4.1589 | train_acc 0.0148 | val_loss 4.1589 | val_acc 0.0163
+No improvement (59/166).
+[SSL] Epoch [188/500] | train_loss 4.1589 | train_acc 0.0159 | val_loss 4.1589 | val_acc 0.0150
+No improvement (60/166).
+[SSL] Epoch [189/500] | train_loss 4.1589 | train_acc 0.0172 | val_loss 4.1589 | val_acc 0.0156
+No improvement (61/166).
+[SSL] Epoch [190/500] | train_loss 4.1589 | train_acc 0.0169 | val_loss 4.1589 | val_acc 0.0150
+No improvement (62/166).
+[SSL] Epoch [191/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0144
+No improvement (63/166).
+[SSL] Epoch [192/500] | train_loss 4.1589 | train_acc 0.0129 | val_loss 4.1589 | val_acc 0.0150
+No improvement (64/166).
+[SSL] Epoch [193/500] | train_loss 4.1589 | train_acc 0.0139 | val_loss 4.1589 | val_acc 0.0119
+No improvement (65/166).
+[SSL] Epoch [194/500] | train_loss 4.1589 | train_acc 0.0156 | val_loss 4.1589 | val_acc 0.0219
+No improvement (66/166).
+[SSL] Epoch [195/500] | train_loss 4.1589 | train_acc 0.0175 | val_loss 4.1589 | val_acc 0.0156
+No improvement (67/166).
+[SSL] Epoch [196/500] | train_loss 4.1589 | train_acc 0.0145 | val_loss 4.1589 | val_acc 0.0169
+Traceback (most recent call last):
+  File "/exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY023/IY023_simclr_training_joint_norm.py", line 133, in <module>
+    history = train_ssl_model(
+              ^^^^^^^^^^^^^^^^
+  File "/exports/eddie/scratch/s1732775/SSA/src/training/train.py", line 411, in train_ssl_model
+    for batch in train_loader:
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 708, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1458, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1420, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1251, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+           ^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/multiprocessing/connection.py", line 440, in _poll
+    r = wait([self], timeout)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+2026/03/10 09:25:15 INFO handleInformTeardown: server teardown initiated id=1(@)
+2026/03/10 09:25:15 INFO connection: closing id=1(@)
+2026/03/10 09:25:15 INFO connection: closed successfully id=1(@)
+2026/03/10 09:25:15 INFO server is shutting down
+2026/03/10 09:25:15 INFO server: listener closed addr=/local/54494281.1.gpu/wandb-286515-286593-3888556563/socket
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msimCLR_b64_lr0.01_d0.01_L2_H4_D16_trj1_lenNone_20260309_090925[0m at: [34mhttps://wandb.ai/grignard-reagent/IY023-SSL-model/runs/oaqqo01a[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20260309_090926-oaqqo01a/logs[0m
+2026/03/10 09:25:16 INFO handleInformTeardown: server shutdown complete id=1(@)
+2026/03/10 09:25:16 INFO connection: ManageConnectionData: connection closed id=1(@)
+2026/03/10 09:25:16 INFO server is closed
