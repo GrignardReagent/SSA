@@ -6,6 +6,26 @@ from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
 
+def batch_norm_collate_fn(batch):
+    """
+    Custom collate function for 'batch-wise' normalisation mode.
+    After stacking the batch, computes mean/std across the batch dimension
+    (dim=0) and z-score normalises z1 and z2 using those shared statistics.
+    """
+    z1_list, z2_list, y_list = zip(*batch)
+    z1 = torch.stack(z1_list, dim=0)  # (B, T, C)
+    z2 = torch.stack(z2_list, dim=0)
+    y  = torch.stack(y_list,  dim=0)
+
+    combined = torch.cat([z1, z2], dim=0)  # (2B, T, C)
+    m = combined.mean(dim=0, keepdim=True)  # (1, T, C)
+    s = combined.std(dim=0, keepdim=True) + 1e-8
+
+    z1 = (z1 - m) / s
+    z2 = (z2 - m) / s
+    return z1, z2, y
+
+
 class SimCLR_Dataset(Dataset):
     """
     Lazy-loading Dataset for SimCLR.
@@ -13,12 +33,14 @@ class SimCLR_Dataset(Dataset):
     2. Loads simulation data on-the-fly in __getitem__.
     3. Handles corrupt/empty files by retrying with a random file.
 
-    normalisation: None | 'instance' | 'global' | 'joint'
+    normalisation: None | 'instance' | 'global' | 'joint' | 'batch-wise'
         None     - no normalisation
         instance - per-trajectory z-score normalisation
         global   - dataset-level z-score using pre-computed mean/std
         joint    - z-score computed from the concatenated pair (v1 + v2),
                    so both views share a single mean/std derived from each other
+        batch-wise    - z-score computed across the full batch (both views combined),
+                   applied via a custom collate_fn in the DataLoader
     """
     def __init__(self,
                  file_paths,
@@ -106,7 +128,7 @@ class SimCLR_Dataset(Dataset):
                 if self.log_scale:
                     t_tensor = torch.log1p(t_tensor)
 
-                # C. Normalisation (skipped for 'joint', applied after both views exist)
+                # C. Normalisation (skipped for 'joint'/'batch-wise', applied after both views exist)
                 if apply_norm:
                     if self.normalisation == 'instance':
                         m = t_tensor.mean(dim=0, keepdim=True)
@@ -115,20 +137,23 @@ class SimCLR_Dataset(Dataset):
                     elif self.normalisation == 'global':
                         t_tensor = (t_tensor - self.global_mean) / self.global_std
 
-                # D. Crop or Pad
+                # D. Subsample to sample_len
                 curr = t_tensor.shape[0]
                 target = self.sample_len
+                stride = curr / target
 
-                if curr > target:
-                    if self.training:
-                        start = np.random.randint(0, curr - target)
-                        t_proc = t_tensor[start : start + target]
-                    else:
-                        t_proc = t_tensor[:target]
+                if curr >= target and self.training:
+                    # Random phase offset within the first stride window for augmentation
+                    phase = np.random.uniform(0, stride)
+                    idx = np.clip(
+                        np.round(phase + np.arange(target) * stride).astype(int),
+                        0, curr - 1
+                    )
                 else:
-                    diff = target - curr
-                    pad_tensor = torch.zeros((diff, t_tensor.shape[1]), dtype=t_tensor.dtype)
-                    t_proc = torch.cat([t_tensor, pad_tensor], dim=0)
+                    # Deterministic uniform spacing; also handles curr < target by
+                    # repeating points (avoids padding)
+                    idx = np.round(np.linspace(0, curr - 1, target)).astype(int)
+                t_proc = t_tensor[idx]
 
                 segments.append(t_proc)
 
@@ -154,6 +179,10 @@ class SimCLR_Dataset(Dataset):
             s = combined.std(dim=0, keepdim=True) + 1e-8
             t1_tensor = (t1_tensor - m) / s
             t2_tensor = (t2_tensor - m) / s
+        elif self.normalisation == 'batch-wise':
+            # No per-sample normalisation; batch_norm_collate_fn handles it at batch level
+            t1_tensor = create_view(indices_v1, apply_norm=False)
+            t2_tensor = create_view(indices_v2, apply_norm=False)
         else:
             t1_tensor = create_view(indices_v1)
             t2_tensor = create_view(indices_v2)
@@ -177,11 +206,12 @@ def ssl_data_prep(
     """
     Prepares data for SimCLR-style training using Lazy Loading.
 
-    normalisation: None | 'instance' | 'global' | 'joint'
+    normalisation: None | 'instance' | 'global' | 'joint' | 'batch-wise'
         None     - no normalisation
         instance - per-trajectory z-score normalisation
         global   - dataset-level z-score (stats computed from training set)
         joint    - z-score computed from the concatenated pair (v1 + v2) per sample
+        batch-wise    - z-score computed across the full batch (both views combined)
     """
     # 1. Split Files
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
@@ -261,8 +291,9 @@ def ssl_data_prep(
     )
 
     # 5. Loaders
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=4, drop_last=True)
-    val_loader   = DataLoader(val_ds,   batch_size=batch_size, shuffle=False, num_workers=4)
-    test_loader  = DataLoader(test_ds,  batch_size=batch_size, shuffle=False, num_workers=4)
+    collate_fn = batch_norm_collate_fn if normalisation == 'batch-wise' else None
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True,  num_workers=4, drop_last=True, collate_fn=collate_fn)
+    val_loader   = DataLoader(val_ds,   batch_size=batch_size, shuffle=False, num_workers=4, collate_fn=collate_fn)
+    test_loader  = DataLoader(test_ds,  batch_size=batch_size, shuffle=False, num_workers=4, collate_fn=collate_fn)
 
     return train_loader, val_loader, test_loader
