@@ -224,34 +224,54 @@ def ssl_data_prep(
     global_mean, global_std = 0.0, 1.0
 
     if normalisation == 'global':
-        if verbose: print("Calculating Global Normalisation Stats...")
-        # Sample up to 200 files for a fast, accurate estimation
-        subset_files = np.random.choice(train_files, min(200, len(train_files)), replace=False)
-        all_vals = []
-        for f in subset_files:
+        if verbose: print("Calculating Global Normalisation Stats (Welford streaming over ALL training files)...")
+
+        # --- Welford / Chan's parallel algorithm ---
+        # Replaces the previous approach of randomly sampling 200 files, which was
+        # fragile and could misrepresent the dataset distribution.
+        # This streams through every training file in a single pass using Chan's
+        # parallel update formula, so statistics are exact and memory usage stays O(1).
+        welford_n    = 0       # running count of values seen so far
+        welford_mean = 0.0     # running mean
+        welford_M2   = 0.0     # running sum of squared deviations from the mean
+
+        for f in tqdm(train_files, desc="Welford global stats", disable=not verbose):
             try:
                 if str(f).endswith(".csv"):
                     df = pd.read_csv(f)
-                    trajs = list(df.values)
-                    for traj in trajs:
-                        all_vals.append(traj)
+                    trajs = [df.values]
                 else:
                     data = np.load(f, allow_pickle=True)
-                    if "trajectories" in data and len(data["trajectories"]) > 0:
-                        traj_array = np.concatenate(list(data["trajectories"]))
-                        all_vals.append(traj_array)
+                    if "trajectories" not in data or len(data["trajectories"]) == 0:
+                        continue
+                    trajs = list(data["trajectories"])
+
+                for traj in trajs:
+                    vals = np.asarray(traj, dtype=np.float64).flatten()
+                    if log_scale:
+                        vals = np.log1p(vals)
+
+                    # Chan's parallel merge: combine running stats with this trajectory batch
+                    n_batch    = len(vals)
+                    mean_batch = np.mean(vals)
+                    M2_batch   = np.var(vals) * n_batch  # sum of sq. deviations for this batch
+
+                    delta        = mean_batch - welford_mean
+                    n_total      = welford_n + n_batch
+                    welford_mean += delta * n_batch / n_total
+                    welford_M2   += M2_batch + delta**2 * welford_n * n_batch / n_total
+                    welford_n     = n_total
+
             except Exception:
                 pass
 
-        if all_vals:
-            all_vals_cat = np.concatenate(all_vals)
-            if log_scale:
-                all_vals_cat = np.log1p(all_vals_cat)
+        if welford_n > 1:
+            global_mean = float(welford_mean)
+            global_std  = float(np.sqrt(welford_M2 / welford_n)) + 1e-8
 
-            global_mean = float(np.mean(all_vals_cat))
-            global_std = float(np.std(all_vals_cat)) + 1e-8
-
-            if verbose: print(f"Global Stats -> Mean: {global_mean:.4f}, Std: {global_std:.4f}")
+            if verbose:
+                print(f"Welford Global Stats ({welford_n:,} values from {len(train_files)} files) -> "
+                      f"Mean: {global_mean:.4f}, Std: {global_std:.4f}")
 
     # 3. Handle Sample Length
     if sample_len is None:
