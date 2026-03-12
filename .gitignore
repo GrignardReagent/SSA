@@ -29,4 +29,7 @@ src/*/*.egg-info/*
 # other IDE files
 .vscode/
 .idea/
+.github/
+.claude/
+.pytest_cache/
 
