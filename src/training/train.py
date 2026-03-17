@@ -407,7 +407,6 @@ def train_ssl_model(
         total_loss, total_correct, total_samples = 0.0, 0, 0
 
         # ======== TRAIN LOOP (X1, X2, _) ========
-        # TODO: info_nce should calculate across the entire train_loader to get meaningful results
         for batch in train_loader:
             # We unpack 3 items but IGNORE the label 'y'
             if len(batch) != 3:

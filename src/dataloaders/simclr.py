@@ -1,3 +1,6 @@
+import hashlib
+import json
+import os
 import torch
 import numpy as np
 import pandas as pd
@@ -5,6 +8,119 @@ import random
 from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
 from sklearn.model_selection import train_test_split
+
+# ── Normalisation helpers ──────────────────────────────────────────────────────
+
+def _norm_instance(t: torch.Tensor) -> torch.Tensor:
+    """Per-trajectory z-score: mean/std computed along the time axis."""
+    m = t.mean(dim=0, keepdim=True)
+    s = t.std(dim=0, keepdim=True)
+    return (t - m) / s
+
+
+def _norm_global(t: torch.Tensor, global_mean: float, global_std: float) -> torch.Tensor:
+    """Dataset-level z-score using pre-computed mean/std."""
+    return (t - global_mean) / global_std
+
+
+def _norm_joint(t1: torch.Tensor, t2: torch.Tensor):
+    """Z-score computed from the concatenated pair so both views share one mean/std."""
+    combined = torch.cat([t1, t2], dim=0)
+    m = combined.mean(dim=0, keepdim=True)
+    s = combined.std(dim=0, keepdim=True)
+    return (t1 - m) / s, (t2 - m) / s
+
+
+def _dataset_fingerprint(file_paths, log_scale: bool) -> str:
+    """
+    Short SHA-256 fingerprint of the sorted file list + log_scale flag.
+    Used to name the stats cache file so different datasets never collide.
+    """
+    key = json.dumps(
+        {"files": sorted(str(p) for p in file_paths), "log_scale": log_scale},
+        sort_keys=True,
+    )
+    return hashlib.sha256(key.encode()).hexdigest()[:16]
+
+
+def _compute_welford_stats(train_files, log_scale: bool, verbose: bool, cache_dir=None):
+    """
+    Stream through every training file once and return (mean, std) using
+    Chan's parallel update formula.  Memory usage is O(1).
+
+    If cache_dir is given, the result is saved to
+    ``<cache_dir>/global_stats_<fingerprint>.json`` on first run and
+    loaded from there on every subsequent call with the same file list
+    and log_scale setting.
+    """
+    # ── Cache lookup ──────────────────────────────────────────────────────────
+    cache_path = None
+    if cache_dir is not None:
+        os.makedirs(cache_dir, exist_ok=True)
+        fingerprint = _dataset_fingerprint(train_files, log_scale)
+        cache_path  = os.path.join(cache_dir, f"global_stats_{fingerprint}.json")
+        if os.path.exists(cache_path):
+            with open(cache_path) as fh:
+                cached = json.load(fh)
+            if verbose:
+                print(f"Loaded cached global stats from {cache_path} "
+                      f"(mean={cached['mean']:.4f}, std={cached['std']:.4f})")
+            return cached["mean"], cached["std"]
+
+    # ── Welford / Chan's parallel algorithm ───────────────────────────────────
+    welford_n    = 0
+    welford_mean = 0.0
+    welford_M2   = 0.0
+
+    for f in tqdm(train_files, desc="Welford global stats", disable=not verbose):
+        try:
+            if str(f).endswith(".csv"):
+                df = pd.read_csv(f)
+                trajs = [df.values]
+            else:
+                data = np.load(f, allow_pickle=True)
+                if "trajectories" not in data or len(data["trajectories"]) == 0:
+                    continue
+                trajs = list(data["trajectories"])
+
+            for traj in trajs:
+                vals = np.asarray(traj, dtype=np.float64).flatten()
+                if log_scale:
+                    vals = np.log1p(vals)
+
+                n_batch    = len(vals)
+                mean_batch = np.mean(vals)
+                M2_batch   = np.var(vals) * n_batch
+
+                delta        = mean_batch - welford_mean
+                n_total      = welford_n + n_batch
+                welford_mean += delta * n_batch / n_total
+                welford_M2   += M2_batch + delta**2 * welford_n * n_batch / n_total
+                welford_n     = n_total
+
+        except Exception:
+            pass
+
+    if welford_n > 1:
+        global_mean = float(welford_mean)
+        global_std  = float(np.sqrt(welford_M2 / welford_n))
+    else:
+        global_mean, global_std = 0.0, 1.0
+
+    # ── Cache save ────────────────────────────────────────────────────────────
+    if cache_path is not None:
+        with open(cache_path, "w") as fh:
+            json.dump(
+                {"mean": global_mean, "std": global_std,
+                 "n_values": welford_n, "n_files": len(train_files),
+                 "log_scale": log_scale},
+                fh, indent=2,
+            )
+        if verbose:
+            print(f"Cached global stats to {cache_path}")
+
+    return global_mean, global_std
+
 
 def batch_norm_collate_fn(batch):
     """
@@ -19,11 +135,13 @@ def batch_norm_collate_fn(batch):
 
     combined = torch.cat([z1, z2], dim=0)  # (2B, T, C)
     m = combined.mean(dim=0, keepdim=True)  # (1, T, C)
-    s = combined.std(dim=0, keepdim=True) + 1e-8
+    s = combined.std(dim=0, keepdim=True)
 
     z1 = (z1 - m) / s
     z2 = (z2 - m) / s
     return z1, z2, y
+
+# ──────────────────────────────────────────────────────────────────────────────
 
 
 class SimCLR_Dataset(Dataset):
@@ -131,11 +249,9 @@ class SimCLR_Dataset(Dataset):
                 # C. Normalisation (skipped for 'joint'/'batch-wise', applied after both views exist)
                 if apply_norm:
                     if self.normalisation == 'instance':
-                        m = t_tensor.mean(dim=0, keepdim=True)
-                        s = t_tensor.std(dim=0, keepdim=True) + 1e-8
-                        t_tensor = (t_tensor - m) / s
+                        t_tensor = _norm_instance(t_tensor)
                     elif self.normalisation == 'global':
-                        t_tensor = (t_tensor - self.global_mean) / self.global_std
+                        t_tensor = _norm_global(t_tensor, self.global_mean, self.global_std)
 
                 # D. Subsample to sample_len
                 curr = t_tensor.shape[0]
@@ -174,11 +290,7 @@ class SimCLR_Dataset(Dataset):
             # Build both views without normalisation, then compute shared stats
             t1_tensor = create_view(indices_v1, apply_norm=False)
             t2_tensor = create_view(indices_v2, apply_norm=False)
-            combined = torch.cat([t1_tensor, t2_tensor], dim=0)
-            m = combined.mean(dim=0, keepdim=True)
-            s = combined.std(dim=0, keepdim=True) + 1e-8
-            t1_tensor = (t1_tensor - m) / s
-            t2_tensor = (t2_tensor - m) / s
+            t1_tensor, t2_tensor = _norm_joint(t1_tensor, t2_tensor)
         elif self.normalisation == 'batch-wise':
             # No per-sample normalisation; batch_norm_collate_fn handles it at batch level
             t1_tensor = create_view(indices_v1, apply_norm=False)
@@ -202,16 +314,23 @@ def ssl_data_prep(
     num_traj=1,
     separator_len=1,
     separator_val=-10.0,
+    stats_cache_dir=".stats_cache",
 ):
     """
     Prepares data for SimCLR-style training using Lazy Loading.
 
     normalisation: None | 'instance' | 'global' | 'joint' | 'batch-wise'
-        None     - no normalisation
-        instance - per-trajectory z-score normalisation
-        global   - dataset-level z-score (stats computed from training set)
-        joint    - z-score computed from the concatenated pair (v1 + v2) per sample
-        batch-wise    - z-score computed across the full batch (both views combined)
+        None       - no normalisation
+        instance   - per-trajectory z-score normalisation
+        global     - dataset-level z-score (stats computed from training set)
+        joint      - z-score computed from the concatenated pair (v1 + v2) per sample
+        batch-wise - z-score computed across the full batch (both views combined)
+
+    stats_cache_dir: directory where the computed global mean/std is saved as a JSON
+        file (keyed by a fingerprint of the file list + log_scale).  Defaults to
+        '.stats_cache' in the current working directory.  Only pass this explicitly
+        if you want the cache somewhere specific (e.g. a shared filesystem accessible
+        to all cluster nodes).  Set to None to disable caching entirely.
     """
     # 1. Split Files
     train_files, test_files = train_test_split(all_file_paths, test_size=0.2, random_state=seed)
@@ -225,53 +344,9 @@ def ssl_data_prep(
 
     if normalisation == 'global':
         if verbose: print("Calculating Global Normalisation Stats (Welford streaming over ALL training files)...")
-
-        # --- Welford / Chan's parallel algorithm ---
-        # Replaces the previous approach of randomly sampling 200 files, which was
-        # fragile and could misrepresent the dataset distribution.
-        # This streams through every training file in a single pass using Chan's
-        # parallel update formula, so statistics are exact and memory usage stays O(1).
-        welford_n    = 0       # running count of values seen so far
-        welford_mean = 0.0     # running mean
-        welford_M2   = 0.0     # running sum of squared deviations from the mean
-
-        for f in tqdm(train_files, desc="Welford global stats", disable=not verbose):
-            try:
-                if str(f).endswith(".csv"):
-                    df = pd.read_csv(f)
-                    trajs = [df.values]
-                else:
-                    data = np.load(f, allow_pickle=True)
-                    if "trajectories" not in data or len(data["trajectories"]) == 0:
-                        continue
-                    trajs = list(data["trajectories"])
-
-                for traj in trajs:
-                    vals = np.asarray(traj, dtype=np.float64).flatten()
-                    if log_scale:
-                        vals = np.log1p(vals)
-
-                    # Chan's parallel merge: combine running stats with this trajectory batch
-                    n_batch    = len(vals)
-                    mean_batch = np.mean(vals)
-                    M2_batch   = np.var(vals) * n_batch  # sum of sq. deviations for this batch
-
-                    delta        = mean_batch - welford_mean
-                    n_total      = welford_n + n_batch
-                    welford_mean += delta * n_batch / n_total
-                    welford_M2   += M2_batch + delta**2 * welford_n * n_batch / n_total
-                    welford_n     = n_total
-
-            except Exception:
-                pass
-
-        if welford_n > 1:
-            global_mean = float(welford_mean)
-            global_std  = float(np.sqrt(welford_M2 / welford_n)) + 1e-8
-
-            if verbose:
-                print(f"Welford Global Stats ({welford_n:,} values from {len(train_files)} files) -> "
-                      f"Mean: {global_mean:.4f}, Std: {global_std:.4f}")
+        global_mean, global_std = _compute_welford_stats(train_files, log_scale, verbose, cache_dir=stats_cache_dir)
+        if verbose:
+            print(f"Welford Global Stats -> Mean: {global_mean:.4f}, Std: {global_std:.4f}")
 
     # 3. Handle Sample Length
     if sample_len is None:
