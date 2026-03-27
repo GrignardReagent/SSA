@@ -3,7 +3,7 @@
 **/m_traj*
 experiments/EXP-25-IY011/data/IY011_synth_shard*
 julia/simulation/tests/test_telegraph_fixed_stats_results/*.png
-experiments/EXP-25-IY013/data/exp_data/*_post_media_switch.tsv
+experiments/EXP-25-IY013/**/*_post_media_switch.tsv
 # dataloaders
 experiments/**/*static_*.pt 
 
@@ -32,4 +32,3 @@ src/*/*.egg-info/*
 .github/
 .claude/
 .pytest_cache/
-

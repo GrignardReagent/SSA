@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
+import math
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.preprocessing import StandardScaler
-from models.transformer import TransformerClassifier, train_model, evaluate_model
+from models.transformer import TransformerClassifier
+from training.train import train_model
+from training.eval import evaluate_model
 from utils.set_seed import set_seed
 
 def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test, 
@@ -112,7 +115,21 @@ def transformer_classifier(X_train, X_val, X_test, y_train, y_val, y_test,
     train_model(model, train_loader, val_loader, epochs=epochs, patience=patience, save_path=save_path)
 
     # === Evaluate ===
-    transformer_acc = evaluate_model(model, test_loader)
+    transformer_loss, transformer_acc = evaluate_model(model, test_loader)
+
+    # Some evaluation pipelines may return nested tuples/lists
+    # (e.g., (acc, aux), ((acc, aux), extras), etc.).
+    # Peel to the first scalar-like value before formatting.
+    while isinstance(transformer_acc, (tuple, list)) and len(transformer_acc) > 0:
+        transformer_acc = transformer_acc[0]
+
+    if hasattr(transformer_acc, "item"):
+        transformer_acc = transformer_acc.item()
+
+    try:
+        transformer_acc = float(transformer_acc)
+    except (TypeError, ValueError):
+        transformer_acc = math.nan
 
     # Print out results based on configuration
     if not use_conv1d and not use_auxiliary:
