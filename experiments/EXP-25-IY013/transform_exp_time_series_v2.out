@@ -1,0 +1,231 @@
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [399 400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [399 400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [399 400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [399 400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [399 400 401 402 403]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+Found 12 TSV file(s) in /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data
+[18360_2020_01_04_steadystate_glucose_2min_01] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/18360_2020_01_04_steadystate_glucose_2min_01_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_1106_mCherry_time_series.csv  (233 cells × 23 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_898_mCherry_time_series.csv  (254 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_900_mCherry_time_series.csv  (243 cells × 178 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_1106_GFP_time_series.csv  (233 cells × 122 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_898_GFP_time_series.csv  (254 cells × 116 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18360_2020_01_04_steadystate_glucose_2min_01_group_900_GFP_time_series.csv  (243 cells × 63 timepoints)
+[18446_2020_01_08_steadystate_glucose_2w0p1_2min_01] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/18446_2020_01_08_steadystate_glucose_2w0p1_2min_01_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18446_2020_01_08_steadystate_glucose_2w0p1_2min_01_group_po_mCherry_time_series.csv  (744 cells × 160 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18446_2020_01_08_steadystate_glucose_2w0p1_2min_01_group_po_GFP_time_series.csv  (744 cells × 158 timepoints)
+[18464_2020_01_20_steadystate_glucose_756S_2min_mock_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_756_mCherry_time_series.csv  (209 cells × 237 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_764_mCherry_time_series.csv  (202 cells × 129 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_903_mCherry_time_series.csv  (220 cells × 178 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_756_GFP_time_series.csv  (209 cells × 201 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_764_GFP_time_series.csv  (202 cells × 178 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_903_GFP_time_series.csv  (220 cells × 189 timepoints)
+[18589_2020_02_10_steadystate_glucose_898S_2w2_01] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/18589_2020_02_10_steadystate_glucose_898S_2w2_01_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_1106_mCherry_time_series.csv  (197 cells × 120 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_898_mCherry_time_series.csv  (245 cells × 131 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_900_mCherry_time_series.csv  (195 cells × 159 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_1106_GFP_time_series.csv  (197 cells × 143 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_898_GFP_time_series.csv  (245 cells × 163 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_900_GFP_time_series.csv  (195 cells × 112 timepoints)
+[19316_2020_10_26_steadystate_glucose_144m_2w2_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19316_2020_10_26_steadystate_glucose_144m_2w2_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1344_6_mCherry_time_series.csv  (71 cells × 94 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1346_4_mCherry_time_series.csv  (84 cells × 128 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1347_mCherry_time_series.csv  (78 cells × 126 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1344_6_GFP_time_series.csv  (71 cells × 217 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1346_4_GFP_time_series.csv  (84 cells × 232 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1347_GFP_time_series.csv  (78 cells × 146 timepoints)
+[19330_2020_11_02_steadystate_glucose_1345m_2w2_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1345_mCherry_time_series.csv  (143 cells × 161 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1348_mCherry_time_series.csv  (140 cells × 159 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1349_mCherry_time_series.csv  (143 cells × 120 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1345_GFP_time_series.csv  (143 cells × 150 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1348_GFP_time_series.csv  (140 cells × 195 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1349_GFP_time_series.csv  (143 cells × 211 timepoints)
+[19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1345_mCherry_time_series.csv  (95 cells × 65 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1348_mCherry_time_series.csv  (126 cells × 92 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1349_mCherry_time_series.csv  (68 cells × 69 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1345_GFP_time_series.csv  (95 cells × 247 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1348_GFP_time_series.csv  (126 cells × 79 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1349_GFP_time_series.csv  (68 cells × 85 timepoints)
+[19392_2020_11_12_steadystate_glucose_898m_2w0p01_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_1106_mCherry_time_series.csv  (187 cells × 28 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_898_mCherry_time_series.csv  (163 cells × 32 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_900_mCherry_time_series.csv  (185 cells × 82 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_1106_GFP_time_series.csv  (187 cells × 49 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_898_GFP_time_series.csv  (163 cells × 34 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_900_GFP_time_series.csv  (185 cells × 46 timepoints)
+[19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1345_mCherry_time_series.csv  (179 cells × 116 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1348_mCherry_time_series.csv  (201 cells × 108 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1349_mCherry_time_series.csv  (178 cells × 127 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1345_GFP_time_series.csv  (179 cells × 99 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1348_GFP_time_series.csv  (201 cells × 94 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1349_GFP_time_series.csv  (178 cells × 100 timepoints)
+[19554_2020_12_06_steadystate_glucose_2w0p01_900m_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_756_mCherry_time_series.csv  (196 cells × 128 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_900_mCherry_time_series.csv  (193 cells × 153 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_903_mCherry_time_series.csv  (170 cells × 150 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_756_GFP_time_series.csv  (196 cells × 203 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_900_GFP_time_series.csv  (193 cells × 43 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_903_GFP_time_series.csv  (170 cells × 19 timepoints)
+[19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_post_media_switch.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1344_mCherry_time_series.csv  (214 cells × 156 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1346_mCherry_time_series.csv  (231 cells × 135 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1347_mCherry_time_series.csv  (200 cells × 117 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1344_GFP_time_series.csv  (214 cells × 147 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1346_GFP_time_series.csv  (231 cells × 219 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1347_GFP_time_series.csv  (200 cells × 80 timepoints)
+[20213_2021_09_07_steady_0p01glc_1344_1346_1347_00] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/exp_data/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_post_media_switch.tsv/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1344_mCherry_time_series.csv  (241 cells × 146 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1346_mCherry_time_series.csv  (231 cells × 105 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1347_mCherry_time_series.csv  (275 cells × 89 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1344_GFP_time_series.csv  (241 cells × 49 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1346_GFP_time_series.csv  (231 cells × 104 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2/20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1347_GFP_time_series.csv  (275 cells × 165 timepoints)
+
+Done. 68 CSV file(s) written to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY013/transformed_exp_time_series_data_v2
