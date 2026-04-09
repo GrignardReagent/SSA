@@ -1,0 +1,76 @@
+graph TD
+    %% --- Global Styling ---
+    classDef data fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:black;
+    classDef process fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:black;
+    classDef model fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:black;
+    classDef deploy fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:black;
+
+    %% --- PHASE 1: DATA PREP ---
+    subgraph PHASE_1_Data_Preparation["PHASE 1: Data Preparation"]
+        direction TB
+        RawFiles["Raw .npz files (1024 simulations)"]:::data
+        
+        SplitFiles["1. Split files: Train / Val / Test (disjoint file IDs to prevent leakage)"]:::process
+        
+        GenPairs["2. Generate dynamic pairs: Positive = (File A, File A); Negative = (File A, File B)"]:::process
+        
+        Preproc["3. Log-linear preprocessing: log1p -> StandardScaler -> random crop (fixes resolution and learns local dynamics)"]:::process
+        
+        PairLoader["Training pairs (x1, x2)"]:::data
+    end
+
+    %% --- PHASE 2: TRAINING ---
+    subgraph PHASE_2_Model_Training["PHASE 2: Model Training"]
+        direction TB
+        SiameseNet["4. Siamese transformer (shared backbone)"]:::model
+        
+        Branch1["x1"]:::model
+        Branch2["x2"]:::model
+        
+        FeatExtract["Feature extraction: z1 = backbone(x1), z2 = backbone(x2)"]:::model
+        
+        DiffHead["5. Difference head: input |z1 - z2| (inductive bias for similarity)"]:::model
+        
+        Loss["Objective: minimize distance if same, maximize distance if different"]:::process
+    end
+
+    %% --- PHASE 3: DEPLOYMENT ---
+    subgraph PHASE_3_Deployment_Inference["PHASE 3: Deployment (Inference)"]
+        direction TB
+        Scissors["6. 'Scissors' step: discard head, keep backbone"]:::deploy
+        
+        RefData["Reference data (few-shot examples)"]:::data
+        UnknownData["Unknown trajectory (single input)"]:::data
+        
+        EmbedRef["Embed references into library"]:::deploy
+        EmbedQuery["Embed unknown into vector"]:::deploy
+        
+        KNN["Nearest neighbour: compare query vector vs library vectors"]:::deploy
+        
+        Prediction(("Prediction (class label)")):::deploy
+    end
+
+    %% --- Connections ---
+    RawFiles --> SplitFiles
+    SplitFiles --> GenPairs
+    GenPairs --> Preproc
+    Preproc --> PairLoader
+    
+    PairLoader --> SiameseNet
+    SiameseNet --> Branch1
+    SiameseNet --> Branch2
+    Branch1 --> FeatExtract
+    Branch2 --> FeatExtract
+    FeatExtract --> DiffHead
+    DiffHead --> Loss
+    
+    Loss -.->|"Trained weights"| Scissors
+    Scissors --> EmbedRef
+    Scissors --> EmbedQuery
+    
+    RefData --> EmbedRef
+    UnknownData --> EmbedQuery
+    
+    EmbedRef --> KNN
+    EmbedQuery --> KNN
+    KNN --> Prediction
