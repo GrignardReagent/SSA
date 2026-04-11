@@ -10,19 +10,26 @@ using Base.Threads
 export simulate_telegraph_model # this can be used directly when the module is imported
 
 """
-    simulate_telegraph_model(parameter_sets, time_points, ntrajectories; num_cores=nthreads())
+    simulate_telegraph_model(parameter_sets, time_points, ntrajectories)
 
 Simulate mRNA counts from the 2-state telegraph model via Gillespie SSA.
 
 - `parameter_sets`: a Vector of Dicts with keys:
-    "sigma_u", "sigma_b", "rho", "d", and optional "label".
+    "sigma_u", "sigma_b", "rho", "d", and optional "label" (string or int).
 - `time_points`: Vector of times at which to save M counts (e.g. `collect(0.0:1.0:100.0)`).
 - `ntrajectories`: number of trajectories per parameter set.
-- `num_cores`: number of threads to use (defaults to `Threads.nthreads()`).
+
+Parallelism is two-level:
+- Outer: `@threads` distributes parameter sets across Julia threads.
+- Inner: Each parameter set's trajectories use `EnsembleSerial` (serial within
+  @threads to avoid over-subscription).
+
+Thread count is controlled by `JULIA_NUM_THREADS`, which must be set in the
+environment *before* Julia starts.
 
 Returns a `DataFrame` with columns: `:label, :time_t1, :time_t2, ...`.
 """
-function simulate_telegraph_model(parameter_sets, time_points, traj::Int; num_cores::Int=nthreads())
+function simulate_telegraph_model(parameter_sets, time_points, traj::Int)
     # the network
     telegraph_model = @reaction_network begin
         sigma_u, G --> G_star # gene activation
@@ -35,28 +42,46 @@ function simulate_telegraph_model(parameter_sets, time_points, traj::Int; num_co
     u0 = [:G => 1, :G_star => 0, :M => 0]
     tspan = (time_points[1], time_points[end])
 
-    rows = Vector{Vector{Any}}()  # Any to allow String or Int labels
+    # Pre-allocate with fixed size so each thread writes to a unique slice —
+    # avoids the data race that push!/append! on a shared Vector would cause.
+    n_params = length(parameter_sets)
+    rows = Vector{Vector{Any}}(undef, n_params * traj)
 
-    @threads for ps in parameter_sets
-        println("Using $num_cores threads for Julia simulation..")
-        # parameters in the order rn.ps (Catalyst guarantees param order in rn.ps)
+    # Convert Python parameter dicts to Julia dicts BEFORE threading
+    # (accessing Python objects from multiple threads causes segfaults)
+    julia_params = [
+        (
+            sigma_u=ps["sigma_u"],
+            sigma_b=ps["sigma_b"],
+            rho=ps["rho"],
+            d=ps["d"],
+            label=get(ps, "label", 0)
+        )
+        for ps in parameter_sets
+    ]
+
+    @threads for i in 1:n_params
+        ps = julia_params[i]
+        # parameters dict for the reaction network
         params = Dict(
-            :sigma_u => ps["sigma_u"],
-            :sigma_b => ps["sigma_b"],
-            :rho     => ps["rho"],
-            :d       => ps["d"],
+            :sigma_u => ps.sigma_u,
+            :sigma_b => ps.sigma_b,
+            :rho     => ps.rho,
+            :d       => ps.d,
         )
 
-        label = Int64(get(ps, "label", 0))
+        label = ps.label
+        start_idx = (i - 1) * traj + 1
 
         if traj == 1
             # single traj
-            row = run_single(telegraph_model, u0, tspan, params, time_points, label)
-            push!(rows, row)
+            rows[start_idx] = run_single(telegraph_model, u0, tspan, params, time_points, label)
         else
             # multiple trajs, use ensemble
             ensemble_results = run_ensemble(telegraph_model, u0, tspan, params, time_points, label, traj)
-            append!(rows, ensemble_results)
+            for j in 1:traj
+                rows[start_idx + j - 1] = ensemble_results[j]
+            end
         end
     end
 
@@ -86,7 +111,9 @@ function run_ensemble(telegraph_model, u0, tspan, params, time_points, label, tr
     jinput = JumpInputs(telegraph_model, u0, tspan, params)
     jprob  = JumpProblem(jinput; save_positions=(false, false))
     eprob = EnsembleProblem(jprob)
-    esol = solve(eprob, SSAStepper(); trajectories=traj, saveat=time_points)
+    # Use EnsembleSerial when called from @threads to avoid nested parallelism issues.
+    # EnsembleThreads() is still beneficial when there's a single parameter set.
+    esol = solve(eprob, SSAStepper(), EnsembleSerial(); trajectories=traj, saveat=time_points)
     
     # Extract M counts for each trajectory
     ensemble_array = Array(esol)  # shape: (species, time_points, trajectories)

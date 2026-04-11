@@ -1,6 +1,7 @@
 # import the simulation functions
 import multiprocessing
-import pandas as pd 
+import warnings
+import pandas as pd
 import numpy as np
 import os
 os.environ.setdefault("PYTHON_JULIACALL_HANDLE_SIGNALS", "yes")
@@ -8,16 +9,46 @@ os.environ.setdefault("PYTHON_JULIACALL_HANDLE_SIGNALS", "yes")
 def simulate_telegraph_model(parameter_sets, time_points, size, num_cores=None):
     """
     Simulates the telegraph model using Julia implementation.
+
+    The telegraph model is a 2-state stochastic model for gene expression with mRNA
+    production and degradation. Simulations use the Gillespie SSA algorithm.
+
     Parameters:
-        parameter_sets (list): List of parameter dictionaries for each system.
-        time_points (numpy array): Array of time points for the simulation.
-        size (int): Number of simulations per condition.
-        num_cores (int, optional): Number of CPU cores to use. Defaults to all available cores.
+        parameter_sets (list): List of parameter dictionaries, one per condition.
+            Each dict must have keys: 'sigma_u', 'sigma_b', 'rho', 'd', and optionally 'label'.
+            - sigma_u: gene activation rate
+            - sigma_b: gene deactivation rate
+            - rho: mRNA production rate
+            - d: mRNA degradation rate
+            - label: identifier for the condition (default: 0)
+        time_points (numpy.ndarray): Array of time points at which to save mRNA counts.
+        size (int): Number of independent trajectories per parameter set.
+        num_cores (int, optional): Number of CPU cores to use (must be set before first
+            import of juliacall). Defaults to all available cores.
+
     Returns:
-        pd.DataFrame: DataFrame containing simulation results with columns for 'label' and time points.
-    Usage:
-        df_results = simulate_telegraph_model(parameter_sets, time_points, size, num_cores)
-        # where parameter_sets is a list of dictionaries with keys like 'sigma_u', 'sigma_b', 'rho', 'd', and 'label'.
+        pd.DataFrame: Simulation results with columns:
+            - 'label': parameter set identifier
+            - 'time_{t}': mRNA count at time t (one column per time point)
+
+    Example:
+        import numpy as np
+        from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
+
+        # Define parameters for two conditions
+        parameter_sets = [
+            {'sigma_u': 1.0, 'sigma_b': 1.0, 'rho': 10.0, 'd': 1.0, 'label': 'control'},
+            {'sigma_u': 2.0, 'sigma_b': 1.0, 'rho': 15.0, 'd': 1.0, 'label': 'treatment'},
+        ]
+
+        # Time points from 0 to 100 (linear steps of 1)
+        time_points = np.arange(0, 100, 1.0)
+
+        # Run 1000 trajectories per condition using all available cores
+        df_results = simulate_telegraph_model(parameter_sets, time_points, size=10)
+
+        # Results: df_results has 2000 rows (1000 per condition)
+        # and 101 columns: 'label' + 100 time_* columns
     """
     if num_cores is None:
         num_cores = multiprocessing.cpu_count()
@@ -56,7 +87,21 @@ def simulate_telegraph_model(parameter_sets, time_points, size, num_cores=None):
         jl.seval('using DataFrames, NPZ')
         jl.seval(jl_include_cmd)
         jl.seval('using .TelegraphSSA')
-        
+
+        # Warn if Julia started with fewer threads than requested.
+        # Julia's thread count is fixed at startup; setting JULIA_NUM_THREADS
+        # after juliacall has already been imported has no effect.
+        actual_threads = int(jl.seval('Threads.nthreads()'))
+        if actual_threads < num_cores:
+            warnings.warn(
+                f"Requested {num_cores} Julia threads but Julia started with "
+                f"{actual_threads}. Julia's thread count is fixed at startup. "
+                f"Set JULIA_NUM_THREADS={num_cores} in the environment before "
+                f"importing juliacall (i.e. before the first call to this function).",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+
         simulate_telegraph_model._julia_initialized = True
 
     # Python → Julia conversion handled automatically
@@ -65,11 +110,12 @@ def simulate_telegraph_model(parameter_sets, time_points, size, num_cores=None):
     
     # Run the simulation in Julia
     jl.seval(f'df_julia = simulate_telegraph_model(parameter_sets, time_points, {size})')
-    
+
     # Convert Julia DataFrame directly to Python
-    labels = np.array(jl.seval('Int64.(df_julia.label)'))
+    # Labels can be strings, integers, or any type — don't force conversion
+    labels = np.array(jl.seval('df_julia.label'))
     counts_matrix = np.array(jl.seval('Int64.(Matrix(df_julia[:, Not(:label)]))'))
-    
+
     # Create pandas DataFrame with same column format as Python version
     df_labels = pd.DataFrame(labels, columns=['label'])
     df_counts = pd.DataFrame(counts_matrix, columns=[f"time_{ti}" for ti in time_points])

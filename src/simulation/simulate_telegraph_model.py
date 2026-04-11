@@ -1,3 +1,4 @@
+################### DEPRECATED: This file is no longer used in the current version of the codebase.  It may be removed in a future release. ###################
 import multiprocessing
 import tqdm
 import numpy as np
