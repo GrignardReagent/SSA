@@ -359,6 +359,77 @@ def calculate_batch_accuracy(z1, z2):
     
     return correct, batch_size
 
+
+def cross_view_info_nce(z1: torch.Tensor, z2: torch.Tensor, temperature: float = 0.1) -> torch.Tensor:
+    """
+    Cross-view InfoNCE loss with self-comparison masking.
+
+    Motivation
+    ----------
+    Standard InfoNCE(z1, z2, negative_mode='unpaired') treats z1 as queries and
+    z2 as the key bank.  For query z1[i] the negatives are {z2[j] | j≠i} — the
+    entire z1 side of the batch is never used as negatives, so same-side cross-file
+    pairs (z1[i] ↔ z1[j]) contribute zero contrastive signal.
+
+    Concretely, if file-1 yields views A, B and file-2 yields views C, D:
+        standard loss uses     negatives: A↔D, B↔C            (diagonal only)
+        cross-view loss uses   negatives: A↔C, A↔D, B↔C, B↔D  (all cross pairs)
+
+    Construction
+    ------------
+    Concatenate both views into a single query/key bank:
+        all_q = cat([z1, z2])   shape (2B, E)
+        all_k = cat([z2, z1])   shape (2B, E)
+
+    The (2B×2B) similarity matrix has positives on the main diagonal:
+        • row i   (z1[i] query) → positive at col i   (z2[i] key)
+        • row B+i (z2[i] query) → positive at col B+i (z1[i] key)
+
+    Self-comparison mask
+    --------------------
+    all_q[i] also appears as a key at column (i+B) % 2B:
+        • z1[i] query (row i)   maps to z1[i] key at column B+i
+        • z2[i] query (row B+i) maps to z2[i] key at column i
+    For L2-normalised embeddings sim(z, z)=1, so exp(1/τ) ≈ 148 at τ=0.2
+    would inflate the denominator without contributing any learning signal
+    (gradient of a constant w.r.t. θ is zero).  We mask these positions to
+    -inf so they are excluded from the softmax denominator entirely.
+
+    Parameters
+    ----------
+    z1, z2      : (B, E) embedding tensors from the two views
+    temperature : InfoNCE temperature τ (default matches info-nce-pytorch)
+
+    Returns
+    -------
+    Scalar loss tensor with gradients attached to z1 and z2.
+    """
+    B = z1.size(0)
+    N = 2 * B
+
+    # L2-normalise so cosine similarity == dot product (standard for InfoNCE)
+    z1 = F.normalize(z1, dim=-1)
+    z2 = F.normalize(z2, dim=-1)
+
+    # Build the cross-view query / key banks by concatenating both views.
+    # Result: positives lie on the main diagonal of the (2B, 2B) logit matrix.
+    all_q = torch.cat([z1, z2], dim=0)   # (2B, E)
+    all_k = torch.cat([z2, z1], dim=0)   # (2B, E)
+
+    # Full pairwise cosine-similarity matrix, scaled by temperature
+    logits = torch.matmul(all_q, all_k.T) / temperature   # (2B, 2B)
+
+    # Mask self-comparisons: query i appears as a key at column (i+B) % 2B.
+    # Setting to -inf excludes the position from the softmax without affecting
+    # gradient flow through any other entry.
+    self_cols = (torch.arange(N, device=z1.device) + B) % N
+    logits[torch.arange(N, device=z1.device), self_cols] = float('-inf')
+
+    # Positives are the diagonal; cross-entropy over 2B classes
+    labels = torch.arange(N, device=z1.device)
+    return F.cross_entropy(logits, labels)
+
+
 def train_ssl_model(
     model,
     train_loader,
@@ -382,9 +453,15 @@ def train_ssl_model(
     # Initialize Optimizer
     optimizer = optimizer or optim.Adam(model.parameters(), lr=lr)
     
-    # Initialize Loss: Default to InfoNCE with negative_mode='unpaired' (SimCLR style)
+    # Initialize Loss.
+    # Default: cross-view InfoNCE with self-comparison masking.
+    # This replaces the previous InfoNCE(negative_mode='unpaired') default, which only
+    # used z2[j≠i] as negatives for query z1[i], leaving all same-side cross-file pairs
+    # (z1[i] ↔ z1[j]) unused.  The cross-view version captures every cross-file pair
+    # as a negative — see cross_view_info_nce() for the full explanation.
+    # Temperature 0.1 matches the info-nce-pytorch library default.
     if loss_fn is None:
-        loss_fn = InfoNCE(negative_mode='unpaired') 
+        loss_fn = lambda q, k: cross_view_info_nce(q, k, temperature=0.1)
     
     # -------- initialize wandb (optional) --------
     run, start_time = None, None
