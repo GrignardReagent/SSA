@@ -135,7 +135,7 @@ def batch_norm_collate_fn(batch):
 
     combined = torch.cat([z1, z2], dim=0)  # (2B, T, C)
     m = combined.mean(dim=0, keepdim=True)  # (1, T, C)
-    s = combined.std(dim=0, keepdim=True)
+    s = combined.std(dim=0, keepdim=True).clamp(min=1e-8)  # clamp prevents div-by-zero when both views are identical
 
     z1 = (z1 - m) / s
     z2 = (z2 - m) / s
@@ -372,14 +372,14 @@ def ssl_data_prep(
     )
 
     val_ds = SimCLR_Dataset(
-        val_files, training=False, sample_len=sample_len,
+        val_files, training=True, sample_len=sample_len,
         log_scale=log_scale, normalisation=normalisation,
         global_mean=global_mean, global_std=global_std,
         num_traj=num_traj, separator_len=separator_len, separator_val=separator_val
     )
 
     test_ds = SimCLR_Dataset(
-        test_files, training=False, sample_len=sample_len,
+        test_files, training=True, sample_len=sample_len,
         log_scale=log_scale, normalisation=normalisation,
         global_mean=global_mean, global_std=global_std,
         num_traj=num_traj, separator_len=separator_len, separator_val=separator_val
