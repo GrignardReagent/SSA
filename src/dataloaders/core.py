@@ -22,19 +22,20 @@ def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None
         X_train, X_test, y_train, y_test [, X_val, y_val]: Split data
     """
     # Load dataset if given as CSV
+    mRNA_traj_file = str(mRNA_traj_file)
     if mRNA_traj_file.endswith(".csv"):
         df_results = pd.read_csv(mRNA_traj_file)
         # Extract features and labels
         X = df_results.iloc[:, 1:].values
         y = df_results["label"].values
-        
+
     # load from tsv
     elif mRNA_traj_file.endswith(".tsv"):
         df_results = pd.read_csv(mRNA_traj_file, sep="\t")
         # Extract features and labels
         X = df_results.iloc[:, 1:].values
         y = df_results["label"].values
-        
+
     # load from npz
     elif mRNA_traj_file.endswith(".npz"):
         data = np.load(mRNA_traj_file)

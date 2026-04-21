@@ -426,6 +426,7 @@ def cross_view_info_nce(z1: torch.Tensor, z2: torch.Tensor, temperature: float =
     logits[torch.arange(N, device=z1.device), self_cols] = float('-inf')
 
     # Positives are the diagonal; cross-entropy over 2B classes
+    # label i means "the positive for query i is at column i" (the diagonal), it tells cross-entropy where to look for the positive in each row's logit vector.
     labels = torch.arange(N, device=z1.device)
     return F.cross_entropy(logits, labels)
 
