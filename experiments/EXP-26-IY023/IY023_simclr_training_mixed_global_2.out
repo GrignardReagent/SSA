@@ -1,0 +1,251 @@
+/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+  data: 7709 trajectories
+  data_mu_variation: 9997 trajectories
+  data_cv_variation: 9699 trajectories
+  data_t_ac_variation: 9660 trajectories
+Total trajectories: 37065
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+2026/03/15 17:02:30 ERROR main: failed to get logger path error="error opening log file: open /home/s1732775/.cache/wandb/logs/core-debug-20260315_170230.log: disk quota exceeded"
+2026/03/15 17:02:30 INFO server: accepting connections addr=/local/54603783.1.gpu/wandb-499935-502904-3585961954/socket
+2026/03/15 17:02:30 INFO server: will exit if parent process dies ppid=499935
+2026/03/15 17:02:30 INFO connection: ManageConnectionData: new connection created id=1(@)
+2026/03/15 17:02:30 INFO handleInformInit: received streamId=yg5ic1rq id=1(@)
+2026/03/15 17:02:30 INFO handleInformInit: stream started streamId=yg5ic1rq id=1(@)
+wandb: setting up run yg5ic1rq
+wandb: Tracking run with wandb version 0.24.0
+wandb: Run data is saved locally in /exports/eddie/scratch/s1732775/SSA/experiments/EXP-26-IY023/wandb/run-20260315_170229-yg5ic1rq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run simCLR_mixed_b512_lr0.01_d0.01_L2_H4_D16_trj1_len500_global_20260315_170227
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY023-SSL-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY023-SSL-model/runs/yg5ic1rq
+/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Starting SSL training...
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.0791)
+[SSL] Epoch [1/500] | train_loss 6.1353 | train_acc 0.0583 | val_loss 6.1120 | val_acc 0.0791
+No improvement (1/166).
+[SSL] Epoch [2/500] | train_loss 5.8496 | train_acc 0.0628 | val_loss 5.5837 | val_acc 0.0717
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.0826)
+[SSL] Epoch [3/500] | train_loss 5.4240 | train_acc 0.0683 | val_loss 5.2072 | val_acc 0.0826
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.0848)
+[SSL] Epoch [4/500] | train_loss 4.7994 | train_acc 0.0769 | val_loss 4.5871 | val_acc 0.0848
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.0857)
+[SSL] Epoch [5/500] | train_loss 4.5540 | train_acc 0.0807 | val_loss 4.4468 | val_acc 0.0857
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.0895)
+[SSL] Epoch [6/500] | train_loss 4.3819 | train_acc 0.0814 | val_loss 4.2627 | val_acc 0.0895
+No improvement (1/166).
+[SSL] Epoch [7/500] | train_loss 4.2636 | train_acc 0.0847 | val_loss 4.2033 | val_acc 0.0863
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1067)
+[SSL] Epoch [8/500] | train_loss 4.2128 | train_acc 0.0910 | val_loss 4.1399 | val_acc 0.1067
+No improvement (1/166).
+[SSL] Epoch [9/500] | train_loss 4.1848 | train_acc 0.0952 | val_loss 4.1305 | val_acc 0.0998
+No improvement (2/166).
+[SSL] Epoch [10/500] | train_loss 4.1538 | train_acc 0.0984 | val_loss 4.0850 | val_acc 0.1059
+No improvement (3/166).
+[SSL] Epoch [11/500] | train_loss 4.1237 | train_acc 0.1015 | val_loss 4.0645 | val_acc 0.1049
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1096)
+[SSL] Epoch [12/500] | train_loss 4.1030 | train_acc 0.1028 | val_loss 4.0522 | val_acc 0.1096
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1098)
+[SSL] Epoch [13/500] | train_loss 4.0862 | train_acc 0.1005 | val_loss 4.0403 | val_acc 0.1098
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1099)
+[SSL] Epoch [14/500] | train_loss 4.0966 | train_acc 0.1061 | val_loss 4.0721 | val_acc 0.1099
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1130)
+[SSL] Epoch [15/500] | train_loss 4.0704 | train_acc 0.1030 | val_loss 4.0051 | val_acc 0.1130
+No improvement (1/166).
+[SSL] Epoch [16/500] | train_loss 4.0418 | train_acc 0.1051 | val_loss 3.9837 | val_acc 0.1091
+No improvement (2/166).
+[SSL] Epoch [17/500] | train_loss 4.0264 | train_acc 0.1074 | val_loss 3.9866 | val_acc 0.1084
+No improvement (3/166).
+[SSL] Epoch [18/500] | train_loss 4.0197 | train_acc 0.1074 | val_loss 3.9510 | val_acc 0.1116
+No improvement (4/166).
+[SSL] Epoch [19/500] | train_loss 3.9805 | train_acc 0.1087 | val_loss 3.9253 | val_acc 0.1130
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1179)
+[SSL] Epoch [20/500] | train_loss 3.9534 | train_acc 0.1116 | val_loss 3.9245 | val_acc 0.1179
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1182)
+[SSL] Epoch [21/500] | train_loss 3.9384 | train_acc 0.1092 | val_loss 3.8925 | val_acc 0.1182
+No improvement (1/166).
+[SSL] Epoch [22/500] | train_loss 3.9221 | train_acc 0.1146 | val_loss 3.8783 | val_acc 0.1152
+No improvement (2/166).
+[SSL] Epoch [23/500] | train_loss 3.9219 | train_acc 0.1115 | val_loss 3.8705 | val_acc 0.1131
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1187)
+[SSL] Epoch [24/500] | train_loss 3.8997 | train_acc 0.1163 | val_loss 3.8429 | val_acc 0.1187
+No improvement (1/166).
+[SSL] Epoch [25/500] | train_loss 3.8904 | train_acc 0.1179 | val_loss 3.8642 | val_acc 0.1173
+No improvement (2/166).
+[SSL] Epoch [26/500] | train_loss 3.8775 | train_acc 0.1181 | val_loss 3.8230 | val_acc 0.1167
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1216)
+[SSL] Epoch [27/500] | train_loss 3.8543 | train_acc 0.1180 | val_loss 3.7943 | val_acc 0.1216
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1254)
+[SSL] Epoch [28/500] | train_loss 3.8215 | train_acc 0.1197 | val_loss 3.7337 | val_acc 0.1254
+No improvement (1/166).
+[SSL] Epoch [29/500] | train_loss 3.7723 | train_acc 0.1220 | val_loss 3.7595 | val_acc 0.1239
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1335)
+[SSL] Epoch [30/500] | train_loss 3.7442 | train_acc 0.1250 | val_loss 3.6934 | val_acc 0.1335
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1352)
+[SSL] Epoch [31/500] | train_loss 3.7354 | train_acc 0.1270 | val_loss 3.6816 | val_acc 0.1352
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1367)
+[SSL] Epoch [32/500] | train_loss 3.6856 | train_acc 0.1273 | val_loss 3.5943 | val_acc 0.1367
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1410)
+[SSL] Epoch [33/500] | train_loss 3.6414 | train_acc 0.1288 | val_loss 3.5880 | val_acc 0.1410
+No improvement (1/166).
+[SSL] Epoch [34/500] | train_loss 3.6202 | train_acc 0.1339 | val_loss 3.5556 | val_acc 0.1359
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1516)
+[SSL] Epoch [35/500] | train_loss 3.6084 | train_acc 0.1392 | val_loss 3.5831 | val_acc 0.1516
+No improvement (1/166).
+[SSL] Epoch [36/500] | train_loss 3.5961 | train_acc 0.1375 | val_loss 3.5178 | val_acc 0.1455
+No improvement (2/166).
+[SSL] Epoch [37/500] | train_loss 3.5642 | train_acc 0.1407 | val_loss 3.4971 | val_acc 0.1431
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1549)
+[SSL] Epoch [38/500] | train_loss 3.5510 | train_acc 0.1399 | val_loss 3.4913 | val_acc 0.1549
+No improvement (1/166).
+[SSL] Epoch [39/500] | train_loss 3.5322 | train_acc 0.1408 | val_loss 3.4676 | val_acc 0.1479
+No improvement (2/166).
+[SSL] Epoch [40/500] | train_loss 3.5213 | train_acc 0.1396 | val_loss 3.4630 | val_acc 0.1502
+No improvement (3/166).
+[SSL] Epoch [41/500] | train_loss 3.4986 | train_acc 0.1462 | val_loss 3.4533 | val_acc 0.1506
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1555)
+[SSL] Epoch [42/500] | train_loss 3.4981 | train_acc 0.1477 | val_loss 3.4325 | val_acc 0.1555
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1566)
+[SSL] Epoch [43/500] | train_loss 3.4819 | train_acc 0.1502 | val_loss 3.4343 | val_acc 0.1566
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1614)
+[SSL] Epoch [44/500] | train_loss 3.4766 | train_acc 0.1473 | val_loss 3.4097 | val_acc 0.1614
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1637)
+[SSL] Epoch [45/500] | train_loss 3.4570 | train_acc 0.1521 | val_loss 3.4079 | val_acc 0.1637
+No improvement (1/166).
+[SSL] Epoch [46/500] | train_loss 3.4668 | train_acc 0.1532 | val_loss 3.4199 | val_acc 0.1576
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1666)
+[SSL] Epoch [47/500] | train_loss 3.4513 | train_acc 0.1551 | val_loss 3.3773 | val_acc 0.1666
+No improvement (1/166).
+[SSL] Epoch [48/500] | train_loss 3.4303 | train_acc 0.1569 | val_loss 3.3852 | val_acc 0.1528
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1723)
+[SSL] Epoch [49/500] | train_loss 3.4155 | train_acc 0.1599 | val_loss 3.3669 | val_acc 0.1723
+No improvement (1/166).
+[SSL] Epoch [50/500] | train_loss 3.4082 | train_acc 0.1606 | val_loss 3.3550 | val_acc 0.1710
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1727)
+[SSL] Epoch [51/500] | train_loss 3.3931 | train_acc 0.1608 | val_loss 3.3490 | val_acc 0.1727
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1728)
+[SSL] Epoch [52/500] | train_loss 3.3831 | train_acc 0.1712 | val_loss 3.3083 | val_acc 0.1728
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1782)
+[SSL] Epoch [53/500] | train_loss 3.3581 | train_acc 0.1665 | val_loss 3.3005 | val_acc 0.1782
+No improvement (1/166).
+[SSL] Epoch [54/500] | train_loss 3.3370 | train_acc 0.1684 | val_loss 3.3014 | val_acc 0.1775
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1909)
+[SSL] Epoch [55/500] | train_loss 3.3359 | train_acc 0.1714 | val_loss 3.2729 | val_acc 0.1909
+No improvement (1/166).
+[SSL] Epoch [56/500] | train_loss 3.3212 | train_acc 0.1755 | val_loss 3.2897 | val_acc 0.1765
+No improvement (2/166).
+[SSL] Epoch [57/500] | train_loss 3.3146 | train_acc 0.1695 | val_loss 3.2709 | val_acc 0.1775
+No improvement (3/166).
+[SSL] Epoch [58/500] | train_loss 3.2946 | train_acc 0.1754 | val_loss 3.2533 | val_acc 0.1833
+No improvement (4/166).
+[SSL] Epoch [59/500] | train_loss 3.2890 | train_acc 0.1759 | val_loss 3.2367 | val_acc 0.1868
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1914)
+[SSL] Epoch [60/500] | train_loss 3.2840 | train_acc 0.1774 | val_loss 3.2295 | val_acc 0.1914
+No improvement (1/166).
+[SSL] Epoch [61/500] | train_loss 3.2835 | train_acc 0.1790 | val_loss 3.2378 | val_acc 0.1897
+No improvement (2/166).
+[SSL] Epoch [62/500] | train_loss 3.2779 | train_acc 0.1811 | val_loss 3.2336 | val_acc 0.1900
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.1978)
+[SSL] Epoch [63/500] | train_loss 3.2672 | train_acc 0.1784 | val_loss 3.2017 | val_acc 0.1978
+No improvement (1/166).
+[SSL] Epoch [64/500] | train_loss 3.2472 | train_acc 0.1832 | val_loss 3.2348 | val_acc 0.1941
+No improvement (2/166).
+[SSL] Epoch [65/500] | train_loss 3.2578 | train_acc 0.1820 | val_loss 3.1935 | val_acc 0.1915
+No improvement (3/166).
+[SSL] Epoch [66/500] | train_loss 3.2465 | train_acc 0.1872 | val_loss 3.2233 | val_acc 0.1922
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2005)
+[SSL] Epoch [67/500] | train_loss 3.2388 | train_acc 0.1867 | val_loss 3.1910 | val_acc 0.2005
+No improvement (1/166).
+[SSL] Epoch [68/500] | train_loss 3.2352 | train_acc 0.1867 | val_loss 3.1835 | val_acc 0.1961
+No improvement (2/166).
+[SSL] Epoch [69/500] | train_loss 3.2285 | train_acc 0.1881 | val_loss 3.1793 | val_acc 0.1973
+No improvement (3/166).
+[SSL] Epoch [70/500] | train_loss 3.2297 | train_acc 0.1881 | val_loss 3.2015 | val_acc 0.1961
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2030)
+[SSL] Epoch [71/500] | train_loss 3.2080 | train_acc 0.1909 | val_loss 3.1567 | val_acc 0.2030
+No improvement (1/166).
+[SSL] Epoch [72/500] | train_loss 3.2159 | train_acc 0.1917 | val_loss 3.1621 | val_acc 0.2030
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2033)
+[SSL] Epoch [73/500] | train_loss 3.2102 | train_acc 0.1897 | val_loss 3.1594 | val_acc 0.2033
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2040)
+[SSL] Epoch [74/500] | train_loss 3.1968 | train_acc 0.1976 | val_loss 3.1622 | val_acc 0.2040
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2064)
+[SSL] Epoch [75/500] | train_loss 3.1825 | train_acc 0.1986 | val_loss 3.1619 | val_acc 0.2064
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2079)
+[SSL] Epoch [76/500] | train_loss 3.1865 | train_acc 0.1957 | val_loss 3.1514 | val_acc 0.2079
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2140)
+[SSL] Epoch [77/500] | train_loss 3.1805 | train_acc 0.2019 | val_loss 3.1298 | val_acc 0.2140
+No improvement (1/166).
+[SSL] Epoch [78/500] | train_loss 3.1818 | train_acc 0.1994 | val_loss 3.1352 | val_acc 0.2118
+No improvement (2/166).
+[SSL] Epoch [79/500] | train_loss 3.1760 | train_acc 0.2004 | val_loss 3.1310 | val_acc 0.2077
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2151)
+[SSL] Epoch [80/500] | train_loss 3.1562 | train_acc 0.2028 | val_loss 3.1249 | val_acc 0.2151
+No improvement (1/166).
+[SSL] Epoch [81/500] | train_loss 3.1515 | train_acc 0.2111 | val_loss 3.1434 | val_acc 0.2050
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2163)
+[SSL] Epoch [82/500] | train_loss 3.1531 | train_acc 0.2131 | val_loss 3.1209 | val_acc 0.2163
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2194)
+[SSL] Epoch [83/500] | train_loss 3.1583 | train_acc 0.2081 | val_loss 3.0979 | val_acc 0.2194
+No improvement (1/166).
+[SSL] Epoch [84/500] | train_loss 3.1625 | train_acc 0.2064 | val_loss 3.1068 | val_acc 0.2128
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2227)
+[SSL] Epoch [85/500] | train_loss 3.1441 | train_acc 0.2129 | val_loss 3.1065 | val_acc 0.2227
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2305)
+[SSL] Epoch [86/500] | train_loss 3.1346 | train_acc 0.2137 | val_loss 3.0806 | val_acc 0.2305
+No improvement (1/166).
+[SSL] Epoch [87/500] | train_loss 3.1297 | train_acc 0.2134 | val_loss 3.0983 | val_acc 0.2172
+No improvement (2/166).
+[SSL] Epoch [88/500] | train_loss 3.1234 | train_acc 0.2146 | val_loss 3.0868 | val_acc 0.2217
+No improvement (3/166).
+[SSL] Epoch [89/500] | train_loss 3.1326 | train_acc 0.2127 | val_loss 3.0953 | val_acc 0.2167
+No improvement (4/166).
+[SSL] Epoch [90/500] | train_loss 3.1239 | train_acc 0.2143 | val_loss 3.0899 | val_acc 0.2280
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2327)
+[SSL] Epoch [91/500] | train_loss 3.1399 | train_acc 0.2145 | val_loss 3.0951 | val_acc 0.2327
+No improvement (1/166).
+[SSL] Epoch [92/500] | train_loss 3.1197 | train_acc 0.2127 | val_loss 3.0848 | val_acc 0.2177
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2332)
+[SSL] Epoch [93/500] | train_loss 3.1166 | train_acc 0.2208 | val_loss 3.0683 | val_acc 0.2332
+No improvement (1/166).
+[SSL] Epoch [94/500] | train_loss 3.1198 | train_acc 0.2204 | val_loss 3.1082 | val_acc 0.2285
+No improvement (2/166).
+[SSL] Epoch [95/500] | train_loss 3.1245 | train_acc 0.2204 | val_loss 3.0720 | val_acc 0.2310
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2352)
+[SSL] Epoch [96/500] | train_loss 3.0997 | train_acc 0.2273 | val_loss 3.0609 | val_acc 0.2352
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2372)
+[SSL] Epoch [97/500] | train_loss 3.0943 | train_acc 0.2302 | val_loss 3.0429 | val_acc 0.2372
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2436)
+[SSL] Epoch [98/500] | train_loss 3.0809 | train_acc 0.2297 | val_loss 3.0388 | val_acc 0.2436
+No improvement (1/166).
+[SSL] Epoch [99/500] | train_loss 3.0999 | train_acc 0.2285 | val_loss 3.0667 | val_acc 0.2408
+No improvement (2/166).
+[SSL] Epoch [100/500] | train_loss 3.0837 | train_acc 0.2268 | val_loss 3.1127 | val_acc 0.2308
+No improvement (3/166).
+[SSL] Epoch [101/500] | train_loss 3.0918 | train_acc 0.2266 | val_loss 3.0521 | val_acc 0.2372
+No improvement (4/166).
+[SSL] Epoch [102/500] | train_loss 3.0855 | train_acc 0.2294 | val_loss 3.0956 | val_acc 0.2263
+No improvement (5/166).
+[SSL] Epoch [103/500] | train_loss 3.0957 | train_acc 0.2304 | val_loss 3.0439 | val_acc 0.2372
+No improvement (6/166).
+[SSL] Epoch [104/500] | train_loss 3.0802 | train_acc 0.2324 | val_loss 3.0741 | val_acc 0.2416
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2457)
+[SSL] Epoch [105/500] | train_loss 3.0742 | train_acc 0.2306 | val_loss 3.0657 | val_acc 0.2457
+No improvement (1/166).
+[SSL] Epoch [106/500] | train_loss 3.0831 | train_acc 0.2272 | val_loss 3.0447 | val_acc 0.2413
+No improvement (2/166).
+[SSL] Epoch [107/500] | train_loss 3.0970 | train_acc 0.2292 | val_loss 3.0463 | val_acc 0.2411
+No improvement (3/166).
+[SSL] Epoch [108/500] | train_loss 3.0812 | train_acc 0.2288 | val_loss 3.0807 | val_acc 0.2398
+No improvement (4/166).
+[SSL] Epoch [109/500] | train_loss 3.0670 | train_acc 0.2343 | val_loss 3.0827 | val_acc 0.2453
+No improvement (5/166).
+[SSL] Epoch [110/500] | train_loss 3.0913 | train_acc 0.2329 | val_loss 3.0306 | val_acc 0.2423
+✅ Model saved at IY023_simCLR_mixed_b512_lr0.01_L2_H4_D16_global_20260315_170227_model.pth (Best Val Acc: 0.2519)
+[SSL] Epoch [111/500] | train_loss 3.0555 | train_acc 0.2395 | val_loss 3.0078 | val_acc 0.2519
+No improvement (1/166).
+[SSL] Epoch [112/500] | train_loss 3.0775 | train_acc 0.2305 | val_loss 3.0465 | val_acc 0.2362
+No improvement (2/166).
+[SSL] Epoch [113/500] | train_loss 3.0661 | train_acc 0.2351 | val_loss 3.0285 | val_acc 0.2505
