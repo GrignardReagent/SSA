@@ -34,3 +34,4 @@ src/*/*.egg-info/*
 .pytest_cache/
 experiments/EXP-25-IY011/data/combined.npz
 CLAUDE.md
+AGENTS.md
