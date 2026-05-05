@@ -1,0 +1,112 @@
+name: Monthly README refresh
+
+on:
+  schedule:
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-readme-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Codex README refresh
+        id: codex
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/prompts/readme-refresh.md
+          sandbox: workspace-write
+          effort: medium
+
+      - name: Validate README-only changes
+        id: validate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- README.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No README.md changes produced by Codex."
+            exit 0
+          fi
+
+          changed_files="$(git diff --name-only)"
+          unexpected_files="$(printf '%s\n' "$changed_files" | grep -v '^README.md$' || true)"
+          if [[ -n "$unexpected_files" ]]; then
+            echo "Codex changed files outside README.md:" >&2
+            printf '%s\n' "$unexpected_files" >&2
+            exit 1
+          fi
+
+          git diff --check README.md
+          if LC_ALL=C grep -nP '[^\x00-\x7F]' README.md; then
+            echo "README.md contains non-ASCII characters." >&2
+            exit 1
+          fi
+          if grep -nE 'simulate_two_telegraph_model_systems|simulate_one_telegraph_model_system|run_simulation|extract_integer_timepoints|quick_find_parameters|find_sigma_sum|mean_var_autocorr|mean_cv_autocorr|gillespie_algorithm' README.md; then
+            echo "README.md contains stale deleted API names." >&2
+            exit 1
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push README refresh branch
+        if: steps.validate.outputs.changed == 'true'
+        id: commit
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          branch="codex/monthly-readme-refresh-${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add README.md
+          git commit -m "docs: refresh README from codebase scan"
+          git push --set-upstream origin "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        if: steps.validate.outputs.changed == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.commit.outputs.branch }}
+          CODEX_FINAL_MESSAGE: ${{ steps.codex.outputs.final-message }}
+        run: |
+          set -euo pipefail
+
+          body_file="$(mktemp)"
+          {
+            echo "Monthly automated README refresh produced by Codex."
+            echo
+            echo "Verification run by workflow:"
+            echo "- git diff --check README.md"
+            echo "- README.md non-ASCII scan"
+            echo "- README.md stale deleted-API scan"
+            echo "- README-only change guard"
+            echo
+            echo "Codex final message:"
+            echo
+            printf '%s\n' "$CODEX_FINAL_MESSAGE"
+          } > "$body_file"
+
+          gh pr create \
+            --base "${GITHUB_REF_NAME}" \
+            --head "$BRANCH" \
+            --title "docs: monthly README refresh" \
+            --body-file "$body_file"

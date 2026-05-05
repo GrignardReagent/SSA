@@ -29,7 +29,6 @@ src/*/*.egg-info/*
 # other IDE files
 .vscode/
 .idea/
-.github/
 .claude/
 .agents/
 .codex/
