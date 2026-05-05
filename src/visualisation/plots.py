@@ -6,8 +6,76 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
 from utils.steady_state import find_steady_state
-from utils.data_processing import _ensure_numpy, _safe_slice, _return_no_label_df
+from utils.data_processing import _safe_slice
 from stats.autocorrelation import autocrosscorr
+
+def _as_trajectory_frame(data, label=None):
+    """Return trajectory columns from simulator output or array-like input."""
+    if isinstance(data, pd.DataFrame):
+        df = data.copy()
+        if "label" in df.columns:
+            if label is not None and label in set(df["label"].dropna().unique()):
+                df = df[df["label"] == label]
+            df = df.drop(columns=["label"], errors="ignore")
+        return df
+
+    arr = np.asarray(data)
+    if arr.ndim == 1:
+        arr = arr.reshape(1, -1)
+    return pd.DataFrame(arr)
+
+
+def _prepare_trajectory_inputs(stress_trajectories, normal_trajectories=None):
+    """Accept full simulator DataFrames or already-split trajectory matrices."""
+    normal = normal_trajectories
+    if (
+        normal is None
+        and isinstance(stress_trajectories, pd.DataFrame)
+        and "label" in stress_trajectories.columns
+    ):
+        labels = set(stress_trajectories["label"].dropna().unique())
+        if 0 in labels and 1 in labels:
+            return (
+                _as_trajectory_frame(stress_trajectories, label=0),
+                _as_trajectory_frame(stress_trajectories, label=1),
+            )
+
+    stress = _as_trajectory_frame(
+        stress_trajectories,
+        label=0 if isinstance(stress_trajectories, pd.DataFrame) else None,
+    )
+
+    if normal is not None:
+        normal = _as_trajectory_frame(
+            normal,
+            label=1 if isinstance(normal, pd.DataFrame) else None,
+        )
+
+    return stress, normal
+
+
+def _resolve_time_points(time_points, trajectories):
+    """Use provided time points, or parse simulator time columns if needed."""
+    time_points = np.asarray(time_points)
+    n_timepoints = trajectories.shape[1]
+    if len(time_points) == n_timepoints:
+        return time_points
+
+    if isinstance(trajectories, pd.DataFrame):
+        parsed = []
+        for col in trajectories.columns:
+            try:
+                parsed.append(float(str(col).replace("time_", "", 1)))
+            except ValueError:
+                break
+        if len(parsed) == n_timepoints:
+            return np.asarray(parsed)
+
+    raise ValueError(
+        f"time_points has length {len(time_points)}, but trajectories have "
+        f"{n_timepoints} time columns."
+    )
+
 
 ################## Mean mRNA counts over time
 def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories, normal_trajectories=None):
@@ -20,7 +88,10 @@ def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories,
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
-    stress_trajectories = _return_no_label_df(stress_trajectories)
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
+    time_points = _resolve_time_points(time_points, stress_trajectories)
     
     # Compute mean trajectories
     mean_stress = stress_trajectories.mean(axis=0)
@@ -39,15 +110,14 @@ def plot_mRNA_trajectory(parameter_sets: list, time_points, stress_trajectories,
     
     # Plot normal condition if provided
     if normal_trajectories is not None:
-        normal_trajectories = _return_no_label_df(normal_trajectories)
         mean_normal = normal_trajectories.mean(axis=0)
         steady_state_time_normal, _ = find_steady_state(parameter_sets[1])
         ax.plot(time_points, mean_normal, color='green', label='Normal Condition (Mean)', linewidth=2)
         ax.axvline(steady_state_time_normal, color='green', linestyle='--', label=f"Steady-State (Normal) @ {steady_state_time_normal:.1f}", alpha=0.5)
 
     # Labels and legend
-    ax.set_xlabel("Time")
-    ax.set_ylabel("mRNA Count")
+    ax.set_xlabel("Time / min")
+    ax.set_ylabel("mRNA count / molecules")
     ax.set_title(f"mRNA Trajectories (Mean for {stress_trajectories.shape[0]} cells)")
     ax.legend()
     ax.grid(True)
@@ -67,7 +137,10 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
-    stress_trajectories = _return_no_label_df(stress_trajectories)
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
+    time_points = _resolve_time_points(time_points, stress_trajectories)
     # Find the time index at which steady state is reached
     steady_state_time_stress, steady_state_index_stress = find_steady_state(parameter_sets[0])
 
@@ -92,7 +165,6 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     
     # Handle normal condition if provided
     if normal_trajectories is not None:
-        normal_trajectories = _return_no_label_df(normal_trajectories)
         steady_state_time_normal, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_mean_ss = steady_state_traj_normal.mean()
@@ -106,8 +178,8 @@ def plot_mRNA_variance(parameter_sets: list, time_points, stress_trajectories, n
     ax.set_ylim([0, max_var * 1.1])
 
     # Labels and legend
-    ax.set_xlabel('Time')
-    ax.set_ylabel('Variance of mRNA Count')
+    ax.set_xlabel('Time / min')
+    ax.set_ylabel('Variance of mRNA count / molecules^2')
     ax.set_title('Variance of mRNA Counts Over Time')
     ax.legend()
     ax.grid(True)
@@ -153,62 +225,59 @@ def plot_mRNA_dist(parameter_sets: list, stress_trajectories, normal_trajectorie
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
-    # check that the trajectories don't have a 'label' column, if they do, remove it (or else the label column may be mis-interpreted as mRNA counts)
-    stress_trajectories = _return_no_label_df(stress_trajectories)
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
     # Find the time index at which steady state is reached, if data is not already steady state
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     steady_state_traj_stress = _safe_slice(stress_trajectories, steady_state_index_stress)
     # Flatten to get all mRNA counts from all trajectories and time points
     stress_ss_flat = steady_state_traj_stress.flatten()
+    normal_ss_flat = None
+
+    if normal_trajectories is not None:
+        _, steady_state_index_normal = find_steady_state(parameter_sets[1])
+        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
+        normal_ss_flat = steady_state_traj_normal.flatten()
 
     fig, ax = plt.subplots(figsize=(10, 6))
+    if bins is None and not kde:
+        max_count = stress_ss_flat.max()
+        if normal_ss_flat is not None:
+            max_count = max(max_count, normal_ss_flat.max())
+        bins = np.arange(0, max_count + 1.5) - 0.5
+
     if kde:
         # Plot KDE (smooth curve)
         sns.kdeplot(stress_ss_flat, fill=True, color='blue', label='Stressed Condition', linewidth=2)
     else:
-        if bins is None:
-            # Determine maximum mRNA count to set bin range
-            max_count = stress_ss_flat.max()
-            # Set up bins explicitly for integer values (Poisson data)
-            bins = np.arange(0, max_count + 1.5) - 0.5  # shift bins by 0.5 to center integer counts
         # Plot histograms
         ax.hist(stress_ss_flat, bins=bins, density=True, alpha=0.6, color='blue', label='Stressed Condition', edgecolor='black')
     
     # ---- Analytical overlay ----
-    max_m_plot = int((bins[-1] + 1) if bins is not None else (
-        (max(stress_ss_flat.max(), normal_ss_flat.max()) if normal_trajectories is not None else stress_ss_flat.max()) + 10))
-
     n_s, pmf_s = telegraph_mrna_pmf(
         parameter_sets[0]['rho'], parameter_sets[0]['sigma_b'], parameter_sets[0]['sigma_u'], parameter_sets[0]['d'],
-        max_m=max_m_plot
+        max_m=int(bins[-1] + 1) if bins is not None else int(stress_ss_flat.max() + 10)
     )
     ax.plot(n_s, pmf_s, lw=2.2, color='deepskyblue', label='Analytical Solution for Telegraph Model (stressed)')
     
     #------------------------ Normal condition if provided ------------------------#
-    if normal_trajectories is not None:
-        normal_trajectories = _return_no_label_df(normal_trajectories)
-        _, steady_state_index_normal = find_steady_state(parameter_sets[1])
-        steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
-        normal_ss_flat = steady_state_traj_normal.flatten()
-        
+    if normal_ss_flat is not None:
         if kde:
             # Plot KDE (smooth curve)
             sns.kdeplot(normal_ss_flat, fill=True, color='red', label='Normal Condition', linewidth=2)
         else:
-            if bins is None:
-                max_count = max(stress_ss_flat.max(), normal_ss_flat.max())
-                bins = np.arange(0, max_count + 1.5) - 0.5
             ax.hist(normal_ss_flat, bins=bins, density=True, alpha=0.6, color='red', label='Normal Condition', edgecolor='black')
         
         # ---- Analytical overlay ----
         n_n, pmf_n = telegraph_mrna_pmf(
             parameter_sets[1]['rho'], parameter_sets[1]['sigma_b'], parameter_sets[1]['sigma_u'], parameter_sets[1]['d'],
-            max_m=max_m_plot
+            max_m=int(bins[-1] + 1) if bins is not None else int(normal_ss_flat.max() + 10)
         )
         ax.plot(n_n, pmf_n, lw=1.8, color='lightcoral', ls='--', label='Analytical Solution for Telegraph Model (normal)')
 
     # Labels and title
-    ax.set_xlabel("mRNA Count at Steady-State")
+    ax.set_xlabel("mRNA count at steady state / molecules")
     ax.set_ylabel("Probability Density")
     ax.set_title("Distribution of mRNA Counts at Steady-State")
     ax.legend()
@@ -227,7 +296,9 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
-    stress_trajectories = _return_no_label_df(stress_trajectories)
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
     
@@ -243,7 +314,6 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
     ax.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
 
     if normal_trajectories is not None:
-        normal_trajectories = _return_no_label_df(normal_trajectories)
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         # Use safe slicing helper
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
@@ -252,7 +322,7 @@ def plot_autocorr(parameter_sets: list, stress_trajectories, normal_trajectories
         ax.plot(lags_normal, np.nanmean(normal_autocorr, axis=0), color='green', label='Normal Condition')
     
     ax.set_title('Autocorrelation of mRNA Counts at Steady-State')
-    ax.set_xlabel('Lag')
+    ax.set_xlabel('Lag / time steps')
     ax.set_ylabel('Autocorrelation')
     ax.legend()
     ax.grid(True)
@@ -269,13 +339,13 @@ def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectorie
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
     # Cross-correlation requires both datasets
     if normal_trajectories is None:
         print("Warning: Cross-correlation requires both stress and normal trajectories. Skipping plot.")
         return
-    
-    stress_trajectories = _return_no_label_df(stress_trajectories)
-    normal_trajectories = _return_no_label_df(normal_trajectories)
 
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
@@ -292,7 +362,7 @@ def plot_crosscorr(parameter_sets: list, stress_trajectories, normal_trajectorie
     plt.figure()
     plt.plot(lags_crosscorr, np.nanmean(crosscorr, axis=0), color='blue', label='Cross-correlation: Stressed vs. Normal')
     plt.title('Crosscorrelation of mRNA Counts at Steady-State')
-    plt.xlabel('Lag')
+    plt.xlabel('Lag / time steps')
     plt.ylabel('Crosscorrelation')
     plt.legend()
     plt.grid(True)
@@ -307,7 +377,9 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
         stress_trajectories (numpy array): Array of mRNA trajectories for stressed condition.
         normal_trajectories (numpy array, optional): Array of mRNA trajectories for normal condition.
     """
-    stress_trajectories = _return_no_label_df(stress_trajectories)
+    stress_trajectories, normal_trajectories = _prepare_trajectory_inputs(
+        stress_trajectories, normal_trajectories
+    )
     
     # Find the time index at which steady state is reached
     _, steady_state_index_stress = find_steady_state(parameter_sets[0])
@@ -323,7 +395,6 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
     if normal_trajectories is not None:
         
         # Both autocorrelation and cross-correlation plots
-        normal_trajectories = _return_no_label_df(normal_trajectories)
         _, steady_state_index_normal = find_steady_state(parameter_sets[1])
         steady_state_traj_normal = _safe_slice(normal_trajectories, steady_state_index_normal)
         normal_autocorr, lags_normal = autocrosscorr(steady_state_traj_normal)
@@ -335,7 +406,7 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
         ax[0].plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
         ax[0].plot(lags_normal, np.nanmean(normal_autocorr, axis=0), color='green', label='Normal Condition')
         ax[0].set_title('Autocorrelation of mRNA Counts at Steady-State')
-        ax[0].set_xlabel('Lag')
+        ax[0].set_xlabel('Lag / time steps')
         ax[0].set_ylabel('Autocorrelation')
         ax[0].legend()
         ax[0].grid(True)
@@ -343,7 +414,7 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
         # Cross-correlation plot
         ax[1].plot(lags_crosscorr, np.nanmean(stress_crosscorr, axis=0), color='purple', label='Cross-correlation: Stressed vs. Normal')
         ax[1].set_title('Cross-correlation of mRNA Counts at Steady-State')
-        ax[1].set_xlabel('Lag')
+        ax[1].set_xlabel('Lag / time steps')
         ax[1].set_ylabel('Crosscorrelation')
         ax[1].legend()
         ax[1].grid(True)
@@ -352,7 +423,7 @@ def plot_autocrosscorr(parameter_sets: list, stress_trajectories, normal_traject
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.plot(lags_stress, np.nanmean(stress_autocorr, axis=0), color='blue', label='Stressed Condition')
         ax.set_title('Autocorrelation of mRNA Counts at Steady-State')
-        ax.set_xlabel('Lag')
+        ax.set_xlabel('Lag / time steps')
         ax.set_ylabel('Autocorrelation')
         ax.legend()
         ax.grid(True)
