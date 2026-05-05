@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 
-# import the simulation functions
-import multiprocessing
 import os
-os.environ.setdefault("PYTHON_JULIACALL_HANDLE_SIGNALS", "yes")
-num_cores = multiprocessing.cpu_count()
-os.environ["JULIA_NUM_THREADS"] = str(num_cores)  # or set to desired number of threads
-from juliacall import Main as jl
 import numpy as np
 import pandas as pd 
 from simulation.mean_cv_t_ac import find_tilda_parameters
+from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 # import the stats functions
 from stats.mean import calculate_mean
 from stats.variance import calculate_variance
@@ -48,27 +43,14 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
     # Set time points - longer simulation for better autocorrelation estimation
     time_points = np.arange(0, 10_000, 1.0)
     
-    # Python → Julia conversion handled automatically
-    jl.parameter_sets = parameter_sets
-    jl.time_points = time_points
-    
-    # Run the simulation in Julia
-    jl.seval(f'df = simulate_telegraph_model(parameter_sets, time_points, {size})')
-    
-    # Convert Julia DataFrame directly to Python
-    labels = np.array(jl.seval('Int64.(df.label)'))
-    counts_matrix = np.array(jl.seval('Int64.(Matrix(df[:, Not(:label)]))'))
-    
-    # Create pandas DataFrame
-    df_labels = pd.DataFrame(labels, columns=['label'])
-    df_counts = pd.DataFrame(counts_matrix, columns=[f"time_{ti}" for ti in time_points])
-    df = pd.concat([df_labels, df_counts], axis=1)
+    df = simulate_telegraph_model(parameter_sets, time_points, size)
+    trajectories = df[df["label"] == 0].drop(columns=["label"])
     
     ###############################################################
     # Now calculate the stats from the simulated data
     ###############################################################
-    mean_observed = calculate_mean(df_counts.T, parameter_sets, use_steady_state=False) # note the df is transposed
-    variance_observed = calculate_variance(df_counts.T, parameter_sets, use_steady_state=False)
+    mean_observed = calculate_mean(trajectories, parameter_sets, use_steady_state=False)
+    variance_observed = calculate_variance(trajectories, parameter_sets, use_steady_state=False)
     cv_observed = calculate_cv(variance_observed, mean_observed)
     
     # Calculate autocorrelation
@@ -99,7 +81,7 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
     os.makedirs(output_dir, exist_ok=True)
     
     # Create and save traj plot
-    fig, ax = plot_mRNA_trajectory(parameter_sets, time_points, df_counts)  
+    fig, ax = plot_mRNA_trajectory(parameter_sets, time_points, df)
     # Save figure with descriptive filename
     traj_filename = f"{output_dir}/telegraph_test_mu{mu_target}_tac{t_ac_target}_cv{cv_target}_traj.png"
     fig.savefig(traj_filename, dpi=300, bbox_inches='tight')
@@ -107,7 +89,7 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
     print(f"Trajectory plot saved to: {traj_filename}")
 
     # Plot data distribution
-    fig, ax = plot_mRNA_dist(parameter_sets, df_counts, kde=False)
+    fig, ax = plot_mRNA_dist(parameter_sets, df, kde=False)
     # Save figure with descriptive filename
     dist_filename = f"{output_dir}/telegraph_test_mu{mu_target}_tac{t_ac_target}_cv{cv_target}_dist.png"
     fig.savefig(dist_filename, dpi=300, bbox_inches='tight')
@@ -161,17 +143,6 @@ def run_simulation_test(mu_target, t_ac_target, cv_target, size=1000):
 ###############################################################
 # Main execution
 ###############################################################
-
-# Initialize Julia environment once
-print("Initializing Julia environment...")
-jl.seval('using Pkg; Pkg.activate("/home/ianyang/stochastic_simulations/julia"); Pkg.instantiate()')
-jl.seval('using DataFrames, NPZ, Base.Threads')
-jl.include("/home/ianyang/stochastic_simulations/julia/simulation/TelegraphSSA.jl")
-jl.seval('using .TelegraphSSA')
-
-# sanity check: how many threads did we get?
-nthreads = int(jl.seval('nthreads()'))
-print(f"Julia nthreads = {nthreads}")
 
 # Define test targets
 mu_targets = [10, 100, 1000]

@@ -3,7 +3,7 @@ from stats.mean import calculate_mean_from_params, calculate_mean
 from stats.variance import calculate_variance_from_params, calculate_variance
 from stats.cv import calculate_cv_from_params, calculate_cv
 from stats.autocorrelation import calculate_ac_from_params, calculate_autocorrelation, calculate_ac_time_interp1d
-from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
+from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 import numpy as np
 import pandas as pd
 
@@ -14,7 +14,9 @@ def test_find_tilda_parameters_analytical():
     t_ac_target = 2
     cv_target = 0.5
     # Get the parameters using the scaled equations
-    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, t_ac_target, cv_target)
+    rho, d, sigma_b, sigma_u = find_tilda_parameters(
+        mu_target, t_ac_target, cv_target, sigma_sum=5.0, max_rel_err=0.01
+    )
     print('Parameters found:', rho, d, sigma_b, sigma_u)
     
     # Plug back in to verify
@@ -39,7 +41,9 @@ def test_find_tilda_parameters_simulation():
     autocorr_target = 2
     cv_target = 0.5
     # Get the parameters using the scaled equations
-    rho, d, sigma_b, sigma_u = find_tilda_parameters(mu_target, autocorr_target, cv_target)
+    rho, d, sigma_b, sigma_u = find_tilda_parameters(
+        mu_target, autocorr_target, cv_target, sigma_sum=5.0, max_rel_err=0.01
+    )
     
     # Create parameter set for simulation
     parameter_set = [
@@ -56,7 +60,7 @@ def test_find_tilda_parameters_simulation():
     time_points = np.arange(0, 144.0, 1.0)
     size = 200
     # Use a single core to avoid multiprocessing overhead during tests
-    df_results = simulate_one_telegraph_model_system(parameter_set, time_points, size, num_cores=1)
+    df_results = simulate_telegraph_model(parameter_set, time_points, size, num_cores=1)
     
     # Extract trajectories (remove label column and convert to numpy array)
     trajectories = df_results[df_results['label'] == 0].drop('label', axis=1).values

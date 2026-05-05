@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 from simulation.mean_cv_t_ac import find_tilda_parameters
-from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
+from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 from stats.mean import calculate_mean
 from stats.variance import calculate_variance
 from stats.cv import calculate_cv
@@ -47,7 +47,7 @@ def test_find_tilda_parameters_matches_simulation(
 
     time_points = np.arange(0, 100, 1.0)
     np.random.seed(0)
-    df_results = simulate_one_telegraph_model_system(
+    df_results = simulate_telegraph_model(
         param_set, time_points, size=100, num_cores=1
     )
 

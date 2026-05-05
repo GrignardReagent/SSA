@@ -8,7 +8,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from simulation.mean_cv_t_ac import find_tilda_parameters
-from simulation.simulate_telegraph_model import simulate_one_telegraph_model_system
+from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 from stats.mean import calculate_mean
 from stats.variance import calculate_variance
 from stats.cv import calculate_cv
@@ -62,7 +62,7 @@ def simulate_case(mu: float,  cv: float, t_ac: float,
         time_points = np.arange(0, t_max, dt)
         
         print(f"Simulating case: mu={mu}, cv={cv}, t_ac={t_ac}, timepoint scaling factor={factor}")
-        df_results = simulate_one_telegraph_model_system(params, time_points, size=size)
+        df_results = simulate_telegraph_model(params, time_points, size=size)
         # drop the labels as we dont need them for analysis
         trajectories = df_results[df_results["label"] == 0].drop("label", axis=1).values
         # calculate the measured stats
