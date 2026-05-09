@@ -1,18 +1,16 @@
 """
-Transform experimental time series data into steady-state CSV files.
+Transform experimental time series data into steady-state CSV files for both
+fluorescence channels (mCherry and GFP).
 
-Discovers all *_post_media_switch.tsv files in ./exp_data (relative to this
-script), derives the omid from the filename, and writes one CSV per group.
+Discovers all *_post_media_switch.tsv files in ./exp_data, runs the same
+steady-state extraction pipeline independently for each channel, and writes
+one CSV per channel per group.
 
 Output filename format:
     {omid}_group_{group}_mCherry_time_series.csv
-
-Usage:
-    python transform_exp_time_series.py
-    python transform_exp_time_series.py --out-dir /path/to/output
+    {omid}_group_{group}_GFP_time_series.csv
 """
 
-import argparse
 import sys
 from pathlib import Path
 
@@ -22,20 +20,20 @@ from sklearn.experimental import enable_iterative_imputer  # noqa: F401
 from sklearn.impute import IterativeImputer
 from sklearn.linear_model import LinearRegression
 
-sys.path.append(str(Path(__file__).resolve().parents[2] / "src"))
+sys.path.insert(0, "/home/ianyang/wela/src")
 from wela.calculate_stats import load_tsv
 
 
 # ---------------------------------------------------------------------------
-# Core transformation functions (ported from IY013_exp_classification_pipeline)
+# Core transformation functions
 # ---------------------------------------------------------------------------
 
-def create_time_series_matrix(df: pd.DataFrame, experiment_name: str) -> dict:
-    """Pivot long-format data to per-group time-series matrices."""
+def create_time_series_matrix(df: pd.DataFrame, experiment_name: str, channel: str) -> dict:
+    """Pivot long-format data to per-group time-series matrices for one channel."""
     result = {}
     for group in df["group"].unique():
         gdf = df[df["group"] == group]
-        pivot = gdf.pivot(index="id", columns="time", values="CV_mCherry").reset_index()
+        pivot = gdf.pivot(index="id", columns="time", values=channel).reset_index()
         pivot["group"] = group
         pivot["experiment"] = experiment_name
         meta = ["id", "group", "experiment"]
@@ -102,7 +100,6 @@ def _detect_initial_burst(
         cv = np.std(valid) / abs(np.mean(valid)) if np.mean(valid) != 0 else 0
         if cv > burst_threshold:
             continue
-        # Check the next min_burst_duration points are also stable
         stable = True
         for j in range(i, min(i + min_burst_duration, len(values))):
             if pd.isna(values[j]):
@@ -156,7 +153,6 @@ def extract_steady_state(
                     win_means.append(np.nan)
                 win_times.append(time_cols[i + window_size - 1])
 
-            # Find first stable start
             ss_start = None
             for i in range(len(win_means) - min_steady_duration):
                 if pd.isna(win_means[i]):
@@ -194,6 +190,13 @@ def extract_steady_state(
                 ends.append(win_times[ss_end] if ss_end is not None else np.nan)
 
         if not starts:
+            # Too few timepoints for window-based detection — keep the full series.
+            print(f"  [steady-state] group '{group}': no steady-state window found "
+                  f"({len(time_cols)} timepoints < window_size+min_duration); keeping full series.")
+            out = df[["id", "group", "experiment"] + time_cols].copy()
+            out = out.dropna(subset=time_cols, how="all")
+            if not out.empty:
+                steady[group] = out
             continue
 
         t_start = np.median([t for t in starts if not pd.isna(t)])
@@ -214,8 +217,14 @@ def extract_steady_state(
 
 
 # ---------------------------------------------------------------------------
-# Main
+# Per-channel pipeline
 # ---------------------------------------------------------------------------
+
+CHANNELS = {
+    "CV_mCherry": "mCherry",
+    "CV_GFP":     "GFP",
+}
+
 
 def process_omid(
     omid: str,
@@ -226,72 +235,92 @@ def process_omid(
     min_steady_duration: int = 5,
     burst_threshold: float = 0.10,
 ) -> list[Path]:
-    """Process one experiment and return list of written CSV paths."""
+    """Process one experiment for both channels; return list of written CSV paths."""
     print(f"[{omid}] Loading {tsv_path}")
-    df = load_tsv(str(tsv_path))[["CV_mCherry", "group", "time", "id"]]
-
-    ts = create_time_series_matrix(df, omid)
-    ts = handle_missing_values(ts)
-    ts = extract_steady_state(
-        ts,
-        window_size=window_size,
-        tolerance=tolerance,
-        min_steady_duration=min_steady_duration,
-        burst_threshold=burst_threshold,
-    )
+    needed_cols = ["group", "time", "id", "CV_mCherry", "CV_GFP"]
+    raw = load_tsv(str(tsv_path))
+    available = [c for c in needed_cols if c in raw.columns]
+    df_full = raw[available]
 
     written = []
-    for group_key, gdf in ts.items():
-        group_val = gdf["group"].iloc[0]
-        fname = f"{omid}_group_{group_val}_mCherry_time_series.csv"
-        out_path = out_dir / fname
-        gdf.to_csv(out_path, index=False)
-        print(f"  Wrote {out_path}  ({gdf.shape[0]} cells × {gdf.shape[1] - 3} timepoints)")
-        written.append(out_path)
+    for col, channel_label in CHANNELS.items():
+        if col not in df_full.columns:
+            print(f"  [{channel_label}] column '{col}' not found — skipping")
+            continue
+
+        df = df_full[["group", "time", "id", col]].copy()
+
+        ts = create_time_series_matrix(df, omid, channel=col)
+        ts = handle_missing_values(ts)
+        # we are skipping steady state extraction for this dataset as it is very short. 
+        # ts = extract_steady_state(
+        #     ts,
+        #     window_size=window_size,
+        #     tolerance=tolerance,
+        #     min_steady_duration=min_steady_duration,
+        #     burst_threshold=burst_threshold,
+        # )
+
+        for group_key, gdf in ts.items():
+            group_val = gdf["group"].iloc[0]
+            fname = f"{omid}_group_{group_val}_{channel_label}_time_series.csv"
+            out_path = out_dir / fname
+            gdf.to_csv(out_path, index=False)
+            print(f"  [{channel_label}] Wrote {out_path}  "
+                  f"({gdf.shape[0]} cells × {gdf.shape[1] - 3} timepoints)")
+            written.append(out_path)
 
     return written
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument(
-        "--out-dir",
-        default=str(Path(__file__).parent / "transformed_exp_time_series_data"),
-        help="Output directory for CSVs (default: ./transformed_exp_time_series_data)",
-    )
-    parser.add_argument("--window-size", type=int, default=30)
-    parser.add_argument("--tolerance", type=float, default=0.10)
-    parser.add_argument("--min-steady-duration", type=int, default=5)
-    parser.add_argument("--burst-threshold", type=float, default=0.10)
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
 
-    args = parser.parse_args()
-    out_dir = Path(args.out_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+OUT_DIR = Path(__file__).parent / "transformed_exp_time_series_data_v3"
+TSV_DIR = Path("/home/ianyang/wela/data_analysis")
+# WINDOW_SIZE = 30
+# TOLERANCE = 0.10
+# MIN_STEADY_DURATION = 5
+# BURST_THRESHOLD = 0.10
+OMIDS = [4053, 4052, 4051, 4054, 4102, 4103, 4105, 4104, 4106, 4107, 4108, 4109, 4110, 3903, 3902, 4251, 2858, 2854, 2853, 2852, 2841, 2842, 2843, 2844, 2849, 2801]
 
-    tsv_dir = Path(__file__).parent / "exp_data"
-    tsv_files = sorted(tsv_dir.glob("*_post_media_switch.tsv"))
-    if not tsv_files:
-        print(f"ERROR: no *_post_media_switch.tsv files found in {tsv_dir}", file=sys.stderr)
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    tasks = []
+    missing = []
+    for omid in OMIDS:
+        tsv_path = TSV_DIR / f"{omid}_post_media_switch.tsv"
+        if tsv_path.exists():
+            tasks.append((str(omid), tsv_path))
+        else:
+            missing.append(omid)
+
+    if missing:
+        print(f"WARNING: no TSV found for omids: {missing}", file=sys.stderr)
+    if not tasks:
+        print("ERROR: no TSV files found for any requested omid", file=sys.stderr)
         sys.exit(1)
 
-    tasks = [(p.name.replace("_post_media_switch.tsv", ""), p) for p in tsv_files]
-    print(f"Found {len(tasks)} TSV file(s) in {tsv_dir}")
+    print(f"Processing {len(tasks)} omid(s) from {TSV_DIR}")
 
     all_written = []
     for omid, tsv_path in tasks:
         written = process_omid(
             omid,
             tsv_path,
-            out_dir,
-            window_size=args.window_size,
-            tolerance=args.tolerance,
-            min_steady_duration=args.min_steady_duration,
-            burst_threshold=args.burst_threshold,
+            OUT_DIR,
+            # window_size=WINDOW_SIZE,
+            # tolerance=TOLERANCE,
+            # min_steady_duration=MIN_STEADY_DURATION,
+            # burst_threshold=BURST_THRESHOLD,
         )
         all_written.extend(written)
 
-    print(f"\nDone. {len(all_written)} CSV file(s) written to {out_dir}")
-
-
-if __name__ == "__main__":
-    main()
+    print(f"\nDone. {len(all_written)} CSV file(s) written to {OUT_DIR}")
