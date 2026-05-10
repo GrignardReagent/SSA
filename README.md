@@ -155,10 +155,12 @@ series:
 - `src/classifiers/`: classical and neural classifiers, including SVM,
   random forest, logistic regression, MLP, LSTM, and transformer interfaces
 - `src/dataloaders/`: loaders for baseline supervised training and SimCLR-style
-  self-supervised learning
+  self-supervised learning; `simclr.py` supports lazy loading plus instance,
+  global, joint, and batch-wise normalisation modes
 - `src/models/`: model definitions for LSTM, transformer, SimCLR/SSL, and
   related experiments
-- `src/training/`: reusable training and evaluation utilities
+- `src/training/`: reusable training and evaluation utilities, including the
+  cross-view InfoNCE loss used by recent SimCLR experiments
 
 Recent experiments from `EXP-25-IY011` onward focus on SimCLR pretraining on
 synthetic trajectories followed by downstream SVM classification on
@@ -194,6 +196,7 @@ record for motivation, methods, results, and conclusions.
 | `EXP-25-IY005` | Fano factor validation of the two-state telegraph model function. |
 | `EXP-25-IY006` | Transformer model architecture search and hyperparameter sweep, counterpart to the early LSTM sweeps. |
 | `EXP-25-IY007` | Benchmarking LSTM and other classifiers across coefficient of variation (CV) ranges on synthetic data. |
+| `EXP-25-IY008` | Experimental time-series processing, WELA analysis, post-media-switch extraction, CV computation, and steady-state GFP/mCherry CSV transforms. |
 | `EXP-25-IY010` | Implementation and validation of `find_tilda_parameters()`, a rescaled parameter solver for the telegraph model, plus synthetic data generation. |
 | `EXP-25-IY011` | Baseline and Siamese transformer trained on Sobol-sampled Julia synthetic data; initial SimCLR contrastive learning trials. |
 | `EXP-25-IY012` | Julia simulation pipeline tests and plotting/histogram checks. |
