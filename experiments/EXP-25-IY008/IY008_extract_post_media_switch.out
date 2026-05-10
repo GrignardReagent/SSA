@@ -1,0 +1,626 @@
+
+=== ANALYZING EXPERIMENT 18446_2020_01_08_steadystate_glucose_2w0p1_2min_01 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['mCherry', 'GFP', 'Brightfield']
+• Exposure times: [100, 30, 30] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.1% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [30]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-01-08 00:00:00
+• Experiment start time: 2020-01-08 00:06:54
+• Capture of the first image: 2020-01-08 00:06:55
+• MultiDGUI commit: a28757e2e9fa60027dcf8e290ee9b66e6372e32c
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['08-Jan-2020', 'Batgirl', 'GFP', '3 chamber', '756', '764', '903', 'Kevin', '0.1% glucose', '2% glucose', '']
+
+Saved post-media-switch data for OMID 18446_2020_01_08_steadystate_glucose_2w0p1_2min_01 (switch at 0.500 h)
+
+=== ANALYZING EXPERIMENT 18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '2% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-02-03 00:00:00
+• Experiment start time: 2020-02-03 18:09:02
+• Capture of the first image: 2020-02-03 18:09:03
+• MultiDGUI commit: b5b699b4598d55c843210156444437658eaab195
+• Experimental details: Aim: Assess phototoxicity for 2min sampling rate, reduced mCherry voltage and 3 Z sections
+Strain: Msn4-GFP/Msn2-mCherry (901)
+Comments:
+O/N on @? for ?.
+Used H dilution.
+OD of O/N @ 12:45pm: 0.12
+Incubate @ 12:50pm
+OD after loading @ 5:10pm: 0.65
+OD L dilution @ 12:45pm: 0.04
+OD M dilution @ 12:45pm: 0.02
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['03-Feb-2020', 'Batgirl', '901.Msn4-Msn2', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   901   Msn4       Msn2
+Saved post-media-switch data for OMID 18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'mCherry', 'GFP']
+• Exposure times: [30, 100, 30] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.01% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-11-22 00:00:00
+• Experiment start time: 2020-11-22 20:08:14
+• Capture of the first image: 2020-11-22 20:08:15
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['22-Nov-2020', 'Batgirl', '3 chamber', '901', '898.Msn2-GFP Mig1-mCherry', 'Kevin', '0.01% glucose', '2% Glucose', 'GFP', 'mCherry', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   898   Msn2       Mig1
+Saved post-media-switch data for OMID 19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.01% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-12-05 00:00:00
+• Experiment start time: 2020-12-05 22:07:19
+• Capture of the first image: 2020-12-05 22:07:21
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['05-Dec-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', '756', '900.Mig1-GFP Msn2-mCherry', '903', 'Kevin', '0.01% glucose', '2% Glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   900   Mig1       Msn2
+Saved post-media-switch data for OMID 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.01% galactose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-11-07 00:00:00
+• Experiment start time: 2020-11-07 23:21:24
+• Capture of the first image: 2020-11-07 23:21:25
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['07-Nov-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', 'Kevin', '1106.Mig2-GFP Mig1-mCherry', '898.Msn2-GFP Mig1-mCherry', '900.Mig1GFP-Msn2mCherry', '0.01% glucose', '2% Glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1106   Mig2       Mig1
+1   898   Msn2       Mig1
+2   900   Mig1       Msn2
+Saved post-media-switch data for OMID 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% raffinose in SC', '2% galactose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-11-07 00:00:00
+• Experiment start time: 2020-11-07 02:37:47
+• Capture of the first image: 2020-11-07 02:37:48
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['07-Nov-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', '1345_Mig2-Msn2', '1348_Maf1-Msn2', '1349_Tod6-Msn2', 'Kevin', '0.01% glucose', '2% Glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1345   Mig2       Msn2
+1  1348   Maf1       Msn2
+2  1349   Tod6       Msn2
+Saved post-media-switch data for OMID 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19316_2020_10_26_steadystate_glucose_144m_2w2_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '2% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-10-25 00:00:00
+• Experiment start time: 2020-10-25 17:09:13
+• Capture of the first image: 2020-10-25 17:09:14
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:   Strains 1344 and 1346 were both labelled 1346 in the subculturing so not sure which is which.
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['25-Oct-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', 'Kevin', '1344_Cat8-Msn2', '1346?_Nrg1-Msn2', '1347_Rtg1-Msn2', '2% Glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1344   Cat8       Msn2
+1  1346   Nrg1       Msn2
+2  1347   Rtg1       Msn2
+Saved post-media-switch data for OMID 19316_2020_10_26_steadystate_glucose_144m_2w2_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.1% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-12-06 00:00:00
+• Experiment start time: 2020-12-06 22:30:45
+• Capture of the first image: 2020-12-06 22:30:47
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['06-Dec-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', 'Kevin', '1346?_Nrg1-Msn2', '1347_Rtg1-Msn2', '0.1% glucose', '2% Glucose', 'Kevin', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1346   Nrg1       Msn2
+1  1347   Rtg1       Msn2
+Saved post-media-switch data for OMID 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[-0.5], [4.5]]
+• Pump contents: ['2% glucose in SC', '0.01% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2021-09-06 00:00:00
+• Experiment start time: 2021-09-06 17:18:07
+• Capture of the first image: 2021-09-06 17:18:10
+• MultiDGUI commit: e1ef7279bc3687c771624cf3b9503671aa6d7cea
+• Experimental details: Aim: Record steady state TF dynamics in 0.01% glucose
+Strains:
+1344- Cat8-GFP Msn2-mCh
+1346- Nrg1-GFP Msn2-mCh
+1347- Rtg1-GFP Msn2-mCh
+Comments:
+Use Kevin's dilution sheet to prepare O/N (start at 11pm for 10:30am)
+At ~11:30am
+1344: 1.09
+1346: 1.00
+1347: 1.05
+At ~4pm (loading)
+1344: 0.67
+1346: 0.65
+1347: 0.63
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['0.01% glucose', '06-Sep-2021', '1344_Cat8-Msn2', '1346?_Nrg1-Msn2', '1347_Rtg1-Msn2', '3 chamber', 'Batgirl', 'GFP', 'mCherry', 'pos001', 'pos004', 'pos007', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1344   Cat8       Msn2
+1  1346   Nrg1       Msn2
+2  1347   Rtg1       Msn2
+Saved post-media-switch data for OMID 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.1% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-01-06 00:00:00
+• Experiment start time: 2020-01-06 16:26:29
+• Capture of the first image: 2020-01-06 16:26:31
+• MultiDGUI commit: a28757e2e9fa60027dcf8e290ee9b66e6372e32c
+• Experimental details: Aim: Assess phototoxicity for 2min sampling rate and reduced mCherry voltage
+Strain: Msn4-GFP/Msn2-mCherry (901)
+Comments:
+Used H dilution.
+OD of O/N @ 11am: 0.15
+Incubate @ 11:15am
+OD after loading @ 3:30pm: 0.48
+OD M dilution @ 3:30pm: 0.38
+OD L dilution @ 3:30pm: 0.15
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['06-Jan-2020', 'Batgirl', '']
+
+Saved post-media-switch data for OMID 18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 18360_2020_01_04_steadystate_glucose_2min_01 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.1% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-01-03 00:00:00
+• Experiment start time: 2020-01-03 18:56:49
+• Capture of the first image: 2020-01-03 18:56:50
+• MultiDGUI commit: a28757e2e9fa60027dcf8e290ee9b66e6372e32c
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['03-Jan-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', '898.Msn2-GFP Mig1-mCherry', '900.Mig1-GFP Msn2-mCherry', '1106.Mig2-GFP Mig1-mCherry', '0.1% glucose', '2% glucose', 'Kevin', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   898   Msn2       Mig1
+1   900   Mig1       Msn2
+2  1106   Mig2       Mig1
+Saved post-media-switch data for OMID 18360_2020_01_04_steadystate_glucose_2min_01 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '2% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-01-19 00:00:00
+• Experiment start time: 2020-01-19 20:08:37
+• Capture of the first image: 2020-01-19 20:08:38
+• MultiDGUI commit: b5b699b4598d55c843210156444437658eaab195
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['19-Jan-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', '756', '764', '903.Dot6-Msn2', '2% glucose', 'Kevin', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   903   Dot6       Msn2
+Saved post-media-switch data for OMID 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 18589_2020_02_10_steadystate_glucose_898S_2w2_01 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'mCherry', 'GFP']
+• Exposure times: [30, 100, 30] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '2% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-02-09 00:00:00
+• Experiment start time: 2020-02-09 19:51:44
+• Capture of the first image: 2020-02-09 19:51:45
+• MultiDGUI commit: b5b699b4598d55c843210156444437658eaab195
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['09-Feb-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', 'Kevin', '1106', '898.Msn2-GFP Mig1-mCherry', '900.Mig1-GFP Msn2-mCherry', '2% glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0   898   Msn2       Mig1
+1   900   Mig1       Msn2
+Saved post-media-switch data for OMID 18589_2020_02_10_steadystate_glucose_898S_2w2_01 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19330_2020_11_02_steadystate_glucose_1345m_2w2_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'GFP', 'mCherry']
+• Exposure times: [30, 30, 100] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '2% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-10-29 00:00:00
+• Experiment start time: 2020-10-29 20:11:16
+• Capture of the first image: 2020-10-29 20:11:17
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:   OD was 4.4, 4.7, 4.7 rather than 0.4 target due to calculation error
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['29-Oct-2020', 'Batgirl', '1345_Mig2-Msn2', '1348_Maf1-Msn2', '1349_Tod6-Msn2', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1345   Mig2       Msn2
+1  1348   Maf1       Msn2
+2  1349   Tod6       Msn2
+Saved post-media-switch data for OMID 19330_2020_11_02_steadystate_glucose_1345m_2w2_00 (switch at 3.000 h)
+
+=== ANALYZING EXPERIMENT 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00 ===
+=== EXPERIMENT SUMMARY ===
+
+📸 IMAGING SETUP (from acquisition file):
+• Channels: ['Brightfield', 'mCherry', 'GFP']
+• Exposure times: [30, 100, 30] ms
+• Camera EM gain: 270
+
+⏱️ TIME-LAPSE SETTINGS:
+• Time interval: 120 seconds (2.0 minutes)
+• Number of timepoints: 540
+• Total experiment time: 64800 seconds (18.0 hours)
+
+🧪 MICROFLUIDICS SETUP:
+• Number of pumps: 2
+• Pump rates: [[0.0], [4.0]]
+• Pump contents: ['2% glucose in SC', '0.1% glucose in SC']
+• Number of switches: 1
+• Switch volumes: 50
+• Switch rates: 100
+• Switch times: [180]
+
+🔬 MICROSCOPE SETUP (from log file):
+• Microscope: Batgirl
+• Date: 2020-11-09 00:00:00
+• Experiment start time: 2020-11-09 02:12:52
+• Capture of the first image: 2020-11-09 02:12:53
+• MultiDGUI commit: 29bfe736500ed3f8be9c19585bee78cc67ceae26
+• Experimental details: Aim:   Strain:   Comments:
+
+💾 OMERO INFORMATION:
+• Project: SteadystateGlucose
+• Tags: ['09-Nov-2020', 'Batgirl', 'GFP', 'mCherry', '3 chamber', 'Kevin', '1345_Mig2-Msn2', '1348_Maf1-Msn2', '1349_Tod6-Msn2', '0.1% glucose', '2% Glucose', '']
+
+• Transcription Factors:
+  group GFP TF mCherry TF
+0  1345   Mig2       Msn2
+1  1348   Maf1       Msn2
+2  1349   Tod6       Msn2
+Saved post-media-switch data for OMID 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00 (switch at 3.000 h)

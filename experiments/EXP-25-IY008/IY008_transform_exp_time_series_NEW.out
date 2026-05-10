@@ -1,0 +1,564 @@
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+Processing 26 omid(s) from /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis
+[4053] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4053/4053_2026_03_26_TFScreen_LowN2_switch_last5_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4052] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4052/4052_2026_03_24_TFScreen_plate2_zeroGlc_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4051] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4051/4051.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Dig1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Gts1_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Gzf1_mCherry_time_series.csv  (23 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Hcm1_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Mot2_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Mot3_mCherry_time_series.csv  (18 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Pho2_mCherry_time_series.csv  (34 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Rds2_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Rpn4_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stb1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp1_mCherry_time_series.csv  (7 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp2_mCherry_time_series.csv  (22 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp4_mCherry_time_series.csv  (32 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Tbf1_mCherry_time_series.csv  (18 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Tec1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Uga3_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Ume1_mCherry_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Dig1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Gts1_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Gzf1_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Hcm1_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Mot2_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Mot3_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Pho2_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Rds2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Rpn4_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stb1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp1_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp2_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Stp4_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Tbf1_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Tec1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Uga3_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4051_group_Ume1_GFP_time_series.csv  (20 cells × 24 timepoints)
+[4054] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4054/4054_2026_03_26_TFScreen_plate1_zeroGlc_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4102] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4102/4102_2026_03_27_TFScreen_plate1_zeroGlc_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4103] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4103/4103.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Aro80_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Asg1_mCherry_time_series.csv  (3 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Azf1_mCherry_time_series.csv  (31 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Bas1_mCherry_time_series.csv  (4 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Dal81_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Ecm22_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Fhl1_mCherry_time_series.csv  (3 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Fkh2_mCherry_time_series.csv  (50 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Gis1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Leu3_mCherry_time_series.csv  (104 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Lys14_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_MSN2_mCherry_time_series.csv  (51 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Mb1p_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Pdr3_mCherry_time_series.csv  (9 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Reb1_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Rfx1_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Rsc3_mCherry_time_series.csv  (106 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Upc2_mCherry_time_series.csv  (77 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Aro80_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Asg1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Azf1_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Bas1_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Dal81_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Ecm22_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Fhl1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Fkh2_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Gis1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Leu3_GFP_time_series.csv  (104 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Lys14_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_MSN2_GFP_time_series.csv  (51 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Mb1p_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Pdr3_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Reb1_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Rfx1_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Rsc3_GFP_time_series.csv  (106 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4103_group_Upc2_GFP_time_series.csv  (77 cells × 24 timepoints)
+[4105] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4105/4105.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Abf3_mCherry_time_series.csv  (30 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Arg80_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Cin5_mCherry_time_series.csv  (62 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Cup9_mCherry_time_series.csv  (36 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Fzf1_mCherry_time_series.csv  (6 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Gcn4_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Ino2_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_MSN2_mCherry_time_series.csv  (122 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Mac1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Opi1_mCherry_time_series.csv  (105 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Rme1_mCherry_time_series.csv  (19 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Sok2_mCherry_time_series.csv  (132 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Spt2_mCherry_time_series.csv  (8 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Stb5_mCherry_time_series.csv  (111 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Stp3_mCherry_time_series.csv  (13 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Sut1_mCherry_time_series.csv  (21 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Tea1_mCherry_time_series.csv  (158 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Yap3_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Yhp1_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Abf3_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Arg80_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Cin5_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Cup9_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Fzf1_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Gcn4_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Ino2_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_MSN2_GFP_time_series.csv  (122 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Mac1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Opi1_GFP_time_series.csv  (105 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Rme1_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Sok2_GFP_time_series.csv  (132 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Spt2_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Stb5_GFP_time_series.csv  (111 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Stp3_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Sut1_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Tea1_GFP_time_series.csv  (158 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Yap3_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4105_group_Yhp1_GFP_time_series.csv  (26 cells × 24 timepoints)
+[4104] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4104/4104.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Cbf1_mCherry_time_series.csv  (70 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Cup2_mCherry_time_series.csv  (52 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hac1_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap2_mCherry_time_series.csv  (41 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap3_mCherry_time_series.csv  (19 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap5_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Ino4_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_MSN2_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Mcm1_mCherry_time_series.csv  (35 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Met28_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Met32_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Nhp6b_mCherry_time_series.csv  (35 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Phd1_mCherry_time_series.csv  (64 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Rgm1_mCherry_time_series.csv  (29 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Rox1_mCherry_time_series.csv  (79 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Spt15_mCherry_time_series.csv  (69 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Srd1_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Tye7_mCherry_time_series.csv  (24 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Yap5_mCherry_time_series.csv  (41 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Yap7_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Cbf1_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Cup2_GFP_time_series.csv  (52 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hac1_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap2_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap3_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Hap5_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Ino4_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_MSN2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Mcm1_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Met28_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Met32_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Nhp6b_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Phd1_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Rgm1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Rox1_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Spt15_GFP_time_series.csv  (69 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Srd1_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Tye7_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Yap5_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4104_group_Yap7_GFP_time_series.csv  (49 cells × 24 timepoints)
+[4106] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4106/4106.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Dig1_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ert1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Fkh1_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Gzf3_mCherry_time_series.csv  (25 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Hcm1_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Met31_mCherry_time_series.csv  (39 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Mot2_mCherry_time_series.csv  (44 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Mot3_mCherry_time_series.csv  (44 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ndd1_mCherry_time_series.csv  (59 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Pho2_mCherry_time_series.csv  (46 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Rds2_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Rpn4_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stb3_mCherry_time_series.csv  (31 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stp2_mCherry_time_series.csv  (64 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stp4_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Tbf1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Tec1_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Uga3_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ume1_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Dig1_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ert1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Fkh1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Gzf3_GFP_time_series.csv  (25 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Hcm1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Met31_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Mot2_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Mot3_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ndd1_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Pho2_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Rds2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Rpn4_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stb3_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stp2_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Stp4_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Tbf1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Tec1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Uga3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4106_group_Ume1_GFP_time_series.csv  (10 cells × 24 timepoints)
+[4107] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4107/4107.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4107_group_Abf1_mCherry_time_series.csv  (87 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4107_group_Abf1_GFP_time_series.csv  (87 cells × 24 timepoints)
+[4108] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4108/4108_2026_03_31_TFScreen_plate1_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4109] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4109/4109_2026_03_31_TFScreen_plate1_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4110] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4110/4110.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Adr1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Arg81_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Dig1_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Fkh1_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Gcr1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Msn2_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Pdr1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Rgt1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Rsf2_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Snt2_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Stb3_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Stp4_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Sum1_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Tbs1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Tec1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Tho2_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Uga3_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/4110_group_Ume3_GFP_time_series.csv  (9 cells × 24 timepoints)
+[3903] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/3903/3903.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Ace2_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Aro80_GFP_time_series.csv  (11 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Asg1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Azf1_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Bas1_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Dal81_GFP_time_series.csv  (7 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Fhl1_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Fkh2_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Leu3_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Mbp1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Pdr3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Pip2_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Rsc3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Sfl1_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Swi6_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Ume6_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Upc2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/3903_group_Yrr1_GFP_time_series.csv  (34 cells × 24 timepoints)
+[3902] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/3902/3902_2026_02_23_TFScreen_plate1_A_B_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[4251] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/4251/4251_2026_04_28_TFScreen_plate1_A_B_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[2858] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2858/2858.tsv
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Cin5_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Cup9_mCherry_time_series.csv  (8 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Ecm22_mCherry_time_series.csv  (76 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Fzf1_mCherry_time_series.csv  (42 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Gcn4_mCherry_time_series.csv  (38 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Ino2_mCherry_time_series.csv  (6 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Lys14_mCherry_time_series.csv  (54 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Mac1_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Mig3_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Msn1_mCherry_time_series.csv  (42 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Opi1_mCherry_time_series.csv  (70 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Reb1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rei1_mCherry_time_series.csv  (50 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rfx1_mCherry_time_series.csv  (66 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rme1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rph1_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Spt2_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Sut1_mCherry_time_series.csv  (33 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Yap3_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [mCherry] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Yox1_mCherry_time_series.csv  (103 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Cin5_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Cup9_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Ecm22_GFP_time_series.csv  (76 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Fzf1_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Gcn4_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Ino2_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Lys14_GFP_time_series.csv  (54 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Mac1_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Mig3_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Msn1_GFP_time_series.csv  (42 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Opi1_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Reb1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rei1_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rfx1_GFP_time_series.csv  (66 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rme1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Rph1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Spt2_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Sut1_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Yap3_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2858_group_Yox1_GFP_time_series.csv  (103 cells × 24 timepoints)
+[2854] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2854/2854.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Abf2_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Arg80_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Cbf1_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Cup2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Hac1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Hap2_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Hap3_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Hap5_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Mcm1_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Met32_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Phd1_GFP_time_series.csv  (65 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Rgm1_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Rox1_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Spt15_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Srd1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Stp3_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Tye7_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Yap5_GFP_time_series.csv  (68 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Yap7_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2854_group_Yhp1_GFP_time_series.csv  (60 cells × 24 timepoints)
+[2853] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2853/2853_2025_07_29_TFScreen_plate2_BCD_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+[2852] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2852/2852.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Afg2_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Def1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Gcd6_poss_mix_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Gis4_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Gsh1_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Hcs1_GFP_time_series.csv  (68 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Hsc82_GFP_time_series.csv  (99 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Mac10_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Mip6_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Pan3_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Pbs2_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Sac7_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Ssa1_GFP_time_series.csv  (79 cells × 24 timepoints)
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Sse2_poss_mix_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Ssk1_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Sst2_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Ths1_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Whi3_GFP_time_series.csv  (92 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2852_group_Ypk1_GFP_time_series.csv  (15 cells × 24 timepoints)
+[2841] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2841/2841.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Ace2_GFP_time_series.csv  (80 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Cin5_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Cup2_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Ino2_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Msn1_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Nhp10_GFP_time_series.csv  (51 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Rei1_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Rgm1_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Rme1_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Sfa1_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Spt15_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Srd1_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Ste12_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Swi6_GFP_time_series.csv  (99 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Ume6_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Yap3_GFP_time_series.csv  (77 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Yox1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2841_group_Yrr1_GFP_time_series.csv  (77 cells × 24 timepoints)
+[2842] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2842/2842.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Ace2_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Adr1_GFP_time_series.csv  (90 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Arg81_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Gcr1_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Hal9_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Msn2_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Pdr1_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Rgm1_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Rgt1_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Rsf2_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Sfl1_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Snt2_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Sum1_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Swi4_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Swi6_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Tbs1_GFP_time_series.csv  (61 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Tho2_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Tye7_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Ume6_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2842_group_Yrr1_GFP_time_series.csv  (26 cells × 24 timepoints)
+[2843] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2843/2843.tsv
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/wela/lib/python3.10/site-packages/sklearn/impute/_iterative.py:785: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch10_FHL1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch11_DAL81_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch12_ASG1_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch13_ARO80_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch14_AZF1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch15_FKH2_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch16_GIS1_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch17_LEU3_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch18_RSC3_GFP_time_series.csv  (65 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch19_UPC2_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch1_RFX1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch20_ZAP1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch2_REB1_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch3_RPH1_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch4_LYS14_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch5_ECM22_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch6_BAS1_GFP_time_series.csv  (82 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch7_MBP1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch8_PIP2_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2843_group_ch9_PDR3_GFP_time_series.csv  (36 cells × 24 timepoints)
+[2844] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2844/2844.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch10_STP4_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch11_TEC1_GFP_time_series.csv  (83 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch12_STB1_GFP_time_series.csv  (74 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch13_INO4_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch14_NHP6B_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch15_HAP3_GFP_time_series.csv  (89 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch16_MET32_GFP_time_series.csv  (61 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch17_HAC1_GFP_time_series.csv  (95 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch18_TYE7_GFP_time_series.csv  (82 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch19_HAP2_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch1_IXR1_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch20_HAP5_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch2_MOT2_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch3_HCM1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch4_NDD1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch5_PHO2_GFP_time_series.csv  (87 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch6_STP1_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch7_STB3_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch8_FKH1_GFP_time_series.csv  (97 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2844_group_ch9_MOT3_GFP_time_series.csv  (91 cells × 24 timepoints)
+[2849] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2849/2849.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch10_MET28_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch11_PHD1_GFP_time_series.csv  (74 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch12_ROX1_GFP_time_series.csv  (86 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch13_CBF1_GFP_time_series.csv  (107 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch14_STP3_GFP_time_series.csv  (92 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch15_YHP1_GFP_time_series.csv  (73 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch16_SPT2_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch17_SUT1_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch18_GCN4_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch19_OPI1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch1_TBF1_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch20_MIG3_GFP_time_series.csv  (52 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch2_GZF3_GFP_time_series.csv  (45 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch4_STP2_GFP_time_series.csv  (67 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch5_UGA3_GFP_time_series.csv  (54 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch6_UME1_GFP_time_series.csv  (58 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch7_DIG1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch8_RDS2_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] Wrote /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW/2849_group_ch9_MET31_GFP_time_series.csv  (64 cells × 24 timepoints)
+[2801] Loading /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis/2801/2801_2025_04_24_TF_screen_plateIII_fg_zero_glc_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] column 'CV_GFP' not found — skipping
+
+Done. 400 CSV file(s) written to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/4_transformed_exp_time_series_NEW

@@ -1,0 +1,1080 @@
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP not found, trying "median_GFP_Z"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP_Z not found, trying "buddings"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+Getting data to identify bud indices...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+Getting data for key index...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+
+Getting data for other signals...
+ Loading extraction/general/None/area for bf_008.
+ Loading extraction/general/None/area for bf_009.
+ Loading extraction/general/None/area for bf_010.
+ Loading extraction/general/None/area for gfp_004.
+ Loading extraction/general/None/area for gfp_005.
+ Loading extraction/general/None/area for gfp_mch_001.
+ Loading extraction/general/None/area for gfp_mch_002.
+ Loading extraction/general/None/area for gfp_mch_003.
+ Loading extraction/general/None/area for mch_006.
+ Loading extraction/general/None/area for mch_007.
+ Loading extraction/general/None/volume for bf_008.
+ Loading extraction/general/None/volume for bf_009.
+ Loading extraction/general/None/volume for bf_010.
+ Loading extraction/general/None/volume for gfp_004.
+ Loading extraction/general/None/volume for gfp_005.
+ Loading extraction/general/None/volume for gfp_mch_001.
+ Loading extraction/general/None/volume for gfp_mch_002.
+ Loading extraction/general/None/volume for gfp_mch_003.
+ Loading extraction/general/None/volume for mch_006.
+ Loading extraction/general/None/volume for mch_007.
+ Loading extraction/general/None/image_x for bf_008.
+ Loading extraction/general/None/image_x for bf_009.
+ Loading extraction/general/None/image_x for bf_010.
+ Loading extraction/general/None/image_x for gfp_004.
+ Loading extraction/general/None/image_x for gfp_005.
+ Loading extraction/general/None/image_x for gfp_mch_001.
+ Loading extraction/general/None/image_x for gfp_mch_002.
+ Loading extraction/general/None/image_x for gfp_mch_003.
+ Loading extraction/general/None/image_x for mch_006.
+ Loading extraction/general/None/image_x for mch_007.
+ Loading extraction/general/None/image_y for bf_008.
+ Loading extraction/general/None/image_y for bf_009.
+ Loading extraction/general/None/image_y for bf_010.
+ Loading extraction/general/None/image_y for gfp_004.
+ Loading extraction/general/None/image_y for gfp_005.
+ Loading extraction/general/None/image_y for gfp_mch_001.
+ Loading extraction/general/None/image_y for gfp_mch_002.
+ Loading extraction/general/None/image_y for gfp_mch_003.
+ Loading extraction/general/None/image_y for mch_006.
+ Loading extraction/general/None/image_y for mch_007.
+ Loading extraction/general/None/absolute_x for bf_008.
+ Loading extraction/general/None/absolute_x for bf_009.
+ Loading extraction/general/None/absolute_x for bf_010.
+ Loading extraction/general/None/absolute_x for gfp_004.
+ Loading extraction/general/None/absolute_x for gfp_005.
+ Loading extraction/general/None/absolute_x for gfp_mch_001.
+ Loading extraction/general/None/absolute_x for gfp_mch_002.
+ Loading extraction/general/None/absolute_x for gfp_mch_003.
+ Loading extraction/general/None/absolute_x for mch_006.
+ Loading extraction/general/None/absolute_x for mch_007.
+ Loading extraction/general/None/absolute_y for bf_008.
+ Loading extraction/general/None/absolute_y for bf_009.
+ Loading extraction/general/None/absolute_y for bf_010.
+ Loading extraction/general/None/absolute_y for gfp_004.
+ Loading extraction/general/None/absolute_y for gfp_005.
+ Loading extraction/general/None/absolute_y for gfp_mch_001.
+ Loading extraction/general/None/absolute_y for gfp_mch_002.
+ Loading extraction/general/None/absolute_y for gfp_mch_003.
+ Loading extraction/general/None/absolute_y for mch_006.
+ Loading extraction/general/None/absolute_y for mch_007.
+Getting bud data...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for bf_008.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for bf_009.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for bf_010.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for mch_006.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for mch_007.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_general_None_area.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_max_median.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_max_mean.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_max_std.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_median.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_mean.
+No data found.
+Grouper:Warning: some positions (10) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_std.
+No data found.
+ Skipping budding event for ('bf', 'bf_008', 7, 1)
+ Skipping budding event for ('bf', 'bf_008', 10, 1)
+ Skipping budding event for ('bf', 'bf_008', 22, 2)
+ Skipping budding event for ('bf', 'bf_008', 44, 32)
+ Skipping budding event for ('bf', 'bf_008', 45, 1)
+ Skipping budding event for ('bf', 'bf_008', 45, 1)
+ Skipping budding event for ('bf', 'bf_008', 49, 1)
+ Skipping budding event for ('bf', 'bf_008', 49, 1)
+ Skipping budding event for ('bf', 'bf_008', 51, 1)
+ Skipping budding event for ('bf', 'bf_008', 58, 1)
+ Skipping budding event for ('bf', 'bf_008', 66, 1)
+ Skipping budding event for ('bf', 'bf_009', 32, 1)
+ Skipping budding event for ('bf', 'bf_009', 78, 1)
+ Skipping budding event for ('bf', 'bf_009', 82, 23)
+ Skipping budding event for ('bf', 'bf_009', 84, 1)
+ Skipping budding event for ('bf', 'bf_009', 89, 2)
+ Skipping budding event for ('bf', 'bf_010', 0, 52)
+ Skipping budding event for ('bf', 'bf_010', 12, 85)
+ Skipping budding event for ('bf', 'bf_010', 27, 1)
+ Skipping budding event for ('bf', 'bf_010', 27, 1)
+ Skipping budding event for ('bf', 'bf_010', 69, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 32, 35)
+ Skipping budding event for ('gfp', 'gfp_004', 35, 139)
+ Skipping budding event for ('gfp', 'gfp_004', 48, 82)
+ Skipping budding event for ('gfp', 'gfp_004', 58, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 58, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 58, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 78, 32)
+ Skipping budding event for ('gfp', 'gfp_004', 78, 32)
+ Skipping budding event for ('gfp', 'gfp_004', 91, 30)
+ Skipping budding event for ('gfp', 'gfp_004', 91, 30)
+ Skipping budding event for ('gfp', 'gfp_004', 92, 108)
+ Skipping budding event for ('gfp', 'gfp_005', 3, 18)
+ Skipping budding event for ('gfp', 'gfp_005', 10, 98)
+ Skipping budding event for ('gfp', 'gfp_005', 14, 72)
+ Skipping budding event for ('gfp', 'gfp_005', 56, 48)
+ Skipping budding event for ('gfp', 'gfp_005', 65, 51)
+ Skipping budding event for ('gfp', 'gfp_005', 72, 51)
+ Skipping budding event for ('gfp', 'gfp_005', 86, 3)
+ Skipping budding event for ('gfp', 'gfp_005', 91, 221)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 19, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 30, 48)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 37, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 49, 9)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 67, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 90, 11)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 28, 9)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 30, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 46, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 62, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 65, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 68, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 72, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 77, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 94, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 12, 10)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 14, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 15, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 25, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 45, 30)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 69, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 69, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 69, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 77, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 79, 1)
+ Skipping budding event for ('mch', 'mch_006', 26, 33)
+ Skipping budding event for ('mch', 'mch_006', 26, 67)
+ Skipping budding event for ('mch', 'mch_006', 31, 18)
+ Skipping budding event for ('mch', 'mch_006', 43, 48)
+ Skipping budding event for ('mch', 'mch_006', 73, 35)
+ Skipping budding event for ('mch', 'mch_006', 74, 112)
+ Skipping budding event for ('mch', 'mch_006', 75, 5)
+ Skipping budding event for ('mch', 'mch_006', 77, 2)
+ Skipping budding event for ('mch', 'mch_006', 78, 28)
+ Skipping budding event for ('mch', 'mch_006', 80, 49)
+ Skipping budding event for ('mch', 'mch_006', 84, 1)
+ Skipping budding event for ('mch', 'mch_006', 88, 18)
+ Skipping budding event for ('mch', 'mch_006', 90, 15)
+ Skipping budding event for ('mch', 'mch_006', 98, 3)
+ Skipping budding event for ('mch', 'mch_007', 18, 57)
+ Skipping budding event for ('mch', 'mch_007', 25, 1)
+ Skipping budding event for ('mch', 'mch_007', 33, 6)
+ Skipping budding event for ('mch', 'mch_007', 46, 10)
+ Skipping budding event for ('mch', 'mch_007', 50, 71)
+ Skipping budding event for ('mch', 'mch_007', 101, 1)
+
+Data size is (1134540, 11).
+Saved 18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP not found, trying "median_GFP_Z"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP_Z not found, trying "buddings"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+Getting data to identify bud indices...
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_007.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_011.
+Getting data for key index...
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_007.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_011.
+
+Getting data for other signals...
+ Loading extraction/general/None/area for 898_BF_001.
+ Loading extraction/general/None/area for 898_BF_002.
+ Loading extraction/general/None/area for 898_GFP_003.
+ Loading extraction/general/None/area for 898_GFP_004.
+ Loading extraction/general/None/area for 898_GFP_mCherry_007.
+ Loading extraction/general/None/area for 898_GFP_mCherry_008.
+ Loading extraction/general/None/area for 898_mCherry_005.
+ Loading extraction/general/None/area for 898_mCherry_006.
+ Loading extraction/general/None/area for 901_009.
+ Loading extraction/general/None/area for 901_010.
+ Loading extraction/general/None/area for 901_011.
+ Loading extraction/general/None/volume for 898_BF_001.
+ Loading extraction/general/None/volume for 898_BF_002.
+ Loading extraction/general/None/volume for 898_GFP_003.
+ Loading extraction/general/None/volume for 898_GFP_004.
+ Loading extraction/general/None/volume for 898_GFP_mCherry_007.
+ Loading extraction/general/None/volume for 898_GFP_mCherry_008.
+ Loading extraction/general/None/volume for 898_mCherry_005.
+ Loading extraction/general/None/volume for 898_mCherry_006.
+ Loading extraction/general/None/volume for 901_009.
+ Loading extraction/general/None/volume for 901_010.
+ Loading extraction/general/None/volume for 901_011.
+ Loading extraction/general/None/image_x for 898_BF_001.
+ Loading extraction/general/None/image_x for 898_BF_002.
+ Loading extraction/general/None/image_x for 898_GFP_003.
+ Loading extraction/general/None/image_x for 898_GFP_004.
+ Loading extraction/general/None/image_x for 898_GFP_mCherry_007.
+ Loading extraction/general/None/image_x for 898_GFP_mCherry_008.
+ Loading extraction/general/None/image_x for 898_mCherry_005.
+ Loading extraction/general/None/image_x for 898_mCherry_006.
+ Loading extraction/general/None/image_x for 901_009.
+ Loading extraction/general/None/image_x for 901_010.
+ Loading extraction/general/None/image_x for 901_011.
+ Loading extraction/general/None/image_y for 898_BF_001.
+ Loading extraction/general/None/image_y for 898_BF_002.
+ Loading extraction/general/None/image_y for 898_GFP_003.
+ Loading extraction/general/None/image_y for 898_GFP_004.
+ Loading extraction/general/None/image_y for 898_GFP_mCherry_007.
+ Loading extraction/general/None/image_y for 898_GFP_mCherry_008.
+ Loading extraction/general/None/image_y for 898_mCherry_005.
+ Loading extraction/general/None/image_y for 898_mCherry_006.
+ Loading extraction/general/None/image_y for 901_009.
+ Loading extraction/general/None/image_y for 901_010.
+ Loading extraction/general/None/image_y for 901_011.
+ Loading extraction/general/None/absolute_x for 898_BF_001.
+ Loading extraction/general/None/absolute_x for 898_BF_002.
+ Loading extraction/general/None/absolute_x for 898_GFP_003.
+ Loading extraction/general/None/absolute_x for 898_GFP_004.
+ Loading extraction/general/None/absolute_x for 898_GFP_mCherry_007.
+ Loading extraction/general/None/absolute_x for 898_GFP_mCherry_008.
+ Loading extraction/general/None/absolute_x for 898_mCherry_005.
+ Loading extraction/general/None/absolute_x for 898_mCherry_006.
+ Loading extraction/general/None/absolute_x for 901_009.
+ Loading extraction/general/None/absolute_x for 901_010.
+ Loading extraction/general/None/absolute_x for 901_011.
+ Loading extraction/general/None/absolute_y for 898_BF_001.
+ Loading extraction/general/None/absolute_y for 898_BF_002.
+ Loading extraction/general/None/absolute_y for 898_GFP_003.
+ Loading extraction/general/None/absolute_y for 898_GFP_004.
+ Loading extraction/general/None/absolute_y for 898_GFP_mCherry_007.
+ Loading extraction/general/None/absolute_y for 898_GFP_mCherry_008.
+ Loading extraction/general/None/absolute_y for 898_mCherry_005.
+ Loading extraction/general/None/absolute_y for 898_mCherry_006.
+ Loading extraction/general/None/absolute_y for 901_009.
+ Loading extraction/general/None/absolute_y for 901_010.
+ Loading extraction/general/None/absolute_y for 901_011.
+Getting bud data...
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_BF_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_007.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_GFP_mCherry_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for 898_mCherry_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_010.
+ Loading postprocessing/buddings/extraction_general_None_volume for 901_011.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_BF_001.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_BF_002.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_GFP_003.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_GFP_004.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_GFP_mCherry_007.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_GFP_mCherry_008.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_mCherry_005.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 898_mCherry_006.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 901_009.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 901_010.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for 901_011.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_general_None_area.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_max_median.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_max_mean.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_max_std.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_median.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_mean.
+No data found.
+Grouper:Warning: some positions (11) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_std.
+No data found.
+ Skipping budding event for ('898_BF', '898_BF_001', 0, 36)
+ Skipping budding event for ('898_BF', '898_BF_001', 2, 1)
+ Skipping budding event for ('898_BF', '898_BF_001', 13, 1)
+ Skipping budding event for ('898_BF', '898_BF_001', 45, 1)
+ Skipping budding event for ('898_BF', '898_BF_001', 67, 1)
+ Skipping budding event for ('898_BF', '898_BF_001', 75, 1)
+ Skipping budding event for ('898_BF', '898_BF_002', 12, 4)
+ Skipping budding event for ('898_BF', '898_BF_002', 23, 2)
+ Skipping budding event for ('898_BF', '898_BF_002', 53, 2)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 23, 2)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 25, 1)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 43, 2)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 52, 16)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 64, 2)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 71, 21)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 71, 21)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 73, 18)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 83, 8)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 90, 48)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 92, 2)
+ Skipping budding event for ('898_GFP', '898_GFP_004', 101, 3)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 11, 1)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 17, 1)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 23, 1)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 47, 6)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 74, 2)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 76, 2)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 78, 1)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_007', 91, 2)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_008', 24, 2)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_008', 66, 2)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_008', 84, 114)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_008', 85, 20)
+ Skipping budding event for ('898_GFP_mCherry', '898_GFP_mCherry_008', 93, 2)
+ Skipping budding event for ('898_mCherry', '898_mCherry_005', 34, 1)
+ Skipping budding event for ('898_mCherry', '898_mCherry_005', 39, 1)
+ Skipping budding event for ('898_mCherry', '898_mCherry_005', 51, 1)
+ Skipping budding event for ('898_mCherry', '898_mCherry_005', 61, 2)
+ Skipping budding event for ('898_mCherry', '898_mCherry_005', 104, 5)
+ Skipping budding event for ('898_mCherry', '898_mCherry_006', 17, 2)
+ Skipping budding event for ('898_mCherry', '898_mCherry_006', 45, 2)
+ Skipping budding event for ('901', '901_009', 15, 1)
+ Skipping budding event for ('901', '901_009', 39, 2)
+ Skipping budding event for ('901', '901_009', 47, 2)
+ Skipping budding event for ('901', '901_009', 67, 2)
+ Skipping budding event for ('901', '901_009', 79, 3)
+ Skipping budding event for ('901', '901_009', 85, 2)
+ Skipping budding event for ('901', '901_009', 88, 2)
+ Skipping budding event for ('901', '901_009', 101, 5)
+ Skipping budding event for ('901', '901_010', 13, 1)
+ Skipping budding event for ('901', '901_010', 15, 1)
+ Skipping budding event for ('901', '901_010', 27, 1)
+ Skipping budding event for ('901', '901_010', 59, 2)
+ Skipping budding event for ('901', '901_010', 83, 1)
+ Skipping budding event for ('901', '901_010', 92, 2)
+ Skipping budding event for ('901', '901_011', 12, 2)
+ Skipping budding event for ('901', '901_011', 26, 1)
+ Skipping budding event for ('901', '901_011', 26, 1)
+ Skipping budding event for ('901', '901_011', 27, 1)
+ Skipping budding event for ('901', '901_011', 36, 1)
+ Skipping budding event for ('901', '901_011', 52, 2)
+ Skipping budding event for ('901', '901_011', 78, 2)
+ Skipping budding event for ('901', '901_011', 96, 2)
+
+Data size is (967680, 11).
+Saved 19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP not found, trying "median_GFP_Z"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+WARNING: key_index median_GFP_Z not found, trying "buddings"
+
+Data directory is /home/ianyang/alibylite/high_quality_data_analysis
+Experiments available:
+{0: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00',
+ 1: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00',
+ 2: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00',
+ 3: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00',
+ 4: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00',
+ 5: '18360_2020_01_04_steadystate_glucose_2min_01',
+ 6: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01',
+ 7: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00',
+ 8: '19316_2020_10_26_steadystate_glucose_144m_2w2_00',
+ 9: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01',
+ 10: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00',
+ 11: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00',
+ 12: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00',
+ 13: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00',
+ 14: 'trash',
+ 15: '18589_2020_02_10_steadystate_glucose_898S_2w2_01'}
+
+Working directory is /home/ianyang/wela/data_analysis
+Datasets available:
+{0: '18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv',
+ 1: '19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv',
+ 2: '1908_2023_09_05_18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 3: '18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv',
+ 4: '1613_2023_04_05_steady_0_1_gluc_2min_msn2msn4_00.tsv',
+ 5: '19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv',
+ 6: '19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv',
+ 7: '469_2022_11_15_morph_5cham_hog1_lte1_htb2_vph1_bud3_01.tsv',
+ 8: '19477_2020_11_27_steadystate_glucose_898_exposure_901_2w0p01_00.tsv',
+ 9: '19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv',
+ 10: '18360_2020_01_04_steadystate_glucose_2min_01.tsv',
+ 11: '19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv',
+ 12: '18446_2020_01_08_steadystate_glucose_2w0p1_2min_01.tsv',
+ 13: '20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv',
+ 14: '19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv',
+ 15: '18572_2020_02_04_steady_2p0glc_2min_3z_mch5V_msn4msn2_00.tsv',
+ 16: '18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00.tsv',
+ 17: '19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv'}
+
+---
+18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00
+---
+Signals available:
+  extraction/general/None/absolute_x
+  extraction/general/None/absolute_y
+  extraction/general/None/area
+  extraction/general/None/centroid_x
+  extraction/general/None/centroid_y
+  extraction/general/None/eccentricity
+  extraction/general/None/image_x
+  extraction/general/None/image_y
+  extraction/general/None/volume
+  postprocessing/bud_metric/extraction_general_None_volume
+  postprocessing/buddings/extraction_general_None_volume
+
+Getting data to identify bud indices...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+Getting data for key index...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+
+Getting data for other signals...
+ Loading extraction/general/None/area for bf_008.
+ Loading extraction/general/None/area for bf_009.
+ Loading extraction/general/None/area for gfp_004.
+ Loading extraction/general/None/area for gfp_005.
+ Loading extraction/general/None/area for gfp_mch_001.
+ Loading extraction/general/None/area for gfp_mch_002.
+ Loading extraction/general/None/area for gfp_mch_003.
+ Loading extraction/general/None/area for mch_006.
+ Loading extraction/general/None/area for mch_007.
+ Loading extraction/general/None/volume for bf_008.
+ Loading extraction/general/None/volume for bf_009.
+ Loading extraction/general/None/volume for gfp_004.
+ Loading extraction/general/None/volume for gfp_005.
+ Loading extraction/general/None/volume for gfp_mch_001.
+ Loading extraction/general/None/volume for gfp_mch_002.
+ Loading extraction/general/None/volume for gfp_mch_003.
+ Loading extraction/general/None/volume for mch_006.
+ Loading extraction/general/None/volume for mch_007.
+ Loading extraction/general/None/image_x for bf_008.
+ Loading extraction/general/None/image_x for bf_009.
+ Loading extraction/general/None/image_x for gfp_004.
+ Loading extraction/general/None/image_x for gfp_005.
+ Loading extraction/general/None/image_x for gfp_mch_001.
+ Loading extraction/general/None/image_x for gfp_mch_002.
+ Loading extraction/general/None/image_x for gfp_mch_003.
+ Loading extraction/general/None/image_x for mch_006.
+ Loading extraction/general/None/image_x for mch_007.
+ Loading extraction/general/None/image_y for bf_008.
+ Loading extraction/general/None/image_y for bf_009.
+ Loading extraction/general/None/image_y for gfp_004.
+ Loading extraction/general/None/image_y for gfp_005.
+ Loading extraction/general/None/image_y for gfp_mch_001.
+ Loading extraction/general/None/image_y for gfp_mch_002.
+ Loading extraction/general/None/image_y for gfp_mch_003.
+ Loading extraction/general/None/image_y for mch_006.
+ Loading extraction/general/None/image_y for mch_007.
+ Loading extraction/general/None/absolute_x for bf_008.
+ Loading extraction/general/None/absolute_x for bf_009.
+ Loading extraction/general/None/absolute_x for gfp_004.
+ Loading extraction/general/None/absolute_x for gfp_005.
+ Loading extraction/general/None/absolute_x for gfp_mch_001.
+ Loading extraction/general/None/absolute_x for gfp_mch_002.
+ Loading extraction/general/None/absolute_x for gfp_mch_003.
+ Loading extraction/general/None/absolute_x for mch_006.
+ Loading extraction/general/None/absolute_x for mch_007.
+ Loading extraction/general/None/absolute_y for bf_008.
+ Loading extraction/general/None/absolute_y for bf_009.
+ Loading extraction/general/None/absolute_y for gfp_004.
+ Loading extraction/general/None/absolute_y for gfp_005.
+ Loading extraction/general/None/absolute_y for gfp_mch_001.
+ Loading extraction/general/None/absolute_y for gfp_mch_002.
+ Loading extraction/general/None/absolute_y for gfp_mch_003.
+ Loading extraction/general/None/absolute_y for mch_006.
+ Loading extraction/general/None/absolute_y for mch_007.
+Getting bud data...
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_008.
+ Loading postprocessing/buddings/extraction_general_None_volume for bf_009.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/buddings/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_006.
+ Loading postprocessing/buddings/extraction_general_None_volume for mch_007.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for bf_008.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for bf_009.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_004.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_005.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_001.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_002.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for gfp_mch_003.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for mch_006.
+ Loading postprocessing/bud_metric/extraction_general_None_volume for mch_007.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_general_None_area.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_max_median.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_max_mean.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_max_std.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_median.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_mean.
+No data found.
+Grouper:Warning: some positions (9) do not contain postprocessing/bud_metric/extraction_buddings_bgsub_max_std.
+No data found.
+ Skipping budding event for ('bf', 'bf_008', 14, 42)
+ Skipping budding event for ('bf', 'bf_008', 53, 2)
+ Skipping budding event for ('bf', 'bf_008', 70, 1)
+ Skipping budding event for ('bf', 'bf_008', 81, 1)
+ Skipping budding event for ('bf', 'bf_008', 97, 1)
+ Skipping budding event for ('bf', 'bf_009', 3, 1)
+ Skipping budding event for ('bf', 'bf_009', 13, 48)
+ Skipping budding event for ('bf', 'bf_009', 49, 3)
+ Skipping budding event for ('bf', 'bf_009', 84, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 5, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 7, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 10, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 18, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 52, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 82, 1)
+ Skipping budding event for ('gfp', 'gfp_004', 97, 1)
+ Skipping budding event for ('gfp', 'gfp_005', 6, 1)
+ Skipping budding event for ('gfp', 'gfp_005', 22, 1)
+ Skipping budding event for ('gfp', 'gfp_005', 41, 1)
+ Skipping budding event for ('gfp', 'gfp_005', 100, 8)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 4, 11)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 26, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 38, 82)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 58, 16)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 82, 5)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 83, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_001', 101, 6)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 31, 1)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_002', 74, 5)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 39, 121)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 81, 14)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 86, 2)
+ Skipping budding event for ('gfp_mch', 'gfp_mch_003', 86, 2)
+ Skipping budding event for ('mch', 'mch_006', 1, 64)
+ Skipping budding event for ('mch', 'mch_006', 12, 1)
+ Skipping budding event for ('mch', 'mch_006', 14, 1)
+ Skipping budding event for ('mch', 'mch_006', 36, 1)
+ Skipping budding event for ('mch', 'mch_006', 62, 1)
+ Skipping budding event for ('mch', 'mch_006', 62, 1)
+ Skipping budding event for ('mch', 'mch_007', 3, 1)
+ Skipping budding event for ('mch', 'mch_007', 15, 1)
+ Skipping budding event for ('mch', 'mch_007', 29, 1)
+ Skipping budding event for ('mch', 'mch_007', 39, 2)
+ Skipping budding event for ('mch', 'mch_007', 40, 1)
+ Skipping budding event for ('mch', 'mch_007', 69, 1)
+ Skipping budding event for ('mch', 'mch_007', 91, 2)
+ Skipping budding event for ('mch', 'mch_007', 91, 2)
+
+Data size is (866160, 11).
+Saved 18367_2020_01_07_steady_0_1_gluc_2min_msn4msn2_00
