@@ -186,30 +186,30 @@ The table below is a quick local index. The ELN should remain the source of
 record for motivation, methods, results, and conclusions.
 
 | Experiment | Brief description |
-|---|---|
-| `EXP-25-IY001` | LSTM architecture and hyperparameter selection on steady-state simulated trajectories. |
-| `EXP-25-IY002` | Combined variance-ratio steady-state datasets, trained the selected IY001 LSTM, and compared classifier baselines. |
-| `EXP-25-IY003` | Follow-up LSTM architecture selection and fine-tuning runs. |
-| `EXP-25-IY004` | Variance-ratio simulation sweeps and classification benchmarks across telegraph-model conditions. |
-| `EXP-25-IY005` | Standalone legacy SSA telegraph fine-tuning prototype. Treat as archival rather than the current simulator pattern. |
-| `EXP-25-IY006` | Transformer classifier grid-search counterpart to the early LSTM sweeps. |
-| `EXP-25-IY007` | Experimental parameter-finding notebooks and checks for mean, CV, and autocorrelation targets. |
-| `EXP-25-IY010` | Validation of target-statistic simulation over broad `mu`, `cv`, and `t_ac` grids. |
-| `EXP-25-IY011` | Sobol-sampled Julia simulations for transfer learning, plus baseline, Siamese, and SimCLR-style model trials. |
+| --- | --- |
+| `EXP-25-IY001` | LSTM architecture and hyperparameter finetuning on steady-state simulated trajectories. |
+| `EXP-25-IY002` | LSTM architecture and hyperparameter finetuning on concatenated steady-state datasets. |
+| `EXP-25-IY003` | LSTM model architecture selection and hyperparameter finetuning treated as two separate tasks. |
+| `EXP-25-IY004` | Benchmarking classifiers across variance ratio ranges on synthetic telegraph-model data. |
+| `EXP-25-IY005` | Fano factor validation of the two-state telegraph model function. |
+| `EXP-25-IY006` | Transformer model architecture search and hyperparameter sweep, counterpart to the early LSTM sweeps. |
+| `EXP-25-IY007` | Benchmarking LSTM and other classifiers across coefficient of variation (CV) ranges on synthetic data. |
+| `EXP-25-IY010` | Implementation and validation of `find_tilda_parameters()`, a rescaled parameter solver for the telegraph model, plus synthetic data generation. |
+| `EXP-25-IY011` | Baseline and Siamese transformer trained on Sobol-sampled Julia synthetic data; initial SimCLR contrastive learning trials. |
 | `EXP-25-IY012` | Julia simulation pipeline tests and plotting/histogram checks. |
-| `EXP-25-IY013` | Experimental time-series transformation and transformer pretraining/fine-tuning on synthetic then experimental data. |
-| `EXP-26-IY014` | Larger Sobol synthetic dataset generation and supervised transformer training/evaluation variants. |
-| `EXP-26-IY015` | Smaller transfer-learning Sobol dataset and baseline transformer training variants. |
-| `EXP-26-IY016` | Two-fold and ten-fold dataset variants, transformer sanity checks, and catch22/tsfresh SVM benchmarks. |
-| `EXP-26-IY017` | SimCLR training on synthetic variation datasets with downstream SVM and catch22 comparisons. |
-| `EXP-26-IY018` | Transformer baseline and Optuna hyperparameter sweeps, including held-out test dataset generation. |
-| `EXP-26-IY019` | Large Sobol simulation batches for `mu`, `cv`, and `t_ac` variation, with ML-ready outputs and summaries. |
-| `EXP-26-IY020` | Ten-thousand-sample Sobol simulation sets and summary-statistic processing for later SSL experiments. |
-| `EXP-26-IY021` | Frozen SimCLR embeddings evaluated with SVMs on experimental mCherry, GFP, and dual-channel data. |
+| `EXP-25-IY013` | Transformation of experimental time-series data and transfer to transformer models. |
+| `EXP-26-IY014` | Baseline transformer training on resimulated data with 10-fold differences enforced in parameter space, across `mu`, `cv`, and `t_ac` variation datasets. |
+| `EXP-26-IY015` | Baseline transformer experiments feeding additional statistical information as input alongside raw time series. |
+| `EXP-26-IY016` | Optimising SVM data analysis pipelines as a follow-up to IY014, including catch22/tsfresh feature benchmarks. |
+| `EXP-26-IY017` | Contrastive learning (SimCLR) follow-up from IY011 exploring different batch sizes and instance normalisation. |
+| `EXP-26-IY018` | Baseline transformer hyperparameter sweep using Optuna, with held-out test dataset generation. |
+| `EXP-26-IY019` | Generation of a large (50k) Sobol simulation dataset across `mu`, `cv`, and `t_ac` variation for transformer training. |
+| `EXP-26-IY020` | Generation of sufficient synthetic data for transformer training, with summary-statistic processing. |
+| `EXP-26-IY021` | Catch22 + SVM and frozen SimCLR embedding + SVM benchmarks on experimental mCherry, GFP, and dual-channel data. |
 | `EXP-26-IY022` | SimCLR normalisation studies, including batch-wise, global, and joint-normalised training variants. |
-| `EXP-26-IY023` | Mixed-source SimCLR training over baseline, `mu`, `cv`, and `t_ac` datasets, with embedding visualisation and SVM downstream analysis. |
-| `EXP-26-IY024` | Cross-view InfoNCE SimCLR experiments on mixed synthetic data. |
-| `EXP-26-IY025` | SVM median-split, pairwise-variation, permutation, and OU-process controls for testing what classifiers use. |
+| `EXP-26-IY023` | Contrastive learning on variation datasets from multiple sources (baseline, `mu`, `cv`, `t_ac`), with embedding visualisation and SVM downstream analysis. |
+| `EXP-26-IY024` | Implementation note and initial experiments on cross-view InfoNCE loss for contrastive learning. |
+| `EXP-26-IY025` | Re-analysis of SVM performance via median-split permutation tests, pairwise-variation controls, and OU-process ablations. |
 | `obsolete_files` | Archived prototypes and old simulation scripts; do not use as templates for new work. |
 
 Historical experiments may reference removed APIs or absolute paths from the
