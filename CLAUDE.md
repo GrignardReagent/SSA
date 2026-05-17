@@ -30,7 +30,7 @@
 - Skip this for simple, obvious fixes - don't over-engineer
 - Challenge your own work before presenting
 - Avoid hardcoding values in scripts
-- Provide sufficient comments and docstrings for codes, functions and classes
+- Provide sufficient in-line comments and docstrings for codes, functions and classes
 - When writing code, descriptions (e.g., Jupyter notebooks or ELNs) or comments, be succinct and to the point, while ensuring clarity. Avoid unnecessary verbosity unless asked to, but do not sacrifice important details for brevity. Strive for a balance between conciseness and informativeness in all communications.
 
 ## 6. Autonomous Bug Fixing
@@ -61,6 +61,16 @@ Always use the micromamba `stochastic_sim` environment unless explicitly stated 
 # Common Commands
 
 Use ``simulate_telegraph_model`` from ``simulation.julia_simulate_telegraph_model`` to simulate time series data from the telegraph model. 
+
+# Data Preprocessing
+
+## Missing Values
+
+- Use `sklearn.impute.IterativeImputer` as the default method for handling NaNs in experimental time-series matrices.
+- Always enable it with `from sklearn.experimental import enable_iterative_imputer  # noqa: F401` before importing `IterativeImputer`.
+- Prefer a deterministic imputer configuration with `random_state=42` unless an experiment defines a different fixed seed.
+- Do not use ad hoc row interpolation or median filling as the primary NaN strategy. Median/global fills are acceptable only as a guarded fallback for pathological cases such as all-NaN timepoints or residual NaNs after iterative imputation.
+- Preserve the original matrix shape after imputation and verify that no NaNs remain.
 
 # Architecture Overview
 
