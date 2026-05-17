@@ -1,0 +1,10 @@
+class_label,class_name,auc_roc,test_n
+0,Nrg1 @ 2% glucose,0.9392405063291139,15
+1,Nrg1 @ 0.1% glucose,0.950210970464135,15
+2,Nrg1 @ 0.01% glucose,0.9783653846153846,16
+3,Rtg1 @ 2% glucose,0.953525641025641,16
+4,Rtg1 @ 0.1% glucose,0.9118589743589743,16
+5,Rtg1 @ 0.01% glucose,0.9911858974358975,16
+micro,micro-average,0.9558623811679492,94
+macro,macro-average,0.9540645623715244,94
+weighted,weighted-average,0.9542632607539692,94
