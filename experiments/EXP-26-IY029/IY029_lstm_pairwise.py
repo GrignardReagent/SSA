@@ -13,7 +13,8 @@ Architecture: input_size=1, hidden_size=64, num_layers=2, bidirectional=True,
               CrossEntropyLoss (label_smoothing=0.1), Adam, ReduceLROnPlateau,
               early stopping patience=15.
 
-BATCH_SIZE=256: LSTM is O(T) memory — no quadratic attention cost.
+BATCH_SIZE=32: BPTT stores all T hidden states per sample in GPU memory
+              (O(T × batch)); must be small for full-length pair sequences.
 
 Saves:
   IY029_lstm_pairwise_results.json
@@ -45,7 +46,7 @@ IY014_ROOT = REPO_ROOT / 'experiments' / 'EXP-26-IY014'
 HIDDEN_SIZE = 64
 NUM_LAYERS  = 2
 DROPOUT     = 0.3
-BATCH_SIZE  = 256   # LSTM is O(T) memory — safe for full trajectories on V100
+BATCH_SIZE  = 32    # BPTT stores O(T × batch) hidden states; keep small for full-length pairs
 N_EPOCHS    = 100
 PATIENCE    = 15
 LR          = 1e-3
