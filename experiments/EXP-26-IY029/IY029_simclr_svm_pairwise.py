@@ -1,9 +1,9 @@
 """
-IY029: Synthetic-Data Pairwise SVM — All SimCLR Models (IY017–IY024)
+IY029: SimCLR Pairwise SVM — All SimCLR Models (IY017–IY024)
 
 *** Designed to run on the University of Edinburgh Eddie HPC cluster. ***
 Expected repo root on Eddie: /home/s1732775/eddie_swain/SSA/
-Submit with: qsub IY029_synthetic_svm_pairwise.sh  (from the EXP-26-IY029 dir)
+Submit with: qsub IY029_simclr_svm_pairwise.sh  (from the EXP-26-IY029 dir)
 
 Evaluates all 34 SimCLR checkpoints on a pairwise same/different task using
 IY011 (2-fold) and IY014 (10-fold) variation datasets across four conditions
@@ -17,14 +17,14 @@ ENCODE_BATCH_SIZE=64 is calibrated for Eddie V100 (16 GB VRAM):
   max attention cost = 64 × 4 × 2910² × 4 B ≈ 8.6 GB.
 
 Saves:
-  IY029_svm_pairwise_results.json             (after embeddings section)
-  IY029_svm_pairwise_results_combined.json    (after combined section)
-  IY029_synthetic_svm_pairwise_2fold.png
-  IY029_synthetic_svm_pairwise_10fold.png
-  IY029_synthetic_svm_pairwise_best_model.png
-  IY029_synthetic_svm_pairwise_combined_2fold.png
-  IY029_synthetic_svm_pairwise_combined_10fold.png
-  IY029_synthetic_svm_pairwise_combined_best_model.png
+  IY029_simclr_svm_pairwise_results.json             (after embeddings section)
+  IY029_simclr_svm_pairwise_results_combined.json    (after combined section)
+  IY029_simclr_svm_pairwise_2fold.png
+  IY029_simclr_svm_pairwise_10fold.png
+  IY029_simclr_svm_pairwise_best_model.png
+  IY029_simclr_svm_pairwise_combined_2fold.png
+  IY029_simclr_svm_pairwise_combined_10fold.png
+  IY029_simclr_svm_pairwise_combined_best_model.png
 """
 import os
 # Reduce CUDA allocator fragmentation — must be set before importing torch
@@ -455,7 +455,7 @@ def main():
     best_label = max(mean_accs, key=mean_accs.get)
 
     # Save JSON immediately so results are not lost if combined section fails
-    save_path = SCRIPT_DIR / 'IY029_svm_pairwise_results.json'
+    save_path = SCRIPT_DIR / 'IY029_simclr_svm_pairwise_results.json'
     with open(save_path, 'w') as f:
         json.dump({
             'best_label': best_label,
@@ -476,12 +476,12 @@ def main():
     print('\n=== Plots: Section 1 ===')
     plot_fold(results, model_labels, ds_names, ds_colors,
               'iy011', 'IY011 (2-fold variation)',
-              SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_2fold.png')
+              SCRIPT_DIR / 'IY029_simclr_svm_pairwise_2fold.png')
     plot_fold(results, model_labels, ds_names, ds_colors,
               'iy014', 'IY014 (10-fold variation)',
-              SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_10fold.png')
+              SCRIPT_DIR / 'IY029_simclr_svm_pairwise_10fold.png')
     plot_best_model(results, model_labels, ds_names, ds_colors,
-                    SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_best_model.png',
+                    SCRIPT_DIR / 'IY029_simclr_svm_pairwise_best_model.png',
                     suptitle_prefix='Best model [z1|z2]')
 
     # ══════════════════════════════════════════════════════════════════════════
@@ -500,7 +500,7 @@ def main():
     }
     best_combined = max(mean_accs_combined, key=mean_accs_combined.get)
 
-    save_path_combined = SCRIPT_DIR / 'IY029_svm_pairwise_results_combined.json'
+    save_path_combined = SCRIPT_DIR / 'IY029_simclr_svm_pairwise_results_combined.json'
     with open(save_path_combined, 'w') as f:
         json.dump({
             'best_label': best_combined,
@@ -522,14 +522,14 @@ def main():
     print('\n=== Plots: Section 2 ===')
     plot_fold(results_combined, model_labels, ds_names, ds_colors,
               'iy011', 'IY011 (2-fold variation)',
-              SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_combined_2fold.png',
+              SCRIPT_DIR / 'IY029_simclr_svm_pairwise_combined_2fold.png',
               title_prefix='Pairwise SVM [raw + encoded]')
     plot_fold(results_combined, model_labels, ds_names, ds_colors,
               'iy014', 'IY014 (10-fold variation)',
-              SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_combined_10fold.png',
+              SCRIPT_DIR / 'IY029_simclr_svm_pairwise_combined_10fold.png',
               title_prefix='Pairwise SVM [raw + encoded]')
     plot_best_model(results_combined, model_labels, ds_names, ds_colors,
-                    SCRIPT_DIR / 'IY029_synthetic_svm_pairwise_combined_best_model.png',
+                    SCRIPT_DIR / 'IY029_simclr_svm_pairwise_combined_best_model.png',
                     suptitle_prefix='Best model [raw|z1|z2]')
 
     print('\nAll done.')

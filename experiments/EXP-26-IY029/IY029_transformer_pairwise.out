@@ -1,0 +1,154 @@
+REPO_ROOT  : /exports/csce/eddie/biology/groups/swain/SSA
+IY011_ROOT : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011  (exists: True)
+IY014_ROOT : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014  (exists: True)
+Device: cuda
+BATCH_SIZE=8  N_EPOCHS=100  D_MODEL=16
+
+=== Baseline ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data/IY011_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data/IY011_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data/IY011_static_test.pt...
+    train=(3000, 3623, 1)  val=(600, 3623, 1)  test=(600, 3623, 1)
+  [Baseline/iy011] epoch  10  loss=0.4510  val=0.765  ETA 92.7min
+  [Baseline/iy011] epoch  20  loss=0.4028  val=0.787  ETA 82.4min
+  [Baseline/iy011] epoch  30  loss=0.3824  val=0.792  ETA 72.0min
+  [Baseline/iy011] epoch  40  loss=0.3587  val=0.775  ETA 61.7min
+  [Baseline/iy011] epoch  50  loss=0.3390  val=0.762  ETA 51.4min
+  [Baseline/iy011] epoch  60  loss=0.3164  val=0.792  ETA 41.2min
+  [Baseline/iy011] epoch  70  loss=0.3030  val=0.782  ETA 30.9min
+  [Baseline/iy011] epoch  80  loss=0.2855  val=0.775  ETA 20.6min
+  [Baseline/iy011] epoch  90  loss=0.2778  val=0.775  ETA 10.3min
+  [Baseline/iy011] epoch 100  loss=0.2721  val=0.780  ETA 0.0min
+  [Baseline/iy011] test acc = 0.7767
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data/IY014_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data/IY014_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data/IY014_static_test.pt...
+    train=(3000, 3623, 1)  val=(600, 3623, 1)  test=(600, 3623, 1)
+  [Baseline/iy014] epoch  10  loss=0.3193  val=0.860  ETA 92.6min
+  [Baseline/iy014] epoch  20  loss=0.2695  val=0.847  ETA 82.3min
+  [Baseline/iy014] epoch  30  loss=0.2414  val=0.895  ETA 72.0min
+  [Baseline/iy014] epoch  40  loss=0.2163  val=0.895  ETA 61.7min
+  [Baseline/iy014] epoch  50  loss=0.1848  val=0.868  ETA 51.4min
+  [Baseline/iy014] epoch  60  loss=0.1736  val=0.862  ETA 41.1min
+  [Baseline/iy014] epoch  70  loss=0.1649  val=0.875  ETA 30.8min
+  [Baseline/iy014] epoch  80  loss=0.1416  val=0.857  ETA 20.5min
+  [Baseline/iy014] epoch  90  loss=0.1392  val=0.862  ETA 10.3min
+  [Baseline/iy014] epoch 100  loss=0.1349  val=0.858  ETA 0.0min
+  [Baseline/iy014] test acc = 0.9033
+
+=== Mu ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY011_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY011_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY011_static_test.pt...
+    train=(3000, 5021, 1)  val=(600, 5021, 1)  test=(600, 5021, 1)
+  [Mu/iy011] epoch  10  loss=0.1709  val=0.937  ETA 173.6min
+  [Mu/iy011] epoch  20  loss=0.1289  val=0.903  ETA 154.3min
+  [Mu/iy011] epoch  30  loss=0.1181  val=0.943  ETA 135.0min
+  [Mu/iy011] epoch  40  loss=0.1062  val=0.925  ETA 115.7min
+  [Mu/iy011] epoch  50  loss=0.0896  val=0.927  ETA 96.4min
+  [Mu/iy011] epoch  60  loss=0.0665  val=0.928  ETA 77.1min
+  [Mu/iy011] epoch  70  loss=0.0584  val=0.920  ETA 57.8min
+  [Mu/iy011] epoch  80  loss=0.0437  val=0.920  ETA 38.5min
+  [Mu/iy011] epoch  90  loss=0.0395  val=0.922  ETA 19.3min
+  [Mu/iy011] epoch 100  loss=0.0357  val=0.923  ETA 0.0min
+  [Mu/iy011] test acc = 0.9500
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY014_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY014_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_mu_variation/IY014_static_test.pt...
+    train=(3000, 5021, 1)  val=(600, 5021, 1)  test=(600, 5021, 1)
+  [Mu/iy014] epoch  10  loss=0.0000  val=1.000  ETA 173.1min
+  [Mu/iy014] epoch  20  loss=0.0000  val=1.000  ETA 153.8min
+  [Mu/iy014] epoch  30  loss=0.0000  val=1.000  ETA 134.6min
+  [Mu/iy014] epoch  40  loss=0.0000  val=1.000  ETA 115.4min
+  [Mu/iy014] epoch  50  loss=0.0000  val=1.000  ETA 96.2min
+  [Mu/iy014] epoch  60  loss=0.0000  val=1.000  ETA 76.9min
+  [Mu/iy014] epoch  70  loss=0.0000  val=1.000  ETA 57.7min
+  [Mu/iy014] epoch  80  loss=0.0000  val=1.000  ETA 38.5min
+  [Mu/iy014] epoch  90  loss=0.0000  val=1.000  ETA 19.2min
+  [Mu/iy014] epoch 100  loss=0.0000  val=1.000  ETA 0.0min
+  [Mu/iy014] test acc = 1.0000
+
+=== CV ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_cv_variation/IY011_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_cv_variation/IY011_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_cv_variation/IY011_static_test.pt...
+    train=(3000, 5003, 1)  val=(600, 5003, 1)  test=(600, 5003, 1)
+  [CV/iy011] epoch  10  loss=0.1936  val=0.852  ETA 173.0min
+  [CV/iy011] epoch  20  loss=0.1236  val=0.940  ETA 153.8min
+  [CV/iy011] epoch  30  loss=0.1072  val=0.947  ETA 134.6min
+  [CV/iy011] epoch  40  loss=0.0923  val=0.937  ETA 115.3min
+  [CV/iy011] epoch  50  loss=0.0696  val=0.932  ETA 96.1min
+  [CV/iy011] epoch  60  loss=0.0552  val=0.938  ETA 76.9min
+  [CV/iy011] epoch  70  loss=0.0452  val=0.938  ETA 57.7min
+  [CV/iy011] epoch  80  loss=0.0262  val=0.945  ETA 38.4min
+  [CV/iy011] epoch  90  loss=0.0278  val=0.950  ETA 19.2min
+  [CV/iy011] epoch 100  loss=0.0211  val=0.945  ETA 0.0min
+  [CV/iy011] test acc = 0.9683
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_cv_variation/IY014_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_cv_variation/IY014_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_cv_variation/IY014_static_test.pt...
+    train=(3000, 5821, 1)  val=(600, 5821, 1)  test=(600, 5821, 1)
+  [CV/iy014] epoch  10  loss=0.0000  val=1.000  ETA 228.8min
+  [CV/iy014] epoch  20  loss=0.0000  val=1.000  ETA 203.4min
+  [CV/iy014] epoch  30  loss=0.0000  val=1.000  ETA 178.0min
+  [CV/iy014] epoch  40  loss=0.0000  val=1.000  ETA 152.6min
+  [CV/iy014] epoch  50  loss=0.0000  val=1.000  ETA 127.1min
+  [CV/iy014] epoch  60  loss=0.0000  val=1.000  ETA 101.7min
+  [CV/iy014] epoch  70  loss=0.0000  val=1.000  ETA 76.3min
+  [CV/iy014] epoch  80  loss=0.0000  val=1.000  ETA 50.9min
+  [CV/iy014] epoch  90  loss=0.0000  val=1.000  ETA 25.4min
+  [CV/iy014] epoch 100  loss=0.0000  val=1.000  ETA 0.0min
+  [CV/iy014] test acc = 1.0000
+
+=== T_ac ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_t_ac_variation/IY011_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_t_ac_variation/IY011_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-25-IY011/data_t_ac_variation/IY011_static_test.pt...
+    train=(3000, 4023, 1)  val=(600, 4023, 1)  test=(600, 4023, 1)
+  [T_ac/iy011] epoch  10  loss=0.6924  val=0.497  ETA 111.8min
+  [T_ac/iy011] epoch  20  loss=0.6700  val=0.503  ETA 99.4min
+  [T_ac/iy011] epoch  30  loss=0.6490  val=0.547  ETA 87.0min
+  [T_ac/iy011] epoch  40  loss=0.6352  val=0.548  ETA 74.5min
+  [T_ac/iy011] epoch  50  loss=0.6117  val=0.560  ETA 62.1min
+  [T_ac/iy011] epoch  60  loss=0.5923  val=0.557  ETA 49.7min
+  [T_ac/iy011] epoch  70  loss=0.5864  val=0.570  ETA 37.3min
+  [T_ac/iy011] epoch  80  loss=0.5704  val=0.582  ETA 24.8min
+  [T_ac/iy011] epoch  90  loss=0.5733  val=0.575  ETA 12.4min
+  [T_ac/iy011] epoch 100  loss=0.5697  val=0.573  ETA 0.0min
+  [T_ac/iy011] test acc = 0.5633
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_t_ac_variation/IY014_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_t_ac_variation/IY014_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY014/data_t_ac_variation/IY014_static_test.pt...
+    train=(3000, 3623, 1)  val=(600, 3623, 1)  test=(600, 3623, 1)
+  [T_ac/iy014] epoch  10  loss=0.4521  val=0.647  ETA 92.2min
+  [T_ac/iy014] epoch  20  loss=0.3029  val=0.830  ETA 82.0min
+  [T_ac/iy014] epoch  30  loss=0.2184  val=0.863  ETA 71.7min
+  [T_ac/iy014] epoch  40  loss=0.1650  val=0.883  ETA 61.5min
+  [T_ac/iy014] epoch  50  loss=0.1364  val=0.882  ETA 51.2min
+  [T_ac/iy014] epoch  60  loss=0.1027  val=0.912  ETA 41.0min
+  [T_ac/iy014] epoch  70  loss=0.0748  val=0.910  ETA 30.8min
+  [T_ac/iy014] epoch  80  loss=0.0585  val=0.915  ETA 20.5min
+  [T_ac/iy014] epoch  90  loss=0.0510  val=0.918  ETA 10.3min
+  [T_ac/iy014] epoch 100  loss=0.0434  val=0.915  ETA 0.0min
+  [T_ac/iy014] test acc = 0.9150
+
+Total training time: 1265.1 min
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_transformer_pairwise_results.json
+
+=== Summary ===
+Dataset       iy011 2-fold  iy014 10-fold
+Baseline          0.7767        0.9033
+Mu                0.9500        1.0000
+CV                0.9683        1.0000
+T_ac              0.5633        0.9150
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_transformer_pairwise_loss.png
+
+Done.

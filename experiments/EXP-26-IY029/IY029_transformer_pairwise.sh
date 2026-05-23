@@ -14,7 +14,7 @@
 
 # Request 1 GPU in the gpu queue
 #$ -q gpu
-#$ -l gpu=1
+#$ -l gpu-mig=1
 
 # 32G RAM per core (sufficient for loading all 8 dataset splits)
 #$ -l h_rss=32G
