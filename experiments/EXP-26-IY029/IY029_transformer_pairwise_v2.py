@@ -144,7 +144,7 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
                    ds_name: str, fold: str) -> tuple:
     """
     Train a fresh TransformerClassifier on the full pair sequence.
-    Returns (test_accuracy, loss_curve).
+    Returns (test_accuracy, loss_curve, best_state).
     """
     model     = TransformerClassifier(
         input_size=1, d_model=D_MODEL, nhead=NHEAD,
@@ -192,7 +192,7 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
 
     model.load_state_dict(best_state)
     te_acc = evaluate(model, te_loader)
-    return te_acc, loss_curve
+    return te_acc, loss_curve, best_state
 
 
 # ── Plotting ───────────────────────────────────────────────────────────────────
@@ -236,6 +236,8 @@ def main():
     results     = {}
     loss_curves = {}
     t_total     = time.time()
+    ckpt_dir    = SCRIPT_DIR / 'checkpoints'
+    ckpt_dir.mkdir(exist_ok=True)
 
     for cfg in DATASET_CONFIGS:
         name = cfg['name']
@@ -251,10 +253,16 @@ def main():
             X_te, y_te = load_split(cfg[f'{fold}_test'])
             print(f'    train={X_tr.shape}  val={X_va.shape}  test={X_te.shape}', flush=True)
 
-            acc, lc = train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, name, fold)
+            acc, lc, state = train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, name, fold)
             results[name][fold]     = acc
             loss_curves[name][fold] = lc
             print(f'  [{name}/{fold}] test acc = {acc:.4f}', flush=True)
+
+            # Save best-validation checkpoint for downstream embedding visualisation.
+            ckpt_path = ckpt_dir / f'IY029_transformer_v2_{name.lower()}_{fold}.pth'
+            torch.save({'state_dict': state, 'd_model': D_MODEL, 'nhead': NHEAD,
+                        'num_layers': NUM_LAYERS, 'dropout': DROPOUT}, ckpt_path)
+            print(f'  Saved checkpoint: {ckpt_path.name}', flush=True)
 
     print(f'\nTotal training time: {(time.time()-t_total)/60:.1f} min')
 

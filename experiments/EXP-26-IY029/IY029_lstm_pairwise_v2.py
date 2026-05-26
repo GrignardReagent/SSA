@@ -125,7 +125,8 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
                    ds_name: str, fold: str) -> tuple:
     """
     Train a fresh LSTMClassifier and evaluate on the test set.
-    Returns (test_accuracy, train_loss_curve).
+    Returns (test_accuracy, train_loss_curve, model) — model is returned so
+    the caller can save its state_dict for embedding visualisation.
     """
     model = LSTMClassifier(
         input_size=1,
@@ -152,7 +153,7 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
     n_epochs = len(history['train_loss'])
     print(f'  [{ds_name}/{fold}] test acc = {te_acc:.4f}  '
           f'({n_epochs} epochs, {elapsed/60:.1f} min)', flush=True)
-    return te_acc, history['train_loss']
+    return te_acc, history['train_loss'], model
 
 
 # ── Plotting ───────────────────────────────────────────────────────────────────
@@ -195,6 +196,8 @@ def main():
     results     = {}
     loss_curves = {}
     t_total     = time.time()
+    ckpt_dir    = SCRIPT_DIR / 'checkpoints'
+    ckpt_dir.mkdir(exist_ok=True)
 
     for cfg in DATASET_CONFIGS:
         name = cfg['name']
@@ -209,9 +212,14 @@ def main():
             X_te, y_te = load_split(cfg[f'{fold}_test'])
             print(f'    train={X_tr.shape}  val={X_va.shape}  test={X_te.shape}', flush=True)
 
-            acc, lc = train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, name, fold)
+            acc, lc, model = train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, name, fold)
             results[name][fold]     = acc
             loss_curves[name][fold] = lc
+
+            # Save model state_dict for downstream embedding visualisation.
+            ckpt_path = ckpt_dir / f'IY029_lstm_v2_{name.lower()}_{fold}.pth'
+            torch.save(model.state_dict(), ckpt_path)
+            print(f'  Saved checkpoint: {ckpt_path.name}', flush=True)
 
     print(f'\nTotal training time: {(time.time()-t_total)/60:.1f} min')
 

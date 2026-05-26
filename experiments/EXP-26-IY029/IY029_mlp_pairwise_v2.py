@@ -123,6 +123,11 @@ class PairwiseMLP(nn.Module):
     def forward(self, x):
         return self.net(x).squeeze(1)   # (B,)
 
+    def encode(self, x):
+        """Extract 64-dim penultimate activations (after last ReLU, before final Linear).
+        Dropout is identity in eval mode so net[:-1] = net up to and including last ReLU."""
+        return self.net[:-1](x)   # (B, 64)
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -168,7 +173,7 @@ def evaluate(model, loader):
 
 
 def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, verbose=False):
-    """Train a fresh PairwiseMLP and return (test_accuracy, loss_curve)."""
+    """Train a fresh PairwiseMLP and return (test_accuracy, loss_curve, best_state, input_dim)."""
     input_dim = X_tr.shape[1]
     # A fresh model is trained for each dataset/fold combination.
     model  = PairwiseMLP(input_dim).to(DEVICE)
@@ -205,7 +210,7 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, verbose=False):
             print(f'  epoch {epoch+1:3d}  loss={loss_curve[-1]:.4f}  val={va_acc:.3f}')
 
     model.load_state_dict(best_state)
-    return evaluate(model, te_loader), loss_curve
+    return evaluate(model, te_loader), loss_curve, best_state, X_tr.shape[1]
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
@@ -220,6 +225,8 @@ def main():
 
     results     = {}   # {ds_name: {'iy011': acc, 'iy014': acc}}
     loss_curves = {}
+    ckpt_dir    = SCRIPT_DIR / 'checkpoints'
+    ckpt_dir.mkdir(exist_ok=True)
 
     for cfg in DATASET_CONFIGS:
         name = cfg['name']
@@ -239,10 +246,17 @@ def main():
             X_va = flatten_pairs(X_va_raw)
             X_te = flatten_pairs(X_te_raw)
 
-            acc, lc = train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te, verbose=True)
+            acc, lc, state, input_dim = train_and_eval(
+                X_tr, y_tr, X_va, y_va, X_te, y_te, verbose=True
+            )
             results[name][fold]     = acc
             loss_curves[name][fold] = lc
             print(f'test acc = {acc:.4f}')
+
+            # Save best-validation checkpoint for downstream embedding visualisation.
+            ckpt_path = ckpt_dir / f'IY029_mlp_v2_{name.lower()}_{fold}.pth'
+            torch.save({'state_dict': state, 'input_dim': input_dim}, ckpt_path)
+            print(f'  Saved checkpoint: {ckpt_path.name}')
 
     print('\nDone.')
 
