@@ -147,6 +147,11 @@ t_ac_observed = calculate_ac_time_interp1d(ac_mean, ac["stress_lags"])
 Plotting helpers in `visualisation.plots` accept either full simulator output
 DataFrames or already-extracted trajectory matrices.
 
+For experimental time-series matrices with missing values, use
+`utils.data_processing.handle_missing_values`. It wraps
+`sklearn.impute.IterativeImputer` with deterministic settings and returns the
+same DataFrame shape with no remaining missing values.
+
 ## Machine Learning Workflows
 
 The repository contains several ML paths for synthetic and experimental time
@@ -213,6 +218,9 @@ record for motivation, methods, results, and conclusions.
 | `EXP-26-IY023` | Contrastive learning on variation datasets from multiple sources (baseline, `mu`, `cv`, `t_ac`), with embedding visualisation and SVM downstream analysis. |
 | `EXP-26-IY024` | Implementation note and initial experiments on cross-view InfoNCE loss for contrastive learning. |
 | `EXP-26-IY025` | Re-analysis of SVM performance via median-split permutation tests, pairwise-variation controls, and OU-process ablations. |
+| `EXP-26-IY026` | Inventory of fluorescence time-lapse microscopy experiments from OMERO metadata, with dataset-level classification results. |
+| `EXP-26-IY028` | Dual-channel experimental-data evaluation, SimCLR ROC/AUC analysis, embedding-space visualisation, and poster figure preparation. |
+| `EXP-26-IY029` | Pairwise same/different method comparison across raw SVM, catch22 + SVM, MLP, transformer, SimCLR + SVM, and LSTM models. |
 | `obsolete_files` | Archived prototypes and old simulation scripts; do not use as templates for new work. |
 
 Historical experiments may reference removed APIs or absolute paths from the
