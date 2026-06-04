@@ -282,8 +282,10 @@ WINDOW_SIZE = 30
 TOLERANCE = 0.10
 MIN_STEADY_DURATION = 5
 BURST_THRESHOLD = 0.10
-OMIDS = [4053, 4052, 4051, 4054, 4102, 4103, 4105, 4104, 4106, 4107, 4108, 4109, 4110, 3903, 3902, 4251, 2858, 2854, 2853, 2852, 2841, 2842, 2843, 2844, 2849, 2801]
+DATA_DIR = "/home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/2_wela_data_analysis"
 
+exp_list = pd.read_csv(f"{DATA_DIR}/exp_list.csv")
+OMIDS = exp_list["exp_name"].tolist()
 
 # ---------------------------------------------------------------------------
 # Main

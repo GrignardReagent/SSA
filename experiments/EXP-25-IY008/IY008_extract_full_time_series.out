@@ -1,0 +1,1045 @@
+nohup: ignoring input
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [489 490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [489 490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [489 490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [489 490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [489 490 491 492 493]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+======================================================================
+OLD DATASET → /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series
+======================================================================
+[18360_2020_01_04_steadystate_glucose_2min_01] Loading 18360_2020_01_04_steadystate_glucose_2min_01.tsv
+  [mCherry] 18360_2020_01_04_steadystate_glucose_2min_01_group_1106_mCherry_time_series.csv  (233 cells × 494 timepoints)
+  [mCherry] 18360_2020_01_04_steadystate_glucose_2min_01_group_898_mCherry_time_series.csv  (254 cells × 494 timepoints)
+  [mCherry] 18360_2020_01_04_steadystate_glucose_2min_01_group_900_mCherry_time_series.csv  (243 cells × 494 timepoints)
+  [GFP] 18360_2020_01_04_steadystate_glucose_2min_01_group_1106_GFP_time_series.csv  (233 cells × 494 timepoints)
+  [GFP] 18360_2020_01_04_steadystate_glucose_2min_01_group_898_GFP_time_series.csv  (254 cells × 494 timepoints)
+  [GFP] 18360_2020_01_04_steadystate_glucose_2min_01_group_900_GFP_time_series.csv  (243 cells × 494 timepoints)
+[18464_2020_01_20_steadystate_glucose_756S_2min_mock_00] Loading 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00.tsv
+  [mCherry] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_756_mCherry_time_series.csv  (209 cells × 540 timepoints)
+  [mCherry] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_764_mCherry_time_series.csv  (202 cells × 540 timepoints)
+  [mCherry] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_903_mCherry_time_series.csv  (220 cells × 540 timepoints)
+  [GFP] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_756_GFP_time_series.csv  (209 cells × 540 timepoints)
+  [GFP] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_764_GFP_time_series.csv  (202 cells × 540 timepoints)
+  [GFP] 18464_2020_01_20_steadystate_glucose_756S_2min_mock_00_group_903_GFP_time_series.csv  (220 cells × 540 timepoints)
+[18589_2020_02_10_steadystate_glucose_898S_2w2_01] Loading 18589_2020_02_10_steadystate_glucose_898S_2w2_01.tsv
+  [mCherry] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_1106_mCherry_time_series.csv  (197 cells × 540 timepoints)
+  [mCherry] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_898_mCherry_time_series.csv  (245 cells × 540 timepoints)
+  [mCherry] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_900_mCherry_time_series.csv  (195 cells × 540 timepoints)
+  [GFP] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_1106_GFP_time_series.csv  (197 cells × 540 timepoints)
+  [GFP] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_898_GFP_time_series.csv  (245 cells × 540 timepoints)
+  [GFP] 18589_2020_02_10_steadystate_glucose_898S_2w2_01_group_900_GFP_time_series.csv  (195 cells × 540 timepoints)
+[19316_2020_10_26_steadystate_glucose_144m_2w2_00] Loading 19316_2020_10_26_steadystate_glucose_144m_2w2_00.tsv
+  [mCherry] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1344_6_mCherry_time_series.csv  (71 cells × 540 timepoints)
+  [mCherry] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1346_4_mCherry_time_series.csv  (84 cells × 540 timepoints)
+  [mCherry] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1347_mCherry_time_series.csv  (78 cells × 540 timepoints)
+  [GFP] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1344_6_GFP_time_series.csv  (71 cells × 540 timepoints)
+  [GFP] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1346_4_GFP_time_series.csv  (84 cells × 540 timepoints)
+  [GFP] 19316_2020_10_26_steadystate_glucose_144m_2w2_00_group_1347_GFP_time_series.csv  (78 cells × 540 timepoints)
+[19330_2020_11_02_steadystate_glucose_1345m_2w2_00] Loading 19330_2020_11_02_steadystate_glucose_1345m_2w2_00.tsv
+  [mCherry] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1345_mCherry_time_series.csv  (143 cells × 540 timepoints)
+  [mCherry] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1348_mCherry_time_series.csv  (140 cells × 540 timepoints)
+  [mCherry] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1349_mCherry_time_series.csv  (143 cells × 540 timepoints)
+  [GFP] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1345_GFP_time_series.csv  (143 cells × 540 timepoints)
+  [GFP] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1348_GFP_time_series.csv  (140 cells × 540 timepoints)
+  [GFP] 19330_2020_11_02_steadystate_glucose_1345m_2w2_00_group_1349_GFP_time_series.csv  (143 cells × 540 timepoints)
+[19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00] Loading 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00.tsv
+  [mCherry] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1345_mCherry_time_series.csv  (95 cells × 540 timepoints)
+  [mCherry] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1348_mCherry_time_series.csv  (126 cells × 540 timepoints)
+  [mCherry] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1349_mCherry_time_series.csv  (68 cells × 540 timepoints)
+  [GFP] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1345_GFP_time_series.csv  (95 cells × 540 timepoints)
+  [GFP] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1348_GFP_time_series.csv  (126 cells × 540 timepoints)
+  [GFP] 19391_2020_11_12_steadystate_glucose_1345m_2w0p01_00_group_1349_GFP_time_series.csv  (68 cells × 540 timepoints)
+[19392_2020_11_12_steadystate_glucose_898m_2w0p01_00] Loading 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00.tsv
+  [mCherry] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_1106_mCherry_time_series.csv  (187 cells × 540 timepoints)
+  [mCherry] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_898_mCherry_time_series.csv  (163 cells × 540 timepoints)
+  [mCherry] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_900_mCherry_time_series.csv  (185 cells × 540 timepoints)
+  [GFP] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_1106_GFP_time_series.csv  (187 cells × 540 timepoints)
+  [GFP] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_898_GFP_time_series.csv  (163 cells × 540 timepoints)
+  [GFP] 19392_2020_11_12_steadystate_glucose_898m_2w0p01_00_group_900_GFP_time_series.csv  (185 cells × 540 timepoints)
+[19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00] Loading 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00.tsv
+  [mCherry] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1345_mCherry_time_series.csv  (179 cells × 540 timepoints)
+  [mCherry] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1348_mCherry_time_series.csv  (201 cells × 540 timepoints)
+  [mCherry] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1349_mCherry_time_series.csv  (178 cells × 540 timepoints)
+  [GFP] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1345_GFP_time_series.csv  (179 cells × 540 timepoints)
+  [GFP] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1348_GFP_time_series.csv  (201 cells × 540 timepoints)
+  [GFP] 19394_2020_11_12_steadystate_glucose_1345m_2w0p1_00_group_1349_GFP_time_series.csv  (178 cells × 540 timepoints)
+[19554_2020_12_06_steadystate_glucose_2w0p01_900m_00] Loading 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00.tsv
+  [mCherry] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_756_mCherry_time_series.csv  (196 cells × 540 timepoints)
+  [mCherry] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_900_mCherry_time_series.csv  (193 cells × 540 timepoints)
+  [mCherry] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_903_mCherry_time_series.csv  (170 cells × 540 timepoints)
+  [GFP] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_756_GFP_time_series.csv  (196 cells × 540 timepoints)
+  [GFP] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_900_GFP_time_series.csv  (193 cells × 540 timepoints)
+  [GFP] 19554_2020_12_06_steadystate_glucose_2w0p01_900m_00_group_903_GFP_time_series.csv  (170 cells × 540 timepoints)
+[19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01] Loading 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01.tsv
+  [mCherry] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1344_mCherry_time_series.csv  (214 cells × 540 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [1]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [1]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [mCherry] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1346_mCherry_time_series.csv  (231 cells × 540 timepoints)
+  [mCherry] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1347_mCherry_time_series.csv  (200 cells × 540 timepoints)
+  [GFP] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1344_GFP_time_series.csv  (214 cells × 540 timepoints)
+  [GFP] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1346_GFP_time_series.csv  (231 cells × 540 timepoints)
+  [GFP] 19566_2020_12_07_steadystate_glucose_1344m_2w0p1_01_group_1347_GFP_time_series.csv  (200 cells × 540 timepoints)
+[20213_2021_09_07_steady_0p01glc_1344_1346_1347_00] Loading 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00.tsv
+  [mCherry] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1344_mCherry_time_series.csv  (241 cells × 540 timepoints)
+  [mCherry] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1346_mCherry_time_series.csv  (231 cells × 540 timepoints)
+  [mCherry] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1347_mCherry_time_series.csv  (275 cells × 540 timepoints)
+  [GFP] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1344_GFP_time_series.csv  (241 cells × 540 timepoints)
+  [GFP] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1346_GFP_time_series.csv  (231 cells × 540 timepoints)
+  [GFP] 20213_2021_09_07_steady_0p01glc_1344_1346_1347_00_group_1347_GFP_time_series.csv  (275 cells × 540 timepoints)
+
+Old dataset done: 66 CSV(s) written to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series
+
+======================================================================
+NEW DATASET → /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series_NEW
+======================================================================
+[4053] Loading 4053_2026_03_26_TFScreen_LowN2_switch_last5_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 4053_group_Fzf1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4053_group_Gts1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 4053_group_Msn1_GFP_time_series.csv  (51 cells × 24 timepoints)
+  [GFP] 4053_group_Rfx1_GFP_time_series.csv  (45 cells × 24 timepoints)
+  [GFP] 4053_group_Ume1_GFP_time_series.csv  (17 cells × 24 timepoints)
+[4052] Loading 4052_2026_03_24_TFScreen_plate2_zeroGlc_00.tsv
+  [mCherry] 4052_group_Abf2_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] 4052_group_Arg80_mCherry_time_series.csv  (27 cells × 24 timepoints)
+  [mCherry] 4052_group_Cup2_mCherry_time_series.csv  (24 cells × 24 timepoints)
+  [mCherry] 4052_group_Hap2_mCherry_time_series.csv  (20 cells × 24 timepoints)
+  [mCherry] 4052_group_Hap3_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4052_group_Hap5_mCherry_time_series.csv  (11 cells × 24 timepoints)
+  [mCherry] 4052_group_Ino4_mCherry_time_series.csv  (25 cells × 24 timepoints)
+  [mCherry] 4052_group_MSN2_mCherry_time_series.csv  (29 cells × 24 timepoints)
+  [mCherry] 4052_group_Mcm1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 4052_group_Met28_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] 4052_group_Met31_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4052_group_Met32_mCherry_time_series.csv  (22 cells × 24 timepoints)
+  [mCherry] 4052_group_Rox1_mCherry_time_series.csv  (60 cells × 24 timepoints)
+  [mCherry] 4052_group_Spt15_mCherry_time_series.csv  (52 cells × 24 timepoints)
+  [mCherry] 4052_group_Srd1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4052_group_Tye7_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4052_group_Yap7_mCherry_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 4052_group_Abf2_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 4052_group_Arg80_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 4052_group_Cup2_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] 4052_group_Hap2_GFP_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 4052_group_Hap3_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4052_group_Hap5_GFP_time_series.csv  (11 cells × 24 timepoints)
+  [GFP] 4052_group_Ino4_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4052_group_MSN2_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 4052_group_Mcm1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4052_group_Met28_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 4052_group_Met31_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4052_group_Met32_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] 4052_group_Rox1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] 4052_group_Spt15_GFP_time_series.csv  (52 cells × 24 timepoints)
+  [GFP] 4052_group_Srd1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4052_group_Tye7_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4052_group_Yap7_GFP_time_series.csv  (36 cells × 24 timepoints)
+[4051] Loading 4051.tsv
+  [mCherry] 4051_group_Dig1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4051_group_Gts1_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] 4051_group_Gzf1_mCherry_time_series.csv  (23 cells × 24 timepoints)
+  [mCherry] 4051_group_Hcm1_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] 4051_group_Mot2_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4051_group_Mot3_mCherry_time_series.csv  (18 cells × 24 timepoints)
+  [mCherry] 4051_group_Pho2_mCherry_time_series.csv  (34 cells × 24 timepoints)
+  [mCherry] 4051_group_Rds2_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] 4051_group_Rpn4_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4051_group_Stb1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] 4051_group_Stp1_mCherry_time_series.csv  (7 cells × 24 timepoints)
+  [mCherry] 4051_group_Stp2_mCherry_time_series.csv  (22 cells × 24 timepoints)
+  [mCherry] 4051_group_Stp4_mCherry_time_series.csv  (32 cells × 24 timepoints)
+  [mCherry] 4051_group_Tbf1_mCherry_time_series.csv  (18 cells × 24 timepoints)
+  [mCherry] 4051_group_Tec1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 4051_group_Uga3_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4051_group_Ume1_mCherry_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 4051_group_Dig1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4051_group_Gts1_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 4051_group_Gzf1_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 4051_group_Hcm1_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 4051_group_Mot2_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4051_group_Mot3_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] 4051_group_Pho2_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] 4051_group_Rds2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] 4051_group_Rpn4_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4051_group_Stb1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4051_group_Stp1_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 4051_group_Stp2_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] 4051_group_Stp4_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 4051_group_Tbf1_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] 4051_group_Tec1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4051_group_Uga3_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4051_group_Ume1_GFP_time_series.csv  (20 cells × 24 timepoints)
+[4054] Loading 4054_2026_03_26_TFScreen_plate1_zeroGlc_00.tsv
+  [mCherry] 4054_group_Ash1_mCherry_time_series.csv  (27 cells × 24 timepoints)
+  [mCherry] 4054_group_Cha4_mCherry_time_series.csv  (13 cells × 24 timepoints)
+  [mCherry] 4054_group_Cst6_mCherry_time_series.csv  (23 cells × 24 timepoints)
+  [mCherry] 4054_group_Ixr1_mCherry_time_series.csv  (3 cells × 24 timepoints)
+  [mCherry] 4054_group_Met4_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4054_group_Pdr8_mCherry_time_series.csv  (25 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [21]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: [21]. At least one non-missing value is needed for imputation with strategy='mean'.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [mCherry] 4054_group_Rlm1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4054_group_Skn7_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4054_group_Ste12_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] 4054_group_Swi5_mCherry_time_series.csv  (19 cells × 24 timepoints)
+  [mCherry] 4054_group_Xbp1_mCherry_time_series.csv  (25 cells × 24 timepoints)
+  [mCherry] 4054_group_YST_1532_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] 4054_group_Yrm1_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4054_group_Ash1_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 4054_group_Cha4_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 4054_group_Cst6_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 4054_group_Ixr1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] 4054_group_Met4_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4054_group_Pdr8_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4054_group_Rlm1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4054_group_Skn7_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4054_group_Ste12_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4054_group_Swi5_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 4054_group_Xbp1_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4054_group_YST_1532_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 4054_group_Yrm1_GFP_time_series.csv  (4 cells × 24 timepoints)
+[4102] Loading 4102_2026_03_27_TFScreen_plate1_zeroGlc_00.tsv
+  [mCherry] 4102_group_Ace2_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4102_group_Adr1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] 4102_group_Arg81_mCherry_time_series.csv  (40 cells × 24 timepoints)
+  [mCherry] 4102_group_Gcr1_mCherry_time_series.csv  (55 cells × 24 timepoints)
+  [mCherry] 4102_group_Hal9_mCherry_time_series.csv  (53 cells × 24 timepoints)
+  [mCherry] 4102_group_Lys14_mCherry_time_series.csv  (23 cells × 24 timepoints)
+  [mCherry] 4102_group_Pdr1_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] 4102_group_Rbh1_mCherry_time_series.csv  (43 cells × 24 timepoints)
+  [mCherry] 4102_group_Reb1_mCherry_time_series.csv  (17 cells × 24 timepoints)
+  [mCherry] 4102_group_Rxf1_mCherry_time_series.csv  (42 cells × 24 timepoints)
+  [mCherry] 4102_group_Sfl1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] 4102_group_Snt2_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] 4102_group_Sum1_mCherry_time_series.csv  (50 cells × 24 timepoints)
+  [mCherry] 4102_group_Swi4_mCherry_time_series.csv  (40 cells × 24 timepoints)
+  [mCherry] 4102_group_Swi6_mCherry_time_series.csv  (39 cells × 24 timepoints)
+  [mCherry] 4102_group_Tbs1_mCherry_time_series.csv  (40 cells × 24 timepoints)
+  [mCherry] 4102_group_Tho2_mCherry_time_series.csv  (40 cells × 24 timepoints)
+  [mCherry] 4102_group_Yrr1_mCherry_time_series.csv  (13 cells × 24 timepoints)
+  [mCherry] 4102_group_Zap1_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4102_group_Ace2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4102_group_Adr1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4102_group_Arg81_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] 4102_group_Gcr1_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] 4102_group_Hal9_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] 4102_group_Lys14_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 4102_group_Pdr1_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 4102_group_Rbh1_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] 4102_group_Reb1_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 4102_group_Rxf1_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] 4102_group_Sfl1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4102_group_Snt2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] 4102_group_Sum1_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] 4102_group_Swi4_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] 4102_group_Swi6_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 4102_group_Tbs1_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] 4102_group_Tho2_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] 4102_group_Yrr1_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 4102_group_Zap1_GFP_time_series.csv  (10 cells × 24 timepoints)
+[4103] Loading 4103.tsv
+  [mCherry] 4103_group_Aro80_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] 4103_group_Asg1_mCherry_time_series.csv  (3 cells × 24 timepoints)
+  [mCherry] 4103_group_Azf1_mCherry_time_series.csv  (31 cells × 24 timepoints)
+  [mCherry] 4103_group_Bas1_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4103_group_Dal81_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 4103_group_Ecm22_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4103_group_Fhl1_mCherry_time_series.csv  (3 cells × 24 timepoints)
+  [mCherry] 4103_group_Fkh2_mCherry_time_series.csv  (50 cells × 24 timepoints)
+  [mCherry] 4103_group_Gis1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] 4103_group_Leu3_mCherry_time_series.csv  (104 cells × 24 timepoints)
+  [mCherry] 4103_group_Lys14_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4103_group_MSN2_mCherry_time_series.csv  (51 cells × 24 timepoints)
+  [mCherry] 4103_group_Mb1p_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] 4103_group_Pdr3_mCherry_time_series.csv  (9 cells × 24 timepoints)
+  [mCherry] 4103_group_Reb1_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4103_group_Rfx1_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4103_group_Rsc3_mCherry_time_series.csv  (106 cells × 24 timepoints)
+  [mCherry] 4103_group_Upc2_mCherry_time_series.csv  (77 cells × 24 timepoints)
+  [GFP] 4103_group_Aro80_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4103_group_Asg1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] 4103_group_Azf1_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] 4103_group_Bas1_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4103_group_Dal81_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4103_group_Ecm22_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4103_group_Fhl1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] 4103_group_Fkh2_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] 4103_group_Gis1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 4103_group_Leu3_GFP_time_series.csv  (104 cells × 24 timepoints)
+  [GFP] 4103_group_Lys14_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4103_group_MSN2_GFP_time_series.csv  (51 cells × 24 timepoints)
+  [GFP] 4103_group_Mb1p_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 4103_group_Pdr3_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] 4103_group_Reb1_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4103_group_Rfx1_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4103_group_Rsc3_GFP_time_series.csv  (106 cells × 24 timepoints)
+  [GFP] 4103_group_Upc2_GFP_time_series.csv  (77 cells × 24 timepoints)
+[4105] Loading 4105.tsv
+  [mCherry] 4105_group_Abf3_mCherry_time_series.csv  (30 cells × 24 timepoints)
+  [mCherry] 4105_group_Arg80_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4105_group_Cin5_mCherry_time_series.csv  (62 cells × 24 timepoints)
+  [mCherry] 4105_group_Cup9_mCherry_time_series.csv  (36 cells × 24 timepoints)
+  [mCherry] 4105_group_Fzf1_mCherry_time_series.csv  (6 cells × 24 timepoints)
+  [mCherry] 4105_group_Gcn4_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 4105_group_Ino2_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] 4105_group_MSN2_mCherry_time_series.csv  (122 cells × 24 timepoints)
+  [mCherry] 4105_group_Mac1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 4105_group_Opi1_mCherry_time_series.csv  (105 cells × 24 timepoints)
+  [mCherry] 4105_group_Rme1_mCherry_time_series.csv  (19 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [mCherry] 4105_group_Sok2_mCherry_time_series.csv  (132 cells × 24 timepoints)
+  [mCherry] 4105_group_Spt2_mCherry_time_series.csv  (8 cells × 24 timepoints)
+  [mCherry] 4105_group_Stb5_mCherry_time_series.csv  (111 cells × 24 timepoints)
+  [mCherry] 4105_group_Stp3_mCherry_time_series.csv  (13 cells × 24 timepoints)
+  [mCherry] 4105_group_Sut1_mCherry_time_series.csv  (21 cells × 24 timepoints)
+  [mCherry] 4105_group_Tea1_mCherry_time_series.csv  (158 cells × 24 timepoints)
+  [mCherry] 4105_group_Yap3_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] 4105_group_Yhp1_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 4105_group_Abf3_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 4105_group_Arg80_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4105_group_Cin5_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 4105_group_Cup9_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 4105_group_Fzf1_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 4105_group_Gcn4_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4105_group_Ino2_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4105_group_MSN2_GFP_time_series.csv  (122 cells × 24 timepoints)
+  [GFP] 4105_group_Mac1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4105_group_Opi1_GFP_time_series.csv  (105 cells × 24 timepoints)
+  [GFP] 4105_group_Rme1_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 4105_group_Sok2_GFP_time_series.csv  (132 cells × 24 timepoints)
+  [GFP] 4105_group_Spt2_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 4105_group_Stb5_GFP_time_series.csv  (111 cells × 24 timepoints)
+  [GFP] 4105_group_Stp3_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 4105_group_Sut1_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] 4105_group_Tea1_GFP_time_series.csv  (158 cells × 24 timepoints)
+  [GFP] 4105_group_Yap3_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 4105_group_Yhp1_GFP_time_series.csv  (26 cells × 24 timepoints)
+[4104] Loading 4104.tsv
+  [mCherry] 4104_group_Cbf1_mCherry_time_series.csv  (70 cells × 24 timepoints)
+  [mCherry] 4104_group_Cup2_mCherry_time_series.csv  (52 cells × 24 timepoints)
+  [mCherry] 4104_group_Hac1_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] 4104_group_Hap2_mCherry_time_series.csv  (41 cells × 24 timepoints)
+  [mCherry] 4104_group_Hap3_mCherry_time_series.csv  (19 cells × 24 timepoints)
+  [mCherry] 4104_group_Hap5_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] 4104_group_Ino4_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] 4104_group_MSN2_mCherry_time_series.csv  (4 cells × 24 timepoints)
+  [mCherry] 4104_group_Mcm1_mCherry_time_series.csv  (35 cells × 24 timepoints)
+  [mCherry] 4104_group_Met28_mCherry_time_series.csv  (1 cells × 24 timepoints)
+  [mCherry] 4104_group_Met32_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [mCherry] 4104_group_Nhp6b_mCherry_time_series.csv  (35 cells × 24 timepoints)
+  [mCherry] 4104_group_Phd1_mCherry_time_series.csv  (64 cells × 24 timepoints)
+  [mCherry] 4104_group_Rgm1_mCherry_time_series.csv  (29 cells × 24 timepoints)
+  [mCherry] 4104_group_Rox1_mCherry_time_series.csv  (79 cells × 24 timepoints)
+  [mCherry] 4104_group_Spt15_mCherry_time_series.csv  (69 cells × 24 timepoints)
+  [mCherry] 4104_group_Srd1_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] 4104_group_Tye7_mCherry_time_series.csv  (24 cells × 24 timepoints)
+  [mCherry] 4104_group_Yap5_mCherry_time_series.csv  (41 cells × 24 timepoints)
+  [mCherry] 4104_group_Yap7_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4104_group_Cbf1_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] 4104_group_Cup2_GFP_time_series.csv  (52 cells × 24 timepoints)
+  [GFP] 4104_group_Hac1_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] 4104_group_Hap2_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 4104_group_Hap3_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 4104_group_Hap5_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4104_group_Ino4_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 4104_group_MSN2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4104_group_Mcm1_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] 4104_group_Met28_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4104_group_Met32_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 4104_group_Nhp6b_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] 4104_group_Phd1_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] 4104_group_Rgm1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 4104_group_Rox1_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] 4104_group_Spt15_GFP_time_series.csv  (69 cells × 24 timepoints)
+  [GFP] 4104_group_Srd1_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] 4104_group_Tye7_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] 4104_group_Yap5_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 4104_group_Yap7_GFP_time_series.csv  (49 cells × 24 timepoints)
+[4106] Loading 4106.tsv
+  [mCherry] 4106_group_Dig1_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] 4106_group_Ert1_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 4106_group_Fkh1_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] 4106_group_Gzf3_mCherry_time_series.csv  (25 cells × 24 timepoints)
+  [mCherry] 4106_group_Hcm1_mCherry_time_series.csv  (49 cells × 24 timepoints)
+  [mCherry] 4106_group_Met31_mCherry_time_series.csv  (39 cells × 24 timepoints)
+  [mCherry] 4106_group_Mot2_mCherry_time_series.csv  (44 cells × 24 timepoints)
+  [mCherry] 4106_group_Mot3_mCherry_time_series.csv  (44 cells × 24 timepoints)
+  [mCherry] 4106_group_Ndd1_mCherry_time_series.csv  (59 cells × 24 timepoints)
+  [mCherry] 4106_group_Pho2_mCherry_time_series.csv  (46 cells × 24 timepoints)
+  [mCherry] 4106_group_Rds2_mCherry_time_series.csv  (47 cells × 24 timepoints)
+  [mCherry] 4106_group_Rpn4_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] 4106_group_Stb3_mCherry_time_series.csv  (31 cells × 24 timepoints)
+  [mCherry] 4106_group_Stp2_mCherry_time_series.csv  (64 cells × 24 timepoints)
+  [mCherry] 4106_group_Stp4_mCherry_time_series.csv  (37 cells × 24 timepoints)
+  [mCherry] 4106_group_Tbf1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] 4106_group_Tec1_mCherry_time_series.csv  (5 cells × 24 timepoints)
+  [mCherry] 4106_group_Uga3_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] 4106_group_Ume1_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4106_group_Dig1_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] 4106_group_Ert1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4106_group_Fkh1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4106_group_Gzf3_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4106_group_Hcm1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 4106_group_Met31_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 4106_group_Mot2_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] 4106_group_Mot3_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] 4106_group_Ndd1_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] 4106_group_Pho2_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] 4106_group_Rds2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] 4106_group_Rpn4_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4106_group_Stb3_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] 4106_group_Stp2_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] 4106_group_Stp4_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] 4106_group_Tbf1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4106_group_Tec1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 4106_group_Uga3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4106_group_Ume1_GFP_time_series.csv  (10 cells × 24 timepoints)
+[4107] Loading 4107.tsv
+  [mCherry] 4107_group_Abf1_mCherry_time_series.csv  (87 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [GFP] 4107_group_Abf1_GFP_time_series.csv  (87 cells × 24 timepoints)
+[4108] Loading 4108_2026_03_31_TFScreen_plate1_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 4108_group_Adr1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 4108_group_Arg81_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] 4108_group_Gcr1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 4108_group_Hal9_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] 4108_group_Msn2_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 4108_group_Pdr1_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 4108_group_Rgt1_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 4108_group_Rsc3_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 4108_group_Rsf2_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4108_group_Sfl1_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 4108_group_Snt2_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 4108_group_Sok2_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4108_group_Stb5_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 4108_group_Sum1_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 4108_group_Swi4_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 4108_group_Swi6_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] 4108_group_Tbs1_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] 4108_group_Tho2_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 4108_group_Ume6_GFP_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 4108_group_Yrr1_GFP_time_series.csv  (27 cells × 24 timepoints)
+[4109] Loading 4109_2026_03_31_TFScreen_plate1_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 4109_group_Ace2_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 4109_group_Aro80_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] 4109_group_Asg1_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] 4109_group_Azf1_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] 4109_group_Bas1_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] 4109_group_Dal81_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] 4109_group_Ecm22_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4109_group_Fhl1_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 4109_group_Fkh2_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 4109_group_Gis1_GFP_time_series.csv  (11 cells × 24 timepoints)
+  [GFP] 4109_group_Leu3_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 4109_group_Lys14_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4109_group_Mbp1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4109_group_Pdr3_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 4109_group_Pip2_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] 4109_group_Reb1_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 4109_group_Rfx1_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 4109_group_Rph1_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 4109_group_Upc2_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] 4109_group_Zap1_GFP_time_series.csv  (23 cells × 24 timepoints)
+[4110] Loading 4110.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 4110_group_Adr1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4110_group_Arg81_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4110_group_Dig1_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 4110_group_Fkh1_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] 4110_group_Gcr1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4110_group_Msn2_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 4110_group_Pdr1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] 4110_group_Rgt1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4110_group_Rsf2_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 4110_group_Snt2_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] 4110_group_Stb3_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] 4110_group_Stp4_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4110_group_Sum1_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 4110_group_Tbs1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 4110_group_Tec1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 4110_group_Tho2_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] 4110_group_Uga3_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4110_group_Ume3_GFP_time_series.csv  (9 cells × 24 timepoints)
+[3903] Loading 3903.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 3903_group_Ace2_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 3903_group_Aro80_GFP_time_series.csv  (11 cells × 24 timepoints)
+  [GFP] 3903_group_Asg1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 3903_group_Azf1_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 3903_group_Bas1_GFP_time_series.csv  (22 cells × 24 timepoints)
+  [GFP] 3903_group_Dal81_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 3903_group_Fhl1_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 3903_group_Fkh2_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 3903_group_Leu3_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 3903_group_Mbp1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 3903_group_Pdr3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 3903_group_Pip2_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 3903_group_Rsc3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 3903_group_Sfl1_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] 3903_group_Swi6_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 3903_group_Ume6_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] 3903_group_Upc2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 3903_group_Yrr1_GFP_time_series.csv  (34 cells × 24 timepoints)
+[3902] Loading 3902_2026_02_23_TFScreen_plate1_A_B_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 3902_group_Ace2_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 3902_group_Aro80_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 3902_group_Asg1_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 3902_group_Bas1_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 3902_group_Dal81_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 3902_group_Empty_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 3902_group_Fhl1_GFP_time_series.csv  (24 cells × 24 timepoints)
+  [GFP] 3902_group_Mbp1_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 3902_group_Pdr1_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 3902_group_Pip2_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 3902_group_Rsc3_GFP_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 3902_group_Sfl1_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 3902_group_Sum1_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 3902_group_Swi4_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 3902_group_Swi6_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 3902_group_Tbs1_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 3902_group_Ume6_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] 3902_group_Upc2_GFP_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 3902_group_Yrr1_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 3902_group_Zap1_GFP_time_series.csv  (29 cells × 24 timepoints)
+[4251] Loading 4251_2026_04_28_TFScreen_plate1_A_B_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 4251_group_Ace2_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4251_group_Aro80_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 4251_group_Asg1_GFP_time_series.csv  (3 cells × 24 timepoints)
+  [GFP] 4251_group_Azf1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 4251_group_Bas1_GFP_time_series.csv  (11 cells × 24 timepoints)
+  [GFP] 4251_group_Dal81_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 4251_group_Fhl1_GFP_time_series.csv  (16 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [GFP] 4251_group_Fkh2_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 4251_group_Gis1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 4251_group_Leu3_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 4251_group_Mbp1_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 4251_group_Pdr3_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] 4251_group_Pip2_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4251_group_Rsc3_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 4251_group_Sfl1_GFP_time_series.csv  (4 cells × 24 timepoints)
+  [GFP] 4251_group_Swi6_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 4251_group_Ume6_GFP_time_series.csv  (1 cells × 24 timepoints)
+  [GFP] 4251_group_Upc2_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 4251_group_Yrr1_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 4251_group_Zap1_GFP_time_series.csv  (9 cells × 24 timepoints)
+[2858] Loading 2858.tsv
+  [mCherry] 2858_group_Cin5_mCherry_time_series.csv  (28 cells × 24 timepoints)
+  [mCherry] 2858_group_Cup9_mCherry_time_series.csv  (8 cells × 24 timepoints)
+  [mCherry] 2858_group_Ecm22_mCherry_time_series.csv  (76 cells × 24 timepoints)
+  [mCherry] 2858_group_Fzf1_mCherry_time_series.csv  (42 cells × 24 timepoints)
+  [mCherry] 2858_group_Gcn4_mCherry_time_series.csv  (38 cells × 24 timepoints)
+  [mCherry] 2858_group_Ino2_mCherry_time_series.csv  (6 cells × 24 timepoints)
+  [mCherry] 2858_group_Lys14_mCherry_time_series.csv  (54 cells × 24 timepoints)
+  [mCherry] 2858_group_Mac1_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] 2858_group_Mig3_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] 2858_group_Msn1_mCherry_time_series.csv  (42 cells × 24 timepoints)
+  [mCherry] 2858_group_Opi1_mCherry_time_series.csv  (70 cells × 24 timepoints)
+  [mCherry] 2858_group_Reb1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] 2858_group_Rei1_mCherry_time_series.csv  (50 cells × 24 timepoints)
+  [mCherry] 2858_group_Rfx1_mCherry_time_series.csv  (66 cells × 24 timepoints)
+  [mCherry] 2858_group_Rme1_mCherry_time_series.csv  (57 cells × 24 timepoints)
+  [mCherry] 2858_group_Rph1_mCherry_time_series.csv  (10 cells × 24 timepoints)
+  [mCherry] 2858_group_Spt2_mCherry_time_series.csv  (16 cells × 24 timepoints)
+  [mCherry] 2858_group_Sut1_mCherry_time_series.csv  (33 cells × 24 timepoints)
+  [mCherry] 2858_group_Yap3_mCherry_time_series.csv  (26 cells × 24 timepoints)
+  [mCherry] 2858_group_Yox1_mCherry_time_series.csv  (103 cells × 24 timepoints)
+  [GFP] 2858_group_Cin5_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 2858_group_Cup9_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 2858_group_Ecm22_GFP_time_series.csv  (76 cells × 24 timepoints)
+  [GFP] 2858_group_Fzf1_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] 2858_group_Gcn4_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] 2858_group_Ino2_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 2858_group_Lys14_GFP_time_series.csv  (54 cells × 24 timepoints)
+  [GFP] 2858_group_Mac1_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 2858_group_Mig3_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 2858_group_Msn1_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] 2858_group_Opi1_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] 2858_group_Reb1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 2858_group_Rei1_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] 2858_group_Rfx1_GFP_time_series.csv  (66 cells × 24 timepoints)
+  [GFP] 2858_group_Rme1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 2858_group_Rph1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 2858_group_Spt2_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 2858_group_Sut1_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] 2858_group_Yap3_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 2858_group_Yox1_GFP_time_series.csv  (103 cells × 24 timepoints)
+[2854] Loading 2854.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2854_group_Abf2_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 2854_group_Arg80_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 2854_group_Cbf1_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 2854_group_Cup2_GFP_time_series.csv  (47 cells × 24 timepoints)
+  [GFP] 2854_group_Hac1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 2854_group_Hap2_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] 2854_group_Hap3_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 2854_group_Hap5_GFP_time_series.csv  (37 cells × 24 timepoints)
+  [GFP] 2854_group_Mcm1_GFP_time_series.csv  (35 cells × 24 timepoints)
+  [GFP] 2854_group_Met32_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 2854_group_Phd1_GFP_time_series.csv  (65 cells × 24 timepoints)
+  [GFP] 2854_group_Rgm1_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] 2854_group_Rox1_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] 2854_group_Spt15_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 2854_group_Srd1_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 2854_group_Stp3_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 2854_group_Tye7_GFP_time_series.csv  (39 cells × 24 timepoints)
+  [GFP] 2854_group_Yap5_GFP_time_series.csv  (68 cells × 24 timepoints)
+  [GFP] 2854_group_Yap7_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 2854_group_Yhp1_GFP_time_series.csv  (60 cells × 24 timepoints)
+[2853] Loading 2853_2025_07_29_TFScreen_plate2_BCD_lowN2_00.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2853_group_Gts1_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 2853_group_Gzf3_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 2853_group_Hcm1_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 2853_group_Ino4_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 2853_group_Mot3_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] 2853_group_Ndd1_GFP_time_series.csv  (10 cells × 24 timepoints)
+  [GFP] 2853_group_Nhp6b_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 2853_group_Pho2_GFP_time_series.csv  (25 cells × 24 timepoints)
+  [GFP] 2853_group_Rds2_GFP_time_series.csv  (17 cells × 24 timepoints)
+  [GFP] 2853_group_Rpn4_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 2853_group_Stb1_GFP_time_series.csv  (26 cells × 24 timepoints)
+  [GFP] 2853_group_Stb3_GFP_time_series.csv  (9 cells × 24 timepoints)
+  [GFP] 2853_group_Stp1_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 2853_group_Stp2_GFP_time_series.csv  (12 cells × 24 timepoints)
+  [GFP] 2853_group_Tbf1_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 2853_group_Tec1_GFP_time_series.csv  (8 cells × 24 timepoints)
+  [GFP] 2853_group_Uga3_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 2853_group_Ume1_GFP_time_series.csv  (17 cells × 24 timepoints)
+[2852] Loading 2852.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2852_group_Afg2_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 2852_group_Def1_GFP_time_series.csv  (28 cells × 24 timepoints)
+  [GFP] 2852_group_Gcd6_poss_mix_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] 2852_group_Gis4_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 2852_group_Gsh1_GFP_time_series.csv  (40 cells × 24 timepoints)
+  [GFP] 2852_group_Hcs1_GFP_time_series.csv  (68 cells × 24 timepoints)
+  [GFP] 2852_group_Hsc82_GFP_time_series.csv  (99 cells × 24 timepoints)
+  [GFP] 2852_group_Mac10_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] 2852_group_Mip6_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 2852_group_Pan3_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 2852_group_Pbs2_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] 2852_group_Sac7_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] 2852_group_Ssa1_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] 2852_group_Sse2_poss_mix_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] 2852_group_Ssk1_GFP_time_series.csv  (62 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [GFP] 2852_group_Sst2_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] 2852_group_Ths1_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 2852_group_Whi3_GFP_time_series.csv  (92 cells × 24 timepoints)
+  [GFP] 2852_group_Ypk1_GFP_time_series.csv  (15 cells × 24 timepoints)
+[2841] Loading 2841.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2841_group_Ace2_GFP_time_series.csv  (80 cells × 24 timepoints)
+  [GFP] 2841_group_Cin5_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] 2841_group_Cup2_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] 2841_group_Ino2_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] 2841_group_Msn1_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] 2841_group_Nhp10_GFP_time_series.csv  (51 cells × 24 timepoints)
+  [GFP] 2841_group_Rei1_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] 2841_group_Rgm1_GFP_time_series.csv  (31 cells × 24 timepoints)
+  [GFP] 2841_group_Rme1_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] 2841_group_Sfa1_GFP_time_series.csv  (79 cells × 24 timepoints)
+  [GFP] 2841_group_Spt15_GFP_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] 2841_group_Srd1_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 2841_group_Ste12_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] 2841_group_Swi6_GFP_time_series.csv  (99 cells × 24 timepoints)
+  [GFP] 2841_group_Ume6_GFP_time_series.csv  (70 cells × 24 timepoints)
+  [GFP] 2841_group_Yap3_GFP_time_series.csv  (77 cells × 24 timepoints)
+  [GFP] 2841_group_Yox1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] 2841_group_Yrr1_GFP_time_series.csv  (77 cells × 24 timepoints)
+[2842] Loading 2842.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2842_group_Ace2_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 2842_group_Adr1_GFP_time_series.csv  (90 cells × 24 timepoints)
+  [GFP] 2842_group_Arg81_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 2842_group_Gcr1_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] 2842_group_Hal9_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] 2842_group_Msn2_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 2842_group_Pdr1_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 2842_group_Rgm1_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] 2842_group_Rgt1_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] 2842_group_Rsf2_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 2842_group_Sfl1_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 2842_group_Snt2_GFP_time_series.csv  (38 cells × 24 timepoints)
+  [GFP] 2842_group_Sum1_GFP_time_series.csv  (33 cells × 24 timepoints)
+  [GFP] 2842_group_Swi4_GFP_time_series.csv  (63 cells × 24 timepoints)
+  [GFP] 2842_group_Swi6_GFP_time_series.csv  (42 cells × 24 timepoints)
+  [GFP] 2842_group_Tbs1_GFP_time_series.csv  (61 cells × 24 timepoints)
+  [GFP] 2842_group_Tho2_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] 2842_group_Tye7_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] 2842_group_Ume6_GFP_time_series.csv  (41 cells × 24 timepoints)
+  [GFP] 2842_group_Yrr1_GFP_time_series.csv  (26 cells × 24 timepoints)
+[2843] Loading 2843.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2843_group_ch10_FHL1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] 2843_group_ch11_DAL81_GFP_time_series.csv  (16 cells × 24 timepoints)
+  [GFP] 2843_group_ch12_ASG1_GFP_time_series.csv  (85 cells × 24 timepoints)
+  [GFP] 2843_group_ch13_ARO80_GFP_time_series.csv  (57 cells × 24 timepoints)
+  [GFP] 2843_group_ch14_AZF1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] 2843_group_ch15_FKH2_GFP_time_series.csv  (46 cells × 24 timepoints)
+  [GFP] 2843_group_ch16_GIS1_GFP_time_series.csv  (62 cells × 24 timepoints)
+  [GFP] 2843_group_ch17_LEU3_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] 2843_group_ch18_RSC3_GFP_time_series.csv  (65 cells × 24 timepoints)
+  [GFP] 2843_group_ch19_UPC2_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 2843_group_ch1_RFX1_GFP_time_series.csv  (29 cells × 24 timepoints)
+  [GFP] 2843_group_ch20_ZAP1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] 2843_group_ch2_REB1_GFP_time_series.csv  (23 cells × 24 timepoints)
+  [GFP] 2843_group_ch3_RPH1_GFP_time_series.csv  (6 cells × 24 timepoints)
+  [GFP] 2843_group_ch4_LYS14_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 2843_group_ch5_ECM22_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] 2843_group_ch6_BAS1_GFP_time_series.csv  (82 cells × 24 timepoints)
+  [GFP] 2843_group_ch7_MBP1_GFP_time_series.csv  (72 cells × 24 timepoints)
+  [GFP] 2843_group_ch8_PIP2_GFP_time_series.csv  (36 cells × 24 timepoints)
+  [GFP] 2843_group_ch9_PDR3_GFP_time_series.csv  (36 cells × 24 timepoints)
+[2844] Loading 2844.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2844_group_ch10_STP4_GFP_time_series.csv  (88 cells × 24 timepoints)
+  [GFP] 2844_group_ch11_TEC1_GFP_time_series.csv  (83 cells × 24 timepoints)
+  [GFP] 2844_group_ch12_STB1_GFP_time_series.csv  (74 cells × 24 timepoints)
+  [GFP] 2844_group_ch13_INO4_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] 2844_group_ch14_NHP6B_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] 2844_group_ch15_HAP3_GFP_time_series.csv  (89 cells × 24 timepoints)
+  [GFP] 2844_group_ch16_MET32_GFP_time_series.csv  (61 cells × 24 timepoints)
+  [GFP] 2844_group_ch17_HAC1_GFP_time_series.csv  (95 cells × 24 timepoints)
+  [GFP] 2844_group_ch18_TYE7_GFP_time_series.csv  (82 cells × 24 timepoints)
+  [GFP] 2844_group_ch19_HAP2_GFP_time_series.csv  (50 cells × 24 timepoints)
+  [GFP] 2844_group_ch1_IXR1_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 2844_group_ch20_HAP5_GFP_time_series.csv  (64 cells × 24 timepoints)
+  [GFP] 2844_group_ch2_MOT2_GFP_time_series.csv  (30 cells × 24 timepoints)
+  [GFP] 2844_group_ch3_HCM1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 2844_group_ch4_NDD1_GFP_time_series.csv  (5 cells × 24 timepoints)
+  [GFP] 2844_group_ch5_PHO2_GFP_time_series.csv  (87 cells × 24 timepoints)
+  [GFP] 2844_group_ch6_STP1_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] 2844_group_ch7_STB3_GFP_time_series.csv  (75 cells × 24 timepoints)
+  [GFP] 2844_group_ch8_FKH1_GFP_time_series.csv  (97 cells × 24 timepoints)
+  [GFP] 2844_group_ch9_MOT3_GFP_time_series.csv  (91 cells × 24 timepoints)
+[2849] Loading 2849.tsv
+  [mCherry] column 'CV_mCherry' not found — skipping
+  [GFP] 2849_group_ch10_MET28_GFP_time_series.csv  (53 cells × 24 timepoints)
+  [GFP] 2849_group_ch11_PHD1_GFP_time_series.csv  (74 cells × 24 timepoints)
+  [GFP] 2849_group_ch12_ROX1_GFP_time_series.csv  (86 cells × 24 timepoints)
+  [GFP] 2849_group_ch13_CBF1_GFP_time_series.csv  (107 cells × 24 timepoints)
+  [GFP] 2849_group_ch14_STP3_GFP_time_series.csv  (92 cells × 24 timepoints)
+  [GFP] 2849_group_ch15_YHP1_GFP_time_series.csv  (73 cells × 24 timepoints)
+  [GFP] 2849_group_ch16_SPT2_GFP_time_series.csv  (71 cells × 24 timepoints)
+  [GFP] 2849_group_ch17_SUT1_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] 2849_group_ch18_GCN4_GFP_time_series.csv  (55 cells × 24 timepoints)
+  [GFP] 2849_group_ch19_OPI1_GFP_time_series.csv  (49 cells × 24 timepoints)
+  [GFP] 2849_group_ch1_TBF1_GFP_time_series.csv  (43 cells × 24 timepoints)
+  [GFP] 2849_group_ch20_MIG3_GFP_time_series.csv  (52 cells × 24 timepoints)
+  [GFP] 2849_group_ch2_GZF3_GFP_time_series.csv  (45 cells × 24 timepoints)
+  [GFP] 2849_group_ch4_STP2_GFP_time_series.csv  (67 cells × 24 timepoints)
+  [GFP] 2849_group_ch5_UGA3_GFP_time_series.csv  (54 cells × 24 timepoints)
+  [GFP] 2849_group_ch6_UME1_GFP_time_series.csv  (58 cells × 24 timepoints)
+  [GFP] 2849_group_ch7_DIG1_GFP_time_series.csv  (60 cells × 24 timepoints)
+  [GFP] 2849_group_ch8_RDS2_GFP_time_series.csv  (59 cells × 24 timepoints)
+  [GFP] 2849_group_ch9_MET31_GFP_time_series.csv  (64 cells × 24 timepoints)
+[2801] Loading 2801_2025_04_24_TF_screen_plateIII_fg_zero_glc_00.tsv
+  [mCherry] 2801_group_ch10_YOX1_mCherry_time_series.csv  (74 cells × 24 timepoints)/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+/home/ianyang/micromamba/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/impute/_iterative.py:895: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+
+  [mCherry] 2801_group_ch11_CUP9_mCherry_time_series.csv  (81 cells × 24 timepoints)
+  [mCherry] 2801_group_ch12_CIN5_mCherry_time_series.csv  (18 cells × 24 timepoints)
+  [mCherry] 2801_group_ch13_YHP1_mCherry_time_series.csv  (32 cells × 24 timepoints)
+  [mCherry] 2801_group_ch14_STP3_mCherry_time_series.csv  (27 cells × 24 timepoints)
+  [mCherry] 2801_group_ch15_CBF1_mCherry_time_series.csv  (44 cells × 24 timepoints)
+  [mCherry] 2801_group_ch16_GCN4_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 2801_group_ch17_SUT1_mCherry_time_series.csv  (32 cells × 24 timepoints)
+  [mCherry] 2801_group_ch18_RME1_mCherry_time_series.csv  (2 cells × 24 timepoints)
+  [mCherry] 2801_group_ch19_INO2_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] 2801_group_ch1_REI1_mCherry_time_series.csv  (14 cells × 24 timepoints)
+  [mCherry] 2801_group_ch20_FZF1_mCherry_time_series.csv  (21 cells × 24 timepoints)
+  [mCherry] 2801_group_ch2_MSN1_mCherry_time_series.csv  (19 cells × 24 timepoints)
+  [mCherry] 2801_group_ch3_MIG3_mCherry_time_series.csv  (20 cells × 24 timepoints)
+  [mCherry] 2801_group_ch5_PHD1_mCherry_time_series.csv  (15 cells × 24 timepoints)
+  [mCherry] 2801_group_ch6_YAP3_mCherry_time_series.csv  (7 cells × 24 timepoints)
+  [mCherry] 2801_group_ch7_SPT2_mCherry_time_series.csv  (13 cells × 24 timepoints)
+  [mCherry] 2801_group_ch8_OPI1_mCherry_time_series.csv  (48 cells × 24 timepoints)
+  [mCherry] 2801_group_ch9_MAC1_mCherry_time_series.csv  (34 cells × 24 timepoints)
+  [GFP] 2801_group_ch10_YOX1_GFP_time_series.csv  (74 cells × 24 timepoints)
+  [GFP] 2801_group_ch11_CUP9_GFP_time_series.csv  (81 cells × 24 timepoints)
+  [GFP] 2801_group_ch12_CIN5_GFP_time_series.csv  (18 cells × 24 timepoints)
+  [GFP] 2801_group_ch13_YHP1_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 2801_group_ch14_STP3_GFP_time_series.csv  (27 cells × 24 timepoints)
+  [GFP] 2801_group_ch15_CBF1_GFP_time_series.csv  (44 cells × 24 timepoints)
+  [GFP] 2801_group_ch16_GCN4_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 2801_group_ch17_SUT1_GFP_time_series.csv  (32 cells × 24 timepoints)
+  [GFP] 2801_group_ch18_RME1_GFP_time_series.csv  (2 cells × 24 timepoints)
+  [GFP] 2801_group_ch19_INO2_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 2801_group_ch1_REI1_GFP_time_series.csv  (14 cells × 24 timepoints)
+  [GFP] 2801_group_ch20_FZF1_GFP_time_series.csv  (21 cells × 24 timepoints)
+  [GFP] 2801_group_ch2_MSN1_GFP_time_series.csv  (19 cells × 24 timepoints)
+  [GFP] 2801_group_ch3_MIG3_GFP_time_series.csv  (20 cells × 24 timepoints)
+  [GFP] 2801_group_ch5_PHD1_GFP_time_series.csv  (15 cells × 24 timepoints)
+  [GFP] 2801_group_ch6_YAP3_GFP_time_series.csv  (7 cells × 24 timepoints)
+  [GFP] 2801_group_ch7_SPT2_GFP_time_series.csv  (13 cells × 24 timepoints)
+  [GFP] 2801_group_ch8_OPI1_GFP_time_series.csv  (48 cells × 24 timepoints)
+  [GFP] 2801_group_ch9_MAC1_GFP_time_series.csv  (34 cells × 24 timepoints)
+
+NEW dataset done: 639 CSV(s) written to /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series_NEW
+
+======================================================================
+All done. 705 CSV file(s) written total.
+  Old: 66 → /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series
+  New: 639 → /home/ianyang/stochastic_simulations/experiments/EXP-25-IY008/5_FULL_transformed_exp_time_series_NEW
