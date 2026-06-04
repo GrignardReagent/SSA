@@ -227,6 +227,37 @@ _CHANNEL_LOG_PATTERN = re.compile(
     r'(?im)^\s*(?:Channel(?: configuration set to)?|Image config)\s*:?\s*([A-Za-z][\w-]*)'
 )
 
+# Newer Batgirl-format log lines look like "group: ch1_REI1 field: position".
+# The TF name is the ALL-CAPS token after the underscore in the group label.
+# Pattern breakdown: ch\d+_ matches the chamber prefix (ch1_, ch2_, ...),
+# then ([A-Z][A-Z0-9]+) captures the uppercase TF name (e.g. REI1, MSN1).
+_GROUP_TF_PATTERN = re.compile(
+    r'^group\s*:\s*ch\d+_([A-Z][A-Z0-9]+)',
+    re.MULTILINE,
+)
+
+# Strains are sometimes referenced in log text as "YST_1490" (lab naming convention).
+# \b ensures we don't match mid-word; (\d+) captures just the numeric part.
+_YST_STRAIN_PATTERN = re.compile(r'\bYST_(\d+)\b', re.IGNORECASE)
+
+# The "Experiment details:" line runs until the next section separator ("---...---")
+# or the start of "Acquisition settings". re.DOTALL lets . match newlines so
+# multi-line details are captured in one match.
+_EXP_DETAILS_PATTERN = re.compile(
+    r'Experiment details:\s*(.+?)(?=\n\s*-{3,}|\n\s*Acquisition settings|\Z)',
+    re.IGNORECASE | re.DOTALL,
+)
+
+# Finds the "switch from X to Y" phrase inside the experiment details.
+# Group 1 = the starting condition (X), group 2 = the ending condition (Y).
+# The lookahead stops Y before punctuation, volume units (ul/ml/g), or
+# context words like "YST_", "added" that begin unrelated follow-on clauses.
+_SWITCH_CONDITION_PATTERN = re.compile(
+    r'switch(?:ing)?\s+from\s+(.+?)\s+to\s+(.+?)'
+    r'(?=[.,;]\s|[.,;]$|\s+\d+\s*(?:ul|ml|g\b)|\s+YST_|\s+added\b|\Z)',
+    re.IGNORECASE,
+)
+
 
 def _dedupe_preserve_order(values: list[str]) -> list[str]:
     seen = set()
@@ -238,6 +269,187 @@ def _dedupe_preserve_order(values: list[str]) -> list[str]:
         seen.add(cleaned.lower())
         unique.append(cleaned)
     return unique
+
+
+# ---------------------------------------------------------------------------
+# Strain / TF database
+# ---------------------------------------------------------------------------
+
+STRAIN_TF_DB_PATH = Path(__file__).parent / "strain_tf_database.csv"
+
+
+def load_strain_tf_database(db_path: Path = STRAIN_TF_DB_PATH) -> dict[str, list[str]]:
+    """Load strain_tf_database.csv and return {group_id: [tf, ...]} mapping.
+
+    The CSV has columns: group_id, channel, tf. A single group_id can have
+    multiple rows (one per channel, e.g. GFP and mCherry), so each key maps
+    to a list of TF names rather than a single string.
+    """
+    db: dict[str, list[str]] = {}
+    if not db_path.exists():
+        return db
+    with open(db_path, newline="") as f:
+        for row in csv.DictReader(f):
+            gid = row.get("group_id", "").strip()
+            tf = row.get("tf", "").strip()
+            if gid and tf:
+                db.setdefault(gid, [])
+                if tf not in db[gid]:  # avoid duplicates when multiple channels share a TF
+                    db[gid].append(tf)
+    return db
+
+
+def lookup_tfs_from_strains(strain_ids: list[str], db: dict[str, list[str]]) -> list[str]:
+    """Return TF names for the given strain/group IDs from the database.
+
+    Used for older experiments where the group ID is a plain number (e.g. 898)
+    rather than an explicit TF name in the group label.
+    """
+    tfs = []
+    for sid in strain_ids:
+        tfs.extend(db.get(sid, []))  # returns [] if strain not in db
+    return _dedupe_preserve_order(tfs)
+
+
+_CONDITION_SYSTEM_PROMPT = """\
+You are extracting the experimental condition from a microscopy experiment log.
+The condition describes what changed during the experiment (e.g. a media switch).
+
+Return the condition as a concise "X to Y" phrase on a single line, for example:
+  2% glucose to 0% glucose
+  high nitrogen to low nitrogen
+  2% glucose to 0.1% glucose
+
+If no condition change is described, return exactly: UNKNOWN
+Return only the condition phrase or UNKNOWN — no other text.
+"""
+
+
+def parse_condition(
+    log_text: str,
+    client: "openai.OpenAI | None" = None,
+    model: str = MODEL,
+) -> str:
+    """Extract the experimental condition from the 'Experiment details' section.
+
+    Strategy:
+    1. Locate the "Experiment details:" line and extract its content.
+    2. Search for a "switch from X to Y" phrase and return "X to Y" directly.
+       Example: "Switch from 2% glucose to 0%." → "2% glucose to 0%"
+    3. If no switch phrase is found and an LLM client is provided, ask the LLM
+       to interpret the free-text details and extract the condition.
+    4. Last resort: return the first sentence of the details (capped at 200 chars).
+    """
+    # Step 1: extract the experiment details block
+    m = _EXP_DETAILS_PATTERN.search(log_text)
+    if not m:
+        return ""
+    details = m.group(1).strip()
+    if not details:
+        return ""
+
+    # Step 2: fast regex path — "switch from X to Y" is unambiguous
+    sw = _SWITCH_CONDITION_PATTERN.search(details)
+    if sw:
+        from_part = sw.group(1).strip().rstrip(".,; ")  # e.g. "2% glucose"
+        to_part = sw.group(2).strip().rstrip(".,; ")    # e.g. "0%"
+        return f"{from_part} to {to_part}"
+
+    # Step 3: LLM fallback — regex found no switch phrase; ask the LLM to
+    # interpret the free-text experiment details and extract the condition.
+    if client is not None:
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                max_completion_tokens=40,  # condition phrase is short
+                timeout=OPENAI_TIMEOUT_SECONDS,
+                messages=[
+                    {"role": "system", "content": _CONDITION_SYSTEM_PROMPT},
+                    # Send only the experiment details text, not the whole log
+                    {"role": "user", "content": details[:500]},
+                ],
+            )
+            llm_condition = response.choices[0].message.content.strip()
+            if llm_condition and llm_condition.upper() != "UNKNOWN":
+                return llm_condition
+        except Exception:
+            pass  # LLM call failed; fall through to last resort
+
+    # Step 4: last resort — no switch phrase and no LLM; return first sentence
+    first_sentence = re.split(r'(?<=[.!?])\s', details)[0]
+    return first_sentence[:200]
+
+
+_TF_SYSTEM_PROMPT = """\
+You are extracting transcription factor (TF) names from a yeast live-cell microscopy experiment log.
+Return a comma-separated list of TF names exactly as they appear in yeast nomenclature (e.g. Msn2, Mig1, Rei1).
+If no TF is identifiable, return exactly: UNKNOWN
+Return only the comma-separated list or UNKNOWN — no other text.
+"""
+
+
+def parse_tf_from_groups(
+    log_text: str,
+    strain_ids: list[str] | None = None,
+    strain_db: dict[str, list[str]] | None = None,
+    client: "openai.OpenAI | None" = None,
+    model: str = MODEL,
+) -> list[str]:
+    """Identify TF names imaged in the experiment using a three-level fallback.
+
+    Strategy:
+    1. Regex — extract TF names directly from Batgirl group labels like
+       "group: ch1_REI1". Returns all unique TFs found across every group line.
+    2. Database lookup — if no TF found via regex, map each strain_id against
+       strain_tf_database.csv (e.g. group_id 898 → Msn2 / Mig1).
+    3. LLM fallback — if both above give nothing, send the first 1000 chars of
+       the log to the LLM and ask it to identify the TFs.
+    4. Last resort — returns ["UNKNOWN"] if all three paths fail.
+    """
+    # Step 1: group-label regex — fastest and most reliable for new Batgirl logs
+    tfs = _dedupe_preserve_order(_GROUP_TF_PATTERN.findall(log_text))
+    if tfs:
+        return tfs
+
+    # Step 2: strain database lookup — for older experiments where the group/strain ID
+    # is a plain number (e.g. 898) rather than an explicit TF name in the label
+    if strain_ids and strain_db:
+        tfs = lookup_tfs_from_strains(strain_ids, strain_db)
+        if tfs:
+            return tfs
+
+    # Step 3: LLM fallback — free-text logs where neither regex nor the database
+    # can determine the TF; send the log excerpt for the LLM to interpret
+    if client is not None:
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                max_completion_tokens=60,  # TF list is short
+                timeout=OPENAI_TIMEOUT_SECONDS,
+                messages=[
+                    {"role": "system", "content": _TF_SYSTEM_PROMPT},
+                    {"role": "user", "content": log_text[:1000]},
+                ],
+            )
+            llm_tfs = response.choices[0].message.content.strip()
+            if llm_tfs and llm_tfs.upper() != "UNKNOWN":
+                # Parse the comma-separated response into a deduplicated list
+                return _dedupe_preserve_order(t.strip() for t in llm_tfs.split(",") if t.strip())
+        except Exception:
+            pass  # LLM call failed; fall through to last resort
+
+    # Step 4: last resort
+    return ["UNKNOWN"]
+
+
+def parse_yst_strain_ids(log_text: str) -> list[str]:
+    """Extract numeric IDs from YST_XXXX references in the log text.
+
+    Strains are written as e.g. "YST_1490" in experiment details or comments.
+    Returns just the number part ("1490") so it can be looked up in the
+    strain_tf_database.
+    """
+    return _dedupe_preserve_order(_YST_STRAIN_PATTERN.findall(log_text))
 
 
 def parse_timepoints(log_text: str) -> int | None:
@@ -256,8 +468,13 @@ def parse_timepoints(log_text: str) -> int | None:
 
 
 def parse_strain_ids(log_text: str) -> list[str]:
-    """Return strain/group labels found in log or acquisition metadata."""
+    """Return strain/group IDs found in log or acquisition metadata.
+
+    Captures numeric group IDs (e.g. ``group: 898``), YST_XXXX numeric parts,
+    explicit ``Strain:`` fields, and old-format acquisition point groups.
+    """
     values = _STRAIN_PATTERN.findall(log_text)
+    values.extend(parse_yst_strain_ids(log_text))
     m = _STRAIN_DETAILS_PATTERN.search(log_text)
     if m:
         values.extend(part.strip() for part in m.group(1).split(","))
@@ -428,11 +645,21 @@ def classify(
     dataset_name: str,
     metadata: MetadataAnnotations,
     model: str = "gpt-5.4",
+    strain_db: dict[str, list[str]] | None = None,
 ) -> dict:
     # --- deterministic extraction from log text ---
     metadata_text = metadata.combined_text()
+    condition = parse_condition(metadata_text, client=client, model=model) if metadata_text else ""
     timepoints = parse_timepoints(metadata_text) if metadata_text else None
     strain_ids = parse_strain_ids(metadata_text) if metadata_text else []
+    # parse_tf_from_groups handles all three fallback levels internally
+    tf_identity = parse_tf_from_groups(
+        metadata_text or "",
+        strain_ids=strain_ids,
+        strain_db=strain_db,
+        client=client,
+        model=model,
+    )
     parsed_channels = parse_channels(metadata_text) if metadata_text else []
     parsed_fluorescence_channels = fluorescence_channels(parsed_channels)
 
@@ -492,7 +719,9 @@ def classify(
         "dataset_id": dataset_id,
         "dataset_name": dataset_name,
         "has_log": metadata.has_metadata,
+        "condition": condition,
         "strain_id": ";".join(strain_ids),  # semicolon-separated so commas don't break CSV parsing
+        "tf_identity": ";".join(tf_identity),
         "timepoints": timepoints if timepoints is not None else "",
         "classification": classification,
         "reason": reason if not metadata.truncated_files else f"{reason} Metadata truncated: {metadata.truncated_files}.",
@@ -507,7 +736,9 @@ def error_result(dataset_id: int, dataset_name: str, exc: Exception) -> dict:
         "dataset_id": dataset_id,
         "dataset_name": dataset_name,
         "has_log": False,
+        "condition": "",
         "strain_id": "",
+        "tf_identity": "",
         "timepoints": "",
         "classification": "ERROR",
         "reason": f"{type(exc).__name__}: {exc}",
@@ -561,6 +792,12 @@ def main() -> None:
     if already_done:
         log.info(f"Resuming: {len(already_done)} datasets already processed.")
 
+    strain_db = load_strain_tf_database()
+    if strain_db:
+        log.info(f"Loaded strain TF database: {len(strain_db)} entries from {STRAIN_TF_DB_PATH}.")
+    else:
+        log.warning(f"Strain TF database not found at {STRAIN_TF_DB_PATH}; TF lookup from strain ID disabled.")
+
     log.info(f"Connecting to OMERO at {SERVER}...")
     conn = connect_omero(SERVER, USERNAME, PASSWORD)
     log.info("Connected.")
@@ -592,7 +829,9 @@ def main() -> None:
             "dataset_id",
             "dataset_name",
             "has_log",
+            "condition",
             "strain_id",
+            "tf_identity",
             "timepoints",
             "classification",
             "reason",
@@ -617,7 +856,7 @@ def main() -> None:
                         log.warning(f"  Truncated large annotation(s): {metadata.truncated_files}")
 
                     log.info("  Classifying metadata...")
-                    result = classify(client, ds_id, ds_name, metadata, model=MODEL)
+                    result = classify(client, ds_id, ds_name, metadata, model=MODEL, strain_db=strain_db)
                 except Exception as exc:
                     log.exception(f"  Failed dataset {ds_id}: {exc}")
                     result = error_result(ds_id, ds_name, exc)
@@ -626,7 +865,8 @@ def main() -> None:
 
                 log.info(
                     f"  -> {result['classification']} | tps: {result['timepoints']} "
-                    f"| strain: {result['strain_id']} | channels: {result['channels']} "
+                    f"| condition: {result['condition']} | strain: {result['strain_id']} "
+                    f"| tf: {result['tf_identity']} | channels: {result['channels']} "
                     f"| {result['reason']}"
                 )
 
