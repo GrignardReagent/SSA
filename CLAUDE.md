@@ -114,7 +114,7 @@ Every job script must follow the following conventions listed in the example (`I
 
 # Request 1 GPUs in the gpu queue, or however many the user specifies
 #$ -q gpu 
-#$ -l gpu=1
+#$ -l gpu-mig=1
 
 # Request 32G per core (32G × 4 cores virtual memory)
 #$ -l h_rss=32G
@@ -154,6 +154,7 @@ conda deactivate
   - Multi-panel (1 row, N cols): (5*N, 4) per column
   - Multi-panel (M rows, 1 col): (8, 4*M) per row
   - Multi-panel grid (M×N): (5*N, 4*M)
+  - For figure legends, always use `loc="best"` to avoid covering data.
   - Always use `tight_layout()` or `constrained_layout=True`
   - DPI: 150 for screen display, 300 for export/paper
 
@@ -178,7 +179,7 @@ When multiple subplots are comparing the **same quantity** across conditions (e.
 
 ## Error Bars
 
-Every plot of statistical data must include error bars. Use the standard error of the mean (SEM) by default; state explicitly in the caption or legend if a different measure is used (e.g. SD, 95% CI).
+Every plot of statistical data must include error bars. Use the standard deviation (std) by default, and when std isn't available, use the standard error of the mean (SEM); state explicitly in the caption or legend if a different measure is used (e.g. 95% CI).
 
 ## Text Overlap & Legend Placement
 
