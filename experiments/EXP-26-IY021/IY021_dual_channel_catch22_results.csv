@@ -1,0 +1,3 @@
+model,accuracy
+Raw SVM (RBF),0.6914893617021277
+catch22 + SVM (RBF),0.5319148936170213
