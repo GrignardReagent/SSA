@@ -10,8 +10,8 @@ Submit with: qsub IY029_transformer_pairwise_v2.sh  (from the EXP-26-IY029 dir)
 The full concatenated pair (T, 1) is fed directly — no siamese splitting.
 CrossEntropyLoss with num_classes=2 (0=different, 1=same). Chance = 50%.
 
-BATCH_SIZE=8 is calibrated for Eddie V100 (16 GB VRAM):
-  max attention cost during backprop ≈ 2 × 8 × 4 × 5821² × 4 B ≈ 8.7 GB.
+BATCH_SIZE=32, early stopping patience=15 (stops once val acc stalls).
+Partial results are written after each (dataset, fold) so a timeout doesn't lose work.
 
 Saves:
   IY029_transformer_pairwise_v2_results.json
@@ -49,8 +49,9 @@ NHEAD      = 4
 NUM_LAYERS = 2
 DROPOUT    = 0.1
 # BATCH_SIZE=8: safe on V100 (16 GB); max attention ≈ 8.7 GB for T=5821
-BATCH_SIZE = 8
+BATCH_SIZE = 32
 N_EPOCHS   = 100
+PATIENCE   = 15   # early-stop if val acc doesn't improve for this many epochs
 LR         = 1e-3
 
 # ── Plotting style ─────────────────────────────────────────────────────────────
@@ -160,6 +161,7 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
 
     best_va, best_state = 0.0, None
     loss_curve = []
+    no_improve = 0
     t0 = time.time()
 
     for epoch in range(N_EPOCHS):
@@ -182,6 +184,9 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
             # of later optimizer updates and can be restored after training.
             best_va = va_acc
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+            no_improve = 0
+        else:
+            no_improve += 1
 
         if (epoch + 1) % 10 == 0:
             elapsed = time.time() - t0
@@ -189,6 +194,11 @@ def train_and_eval(X_tr, y_tr, X_va, y_va, X_te, y_te,
             print(f'  [{ds_name}/{fold}] epoch {epoch+1:3d}  '
                   f'loss={loss_curve[-1]:.4f}  val={va_acc:.3f}  '
                   f'ETA {eta/60:.1f}min', flush=True)
+
+        if no_improve >= PATIENCE:
+            print(f'  [{ds_name}/{fold}] early stop at epoch {epoch+1} '
+                  f'(best val={best_va:.3f})', flush=True)
+            break
 
     model.load_state_dict(best_state)
     te_acc = evaluate(model, te_loader)
@@ -263,6 +273,16 @@ def main():
             torch.save({'state_dict': state, 'd_model': D_MODEL, 'nhead': NHEAD,
                         'num_layers': NUM_LAYERS, 'dropout': DROPOUT}, ckpt_path)
             print(f'  Saved checkpoint: {ckpt_path.name}', flush=True)
+
+            # Write partial results after each run so a timeout doesn't lose them.
+            partial_path = SCRIPT_DIR / 'IY029_transformer_pairwise_v2_results.json'
+            with open(partial_path, 'w') as _f:
+                json.dump(
+                    {ds: {f: float(results[ds][f]) for f in results[ds]}
+                     for ds in results},
+                    _f, indent=2,
+                )
+            print(f'  Partial results saved.', flush=True)
 
     print(f'\nTotal training time: {(time.time()-t_total)/60:.1f} min')
 

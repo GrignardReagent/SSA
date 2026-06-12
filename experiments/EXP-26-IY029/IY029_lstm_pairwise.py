@@ -48,7 +48,7 @@ NUM_LAYERS  = 2
 DROPOUT     = 0.3
 BATCH_SIZE  = 32    # BPTT stores O(T × batch) hidden states; keep small for full-length pairs
 N_EPOCHS    = 100
-PATIENCE    = 15
+PATIENCE    = 100
 LR          = 1e-3
 
 # ── Plotting style ─────────────────────────────────────────────────────────────

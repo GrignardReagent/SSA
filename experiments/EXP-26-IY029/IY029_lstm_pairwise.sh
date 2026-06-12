@@ -7,7 +7,7 @@
 #$ -cwd
 #$ -l h_rt=47:59:59
 #$ -q gpu
-#$ -l gpu=1
+#$ -l gpu-mig=1
 #$ -l h_rss=32G
 #$ -m bea -M s1732775@ed.ac.uk
 

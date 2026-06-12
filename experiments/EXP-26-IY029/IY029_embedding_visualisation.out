@@ -1,0 +1,162 @@
+REPO_ROOT  : /exports/csce/eddie/biology/groups/swain/SSA
+IY029_DATA : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data  (exists: True)
+CKPT_DIR   : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/checkpoints   (exists: True)
+Device     : cuda
+Cache dir  : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/embeddings_cache
+SimCLR checkpoints found: 34
+SimCLR best label (IY029_simclr_svm_pairwise_v2_results.json): IY017-b64_lr0.01_L2_H4_D16-instance-163742
+  Loaded: IY017_simCLR_b64_lr0.01_L2_H4_D16_20260215_163742_model.pth
+
+══ baseline / 2_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_test.pt...
+  Data loaded in 2.2s  train=(10000, 3623, 1)  test=(2000, 3623, 1)
+  SVM... 0.3s  shape=(2000, 3623)
+  catch22...
+    catch22 train... 135s | test... 26s
+    shape=(2000, 44)
+  SimCLR... 4.0s  shape=(2000, 32)
+  MLP... 0.4s  shape=(2000, 64)
+  Transformer... 5.5s  shape=(2000, 16)
+  LSTM... 0.5s  shape=(2000, 128)
+
+══ baseline / 10_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_test.pt...
+  Data loaded in 1.0s  train=(10000, 3623, 1)  test=(2000, 3623, 1)
+  SVM... 0.3s  shape=(2000, 3623)
+  catch22...
+    catch22 train... 132s | test... 25s
+    shape=(2000, 44)
+  SimCLR... 2.9s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 5.5s  shape=(2000, 16)
+  LSTM... 0.3s  shape=(2000, 128)
+
+══ mu / 2_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_test.pt...
+  Data loaded in 0.9s  train=(10000, 5021, 1)  test=(2000, 5021, 1)
+  SVM... 0.5s  shape=(2000, 5021)
+  catch22...
+    catch22 train... 237s | test... 47s
+    shape=(2000, 44)
+  SimCLR... 5.5s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 10.5s  shape=(2000, 16)
+  LSTM... 0.4s  shape=(2000, 128)
+
+══ mu / 10_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_test.pt...
+  Data loaded in 1.0s  train=(10000, 5021, 1)  test=(2000, 5021, 1)
+  SVM... 0.4s  shape=(2000, 5021)
+  catch22...
+    catch22 train... 240s | test... 48s
+    shape=(2000, 44)
+  SimCLR... 5.4s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 10.5s  shape=(2000, 16)
+  LSTM... 0.4s  shape=(2000, 128)
+
+══ cv / 2_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_test.pt...
+  Data loaded in 0.7s  train=(10000, 5003, 1)  test=(2000, 5003, 1)
+  SVM... 0.4s  shape=(2000, 5003)
+  catch22...
+    catch22 train... 230s | test... 46s
+    shape=(2000, 44)
+  SimCLR... 5.4s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 10.4s  shape=(2000, 16)
+  LSTM... 0.4s  shape=(2000, 128)
+
+══ cv / 10_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_test.pt...
+  Data loaded in 0.7s  train=(10000, 5821, 1)  test=(2000, 5821, 1)
+  SVM... 0.4s  shape=(2000, 5821)
+  catch22...
+    catch22 train... 265s | test... 53s
+    shape=(2000, 44)
+  SimCLR... 7.0s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 13.7s  shape=(2000, 16)
+  LSTM... 0.4s  shape=(2000, 128)
+
+══ t_ac / 2_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_test.pt...
+  Data loaded in 0.4s  train=(10000, 4023, 1)  test=(2000, 4023, 1)
+  SVM... 0.3s  shape=(2000, 4023)
+  catch22...
+    catch22 train... 144s | test... 29s
+    shape=(2000, 44)
+  SimCLR... 3.4s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 6.8s  shape=(2000, 16)
+  LSTM... 0.3s  shape=(2000, 128)
+
+══ t_ac / 10_fold ══
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_test.pt...
+  Data loaded in 0.4s  train=(10000, 3623, 1)  test=(2000, 3623, 1)
+  SVM... 0.3s  shape=(2000, 3623)
+  catch22...
+    catch22 train... 136s | test... 27s
+    shape=(2000, 44)
+  SimCLR... 2.9s  shape=(2000, 32)
+  MLP... 0.0s  shape=(2000, 64)
+  Transformer... 5.5s  shape=(2000, 16)
+  LSTM... 0.3s  shape=(2000, 128)
+
+Phase 1 done in 32.9 min
+Saved IY029_embedding_metrics.json
+
+── Phase 2: PCA plots ──
+
+▶ PCA — Raw SVM
+  Saved IY029_embedding_svm_pca.png
+
+▶ PCA — catch22 + SVM
+  Saved IY029_embedding_catch22_pca.png
+
+▶ PCA — SimCLR + SVM
+  Saved IY029_embedding_simclr_pca.png
+
+▶ PCA — MLP
+  Saved IY029_embedding_mlp_pca.png
+
+▶ PCA — Transformer
+  Saved IY029_embedding_transformer_pca.png
+
+▶ PCA — LSTM
+  Saved IY029_embedding_lstm_pca.png
+
+── Phase 3: t-SNE plots ──
+
+▶ t-SNE — Raw SVM
+  Saved IY029_embedding_svm_tsne.png
+
+▶ t-SNE — catch22 + SVM
+  Saved IY029_embedding_catch22_tsne.png
+
+▶ t-SNE — SimCLR + SVM
+  Saved IY029_embedding_simclr_tsne.png
+
+▶ t-SNE — MLP
+  Saved IY029_embedding_mlp_tsne.png
+
+▶ t-SNE — Transformer
+  Saved IY029_embedding_transformer_tsne.png
+
+▶ t-SNE — LSTM
+  Saved IY029_embedding_lstm_tsne.png
+
+── Phase 4: metric heatmaps ──
+  Saved IY029_embedding_dscore_heatmap.png
+  Saved IY029_embedding_ari_heatmap.png
+  Saved IY029_embedding_nmi_heatmap.png
+
+Done.

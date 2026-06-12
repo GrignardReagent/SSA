@@ -1,0 +1,137 @@
+REPO_ROOT  : /exports/csce/eddie/biology/groups/swain/SSA
+IY029_DATA : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data  (exists: True)
+Device: cuda
+BATCH_SIZE=32  N_EPOCHS=100  D_MODEL=16
+
+=== Baseline ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_test.pt...
+    train=(10000, 3623, 1)  val=(2000, 3623, 1)  test=(2000, 3623, 1)
+  [Baseline/iy011] epoch  10  loss=0.4761  val=0.740  ETA 303.2min
+  [Baseline/iy011] epoch  20  loss=0.4126  val=0.786  ETA 269.4min
+  [Baseline/iy011] epoch  30  loss=0.3819  val=0.803  ETA 235.7min
+  [Baseline/iy011] epoch  40  loss=0.3658  val=0.818  ETA 202.0min
+  [Baseline/iy011] epoch  50  loss=0.3508  val=0.807  ETA 168.4min
+  [Baseline/iy011] epoch  60  loss=0.3400  val=0.816  ETA 134.7min
+  [Baseline/iy011] epoch  70  loss=0.3290  val=0.818  ETA 101.0min
+  [Baseline/iy011] epoch  80  loss=0.3255  val=0.816  ETA 67.3min
+  [Baseline/iy011] early stop at epoch 86 (best val=0.823)
+  [Baseline/iy011] test acc = 0.8290
+  Saved checkpoint: IY029_transformer_v2_baseline_iy011.pth
+  Partial results saved.
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_test.pt...
+    train=(10000, 3623, 1)  val=(2000, 3623, 1)  test=(2000, 3623, 1)
+  [Baseline/iy014] epoch  10  loss=0.2794  val=0.903  ETA 303.0min
+  [Baseline/iy014] epoch  20  loss=0.2350  val=0.910  ETA 269.3min
+  [Baseline/iy014] epoch  30  loss=0.2153  val=0.915  ETA 235.7min
+  [Baseline/iy014] epoch  40  loss=0.2060  val=0.917  ETA 202.0min
+  [Baseline/iy014] epoch  50  loss=0.1919  val=0.915  ETA 168.3min
+  [Baseline/iy014] early stop at epoch 58 (best val=0.923)
+  [Baseline/iy014] test acc = 0.9025
+  Saved checkpoint: IY029_transformer_v2_baseline_iy014.pth
+  Partial results saved.
+
+=== Mu ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_test.pt...
+    train=(10000, 5021, 1)  val=(2000, 5021, 1)  test=(2000, 5021, 1)
+  [Mu/iy011] epoch  10  loss=0.1359  val=0.939  ETA 571.6min
+  [Mu/iy011] epoch  20  loss=0.1230  val=0.948  ETA 508.0min
+  [Mu/iy011] epoch  30  loss=0.1167  val=0.943  ETA 444.5min
+  [Mu/iy011] epoch  40  loss=0.1083  val=0.945  ETA 381.0min
+  [Mu/iy011] early stop at epoch 40 (best val=0.955)
+  [Mu/iy011] test acc = 0.9480
+  Saved checkpoint: IY029_transformer_v2_mu_iy011.pth
+  Partial results saved.
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_test.pt...
+    train=(10000, 5021, 1)  val=(2000, 5021, 1)  test=(2000, 5021, 1)
+  [Mu/iy014] epoch  10  loss=0.0000  val=1.000  ETA 571.6min
+  [Mu/iy014] epoch  20  loss=0.0023  val=1.000  ETA 508.1min
+  [Mu/iy014] early stop at epoch 20 (best val=1.000)
+  [Mu/iy014] test acc = 1.0000
+  Saved checkpoint: IY029_transformer_v2_mu_iy014.pth
+  Partial results saved.
+
+=== CV ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_test.pt...
+    train=(10000, 5003, 1)  val=(2000, 5003, 1)  test=(2000, 5003, 1)
+  [CV/iy011] epoch  10  loss=0.1274  val=0.947  ETA 571.0min
+  [CV/iy011] epoch  20  loss=0.1242  val=0.961  ETA 507.5min
+  [CV/iy011] epoch  30  loss=0.1020  val=0.963  ETA 444.1min
+  [CV/iy011] early stop at epoch 32 (best val=0.966)
+  [CV/iy011] test acc = 0.9505
+  Saved checkpoint: IY029_transformer_v2_cv_iy011.pth
+  Partial results saved.
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_test.pt...
+    train=(10000, 5821, 1)  val=(2000, 5821, 1)  test=(2000, 5821, 1)
+  [CV/iy014] epoch  10  loss=0.0000  val=1.000  ETA 754.8min
+  [CV/iy014] early stop at epoch 18 (best val=1.000)
+  [CV/iy014] test acc = 1.0000
+  Saved checkpoint: IY029_transformer_v2_cv_iy014.pth
+  Partial results saved.
+
+=== T_ac ===
+  iy011: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_test.pt...
+    train=(10000, 4023, 1)  val=(2000, 4023, 1)  test=(2000, 4023, 1)
+  [T_ac/iy011] epoch  10  loss=0.6933  val=0.515  ETA 367.7min
+  [T_ac/iy011] epoch  20  loss=0.6931  val=0.531  ETA 326.8min
+  [T_ac/iy011] epoch  30  loss=0.6819  val=0.571  ETA 286.0min
+  [T_ac/iy011] epoch  40  loss=0.6752  val=0.605  ETA 245.1min
+  [T_ac/iy011] epoch  50  loss=0.6453  val=0.634  ETA 204.3min
+  [T_ac/iy011] epoch  60  loss=0.5903  val=0.693  ETA 163.4min
+  [T_ac/iy011] epoch  70  loss=0.5575  val=0.714  ETA 122.6min
+  [T_ac/iy011] epoch  80  loss=0.5420  val=0.718  ETA 81.7min
+  [T_ac/iy011] epoch  90  loss=0.5367  val=0.714  ETA 40.9min
+  [T_ac/iy011] epoch 100  loss=0.5296  val=0.717  ETA 0.0min
+  [T_ac/iy011] test acc = 0.7315
+  Saved checkpoint: IY029_transformer_v2_t_ac_iy011.pth
+  Partial results saved.
+  iy014: loading data...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_test.pt...
+    train=(10000, 3623, 1)  val=(2000, 3623, 1)  test=(2000, 3623, 1)
+  [T_ac/iy014] epoch  10  loss=0.4366  val=0.785  ETA 303.1min
+  [T_ac/iy014] epoch  20  loss=0.2516  val=0.842  ETA 269.5min
+  [T_ac/iy014] epoch  30  loss=0.1812  val=0.881  ETA 235.9min
+  [T_ac/iy014] epoch  40  loss=0.1195  val=0.929  ETA 202.3min
+  [T_ac/iy014] epoch  50  loss=0.0884  val=0.924  ETA 168.6min
+  [T_ac/iy014] epoch  60  loss=0.0740  val=0.940  ETA 134.9min
+  [T_ac/iy014] epoch  70  loss=0.0552  val=0.926  ETA 101.2min
+  [T_ac/iy014] epoch  80  loss=0.0487  val=0.939  ETA 67.5min
+  [T_ac/iy014] early stop at epoch 83 (best val=0.952)
+  [T_ac/iy014] test acc = 0.9490
+  Saved checkpoint: IY029_transformer_v2_t_ac_iy014.pth
+  Partial results saved.
+
+Total training time: 1912.6 min
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_transformer_pairwise_v2_results.json
+
+=== Summary ===
+Dataset       iy011 2-fold  iy014 10-fold
+Baseline          0.8290        0.9025
+Mu                0.9480        1.0000
+CV                0.9505        1.0000
+T_ac              0.7315        0.9490
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_transformer_pairwise_v2_loss.png
+
+Done.

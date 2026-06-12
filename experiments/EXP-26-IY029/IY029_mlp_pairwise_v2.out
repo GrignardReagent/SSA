@@ -1,0 +1,102 @@
+IY029_DATA : /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data  (exists: True)
+Device: cuda
+SAMPLE_LEN=500  BATCH_SIZE=256  N_EPOCHS=100
+
+=== Baseline ===
+  iy011: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/baseline/IY029_static_test.pt...
+  epoch  20  loss=0.2598  val=0.725
+  epoch  40  loss=0.1236  val=0.738
+  epoch  60  loss=0.0582  val=0.737
+  epoch  80  loss=0.0426  val=0.737
+  epoch 100  loss=0.0307  val=0.737
+test acc = 0.7415
+  Saved checkpoint: IY029_mlp_v2_baseline_iy011.pth
+  iy014: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/baseline/IY029_static_test.pt...
+  epoch  20  loss=0.1566  val=0.854
+  epoch  40  loss=0.1192  val=0.875
+  epoch  60  loss=0.0785  val=0.870
+  epoch  80  loss=0.0455  val=0.874
+  epoch 100  loss=0.0461  val=0.875
+test acc = 0.8385
+  Saved checkpoint: IY029_mlp_v2_baseline_iy014.pth
+
+=== Mu ===
+  iy011: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/mu/IY029_static_test.pt...
+  epoch  20  loss=0.0639  val=0.920
+  epoch  40  loss=0.0131  val=0.926
+  epoch  60  loss=0.0080  val=0.924
+  epoch  80  loss=0.0161  val=0.926
+  epoch 100  loss=0.0046  val=0.926
+test acc = 0.9345
+  Saved checkpoint: IY029_mlp_v2_mu_iy011.pth
+  iy014: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/mu/IY029_static_test.pt...
+  epoch  20  loss=0.0223  val=0.994
+  epoch  40  loss=0.0071  val=0.996
+  epoch  60  loss=0.0034  val=0.994
+  epoch  80  loss=0.0019  val=0.996
+  epoch 100  loss=0.0077  val=0.995
+test acc = 0.9955
+  Saved checkpoint: IY029_mlp_v2_mu_iy014.pth
+
+=== CV ===
+  iy011: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/cv/IY029_static_test.pt...
+  epoch  20  loss=0.1543  val=0.821
+  epoch  40  loss=0.0588  val=0.825
+  epoch  60  loss=0.0310  val=0.831
+  epoch  80  loss=0.0243  val=0.825
+  epoch 100  loss=0.0233  val=0.830
+test acc = 0.8275
+  Saved checkpoint: IY029_mlp_v2_cv_iy011.pth
+  iy014: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/cv/IY029_static_test.pt...
+  epoch  20  loss=0.0172  val=0.965
+  epoch  40  loss=0.0379  val=0.959
+  epoch  60  loss=0.0054  val=0.962
+  epoch  80  loss=0.0039  val=0.960
+  epoch 100  loss=0.0018  val=0.960
+test acc = 0.9315
+  Saved checkpoint: IY029_mlp_v2_cv_iy014.pth
+
+=== T_ac ===
+  iy011: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/2_fold/t_ac/IY029_static_test.pt...
+  epoch  20  loss=0.3172  val=0.648
+  epoch  40  loss=0.1250  val=0.640
+  epoch  60  loss=0.0644  val=0.640
+  epoch  80  loss=0.0517  val=0.643
+  epoch 100  loss=0.0420  val=0.643
+test acc = 0.6335
+  Saved checkpoint: IY029_mlp_v2_t_ac_iy011.pth
+  iy014: 📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_train.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_val.pt...
+📂 Loading static data from /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/data/10_fold/t_ac/IY029_static_test.pt...
+  epoch  20  loss=0.0623  val=0.884
+  epoch  40  loss=0.0432  val=0.893
+  epoch  60  loss=0.0244  val=0.897
+  epoch  80  loss=0.0125  val=0.901
+  epoch 100  loss=0.0108  val=0.902
+test acc = 0.9200
+  Saved checkpoint: IY029_mlp_v2_t_ac_iy014.pth
+
+Done.
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_mlp_pairwise_v2_results.json
+          2-fold (IY029)  10-fold (IY029)  Mean
+Dataset                                        
+Baseline           0.742            0.839 0.790
+Mu                 0.934            0.996 0.965
+CV                 0.828            0.931 0.879
+T_ac               0.633            0.920 0.777
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_mlp_pairwise_v2_loss.png
+Saved /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY029/IY029_mlp_pairwise_v2_acc.png
