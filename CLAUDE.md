@@ -30,7 +30,7 @@
 - Skip this for simple, obvious fixes - don't over-engineer
 - Challenge your own work before presenting
 - Avoid hardcoding values in scripts
-- Provide sufficient in-line comments and docstrings for codes, functions and classes
+- Provide sufficient in-line, step-by-step comments and docstrings for codes, functions and classes
 - When writing code, descriptions (e.g., Jupyter notebooks or ELNs) or comments, be succinct and to the point, while ensuring clarity. Avoid unnecessary verbosity unless asked to, but do not sacrifice important details for brevity. Strive for a balance between conciseness and informativeness in all communications.
 
 ## 6. Autonomous Bug Fixing
