@@ -1,0 +1,67 @@
+exp_id,group_id,channel,condition,tf
+18360,1106,GFP,0.1% glucose,Mig2
+18360,1106,mCherry,0.1% glucose,Mig1
+18360,898,GFP,0.1% glucose,Msn2
+18360,898,mCherry,0.1% glucose,Mig1
+18360,900,GFP,0.1% glucose,Mig1
+18360,900,mCherry,0.1% glucose,Msn2
+18464,756,GFP,2% glucose (mock/steady),Sfp1
+18464,756,mCherry,2% glucose (mock/steady),Msn2
+18464,764,GFP,2% glucose (mock/steady),Sfp1
+18464,764,mCherry,2% glucose (mock/steady),Dot6
+18464,903,GFP,2% glucose (mock/steady),Dot6
+18464,903,mCherry,2% glucose (mock/steady),Msn2
+18589,1106,GFP,2% glucose (mock/steady),Mig2
+18589,1106,mCherry,2% glucose (mock/steady),Mig1
+18589,898,GFP,2% glucose (mock/steady),Msn2
+18589,898,mCherry,2% glucose (mock/steady),Mig1
+18589,900,GFP,2% glucose (mock/steady),Mig1
+18589,900,mCherry,2% glucose (mock/steady),Msn2
+19316,1344_6,GFP,2% glucose (mock/steady),Cat8
+19316,1344_6,mCherry,2% glucose (mock/steady),Msn2
+19316,1346_4,GFP,2% glucose (mock/steady),Nrg1
+19316,1346_4,mCherry,2% glucose (mock/steady),Msn2
+19316,1347,GFP,2% glucose (mock/steady),Rtg1
+19316,1347,mCherry,2% glucose (mock/steady),Msn2
+19330,1345,GFP,2% glucose (mock/steady),Mig2
+19330,1345,mCherry,2% glucose (mock/steady),Msn2
+19330,1348,GFP,2% glucose (mock/steady),Maf1
+19330,1348,mCherry,2% glucose (mock/steady),Msn2
+19330,1349,GFP,2% glucose (mock/steady),Tod6
+19330,1349,mCherry,2% glucose (mock/steady),Msn2
+19391,1345,GFP,2% galactose,Mig2
+19391,1345,mCherry,2% galactose,Msn2
+19391,1348,GFP,2% galactose,Maf1
+19391,1348,mCherry,2% galactose,Msn2
+19391,1349,GFP,2% galactose,Tod6
+19391,1349,mCherry,2% galactose,Msn2
+19392,1106,GFP,0.01% galactose,Mig2
+19392,1106,mCherry,0.01% galactose,Mig1
+19392,898,GFP,0.01% galactose,Msn2
+19392,898,mCherry,0.01% galactose,Mig1
+19392,900,GFP,0.01% galactose,Mig1
+19392,900,mCherry,0.01% galactose,Msn2
+19394,1345,GFP,0.1% glucose,Mig2
+19394,1345,mCherry,0.1% glucose,Msn2
+19394,1348,GFP,0.1% glucose,Maf1
+19394,1348,mCherry,0.1% glucose,Msn2
+19394,1349,GFP,0.1% glucose,Tod6
+19394,1349,mCherry,0.1% glucose,Msn2
+19554,756,GFP,0.01% glucose,Sfp1
+19554,756,mCherry,0.01% glucose,Msn2
+19554,900,GFP,0.01% glucose,Mig1
+19554,900,mCherry,0.01% glucose,Msn2
+19554,903,GFP,0.01% glucose,Dot6
+19554,903,mCherry,0.01% glucose,Msn2
+19566,1344,GFP,0.1% glucose,Cat8
+19566,1344,mCherry,0.1% glucose,Msn2
+19566,1346,GFP,0.1% glucose,Nrg1
+19566,1346,mCherry,0.1% glucose,Msn2
+19566,1347,GFP,0.1% glucose,Rtg1
+19566,1347,mCherry,0.1% glucose,Msn2
+20213,1344,GFP,0.01% glucose,Cat8
+20213,1344,mCherry,0.01% glucose,Msn2
+20213,1346,GFP,0.01% glucose,Nrg1
+20213,1346,mCherry,0.01% glucose,Msn2
+20213,1347,GFP,0.01% glucose,Rtg1
+20213,1347,mCherry,0.01% glucose,Msn2
