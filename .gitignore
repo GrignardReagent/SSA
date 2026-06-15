@@ -5,6 +5,8 @@ experiments/EXP-25-IY011/data/IY011_synth_shard*
 julia/simulation/tests/test_telegraph_fixed_stats_results/*.png
 **/*_post_media_switch.tsv
 experiments/EXP-25-IY008/2_wela_data_analysis/**/*.tsv
+experiments/EXP-25-IY008/**/TF_conditions_overviews/*.png
+experiments/EXP-25-IY008/**/trace_overviews/*.png
 experiments/EXP-25-IY011/data/combined.npz
 experiments/EXP-26-IY029/embeddings_cache/*
 
@@ -38,3 +40,4 @@ src/*/*.egg-info/*
 .codex/
 .pytest_cache/
 tasks/
+
