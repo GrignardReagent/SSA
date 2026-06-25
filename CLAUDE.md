@@ -24,7 +24,7 @@
 - Ask yourself: "Would a staff engineer approve this?"
 - Run tests, check logs, demonstrate correctness
 
-## 5. Demand Elegance (Balanced)
+## 5. Demand Elegance
 - For non-trivial changes: pause and ask "is there a more elegant way?"
 - If a fix feels hacky: "Knowing everything I know now, implement the elegant solution"
 - Skip this for simple, obvious fixes - don't over-engineer
@@ -60,7 +60,9 @@ Always use the micromamba `stochastic_sim` environment unless explicitly stated 
 
 # Common Commands
 
-Use ``simulate_telegraph_model`` from ``simulation.julia_simulate_telegraph_model`` to simulate time series data from the telegraph model. 
+Use ``simulate_telegraph_model`` from ``simulation.julia_simulate_telegraph_model`` to simulate time series data from the telegraph model.
+
+For codes that are likely to be used again and again, keep it within an appropriate location in the `src/` folder instead of re-creating the same function in multiple notebooks and scripts. Before creating a new function or class, check if it already exists in `src/` or if there is a similar function that can be modified to suit your needs. Do NOT create similar functions.
 
 # Data Preprocessing
 
