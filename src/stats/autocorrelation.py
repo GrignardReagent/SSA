@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
-from utils.data_processing import _ensure_numpy, _safe_slice
+from utils.processing.helpers import _ensure_numpy, _safe_slice
 
 ############# Autocorrelation and Cross-correlation ##############
 def autocrosscorr(

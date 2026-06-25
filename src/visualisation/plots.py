@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA
 from utils.steady_state import find_steady_state
-from utils.data_processing import _safe_slice
+from utils.processing.helpers import _safe_slice
 from stats.autocorrelation import autocrosscorr
 
 def _as_trajectory_frame(data, label=None):

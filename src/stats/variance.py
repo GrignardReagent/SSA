@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from utils.steady_state import find_steady_state
-from utils.data_processing import _ensure_numpy, _safe_slice
+from utils.processing.helpers import _ensure_numpy, _safe_slice
 
 def calculate_variance(trajectories, parameter_set, use_steady_state=True):
     """
