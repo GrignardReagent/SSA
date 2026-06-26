@@ -199,6 +199,54 @@ FLUORESCENCE_CHANNELS = (
     "tdTomatoFRET",
 )
 
+# All proteins confirmed as TF/nuclear-localisation reporters in Swain-lab experiments.
+# Drawn from IY008 training metadata (143 confirmed TFs) plus extras seen in IY026.
+KNOWN_TFS: frozenset[str] = frozenset({
+    # IY008 confirmed TF localisation training data
+    "Abf1", "Abf2", "Abf3", "Ace2", "Adr1", "Afg2", "Arg80", "Arg81", "Aro80",
+    "Asg1", "Ash1", "Azf1", "Bas1", "Cbf1", "Cha4", "Cin5", "Cst6", "Cup2", "Cup9",
+    "Dal81", "Def1", "Dig1", "Ecm22", "Ert1", "Fhl1", "Fkh1", "Fkh2", "Fzf1",
+    "Gcn4", "Gcr1", "Gis1", "Gis4", "Gsh1", "Gts1", "Gzf1", "Gzf3", "Hac1", "Hal9",
+    "Hap2", "Hap3", "Hap5", "Hcm1", "Hcs1", "Hsc82", "Ino2", "Ino4", "Ixr1",
+    "Leu3", "Lys14", "Mac1", "Mac10", "Mbp1", "Mcm1", "Met28", "Met31", "Met32",
+    "Met4", "Mig3", "Mip6", "Mot2", "Mot3", "Msn1", "Msn2", "Ndd1", "Nhp10",
+    "Nhp6B", "Opi1", "Pan3", "Pbs2", "Pdr1", "Pdr3", "Pdr8", "Phd1", "Pho2", "Pip2",
+    "Rbh1", "Rds2", "Reb1", "Rei1", "Rfx1", "Rgm1", "Rgt1", "Rlm1", "Rme1", "Rox1",
+    "Rph1", "Rpn4", "Rsc3", "Rsf2", "Rxf1", "Sac7", "Sch9", "Sfa1", "Sfl1", "Skn7",
+    "Snt2", "Sok2", "Spt15", "Spt2", "Srd1", "Ssa1", "Ssk1", "Sst2", "Stb1", "Stb3",
+    "Stb5", "Ste12", "Stp1", "Stp2", "Stp3", "Stp4", "Sum1", "Sut1", "Swi4", "Swi5",
+    "Swi6", "Tbf1", "Tbs1", "Tea1", "Tec1", "Tho2", "Ths1", "Tye7", "Uga3", "Ume1",
+    "Ume3", "Ume6", "Upc2", "Whi3", "Xbp1", "Yap3", "Yap5", "Yap7", "Yhp1", "Yox1",
+    "Ypk1", "Yrm1", "Yrr1", "Zap1",
+    # Additional TFs / nuclear-localisation reporters seen in IY026 data
+    "Mig1", "Mig2", "Msn4", "Dot6", "Sfp1", "Hog1", "Crz1", "Yap1", "Whi5",
+    "Cat8", "Nrg1", "Rtg1", "Maf1", "Tod6", "Srl1",
+    "Gal3", "Gal4", "Gal7", "Gal80",
+    "Snf1", "Bcy1", "Yak1",   # signaling proteins with documented localisation dynamics
+    "Bub1", "Mad1",            # kinetochore proteins tracked for localisation
+})
+
+# Fluorescently-tagged proteins that are NOT TFs / localisation reporters.
+# Used to downgrade experiments that image only non-TF markers.
+KNOWN_NON_TF_MARKERS: frozenset[str] = frozenset({
+    # Histones / chromatin (mark nucleus but are not TFs)
+    "Htb2", "Htb1", "Hta2", "Hta1",
+    # Organelle markers
+    "Vph1",   # vacuolar H⁺-ATPase
+    "Cox4", "Cox5",  # mitochondria
+    "Pex14",  # peroxisome
+    # Bud-neck / SPB / cell-cycle structural proteins
+    "Bud3", "Lte1", "Cdc14",
+    # RNA-binding / stress-granule proteins
+    "Pab1", "Pub1", "Ngr1", "Edc1",
+    # Metabolic enzymes from protein-aggregation screens (non-TF)
+    "Ade6", "Vip1", "Rse1", "Iki3", "Caf130", "Gdh2", "She4", "Amd1", "Pat1",
+    "Gln1", "Elp2", "Ltv1", "Sro9", "Cpr6", "Hsp42", "Cdc123", "Scd6", "Tmt1",
+    "Sbp1", "Nmd4", "Met14", "Lsm1", "Fas2", "Slh1", "Aro1", "Kem1", "Ura7",
+    # Signalling (kinases / GEFs) that are clearly not localisation reporters
+    "Sip1", "Sip2", "Gal83",  # Snf1 complex components (tracked as degradation targets)
+})
+
 # Ordered by specificity; first match wins
 _TIMEPOINTS_PATTERNS = [
     re.compile(r'number\s+of\s+timepoints\s*[=:]\s*(\d+)', re.IGNORECASE),
@@ -239,6 +287,21 @@ _GROUP_TF_PATTERN = re.compile(
 # Strains are sometimes referenced in log text as "YST_1490" (lab naming convention).
 # \b ensures we don't match mid-word; (\d+) captures just the numeric part.
 _YST_STRAIN_PATTERN = re.compile(r'\bYST_(\d+)\b', re.IGNORECASE)
+
+# Compiled once at import: matches any KNOWN_TFS name anywhere in a string (case-insensitive).
+# Sorted longest-first so e.g. "Msn4" is preferred over "Msn" when both would match.
+_KNOWN_TF_PATTERN: re.Pattern = re.compile(
+    r'\b(?:' + '|'.join(re.escape(tf) for tf in sorted(KNOWN_TFS, key=len, reverse=True)) + r')\b',
+    re.IGNORECASE,
+)
+
+# Matches "ProteinName-FluorescentTag" constructs in free-text log entries,
+# e.g. "Msn2-GFP", "Dot6-mCherry2", "Whi5-YFP".
+_TAGGED_PROTEIN_PATTERN: re.Pattern = re.compile(
+    r'\b([A-Za-z][A-Za-z0-9]{1,8})\s*[-–]\s*'
+    r'(?:GFP2?|mCherry2?|YFP|CFP|mKO2|tdTomato|mTurquoise2?|RFP|mNeonGreen|Venus|Citrine|mKate|AID)',
+    re.IGNORECASE,
+)
 
 # The "Experiment details:" line runs until the next section separator ("---...---")
 # or the start of "Acquisition settings". re.DOTALL lets . match newlines so
@@ -309,6 +372,60 @@ def lookup_tfs_from_strains(strain_ids: list[str], db: dict[str, list[str]]) -> 
     for sid in strain_ids:
         tfs.extend(db.get(sid, []))  # returns [] if strain not in db
     return _dedupe_preserve_order(tfs)
+
+
+def normalize_tf_name(name: str) -> str:
+    """Normalise a gene name to standard yeast title-case (e.g. MSN2 → Msn2, REI1 → Rei1)."""
+    if not name or name.upper() in ("UNKNOWN", ""):
+        return name
+    # First letter uppercase, remaining letters lowercase; digits are preserved.
+    return name[0].upper() + name[1:].lower()
+
+
+def parse_tf_from_dataset_name(dataset_name: str) -> list[str]:
+    """Extract known TF names from an OMERO dataset name string.
+
+    Handles common Swain-lab naming patterns:
+    - CamelCase concatenation: ``Msn2Dot6Mig1``  (split at digit→uppercase junctions)
+    - Underscore tokens:       ``Switch_2to0pGlc_Msn2_dIra12_00``
+    - Uppercase gene tokens:   ``GAL3_MAN_GAL_00``
+
+    Strategy: split name on ``_``, ``-``, and spaces to get coarse tokens; for each
+    token attempt a direct (case-insensitive) lookup first, then re-segment by
+    extracting CamelCase sub-words ([A-Z][a-z0-9]+) and look those up individually.
+    """
+    tf_lookup = {tf.lower(): tf for tf in KNOWN_TFS}
+    found = []
+    for token in re.split(r'[_\-\s]', dataset_name):
+        if not token:
+            continue
+        # Direct lookup — handles plain tokens like "Msn2", "GAL3", "Mig1"
+        if token.lower() in tf_lookup:
+            found.append(tf_lookup[token.lower()])
+            continue
+        # CamelCase segmentation — splits "Msn2Dot6Mig1" → ["Msn2", "Dot6", "Mig1"].
+        # Pattern [A-Z][a-z0-9]+ matches one uppercase letter followed by lowercase/digits,
+        # which is the standard yeast gene-name segment (Msn, Dot, Mig + trailing digits).
+        for sub in re.findall(r'[A-Z][a-z0-9]+', token):
+            if sub.lower() in tf_lookup:
+                found.append(tf_lookup[sub.lower()])
+    return _dedupe_preserve_order(found)
+
+
+def parse_tf_from_strain_text(log_text: str) -> list[str]:
+    """Extract known TF names from 'Protein-FluorescentTag' constructs in log text.
+
+    Scans for patterns like ``Msn2-GFP``, ``Dot6-mCherry``, filters by KNOWN_TFS.
+    This supplements group-label and strain-DB lookups for older free-text logs.
+    """
+    tf_lookup = {tf.lower(): tf for tf in KNOWN_TFS}
+    found = []
+    for m in _TAGGED_PROTEIN_PATTERN.finditer(log_text):
+        protein = normalize_tf_name(m.group(1))
+        canonical = tf_lookup.get(protein.lower())
+        if canonical:
+            found.append(canonical)
+    return _dedupe_preserve_order(found)
 
 
 _CONDITION_SYSTEM_PROMPT = """\
@@ -390,41 +507,52 @@ Return only the comma-separated list or UNKNOWN — no other text.
 
 def parse_tf_from_groups(
     log_text: str,
+    dataset_name: str = "",
     strain_ids: list[str] | None = None,
     strain_db: dict[str, list[str]] | None = None,
     client: "openai.OpenAI | None" = None,
     model: str = MODEL,
 ) -> list[str]:
-    """Identify TF names imaged in the experiment using a three-level fallback.
+    """Identify TF names imaged in the experiment using a five-level fallback.
 
-    Strategy:
-    1. Regex — extract TF names directly from Batgirl group labels like
-       "group: ch1_REI1". Returns all unique TFs found across every group line.
-    2. Database lookup — if no TF found via regex, map each strain_id against
-       strain_tf_database.csv (e.g. group_id 898 → Msn2 / Mig1).
-    3. LLM fallback — if both above give nothing, send the first 1000 chars of
-       the log to the LLM and ask it to identify the TFs.
-    4. Last resort — returns ["UNKNOWN"] if all three paths fail.
+    Priority (highest → lowest confidence):
+    1. Batgirl group labels — ``group: ch1_REI1`` → deterministic, no ambiguity.
+    2. Strain DB (strain_tf_database.csv) — numeric group IDs mapped to TF names.
+    3. Dataset name — extract KNOWN_TFS names from the OMERO dataset name string.
+    4. Tagged-protein patterns — ``Protein-GFP`` / ``Protein-mCherry`` in log text,
+       filtered against KNOWN_TFS.
+    5. LLM fallback — only when all deterministic paths yield nothing.
     """
-    # Step 1: group-label regex — fastest and most reliable for new Batgirl logs
-    tfs = _dedupe_preserve_order(_GROUP_TF_PATTERN.findall(log_text))
-    if tfs:
-        return tfs
+    # Step 1: Batgirl group-label regex — normalise to title-case (REI1 → Rei1)
+    raw_tfs = _GROUP_TF_PATTERN.findall(log_text)
+    if raw_tfs:
+        return _dedupe_preserve_order(normalize_tf_name(tf) for tf in raw_tfs)
 
-    # Step 2: strain database lookup — for older experiments where the group/strain ID
-    # is a plain number (e.g. 898) rather than an explicit TF name in the label
+    # Step 2: strain DB lookup — authoritative source for older numeric group IDs
     if strain_ids and strain_db:
         tfs = lookup_tfs_from_strains(strain_ids, strain_db)
         if tfs:
             return tfs
 
-    # Step 3: LLM fallback — free-text logs where neither regex nor the database
-    # can determine the TF; send the log excerpt for the LLM to interpret
+    # Step 3: dataset name parsing — many names encode the TF(s) explicitly,
+    # e.g. "Ramp_2to0pGlc_Msn2Dot6Mig1_00" or "GAL3_MAN_GAL_00"
+    if dataset_name:
+        tfs = parse_tf_from_dataset_name(dataset_name)
+        if tfs:
+            return tfs
+
+    # Step 4: tagged-protein patterns in log text — "Protein-GFP" / "Protein-mCherry"
+    if log_text:
+        tfs = parse_tf_from_strain_text(log_text)
+        if tfs:
+            return tfs
+
+    # Step 5: LLM fallback — only when all deterministic paths are exhausted
     if client is not None:
         try:
             response = client.chat.completions.create(
                 model=model,
-                max_completion_tokens=60,  # TF list is short
+                max_completion_tokens=60,
                 timeout=OPENAI_TIMEOUT_SECONDS,
                 messages=[
                     {"role": "system", "content": _TF_SYSTEM_PROMPT},
@@ -433,12 +561,10 @@ def parse_tf_from_groups(
             )
             llm_tfs = response.choices[0].message.content.strip()
             if llm_tfs and llm_tfs.upper() != "UNKNOWN":
-                # Parse the comma-separated response into a deduplicated list
                 return _dedupe_preserve_order(t.strip() for t in llm_tfs.split(",") if t.strip())
         except Exception:
-            pass  # LLM call failed; fall through to last resort
+            pass
 
-    # Step 4: last resort
     return ["UNKNOWN"]
 
 
@@ -596,6 +722,98 @@ def parse_point_groups(text: str) -> list[str]:
 # LLM classification
 # ---------------------------------------------------------------------------
 
+_TF_LOC_SYSTEM_PROMPT = """\
+You are a lab data curator for Swain-lab yeast live-cell microscopy experiments.
+Determine whether this experiment is a TRANSCRIPTION FACTOR (TF) LOCALISATION experiment.
+
+A TF localisation experiment:
+- Tags one or more transcription factors (or nuclear-localisation reporters) with a fluorescent protein (GFP, mCherry, …)
+- Monitors the nuclear-vs-cytoplasmic distribution of the TF over time in response to a stimulus
+- Examples of TFs: Msn2, Msn4, Mig1, Dot6, Sfp1, Hog1, Crz1, Yap1, Whi5, Opi1, Swi4, etc.
+
+NOT a TF localisation experiment:
+- Organelle markers only (Vph1 for vacuole, Cox4 for mitochondria, Pex14 for peroxisome)
+- Histone markers (Htb2-GFP, Hta2-mCherry) — these mark the nucleus but are not TFs
+- Stress-granule / P-body markers (Pab1-GFP, Edc1-GFP)
+- pH or metabolite sensors (pHluorin, NADH)
+- Morphology / bud-neck markers (Bud3, Lte1)
+- Protein aggregation screens (non-TF metabolic enzymes)
+- Pure brightfield or structural imaging
+
+Respond ONLY in this exact format (two lines, no extra text):
+TF_LOCALISATION: YES or NO
+REASON: one sentence — name the TF(s) being tracked, or explain why this is not TF localisation
+"""
+
+
+def classify_tf_localisation(
+    tf_names: list[str],
+    dataset_name: str,
+    metadata_text: str | None,
+    strain_ids: list[str],
+    strain_db: dict[str, list[str]],
+    client: "openai.OpenAI | None",
+    model: str = MODEL,
+) -> tuple[str, str]:
+    """Determine whether the experiment tracks TF localisation.
+
+    Returns (is_tf_loc, reason) where is_tf_loc is 'YES', 'NO', or 'UNKNOWN'.
+
+    Priority:
+    1. Strain IDs in strain_tf_database → YES (highest confidence).
+    2. All detected proteins are in KNOWN_TFS → YES.
+    3. At least one detected protein is in KNOWN_NON_TF_MARKERS and NONE in KNOWN_TFS → NO.
+    4. LLM with a targeted prompt — only when deterministic paths are inconclusive.
+    """
+    real_tfs = [tf for tf in tf_names if tf.lower() not in ("unknown", "")]
+
+    # Step 1: strain DB — authoritative; these group IDs were specifically mapped to TFs
+    db_tfs = lookup_tfs_from_strains(strain_ids, strain_db)
+    if db_tfs:
+        return "YES", f"Strain(s) {'; '.join(strain_ids[:4])} in TF database → {', '.join(db_tfs)}"
+
+    if real_tfs:
+        tf_lower = {tf.lower() for tf in KNOWN_TFS}
+        non_tf_lower = {m.lower() for m in KNOWN_NON_TF_MARKERS}
+
+        known_tf_hits = [tf for tf in real_tfs if tf.lower() in tf_lower]
+        non_tf_hits = [tf for tf in real_tfs if tf.lower() in non_tf_lower]
+
+        # Step 2: at least one protein is a confirmed TF → YES (TF channel(s) present)
+        if known_tf_hits:
+            return "YES", f"Known TF(s) detected: {', '.join(known_tf_hits)}"
+
+        # Step 3: all detected proteins are non-TF markers → NO
+        if non_tf_hits and len(non_tf_hits) == len(real_tfs):
+            return "NO", f"Only non-TF markers detected: {', '.join(non_tf_hits)}"
+
+    # Step 4: LLM fallback
+    if client is not None and (metadata_text or dataset_name):
+        excerpt = (metadata_text or "")[:1500]
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                max_completion_tokens=80,
+                timeout=OPENAI_TIMEOUT_SECONDS,
+                messages=[
+                    {"role": "system", "content": _TF_LOC_SYSTEM_PROMPT},
+                    {"role": "user", "content": f"Dataset name: {dataset_name}\n\n{excerpt}"},
+                ],
+            )
+            llm_text = response.choices[0].message.content.strip()
+            is_tf_loc, reason = "UNKNOWN", ""
+            for line in llm_text.splitlines():
+                if line.startswith("TF_LOCALISATION:"):
+                    is_tf_loc = line.split(":", 1)[1].strip()
+                elif line.startswith("REASON:"):
+                    reason = line.split(":", 1)[1].strip()
+            return is_tf_loc, reason
+        except Exception:
+            pass
+
+    return "UNKNOWN", "Insufficient metadata to determine TF localisation"
+
+
 # The LLM is only asked about fluorescence — timepoints and strain are extracted by code above.
 SYSTEM_PROMPT = """\
 You are a lab data curator analysing microscopy experiment metadata from the
@@ -652,14 +870,18 @@ def classify(
     condition = parse_condition(metadata_text, client=client, model=model) if metadata_text else ""
     timepoints = parse_timepoints(metadata_text) if metadata_text else None
     strain_ids = parse_strain_ids(metadata_text) if metadata_text else []
-    # parse_tf_from_groups handles all three fallback levels internally
+
+    # TF identification: five-level fallback (group-label → strain DB → dataset name
+    # → tagged-protein patterns → LLM). LLM is last resort only.
     tf_identity = parse_tf_from_groups(
         metadata_text or "",
+        dataset_name=dataset_name,
         strain_ids=strain_ids,
         strain_db=strain_db,
         client=client,
         model=model,
     )
+
     parsed_channels = parse_channels(metadata_text) if metadata_text else []
     parsed_fluorescence_channels = fluorescence_channels(parsed_channels)
 
@@ -677,7 +899,7 @@ def classify(
             f"CHANNELS: {', '.join(parsed_fluorescence_channels)}"
         )
     else:
-        # --- LLM: fluorescence detection only when deterministic parsing is inconclusive ---
+        # LLM for fluorescence detection only when deterministic parsing is inconclusive
         excerpt = build_metadata_excerpt(metadata)
         user_msg = USER_TEMPLATE.format(
             dataset_id=dataset_id,
@@ -695,7 +917,7 @@ def classify(
         )
         llm_text = response.choices[0].message.content.strip()
 
-    # Parse the three structured lines from the LLM response
+    # Parse the three structured lines from the fluorescence LLM response
     fluorescence, reason, channels = "UNKNOWN", "", ""
     for line in llm_text.splitlines():
         if line.startswith("FLUORESCENCE:"):
@@ -705,8 +927,7 @@ def classify(
         elif line.startswith("CHANNELS:"):
             channels = line.split(":", 1)[1].strip()
 
-    # Final classification: YES only if fluorescence detected AND timepoints > 1.
-    # Timepoints come from regex, not the LLM, to avoid hallucination.
+    # Fluorescence time-lapse: YES only if fluorescence detected AND timepoints > 1
     has_fluorescence = fluorescence == "YES" or bool(parsed_fluorescence_channels)
     is_timelapse = timepoints is not None and timepoints > 1
     classification = "YES" if (has_fluorescence and is_timelapse) else "NO"
@@ -715,15 +936,29 @@ def classify(
     if not reason and parsed_fluorescence_channels:
         reason = "Fluorescence channel(s) found in parsed acquisition metadata."
 
+    # TF localisation classification: separate from fluorescence classification.
+    # Only runs deterministic + LLM check; does not require a second OMERO call.
+    is_tf_loc, tf_loc_reason = classify_tf_localisation(
+        tf_names=tf_identity,
+        dataset_name=dataset_name,
+        metadata_text=metadata_text,
+        strain_ids=strain_ids,
+        strain_db=strain_db or {},
+        client=client,
+        model=model,
+    )
+
     return {
         "dataset_id": dataset_id,
         "dataset_name": dataset_name,
         "has_log": metadata.has_metadata,
         "condition": condition,
-        "strain_id": ";".join(strain_ids),  # semicolon-separated so commas don't break CSV parsing
+        "strain_id": ";".join(strain_ids),
         "tf_identity": ";".join(tf_identity),
         "timepoints": timepoints if timepoints is not None else "",
-        "classification": classification,
+        "classification": classification,               # fluorescence time-lapse
+        "is_tf_localisation": is_tf_loc,               # NEW: TF localisation YES/NO/UNKNOWN
+        "tf_localisation_reason": tf_loc_reason,        # NEW
         "reason": reason if not metadata.truncated_files else f"{reason} Metadata truncated: {metadata.truncated_files}.",
         "channels": channels,
         "raw_llm_response": llm_text,
@@ -741,6 +976,8 @@ def error_result(dataset_id: int, dataset_name: str, exc: Exception) -> dict:
         "tf_identity": "",
         "timepoints": "",
         "classification": "ERROR",
+        "is_tf_localisation": "UNKNOWN",
+        "tf_localisation_reason": "",
         "reason": f"{type(exc).__name__}: {exc}",
         "channels": "",
         "raw_llm_response": "",
@@ -833,7 +1070,9 @@ def main() -> None:
             "strain_id",
             "tf_identity",
             "timepoints",
-            "classification",
+            "classification",        # fluorescence time-lapse (YES/NO/ERROR)
+            "is_tf_localisation",    # TF localisation experiment (YES/NO/UNKNOWN)
+            "tf_localisation_reason",
             "reason",
             "channels",
             "raw_llm_response",
@@ -864,10 +1103,12 @@ def main() -> None:
                 csv_file.flush()  # write through after each row so results survive a crash mid-run
 
                 log.info(
-                    f"  -> {result['classification']} | tps: {result['timepoints']} "
-                    f"| condition: {result['condition']} | strain: {result['strain_id']} "
-                    f"| tf: {result['tf_identity']} | channels: {result['channels']} "
-                    f"| {result['reason']}"
+                    f"  -> fluor: {result['classification']} "
+                    f"| tf_loc: {result['is_tf_localisation']} "
+                    f"| tps: {result['timepoints']} "
+                    f"| tf: {result['tf_identity']} "
+                    f"| condition: {result['condition']} "
+                    f"| channels: {result['channels']}"
                 )
 
                 # Polite pause to avoid hammering the LLM API
