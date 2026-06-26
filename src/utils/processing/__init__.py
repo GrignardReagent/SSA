@@ -20,15 +20,16 @@ pipeline
 
 from utils.processing.helpers import _ensure_numpy, _safe_slice, _return_no_label_df
 from utils.processing.imputation import fill_nans, handle_missing_values
-from utils.processing.normalisation import batch_wise_normalise
+from utils.processing.feature_frames import fit_fill_feature_frame
+from utils.processing.normalisation import batch_wise_normalise, instance_norm_np
 from utils.processing.balancing import balance_classes, balance_by_label
 from utils.processing.labelling import add_binary_labels, add_nearest_neighbour_labels
 from utils.processing.pipeline import prepare_dataset
 
 __all__ = [
     "_ensure_numpy", "_safe_slice", "_return_no_label_df",
-    "fill_nans", "handle_missing_values",
-    "batch_wise_normalise",
+    "fill_nans", "handle_missing_values", "fit_fill_feature_frame",
+    "batch_wise_normalise", "instance_norm_np",
     "balance_classes", "balance_by_label",
     "add_binary_labels", "add_nearest_neighbour_labels",
     "prepare_dataset",

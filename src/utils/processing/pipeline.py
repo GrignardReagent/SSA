@@ -74,13 +74,16 @@ def prepare_dataset(
     lbl_iter = iter(label_strs)
 
     for ts in ts_raw:
+        # imputation
         ts_imp = fill_nans(np.asarray(ts, dtype=float))
         for row in ts_imp:
             lbl = next(lbl_iter)
+            # filtering, keep only rows whose label is in kept_classes
             if lbl in kept_set:
                 flat_series.append(row)
                 flat_lbls.append(lbl)
-
+    
+    # truncate to shortest common length
     min_T = min(len(s) for s in flat_series)
     X_all = np.vstack([s[:min_T] for s in flat_series])
     y_all = np.array([label_to_int[l] for l in flat_lbls])
@@ -90,7 +93,8 @@ def prepare_dataset(
         f"{dataset_name}: {X_all.shape[0]} cells × {min_T} tp, "
         f"{n_cls} classes, NaN remaining: {np.isnan(X_all).sum()}"
     )
-
+    
+    # balance classes to the minority count
     X_bal, y_bal = balance_classes(X_all, y_all, random_state=random_state)
     min_count = int(np.bincount(y_bal).min())
     print(f"  Balancing to {min_count} cells/class")

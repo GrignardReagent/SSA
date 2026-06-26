@@ -38,3 +38,9 @@ def batch_wise_normalise(X: np.ndarray) -> np.ndarray:
     mean = X.mean(axis=0, keepdims=True)
     std = X.std(axis=0, keepdims=True) + 1e-8
     return (X - mean) / std
+
+
+def instance_norm_np(x: np.ndarray) -> np.ndarray:
+    """Z-score one trajectory using its own mean and standard deviation."""
+    x = np.asarray(x)
+    return (x - np.mean(x)) / (np.std(x) + 1e-8)

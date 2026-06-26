@@ -2,7 +2,9 @@
 
 import torch
 import torch.nn as nn
-from training.eval import _compute_loss_and_accuracy
+from torch.utils.data import DataLoader, TensorDataset
+
+from training.eval import evaluate_model, _compute_loss_and_accuracy
 
 '''
 Modular test: _compute_loss_and_accuracy function used for evaluate_model()
@@ -118,3 +120,28 @@ def test_bce_invalid_shape():
         assert False, "Should raise ValueError"
     except ValueError:
         pass
+
+
+def test_evaluate_model_pairwise_batch():
+    """Three tensor batches with vector labels are pairwise inputs, not masks."""
+
+    class PairwiseModel(nn.Module):
+        def forward(self, x1, x2):
+            score = (x1 + x2).sum(dim=1)
+            return torch.stack([-score, score], dim=1)
+
+    x1 = torch.tensor([[1.0, 1.0], [-1.0, -1.0], [2.0, 0.5], [-0.5, -0.5]])
+    x2 = torch.zeros_like(x1)
+    y = torch.tensor([1, 0, 1, 0])
+    loader = DataLoader(TensorDataset(x1, x2, y), batch_size=2)
+
+    loss, acc = evaluate_model(
+        PairwiseModel(),
+        loader,
+        loss_fn=nn.CrossEntropyLoss(),
+        device=torch.device("cpu"),
+        verbose=False,
+    )
+
+    assert loss is not None
+    assert acc == 1.0

@@ -7,6 +7,28 @@ from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 from torch.utils.data import TensorDataset, DataLoader
 
+def to_tensor(data, labels):
+    """Convert feature and label arrays to a float/long TensorDataset."""
+    return TensorDataset(
+        torch.tensor(data, dtype=torch.float32),
+        torch.tensor(labels, dtype=torch.long),
+    )
+
+
+def get_data_arrays(loader):
+    """Concatenate DataLoader batches into numpy arrays without feature flattening."""
+    X_list = []
+    y_list = []
+
+    for X_batch, y_batch in loader:
+        X_list.append(X_batch.cpu().numpy().squeeze())
+        y_list.append(y_batch.cpu().numpy().ravel())
+
+    if not X_list:
+        return None, None
+    return np.concatenate(X_list), np.concatenate(y_list)
+
+
 def load_and_split_data(mRNA_traj_file, split_test_size=0.2, split_val_size=None, split_random_state=42):
     """
     Loads the mRNA trajectories dataset, extracts features and labels,

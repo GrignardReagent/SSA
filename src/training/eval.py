@@ -17,6 +17,7 @@ def evaluate_model(
     Supports batches shaped:
       - (X, y)
       - (X, y, mask)  -> passed as src_key_padding_mask=mask
+      - (X1, X2, y)   -> passed as model(X1, X2)
     Handles BCE/BCEWithLogits and CrossEntropy.
     """
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -25,29 +26,15 @@ def evaluate_model(
     total_loss, correct, total = 0.0, 0, 0
     
     for batch in test_loader:
-        if len(batch) == 2: # handle (X, y)
-            X_batch, y_batch = batch
-            mask = None
-            
-        elif len(batch) >= 3 and isinstance(batch[2], torch.Tensor): # handle (X, y, mask)
-            X_batch, y_batch, mask = batch[0], batch[1], batch[2]
-            
-        elif len(batch) >=3: # handle (X1, X2, y) - pairwise
-            X1_batch, X2_batch, y_batch = batch[0], batch[1], batch[2]
-            X_batch = (X1_batch.to(device), X2_batch.to(device))
-            y_batch = y_batch.to(device)
-            mask = None
-        
-        else:
-            raise ValueError("Batch must be (X,y) or (X,y,mask, ...).")
-        
-        X_batch, y_batch = X_batch.to(device), y_batch.to(device)
-        outputs = model(X_batch) if mask is None else model(X_batch, src_key_padding_mask=mask.to(device)) 
-        
+        outputs, y_batch = _handle_different_batch_shapes(model, batch, device)
         loss, preds, tgt = _compute_loss_and_accuracy(outputs, y_batch, loss_fn)
-        total_loss += loss.item() * X_batch.size(0)
+        batch_size = tgt.size(0)
+        total_loss += loss.item() * batch_size
         correct += (preds == tgt).sum().item()
-        total += tgt.size(0)
+        total += batch_size
+
+    if total == 0:
+        raise ValueError("Cannot evaluate an empty DataLoader.")
 
     loss = (total_loss / total) if (loss_fn and total > 0) else None
     acc = correct / total
@@ -60,7 +47,6 @@ def evaluate_model(
 def _handle_different_batch_shapes(
     model: torch.nn.Module,
     batch,
-    loss_fn: torch.nn.Module,
     device: torch.device,
 ):
     """
@@ -74,24 +60,22 @@ def _handle_different_batch_shapes(
         outputs: model outputs tensor
         y_batch: target tensor
     """
-    # (X, y)
     if len(batch) == 2:
         X_batch, y_batch = batch
         X_batch, y_batch = X_batch.to(device), y_batch.to(device)
         outputs = model(X_batch)
 
-    # 3-item batch: either (X, y, mask) or (X1, X2, y)
-    elif len(batch) == 3:
+    elif len(batch) >= 3:
         a, b, c = batch
 
-        # Heuristic: if third tensor looks like a mask (bool / byte and 2D), treat as (X, y, mask)
+        # A padding mask is a boolean/byte tensor with shape (batch, time).
+        # Otherwise a 3-item batch is treated as pairwise: (X1, X2, y).
         if isinstance(c, torch.Tensor) and c.dtype in (torch.bool, torch.uint8) and c.dim() == 2:
             X_batch, y_batch, mask = a, b, c
             X_batch, y_batch = X_batch.to(device), y_batch.to(device)
             mask = mask.to(device)
             outputs = model(X_batch, src_key_padding_mask=mask)
         else:
-            # Assume pairwise batch: (X1, X2, y)
             X1_batch, X2_batch, y_batch = a, b, c
             X1_batch, X2_batch, y_batch = X1_batch.to(device), X2_batch.to(device), y_batch.to(device)
             outputs = model(X1_batch, X2_batch)
@@ -155,14 +139,17 @@ def _compute_loss_and_accuracy(
         if y_batch_mod.dim() == 1:
             y_batch_mod = y_batch_mod.unsqueeze(1)
 
-        # Convert model outputs → probabilities
-        # Case A: model outputs (N,) or (N,1) single logit → use sigmoid
+        # BCELoss expects probabilities, so use model outputs directly.
         if outputs_mod.dim() == 1 or (outputs_mod.dim() == 2 and outputs_mod.size(1) == 1):
-            probs = torch.sigmoid(outputs_mod.view(-1, 1))      # (N,1)
+            probs = outputs_mod.view(-1, 1)      # (N,1)
 
-        # Case B: model outputs (N,2) → take positive class prob via softmax
+        # Case B: model outputs (N,2) → take positive class probability
         elif outputs_mod.dim() == 2 and outputs_mod.size(1) == 2:
-            probs = torch.softmax(outputs_mod, dim=1)[:, 1].unsqueeze(1)  # (N,1)
+            probs = outputs_mod[:, 1].unsqueeze(1)  # (N,1)
+        else:
+            raise ValueError(
+                "BCELoss expects model outputs with shape (N,), (N, 1), or (N, 2)."
+            )
 
         # compute loss
         loss = loss_fn(probs, y_batch_mod)
@@ -227,11 +214,20 @@ def _compute_probabilities(
             logits_pos = outputs.view(-1)              # (N,)
         return torch.sigmoid(logits_pos)               # (N,)
 
-    # Binary with BCELoss (we treat outputs as logits for consistency)
+    # Binary with BCELoss: outputs are already probabilities.
     if isinstance(loss_fn, nn.BCELoss):
-        return torch.sigmoid(outputs.view(-1))         # (N,)
+        if outputs.dim() == 2 and outputs.size(1) == 2:
+            return outputs[:, 1]
+        return outputs.view(-1)
 
     # Multiclass CE
     if isinstance(loss_fn, nn.CrossEntropyLoss):
         return torch.softmax(outputs, dim=1)           # (N,C)
 # === Probability Prediction ===
+
+
+def logits_to_class_predictions(logits: torch.Tensor) -> torch.Tensor:
+    """Convert binary or multiclass logits to class predictions."""
+    if logits.ndim > 1 and logits.shape[1] > 1:
+        return torch.argmax(logits, dim=1)
+    return (torch.sigmoid(logits) > 0.5).float().squeeze()

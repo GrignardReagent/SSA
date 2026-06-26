@@ -8,6 +8,8 @@ from sklearn.metrics import (accuracy_score,
 import pandas as pd
 from typing import Dict, Optional
 
+from training.few_shot import test_svm_few_shot
+
 
 def svm_classifier(X_train, X_test, y_train, y_test, 
                    svm_C=1.0, 
