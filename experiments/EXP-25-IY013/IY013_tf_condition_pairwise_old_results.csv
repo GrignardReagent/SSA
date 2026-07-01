@@ -1,0 +1,91 @@
+Class_A,Class_B,Dataset,Classifier,Accuracy,N_train,N_test
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Steady-state,Raw SVM,0.946236559139785,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Steady-state,LSTM,0.956989247311828,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Steady-state,Transformer,0.946236559139785,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Full,Raw SVM,0.978494623655914,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Full,LSTM,0.978494623655914,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 0.1% glucose,Full,Transformer,0.956989247311828,369,93
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,0.9117647058823529,134,34
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,LSTM,0.9117647058823529,134,34
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,Transformer,0.9411764705882353,134,34
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Full,Raw SVM,0.9117647058823529,134,34
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Full,LSTM,0.8823529411764706,134,34
+Nrg1 @ 0.01% glucose,Nrg1 @ 2% glucose (mock/steady),Full,Transformer,0.8529411764705882,134,34
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Steady-state,Raw SVM,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Steady-state,LSTM,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Steady-state,Transformer,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Full,Raw SVM,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Full,LSTM,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.01% glucose,Full,Transformer,1.0,369,93
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,Raw SVM,0.975,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,LSTM,0.975,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,Transformer,0.9625,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,Raw SVM,1.0,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,LSTM,0.9875,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,Transformer,1.0,320,80
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,1.0,124,32
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,LSTM,1.0,124,32
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Transformer,1.0,124,32
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Raw SVM,1.0,124,32
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,LSTM,1.0,124,32
+Nrg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Transformer,1.0,124,32
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,0.7647058823529411,134,34
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,LSTM,0.7058823529411765,134,34
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Steady-state,Transformer,0.7058823529411765,134,34
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Full,Raw SVM,0.8235294117647058,134,34
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Full,LSTM,0.7647058823529411,134,34
+Nrg1 @ 0.1% glucose,Nrg1 @ 2% glucose (mock/steady),Full,Transformer,0.8823529411764706,134,34
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Steady-state,Raw SVM,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Steady-state,LSTM,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Steady-state,Transformer,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Full,Raw SVM,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Full,LSTM,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.01% glucose,Full,Transformer,1.0,369,93
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Steady-state,Raw SVM,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Steady-state,LSTM,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Steady-state,Transformer,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Full,Raw SVM,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Full,LSTM,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 0.1% glucose,Full,Transformer,1.0,320,80
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,1.0,124,32
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,LSTM,1.0,124,32
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Transformer,1.0,124,32
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Raw SVM,1.0,124,32
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,LSTM,1.0,124,32
+Nrg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Transformer,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Steady-state,Raw SVM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Steady-state,LSTM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Steady-state,Transformer,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Full,Raw SVM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Full,LSTM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.01% glucose,Full,Transformer,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Steady-state,Raw SVM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Steady-state,LSTM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Steady-state,Transformer,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Full,Raw SVM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Full,LSTM,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 0.1% glucose,Full,Transformer,1.0,134,34
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Steady-state,LSTM,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Steady-state,Transformer,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Full,Raw SVM,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Full,LSTM,1.0,124,32
+Nrg1 @ 2% glucose (mock/steady),Rtg1 @ 2% glucose (mock/steady),Full,Transformer,1.0,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,Raw SVM,0.9125,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,LSTM,0.875,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Steady-state,Transformer,0.9125,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,Raw SVM,0.975,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,LSTM,0.9375,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 0.1% glucose,Full,Transformer,0.975,320,80
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,0.8125,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,LSTM,0.875,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Transformer,0.84375,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Raw SVM,0.9375,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,LSTM,0.78125,124,32
+Rtg1 @ 0.01% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Transformer,0.90625,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Raw SVM,0.71875,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,LSTM,0.8125,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Steady-state,Transformer,0.65625,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Raw SVM,0.78125,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,LSTM,0.78125,124,32
+Rtg1 @ 0.1% glucose,Rtg1 @ 2% glucose (mock/steady),Full,Transformer,0.71875,124,32
