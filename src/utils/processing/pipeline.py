@@ -1,16 +1,16 @@
 """
 End-to-end data preparation pipeline for experimental time-series datasets.
 
-prepare_dataset — impute → filter → truncate → balance → normalise → split
+prepare_dataset — impute → filter → truncate → balance → split → normalise
 """
 
 from __future__ import annotations
 
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 from utils.processing.imputation import fill_nans
-from utils.processing.normalisation import batch_wise_normalise
 from utils.processing.balancing import balance_classes
 
 
@@ -29,8 +29,9 @@ def prepare_dataset(
     2. Keep only rows whose string label is in ``kept_classes``.
     3. Truncate all series to the shortest common length.
     4. Balance classes to the minority count.
-    5. Apply :func:`~utils.processing.normalisation.batch_wise_normalise`.
-    6. Stratified 80 / 20 train / test split.
+    5. Stratified 80 / 20 train / test split.
+    6. Fit ``StandardScaler`` on the train split only, transform both splits
+       (avoids test-set statistics leaking into the training normalisation).
 
     Parameters
     ----------
@@ -51,7 +52,7 @@ def prepare_dataset(
         Keys:
 
         - ``X_bal``, ``y_bal`` — full balanced data before splitting
-        - ``X_train``, ``X_test`` — batch-normalised splits
+        - ``X_train``, ``X_test`` — splits normalised with train-fitted ``StandardScaler``
         - ``X_train_raw``, ``X_test_raw`` — un-normalised splits
         - ``y_train``, ``y_test``
         - ``class_names`` — sorted list of retained class names
@@ -99,18 +100,21 @@ def prepare_dataset(
     min_count = int(np.bincount(y_bal).min())
     print(f"  Balancing to {min_count} cells/class")
 
-    X_norm = batch_wise_normalise(X_bal)
-
     idx_all = np.arange(len(y_bal))
     idx_tr, idx_te = train_test_split(
         idx_all, test_size=0.2, random_state=random_state, stratify=y_bal
     )
     print(f"  Train: {len(idx_tr)}  |  Test: {len(idx_te)}")
 
+    # fit normalisation stats on train only, avoiding test-set leakage
+    scaler = StandardScaler()
+    X_train_norm = scaler.fit_transform(X_bal[idx_tr])
+    X_test_norm = scaler.transform(X_bal[idx_te])
+
     return dict(
         X_bal=X_bal,            y_bal=y_bal,
         X_train_raw=X_bal[idx_tr], X_test_raw=X_bal[idx_te],
-        X_train=X_norm[idx_tr], X_test=X_norm[idx_te],
+        X_train=X_train_norm,  X_test=X_test_norm,
         y_train=y_bal[idx_tr],  y_test=y_bal[idx_te],
         class_names=class_names,
         min_T=min_T,
