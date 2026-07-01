@@ -21,6 +21,8 @@ import json
 import numpy as np
 import torch
 import matplotlib
+from utils.svm import extract_data_for_svm
+
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -111,14 +113,6 @@ IY014_EXPERIMENTS = [
 
 
 # ── Data helpers ───────────────────────────────────────────────────────────────
-def extract_data_for_svm(loader):
-    """Flatten (B, T, C) loader batches into (N, T*C) arrays for SVM input."""
-    X_list, y_list = [], []
-    with torch.no_grad():
-        for X_batch, y_batch in loader:
-            X_list.append(X_batch.cpu().numpy().reshape(X_batch.shape[0], -1))
-            y_list.append(y_batch.cpu().numpy().ravel())
-    return np.vstack(X_list), np.concatenate(y_list)
 
 
 def run_svm_for_experiment(exp):
@@ -126,8 +120,8 @@ def run_svm_for_experiment(exp):
     train_loader = load_loader_from_disk(exp['train'], batch_size=256)
     test_loader  = load_loader_from_disk(exp['test'],  batch_size=256)
 
-    X_train, y_train = extract_data_for_svm(train_loader)
-    X_test,  y_test  = extract_data_for_svm(test_loader)
+    X_train, y_train = extract_data_for_svm(train_loader, verbose=False)
+    X_test,  y_test  = extract_data_for_svm(test_loader, verbose=False)
 
     scaler = StandardScaler()
     X_train = scaler.fit_transform(X_train)
@@ -171,8 +165,8 @@ def run_svm_returning_clf(exp):
     """Load data, scale, train RBF SVM; return (clf, X_test_scaled, y_test, accuracy)."""
     train_loader = load_loader_from_disk(exp['train'], batch_size=256)
     test_loader  = load_loader_from_disk(exp['test'],  batch_size=256)
-    X_train, y_train = extract_data_for_svm(train_loader)
-    X_test,  y_test  = extract_data_for_svm(test_loader)
+    X_train, y_train = extract_data_for_svm(train_loader, verbose=False)
+    X_test,  y_test  = extract_data_for_svm(test_loader, verbose=False)
     scaler  = StandardScaler()
     X_train = scaler.fit_transform(X_train)
     X_test  = scaler.transform(X_test)

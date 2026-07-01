@@ -22,14 +22,12 @@ import sys
 import json
 import time
 import numpy as np
-import pycatch22
 import matplotlib
 matplotlib.use('Agg')   # non-interactive backend for HPC
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 from pathlib import Path
-from joblib import Parallel, delayed
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
@@ -39,6 +37,7 @@ REPO_ROOT  = SCRIPT_DIR.parent.parent
 sys.path.insert(0, str(REPO_ROOT / 'src'))
 
 from dataloaders import load_loader_from_disk
+from features.catch22 import extract_catch22_pair
 
 IY029_DATA = SCRIPT_DIR / 'data'   # EXP-26-IY029/data/{2_fold,10_fold}/<cond>/
 
@@ -105,31 +104,6 @@ def load_pair_data(train_pt: Path, test_pt: Path):
     X_train, y_train = _extract(train_pt)
     X_test,  y_test  = _extract(test_pt)
     return X_train, X_test, y_train, y_test
-
-
-def _catch22_single(x: np.ndarray) -> list:
-    """Compute 22 catch22 features for a single 1-D trajectory."""
-    return pycatch22.catch22_all(x.tolist())['values']
-
-
-def extract_catch22_pair(X_np: np.ndarray, n_jobs: int = N_JOBS) -> np.ndarray:
-    """
-    Compute [catch22(x1) | catch22(x2)] for each pair in X_np.
-
-    X_np : (N, T, 1) — full concatenated pair.
-    Returns (N, 44); NaNs from degenerate series replaced with 0.
-    """
-    # Split the concatenated pair back into its two trajectory halves before featurising.
-    half = X_np.shape[1] // 2
-    x1_list = [X_np[i, :half, 0] for i in range(len(X_np))]
-    x2_list = [X_np[i, half:, 0] for i in range(len(X_np))]
-
-    # catch22 extraction is independent per trajectory, so joblib can parallelise safely.
-    f1 = Parallel(n_jobs=n_jobs)(delayed(_catch22_single)(x) for x in x1_list)
-    f2 = Parallel(n_jobs=n_jobs)(delayed(_catch22_single)(x) for x in x2_list)
-
-    feats = np.array([a + b for a, b in zip(f1, f2)], dtype=np.float32)
-    return np.nan_to_num(feats, nan=0.0)
 
 
 def run_svm(feats_tr: np.ndarray, feats_te: np.ndarray,

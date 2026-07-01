@@ -58,6 +58,7 @@ sys.path.insert(0, str(REPO_ROOT / 'src'))
 
 from dataloaders import load_loader_from_disk
 from models.ssl_transformer import SSL_Transformer
+from utils.embeddings import parse_arch_from_name
 
 IY011_ROOT = REPO_ROOT / 'experiments' / 'EXP-25-IY011'
 IY014_ROOT = REPO_ROOT / 'experiments' / 'EXP-26-IY014'
@@ -114,15 +115,6 @@ NORM_OVERRIDES = {
     'IY023_simCLR_b64_lr0.01_L2_H4_D16_20260308_125550_model': 'global',
     'IY023_simCLR_b64_lr0.01_L2_H4_D16_20260308_165118_model': 'joint',
 }
-
-
-def parse_arch_from_name(name: str) -> dict:
-    """Extract transformer architecture hyperparameters from checkpoint filename."""
-    d_model    = int(re.search(r'_D(\d+)', name).group(1))
-    nhead      = int(re.search(r'_H(\d+)', name).group(1))
-    num_layers = int(re.search(r'_L(\d+)', name).group(1))
-    return dict(input_size=1, d_model=d_model, nhead=nhead,
-                num_layers=num_layers, dropout=0.01, use_conv1d=False)
 
 
 def make_short_label(path: Path) -> str:

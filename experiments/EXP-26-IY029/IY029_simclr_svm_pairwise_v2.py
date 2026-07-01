@@ -118,13 +118,7 @@ NORM_OVERRIDES = {
 }
 
 
-def parse_arch_from_name(name: str) -> dict:
-    """Extract transformer architecture hyperparameters from checkpoint filename."""
-    d_model    = int(re.search(r'_D(\d+)', name).group(1))
-    nhead      = int(re.search(r'_H(\d+)', name).group(1))
-    num_layers = int(re.search(r'_L(\d+)', name).group(1))
-    return dict(input_size=1, d_model=d_model, nhead=nhead,
-                num_layers=num_layers, dropout=0.01, use_conv1d=False)
+from utils.embeddings import parse_arch_from_name, load_simclr_model
 
 
 def make_short_label(path: Path) -> str:
@@ -177,14 +171,7 @@ def load_pair_data(train_pt: Path, test_pt: Path):
 
 # ── Evaluation helpers ─────────────────────────────────────────────────────────
 
-def load_model(ckpt_path: Path, device) -> SSL_Transformer:
-    """Instantiate SSL_Transformer from filename and load checkpoint weights."""
-    arch  = parse_arch_from_name(ckpt_path.stem)
-    model = SSL_Transformer(**arch).to(device)
-    state = torch.load(ckpt_path, map_location=device, weights_only=True)
-    model.load_state_dict(state)
-    model.eval()
-    return model
+# load_model replaced by load_simclr_model from utils.embeddings (imported above)
 
 
 def encode_pairs(model: SSL_Transformer, X_np: np.ndarray,
@@ -396,7 +383,7 @@ def run_evaluation_loop(prepared_data: dict, ds_names: list,
 
     for i, (ckpt_path, mdl_label) in enumerate(MODEL_REGISTRY):
         results[mdl_label] = {}
-        model = load_model(ckpt_path, DEVICE)
+        model = load_simclr_model(ckpt_path, DEVICE)
 
         for ds_name in ds_names:
             results[mdl_label][ds_name] = {}

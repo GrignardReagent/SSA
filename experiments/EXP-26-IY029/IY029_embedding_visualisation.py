@@ -49,9 +49,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import seaborn as sns
 import pandas as pd
-import pycatch22
 from pathlib import Path
-from joblib import Parallel, delayed
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
@@ -64,6 +62,7 @@ REPO_ROOT  = SCRIPT_DIR.parents[1]
 sys.path.insert(0, str(REPO_ROOT / 'src'))
 
 from dataloaders import load_loader_from_disk
+from features.catch22 import catch22_features
 from models.ssl_transformer import SSL_Transformer
 from models.lstm import LSTMClassifier
 from models.transformer import TransformerClassifier
@@ -184,23 +183,6 @@ def load_split(cond: str, fold: str, split: str) -> tuple[np.ndarray, np.ndarray
 
 
 # ── catch22 helpers ────────────────────────────────────────────────────────────
-
-def _c22_single(x):
-    return pycatch22.catch22_all(x.tolist())['values']
-
-
-def catch22_features(X_np: np.ndarray, n_jobs: int = N_JOBS_C22) -> np.ndarray:
-    """[catch22(x1) | catch22(x2)] for each pair. Returns (N, 44)."""
-    half = X_np.shape[1] // 2
-    f1 = Parallel(n_jobs=n_jobs)(
-        delayed(_c22_single)(X_np[i, :half, 0]) for i in range(len(X_np))
-    )
-    f2 = Parallel(n_jobs=n_jobs)(
-        delayed(_c22_single)(X_np[i, half:, 0]) for i in range(len(X_np))
-    )
-    return np.nan_to_num(
-        np.array([a + b for a, b in zip(f1, f2)], dtype=np.float32), nan=0.0
-    )
 
 
 # ── Per-method embedding extractors ───────────────────────────────────────────
