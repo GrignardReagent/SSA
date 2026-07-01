@@ -25,6 +25,7 @@ removed. New code should use the Julia wrapper and `find_tilda_parameters`.
 |-- src/
 |   |-- classifiers/      # SVM, random forest, logistic, neural classifiers
 |   |-- dataloaders/      # Baseline, SSL, and SimCLR dataset loaders
+|   |-- features/         # catch22 extraction and feature benchmarks
 |   |-- models/           # LSTM, transformer, SimCLR/SSL model components
 |   |-- mutual_information/
 |   |-- simulation/       # Current telegraph parameter solve + Julia wrapper
@@ -157,6 +158,7 @@ series:
 - `src/dataloaders/`: loaders for baseline supervised training and SimCLR-style
   self-supervised learning; `simclr.py` supports lazy loading plus instance,
   global, joint, and batch-wise normalisation modes
+- `src/features/`: catch22 feature extraction and SVM benchmark helpers
 - `src/models/`: model definitions for LSTM, transformer, SimCLR/SSL, and
   related experiments
 - `src/training/`: reusable training and evaluation utilities, including the
@@ -217,13 +219,16 @@ record for motivation, methods, results, and conclusions.
 | `EXP-26-IY027` | Time-lapse dataset probe for Shimizu FRET-style `.mat` data, producing quick diagnostic plots of available trajectories. |
 | `EXP-26-IY028` | Embedding-space and poster-figure analyses for experimental data, including SimCLR ROC-AUC, t-SNE/PHATE visualisations, clustering/discriminability metrics, and dual-channel catch22/SVM comparisons. |
 | `EXP-26-IY029` | Pairwise same/different method comparison across catch22 + SVM, SimCLR + SVM, MLP, LSTM, and transformer models, with embedding visualisation and clustering metrics. |
-| `EXP-26-IY030` | Supervised contrastive learning on dual-channel experimental data, including full SimCLR finetuning, frozen-backbone SupCon, and frozen-backbone MLP classifier variants. |
 | `EXP-26-IY031` | TF identity/condition classification sanity checks on old and NEW experimental datasets, comparing full-trace and steady-state SimCLR results with balanced traces and confusion matrices. |
-| `obsolete_files` | Archived prototypes and old simulation scripts; do not use as templates for new work. |
+| `EXP-26-IY032` | Open-set retrieval and kNN-style checks on TF/condition embeddings, including baseline heatmaps, UMAP views, and full/steady-state SimCLR summaries. |
+| `EXP-26-IY033` | Condition-first classification sanity check on steady-state experimental traces, with confusion matrices and condition summary comparisons. |
 
 Historical experiments may reference removed APIs or absolute paths from the
 machine or cluster where they were run. For new work, prefer the current `src/`
 APIs above and keep experiment-specific paths local to the experiment folder.
+
+`experiments/obsolete_files/` contains archived prototypes and old simulation
+scripts. Treat it as historical reference only, not as a template for new work.
 
 ## Notebooks
 
