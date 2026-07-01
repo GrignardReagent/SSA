@@ -6,7 +6,7 @@ Submodules
 processing/
     All data-processing utilities, organised by concern:
       imputation    — fill_nans (numpy), handle_missing_values (DataFrame)
-      normalisation — batch_wise_normalise
+      normalisation — instance_norm_np
       balancing     — balance_classes, balance_by_label
       labelling     — add_binary_labels, add_nearest_neighbour_labels
       pipeline      — prepare_dataset (full end-to-end prep)

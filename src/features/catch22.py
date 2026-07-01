@@ -105,9 +105,8 @@ def run_catch22_series_svm(
 ) -> tuple[float, np.ndarray]:
     """Run catch22 + RBF-SVM on a prepared train/test series dictionary.
 
-    The expected dictionary keys are ``series_train``, ``series_test``,
-    ``y_train``, ``y_test`` and ``class_names``. This matches the IY031
-    experimental-condition notebooks.
+    Accepts dicts produced by ``prepare_dataset`` (keys ``X_train_raw`` /
+    ``X_test_raw``) or older dicts with ``series_train`` / ``series_test``.
     """
     from sklearn.metrics import accuracy_score, classification_report
     from sklearn.pipeline import Pipeline
@@ -115,8 +114,11 @@ def run_catch22_series_svm(
     from sklearn.svm import SVC
 
     print(f"\n=== Catch22 + SVM (RBF) -- {dataset_tag} ===")
-    X_train = extract_catch22(dataset["series_train"], desc="Train")
-    X_test = extract_catch22(dataset["series_test"], desc="Test")
+    # support both key conventions
+    train_key = "X_train_raw" if "X_train_raw" in dataset else "series_train"
+    test_key  = "X_test_raw"  if "X_test_raw"  in dataset else "series_test"
+    X_train = extract_catch22(dataset[train_key], desc="Train")
+    X_test = extract_catch22(dataset[test_key], desc="Test")
     X_train, X_test = fill_feature_frame(X_train, X_test)
     print(f"Feature matrix: {X_train.shape[1]} features")
 
