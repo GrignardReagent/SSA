@@ -285,11 +285,17 @@ for ratio in tqdm.tqdm(variance_ratios, desc="Running Variance Ratio Simulations
         y_test_tensor = torch.tensor(y_test, dtype=torch.long)
         X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
 
-        from utils.evaluate import evaluate_model 
+        from training.eval import evaluate_model
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         IY002A_model.eval()
-        IY002A_model.to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+        IY002A_model.to(device)
         test_loader = DataLoader(TensorDataset(X_test_tensor, y_test_tensor), batch_size=64, shuffle=False)
-        iy002a_accuracy = evaluate_model(IY002A_model, test_loader, output_size=len(set(y_train)))
+        _, iy002a_accuracy = evaluate_model(
+            IY002A_model,
+            test_loader,
+            device=device,
+            verbose=False,
+        )
 
         # Record results
         df_acc_results = pd.DataFrame({

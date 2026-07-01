@@ -9,6 +9,7 @@ from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score, classification_report
 from dataloaders import load_loader_from_disk
+from utils.svm import extract_data_for_svm
 
 # ==========================================
 # CONFIGURATION
@@ -95,32 +96,6 @@ mu_val_loader = load_loader_from_disk(mu_val_save_path)
 mu_test_loader = load_loader_from_disk(mu_test_save_path)   
 
 # verify the results seen from training script
-def extract_data_for_svm(loader):
-    """
-    Extracts all batches from a DataLoader and flattens them for SVM input.
-    Input X: (Batch, Time, Features) -> Output X: (Total_Samples, Time * Features)
-    """
-    X_list = []
-    y_list = []
-    
-    print(f"Extracting data from loader for SVM...")
-    
-    with torch.no_grad():
-        for X_batch, y_batch in loader:
-            # Move to CPU and convert to numpy
-            X_np = X_batch.cpu().numpy()
-            y_np = y_batch.cpu().numpy()
-            
-            # Flatten the time series: 
-            # (Batch, Seq_Len, 1) -> (Batch, Seq_Len)
-            # This turns the time series into a long feature vector
-            X_flat = X_np.reshape(X_np.shape[0], -1)
-            
-            X_list.append(X_flat)
-            y_list.append(y_np)
-            
-    # Concatenate all batches
-    return np.vstack(X_list), np.concatenate(y_list)
 import os
 # Completely hide the GPU from Python
 # os.environ["CUDA_VISIBLE_DEVICES"] = "" 

@@ -19,6 +19,7 @@ from tqdm import tqdm
 
 from models.transformer import TransformerClassifier
 from utils.load_data import load_and_split_data
+from dataloaders.tensors import to_tensor
 
 # ---------------------------------------------------------------------------
 # Data preparation (same dataset and preprocessing as IY006.py)
@@ -41,13 +42,6 @@ X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
 X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 
-
-def to_tensor(data, labels):
-    """Helper to convert arrays to a TensorDataset."""
-    return TensorDataset(
-        torch.tensor(data, dtype=torch.float32),
-        torch.tensor(labels, dtype=torch.long),
-    )
 
 # ---------------------------------------------------------------------------
 # Grid search configuration with extended hyperparameters

@@ -12,6 +12,8 @@ from torch.utils.data import DataLoader, TensorDataset
 from utils.load_data import load_and_split_data
 from tqdm import tqdm
 import multiprocessing
+from dataloaders.tensors import to_tensor
+from utils.experiment_tracking import claim_config
 
 # Auto-detect number of CPUs allocated by Grid Engine
 num_workers = max(1, int(os.environ.get("NSLOTS", multiprocessing.cpu_count()) ) // 2)
@@ -29,10 +31,6 @@ X_test = scaler.transform(X_test)
 X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
 X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-
-def to_tensor(data, labels):
-    return TensorDataset(torch.tensor(data, dtype=torch.float32),
-                         torch.tensor(labels, dtype=torch.long))
 
 # Architecture configs to sweep
 architectures = [
@@ -68,43 +66,6 @@ if not os.path.exists(results_file) or os.path.getsize(results_file) == 0:
         writer.writeheader()
 
 # Claim a config for exclusive access
-def claim_config(config_key):
-    """Claim a config by writing a placeholder row with 'IN_PROGRESS' if not yet taken."""
-    if os.path.exists(results_file):
-        df = pd.read_csv(results_file)
-        keys = set((
-            row["architecture"],
-            row["hidden_size"],
-            row["num_layers"],
-            row["dropout_rate"],
-            row["learning_rate"],
-            row["batch_size"],
-            row["epochs"]
-        ) for _, row in df.iterrows())
-
-        if config_key in keys:
-            return False
-
-    # Claim it with a placeholder
-    with open(results_file, "a", newline="") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-        writer.writerow({
-            "architecture": config_key[0],
-            "hidden_size": config_key[1],
-            "num_layers": config_key[2],
-            "dropout_rate": config_key[3],
-            "learning_rate": config_key[4],
-            "batch_size": config_key[5],
-            "epochs": config_key[6],
-            "train_acc": "IN_PROGRESS",
-            "val_acc": None,
-            "test_acc": None,
-            "test_acc_std": None,
-            "time": None
-        })
-
-    return True
-
 num_runs = 10
 results = []
 
@@ -115,7 +76,7 @@ for cfg in tqdm(architectures):
     for hidden_size, num_layers, dropout_rate, lr, batch_size, epochs in tqdm(param_grid, desc="Grid Search"):
         config_key = (cfg['name'], hidden_size, num_layers, dropout_rate, lr, batch_size, epochs)
 
-        if not claim_config(config_key):
+        if not claim_config(config_key, results_file, csv_columns):
             continue  # Already completed or in progress
 
         print(f"Testing: Hidden={hidden_size}, Layers={num_layers}, Dropout={dropout_rate}, LR={lr}, Batch={batch_size}, Epochs={epochs}")

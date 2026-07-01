@@ -1,14 +1,7 @@
 from pathlib import Path
 from dataloaders import baseline_data_prep, save_loader_to_disk
-import pycatch22
 import pandas as pd
-import numpy as np
-import torch
-from sklearn.svm import SVC
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.metrics import accuracy_score
-from tqdm import tqdm
+from features.catch22 import run_catch22_svm
 
 def make_loaders(DATA_ROOT: Path, results_csv: str, param_dist_threshold: float):
     # build the dataloaders, minimum 2-fold difference in group-making, like in IY011
@@ -57,79 +50,8 @@ def make_loaders(DATA_ROOT: Path, results_csv: str, param_dist_threshold: float)
 
 
 # --- 1. Helper: Extract Catch22 Features ---
-def extract_catch22_from_loader(loader, exp_name):
-    """
-    Iterates through a DataLoader and extracts 22 canonical features per sample.
-    Returns: DataFrame (N, 22), Labels (N,)
-    """
-    features_list = []
-    y_list = []
-    
-    # We iterate manually to keep it simple and safe
-    # Catch22 is fast enough that we don't need complex multiprocessing
-    print(f"   Extracting Catch22 features for {exp_name}...")
-    
-    for X_batch, y_batch in tqdm(loader, leave=False):
-        X_numpy = X_batch.numpy().squeeze() # (Batch, Time)
-        y_numpy = y_batch.numpy().flatten()
-        
-        for i in range(X_numpy.shape[0]):
-            time_series = X_numpy[i, :]
-            
-            # Catch22 returns a dictionary: {'names': [...], 'values': [...]}
-            # We convert it to a simple dict for DataFrame creation
-            c22_out = pycatch22.catch22_all(time_series)
-            
-            # Map names to values
-            feat_dict = dict(zip(c22_out['names'], c22_out['values']))
-            features_list.append(feat_dict)
-            y_list.append(y_numpy[i])
-            
-    # Convert to DataFrame
-    df_features = pd.DataFrame(features_list)
-    y_labels = np.array(y_list)
-    
-    return df_features, y_labels
 
 # --- 2. Main Catch22 + SVM Function ---
-def run_catch22_svm(train_loader, test_loader, exp_name="Experiment"):
-    print(f"\n=== Running Catch22 + SVM on {exp_name} ===")
-    
-    # A. Extract
-    X_train, y_train = extract_catch22_from_loader(train_loader, f"{exp_name} (Train)")
-    X_test, y_test   = extract_catch22_from_loader(test_loader, f"{exp_name} (Test)")
-    
-    if len(X_train) == 0: return 0.0
-
-    print(f"   Extracted {X_train.shape[1]} C22 features.")
-    
-    # B. Train SVM
-    # Catch22 features have wildly different scales (some are counts, some are decimals)
-    # StandardScaler is mandatory.
-    print("   Training SVM...")
-    
-    pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('svm', SVC(kernel='rbf', C=1.0, gamma='scale'))
-    ])
-    
-    pipe.fit(X_train, y_train)
-    
-    # C. Evaluate
-    y_pred = pipe.predict(X_test)
-    acc = accuracy_score(y_test, y_pred)
-    
-    print(f"🏆 {exp_name} Catch22 Accuracy: {acc:.2%}")
-    
-    # D. Feature Importance (Permutation) - Optional Check
-    # Since we only have 22 features, we can afford to print the most useful one.
-    # Simple variance check:
-    # If a feature has 0 variance (same for all files), Catch22 might return NaN or const.
-    # We quickly handle NaNs (fill with 0) just in case.
-    X_train = X_train.fillna(0)
-    
-    print("-" * 30)
-    return acc
 
 # ============================================
 # make the loaders

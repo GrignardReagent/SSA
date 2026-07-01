@@ -5,6 +5,7 @@ from models.lstm import LSTMClassifier
 from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader, TensorDataset
 from utils.load_data import load_and_split_data  
+from dataloaders.tensors import to_tensor
 
 output_file = 'data/combined_traj_1199_1200.csv'
 X_train, X_val, X_test, y_train, y_val, y_test = load_and_split_data(output_file, split_val_size=0.2)
@@ -17,10 +18,6 @@ X_test = scaler.transform(X_test)
 X_train = X_train.reshape((X_train.shape[0], X_train.shape[1], 1))
 X_val = X_val.reshape((X_val.shape[0], X_val.shape[1], 1))
 X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
-
-def to_tensor(data, labels):
-    return TensorDataset(torch.tensor(data, dtype=torch.float32),
-                         torch.tensor(labels, dtype=torch.long))
 
 train_loader = DataLoader(to_tensor(X_train, y_train), batch_size=64, shuffle=True)
 val_loader = DataLoader(to_tensor(X_val, y_val), batch_size=64)
