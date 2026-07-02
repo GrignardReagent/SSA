@@ -1,0 +1,55 @@
+Total conditions: 1012
+t_ac range: 2.49 – 119.98 min
+
+    Cutoff    N conditions   Fraction kept
+       0 min            1012            1.00
+      20 min             861            0.85
+      40 min             688            0.68
+      60 min             516            0.51
+      80 min             344            0.34
+
+Pre-loading trajectories...
+T=1811, T_total=3623, cache ~733 MB
+
+--- Cutoff: 0 min  (1012 conditions) ---
+  Train conditions: 810, Test conditions: 202
+=== SVM (RBF Kernel) Classification Accuracy: 0.49 ===
+  SVM accuracy: 0.4883 ± 0.0400 (95% CI)
+
+--- Cutoff: 20 min  (861 conditions) ---
+  Train conditions: 689, Test conditions: 172
+=== SVM (RBF Kernel) Classification Accuracy: 0.54 ===
+  SVM accuracy: 0.5417 ± 0.0399 (95% CI)
+
+--- Cutoff: 40 min  (688 conditions) ---
+  Train conditions: 551, Test conditions: 137
+=== SVM (RBF Kernel) Classification Accuracy: 0.48 ===
+  SVM accuracy: 0.4833 ± 0.0400 (95% CI)
+
+--- Cutoff: 60 min  (516 conditions) ---
+  Train conditions: 413, Test conditions: 103
+=== SVM (RBF Kernel) Classification Accuracy: 0.54 ===
+  SVM accuracy: 0.5367 ± 0.0399 (95% CI)
+
+--- Cutoff: 80 min  (344 conditions) ---
+  Train conditions: 276, Test conditions: 68
+=== SVM (RBF Kernel) Classification Accuracy: 0.50 ===
+  SVM accuracy: 0.5017 ± 0.0400 (95% CI)
+
+--- Summary ---
+ cutoff  n_cond  accuracy       se
+      0    1012  0.488333 0.020407
+     20     861  0.541667 0.020341
+     40     688  0.483333 0.020401
+     60     516  0.536667 0.020357
+     80     344  0.501667 0.020412
+Perm cutoff   0 min: obs=0.4883  null=0.5002±0.0207  p=0.7380  
+Perm cutoff  20 min: obs=0.5417  null=0.4990±0.0198  p=0.0240 *
+Perm cutoff  40 min: obs=0.4833  null=0.4999±0.0211  p=0.8160  
+Perm cutoff  60 min: obs=0.5367  null=0.4994±0.0205  p=0.0320 *
+Perm cutoff  80 min: obs=0.5017  null=0.4990±0.0216  p=0.4740  
+Saved IY025_svm_accuracy_vs_tac_cutoff.png
+Saved IY025_svm_tac_cutoff_permutation.png
+Saved IY025_tac_svm_high_tac_results.json
+
+All done.
