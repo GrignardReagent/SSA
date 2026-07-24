@@ -550,6 +550,7 @@ def train_ssl_model(
             history["val_acc"].append(val_acc)
 
             # ===== Early stopping based on Contrastive Accuracy =====
+            # TODO: Consider using SimCLR + kNN downstream evaluation for early stopping instead of raw contrastive accuracy, as the latter may not always correlate with downstream task performance.
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
                 epochs_no_improve = 0
@@ -605,4 +606,184 @@ def train_ssl_model(
         finish_wandb_run(run, best_val_acc, start_time)
 
     print("SSL training complete.")
+    return history
+
+
+# Supervised-Contrastive (SupCon) Training Loop
+def train_supcon_model(
+    model,
+    train_loader,
+    val_loader=None,
+    epochs=200,
+    patience=20,
+    lr=1e-3,
+    optimizer=None,
+    scheduler=None,
+    loss_fn=None,
+    augment_fn=None,
+    n_views=2,
+    encode_fn=None,
+    device=None,
+    grad_clip=1.0,
+    save_path=None,
+    eval_fn=None,
+    eval_every=10,
+    eval_metric_key=None,
+    wandb_logging=False,
+    wandb_config=None,
+    verbose=True,
+):
+    """SupCon training loop: batches are (X, y) single cells/trajectories.
+
+    Each step builds `n_views` independently-augmented views of X via
+    `augment_fn`, encodes each via `encode_fn`, concatenates into
+    (n_views*B, D) features / (n_views*B,) labels, and scores them with a
+    metric-learning `loss_fn(feats, labels)` (e.g. pytorch-metric-learning's
+    SupConLoss). 
+    
+    `eval_fn`: if given, is a caller-supplied downstream probe
+    (e.g. SVM/KNN readout) invoked every `eval_every` epochs; its returned
+    dict drives both wandb logging (under "downstream/") and, via
+    `eval_metric_key`, checkpoint selection -- mirroring how `train_model`
+    selects on val_acc, except the selection metric here is domain-specific
+    and supplied by the caller rather than computed internally.
+    """
+    device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+    optimizer = optimizer or optim.AdamW(model.parameters(), lr=lr)
+    if loss_fn is None:
+        raise ValueError("train_supcon_model requires an explicit loss_fn, e.g. SupConLoss(...).")
+    if augment_fn is None:
+        raise ValueError("train_supcon_model requires an explicit augment_fn producing SupCon views.")
+    encode_fn = encode_fn or (lambda m, x: m.projection_head(m.backbone.encode(x)))
+
+    if eval_fn is not None and save_path is not None and eval_metric_key is None:
+        raise ValueError("eval_metric_key is required when eval_fn + save_path are both given.")
+
+    # -------- initialize wandb (optional) --------
+    run, start_time = None, None
+    if wandb_logging:
+        if wandb_config is None:
+            raise ValueError("wandb_logging=True but no wandb_config provided.")
+        run = init_wandb_run(wandb_config)
+        start_time = time.time()
+    # --------------------------------------------
+
+    def _supcon_forward(xb, yb):
+        """n_views augmented views of one cell batch -> concatenated feats/labels -> loss."""
+        # data augmentation: n_views independent augmentations of the same batch
+        views = [augment_fn(xb) for _ in range(n_views)]
+        # encode each view into a feature vector
+        zs = [encode_fn(model, v) for v in views]
+        feats = torch.cat(zs, dim=0)
+        # supcon is supervised so we need to repeat the labels for each view
+        labels = torch.cat([yb] * n_views, dim=0)
+        return loss_fn(feats, labels)
+
+    if verbose:
+        print("Starting SupCon training...")
+
+    best_eval_value = -float("inf")
+    epochs_no_improve = 0
+    history = {"epoch": [], "train_loss": [], "val_loss": [], "lr": [], "eval_epoch": []}
+
+    for epoch in range(1, epochs + 1):
+        model.train()
+        running, n_seen = 0.0, 0
+        for xb, yb in train_loader:
+            xb, yb = xb.to(device), yb.to(device)
+            
+            optimizer.zero_grad()
+            loss = _supcon_forward(xb, yb)
+            loss.backward()
+            if grad_clip:
+                nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+            optimizer.step()
+            
+            # batch total loss
+            running += loss.item() * len(yb)
+            n_seen += len(yb)
+        # summing across batches and dividing by the total sample count (n_seen) gives a correct per-sample average for the epoch — rather than just averaging the per-batch means, which would be slightly wrong if the last batch is a different size e.g., if drop_last = False.
+        train_loss = running / n_seen
+        current_lr = optimizer.param_groups[0]["lr"]
+
+        # ========= Validation (monitoring only -- no early stopping unless patience is set) =========
+        val_loss = None
+        if val_loader is not None:
+            model.eval()
+            v_running, v_seen = 0.0, 0
+            with torch.no_grad():
+                for xb, yb in val_loader:
+                    xb, yb = xb.to(device), yb.to(device)
+                    vloss = _supcon_forward(xb, yb)
+                    v_running += vloss.item() * len(yb)
+                    v_seen += len(yb)
+            val_loss = v_running / v_seen
+            model.train()
+
+        # ---- LR scheduler step ----
+        if scheduler is not None:
+            if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
+                scheduler.step(val_loss if val_loss is not None else train_loss)
+            else:
+                scheduler.step()
+        # ----------------------------
+
+        history["epoch"].append(epoch)
+        history["train_loss"].append(train_loss)
+        history["val_loss"].append(val_loss)
+        history["lr"].append(current_lr)
+
+        # ========= Periodic downstream eval + checkpoint selection =========
+        eval_metrics = None
+        if eval_fn is not None and (epoch % eval_every == 0 or epoch == epochs):
+            eval_metrics = eval_fn(model)
+            history["eval_epoch"].append(epoch)
+            for k, v in eval_metrics.items():
+                history.setdefault(f"eval/{k}", []).append(v)
+
+            # Checkpoint selection based on eval_metric_key
+            if eval_metric_key is not None:
+                if eval_metric_key not in eval_metrics:
+                    raise ValueError(f"eval_metric_key '{eval_metric_key}' not found in eval_metrics: {list(eval_metrics.keys())}")
+                current_value = eval_metrics[eval_metric_key]
+                if current_value > best_eval_value:
+                    best_eval_value = current_value
+                    epochs_no_improve = 0
+                    if save_path:
+                        torch.save(model.state_dict(), save_path)
+                        if verbose:
+                            print(f"✅ Model saved at {save_path} (best {eval_metric_key}: {best_eval_value:.4f})")
+                else:
+                    epochs_no_improve += 1
+                    if verbose:
+                        print(f"No improvement in {eval_metric_key} ({epochs_no_improve}/{patience}).")
+                
+                # ==== Early stopping based on (downstream) eval_metric_key ====
+                if patience is not None and epochs_no_improve >= patience:
+                    if verbose:
+                        print("🛑 Early stopping.")
+                    break
+                
+        # -------- wandb logging (all log_dict construction lives here) --------
+        if wandb_logging and run is not None:
+            log_dict = {"epoch": epoch, "train/loss": float(train_loss), "lr": current_lr}
+            if val_loss is not None:
+                log_dict["val/loss"] = float(val_loss)
+            if eval_metrics is not None:
+                log_dict.update({f"downstream/{k}": float(v) for k, v in eval_metrics.items()})
+            wandb_log(run, log_dict)
+
+        if verbose:
+            msg = f"[SupCon] Epoch [{epoch}/{epochs}] | train_loss {train_loss:.4f}"
+            if val_loss is not None:
+                msg += f" | val_loss {val_loss:.4f}"
+            if eval_metrics is not None:
+                msg += " | " + " | ".join(f"{k} {v:.4f}" for k, v in eval_metrics.items())
+            print(msg)
+
+    if wandb_logging and run is not None:
+        finish_wandb_run(run, best_eval_value if eval_fn is not None else None, start_time)
+
+    print("SupCon training complete.")
     return history

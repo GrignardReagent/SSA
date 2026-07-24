@@ -31,4 +31,5 @@ dependencies:
       - biocircuits  # Biocircuits package for stochastic simulations
       - optuna
       - torch
+      - pytorch-metric-learning  # SupConLoss (EXP-26-IY036), reused instead of a hand-rolled loss
       - -e .  # Install local package using pyproject.toml
