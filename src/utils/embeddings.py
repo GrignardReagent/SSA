@@ -14,6 +14,8 @@ import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+from sklearn.metrics import accuracy_score
+from sklearn.neighbors import KNeighborsClassifier
 
 
 # ── SimCLR model utilities ────────────────────────────────────────────────────
@@ -207,6 +209,37 @@ def encode_channel(model, X: np.ndarray, device, batch_size: int = 256) -> np.nd
             )
             embeddings.append(model.backbone.encode(batch).cpu().numpy())
     return np.concatenate(embeddings, axis=0)
+
+
+def knn_downstream_accuracy(
+    model,
+    X_train: np.ndarray,
+    X_test: np.ndarray,
+    y_train: np.ndarray,
+    y_test: np.ndarray,
+    device,
+    n_neighbors: int = 10,
+    metric: str = "euclidean",
+    batch_size: int = 256,
+) -> tuple[float, np.ndarray]:
+    """KNN downstream readout: encode raw traces, fit/predict KNN on RAW embeddings.
+
+    Mirrors the methodology in IY035_downstream_knn.py -- no StandardScaler on
+    the embeddings (an ablation over IY035 checkpoints found embedding scaling
+    a wash that homogenises checkpoints, suppressing the best ones). Caller
+    controls model.eval()/model.train() around the call, same convention as
+    `encode_channel`.
+
+    Returns
+    -------
+    (accuracy, y_pred)
+    """
+    Z_train = encode_channel(model, X_train, device, batch_size=batch_size)
+    Z_test = encode_channel(model, X_test, device, batch_size=batch_size)
+    knn = KNeighborsClassifier(n_neighbors=n_neighbors, metric=metric, n_jobs=-1)
+    knn.fit(Z_train, y_train)
+    y_pred = knn.predict(Z_test)
+    return accuracy_score(y_test, y_pred), y_pred
 
 
 # ── Dimensionality reduction ──────────────────────────────────────────────────
