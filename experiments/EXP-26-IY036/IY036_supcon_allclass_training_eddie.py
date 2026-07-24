@@ -86,9 +86,12 @@ from utils.processing.imputation import fill_nans
 from utils.processing.pipeline import prepare_dataset
 
 # ── Config ────────────────────────────────────────────────────────────────────
-IY036_DIR = Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY036")
-IY031_DIR = Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY031")
-IY008_DIR = Path("/home/ianyang/stochastic_simulations/experiments/EXP-25-IY008")
+# Relative to this script's own location, not hardcoded to one machine's home
+# directory -- Eddie's filesystem layout under the repo root may not match local.
+IY036_DIR = Path(__file__).resolve().parent
+EXPERIMENTS_DIR = IY036_DIR.parent
+IY031_DIR = EXPERIMENTS_DIR / "EXP-26-IY031"
+IY008_DIR = EXPERIMENTS_DIR / "EXP-25-IY008"
 FULL_DATA_DIR = IY008_DIR / "5_FULL_transformed_exp_time_series"
 META_PATH = IY008_DIR / "old_data_metadata.csv"
 META_COLS = ["id", "group", "experiment"]
