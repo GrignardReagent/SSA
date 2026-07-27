@@ -1,5 +1,5 @@
 method,accuracy
-"IY036 SupCon + SVM, label-supervised",0.851063829787234
+"IY036 SupCon + SVM, label-supervised",0.8191489361702128
 "Best SimCLR + SVM, self-supervised (IY031)",0.7978723404255319
 Raw SVM (IY031),0.7553
 Catch22 + SVM (IY031),0.5426

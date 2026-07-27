@@ -52,7 +52,8 @@
 
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
-- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
+- **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs. If you installed packages or downloaded data whilst temporarily testing something, remove them afterwards when they are no longer needed.
+- **Avoid Redundancy**: If the request involves implementing a feature that already exists in the codebase or on GitHub, consider using the existing implementation instead of hand-rolling existing implementations e.g., LR schedulers and optimisers.
 
 # Environment Setup
 

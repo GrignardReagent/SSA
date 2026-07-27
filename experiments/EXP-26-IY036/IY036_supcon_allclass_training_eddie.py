@@ -68,7 +68,6 @@ from datetime import datetime
 import numpy as np
 import pandas as pd
 import torch
-import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
@@ -80,6 +79,7 @@ from pytorch_metric_learning.losses import SupConLoss
 
 from models.ssl_transformer import SSL_Transformer
 from training.train import train_supcon_model
+from training.lars import LARS
 from utils.embeddings import encode_channel, knn_downstream_accuracy
 from utils.experimental_time_series import load_labelled_time_series_csvs
 from utils.processing.imputation import fill_nans
@@ -110,7 +110,14 @@ NOISE_STD = 0.05       # Gaussian-noise augmentation for the two SupCon views
 # training
 batch_size = 2048   # Khosla et al. (SupCon) used 6144 on resnet-50, 4096 on resnet-200
 epochs = 1680
-lr = 1e-3
+# SimCLR/SupCon-lineage linear-scaling rule for LARS (Chen et al. 2020, "A Simple
+# Framework for Contrastive Learning..."): lr = 0.3 * batch_size / 256. This is a
+# very different scale to the 1e-3 tuned for AdamW in the local (non-Eddie) script
+# -- LARS's own per-layer trust ratio already normalises step size per layer, so
+# the *global* lr it expects is 1-2 orders of magnitude larger than a typical Adam lr.
+lr = 0.3 * batch_size / 256
+lars_momentum = 0.9              # standard SGD-style momentum used inside LARS (Khosla et al.)
+lars_trust_coefficient = 0.001   # "eta" in the LARS paper (You, Gitman & Ginsburg 2017); standard default
 weight_decay = 1e-4
 temperature = 0.07     # SupCon default (Khosla et al.), though 0.07 is a well-established alternative default
 eval_every = 10        # epochs between checkpoint-selection evaluations
@@ -258,8 +265,15 @@ train_loader = DataLoader(
     CellDataset(X_pre_tr, y_pre_tr), batch_size=batch_size, shuffle=True,
     num_workers=4, drop_last=True, generator=loader_gen,
 )
+# NOT batch_size: an eval-mode (model.eval() + torch.no_grad()) forward pass
+# measured ~2.3-2.5x MORE peak memory per sample than a full train step
+# (forward+backward+optimizer.step()) at the same batch size on this
+# architecture -- profiled empirically, likely an SDPA backend difference
+# between grad/no-grad mode. Reusing the (large) training batch_size here
+# would make the val loop the actual OOM bottleneck, not the training step.
+VAL_BATCH_SIZE = 256
 val_loader = DataLoader(
-    CellDataset(X_pre_val, y_pre_val), batch_size=batch_size, shuffle=False, num_workers=4,
+    CellDataset(X_pre_val, y_pre_val), batch_size=VAL_BATCH_SIZE, shuffle=False, num_workers=4,
 )
 print(f"Batches/epoch: {len(train_loader)}  (batch_size={batch_size})")
 
@@ -268,9 +282,18 @@ print(f"Batches/epoch: {len(train_loader)}  (batch_size={batch_size})")
 model = SSL_Transformer(input_size=1, d_model=d_model, nhead=nhead,
                         num_layers=num_layers, dropout=dropout,
                         use_conv1d=False).to(DEVICE)
-optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay) # ! Khosla used LARS ! But this is for large batch sizes only, for CNNs, not necessary for us.
+# LARS: unlike the local script's small batch_size (where AdamW is the pragmatic
+# choice), this Eddie run uses a genuinely large batch (2048), which is exactly
+# the regime LARS exists for -- see training/lars.py's module docstring.
+optimizer = LARS(model.parameters(), lr=lr, momentum=lars_momentum,
+                 weight_decay=weight_decay, trust_coefficient=lars_trust_coefficient)
 supcon_criterion = SupConLoss(temperature=temperature)  # pytorch-metric-learning
 
+# Linear-warmup + cosine-decay is the standard schedule paired with LARS in the
+# SimCLR/SupCon lineage (Chen et al. 2020 use exactly this: 10 epochs of linear
+# warmup, then cosine decay without restarts) -- LARS is known to be unstable
+# very early in training at large batch/lr, and warmup is the standard fix
+# (Goyal et al. 2017). Kept as-is here; only the optimizer/lr changed above.
 from transformers import get_cosine_schedule_with_warmup
 scheduler = get_cosine_schedule_with_warmup(
     optimizer, num_warmup_steps=int(0.1 * epochs), num_training_steps=epochs)
@@ -351,7 +374,8 @@ wandb_config = {
     "batch_size": batch_size, "input_size": 1, "d_model": d_model, "nhead": nhead,
     "num_layers": num_layers, "dropout": dropout, "use_conv1d": False,
     "epochs": epochs, "patience": patience, "lr": lr, "weight_decay": weight_decay,
-    "optimizer": type(optimizer).__name__, "scheduler": type(scheduler).__name__,
+    "optimizer": type(optimizer).__name__, "lars_momentum": lars_momentum,
+    "lars_trust_coefficient": lars_trust_coefficient, "scheduler": type(scheduler).__name__,
     "loss_fn": "SupConLoss", "temperature": temperature,
     "eval_every": eval_every, "eval_metric_key": eval_metric_key, "knn_neighbors": K_NEIGHBORS,
     "seq_len": SEQ_LEN, "save_path": str(save_path), "grad_clip": None,
