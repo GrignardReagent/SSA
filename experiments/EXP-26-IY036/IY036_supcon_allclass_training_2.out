@@ -1,0 +1,263 @@
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 0hwa8h68
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/wandb/run-20260727_112749-0hwa8h68
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run supcon_allclass_b512_lr0.001_d0.01_L2_H4_D16_temp0.1_20260727_112748
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY036-SupCon-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY036-SupCon-model/runs/0hwa8h68
+Full: 1099 cells × 540 tp, 6 classes, NaN remaining: 0
+  Balancing to 78 cells/class
+  Train: 374  |  Test: 94
+Downstream train/val split: 299 train, 75 val (val_fraction=0.2)
+SupCon pretraining pool : 11886 cells x 540 tp, 32 TF@condition classes (94 downstream test cells excluded)
+Downstream eval (6-class): train 374, test 94, chance 0.1667
+Pretraining class sizes: min=62, max=1700, n_classes=32
+SupCon train/val split: 9508 train, 2378 val (val_fraction=0.2)
+Batches/epoch: 18  (batch_size=512)
+
+Starting SupCon training...
+Starting SupCon training...
+[SupCon] Epoch [1/200] | train_loss 6.8302 | val_loss 6.7770
+[SupCon] Epoch [2/200] | train_loss 6.8120 | val_loss 6.7368
+[SupCon] Epoch [3/200] | train_loss 6.7370 | val_loss 6.6395
+[SupCon] Epoch [4/200] | train_loss 6.6225 | val_loss 6.5403
+[SupCon] Epoch [5/200] | train_loss 6.5614 | val_loss 6.5216
+[SupCon] Epoch [6/200] | train_loss 6.5439 | val_loss 6.5048
+[SupCon] Epoch [7/200] | train_loss 6.5324 | val_loss 6.4934
+[SupCon] Epoch [8/200] | train_loss 6.5226 | val_loss 6.4916
+[SupCon] Epoch [9/200] | train_loss 6.5117 | val_loss 6.4738
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    ✅ Model saved at /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/IY036_supcon_allclass_b512_lr0.001_L2_H4_D16_20260727_112748_model.pth (best knn_val_acc: 0.6800)
+[SupCon] Epoch [10/200] | train_loss 6.4934 | val_loss 6.4554 | knn_val_acc 0.6800 | svm_val_acc 0.6800 | knn_train_acc 0.7291 | svm_train_acc 0.7124
+[SupCon] Epoch [11/200] | train_loss 6.4752 | val_loss 6.4249
+[SupCon] Epoch [12/200] | train_loss 6.4375 | val_loss 6.3933
+[SupCon] Epoch [13/200] | train_loss 6.3914 | val_loss 6.3398
+[SupCon] Epoch [14/200] | train_loss 6.3440 | val_loss 6.2855
+[SupCon] Epoch [15/200] | train_loss 6.2768 | val_loss 6.1861
+[SupCon] Epoch [16/200] | train_loss 6.1762 | val_loss 6.0815
+[SupCon] Epoch [17/200] | train_loss 6.0875 | val_loss 5.9761
+[SupCon] Epoch [18/200] | train_loss 6.0136 | val_loss 5.9304
+[SupCon] Epoch [19/200] | train_loss 5.9591 | val_loss 5.8766
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    ✅ Model saved at /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/IY036_supcon_allclass_b512_lr0.001_L2_H4_D16_20260727_112748_model.pth (best knn_val_acc: 0.7733)
+[SupCon] Epoch [20/200] | train_loss 5.9114 | val_loss 5.8412 | knn_val_acc 0.7733 | svm_val_acc 0.7867 | knn_train_acc 0.8027 | svm_train_acc 0.7659
+[SupCon] Epoch [21/200] | train_loss 5.8825 | val_loss 5.8133
+[SupCon] Epoch [22/200] | train_loss 5.8533 | val_loss 5.7787
+[SupCon] Epoch [23/200] | train_loss 5.8179 | val_loss 5.7414
+[SupCon] Epoch [24/200] | train_loss 5.7911 | val_loss 5.7326
+[SupCon] Epoch [25/200] | train_loss 5.7617 | val_loss 5.7069
+[SupCon] Epoch [26/200] | train_loss 5.7617 | val_loss 5.6829
+[SupCon] Epoch [27/200] | train_loss 5.7376 | val_loss 5.6658
+[SupCon] Epoch [28/200] | train_loss 5.7114 | val_loss 5.6537
+[SupCon] Epoch [29/200] | train_loss 5.6975 | val_loss 5.6261
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (1/6).
+[SupCon] Epoch [30/200] | train_loss 5.6690 | val_loss 5.6042 | knn_val_acc 0.7600 | svm_val_acc 0.8000 | knn_train_acc 0.7893 | svm_train_acc 0.7793
+[SupCon] Epoch [31/200] | train_loss 5.6493 | val_loss 5.5934
+[SupCon] Epoch [32/200] | train_loss 5.6330 | val_loss 5.5695
+[SupCon] Epoch [33/200] | train_loss 5.6110 | val_loss 5.5427
+[SupCon] Epoch [34/200] | train_loss 5.5956 | val_loss 5.5249
+[SupCon] Epoch [35/200] | train_loss 5.5761 | val_loss 5.5077
+[SupCon] Epoch [36/200] | train_loss 5.5690 | val_loss 5.4987
+[SupCon] Epoch [37/200] | train_loss 5.5582 | val_loss 5.4933
+[SupCon] Epoch [38/200] | train_loss 5.5465 | val_loss 5.4956
+[SupCon] Epoch [39/200] | train_loss 5.5343 | val_loss 5.4709
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (2/6).
+[SupCon] Epoch [40/200] | train_loss 5.5252 | val_loss 5.4678 | knn_val_acc 0.7467 | svm_val_acc 0.7867 | knn_train_acc 0.7960 | svm_train_acc 0.7926
+[SupCon] Epoch [41/200] | train_loss 5.5232 | val_loss 5.4672
+[SupCon] Epoch [42/200] | train_loss 5.5102 | val_loss 5.4525
+[SupCon] Epoch [43/200] | train_loss 5.5058 | val_loss 5.4562
+[SupCon] Epoch [44/200] | train_loss 5.4999 | val_loss 5.4479
+[SupCon] Epoch [45/200] | train_loss 5.4917 | val_loss 5.4285
+[SupCon] Epoch [46/200] | train_loss 5.4763 | val_loss 5.4252
+[SupCon] Epoch [47/200] | train_loss 5.4694 | val_loss 5.4182
+[SupCon] Epoch [48/200] | train_loss 5.4717 | val_loss 5.4163
+[SupCon] Epoch [49/200] | train_loss 5.4655 | val_loss 5.4267
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    ✅ Model saved at /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/IY036_supcon_allclass_b512_lr0.001_L2_H4_D16_20260727_112748_model.pth (best knn_val_acc: 0.7867)
+[SupCon] Epoch [50/200] | train_loss 5.4713 | val_loss 5.4005 | knn_val_acc 0.7867 | svm_val_acc 0.8133 | knn_train_acc 0.7926 | svm_train_acc 0.7926
+[SupCon] Epoch [51/200] | train_loss 5.4464 | val_loss 5.4175
+[SupCon] Epoch [52/200] | train_loss 5.4429 | val_loss 5.4056
+[SupCon] Epoch [53/200] | train_loss 5.4467 | val_loss 5.4001
+[SupCon] Epoch [54/200] | train_loss 5.4339 | val_loss 5.4063
+[SupCon] Epoch [55/200] | train_loss 5.4372 | val_loss 5.3987
+[SupCon] Epoch [56/200] | train_loss 5.4289 | val_loss 5.3939
+[SupCon] Epoch [57/200] | train_loss 5.4208 | val_loss 5.3756
+[SupCon] Epoch [58/200] | train_loss 5.4130 | val_loss 5.3669
+[SupCon] Epoch [59/200] | train_loss 5.4118 | val_loss 5.3611
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (1/6).
+[SupCon] Epoch [60/200] | train_loss 5.4026 | val_loss 5.3571 | knn_val_acc 0.7733 | svm_val_acc 0.8133 | knn_train_acc 0.8027 | svm_train_acc 0.8127
+[SupCon] Epoch [61/200] | train_loss 5.4000 | val_loss 5.3637
+[SupCon] Epoch [62/200] | train_loss 5.3988 | val_loss 5.3691
+[SupCon] Epoch [63/200] | train_loss 5.3982 | val_loss 5.3504
+[SupCon] Epoch [64/200] | train_loss 5.3994 | val_loss 5.3417
+[SupCon] Epoch [65/200] | train_loss 5.3744 | val_loss 5.3427
+[SupCon] Epoch [66/200] | train_loss 5.3717 | val_loss 5.3409
+[SupCon] Epoch [67/200] | train_loss 5.3715 | val_loss 5.3327
+[SupCon] Epoch [68/200] | train_loss 5.3819 | val_loss 5.3325
+[SupCon] Epoch [69/200] | train_loss 5.3778 | val_loss 5.3279
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (2/6).
+[SupCon] Epoch [70/200] | train_loss 5.3617 | val_loss 5.3251 | knn_val_acc 0.7733 | svm_val_acc 0.8133 | knn_train_acc 0.8161 | svm_train_acc 0.8194
+[SupCon] Epoch [71/200] | train_loss 5.3578 | val_loss 5.3159
+[SupCon] Epoch [72/200] | train_loss 5.3551 | val_loss 5.3215
+[SupCon] Epoch [73/200] | train_loss 5.3469 | val_loss 5.3132
+[SupCon] Epoch [74/200] | train_loss 5.3430 | val_loss 5.3079
+[SupCon] Epoch [75/200] | train_loss 5.3372 | val_loss 5.3082
+[SupCon] Epoch [76/200] | train_loss 5.3386 | val_loss 5.3019
+[SupCon] Epoch [77/200] | train_loss 5.3361 | val_loss 5.3023
+[SupCon] Epoch [78/200] | train_loss 5.3241 | val_loss 5.2848
+[SupCon] Epoch [79/200] | train_loss 5.3212 | val_loss 5.2939
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (3/6).
+[SupCon] Epoch [80/200] | train_loss 5.3062 | val_loss 5.2912 | knn_val_acc 0.7867 | svm_val_acc 0.8133 | knn_train_acc 0.8127 | svm_train_acc 0.8094
+[SupCon] Epoch [81/200] | train_loss 5.3147 | val_loss 5.2772
+[SupCon] Epoch [82/200] | train_loss 5.3103 | val_loss 5.2713
+[SupCon] Epoch [83/200] | train_loss 5.3127 | val_loss 5.2708
+[SupCon] Epoch [84/200] | train_loss 5.3017 | val_loss 5.2790
+[SupCon] Epoch [85/200] | train_loss 5.2938 | val_loss 5.2709
+[SupCon] Epoch [86/200] | train_loss 5.2882 | val_loss 5.2617
+[SupCon] Epoch [87/200] | train_loss 5.2928 | val_loss 5.2559
+[SupCon] Epoch [88/200] | train_loss 5.2921 | val_loss 5.2708
+[SupCon] Epoch [89/200] | train_loss 5.2764 | val_loss 5.2700
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    ✅ Model saved at /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/IY036_supcon_allclass_b512_lr0.001_L2_H4_D16_20260727_112748_model.pth (best knn_val_acc: 0.8267)
+[SupCon] Epoch [90/200] | train_loss 5.2838 | val_loss 5.2573 | knn_val_acc 0.8267 | svm_val_acc 0.8267 | knn_train_acc 0.8060 | svm_train_acc 0.8161
+[SupCon] Epoch [91/200] | train_loss 5.2762 | val_loss 5.2729
+[SupCon] Epoch [92/200] | train_loss 5.2802 | val_loss 5.2687
+[SupCon] Epoch [93/200] | train_loss 5.2795 | val_loss 5.2600
+[SupCon] Epoch [94/200] | train_loss 5.2680 | val_loss 5.2460
+[SupCon] Epoch [95/200] | train_loss 5.2643 | val_loss 5.2562
+[SupCon] Epoch [96/200] | train_loss 5.2656 | val_loss 5.2404
+[SupCon] Epoch [97/200] | train_loss 5.2658 | val_loss 5.2294
+[SupCon] Epoch [98/200] | train_loss 5.2587 | val_loss 5.2411
+[SupCon] Epoch [99/200] | train_loss 5.2552 | val_loss 5.2398
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (1/6).
+[SupCon] Epoch [100/200] | train_loss 5.2453 | val_loss 5.2381 | knn_val_acc 0.8267 | svm_val_acc 0.8133 | knn_train_acc 0.8027 | svm_train_acc 0.8194
+[SupCon] Epoch [101/200] | train_loss 5.2551 | val_loss 5.2432
+[SupCon] Epoch [102/200] | train_loss 5.2486 | val_loss 5.2322
+[SupCon] Epoch [103/200] | train_loss 5.2403 | val_loss 5.2301
+[SupCon] Epoch [104/200] | train_loss 5.2293 | val_loss 5.2329
+[SupCon] Epoch [105/200] | train_loss 5.2329 | val_loss 5.2161
+[SupCon] Epoch [106/200] | train_loss 5.2370 | val_loss 5.2115
+[SupCon] Epoch [107/200] | train_loss 5.2360 | val_loss 5.2116
+[SupCon] Epoch [108/200] | train_loss 5.2335 | val_loss 5.2195
+[SupCon] Epoch [109/200] | train_loss 5.2338 | val_loss 5.2191
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (2/6).
+[SupCon] Epoch [110/200] | train_loss 5.2232 | val_loss 5.2066 | knn_val_acc 0.8133 | svm_val_acc 0.8267 | knn_train_acc 0.8060 | svm_train_acc 0.8227
+[SupCon] Epoch [111/200] | train_loss 5.2230 | val_loss 5.2097
+[SupCon] Epoch [112/200] | train_loss 5.2154 | val_loss 5.2113
+[SupCon] Epoch [113/200] | train_loss 5.2196 | val_loss 5.2149
+[SupCon] Epoch [114/200] | train_loss 5.2230 | val_loss 5.2048
+[SupCon] Epoch [115/200] | train_loss 5.2064 | val_loss 5.1962
+[SupCon] Epoch [116/200] | train_loss 5.2070 | val_loss 5.1952
+[SupCon] Epoch [117/200] | train_loss 5.2143 | val_loss 5.2046
+[SupCon] Epoch [118/200] | train_loss 5.2165 | val_loss 5.1948
+[SupCon] Epoch [119/200] | train_loss 5.2154 | val_loss 5.2027
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (3/6).
+[SupCon] Epoch [120/200] | train_loss 5.2144 | val_loss 5.1853 | knn_val_acc 0.8133 | svm_val_acc 0.8267 | knn_train_acc 0.8027 | svm_train_acc 0.8261
+[SupCon] Epoch [121/200] | train_loss 5.2091 | val_loss 5.1950
+[SupCon] Epoch [122/200] | train_loss 5.2005 | val_loss 5.1894
+[SupCon] Epoch [123/200] | train_loss 5.2048 | val_loss 5.1897
+[SupCon] Epoch [124/200] | train_loss 5.2008 | val_loss 5.1899
+[SupCon] Epoch [125/200] | train_loss 5.2032 | val_loss 5.1907
+[SupCon] Epoch [126/200] | train_loss 5.2024 | val_loss 5.1913
+[SupCon] Epoch [127/200] | train_loss 5.1982 | val_loss 5.1892
+[SupCon] Epoch [128/200] | train_loss 5.1936 | val_loss 5.1823
+[SupCon] Epoch [129/200] | train_loss 5.1930 | val_loss 5.1782
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (4/6).
+[SupCon] Epoch [130/200] | train_loss 5.1958 | val_loss 5.1832 | knn_val_acc 0.8133 | svm_val_acc 0.8267 | knn_train_acc 0.8027 | svm_train_acc 0.8194
+[SupCon] Epoch [131/200] | train_loss 5.1876 | val_loss 5.1933
+[SupCon] Epoch [132/200] | train_loss 5.1910 | val_loss 5.1816
+[SupCon] Epoch [133/200] | train_loss 5.1887 | val_loss 5.1895
+[SupCon] Epoch [134/200] | train_loss 5.1840 | val_loss 5.1783
+[SupCon] Epoch [135/200] | train_loss 5.1841 | val_loss 5.1754
+[SupCon] Epoch [136/200] | train_loss 5.1821 | val_loss 5.1807
+[SupCon] Epoch [137/200] | train_loss 5.1804 | val_loss 5.1816
+[SupCon] Epoch [138/200] | train_loss 5.1850 | val_loss 5.1803
+[SupCon] Epoch [139/200] | train_loss 5.1775 | val_loss 5.1751
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    No improvement in knn_val_acc (5/6).
+[SupCon] Epoch [140/200] | train_loss 5.1751 | val_loss 5.1740 | knn_val_acc 0.8267 | svm_val_acc 0.8267 | knn_train_acc 0.7993 | svm_train_acc 0.8227
+[SupCon] Epoch [141/200] | train_loss 5.1783 | val_loss 5.1784
+[SupCon] Epoch [142/200] | train_loss 5.1772 | val_loss 5.1678
+[SupCon] Epoch [143/200] | train_loss 5.1705 | val_loss 5.1708
+[SupCon] Epoch [144/200] | train_loss 5.1752 | val_loss 5.1816
+[SupCon] Epoch [145/200] | train_loss 5.1722 | val_loss 5.1736
+[SupCon] Epoch [146/200] | train_loss 5.1751 | val_loss 5.1719
+[SupCon] Epoch [147/200] | train_loss 5.1713 | val_loss 5.1680
+[SupCon] Epoch [148/200] | train_loss 5.1757 | val_loss 5.1649
+[SupCon] Epoch [149/200] | train_loss 5.1669 | val_loss 5.1694
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading summary, console lines 164-166
+wandb: 
+wandb: Run history:
+wandb: downstream/knn_train_acc ▁▇▆▆▆▇██▇▇▇▇▇▇
+wandb:   downstream/knn_val_acc ▁▅▅▄▆▅▅▆██▇▇▇█
+wandb: downstream/svm_train_acc ▁▄▅▆▆▇█▇▇█████
+wandb:   downstream/svm_val_acc ▁▆▇▆▇▇▇▇█▇████
+wandb:                    epoch ▁▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▃▃▄▄▄▄▄▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:                       lr ▁▂▃▅▅▇██████▇▇▇▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▄▃▃▃▃▂▂▂▂▁
+wandb:               train/loss ███▇▇▇▇▆▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                 val/loss ██▇▇▇▅▄▄▄▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:             best_val_acc 0.82667
+wandb: downstream/knn_train_acc 0.79933
+wandb:   downstream/knn_val_acc 0.82667
+wandb: downstream/svm_train_acc 0.82274
+wandb:   downstream/svm_val_acc 0.82667
+wandb:                    epoch 149
+wandb:                       lr 0.00019
+wandb:               train/loss 5.16693
+wandb:        training_time_sec 1610.60756
+wandb:                 val/loss 5.16945
+wandb: 
+wandb: 🚀 View run supcon_allclass_b512_lr0.001_d0.01_L2_H4_D16_temp0.1_20260727_112748 at: https://wandb.ai/grignard-reagent/IY036-SupCon-model/runs/0hwa8h68
+wandb: ⭐️ View project at: https://wandb.ai/grignard-reagent/IY036-SupCon-model
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260727_112749-0hwa8h68/logs
+No improvement in knn_val_acc (6/6).
+🛑 Early stopping.
+SupCon training complete.
+Saved: /home/ianyang/stochastic_simulations/experiments/EXP-26-IY036/IY036_supcon_allclass_b512_lr0.001_L2_H4_D16_20260727_112748_model.pth
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    
+=== IY036 SupCon + SVM (Full, 6-class) ===
+Test accuracy: 0.8298  (chance 0.1667, +0.6631)
+                                 precision    recall  f1-score   support
+
+           Nrg1 @ 0.01% glucose       0.94      1.00      0.97        15
+            Nrg1 @ 0.1% glucose       0.78      0.93      0.85        15
+Nrg1 @ 2% glucose (mock/steady)       0.92      0.69      0.79        16
+           Rtg1 @ 0.01% glucose       1.00      0.88      0.93        16
+            Rtg1 @ 0.1% glucose       0.75      0.75      0.75        16
+Rtg1 @ 2% glucose (mock/steady)       0.67      0.75      0.71        16
+
+                       accuracy                           0.83        94
+                      macro avg       0.84      0.83      0.83        94
+                   weighted avg       0.84      0.83      0.83        94
+
+SimCLR encode:   0%|          | 0/2 [00:00<?, ?it/s]                                                    SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    
+=== IY036 SupCon + KNN (k=10, Full, 6-class) ===
+Test accuracy: 0.8298  (chance 0.1667, +0.6631)
+                                 precision    recall  f1-score   support
+
+           Nrg1 @ 0.01% glucose       0.88      0.93      0.90        15
+            Nrg1 @ 0.1% glucose       0.88      0.93      0.90        15
+Nrg1 @ 2% glucose (mock/steady)       0.86      0.75      0.80        16
+           Rtg1 @ 0.01% glucose       0.93      0.81      0.87        16
+            Rtg1 @ 0.1% glucose       0.75      0.94      0.83        16
+Rtg1 @ 2% glucose (mock/steady)       0.71      0.62      0.67        16
+
+                       accuracy                           0.83        94
+                      macro avg       0.83      0.83      0.83        94
+                   weighted avg       0.83      0.83      0.83        94
+
+
+=== Comparison vs IY031 (Full, 6-class, same SVM readout) ===
+                                    method  accuracy
+      IY036 SupCon + SVM, label-supervised  0.829787
+Best SimCLR + SVM, self-supervised (IY031)  0.797872
+                           Raw SVM (IY031)  0.755300
+                     Catch22 + SVM (IY031)  0.542600
+                                    Chance  0.166667
+
+=== KNN comparison vs IY032 (Full, 6-class) ===
+                              method  accuracy
+IY036 SupCon + KNN, label-supervised  0.829787
+                     Raw KNN (IY032)  0.723400
+                              Chance  0.166667

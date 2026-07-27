@@ -1,4 +1,4 @@
 method,accuracy
-"IY036 SupCon + KNN, label-supervised",0.8297872340425532
+"IY036 SupCon + KNN, label-supervised",0.8723404255319149
 Raw KNN (IY032),0.7234
 Chance,0.16666666666666666

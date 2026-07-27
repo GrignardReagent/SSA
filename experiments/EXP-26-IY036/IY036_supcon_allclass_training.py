@@ -63,7 +63,7 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.model_selection import cross_val_score, StratifiedKFold, train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 from pytorch_metric_learning.losses import SupConLoss
@@ -74,6 +74,7 @@ from utils.embeddings import encode_channel, knn_downstream_accuracy
 from utils.experimental_time_series import load_labelled_time_series_csvs
 from utils.processing.imputation import fill_nans
 from utils.processing.pipeline import prepare_dataset
+from utils.augmentation import jitter_torch
 
 # ── Config ────────────────────────────────────────────────────────────────────
 IY036_DIR = Path("/home/ianyang/stochastic_simulations/experiments/EXP-26-IY036")
@@ -101,10 +102,13 @@ weight_decay = 1e-4
 temperature = 0.1     # SupCon default (Khosla et al.), though 0.07 is a well-established alternative default
 eval_every = 10        # epochs between checkpoint-selection evaluations
 patience = epochs // (eval_every * 3)  # early stopping patience in units of eval_every
-eval_metric_key = "knn_train_cv" # the metric used to select the best checkpoint -- KNN has no kernel to
+eval_metric_key = "knn_val_acc" # the metric used to select the best checkpoint -- KNN has no kernel to
 # compensate for messy embedding geometry, so it's a more direct probe of whether SupCon is actually
-# clustering same-label cells together than SVM-CV is; SVM (matching IY031) is reported, not selected on
-VAL_FRACTION = 0.08    # held out from the pretraining pool for SupCon val-loss monitoring only
+# clustering same-label cells together than SVM is; SVM (matching IY031) is reported, not selected on.
+# Selecting on a genuine held-out VAL split (not train-cv, not train accuracy) matters because
+# training accuracy can't detect the downstream classifier overfitting to the training pool.
+VAL_FRACTION = 0.20    # reused for both the pretraining-pool SupCon val-loss carve AND the
+# downstream 6-class train/val carve below
 K_NEIGHBORS = 10       # KNN downstream readout (matches IY032/IY035's grid-search k)
 
 # model (identical architecture to the IY031/IY032 checkpoints for comparability)
@@ -140,6 +144,17 @@ chance = 1.0 / n_cls_eval
 scaler_in = StandardScaler().fit(d["X_train_raw"])
 assert np.allclose(scaler_in.transform(d["X_test_raw"]), d["X_test"], atol=1e-6), \
     "input scaler does not reproduce prepare_dataset's normalisation"
+
+# Held out from the downstream 6-class TRAIN split ONLY -- d["X_test"] stays untouched
+# until the one-shot final evaluation. Used by eval_fn below for genuine validation
+# accuracy during SupCon training (replaces the previous CV-on-train approach: CV
+# never leaves the training pool, so it can't detect the SVM/KNN classifier
+# overfitting to it -- a true held-out split can).
+X_down_tr, X_down_val, y_down_tr, y_down_val = train_test_split(
+    d["X_train"], d["y_train"], test_size=VAL_FRACTION,
+    random_state=RANDOM_STATE, stratify=d["y_train"])
+print(f"Downstream train/val split: {len(y_down_tr)} train, {len(y_down_val)} val "
+      f"(val_fraction={VAL_FRACTION})")
 
 # ── Build the SupCon pretraining pool: all 32 classes, minus downstream test cells ──
 test_hashes = {row[:SEQ_LEN].tobytes() for row in d["X_test_raw"].astype(np.float64)}
@@ -247,69 +262,62 @@ from transformers import get_cosine_schedule_with_warmup
 scheduler = get_cosine_schedule_with_warmup(
     optimizer, num_warmup_steps=int(0.1 * epochs), num_training_steps=epochs)
 
-
-def augment(x: torch.Tensor) -> torch.Tensor:
-    """Gaussian-noise view. Applied in the training loop (not in workers) so the
-    augmentation RNG stays on the seeded main-process stream."""
-    return x + torch.randn_like(x) * NOISE_STD
-
-
 def svm_eval(model):
     """IY031's readout: encode -> StandardScale embeddings -> RBF-SVM.
 
-    Returns (svm_test_acc, svm_train_cv, y_pred). `svm_train_cv` is 5-fold CV on the
-    TRAIN embeddings only, reported alongside svm_test_acc -- neither drives
-    checkpoint selection (see eval_fn: that's knn_train_cv's job).
+    Fit on the FULL downstream train split (d["X_train"]), evaluated on the
+    held-out test split (d["X_test"]) -- computed once, at the end (see 'Final
+    evaluation' below), never tracked per-epoch or used for checkpoint selection.
     """
     model.eval()
     Z_tr = encode_channel(model, d["X_train"], DEVICE)
     Z_te = encode_channel(model, d["X_test"], DEVICE)
     sc = StandardScaler()
     Z_tr_sc, Z_te_sc = sc.fit_transform(Z_tr), sc.transform(Z_te)
-    
     clf = SVC(kernel="rbf", C=1.0, gamma="scale", random_state=RANDOM_STATE)
-    # we use cv to get a more robust estimate of the SVM's performance on the training set, since the downstream test set is small and may not be representative. The cv score is computed using stratified k-fold cross-validation to ensure that each fold has a similar class distribution.
-    cv = cross_val_score(
-        SVC(kernel="rbf", C=1.0, gamma="scale", random_state=RANDOM_STATE),
-        Z_tr_sc, d["y_train"],
-        cv=StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE), # stratified k-fold for clf tasks with imbalanced classes
-    ).mean()
-    
     clf.fit(Z_tr_sc, d["y_train"])
     y_pred = clf.predict(Z_te_sc)
     model.train()
-    return accuracy_score(d["y_test"], y_pred), cv, y_pred
+    return accuracy_score(d["y_test"], y_pred), y_pred
 
 
 def eval_fn(model):
     """
-    Periodic downstream readout on the fixed 6-class benchmark `d` (disjoint
-    from the SupCon pretraining pool). KNN train-CV (raw embeddings, 5-fold on
-    d["X_train"] only) drives checkpoint selection -- unlike SVM's RBF kernel,
-    KNN has no way to compensate for messy embedding geometry, so it's a more
-    direct probe of whether SupCon is actually clustering same-label cells
-    together. 
-    
-    SVM CV/test and KNN test accuracy are tracked alongside for
-    reporting only (matches IY031's methodology for the headline comparison).
+    Periodic downstream train/val readout on a genuine held-out split of the
+    6-class benchmark's TRAIN portion (X_down_tr/X_down_val) -- d["X_test"] is
+    never touched here, and is reserved for the one-shot final evaluation below.
+
+    knn_val_acc drives checkpoint selection: unlike SVM's RBF kernel, KNN has no
+    way to compensate for messy embedding geometry, so it's a more direct probe
+    of whether SupCon is actually clustering same-label cells together.
+
+    knn_train_acc / svm_train_acc are tracked alongside PURELY to visualise the
+    train/val gap (a widening gap = overfitting) -- training accuracy is never
+    used to select a checkpoint or to stop, since it can't detect overfitting
+    by construction (it's evaluated on the same data the classifier was fit on).
     """
     model.eval()
-    Z_tr = encode_channel(model, d["X_train"], DEVICE)
+    Z_tr = encode_channel(model, X_down_tr, DEVICE)
+    Z_val = encode_channel(model, X_down_val, DEVICE)
     model.train()
-    # the knn_train_cv score is used for supcon checkpoint selection
-    knn_train_cv = cross_val_score(
-        KNeighborsClassifier(n_neighbors=K_NEIGHBORS, metric="euclidean", n_jobs=-1),
-        Z_tr, d["y_train"],
-        cv=StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE),
-    ).mean()
 
-    svm_test_acc, svm_train_cv, _ = svm_eval(model)
-    model.eval()
-    knn_test_acc, _ = knn_downstream_accuracy(
-        model, d["X_train"], d["X_test"], d["y_train"], d["y_test"], DEVICE, n_neighbors=K_NEIGHBORS)
-    model.train()
-    return {"knn_train_cv": knn_train_cv, "svm_train_cv": svm_train_cv,
-            "svm_test_acc": svm_test_acc, "knn_test_acc": knn_test_acc}
+    # KNN: raw embeddings, no StandardScaler (established convention -- an
+    # ablation over IY035 checkpoints found embedding scaling a wash that
+    # homogenises checkpoints, suppressing the best ones).
+    knn = KNeighborsClassifier(n_neighbors=K_NEIGHBORS, metric="euclidean", n_jobs=-1)
+    knn.fit(Z_tr, y_down_tr)
+    knn_train_acc = accuracy_score(y_down_tr, knn.predict(Z_tr))
+    knn_val_acc = accuracy_score(y_down_val, knn.predict(Z_val))
+
+    # SVM: StandardScaled embeddings (matches IY031's methodology)
+    sc = StandardScaler().fit(Z_tr)
+    clf = SVC(kernel="rbf", C=1.0, gamma="scale", random_state=RANDOM_STATE)
+    clf.fit(sc.transform(Z_tr), y_down_tr)
+    svm_train_acc = accuracy_score(y_down_tr, clf.predict(sc.transform(Z_tr)))
+    svm_val_acc = accuracy_score(y_down_val, clf.predict(sc.transform(Z_val)))
+
+    return {"knn_val_acc": knn_val_acc, "svm_val_acc": svm_val_acc,
+            "knn_train_acc": knn_train_acc, "svm_train_acc": svm_train_acc}
 
 
 # ── Train ─────────────────────────────────────────────────────────────────────
@@ -324,6 +332,7 @@ wandb_config = {
     "dataset": str(FULL_DATA_DIR),
     "augmentation": "noise", "noise_std": NOISE_STD,
     "num_cells_pretrain_train": len(y_pre_tr), "num_cells_pretrain_val": len(y_pre_val),
+    "num_cells_downstream_train_fit": len(y_down_tr), "num_cells_downstream_val": len(y_down_val),
     "val_fraction": VAL_FRACTION, "num_classes_pretrain": len(pre_class_names),
     "n_excluded_downstream_test_cells": n_excluded,
     "batch_size": batch_size, "input_size": 1, "d_model": d_model, "nhead": nhead,
@@ -339,7 +348,7 @@ print("\nStarting SupCon training...")
 history = train_supcon_model(
     model, train_loader, val_loader=val_loader,
     epochs=epochs, patience=patience, lr=lr, optimizer=optimizer, scheduler=scheduler,
-    loss_fn=supcon_criterion, augment_fn=augment,
+    loss_fn=supcon_criterion, augment_fn=lambda x: jitter_torch(x, sigma=NOISE_STD),  # augment each view with independent Gaussian noise
     device=DEVICE, grad_clip=None, save_path=str(save_path),
     eval_fn=eval_fn, eval_every=eval_every, eval_metric_key=eval_metric_key,
     wandb_logging=True, wandb_config=wandb_config, verbose=True,
@@ -348,7 +357,7 @@ print(f"Saved: {save_path}")
 
 # ── Final evaluation with the selected checkpoint ─────────────────────────────
 model.load_state_dict(torch.load(save_path, map_location=DEVICE, weights_only=True))
-final_test, final_cv, y_pred = svm_eval(model)
+final_test, y_pred = svm_eval(model)
 print(f"\n=== IY036 SupCon + SVM (Full, 6-class) ===")
 print(f"Test accuracy: {final_test:.4f}  (chance {chance:.4f}, {final_test - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred, target_names=d["class_names"]))
