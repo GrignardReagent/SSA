@@ -133,8 +133,10 @@ module load cuda
 # Activate env (use conda instead of micromamba on Eddie)
 conda activate stochastic_sim
 
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
 # Run Python script and log output
-python IYXXX_job_script.py > IYXXX_job_script.out 2>&1
+python IYXXX_job_script.py > "IYXXX_job_script_${TIMESTAMP}.out" 2>&1
 
 # Deactivate after job is done
 conda deactivate
