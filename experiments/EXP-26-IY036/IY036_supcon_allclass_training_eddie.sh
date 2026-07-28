@@ -30,8 +30,14 @@ module load cuda
 # Activate env (use conda instead of micromamba on Eddie)
 conda activate stochastic_sim
 
+# Timestamped so repeated resubmissions with different hyperparameters each
+# keep their own log, rather than overwriting a single static .out file
+# (the -o/-e files above are already unique per $JOB_ID, but they end up
+# ~empty since this redirect diverts all of the script's actual output here).
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
 # Run Python script and log output
-python IY036_supcon_allclass_training_eddie.py > IY036_supcon_allclass_training_eddie.out 2>&1
+python IY036_supcon_allclass_training_eddie.py > "IY036_supcon_allclass_training_eddie_${TIMESTAMP}.out" 2>&1
 
 # Deactivate after job is done
 conda deactivate

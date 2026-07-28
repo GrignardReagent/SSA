@@ -79,7 +79,7 @@ from pytorch_metric_learning.losses import SupConLoss
 
 from models.ssl_transformer import SSL_Transformer
 from training.train import train_supcon_model
-from training.lars import LARS
+from open_lars import LARS
 from utils.embeddings import encode_channel, knn_downstream_accuracy
 from utils.experimental_time_series import load_labelled_time_series_csvs
 from utils.processing.imputation import fill_nans
@@ -284,7 +284,9 @@ model = SSL_Transformer(input_size=1, d_model=d_model, nhead=nhead,
                         use_conv1d=False).to(DEVICE)
 # LARS: unlike the local script's small batch_size (where AdamW is the pragmatic
 # choice), this Eddie run uses a genuinely large batch (2048), which is exactly
-# the regime LARS exists for -- see training/lars.py's module docstring.
+# the regime LARS exists for. Uses the open_lars package (pip) -- verified
+# bit-for-bit identical to this repo's prior hand-rolled implementation before
+# swapping it in; see requirements.yml.
 optimizer = LARS(model.parameters(), lr=lr, momentum=lars_momentum,
                  weight_decay=weight_decay, trust_coefficient=lars_trust_coefficient)
 supcon_criterion = SupConLoss(temperature=temperature)  # pytorch-metric-learning

@@ -34,4 +34,5 @@ dependencies:
       - transformers  # get_cosine_schedule_with_warmup, used across SimCLR/SupCon training scripts
       - wandb  # experiment tracking (training.wandb_utils)
       - pytorch-metric-learning  # SupConLoss (EXP-26-IY036), reused instead of a hand-rolled loss
+      - open_lars  # LARS optimizer (EXP-26-IY036 Eddie run), replaces the hand-rolled training/lars.py
       - -e .  # Install local package using pyproject.toml
