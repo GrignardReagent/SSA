@@ -632,6 +632,7 @@ def train_supcon_model(
     wandb_logging=False,
     wandb_config=None,
     verbose=True,
+    return_run=False,
 ):
     """SupCon training loop: batches are (X, y) single cells/trajectories.
 
@@ -647,6 +648,13 @@ def train_supcon_model(
     `eval_metric_key`, checkpoint selection -- mirroring how `train_model`
     selects on val_acc, except the selection metric here is domain-specific
     and supplied by the caller rather than computed internally.
+
+    `return_run`: return ``(history, run)`` instead of just ``history``, with
+    the wandb run left OPEN. Final test metrics are necessarily computed after
+    this function returns (they need the selected checkpoint reloaded), by
+    which point a closed run can no longer accept them. The caller writes them
+    to ``run.summary`` and then calls ``run.finish()``. ``run`` is None when
+    ``wandb_logging=False``, so the same call site works either way.
     """
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -783,7 +791,10 @@ def train_supcon_model(
             print(msg)
 
     if wandb_logging and run is not None:
-        finish_wandb_run(run, best_eval_value if eval_fn is not None else None, start_time)
+        # when the caller wants the run back, leave it OPEN so it can attach
+        # one-shot final test metrics before closing it
+        finish_wandb_run(run, best_eval_value if eval_fn is not None else None,
+                         start_time, finish=not return_run)
 
     print("SupCon training complete.")
-    return history
+    return (history, run) if return_run else history

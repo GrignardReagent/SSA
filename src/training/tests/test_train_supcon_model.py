@@ -136,3 +136,82 @@ def test_missing_augment_fn_or_loss_fn_raises():
         assert False, "expected ValueError for missing augment_fn"
     except ValueError:
         pass
+
+
+# ── return_run: keeping the wandb run open for one-shot final metrics ─────────
+
+class _FakeRun:
+    """Minimal stand-in for a wandb run, so these tests never touch the network."""
+
+    def __init__(self):
+        self.summary = {}
+        self.logged = []
+        self.finished = False
+
+    def log(self, metrics):
+        self.logged.append(metrics)
+
+    def finish(self):
+        self.finished = True
+
+
+def _patch_wandb(monkeypatch):
+    """Route train.py's wandb helpers to a fake run and hand it back."""
+    from training import train as train_mod
+
+    run = _FakeRun()
+    monkeypatch.setattr(train_mod, "init_wandb_run", lambda cfg: run)
+    monkeypatch.setattr(train_mod, "wandb_log", lambda r, m: r.log(m))
+    return run
+
+
+_CFG = {"entity": "e", "project": "p", "name": "n"}
+
+
+def test_return_run_false_keeps_the_old_single_return_value():
+    # regression guard: the v1 IY036 scripts unpack `history` directly
+    model = _make_model()
+    history = train_supcon_model(
+        model, _make_loader(), epochs=2, loss_fn=SupConLoss(temperature=0.07),
+        augment_fn=_augment, grad_clip=None, wandb_logging=False, verbose=False,
+    )
+    assert isinstance(history, dict)
+
+
+def test_return_run_true_yields_none_when_wandb_is_off():
+    model = _make_model()
+    history, run = train_supcon_model(
+        model, _make_loader(), epochs=2, loss_fn=SupConLoss(temperature=0.07),
+        augment_fn=_augment, grad_clip=None, wandb_logging=False, verbose=False,
+        return_run=True,
+    )
+    assert isinstance(history, dict) and run is None
+
+
+def test_return_run_true_leaves_the_run_open_for_the_caller(monkeypatch):
+    # the whole point: final test metrics are computed AFTER this returns, so a
+    # finished run would reject them
+    run = _patch_wandb(monkeypatch)
+    model = _make_model()
+    _, returned = train_supcon_model(
+        model, _make_loader(), epochs=2, loss_fn=SupConLoss(temperature=0.07),
+        augment_fn=_augment, grad_clip=None, wandb_logging=True, wandb_config=_CFG,
+        verbose=False, return_run=True,
+    )
+    assert returned is run
+    assert not run.finished, "run must stay open so the caller can add summaries"
+    assert "training_time_sec" in run.summary   # summary values still written
+    run.summary.update({"final/svm_balanced_acc": 0.8})
+    run.finish()
+    assert run.finished
+
+
+def test_run_is_still_closed_automatically_when_return_run_is_false(monkeypatch):
+    run = _patch_wandb(monkeypatch)
+    model = _make_model()
+    train_supcon_model(
+        model, _make_loader(), epochs=2, loss_fn=SupConLoss(temperature=0.07),
+        augment_fn=_augment, grad_clip=None, wandb_logging=True, wandb_config=_CFG,
+        verbose=False,
+    )
+    assert run.finished, "default path must still close the run"
