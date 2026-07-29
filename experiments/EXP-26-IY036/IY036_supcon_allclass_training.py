@@ -53,7 +53,6 @@ IY031 is the point of this script.
 import re
 import random
 from pathlib import Path
-from datetime import datetime
 
 import numpy as np
 import pandas as pd
@@ -71,6 +70,7 @@ from pytorch_metric_learning.losses import SupConLoss
 from models.ssl_transformer import SSL_Transformer
 from training.train import train_supcon_model
 from utils.embeddings import encode_channel, knn_downstream_accuracy
+from utils.experiment_tracking import run_timestamp
 from utils.experimental_time_series import load_labelled_time_series_csvs
 from utils.processing.imputation import fill_nans
 from utils.processing.pipeline import prepare_dataset
@@ -321,7 +321,9 @@ def eval_fn(model):
 
 
 # ── Train ─────────────────────────────────────────────────────────────────────
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+# Run interactively (no job script), so this falls back to the current time --
+# same helper as the Eddie variant, which instead inherits $RUN_TIMESTAMP
+timestamp = run_timestamp()
 save_path = IY036_DIR / (f"IY036_supcon_allclass_b{batch_size}_lr{lr}_"
                          f"L{num_layers}_H{nhead}_D{d_model}_{timestamp}_model.pth")
 
@@ -357,9 +359,9 @@ print(f"Saved: {save_path}")
 
 # ── Final evaluation with the selected checkpoint ─────────────────────────────
 model.load_state_dict(torch.load(save_path, map_location=DEVICE, weights_only=True))
-final_test, y_pred = svm_eval(model)
+final_svm_test, y_pred = svm_eval(model)
 print(f"\n=== IY036 SupCon + SVM (Full, 6-class) ===")
-print(f"Test accuracy: {final_test:.4f}  (chance {chance:.4f}, {final_test - chance:+.4f})")
+print(f"Test accuracy: {final_svm_test:.4f}  (chance {chance:.4f}, {final_svm_test - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred, target_names=d["class_names"]))
 
 model.eval()
@@ -370,29 +372,70 @@ print(f"\n=== IY036 SupCon + KNN (k={K_NEIGHBORS}, Full, 6-class) ===")
 print(f"Test accuracy: {final_knn:.4f}  (chance {chance:.4f}, {final_knn - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred_knn, target_names=d["class_names"]))
 
-# ── Comparison vs IY031 (identical SVM readout, identical split) ──────────────
-iy031 = pd.read_csv(IY031_DIR / "IY031_tf_condition_full_simclr_results.csv")
-iy031_best = iy031[iy031.status == "ok"].accuracy.max()
-comparison = pd.DataFrame([
-    {"method": "Chance", "accuracy": chance},
-    {"method": "Catch22 + SVM (IY031)", "accuracy": 0.5426},
-    {"method": "Raw SVM (IY031)", "accuracy": 0.7553},
-    {"method": "Best SimCLR + SVM, self-supervised (IY031)", "accuracy": iy031_best},
-    {"method": "IY036 SupCon + SVM, label-supervised", "accuracy": final_test},
-]).sort_values("accuracy", ascending=False).reset_index(drop=True)
-print("\n=== Comparison vs IY031 (Full, 6-class, same SVM readout) ===")
-print(comparison.to_string(index=False))
-comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_vs_iy031.csv", index=False)
+# Log and write the final test results along with the hyperparameters
+final_results = [{
+    "method": "IY036 SupCon, label-supervised",
+    # run identity -- matches this run's checkpoint and history CSV
+    "timestamp": timestamp,
+    # test results
+    "svm_accuracy": float(final_svm_test),
+    "knn_accuracy": float(final_knn),
+    "chance": float(chance),          # 1/n_classes, so accuracies stay interpretable
+    # knn
+    "k_neighbors": int(K_NEIGHBORS),
+    # fixed classes (used for training)
+    "fixed_classes": str(FIXED_CLASSES),
+    # training hyperparameters
+    "batch_size": int(batch_size),
+    "epochs": int(epochs),
+    "lr": float(lr),
+    "val_fraction": float(VAL_FRACTION),
+    "noise_std": float(NOISE_STD),    # augmentation strength for the two SupCon views
+    # optimizer -- recorded because the local (AdamW) and Eddie (LARS) variants
+    # differ here, and lr is only comparable within one optimizer
+    "optimizer": type(optimizer).__name__,
+    "weight_decay": float(weight_decay),
+    # SupCon hyperparameters
+    "temperature": float(temperature),
+    "patience": int(patience),
+    "eval_metric_key": str(eval_metric_key),
+    # model architecture
+    "d_model": int(d_model),
+    "nhead": int(nhead),
+    "num_layers": int(num_layers),
+    "dropout": float(dropout),
+    "seq_len": int(SEQ_LEN),
+}]
 
-# KNN comparison kept in a separate CSV (SVM/KNN aren't apples-to-apples in one table)
-knn_comparison = pd.DataFrame([
-    {"method": "Chance", "accuracy": chance},
-    {"method": "Raw KNN (IY032)", "accuracy": 0.7234},
-    {"method": "IY036 SupCon + KNN, label-supervised", "accuracy": final_knn},
-]).sort_values("accuracy", ascending=False).reset_index(drop=True)
-print("\n=== KNN comparison vs IY032 (Full, 6-class) ===")
-print(knn_comparison.to_string(index=False))
-knn_comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_knn_vs_iy032.csv", index=False)
+# write final results + hyperparameters to CSV
+final_df = pd.DataFrame(final_results)
+out_path = IY036_DIR / f"IY036_supcon_allclass_final_results_{timestamp}.csv"
+final_df.to_csv(out_path, index=False)
+print(f"Wrote final test results & hyperparameters to: {out_path}")
+
+# # ── Comparison vs IY031 (identical SVM readout, identical split) ──────────────
+# iy031 = pd.read_csv(IY031_DIR / "IY031_tf_condition_full_simclr_results.csv")
+# iy031_best = iy031[iy031.status == "ok"].accuracy.max()
+# comparison = pd.DataFrame([
+#     {"method": "Chance", "accuracy": chance},
+#     {"method": "Catch22 + SVM (IY031)", "accuracy": 0.5426},
+#     {"method": "Raw SVM (IY031)", "accuracy": 0.7553},
+#     {"method": "Best SimCLR + SVM, self-supervised (IY031)", "accuracy": iy031_best},
+#     {"method": "IY036 SupCon + SVM, label-supervised", "accuracy": final_test},
+# ]).sort_values("accuracy", ascending=False).reset_index(drop=True)
+# print("\n=== Comparison vs IY031 (Full, 6-class, same SVM readout) ===")
+# print(comparison.to_string(index=False))
+# comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_vs_iy031.csv", index=False)
+
+# # KNN comparison kept in a separate CSV (SVM/KNN aren't apples-to-apples in one table)
+# knn_comparison = pd.DataFrame([
+#     {"method": "Chance", "accuracy": chance},
+#     {"method": "Raw KNN (IY032)", "accuracy": 0.7234},
+#     {"method": "IY036 SupCon + KNN, label-supervised", "accuracy": final_knn},
+# ]).sort_values("accuracy", ascending=False).reset_index(drop=True)
+# print("\n=== KNN comparison vs IY032 (Full, 6-class) ===")
+# print(knn_comparison.to_string(index=False))
+# knn_comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_knn_vs_iy032.csv", index=False)
 
 pd.DataFrame({k: pd.Series(v) for k, v in history.items()}).to_csv(
     IY036_DIR / f"IY036_supcon_allclass_history_{timestamp}.csv", index=False)

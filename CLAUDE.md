@@ -133,10 +133,14 @@ module load cuda
 # Activate env (use conda instead of micromamba on Eddie)
 conda activate stochastic_sim
 
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+# Exported so the Python script can stamp its artifacts (checkpoints, history
+# CSVs, W&B run names) with the SAME timestamp as this .out log, via
+# `run_timestamp()` from `utils.experiment_tracking`. Without the export the
+# script takes its own reading and the log cannot be matched to its artifacts.
+export RUN_TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 # Run Python script and log output
-python IYXXX_job_script.py > "IYXXX_job_script_${TIMESTAMP}.out" 2>&1
+python IYXXX_job_script.py > "IYXXX_job_script_${RUN_TIMESTAMP}.out" 2>&1
 
 # Deactivate after job is done
 conda deactivate

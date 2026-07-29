@@ -34,10 +34,13 @@ conda activate stochastic_sim
 # keep their own log, rather than overwriting a single static .out file
 # (the -o/-e files above are already unique per $JOB_ID, but they end up
 # ~empty since this redirect diverts all of the script's actual output here).
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+# Exported so the Python script stamps its artifacts (checkpoint, history CSV,
+# W&B run name) with this SAME timestamp instead of taking its own reading a
+# few seconds later -- otherwise a log cannot be matched to its artifacts.
+export RUN_TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 
 # Run Python script and log output
-python IY036_supcon_allclass_training_eddie.py > "IY036_supcon_allclass_training_eddie_${TIMESTAMP}.out" 2>&1
+python IY036_supcon_allclass_training_eddie.py > "IY036_supcon_allclass_training_eddie_${RUN_TIMESTAMP}.out" 2>&1
 
 # Deactivate after job is done
 conda deactivate

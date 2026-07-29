@@ -63,7 +63,6 @@ IY031 is the point of this script.
 import re
 import random
 from pathlib import Path
-from datetime import datetime
 
 import numpy as np
 import pandas as pd
@@ -81,6 +80,7 @@ from models.ssl_transformer import SSL_Transformer
 from training.train import train_supcon_model
 from open_lars import LARS
 from utils.embeddings import encode_channel, knn_downstream_accuracy
+from utils.experiment_tracking import run_timestamp
 from utils.experimental_time_series import load_labelled_time_series_csvs
 from utils.processing.imputation import fill_nans
 from utils.processing.pipeline import prepare_dataset
@@ -108,8 +108,8 @@ SEQ_LEN = 540          # downstream traces are 540 tp; shorter files are resampl
 NOISE_STD = 0.05       # Gaussian-noise augmentation for the two SupCon views
 
 # training
-batch_size = 2048   # Khosla et al. (SupCon) used 6144 on resnet-50, 4096 on resnet-200
-epochs = 1680
+batch_size = 4096   # Khosla et al. (SupCon) used 6144 on resnet-50, 4096 on resnet-200
+epochs = 3360
 # SimCLR/SupCon-lineage linear-scaling rule for LARS (Chen et al. 2020, "A Simple
 # Framework for Contrastive Learning..."): lr = 0.3 * batch_size / 256. This is a
 # very different scale to the 1e-3 tuned for AdamW in the local (non-Eddie) script
@@ -119,14 +119,10 @@ lr = 0.3 * batch_size / 256
 lars_momentum = 0.9              # standard SGD-style momentum used inside LARS (Khosla et al.)
 lars_trust_coefficient = 0.001   # "eta" in the LARS paper (You, Gitman & Ginsburg 2017); standard default
 weight_decay = 1e-4
-temperature = 0.07     # SupCon default (Khosla et al.), though 0.07 is a well-established alternative default
+temperature = 0.07     # well-established alternative to the SupCon default of 0.1 (Khosla et al.)
 eval_every = 10        # epochs between checkpoint-selection evaluations
 patience = epochs // (eval_every * 3)  # early stopping patience in units of eval_every
-eval_metric_key = "knn_val_acc" # the metric used to select the best checkpoint -- KNN has no kernel to
-# compensate for messy embedding geometry, so it's a more direct probe of whether SupCon is actually
-# clustering same-label cells together than SVM is; SVM (matching IY031) is reported, not selected on.
-# Selecting on a genuine held-out VAL split (not train-cv, not train accuracy) matters because
-# training accuracy can't detect the downstream classifier overfitting to the training pool.
+eval_metric_key = "knn_val_acc" # the metric used to select the best checkpoint -- KNN has no kernel to compensate for messy embedding geometry, so it's a more direct probe of whether SupCon is actually clustering same-label cells together than SVM is; SVM (matching IY031) is reported, not selected on. Selecting on a genuine held-out VAL split (not train-cv, not train accuracy) matters because training accuracy can't detect the downstream classifier overfitting to the training pool.
 VAL_FRACTION = 0.20    # reused for both the pretraining-pool SupCon val-loss carve AND the
 # downstream 6-class train/val carve below
 K_NEIGHBORS = 10       # KNN downstream readout (matches IY032/IY035's grid-search k)
@@ -165,11 +161,7 @@ scaler_in = StandardScaler().fit(d["X_train_raw"])
 assert np.allclose(scaler_in.transform(d["X_test_raw"]), d["X_test"], atol=1e-6), \
     "input scaler does not reproduce prepare_dataset's normalisation"
 
-# Held out from the downstream 6-class TRAIN split ONLY -- d["X_test"] stays untouched
-# until the one-shot final evaluation. Used by eval_fn below for genuine validation
-# accuracy during SupCon training (replaces the previous CV-on-train approach: CV
-# never leaves the training pool, so it can't detect the SVM/KNN classifier
-# overfitting to it -- a true held-out split can).
+# Held out from the downstream 6-class TRAIN split ONLY -- d["X_test"] stays untouched until the one-shot final evaluation. Used by eval_fn below for genuine validation accuracy during SupCon training (replaces the previous CV-on-train approach)
 X_down_tr, X_down_val, y_down_tr, y_down_val = train_test_split(
     d["X_train"], d["y_train"], test_size=VAL_FRACTION,
     random_state=RANDOM_STATE, stratify=d["y_train"])
@@ -283,7 +275,7 @@ model = SSL_Transformer(input_size=1, d_model=d_model, nhead=nhead,
                         num_layers=num_layers, dropout=dropout,
                         use_conv1d=False).to(DEVICE)
 # LARS: unlike the local script's small batch_size (where AdamW is the pragmatic
-# choice), this Eddie run uses a genuinely large batch (2048), which is exactly
+# choice), this Eddie run uses a genuinely large batch (see `batch_size`), which is exactly
 # the regime LARS exists for. Uses the open_lars package (pip) -- verified
 # bit-for-bit identical to this repo's prior hand-rolled implementation before
 # swapping it in; see requirements.yml.
@@ -359,7 +351,8 @@ def eval_fn(model):
 
 
 # ── Train ─────────────────────────────────────────────────────────────────────
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+# Reuse the job script's RUN_TIMESTAMP so the .out log and these artifacts match
+timestamp = run_timestamp()
 save_path = IY036_DIR / (f"IY036_supcon_allclass_b{batch_size}_lr{lr}_"
                          f"L{num_layers}_H{nhead}_D{d_model}_{timestamp}_model.pth")
 
@@ -396,9 +389,9 @@ print(f"Saved: {save_path}")
 
 # ── Final evaluation with the selected checkpoint ─────────────────────────────
 model.load_state_dict(torch.load(save_path, map_location=DEVICE, weights_only=True))
-final_test, y_pred = svm_eval(model)
+final_svm_test, y_pred = svm_eval(model)
 print(f"\n=== IY036 SupCon + SVM (Full, 6-class) ===")
-print(f"Test accuracy: {final_test:.4f}  (chance {chance:.4f}, {final_test - chance:+.4f})")
+print(f"Test accuracy: {final_svm_test:.4f}  (chance {chance:.4f}, {final_svm_test - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred, target_names=d["class_names"]))
 
 model.eval()
@@ -409,29 +402,50 @@ print(f"\n=== IY036 SupCon + KNN (k={K_NEIGHBORS}, Full, 6-class) ===")
 print(f"Test accuracy: {final_knn:.4f}  (chance {chance:.4f}, {final_knn - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred_knn, target_names=d["class_names"]))
 
-# ── Comparison vs IY031 (identical SVM readout, identical split) ──────────────
-iy031 = pd.read_csv(IY031_DIR / "IY031_tf_condition_full_simclr_results.csv")
-iy031_best = iy031[iy031.status == "ok"].accuracy.max()
-comparison = pd.DataFrame([
-    {"method": "Chance", "accuracy": chance},
-    {"method": "Catch22 + SVM (IY031)", "accuracy": 0.5426},
-    {"method": "Raw SVM (IY031)", "accuracy": 0.7553},
-    {"method": "Best SimCLR + SVM, self-supervised (IY031)", "accuracy": iy031_best},
-    {"method": "IY036 SupCon + SVM, label-supervised", "accuracy": final_test},
-]).sort_values("accuracy", ascending=False).reset_index(drop=True)
-print("\n=== Comparison vs IY031 (Full, 6-class, same SVM readout) ===")
-print(comparison.to_string(index=False))
-comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_vs_iy031_eddie.csv", index=False)
+# Log and write the final test results along with the hyperparameters
+final_results = [{
+    "method": "IY036 SupCon, label-supervised",
+    # run identity -- matches this run's .out log, checkpoint and history CSV
+    "timestamp": timestamp,
+    # test results
+    "svm_accuracy": float(final_svm_test),
+    "knn_accuracy": float(final_knn),
+    "chance": float(chance),          # 1/n_classes, so accuracies stay interpretable
+    # knn
+    "k_neighbors": int(K_NEIGHBORS),
+    # fixed classes (used for training)
+    "fixed_classes": str(FIXED_CLASSES),
+    # training hyperparameters
+    "batch_size": int(batch_size),
+    "epochs": int(epochs),
+    "lr": float(lr),
+    "val_fraction": float(VAL_FRACTION),
+    "noise_std": float(NOISE_STD),    # augmentation strength for the two SupCon views
+    # optimizer -- recorded because the local (AdamW) and Eddie (LARS) variants
+    # differ here, and lr is only comparable within one optimizer
+    "optimizer": type(optimizer).__name__,
+    # LARS hyperparameters
+    "lars_momentum": float(lars_momentum),
+    "lars_trust_coefficient": float(lars_trust_coefficient),
+    "weight_decay": float(weight_decay),
+    # SupCon hyperparameters
+    "temperature": float(temperature),
+    "patience": int(patience),
+    "eval_metric_key": str(eval_metric_key),
+    # model architecture
+    "d_model": int(d_model),
+    "nhead": int(nhead),
+    "num_layers": int(num_layers),
+    "dropout": float(dropout),
+    "seq_len": int(SEQ_LEN),
+}]
 
-# KNN comparison kept in a separate CSV (SVM/KNN aren't apples-to-apples in one table)
-knn_comparison = pd.DataFrame([
-    {"method": "Chance", "accuracy": chance},
-    {"method": "Raw KNN (IY032)", "accuracy": 0.7234},
-    {"method": "IY036 SupCon + KNN, label-supervised", "accuracy": final_knn},
-]).sort_values("accuracy", ascending=False).reset_index(drop=True)
-print("\n=== KNN comparison vs IY032 (Full, 6-class) ===")
-print(knn_comparison.to_string(index=False))
-knn_comparison.to_csv(IY036_DIR / "IY036_supcon_allclass_knn_vs_iy032_eddie.csv", index=False)
+# write final results + hyperparameters to CSV
+final_df = pd.DataFrame(final_results)
+out_path = IY036_DIR / f"IY036_supcon_allclass_final_results_eddie_{timestamp}.csv"
+final_df.to_csv(out_path, index=False)
+print(f"Wrote final test results & hyperparameters to: {out_path}")
 
+# write training history to csv
 pd.DataFrame({k: pd.Series(v) for k, v in history.items()}).to_csv(
     IY036_DIR / f"IY036_supcon_allclass_history_eddie_{timestamp}.csv", index=False)
