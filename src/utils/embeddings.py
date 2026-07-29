@@ -211,6 +211,31 @@ def encode_channel(model, X: np.ndarray, device, batch_size: int = 256) -> np.nd
     return np.concatenate(embeddings, axis=0)
 
 
+def fit_predict_knn(
+    Z_train: np.ndarray,
+    y_train: np.ndarray,
+    Z_query: np.ndarray,
+    n_neighbors: int = 10,
+    metric: str = "euclidean",
+    prior_correction: bool = False,
+) -> np.ndarray:
+    """Fit a KNN on embeddings and predict, optionally correcting for class priors.
+
+    KNN has no ``class_weight`` equivalent, so on an unbalanced fit set a
+    majority class wins neighbourhoods simply by being more numerous. With
+    ``prior_correction``, each class's neighbour vote is divided by its share of
+    the fit set, so a majority class needs proportionally more neighbours to
+    win -- the KNN analogue of ``class_weight="balanced"``.
+    """
+    knn = KNeighborsClassifier(n_neighbors=n_neighbors, metric=metric, n_jobs=-1)
+    knn.fit(Z_train, y_train)
+    if not prior_correction:
+        return knn.predict(Z_query)
+    # neighbour votes / class share of the fit set, then argmax
+    prior = np.bincount(y_train, minlength=len(knn.classes_))[knn.classes_] / len(y_train)
+    return knn.classes_[np.argmax(knn.predict_proba(Z_query) / prior, axis=1)]
+
+
 def knn_downstream_accuracy(
     model,
     X_train: np.ndarray,
@@ -221,6 +246,7 @@ def knn_downstream_accuracy(
     n_neighbors: int = 10,
     metric: str = "euclidean",
     batch_size: int = 256,
+    prior_correction: bool = False,
 ) -> tuple[float, np.ndarray]:
     """KNN downstream readout: encode raw traces, fit/predict KNN on RAW embeddings.
 
@@ -230,15 +256,17 @@ def knn_downstream_accuracy(
     controls model.eval()/model.train() around the call, same convention as
     `encode_channel`.
 
+    ``prior_correction`` (default off, preserving existing callers' behaviour)
+    de-biases the vote on unbalanced fit sets -- see :func:`fit_predict_knn`.
+
     Returns
     -------
     (accuracy, y_pred)
     """
     Z_train = encode_channel(model, X_train, device, batch_size=batch_size)
     Z_test = encode_channel(model, X_test, device, batch_size=batch_size)
-    knn = KNeighborsClassifier(n_neighbors=n_neighbors, metric=metric, n_jobs=-1)
-    knn.fit(Z_train, y_train)
-    y_pred = knn.predict(Z_test)
+    y_pred = fit_predict_knn(Z_train, y_train, Z_test, n_neighbors=n_neighbors,
+                             metric=metric, prior_correction=prior_correction)
     return accuracy_score(y_test, y_pred), y_pred
 
 
