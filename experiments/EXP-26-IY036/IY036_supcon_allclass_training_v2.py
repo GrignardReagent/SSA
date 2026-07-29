@@ -110,6 +110,7 @@ from pytorch_metric_learning.losses import SupConLoss
 
 from models.ssl_transformer import SSL_Transformer
 from training.train import train_supcon_model
+from training.wandb_utils import wandb_log
 
 from features.catch22 import run_catch22_series_svm
 from utils.embeddings import encode_channel, fit_predict_knn, knn_downstream_accuracy
@@ -422,13 +423,17 @@ wandb_config = {
 }
 
 print("\nStarting SupCon training...")
-history = train_supcon_model(
+# return_run=True keeps the wandb run OPEN so the one-shot final test metrics
+# below -- computed after training, on the reloaded best checkpoint -- can still
+# be attached to it. `wandb_run` is None when wandb_logging is off.
+history, wandb_run = train_supcon_model(
     model, train_loader, val_loader=val_loader,
     epochs=epochs, patience=patience, lr=lr, optimizer=optimizer, scheduler=scheduler,
     loss_fn=supcon_criterion, augment_fn=lambda x: jitter_torch(x, sigma=NOISE_STD),
     device=DEVICE, grad_clip=None, save_path=str(save_path),
     eval_fn=eval_fn, eval_every=eval_every, eval_metric_key=eval_metric_key,
     wandb_logging=True, wandb_config=wandb_config, verbose=True,
+    return_run=True,
 )
 print(f"Saved: {save_path}")
 
@@ -455,10 +460,10 @@ _, y_pred_knn = knn_downstream_accuracy(
     model, d["X_train"], d["X_test"], d["y_train"], d["y_test"], DEVICE,
     n_neighbors=K_NEIGHBORS, prior_correction=True)
 model.train()
-final_knn = balanced_accuracy_score(d["y_test"], y_pred_knn)
+final_knn_test = balanced_accuracy_score(d["y_test"], y_pred_knn)
 print(f"\n=== IY036 v2 SupCon + KNN (k={K_NEIGHBORS}, Full, 6-class) ===")
-print(f"Balanced test accuracy: {final_knn:.4f} ± {_se(final_knn):.4f} (SE, n={n_test})"
-      f"  (chance {chance:.4f}, {final_knn - chance:+.4f})")
+print(f"Balanced test accuracy: {final_knn_test:.4f} ± {_se(final_knn_test):.4f} (SE, n={n_test})"
+      f"  (chance {chance:.4f}, {final_knn_test - chance:+.4f})")
 print(classification_report(d["y_test"], y_pred_knn, target_names=d["class_names"]))
 
 # ── Classical baselines, re-run on the IDENTICAL v2 split ─────────────────────
@@ -492,12 +497,12 @@ final_results = [{
     # test results -- BALANCED accuracy on the unbalanced v2 test split
     "metric": "balanced_accuracy",
     "svm_accuracy": float(final_svm_test),
-    "knn_accuracy": float(final_knn),
+    "knn_accuracy": float(final_knn_test),
     "chance": float(chance),          # 1/n_classes, so accuracies stay interpretable
     # binomial SE on the test split, so a reader can see what is resolvable
     "n_test": int(n_test),
     "svm_accuracy_se": _se(final_svm_test),
-    "knn_accuracy_se": _se(final_knn),
+    "knn_accuracy_se": _se(final_knn_test),
     # classical baselines re-run on this exact split (not the IY031/IY032 values)
     "raw_svm_accuracy": float(raw_svm_acc),
     "raw_knn_accuracy": float(raw_knn_acc),
@@ -533,6 +538,30 @@ final_results = [{
     "seq_len": int(SEQ_LEN),
 }]
 
+# ── One-shot final metrics -> wandb ──────────────────────────────────────────
+# These are single values per run, not per-epoch curves, so they belong in
+# run.summary rather than run.log: summary values are what the wandb runs TABLE
+# sorts and filters on, which is how runs get compared against each other.
+# They are ALSO logged as a final step so they appear in the run's own charts.
+if wandb_run is not None:
+    final_metrics = {
+        "final/svm_balanced_acc": float(final_svm_test),
+        "final/knn_balanced_acc": float(final_knn_test),
+        "final/svm_balanced_acc_se": _se(final_svm_test),
+        "final/knn_balanced_acc_se": _se(final_knn_test),
+        # baselines on the identical split, so a run can be judged against them
+        # without leaving the wandb table
+        "final/baseline_raw_svm": float(raw_svm_acc),
+        "final/baseline_raw_knn": float(raw_knn_acc),
+        "final/baseline_catch22_svm": float(catch22_acc),
+        "final/chance": float(chance),
+        "final/n_test": int(n_test),
+    }
+    wandb_run.summary.update(final_metrics)
+    wandb_log(wandb_run, final_metrics)
+    wandb_run.finish()          # train_supcon_model deliberately left it open
+    print("Logged final test metrics to wandb summary.")
+
 # write final results + hyperparameters to CSV
 final_df = pd.DataFrame(final_results)
 out_path = IY036_DIR / f"IY036_v2_supcon_allclass_final_results_{timestamp}.csv"
@@ -559,7 +588,7 @@ comparison = pd.DataFrame([
      "accuracy": final_svm_test, "accuracy_se": _se(final_svm_test)},
     {"method": f"IY036 v2 SupCon + KNN (k={K_NEIGHBORS}), label-supervised",
      "split": "v2", "n_test": n_test,
-     "accuracy": final_knn, "accuracy_se": _se(final_knn)},
+     "accuracy": final_knn_test, "accuracy_se": _se(final_knn_test)},
     # legacy rows -- different test set, NOT comparable to the block above
     {"method": "Catch22 + SVM (IY031, legacy split)", "split": "legacy",
      "n_test": LEGACY_N_TEST, "accuracy": 0.5426, "accuracy_se": None},
