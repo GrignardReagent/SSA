@@ -1,0 +1,11 @@
+method,split,n_test,accuracy,accuracy_se
+Chance,-,,0.16666666666666666,
+"Best SimCLR + SVM, self-supervised (IY031, legacy split)",legacy,94.0,0.7979,
+"Raw SVM (IY031, legacy split)",legacy,94.0,0.7553,
+"Raw KNN (IY032, legacy split)",legacy,94.0,0.7234,
+"Catch22 + SVM (IY031, legacy split)",legacy,94.0,0.5426,
+"IY036 v2 SupCon + SVM, label-supervised",v2,220.0,0.7654779896148183,0.028565828046021768
+Raw SVM,v2,220.0,0.7467018329070759,0.029320967183003515
+"IY036 v2 SupCon + KNN (k=10), label-supervised",v2,220.0,0.743867220801364,0.02942855590768775
+Raw KNN (k=10),v2,220.0,0.7266444819034333,0.030047861731723052
+Catch22 + SVM,v2,220.0,0.45347109199410984,0.03356371557607597

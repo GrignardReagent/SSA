@@ -11,7 +11,8 @@ Two complementary D-score definitions are provided — choose based on context:
     Use when: binary classification only, and speed matters (e.g. per-epoch or
     per-panel monitoring during sweeps). O(n·d) — fast even at scale.
 
-Also provides clustering agreement metrics (ARI, NMI).
+Also provides clustering agreement metrics (ARI, NMI) and a paired bootstrap for
+comparing two classifiers scored on the SAME test set.
 """
 
 from __future__ import annotations
@@ -22,9 +23,94 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.metrics import (
     adjusted_rand_score,
+    balanced_accuracy_score,
     normalized_mutual_info_score,
     pairwise_distances,
 )
+
+
+# ── Comparing two classifiers on one test set ─────────────────────────────────
+
+def paired_bootstrap_diff(
+    y_true: np.ndarray,
+    y_pred_a: np.ndarray,
+    y_pred_b: np.ndarray,
+    metric=balanced_accuracy_score,
+    n_boot: int = 10000,
+    random_state: int = 0,
+) -> dict:
+    """Bootstrap CI on ``metric(a) - metric(b)`` for two classifiers, PAIRED.
+
+    Both predictions must come from the same test cells, in the same order. The
+    same resampled indices are applied to both, so the shared test-set noise
+    cancels -- which is what makes this far tighter than comparing two
+    independent confidence intervals, and the right test when asking "is model A
+    better than model B *here*".
+
+    Needed because a metric like ``balanced_accuracy_score`` is not a mean over
+    independent samples, so it has no closed-form standard error and McNemar's
+    test does not apply to it (McNemar tests overall accuracy only -- run it
+    alongside, not instead).
+
+    Resamples that lose a class entirely are skipped, since balanced accuracy is
+    undefined for an absent class.
+
+    Parameters
+    ----------
+    y_true:
+        True labels, shape (n_samples,).
+    y_pred_a, y_pred_b:
+        Predictions from the two models, aligned with ``y_true``.
+    metric:
+        Any ``f(y_true, y_pred) -> float``. Defaults to balanced accuracy.
+    n_boot:
+        Bootstrap resamples to attempt.
+    random_state:
+        Seed, so a reported interval is reproducible.
+
+    Returns
+    -------
+    dict
+        ``diff`` (point estimate on the full test set), ``lo`` / ``hi`` (95%
+        percentile interval), ``p_gt_0`` (fraction of resamples favouring A),
+        and ``n_valid`` (resamples actually used).
+
+    Examples
+    --------
+    >>> from utils.metrics import paired_bootstrap_diff
+    >>> r = paired_bootstrap_diff(y_test, pred_supcon, pred_raw)
+    >>> f"{r['diff']:+.4f} [{r['lo']:+.4f}, {r['hi']:+.4f}]"
+    """
+    y_true = np.asarray(y_true)
+    y_pred_a = np.asarray(y_pred_a)
+    y_pred_b = np.asarray(y_pred_b)
+    if not (len(y_true) == len(y_pred_a) == len(y_pred_b)):
+        raise ValueError(
+            f"paired comparison needs equal lengths, got {len(y_true)}, "
+            f"{len(y_pred_a)}, {len(y_pred_b)}"
+        )
+
+    rng = np.random.default_rng(random_state)
+    n, n_classes = len(y_true), len(np.unique(y_true))
+    diffs = []
+    for _ in range(n_boot):
+        idx = rng.integers(0, n, n)
+        if len(np.unique(y_true[idx])) < n_classes:
+            continue
+        diffs.append(metric(y_true[idx], y_pred_a[idx]) - metric(y_true[idx], y_pred_b[idx]))
+
+    if not diffs:
+        raise ValueError("no valid bootstrap resamples -- test set too small or too skewed")
+
+    diffs = np.asarray(diffs)
+    lo, hi = np.percentile(diffs, [2.5, 97.5])
+    return {
+        "diff": float(metric(y_true, y_pred_a) - metric(y_true, y_pred_b)),
+        "lo": float(lo),
+        "hi": float(hi),
+        "p_gt_0": float((diffs > 0).mean()),
+        "n_valid": int(len(diffs)),
+    }
 
 
 # ── D-score variants ──────────────────────────────────────────────────────────
