@@ -22,7 +22,15 @@ FLUORESCENCE_CHANNELS = (
     "NADH",
     "mTurquoise2",
     "tdTomatoFRET",
+    "YFP",       # dataset 932: DIC + YFP over 200 timepoints
+    "TMRM",      # mitochondrial membrane-potential dye (datasets 4418-4420, 3709)
+    "coumarin",  # NADH-experiment dye (datasets 1239, 2709, 2711)
 )
+
+# Transmitted-light channels. Named explicitly rather than treated as "anything
+# not fluorescent", so a channel name nobody has catalogued yet stands out as
+# unrecognised instead of being silently filed as brightfield.
+BRIGHTFIELD_CHANNELS = ("Brightfield", "brightfield1", "DIC")
 
 # All proteins confirmed as TF/nuclear-localisation reporters in Swain-lab experiments.
 # Drawn from IY008 training metadata (143 confirmed TFs) plus extras seen in IY026.
@@ -45,7 +53,7 @@ KNOWN_TFS: frozenset[str] = frozenset({
     "Ypk1", "Yrm1", "Yrr1", "Zap1",
     # Additional TFs / nuclear-localisation reporters seen in IY026 data
     "Mig1", "Mig2", "Msn4", "Dot6", "Sfp1", "Hog1", "Crz1", "Yap1", "Whi5",
-    "Cat8", "Nrg1", "Rtg1", "Maf1", "Tod6", "Srl1",
+    "Cat8", "Nrg1", "Rtg1", "Maf1", "Tod6", "Srl1", "Gln3", "Pho4",
     "Gal3", "Gal4", "Gal7", "Gal80",
     "Snf1", "Bcy1", "Yak1",   # signaling proteins with documented localisation dynamics
     "Bub1", "Mad1",            # kinetochore proteins tracked for localisation

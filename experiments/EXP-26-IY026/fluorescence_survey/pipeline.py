@@ -125,6 +125,7 @@ def run(
                     f"| condition: {result['condition']} "
                     f"| channels: {result['channels']}"
                 )
+                log.info(f"     {result['provenance']}")
 
                 time.sleep(config.SLEEP_BETWEEN_DATASETS)  # polite pause for the LLM API
     finally:

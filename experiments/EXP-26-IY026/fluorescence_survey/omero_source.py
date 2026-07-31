@@ -4,6 +4,7 @@ This is the only module that talks to the OMERO server; everything downstream
 works on plain strings.
 """
 
+import re
 import sys
 from dataclasses import dataclass
 
@@ -94,7 +95,30 @@ def _read_file_annotation_text(
             break
         chunks.append(chunk)
         total_bytes += len(chunk)
-    return b"".join(chunks).decode("utf-8", errors="ignore"), truncated
+    text = b"".join(chunks).decode("utf-8", errors="ignore")
+    if truncated:
+        # Drop the final partial line. The cut lands mid-token, and a fragment
+        # still parses: "Channel: Brightfield" cut short registered a channel
+        # called "Brigh" on nine datasets.
+        text = text[:text.rfind("\n") + 1] if "\n" in text else ""
+    return text, truncated
+
+
+# Upload bookkeeping the acquisition machine leaves in the dataset. These are
+# .txt files with no microscopy content at all, and the "any other .txt" rule at
+# the bottom of the priority list would otherwise accept them as metadata —
+# reporting has_log=True and spending an LLM call on 31 bytes of "Upload to
+# staffa is in progress" (datasets 667, 677, 974, 975).
+_UPLOAD_HOUSEKEEPING_PATTERN = re.compile(
+    r'upload\b.{0,40}\b(?:in progress|failed|error|completed)|'
+    r'prevent upload attempts|there are no text files',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def _is_upload_housekeeping(text: str) -> bool:
+    """True for short upload-status notes that carry no experimental metadata."""
+    return len(text) < 500 and bool(_UPLOAD_HOUSEKEEPING_PATTERN.search(text))
 
 
 def _is_microscopy_log(text: str) -> bool:
@@ -128,6 +152,8 @@ def read_metadata_annotations(dataset_obj) -> MetadataAnnotations:
             continue  # only consider plain-text / log files
 
         text, truncated = _read_file_annotation_text(ann)
+        if _is_upload_housekeeping(text):
+            continue  # upload status note, not experimental metadata
         if truncated:
             metadata.truncated_files = ";".join(
                 value for value in (metadata.truncated_files, fname) if value
