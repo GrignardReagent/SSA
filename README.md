@@ -1,94 +1,64 @@
 # Stochastic Simulations
 
-This repository contains simulation, statistics, visualisation, and machine
-learning code for stochastic gene expression time-series experiments. The
-current simulation pipeline is centred on the two-state telegraph model:
+Simulation, statistical analysis, and machine-learning workflows for stochastic
+gene-expression time series. The main model is the two-state telegraph model;
+recent work uses synthetic trajectories for supervised and contrastive learning
+and evaluates learned representations on experimental fluorescence data.
 
-- solve telegraph parameters from target summary statistics with
-  `simulation.mean_cv_t_ac.find_tilda_parameters`
-- simulate trajectories with the Julia-backed SSA wrapper
-  `simulation.julia_simulate_telegraph_model.simulate_telegraph_model`
-- analyse mean, variance, CV, autocorrelation, and steady-state behaviour
-- train and evaluate downstream time-series classifiers and self-supervised
-  models on synthetic and experimental data
+For new work, treat `src/` as the reusable library and each
+`experiments/EXP-YY-IYXXX/` directory as an experiment record. Historical
+notebooks and archived prototypes are described separately below.
 
-Older pure-Python SSA simulators and exploratory parameter solvers have been
-removed. New code should use the Julia wrapper and `find_tilda_parameters`.
+## Quick Start
+
+Use the repository's `stochastic_sim` environment:
+
+```bash
+micromamba env create -f requirements.yml
+micromamba activate stochastic_sim
+pip install -e .
+```
+
+The simulator also needs Julia and the Python `juliacall` bridge. On its first
+call, the wrapper activates and instantiates the Julia project in `julia/`.
+The feature and test workflows additionally use `pycatch22` and `pytest`.
+These three packages are used by the code but are not currently declared in
+the checked-in Python dependency files, so install them when needed:
+
+```bash
+pip install juliacall pycatch22 pytest
+```
+
+Imports assume the editable installation above. For one-off commands, use
+`PYTHONPATH=src` from the repository root.
 
 ## Repository Layout
 
 ```text
 .
-|-- experiments/          # One folder per experiment, e.g. EXP-26-IY025
-|-- julia/                # Julia project and TelegraphSSA implementation
-|-- notebooks/            # Exploratory notebooks and examples
-|-- src/
-|   |-- classifiers/      # SVM, random forest, logistic, neural classifiers
-|   |-- dataloaders/      # Baseline, SSL, and SimCLR dataset loaders
-|   |-- features/         # catch22 extraction and feature benchmarks
-|   |-- models/           # LSTM, transformer, SimCLR/SSL model components
+|-- src/                  # Reusable Python library
+|   |-- classifiers/      # Classical and neural classifier wrappers
+|   |-- dataloaders/      # Supervised, pairwise, SSL, and SimCLR loaders
+|   |-- features/         # catch22 extraction and benchmarks
+|   |-- models/           # MLP, LSTM, transformer, and SSL models
 |   |-- mutual_information/
-|   |-- simulation/       # Current telegraph parameter solve + Julia wrapper
-|   |-- stats/            # Mean, variance, CV, autocorrelation, reports
-|   |-- training/         # Training/evaluation utilities
-|   |-- utils/            # Data processing, labels, steady-state helpers
-|   `-- visualisation/    # Trajectory, distribution, AC/cross-correlation plots
-`-- pyproject.toml
+|   |-- simulation/       # Telegraph parameter solver and Julia wrapper
+|   |-- stats/            # Mean, variance, CV, Fano factor, and correlation
+|   |-- training/         # Training, evaluation, contrastive losses, diagnostics
+|   |-- utils/            # Processing, augmentation, embeddings, and metrics
+|   `-- visualisation/    # Reusable trajectory and statistics plots
+|-- experiments/          # One directory per experiment record
+|-- julia/                # Julia environment and SSA implementations
+|-- notebooks/            # Older exploratory notebooks and local artifacts
+|-- requirements.yml      # Preferred micromamba environment
+`-- pyproject.toml        # Editable Python package metadata
 ```
 
-## Environment
+## Current Simulation Workflow
 
-Use the `stochastic_sim` environment for normal development.
-
-```bash
-micromamba activate stochastic_sim
-pip install -e .
-```
-
-If the environment needs to be recreated, install the Python dependencies from
-`pyproject.toml` and keep the package editable with `pip install -e .`.
-
-The simulator also uses the Julia project in `julia/`. The Python wrapper
-activates and instantiates this Julia environment on first use through
-`juliacall`.
-
-## Simulating Telegraph Time Series
-
-The current public simulation entry point is:
-
-```python
-from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
-```
-
-It expects a list of parameter dictionaries, an array of time points, and the
-number of trajectories per parameter set. It returns a wide `pandas.DataFrame`
-with a `label` column and one `time_*` column per time point.
-
-```python
-import numpy as np
-
-from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
-
-parameter_sets = [
-    {"sigma_b": 1.0, "sigma_u": 1.0, "rho": 10.0, "d": 1.0, "label": 0},
-    {"sigma_b": 2.0, "sigma_u": 1.0, "rho": 15.0, "d": 1.0, "label": 1},
-]
-
-time_points = np.arange(0, 300, 1.0)
-df = simulate_telegraph_model(parameter_sets, time_points, size=100, num_cores=4)
-```
-
-Julia thread count is fixed when Julia starts. If you need a specific thread
-count, set it before the first `juliacall` import or first call to the wrapper:
-
-```bash
-export JULIA_NUM_THREADS=4
-```
-
-## Solving Parameters From Target Statistics
-
-Use `find_tilda_parameters` to map target mean, autocorrelation time, and CV to
-telegraph rates:
+Use `find_tilda_parameters` to solve telegraph rates from a target mean,
+autocorrelation time, and coefficient of variation. It returns parameters in
+the order `(rho, d, sigma_b, sigma_u)`.
 
 ```python
 import numpy as np
@@ -96,15 +66,12 @@ import numpy as np
 from simulation.mean_cv_t_ac import find_tilda_parameters
 from simulation.julia_simulate_telegraph_model import simulate_telegraph_model
 
-mu_target = 100.0
-t_ac_target = 20.0
-cv_target = 0.5
-
 rho, d, sigma_b, sigma_u = find_tilda_parameters(
-    mu_target,
-    t_ac_target,
-    cv_target,
+    mu_target=10.0,
+    t_ac_target=2.0,
+    cv_target=0.5,
     sigma_sum=5.0,
+    max_rel_err=0.01,
 )
 
 parameter_sets = [
@@ -113,172 +80,146 @@ parameter_sets = [
         "sigma_u": sigma_u,
         "rho": rho,
         "d": d,
-        "label": 0,
+        "label": "example",
     }
 ]
-
-time_points = np.arange(0, 1000, 1.0)
-df = simulate_telegraph_model(parameter_sets, time_points, size=50)
+time_points = np.arange(0.0, 144.0, 1.0)
+results = simulate_telegraph_model(
+    parameter_sets,
+    time_points,
+    size=100,
+    num_cores=4,
+)
 ```
 
-`sigma_sum = sigma_b + sigma_u` controls the rescaling used by the solver. Some
-target combinations are numerically ill-conditioned for the default
-`sigma_sum=1.0`; for strict analytical checks, pass a problem-appropriate value
-and tighten `max_rel_err`.
-
-## Working With Simulator Output
-
-Most statistics functions accept trajectory arrays with shape
-`(n_trajectories, n_timepoints)`. For a simulator result:
+`simulate_telegraph_model` returns a wide `pandas.DataFrame`: one row per
+trajectory, a `label` column, and one `time_*` column per requested time point.
+Labels may be strings or numbers. To obtain a trajectory matrix:
 
 ```python
-trajectories = df[df["label"] == 0].drop(columns=["label"]).to_numpy()
+trajectories = results.drop(columns="label").to_numpy()
 ```
 
-Autocorrelation utilities accept the full labelled DataFrame:
+Julia's thread count is fixed when Julia starts. Set `JULIA_NUM_THREADS` before
+the first `juliacall` import or simulator call when a fixed thread count is
+required:
 
-```python
-from stats.autocorrelation import calculate_autocorrelation, calculate_ac_time_interp1d
-
-ac = calculate_autocorrelation(df, stationary=True)
-ac_mean = ac["stress_ac"].mean(axis=0)
-t_ac_observed = calculate_ac_time_interp1d(ac_mean, ac["stress_lags"])
+```bash
+export JULIA_NUM_THREADS=4
 ```
 
-Plotting helpers in `visualisation.plots` accept either full simulator output
-DataFrames or already-extracted trajectory matrices.
+The parameter solver requires positive targets and
+`mu_target * cv_target**2 > 1`. `sigma_sum` is the fixed value of
+`sigma_b + sigma_u`; it can affect numerical conditioning and is not selected
+automatically.
 
-## Machine Learning Workflows
+## Reusable Analysis and ML Code
 
-The repository contains several ML paths for synthetic and experimental time
-series:
+- `stats.autocorrelation` calculates auto/cross-correlation and interpolated
+  autocorrelation time; the other `stats` modules provide analytical and
+  trajectory-based summary statistics.
+- `utils.processing` contains the shared preprocessing pipeline. Missing values
+  are handled with deterministic `IterativeImputer` logic that preserves shape,
+  with guarded fallbacks for pathological inputs.
+- `dataloaders.simclr` supports synthetic and experimental contrastive pairs,
+  lazy loading, and instance, global, joint, or batch-wise normalization.
+- `training.train` contains supervised, Siamese, SimCLR cross-view InfoNCE, and
+  supervised-contrastive training loops. Evaluation, few-shot utilities, and
+  diagnostics live beside it.
+- `features.catch22`, `utils.embeddings`, and `utils.metrics` support the common
+  downstream SVM/k-NN and representation-analysis workflows.
+- `visualisation.plots` accepts simulator-style DataFrames or extracted
+  trajectory matrices for the main telegraph-model plots.
 
-- `src/classifiers/`: classical and neural classifiers, including SVM,
-  random forest, logistic regression, MLP, LSTM, and transformer interfaces
-- `src/dataloaders/`: loaders for baseline supervised training and SimCLR-style
-  self-supervised learning; `simclr.py` supports lazy loading plus instance,
-  global, joint, and batch-wise normalisation modes
-- `src/features/`: catch22 feature extraction and SVM benchmark helpers
-- `src/models/`: model definitions for LSTM, transformer, SimCLR/SSL, and
-  related experiments
-- `src/training/`: reusable training and evaluation utilities, including the
-  cross-view InfoNCE loss used by recent SimCLR experiments
+Before adding a helper to an experiment, check `src/` for an existing reusable
+implementation.
 
-Recent experiments from `EXP-25-IY011` onward focus on SimCLR pretraining on
-synthetic trajectories followed by downstream SVM classification on
-experimental data.
+## Experiment Index
 
-Feature-engineering benchmarks such as catch22, tsfresh, and permutation or
-shuffle controls currently live mainly in experiment folders. Promote reusable
-pieces into `src/` only when they are needed across experiments.
+Experiment directories are named `EXP-YY-IYXXX`, where `YY` is the year and
+`IYXXX` is the experiment identifier. Scripts, job files, logs, figures,
+checkpoints, and result tables in these directories preserve the local record;
+the matching [Electronic Lab Notebook](https://www.notion.so/202698419cbd8055bfc9db5bbf88b149?v=202698419cbd8092be3d000cc75d14e6&source=copy_link)
+entry is the source of record for motivation, methods, results, and conclusions.
 
-## Experiments
-
-Experiment folders live under `experiments/` and use names like
-`EXP-26-IY019`, where `26` is the year and `IY019` is the experiment ID. A
-typical experiment folder contains:
-
-- a main Python script
-- an `.out` log from the Python run
-- optional Grid Engine `.sh`, `.o`, and `.e` files for Eddie/HPC jobs
-- figures, CSV summaries, model checkpoints, or notebooks produced by the run
-
-When creating a new experiment, also create the matching Electronic Lab
-Notebook entry with the same experiment name.
-
-The table below is a quick local index. The ELN should remain the source of
-record for motivation, methods, results, and conclusions.
-
-| Experiment | Brief description |
+| Experiment | Scope |
 | --- | --- |
-| `EXP-25-IY001` | Early LSTM architecture and hyperparameter selection on steady-state simulated trajectories, with many HPC job variants. |
-| `EXP-25-IY002` | Follow-up LSTM training on concatenated steady-state simulation datasets, producing the `IY002A` model artifact. |
-| `EXP-25-IY003` | Empty local placeholder folder; no experiment artifacts are currently present in the repository. |
-| `EXP-25-IY004` | Synthetic telegraph-model classifier benchmarks across variance-ratio regimes. |
-| `EXP-25-IY005` | Telegraph SSA fine-tuning and Fano-factor validation for the two-state model implementation. |
-| `EXP-25-IY006` | Transformer architecture and hyperparameter-importance analysis, including trajectory-combination utilities and saved model/results artifacts. |
-| `EXP-25-IY007` | Parameter-finding and classifier benchmarks across CV, `mu`, and `t_ac` variation settings, including LSTM/transformer sweeps and CV/autocorrelation diagnostics. |
-| `EXP-25-IY008` | Experimental time-series processing for old and NEW TF-screen datasets: metadata mapping, full/post-switch extraction, CV analysis, and GFP/mCherry transforms. |
-| `EXP-25-IY010` | Development and validation of telegraph target-statistic solvers, sampling strategies, synthetic dataset generation, measurement-noise tests, and ratio-classification benchmarks. |
-| `EXP-25-IY011` | Sobol-sampled Julia simulations for baseline, `mu`, `cv`, and `t_ac` variation datasets, with baseline transformer, Siamese transformer, and initial contrastive-learning workflows. |
-| `EXP-25-IY012` | Julia TelegraphSSA wrapper validation, fixed-statistic simulation tests, and analytical/histogram plotting checks. |
-| `EXP-25-IY013` | Experimental time-series classification pipelines, including binary and multiclass SVM/LSTM/transformer comparisons and all-Omid pairwise heatmaps. |
-| `EXP-26-IY014` | Julia-resimulated baseline, `mu`, `cv`, and `t_ac` variation datasets with 10-fold parameter differences, plus baseline transformer training and evaluation. |
-| `EXP-26-IY015` | Baseline transformer experiments that augment raw simulated time series with additional summary-statistic inputs. |
-| `EXP-26-IY016` | Follow-up SVM pipeline optimisation on IY014-style data, including 2-fold/10-fold variants and catch22/tsfresh feature benchmarks. |
-| `EXP-26-IY017` | SimCLR follow-up from IY011 exploring batch size, embedding dimension, instance normalisation, catch22 baselines, and downstream SVM evaluation. |
-| `EXP-26-IY018` | Baseline transformer hyperparameter sweeps with Optuna across baseline, `mu`, `cv`, and `t_ac` datasets, plus held-out test dataset generation. |
-| `EXP-26-IY019` | Large Sobol synthetic dataset generation across baseline, `mu`, `cv`, and `t_ac` variation settings for downstream transformer training. |
-| `EXP-26-IY020` | Additional synthetic dataset generation and summary-statistic processing across baseline, `mu`, `cv`, and `t_ac` variation settings. |
-| `EXP-26-IY021` | Experimental-data benchmarks comparing raw SVM, catch22 + SVM, and frozen SimCLR embedding + SVM on mCherry, GFP, and dual-channel datasets. |
-| `EXP-26-IY022` | SimCLR normalisation studies, including batch-wise, global, joint, and standard training variants with downstream SVM comparison. |
-| `EXP-26-IY023` | Mixed-source SimCLR training across baseline, `mu`, `cv`, and `t_ac` variation datasets, with embedding visualisation and SVM downstream analysis. |
-| `EXP-26-IY024` | Cross-view InfoNCE implementation note and SimCLR training comparisons for mixed variation datasets, including logit-matrix diagnostics. |
-| `EXP-26-IY025` | Re-analysis of SVM pairwise performance, including median-split permutation tests, pairwise-variation controls, and `t_ac` mechanism studies linking fixed mean/CV sweeps to distribution shape, fraction-above-mean behaviour, and all four telegraph rates. |
-| `EXP-26-IY026` | Fluorescence experiment inventory and overview, linking time-lapse files to strain/TF metadata and summary result tables. |
-| `EXP-26-IY027` | Time-lapse dataset probe for Shimizu FRET-style `.mat` data, producing quick diagnostic plots of available trajectories. |
-| `EXP-26-IY028` | Embedding-space and poster-figure analyses for experimental data, including SimCLR ROC-AUC, t-SNE/PHATE visualisations, clustering/discriminability metrics, and dual-channel catch22/SVM comparisons. |
-| `EXP-26-IY029` | Pairwise same/different method comparison across catch22 + SVM, SimCLR + SVM, MLP, LSTM, and transformer models, with embedding visualisation and clustering metrics. |
-| `EXP-26-IY031` | TF identity/condition classification sanity checks on old and NEW experimental datasets, comparing full-trace and steady-state SimCLR results with balanced traces and confusion matrices. |
-| `EXP-26-IY032` | Open-set retrieval and kNN-style checks on TF/condition embeddings, including baseline heatmaps, UMAP views, and full/steady-state SimCLR summaries. |
-| `EXP-26-IY033` | Condition-first classification sanity check on steady-state experimental traces, with confusion matrices and condition summary comparisons. |
+| `EXP-25-IY001` | LSTM architecture and hyperparameter selection on steady-state synthetic trajectories, with HPC variants. |
+| `EXP-25-IY002` | Historical follow-up that assembles variance-ratio steady-state data and trains the selected LSTM. |
+| `EXP-25-IY003` | Earlier LSTM architecture-selection and hyperparameter-finetuning runs preserved in two subdirectories. |
+| `EXP-25-IY004` | Historical telegraph classifier benchmarks across variance-ratio regimes using the selected LSTM. |
+| `EXP-25-IY005` | Telegraph SSA tuning and Fano-factor validation. |
+| `EXP-25-IY006` | Transformer architecture and hyperparameter analysis, trajectory combination, and saved model artifacts. |
+| `EXP-25-IY007` | Historical parameter-solver validation and LSTM/transformer benchmarks across target-statistic variations. |
+| `EXP-25-IY008` | Processing and analysis of old and expanded TF-screen fluorescence time series. |
+| `EXP-25-IY010` | Historical target-statistic solver development, synthetic sampling, noise tests, and ratio classification. |
+| `EXP-25-IY011` | Sobol-sampled Julia simulations plus baseline, Siamese, and early contrastive transformer workflows. |
+| `EXP-25-IY012` | Notebook-only Julia telegraph wrapper validation and analytical/distribution sanity checks. |
+| `EXP-25-IY013` | Raw SVM, LSTM, and transformer classification of old/new experimental TF-condition traces. |
+| `EXP-26-IY014` | Julia-resimulated baseline and isolated mean, CV, or autocorrelation-time variation datasets. |
+| `EXP-26-IY015` | Baseline transformer studies of 2-fold parameter differences and trajectory-group size. |
+| `EXP-26-IY016` | SVM optimization and catch22/tsfresh benchmarks on 2-fold and 10-fold synthetic variations. |
+| `EXP-26-IY017` | SimCLR batch-size, embedding-width, and normalization studies with catch22 and downstream SVM baselines. |
+| `EXP-26-IY018` | Optuna transformer sweeps across synthetic variation datasets and held-out test generation. |
+| `EXP-26-IY019` | Large Sobol synthetic corpora for baseline and isolated mean, CV, or autocorrelation-time variations. |
+| `EXP-26-IY020` | Denser synthetic corpora and summary-statistic/steady-state dataset preparation. |
+| `EXP-26-IY021` | Raw SVM, catch22+SVM, and frozen SimCLR+SVM benchmarks on single- and dual-channel experimental data. |
+| `EXP-26-IY022` | Instance, global, joint, and batch-wise normalization studies for SimCLR and downstream SVMs. |
+| `EXP-26-IY023` | Mixed-variation SimCLR training across normalization, batch-size, sequence-length, and embedding settings. |
+| `EXP-26-IY024` | Cross-view InfoNCE validation and comparison with standard InfoNCE on mixed synthetic data. |
+| `EXP-26-IY025` | Pairwise SVM, catch22, and telegraph-mechanism analyses of autocorrelation-time variation. |
+| `EXP-26-IY026` | OMERO fluorescence/TF dataset survey with deterministic metadata parsing and an LLM fallback. |
+| `EXP-26-IY027` | Exploratory probes of Fraisse VRAE and Shimizu FRET time-lapse datasets. |
+| `EXP-26-IY028` | SimCLR/catch22 representation, ROC-AUC, clustering, and poster analyses of experimental data. |
+| `EXP-26-IY029` | Pairwise comparison of raw SVM, catch22, SimCLR, MLP, LSTM, and transformer methods. |
+| `EXP-26-IY030` | MLP versus RBF-SVM heads on frozen SimCLR embeddings for TF-at-condition classification. |
+| `EXP-26-IY031` | Full-trace and steady-state TF/condition classification and embedding-separation checks. |
+| `EXP-26-IY032` | k-NN embedding retrieval and leave-one-TF-out open-set diagnostics. |
+| `EXP-26-IY033` | Condition-first classification after collapsing TF identity into carbon-source classes. |
+| `EXP-26-IY034` | Supervised-contrastive refinement of SimCLR backbones with frozen-embedding SVM evaluation. |
+| `EXP-26-IY035` | SimCLR pretraining on experimental same-file, augmented, and full-versus-steady-state views. |
+| `EXP-26-IY036` | All-class supervised-contrastive encoders and k-NN/SVM comparisons; v3 follow-up scripts have no recorded results. |
 
-Historical experiments may reference removed APIs or absolute paths from the
-machine or cluster where they were run. For new work, prefer the current `src/`
-APIs above and keep experiment-specific paths local to the experiment folder.
+Create a matching ELN page when adding an experiment. `EXP-26-IY026` has its
+own README and additional OMERO dependency notes.
 
-`experiments/obsolete_files/` contains archived prototypes and old simulation
-scripts. Treat it as historical reference only, not as a template for new work.
+## Tests
 
-## Notebooks
-
-The root `notebooks/` directory contains older exploratory work, prototypes,
-and WIP analyses. Recent reproducible work is usually easier to follow from the
-matching `experiments/EXP-YY-IYXXX/` folder and ELN entry.
-
-## Testing
-
-Run tests from the repository root with `PYTHONPATH=src`:
+Run the test suite from the repository root:
 
 ```bash
 PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest
 ```
 
-Useful focused checks:
+Focused suites are under `src/*/tests/`, for example:
 
 ```bash
 PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest src/simulation/tests
-PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest src/visualisation/tests
-PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest src/stats/tests
+PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest src/training/tests
+PYTHONPATH=src micromamba run -n stochastic_sim python -m pytest src/utils/tests
 ```
 
-The Julia-backed simulation tests may take longer on first run because Julia
-has to initialise and instantiate the `julia/` project.
+Julia-backed tests can be slower on first use while the Julia project is
+instantiated.
 
-## Plotting Conventions
+## Experiment Conventions
 
-For experiment figures:
+- Use the `stochastic_sim` environment for local work. Eddie Grid Engine jobs
+  use `conda activate stochastic_sim` after loading Miniforge and CUDA modules.
+- Export one `RUN_TIMESTAMP` before a job so logs, checkpoints, histories, and
+  tracking runs receive the same timestamp.
+- Save figures as `IYXXX_<figure_name>.png`; label axes with variable and units,
+  use colorblind-safe colors, and include error bars (standard deviation by
+  default, or state the alternative).
+- Keep experiment-specific scripts and artifacts in their experiment directory;
+  move code into `src/` only when it is reusable.
+- Avoid committing large generated data, logs, or checkpoints unless they are
+  deliberate experiment records.
 
-- save figures as `IYXXX_<figure_name>.png`
-- label axes with variable names and units, for example `Time / min`
-- include error bars for statistical plots, using SEM by default
-- use `sns.color_palette("colorblind")` where possible
-- prefer outside legends when in-axes legends cover data
-- call `tight_layout()` or use `constrained_layout=True`
+## Historical and Archival Material
 
-See `src/visualisation/plots.py` for reusable plotting helpers.
-
-## HPC Jobs
-
-Long simulations are often run on the University of Edinburgh Eddie cluster
-with Grid Engine. Job scripts should activate `stochastic_sim`, request the
-needed GPU/CPU resources, set a runtime limit, and write Python output to a
-matching `.out` file in the experiment directory.
-
-## Notes
-
-- Use the Julia wrapper for new simulations.
-- Do not reintroduce the deleted pure-Python telegraph SSA simulator.
-- Keep experiment changes scoped to the relevant `EXP-YY-IYXXX` folder.
-- Generated data, logs, checkpoints, and figures can be large; avoid committing
-  bulky outputs unless they are deliberate experiment artefacts.
+`experiments/obsolete_files/` contains archived prototypes and old simulation
+code. Root `notebooks/` and the Julia notebooks are mostly exploratory or
+historical. They may contain machine-specific paths or interfaces that no
+longer represent the supported workflow; use the current APIs shown above for
+new work.
