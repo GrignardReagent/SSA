@@ -1,0 +1,1417 @@
+Full: 1099 cells × 540 tp, 6 classes, NaN remaining: 0
+  Train: 659  |  Val: 220  |  Test: 220
+  Rest (non-benchmark): 10881 cells, 26 classes
+Downstream 6-class: fit 659, val 220, test 220, chance 0.1667
+SupCon pretraining pool : 11540 cells x 540 tp, 32 TF@condition classes (440 benchmark val/test cells never added)
+Pretraining class sizes: min=46, max=1700, n_classes=32
+SupCon train/val split: 9232 train, 2308 val (val_fraction=0.2)
+
+Augmentation recipe: composed
+  jitter σ=0.15 -> scaling σ=0.1 -> magnitude_warp σ=0.2 (knot 4) -> window_slice ratio=0.9
+
+=== Classical baselines on the v3 split (identical for every seed) ===
+Raw SVM      : 0.7467 ± 0.0293
+Raw KNN (k=10): 0.7266 ± 0.0300
+
+=== Catch22 + SVM (RBF) -- IY036 v3 split ===
+Train:   0%|          | 0/659 [00:00<?, ?it/s]Train:   5%|▍         | 31/659 [00:00<00:02, 307.55it/s]Train:  10%|▉         | 64/659 [00:00<00:01, 315.53it/s]Train:  15%|█▍        | 96/659 [00:00<00:01, 310.25it/s]Train:  19%|█▉        | 128/659 [00:00<00:01, 310.93it/s]Train:  24%|██▍       | 160/659 [00:00<00:01, 309.04it/s]Train:  29%|██▉       | 191/659 [00:00<00:01, 308.48it/s]Train:  34%|███▍      | 224/659 [00:00<00:01, 312.75it/s]Train:  39%|███▉      | 256/659 [00:00<00:01, 313.86it/s]Train:  44%|████▍     | 290/659 [00:00<00:01, 318.97it/s]Train:  49%|████▉     | 322/659 [00:01<00:01, 317.85it/s]Train:  54%|█████▍    | 355/659 [00:01<00:00, 321.05it/s]Train:  59%|█████▉    | 388/659 [00:01<00:00, 319.25it/s]Train:  64%|██████▍   | 421/659 [00:01<00:00, 322.05it/s]Train:  69%|██████▉   | 454/659 [00:01<00:00, 319.78it/s]Train:  74%|███████▍  | 487/659 [00:01<00:00, 322.18it/s]Train:  79%|███████▉  | 520/659 [00:01<00:00, 318.60it/s]Train:  84%|████████▍ | 553/659 [00:01<00:00, 321.41it/s]Train:  89%|████████▉ | 586/659 [00:01<00:00, 319.75it/s]Train:  94%|█████████▍| 618/659 [00:01<00:00, 318.06it/s]Train:  99%|█████████▊| 650/659 [00:02<00:00, 318.29it/s]                                                         Test:   0%|          | 0/220 [00:00<?, ?it/s]Test:  15%|█▍        | 32/220 [00:00<00:00, 317.24it/s]Test:  29%|██▉       | 64/220 [00:00<00:00, 318.27it/s]Test:  44%|████▍     | 97/220 [00:00<00:00, 319.29it/s]Test:  60%|█████▉    | 131/220 [00:00<00:00, 323.70it/s]Test:  75%|███████▍  | 164/220 [00:00<00:00, 322.70it/s]Test:  90%|█████████ | 198/220 [00:00<00:00, 326.57it/s]                                                        /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/s1732775/.netrc.
+wandb: Currently logged in as: grignardreagent (grignard-reagent) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run bgln2jwe
+wandb: Tracking run with wandb version 0.28.1
+wandb: Run data is saved locally in /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/wandb/run-20260730_170116-bgln2jwe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run supcon_allclass_eddie_v3_composed_b4096_lr4.8_L2_H4_D16_temp0.07_20260730_170044_seed42
+wandb: ⭐️ View project at https://wandb.ai/grignard-reagent/IY036-SupCon-model
+wandb: 🚀 View run at https://wandb.ai/grignard-reagent/IY036-SupCon-model/runs/bgln2jwe
+/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Feature matrix: 22 features
+Accuracy: 0.5409  (chance=0.1667)
+Catch22 + SVM: 0.4535 ± 0.0336
+
+==============================================================================
+=== seed 42  |  recipe composed 
+==============================================================================
+Batches/epoch: 2  (batch_size=4096)
+Starting SupCon training...
+[SupCon] Epoch [1/3360] | train_loss 8.9152 | val_loss 6.1346
+[SupCon] Epoch [2/3360] | train_loss 8.9188 | val_loss 6.1351
+[SupCon] Epoch [3/3360] | train_loss 8.9151 | val_loss 6.1258
+[SupCon] Epoch [4/3360] | train_loss 8.9015 | val_loss 6.0979
+[SupCon] Epoch [5/3360] | train_loss 8.8731 | val_loss 6.0599
+[SupCon] Epoch [6/3360] | train_loss 8.8199 | val_loss 6.0059
+[SupCon] Epoch [7/3360] | train_loss 8.7639 | val_loss 5.9594
+[SupCon] Epoch [8/3360] | train_loss 8.7383 | val_loss 5.9476
+[SupCon] Epoch [9/3360] | train_loss 8.7209 | val_loss 5.9358
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.73it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.6487)
+[SupCon] Epoch [10/3360] | train_loss 8.7147 | val_loss 5.9334 | knn_val_acc_smooth 0.6487 | knn_val_acc 0.6487 | svm_val_acc 0.6976 | knn_train_acc 0.7448 | svm_train_acc 0.6973
+[SupCon] Epoch [11/3360] | train_loss 8.7080 | val_loss 5.9266
+[SupCon] Epoch [12/3360] | train_loss 8.7022 | val_loss 5.9231
+[SupCon] Epoch [13/3360] | train_loss 8.6984 | val_loss 5.9207
+[SupCon] Epoch [14/3360] | train_loss 8.6937 | val_loss 5.9244
+[SupCon] Epoch [15/3360] | train_loss 8.6939 | val_loss 5.9200
+[SupCon] Epoch [16/3360] | train_loss 8.6939 | val_loss 5.9142
+[SupCon] Epoch [17/3360] | train_loss 8.6854 | val_loss 5.9150
+[SupCon] Epoch [18/3360] | train_loss 8.6866 | val_loss 5.9100
+[SupCon] Epoch [19/3360] | train_loss 8.6901 | val_loss 5.9038
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.49it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.6487)
+[SupCon] Epoch [20/3360] | train_loss 8.6861 | val_loss 5.9003 | knn_val_acc_smooth 0.6487 | knn_val_acc 0.6487 | svm_val_acc 0.7080 | knn_train_acc 0.7434 | svm_train_acc 0.7234
+[SupCon] Epoch [21/3360] | train_loss 8.6832 | val_loss 5.9102
+[SupCon] Epoch [22/3360] | train_loss 8.6833 | val_loss 5.9039
+[SupCon] Epoch [23/3360] | train_loss 8.6855 | val_loss 5.9065
+[SupCon] Epoch [24/3360] | train_loss 8.6860 | val_loss 5.8989
+[SupCon] Epoch [25/3360] | train_loss 8.6788 | val_loss 5.8917
+[SupCon] Epoch [26/3360] | train_loss 8.6747 | val_loss 5.8905
+[SupCon] Epoch [27/3360] | train_loss 8.6781 | val_loss 5.8892
+[SupCon] Epoch [28/3360] | train_loss 8.6706 | val_loss 5.8885
+[SupCon] Epoch [29/3360] | train_loss 8.6659 | val_loss 5.8805
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.28it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.6575)
+[SupCon] Epoch [30/3360] | train_loss 8.6604 | val_loss 5.8818 | knn_val_acc_smooth 0.6575 | knn_val_acc 0.6751 | svm_val_acc 0.7060 | knn_train_acc 0.7487 | svm_train_acc 0.7444
+[SupCon] Epoch [31/3360] | train_loss 8.6587 | val_loss 5.8841
+[SupCon] Epoch [32/3360] | train_loss 8.6588 | val_loss 5.8729
+[SupCon] Epoch [33/3360] | train_loss 8.6614 | val_loss 5.8680
+[SupCon] Epoch [34/3360] | train_loss 8.6530 | val_loss 5.8610
+[SupCon] Epoch [35/3360] | train_loss 8.6476 | val_loss 5.8569
+[SupCon] Epoch [36/3360] | train_loss 8.6571 | val_loss 5.8880
+[SupCon] Epoch [37/3360] | train_loss 8.6689 | val_loss 5.8857
+[SupCon] Epoch [38/3360] | train_loss 8.6646 | val_loss 5.8553
+[SupCon] Epoch [39/3360] | train_loss 8.6427 | val_loss 5.8463
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.6736)
+[SupCon] Epoch [40/3360] | train_loss 8.6439 | val_loss 5.8646 | knn_val_acc_smooth 0.6736 | knn_val_acc 0.6970 | svm_val_acc 0.7235 | knn_train_acc 0.7790 | svm_train_acc 0.7175
+[SupCon] Epoch [41/3360] | train_loss 8.6453 | val_loss 5.8431
+[SupCon] Epoch [42/3360] | train_loss 8.6380 | val_loss 5.8429
+[SupCon] Epoch [43/3360] | train_loss 8.6316 | val_loss 5.8394
+[SupCon] Epoch [44/3360] | train_loss 8.6274 | val_loss 5.8235
+[SupCon] Epoch [45/3360] | train_loss 8.6081 | val_loss 5.8254
+[SupCon] Epoch [46/3360] | train_loss 8.6118 | val_loss 5.8339
+[SupCon] Epoch [47/3360] | train_loss 8.6226 | val_loss 5.8310
+[SupCon] Epoch [48/3360] | train_loss 8.6042 | val_loss 5.8143
+[SupCon] Epoch [49/3360] | train_loss 8.5854 | val_loss 5.8145
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7062)
+[SupCon] Epoch [50/3360] | train_loss 8.5952 | val_loss 5.7937 | knn_val_acc_smooth 0.7062 | knn_val_acc 0.7464 | svm_val_acc 0.7406 | knn_train_acc 0.7677 | svm_train_acc 0.7516
+[SupCon] Epoch [51/3360] | train_loss 8.5691 | val_loss 5.7969
+[SupCon] Epoch [52/3360] | train_loss 8.5670 | val_loss 5.7674
+[SupCon] Epoch [53/3360] | train_loss 8.5543 | val_loss 5.7722
+[SupCon] Epoch [54/3360] | train_loss 8.5535 | val_loss 5.7533
+[SupCon] Epoch [55/3360] | train_loss 8.5348 | val_loss 5.7428
+[SupCon] Epoch [56/3360] | train_loss 8.5198 | val_loss 5.7246
+[SupCon] Epoch [57/3360] | train_loss 8.5145 | val_loss 5.7096
+[SupCon] Epoch [58/3360] | train_loss 8.5148 | val_loss 5.7234
+[SupCon] Epoch [59/3360] | train_loss 8.5083 | val_loss 5.7042
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7306)
+[SupCon] Epoch [60/3360] | train_loss 8.4843 | val_loss 5.6760 | knn_val_acc_smooth 0.7306 | knn_val_acc 0.7484 | svm_val_acc 0.7666 | knn_train_acc 0.7768 | svm_train_acc 0.7511
+[SupCon] Epoch [61/3360] | train_loss 8.4750 | val_loss 5.6572
+[SupCon] Epoch [62/3360] | train_loss 8.4511 | val_loss 5.6490
+[SupCon] Epoch [63/3360] | train_loss 8.4522 | val_loss 5.6334
+[SupCon] Epoch [64/3360] | train_loss 8.4315 | val_loss 5.6395
+[SupCon] Epoch [65/3360] | train_loss 8.4568 | val_loss 5.6142
+[SupCon] Epoch [66/3360] | train_loss 8.4230 | val_loss 5.6372
+[SupCon] Epoch [67/3360] | train_loss 8.4483 | val_loss 5.6454
+[SupCon] Epoch [68/3360] | train_loss 8.4722 | val_loss 5.6529
+[SupCon] Epoch [69/3360] | train_loss 8.4606 | val_loss 5.6479
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7363)
+[SupCon] Epoch [70/3360] | train_loss 8.4261 | val_loss 5.6126 | knn_val_acc_smooth 0.7363 | knn_val_acc 0.7142 | svm_val_acc 0.7627 | knn_train_acc 0.7701 | svm_train_acc 0.7405
+[SupCon] Epoch [71/3360] | train_loss 8.4407 | val_loss 5.6220
+[SupCon] Epoch [72/3360] | train_loss 8.4236 | val_loss 5.6192
+[SupCon] Epoch [73/3360] | train_loss 8.4300 | val_loss 5.5943
+[SupCon] Epoch [74/3360] | train_loss 8.4019 | val_loss 5.6112
+[SupCon] Epoch [75/3360] | train_loss 8.4029 | val_loss 5.5923
+[SupCon] Epoch [76/3360] | train_loss 8.4003 | val_loss 5.5719
+[SupCon] Epoch [77/3360] | train_loss 8.3910 | val_loss 5.5779
+[SupCon] Epoch [78/3360] | train_loss 8.3771 | val_loss 5.5954
+[SupCon] Epoch [79/3360] | train_loss 8.3977 | val_loss 5.5572
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7399)
+[SupCon] Epoch [80/3360] | train_loss 8.3716 | val_loss 5.5780 | knn_val_acc_smooth 0.7399 | knn_val_acc 0.7572 | svm_val_acc 0.7973 | knn_train_acc 0.7660 | svm_train_acc 0.7675
+[SupCon] Epoch [81/3360] | train_loss 8.3819 | val_loss 5.5470
+[SupCon] Epoch [82/3360] | train_loss 8.3657 | val_loss 5.5502
+[SupCon] Epoch [83/3360] | train_loss 8.3575 | val_loss 5.5418
+[SupCon] Epoch [84/3360] | train_loss 8.3465 | val_loss 5.5222
+[SupCon] Epoch [85/3360] | train_loss 8.3423 | val_loss 5.5535
+[SupCon] Epoch [86/3360] | train_loss 8.3513 | val_loss 5.5212
+[SupCon] Epoch [87/3360] | train_loss 8.3303 | val_loss 5.5431
+[SupCon] Epoch [88/3360] | train_loss 8.3460 | val_loss 5.5419
+[SupCon] Epoch [89/3360] | train_loss 8.3478 | val_loss 5.5176
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (1/112).
+[SupCon] Epoch [90/3360] | train_loss 8.3496 | val_loss 5.5698 | knn_val_acc_smooth 0.7231 | knn_val_acc 0.6978 | svm_val_acc 0.7390 | knn_train_acc 0.7809 | svm_train_acc 0.7362
+[SupCon] Epoch [91/3360] | train_loss 8.3593 | val_loss 5.5310
+[SupCon] Epoch [92/3360] | train_loss 8.3281 | val_loss 5.4893
+[SupCon] Epoch [93/3360] | train_loss 8.3233 | val_loss 5.5448
+[SupCon] Epoch [94/3360] | train_loss 8.3196 | val_loss 5.4867
+[SupCon] Epoch [95/3360] | train_loss 8.3046 | val_loss 5.4899
+[SupCon] Epoch [96/3360] | train_loss 8.2936 | val_loss 5.4845
+[SupCon] Epoch [97/3360] | train_loss 8.2906 | val_loss 5.4576
+[SupCon] Epoch [98/3360] | train_loss 8.2757 | val_loss 5.4758
+[SupCon] Epoch [99/3360] | train_loss 8.3268 | val_loss 5.5008
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.74it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (2/112).
+[SupCon] Epoch [100/3360] | train_loss 8.3144 | val_loss 5.4835 | knn_val_acc_smooth 0.7272 | knn_val_acc 0.7267 | svm_val_acc 0.7375 | knn_train_acc 0.7832 | svm_train_acc 0.7376
+[SupCon] Epoch [101/3360] | train_loss 8.2962 | val_loss 5.4902
+[SupCon] Epoch [102/3360] | train_loss 8.2932 | val_loss 5.4766
+[SupCon] Epoch [103/3360] | train_loss 8.2849 | val_loss 5.4466
+[SupCon] Epoch [104/3360] | train_loss 8.2661 | val_loss 5.4531
+[SupCon] Epoch [105/3360] | train_loss 8.2655 | val_loss 5.4577
+[SupCon] Epoch [106/3360] | train_loss 8.2578 | val_loss 5.4470
+[SupCon] Epoch [107/3360] | train_loss 8.2484 | val_loss 5.4142
+[SupCon] Epoch [108/3360] | train_loss 8.2414 | val_loss 5.3990
+[SupCon] Epoch [109/3360] | train_loss 8.2303 | val_loss 5.4360
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (3/112).
+[SupCon] Epoch [110/3360] | train_loss 8.2966 | val_loss 5.5135 | knn_val_acc_smooth 0.7209 | knn_val_acc 0.7381 | svm_val_acc 0.7384 | knn_train_acc 0.7890 | svm_train_acc 0.7440
+[SupCon] Epoch [111/3360] | train_loss 8.3105 | val_loss 5.4781
+[SupCon] Epoch [112/3360] | train_loss 8.2981 | val_loss 5.4558
+[SupCon] Epoch [113/3360] | train_loss 8.2798 | val_loss 5.5155
+[SupCon] Epoch [114/3360] | train_loss 8.3331 | val_loss 5.5327
+[SupCon] Epoch [115/3360] | train_loss 8.3110 | val_loss 5.4747
+[SupCon] Epoch [116/3360] | train_loss 8.2832 | val_loss 5.4331
+[SupCon] Epoch [117/3360] | train_loss 8.2713 | val_loss 5.4257
+[SupCon] Epoch [118/3360] | train_loss 8.2295 | val_loss 5.4161
+[SupCon] Epoch [119/3360] | train_loss 8.2426 | val_loss 5.4187
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7485)
+[SupCon] Epoch [120/3360] | train_loss 8.2478 | val_loss 5.4254 | knn_val_acc_smooth 0.7485 | knn_val_acc 0.7807 | svm_val_acc 0.7260 | knn_train_acc 0.7905 | svm_train_acc 0.7513
+[SupCon] Epoch [121/3360] | train_loss 8.2410 | val_loss 5.3794
+[SupCon] Epoch [122/3360] | train_loss 8.2120 | val_loss 5.3859
+[SupCon] Epoch [123/3360] | train_loss 8.2036 | val_loss 5.4021
+[SupCon] Epoch [124/3360] | train_loss 8.2439 | val_loss 5.4442
+[SupCon] Epoch [125/3360] | train_loss 8.2267 | val_loss 5.3965
+[SupCon] Epoch [126/3360] | train_loss 8.2113 | val_loss 5.4365
+[SupCon] Epoch [127/3360] | train_loss 8.2726 | val_loss 5.3840
+[SupCon] Epoch [128/3360] | train_loss 8.2549 | val_loss 5.5436
+[SupCon] Epoch [129/3360] | train_loss 8.2760 | val_loss 5.4609
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7563)
+[SupCon] Epoch [130/3360] | train_loss 8.2589 | val_loss 5.3804 | knn_val_acc_smooth 0.7563 | knn_val_acc 0.7500 | svm_val_acc 0.7411 | knn_train_acc 0.8067 | svm_train_acc 0.7875
+[SupCon] Epoch [131/3360] | train_loss 8.2289 | val_loss 5.4137
+[SupCon] Epoch [132/3360] | train_loss 8.2883 | val_loss 5.4664
+[SupCon] Epoch [133/3360] | train_loss 8.2508 | val_loss 5.3927
+[SupCon] Epoch [134/3360] | train_loss 8.2198 | val_loss 5.4243
+[SupCon] Epoch [135/3360] | train_loss 8.2210 | val_loss 5.3729
+[SupCon] Epoch [136/3360] | train_loss 8.1995 | val_loss 5.3735
+[SupCon] Epoch [137/3360] | train_loss 8.1932 | val_loss 5.3894
+[SupCon] Epoch [138/3360] | train_loss 8.1985 | val_loss 5.3599
+[SupCon] Epoch [139/3360] | train_loss 8.1788 | val_loss 5.3548
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7596)
+[SupCon] Epoch [140/3360] | train_loss 8.1855 | val_loss 5.3215 | knn_val_acc_smooth 0.7596 | knn_val_acc 0.7480 | svm_val_acc 0.7256 | knn_train_acc 0.7953 | svm_train_acc 0.7797
+[SupCon] Epoch [141/3360] | train_loss 8.1550 | val_loss 5.3706
+[SupCon] Epoch [142/3360] | train_loss 8.1628 | val_loss 5.3656
+[SupCon] Epoch [143/3360] | train_loss 8.1915 | val_loss 5.3850
+[SupCon] Epoch [144/3360] | train_loss 8.1773 | val_loss 5.3729
+[SupCon] Epoch [145/3360] | train_loss 8.1910 | val_loss 5.4858
+[SupCon] Epoch [146/3360] | train_loss 8.2614 | val_loss 5.3650
+[SupCon] Epoch [147/3360] | train_loss 8.1981 | val_loss 5.3560
+[SupCon] Epoch [148/3360] | train_loss 8.1793 | val_loss 5.3825
+[SupCon] Epoch [149/3360] | train_loss 8.1871 | val_loss 5.3660
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (1/112).
+[SupCon] Epoch [150/3360] | train_loss 8.1776 | val_loss 5.4089 | knn_val_acc_smooth 0.7478 | knn_val_acc 0.7455 | svm_val_acc 0.7427 | knn_train_acc 0.8005 | svm_train_acc 0.8022
+[SupCon] Epoch [151/3360] | train_loss 8.1829 | val_loss 5.3459
+[SupCon] Epoch [152/3360] | train_loss 8.1642 | val_loss 5.3170
+[SupCon] Epoch [153/3360] | train_loss 8.1471 | val_loss 5.3162
+[SupCon] Epoch [154/3360] | train_loss 8.1396 | val_loss 5.3179
+[SupCon] Epoch [155/3360] | train_loss 8.1343 | val_loss 5.3289
+[SupCon] Epoch [156/3360] | train_loss 8.1646 | val_loss 5.4152
+[SupCon] Epoch [157/3360] | train_loss 8.1937 | val_loss 5.3034
+[SupCon] Epoch [158/3360] | train_loss 8.1509 | val_loss 5.3317
+[SupCon] Epoch [159/3360] | train_loss 8.1574 | val_loss 5.3184
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (2/112).
+[SupCon] Epoch [160/3360] | train_loss 8.1443 | val_loss 5.3082 | knn_val_acc_smooth 0.7352 | knn_val_acc 0.7122 | svm_val_acc 0.7171 | knn_train_acc 0.8044 | svm_train_acc 0.7874
+[SupCon] Epoch [161/3360] | train_loss 8.1367 | val_loss 5.3394
+[SupCon] Epoch [162/3360] | train_loss 8.1260 | val_loss 5.3012
+[SupCon] Epoch [163/3360] | train_loss 8.1230 | val_loss 5.3220
+[SupCon] Epoch [164/3360] | train_loss 8.1525 | val_loss 5.2877
+[SupCon] Epoch [165/3360] | train_loss 8.1426 | val_loss 5.2963
+[SupCon] Epoch [166/3360] | train_loss 8.1558 | val_loss 5.2806
+[SupCon] Epoch [167/3360] | train_loss 8.1105 | val_loss 5.3500
+[SupCon] Epoch [168/3360] | train_loss 8.2125 | val_loss 5.4604
+[SupCon] Epoch [169/3360] | train_loss 8.2180 | val_loss 5.4782
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (3/112).
+[SupCon] Epoch [170/3360] | train_loss 8.2940 | val_loss 5.5246 | knn_val_acc_smooth 0.7279 | knn_val_acc 0.7261 | svm_val_acc 0.7536 | knn_train_acc 0.8024 | svm_train_acc 0.7879
+[SupCon] Epoch [171/3360] | train_loss 8.3272 | val_loss 5.4978
+[SupCon] Epoch [172/3360] | train_loss 8.2982 | val_loss 5.4437
+[SupCon] Epoch [173/3360] | train_loss 8.2292 | val_loss 5.4174
+[SupCon] Epoch [174/3360] | train_loss 8.2145 | val_loss 5.3669
+[SupCon] Epoch [175/3360] | train_loss 8.1840 | val_loss 5.3857
+[SupCon] Epoch [176/3360] | train_loss 8.1719 | val_loss 5.3581
+[SupCon] Epoch [177/3360] | train_loss 8.1538 | val_loss 5.3121
+[SupCon] Epoch [178/3360] | train_loss 8.1273 | val_loss 5.3586
+[SupCon] Epoch [179/3360] | train_loss 8.1493 | val_loss 5.3456
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (4/112).
+[SupCon] Epoch [180/3360] | train_loss 8.1379 | val_loss 5.3046 | knn_val_acc_smooth 0.7293 | knn_val_acc 0.7497 | svm_val_acc 0.7628 | knn_train_acc 0.7933 | svm_train_acc 0.8071
+[SupCon] Epoch [181/3360] | train_loss 8.1314 | val_loss 5.2818
+[SupCon] Epoch [182/3360] | train_loss 8.1154 | val_loss 5.2766
+[SupCon] Epoch [183/3360] | train_loss 8.1020 | val_loss 5.2897
+[SupCon] Epoch [184/3360] | train_loss 8.1198 | val_loss 5.2666
+[SupCon] Epoch [185/3360] | train_loss 8.0927 | val_loss 5.2652
+[SupCon] Epoch [186/3360] | train_loss 8.1019 | val_loss 5.2906
+[SupCon] Epoch [187/3360] | train_loss 8.0821 | val_loss 5.2548
+[SupCon] Epoch [188/3360] | train_loss 8.0658 | val_loss 5.2276
+[SupCon] Epoch [189/3360] | train_loss 8.0630 | val_loss 5.2599
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (5/112).
+[SupCon] Epoch [190/3360] | train_loss 8.1107 | val_loss 5.4026 | knn_val_acc_smooth 0.7258 | knn_val_acc 0.7017 | svm_val_acc 0.7218 | knn_train_acc 0.7896 | svm_train_acc 0.7850
+[SupCon] Epoch [191/3360] | train_loss 8.1698 | val_loss 5.3652
+[SupCon] Epoch [192/3360] | train_loss 8.2453 | val_loss 5.4651
+[SupCon] Epoch [193/3360] | train_loss 8.2454 | val_loss 5.3607
+[SupCon] Epoch [194/3360] | train_loss 8.2042 | val_loss 5.5392
+[SupCon] Epoch [195/3360] | train_loss 8.3113 | val_loss 5.4665
+[SupCon] Epoch [196/3360] | train_loss 8.2632 | val_loss 5.4484
+[SupCon] Epoch [197/3360] | train_loss 8.2612 | val_loss 5.3743
+[SupCon] Epoch [198/3360] | train_loss 8.1999 | val_loss 5.3812
+[SupCon] Epoch [199/3360] | train_loss 8.1870 | val_loss 5.3523
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (6/112).
+[SupCon] Epoch [200/3360] | train_loss 8.1774 | val_loss 5.3280 | knn_val_acc_smooth 0.7439 | knn_val_acc 0.7804 | svm_val_acc 0.7849 | knn_train_acc 0.7976 | svm_train_acc 0.7805
+[SupCon] Epoch [201/3360] | train_loss 8.1365 | val_loss 5.2977
+[SupCon] Epoch [202/3360] | train_loss 8.1105 | val_loss 5.3353
+[SupCon] Epoch [203/3360] | train_loss 8.1078 | val_loss 5.3161
+[SupCon] Epoch [204/3360] | train_loss 8.1130 | val_loss 5.2885
+[SupCon] Epoch [205/3360] | train_loss 8.1082 | val_loss 5.2758
+[SupCon] Epoch [206/3360] | train_loss 8.0936 | val_loss 5.2571
+[SupCon] Epoch [207/3360] | train_loss 8.0906 | val_loss 5.2528
+[SupCon] Epoch [208/3360] | train_loss 8.0555 | val_loss 5.2546
+[SupCon] Epoch [209/3360] | train_loss 8.0691 | val_loss 5.2587
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (7/112).
+[SupCon] Epoch [210/3360] | train_loss 8.0872 | val_loss 5.3502 | knn_val_acc_smooth 0.7317 | knn_val_acc 0.7131 | svm_val_acc 0.7273 | knn_train_acc 0.7812 | svm_train_acc 0.7884
+[SupCon] Epoch [211/3360] | train_loss 8.1639 | val_loss 5.2758
+[SupCon] Epoch [212/3360] | train_loss 8.0722 | val_loss 5.3050
+[SupCon] Epoch [213/3360] | train_loss 8.0972 | val_loss 5.2483
+[SupCon] Epoch [214/3360] | train_loss 8.0799 | val_loss 5.2709
+[SupCon] Epoch [215/3360] | train_loss 8.0854 | val_loss 5.2436
+[SupCon] Epoch [216/3360] | train_loss 8.0452 | val_loss 5.2535
+[SupCon] Epoch [217/3360] | train_loss 8.0857 | val_loss 5.2763
+[SupCon] Epoch [218/3360] | train_loss 8.0868 | val_loss 5.2638
+[SupCon] Epoch [219/3360] | train_loss 8.0608 | val_loss 5.2667
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (8/112).
+[SupCon] Epoch [220/3360] | train_loss 8.0658 | val_loss 5.2375 | knn_val_acc_smooth 0.7352 | knn_val_acc 0.7122 | svm_val_acc 0.7458 | knn_train_acc 0.7877 | svm_train_acc 0.7952
+[SupCon] Epoch [221/3360] | train_loss 8.0470 | val_loss 5.2190
+[SupCon] Epoch [222/3360] | train_loss 8.0333 | val_loss 5.2302
+[SupCon] Epoch [223/3360] | train_loss 8.0592 | val_loss 5.2249
+[SupCon] Epoch [224/3360] | train_loss 8.0537 | val_loss 5.3012
+[SupCon] Epoch [225/3360] | train_loss 8.1519 | val_loss 5.2770
+[SupCon] Epoch [226/3360] | train_loss 8.1662 | val_loss 5.3526
+[SupCon] Epoch [227/3360] | train_loss 8.3232 | val_loss 5.3725
+[SupCon] Epoch [228/3360] | train_loss 8.2208 | val_loss 5.4254
+[SupCon] Epoch [229/3360] | train_loss 8.2718 | val_loss 5.4411
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (9/112).
+[SupCon] Epoch [230/3360] | train_loss 8.2349 | val_loss 5.3816 | knn_val_acc_smooth 0.7197 | knn_val_acc 0.7337 | svm_val_acc 0.7365 | knn_train_acc 0.7888 | svm_train_acc 0.7877
+[SupCon] Epoch [231/3360] | train_loss 8.2107 | val_loss 5.3560
+[SupCon] Epoch [232/3360] | train_loss 8.1590 | val_loss 5.3379
+[SupCon] Epoch [233/3360] | train_loss 8.1380 | val_loss 5.3300
+[SupCon] Epoch [234/3360] | train_loss 8.1062 | val_loss 5.2769
+[SupCon] Epoch [235/3360] | train_loss 8.1032 | val_loss 5.2701
+[SupCon] Epoch [236/3360] | train_loss 8.0704 | val_loss 5.2605
+[SupCon] Epoch [237/3360] | train_loss 8.0723 | val_loss 5.2323
+[SupCon] Epoch [238/3360] | train_loss 8.0428 | val_loss 5.2690
+[SupCon] Epoch [239/3360] | train_loss 8.0773 | val_loss 5.2691
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (10/112).
+[SupCon] Epoch [240/3360] | train_loss 8.0529 | val_loss 5.2198 | knn_val_acc_smooth 0.7316 | knn_val_acc 0.7488 | svm_val_acc 0.7610 | knn_train_acc 0.7896 | svm_train_acc 0.7993
+[SupCon] Epoch [241/3360] | train_loss 8.0521 | val_loss 5.2740
+[SupCon] Epoch [242/3360] | train_loss 8.0569 | val_loss 5.3086
+[SupCon] Epoch [243/3360] | train_loss 8.1433 | val_loss 5.2557
+[SupCon] Epoch [244/3360] | train_loss 8.0824 | val_loss 5.2677
+[SupCon] Epoch [245/3360] | train_loss 8.0785 | val_loss 5.2616
+[SupCon] Epoch [246/3360] | train_loss 8.0548 | val_loss 5.2638
+[SupCon] Epoch [247/3360] | train_loss 8.0628 | val_loss 5.2882
+[SupCon] Epoch [248/3360] | train_loss 8.0825 | val_loss 5.2294
+[SupCon] Epoch [249/3360] | train_loss 8.0582 | val_loss 5.2781
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (11/112).
+[SupCon] Epoch [250/3360] | train_loss 8.1143 | val_loss 5.2685 | knn_val_acc_smooth 0.7415 | knn_val_acc 0.7419 | svm_val_acc 0.7853 | knn_train_acc 0.7919 | svm_train_acc 0.8011
+[SupCon] Epoch [251/3360] | train_loss 8.0993 | val_loss 5.2639
+[SupCon] Epoch [252/3360] | train_loss 8.0576 | val_loss 5.2728
+[SupCon] Epoch [253/3360] | train_loss 8.0796 | val_loss 5.2456
+[SupCon] Epoch [254/3360] | train_loss 8.0505 | val_loss 5.2261
+[SupCon] Epoch [255/3360] | train_loss 8.0412 | val_loss 5.2482
+[SupCon] Epoch [256/3360] | train_loss 8.0542 | val_loss 5.2487
+[SupCon] Epoch [257/3360] | train_loss 8.0793 | val_loss 5.2705
+[SupCon] Epoch [258/3360] | train_loss 8.0793 | val_loss 5.2386
+[SupCon] Epoch [259/3360] | train_loss 8.0638 | val_loss 5.2492
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (12/112).
+[SupCon] Epoch [260/3360] | train_loss 8.0465 | val_loss 5.2892 | knn_val_acc_smooth 0.7421 | knn_val_acc 0.7357 | svm_val_acc 0.7321 | knn_train_acc 0.7926 | svm_train_acc 0.7936
+[SupCon] Epoch [261/3360] | train_loss 8.0531 | val_loss 5.2889
+[SupCon] Epoch [262/3360] | train_loss 8.0752 | val_loss 5.2719
+[SupCon] Epoch [263/3360] | train_loss 8.0610 | val_loss 5.2345
+[SupCon] Epoch [264/3360] | train_loss 8.0701 | val_loss 5.2744
+[SupCon] Epoch [265/3360] | train_loss 8.0481 | val_loss 5.2678
+[SupCon] Epoch [266/3360] | train_loss 8.0673 | val_loss 5.2438
+[SupCon] Epoch [267/3360] | train_loss 8.0326 | val_loss 5.2309
+[SupCon] Epoch [268/3360] | train_loss 8.0416 | val_loss 5.2708
+[SupCon] Epoch [269/3360] | train_loss 8.0490 | val_loss 5.2102
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (13/112).
+[SupCon] Epoch [270/3360] | train_loss 8.1087 | val_loss 5.3918 | knn_val_acc_smooth 0.7338 | knn_val_acc 0.7237 | svm_val_acc 0.7487 | knn_train_acc 0.7824 | svm_train_acc 0.8005
+[SupCon] Epoch [271/3360] | train_loss 8.1650 | val_loss 5.3086
+[SupCon] Epoch [272/3360] | train_loss 8.1655 | val_loss 5.2809
+[SupCon] Epoch [273/3360] | train_loss 8.0771 | val_loss 5.3125
+[SupCon] Epoch [274/3360] | train_loss 8.1075 | val_loss 5.2673
+[SupCon] Epoch [275/3360] | train_loss 8.0799 | val_loss 5.2308
+[SupCon] Epoch [276/3360] | train_loss 8.0444 | val_loss 5.3011
+[SupCon] Epoch [277/3360] | train_loss 8.0966 | val_loss 5.2680
+[SupCon] Epoch [278/3360] | train_loss 8.0779 | val_loss 5.3354
+[SupCon] Epoch [279/3360] | train_loss 8.1229 | val_loss 5.4120
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (14/112).
+[SupCon] Epoch [280/3360] | train_loss 8.1305 | val_loss 5.4914 | knn_val_acc_smooth 0.7368 | knn_val_acc 0.7509 | svm_val_acc 0.7412 | knn_train_acc 0.7990 | svm_train_acc 0.8191
+[SupCon] Epoch [281/3360] | train_loss 8.3009 | val_loss 5.2893
+[SupCon] Epoch [282/3360] | train_loss 8.1737 | val_loss 5.4558
+[SupCon] Epoch [283/3360] | train_loss 8.2217 | val_loss 5.3772
+[SupCon] Epoch [284/3360] | train_loss 8.1493 | val_loss 5.3837
+[SupCon] Epoch [285/3360] | train_loss 8.1532 | val_loss 5.2885
+[SupCon] Epoch [286/3360] | train_loss 8.1049 | val_loss 5.2670
+[SupCon] Epoch [287/3360] | train_loss 8.0953 | val_loss 5.3521
+[SupCon] Epoch [288/3360] | train_loss 8.0938 | val_loss 5.2686
+[SupCon] Epoch [289/3360] | train_loss 8.0669 | val_loss 5.2610
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (15/112).
+[SupCon] Epoch [290/3360] | train_loss 8.0474 | val_loss 5.2220 | knn_val_acc_smooth 0.7360 | knn_val_acc 0.7335 | svm_val_acc 0.7369 | knn_train_acc 0.7973 | svm_train_acc 0.8195
+[SupCon] Epoch [291/3360] | train_loss 8.0459 | val_loss 5.2272
+[SupCon] Epoch [292/3360] | train_loss 8.0297 | val_loss 5.2190
+[SupCon] Epoch [293/3360] | train_loss 8.0134 | val_loss 5.2239
+[SupCon] Epoch [294/3360] | train_loss 8.0399 | val_loss 5.2519
+[SupCon] Epoch [295/3360] | train_loss 8.0634 | val_loss 5.2740
+[SupCon] Epoch [296/3360] | train_loss 8.0621 | val_loss 5.2764
+[SupCon] Epoch [297/3360] | train_loss 8.0736 | val_loss 5.2198
+[SupCon] Epoch [298/3360] | train_loss 8.0285 | val_loss 5.2559
+[SupCon] Epoch [299/3360] | train_loss 8.0661 | val_loss 5.2600
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (16/112).
+[SupCon] Epoch [300/3360] | train_loss 8.0523 | val_loss 5.2530 | knn_val_acc_smooth 0.7460 | knn_val_acc 0.7538 | svm_val_acc 0.7429 | knn_train_acc 0.8093 | svm_train_acc 0.8068
+[SupCon] Epoch [301/3360] | train_loss 8.0415 | val_loss 5.2094
+[SupCon] Epoch [302/3360] | train_loss 8.0321 | val_loss 5.2754
+[SupCon] Epoch [303/3360] | train_loss 8.0797 | val_loss 5.2378
+[SupCon] Epoch [304/3360] | train_loss 8.0348 | val_loss 5.2607
+[SupCon] Epoch [305/3360] | train_loss 8.0788 | val_loss 5.2804
+[SupCon] Epoch [306/3360] | train_loss 8.0399 | val_loss 5.3186
+[SupCon] Epoch [307/3360] | train_loss 8.1181 | val_loss 5.3123
+[SupCon] Epoch [308/3360] | train_loss 8.0945 | val_loss 5.2548
+[SupCon] Epoch [309/3360] | train_loss 8.0419 | val_loss 5.2695
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (17/112).
+[SupCon] Epoch [310/3360] | train_loss 8.0647 | val_loss 5.2622 | knn_val_acc_smooth 0.7452 | knn_val_acc 0.7483 | svm_val_acc 0.7567 | knn_train_acc 0.8208 | svm_train_acc 0.8100
+[SupCon] Epoch [311/3360] | train_loss 8.0971 | val_loss 5.3234
+[SupCon] Epoch [312/3360] | train_loss 8.0927 | val_loss 5.3193
+[SupCon] Epoch [313/3360] | train_loss 8.0757 | val_loss 5.2003
+[SupCon] Epoch [314/3360] | train_loss 8.0491 | val_loss 5.2314
+[SupCon] Epoch [315/3360] | train_loss 8.0199 | val_loss 5.2058
+[SupCon] Epoch [316/3360] | train_loss 8.0095 | val_loss 5.1921
+[SupCon] Epoch [317/3360] | train_loss 8.0366 | val_loss 5.2121
+[SupCon] Epoch [318/3360] | train_loss 8.0316 | val_loss 5.2324
+[SupCon] Epoch [319/3360] | train_loss 8.0556 | val_loss 5.2293
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (18/112).
+[SupCon] Epoch [320/3360] | train_loss 8.0271 | val_loss 5.2489 | knn_val_acc_smooth 0.7546 | knn_val_acc 0.7617 | svm_val_acc 0.7734 | knn_train_acc 0.7591 | svm_train_acc 0.7967
+[SupCon] Epoch [321/3360] | train_loss 8.0731 | val_loss 5.3060
+[SupCon] Epoch [322/3360] | train_loss 8.1092 | val_loss 5.2804
+[SupCon] Epoch [323/3360] | train_loss 8.1052 | val_loss 5.3043
+[SupCon] Epoch [324/3360] | train_loss 8.1013 | val_loss 5.2872
+[SupCon] Epoch [325/3360] | train_loss 8.1140 | val_loss 5.3757
+[SupCon] Epoch [326/3360] | train_loss 8.1781 | val_loss 5.4331
+[SupCon] Epoch [327/3360] | train_loss 8.1895 | val_loss 5.3232
+[SupCon] Epoch [328/3360] | train_loss 8.1414 | val_loss 5.3665
+[SupCon] Epoch [329/3360] | train_loss 8.1693 | val_loss 5.3067
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (19/112).
+[SupCon] Epoch [330/3360] | train_loss 8.1093 | val_loss 5.2835 | knn_val_acc_smooth 0.7485 | knn_val_acc 0.7355 | svm_val_acc 0.7597 | knn_train_acc 0.7988 | svm_train_acc 0.7959
+[SupCon] Epoch [331/3360] | train_loss 8.0988 | val_loss 5.3242
+[SupCon] Epoch [332/3360] | train_loss 8.0937 | val_loss 5.2756
+[SupCon] Epoch [333/3360] | train_loss 8.0690 | val_loss 5.2587
+[SupCon] Epoch [334/3360] | train_loss 8.0564 | val_loss 5.2396
+[SupCon] Epoch [335/3360] | train_loss 8.0539 | val_loss 5.2097
+[SupCon] Epoch [336/3360] | train_loss 8.0237 | val_loss 5.2132
+[SupCon] Epoch [337/3360] | train_loss 8.0192 | val_loss 5.2184
+[SupCon] Epoch [338/3360] | train_loss 7.9973 | val_loss 5.1792
+[SupCon] Epoch [339/3360] | train_loss 7.9931 | val_loss 5.2166
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (20/112).
+[SupCon] Epoch [340/3360] | train_loss 8.0226 | val_loss 5.2178 | knn_val_acc_smooth 0.7552 | knn_val_acc 0.7684 | svm_val_acc 0.7494 | knn_train_acc 0.7872 | svm_train_acc 0.8199
+[SupCon] Epoch [341/3360] | train_loss 8.0109 | val_loss 5.2131
+[SupCon] Epoch [342/3360] | train_loss 7.9879 | val_loss 5.2049
+[SupCon] Epoch [343/3360] | train_loss 7.9999 | val_loss 5.2074
+[SupCon] Epoch [344/3360] | train_loss 7.9948 | val_loss 5.1974
+[SupCon] Epoch [345/3360] | train_loss 8.0147 | val_loss 5.1728
+[SupCon] Epoch [346/3360] | train_loss 8.0026 | val_loss 5.1975
+[SupCon] Epoch [347/3360] | train_loss 8.0149 | val_loss 5.3258
+[SupCon] Epoch [348/3360] | train_loss 8.0887 | val_loss 5.2709
+[SupCon] Epoch [349/3360] | train_loss 8.0605 | val_loss 5.2463
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (21/112).
+[SupCon] Epoch [350/3360] | train_loss 8.0331 | val_loss 5.2198 | knn_val_acc_smooth 0.7532 | knn_val_acc 0.7558 | svm_val_acc 0.7722 | knn_train_acc 0.7845 | svm_train_acc 0.8049
+[SupCon] Epoch [351/3360] | train_loss 8.0463 | val_loss 5.2361
+[SupCon] Epoch [352/3360] | train_loss 8.0294 | val_loss 5.2183
+[SupCon] Epoch [353/3360] | train_loss 8.0195 | val_loss 5.1942
+[SupCon] Epoch [354/3360] | train_loss 7.9947 | val_loss 5.1985
+[SupCon] Epoch [355/3360] | train_loss 7.9897 | val_loss 5.1984
+[SupCon] Epoch [356/3360] | train_loss 7.9956 | val_loss 5.2101
+[SupCon] Epoch [357/3360] | train_loss 8.0260 | val_loss 5.2624
+[SupCon] Epoch [358/3360] | train_loss 8.0858 | val_loss 5.2098
+[SupCon] Epoch [359/3360] | train_loss 8.0320 | val_loss 5.2509
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7618)
+[SupCon] Epoch [360/3360] | train_loss 8.0175 | val_loss 5.2517 | knn_val_acc_smooth 0.7618 | knn_val_acc 0.7613 | svm_val_acc 0.7701 | knn_train_acc 0.7911 | svm_train_acc 0.7976
+[SupCon] Epoch [361/3360] | train_loss 8.0319 | val_loss 5.2348
+[SupCon] Epoch [362/3360] | train_loss 8.0338 | val_loss 5.1735
+[SupCon] Epoch [363/3360] | train_loss 8.0004 | val_loss 5.1939
+[SupCon] Epoch [364/3360] | train_loss 7.9863 | val_loss 5.2276
+[SupCon] Epoch [365/3360] | train_loss 8.0300 | val_loss 5.2118
+[SupCon] Epoch [366/3360] | train_loss 7.9838 | val_loss 5.1892
+[SupCon] Epoch [367/3360] | train_loss 7.9952 | val_loss 5.2491
+[SupCon] Epoch [368/3360] | train_loss 8.0602 | val_loss 5.2557
+[SupCon] Epoch [369/3360] | train_loss 8.0411 | val_loss 5.2473
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7704)
+[SupCon] Epoch [370/3360] | train_loss 8.0552 | val_loss 5.3429 | knn_val_acc_smooth 0.7704 | knn_val_acc 0.7942 | svm_val_acc 0.7755 | knn_train_acc 0.8018 | svm_train_acc 0.8125
+[SupCon] Epoch [371/3360] | train_loss 8.1397 | val_loss 5.2677
+[SupCon] Epoch [372/3360] | train_loss 8.1072 | val_loss 5.2221
+[SupCon] Epoch [373/3360] | train_loss 8.0283 | val_loss 5.2523
+[SupCon] Epoch [374/3360] | train_loss 8.0627 | val_loss 5.1819
+[SupCon] Epoch [375/3360] | train_loss 7.9978 | val_loss 5.1898
+[SupCon] Epoch [376/3360] | train_loss 8.0135 | val_loss 5.2333
+[SupCon] Epoch [377/3360] | train_loss 8.0720 | val_loss 5.2888
+[SupCon] Epoch [378/3360] | train_loss 8.0676 | val_loss 5.2506
+[SupCon] Epoch [379/3360] | train_loss 8.0231 | val_loss 5.2036
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7741)
+[SupCon] Epoch [380/3360] | train_loss 8.0074 | val_loss 5.2584 | knn_val_acc_smooth 0.7741 | knn_val_acc 0.7668 | svm_val_acc 0.7553 | knn_train_acc 0.7883 | svm_train_acc 0.8180
+[SupCon] Epoch [381/3360] | train_loss 8.0991 | val_loss 5.2652
+[SupCon] Epoch [382/3360] | train_loss 8.0548 | val_loss 5.2408
+[SupCon] Epoch [383/3360] | train_loss 8.0346 | val_loss 5.2126
+[SupCon] Epoch [384/3360] | train_loss 8.0155 | val_loss 5.1867
+[SupCon] Epoch [385/3360] | train_loss 7.9904 | val_loss 5.1951
+[SupCon] Epoch [386/3360] | train_loss 8.0006 | val_loss 5.1938
+[SupCon] Epoch [387/3360] | train_loss 8.0172 | val_loss 5.1924
+[SupCon] Epoch [388/3360] | train_loss 7.9801 | val_loss 5.1724
+[SupCon] Epoch [389/3360] | train_loss 7.9990 | val_loss 5.2270
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7827)
+[SupCon] Epoch [390/3360] | train_loss 8.0128 | val_loss 5.2476 | knn_val_acc_smooth 0.7827 | knn_val_acc 0.7872 | svm_val_acc 0.7715 | knn_train_acc 0.7953 | svm_train_acc 0.8162
+[SupCon] Epoch [391/3360] | train_loss 8.0041 | val_loss 5.2108
+[SupCon] Epoch [392/3360] | train_loss 7.9926 | val_loss 5.2039
+[SupCon] Epoch [393/3360] | train_loss 7.9898 | val_loss 5.2339
+[SupCon] Epoch [394/3360] | train_loss 7.9987 | val_loss 5.2298
+[SupCon] Epoch [395/3360] | train_loss 7.9913 | val_loss 5.2255
+[SupCon] Epoch [396/3360] | train_loss 8.0203 | val_loss 5.3274
+[SupCon] Epoch [397/3360] | train_loss 8.1591 | val_loss 5.2549
+[SupCon] Epoch [398/3360] | train_loss 8.1864 | val_loss 5.2346
+[SupCon] Epoch [399/3360] | train_loss 8.1254 | val_loss 5.3666
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7869)
+[SupCon] Epoch [400/3360] | train_loss 8.1061 | val_loss 5.2772 | knn_val_acc_smooth 0.7869 | knn_val_acc 0.8068 | svm_val_acc 0.7807 | knn_train_acc 0.7831 | svm_train_acc 0.8034
+[SupCon] Epoch [401/3360] | train_loss 8.0711 | val_loss 5.2995
+[SupCon] Epoch [402/3360] | train_loss 8.0740 | val_loss 5.2399
+[SupCon] Epoch [403/3360] | train_loss 8.0538 | val_loss 5.2211
+[SupCon] Epoch [404/3360] | train_loss 8.0352 | val_loss 5.2021
+[SupCon] Epoch [405/3360] | train_loss 8.0039 | val_loss 5.2188
+[SupCon] Epoch [406/3360] | train_loss 7.9904 | val_loss 5.1772
+[SupCon] Epoch [407/3360] | train_loss 7.9753 | val_loss 5.1615
+[SupCon] Epoch [408/3360] | train_loss 7.9767 | val_loss 5.1920
+[SupCon] Epoch [409/3360] | train_loss 7.9898 | val_loss 5.1612
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.46it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (1/112).
+[SupCon] Epoch [410/3360] | train_loss 7.9330 | val_loss 5.1969 | knn_val_acc_smooth 0.7820 | knn_val_acc 0.7519 | svm_val_acc 0.7707 | knn_train_acc 0.7869 | svm_train_acc 0.8310
+[SupCon] Epoch [411/3360] | train_loss 8.0107 | val_loss 5.1859
+[SupCon] Epoch [412/3360] | train_loss 7.9687 | val_loss 5.2095
+[SupCon] Epoch [413/3360] | train_loss 8.0245 | val_loss 5.1702
+[SupCon] Epoch [414/3360] | train_loss 8.0087 | val_loss 5.1674
+[SupCon] Epoch [415/3360] | train_loss 7.9892 | val_loss 5.2135
+[SupCon] Epoch [416/3360] | train_loss 7.9991 | val_loss 5.1676
+[SupCon] Epoch [417/3360] | train_loss 7.9741 | val_loss 5.2273
+[SupCon] Epoch [418/3360] | train_loss 8.0212 | val_loss 5.2180
+[SupCon] Epoch [419/3360] | train_loss 7.9866 | val_loss 5.2226
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (2/112).
+[SupCon] Epoch [420/3360] | train_loss 8.0091 | val_loss 5.1971 | knn_val_acc_smooth 0.7737 | knn_val_acc 0.7623 | svm_val_acc 0.7813 | knn_train_acc 0.8048 | svm_train_acc 0.8214
+[SupCon] Epoch [421/3360] | train_loss 8.0143 | val_loss 5.1779
+[SupCon] Epoch [422/3360] | train_loss 7.9837 | val_loss 5.1702
+[SupCon] Epoch [423/3360] | train_loss 7.9928 | val_loss 5.1878
+[SupCon] Epoch [424/3360] | train_loss 7.9744 | val_loss 5.1995
+[SupCon] Epoch [425/3360] | train_loss 7.9488 | val_loss 5.1748
+[SupCon] Epoch [426/3360] | train_loss 7.9667 | val_loss 5.1662
+[SupCon] Epoch [427/3360] | train_loss 7.9672 | val_loss 5.2114
+[SupCon] Epoch [428/3360] | train_loss 8.0199 | val_loss 5.1800
+[SupCon] Epoch [429/3360] | train_loss 7.9660 | val_loss 5.1740
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (3/112).
+[SupCon] Epoch [430/3360] | train_loss 7.9572 | val_loss 5.2141 | knn_val_acc_smooth 0.7753 | knn_val_acc 0.8116 | svm_val_acc 0.7711 | knn_train_acc 0.7854 | svm_train_acc 0.8318
+[SupCon] Epoch [431/3360] | train_loss 7.9750 | val_loss 5.2417
+[SupCon] Epoch [432/3360] | train_loss 8.0155 | val_loss 5.1899
+[SupCon] Epoch [433/3360] | train_loss 7.9612 | val_loss 5.1457
+[SupCon] Epoch [434/3360] | train_loss 7.9418 | val_loss 5.1281
+[SupCon] Epoch [435/3360] | train_loss 7.9210 | val_loss 5.1892
+[SupCon] Epoch [436/3360] | train_loss 7.9407 | val_loss 5.1931
+[SupCon] Epoch [437/3360] | train_loss 7.9803 | val_loss 5.2744
+[SupCon] Epoch [438/3360] | train_loss 8.0226 | val_loss 5.1710
+[SupCon] Epoch [439/3360] | train_loss 7.9697 | val_loss 5.1970
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.40it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (4/112).
+[SupCon] Epoch [440/3360] | train_loss 7.9513 | val_loss 5.1879 | knn_val_acc_smooth 0.7845 | knn_val_acc 0.7795 | svm_val_acc 0.7807 | knn_train_acc 0.8037 | svm_train_acc 0.8366
+[SupCon] Epoch [441/3360] | train_loss 7.9768 | val_loss 5.2019
+[SupCon] Epoch [442/3360] | train_loss 7.9698 | val_loss 5.1243
+[SupCon] Epoch [443/3360] | train_loss 7.9458 | val_loss 5.1204
+[SupCon] Epoch [444/3360] | train_loss 7.9276 | val_loss 5.1585
+[SupCon] Epoch [445/3360] | train_loss 7.9415 | val_loss 5.1462
+[SupCon] Epoch [446/3360] | train_loss 7.9413 | val_loss 5.1484
+[SupCon] Epoch [447/3360] | train_loss 7.9246 | val_loss 5.0951
+[SupCon] Epoch [448/3360] | train_loss 7.8909 | val_loss 5.1931
+[SupCon] Epoch [449/3360] | train_loss 7.9422 | val_loss 5.1463
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+✅ Model saved at /exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_v3_composed_b4096_lr4.8_L2_H4_D16_20260730_170044_seed42_model.pth (best knn_val_acc_smooth: 0.7890)
+[SupCon] Epoch [450/3360] | train_loss 7.9135 | val_loss 5.1729 | knn_val_acc_smooth 0.7890 | knn_val_acc 0.7758 | svm_val_acc 0.7953 | knn_train_acc 0.8042 | svm_train_acc 0.8292
+[SupCon] Epoch [451/3360] | train_loss 7.9514 | val_loss 5.2274
+[SupCon] Epoch [452/3360] | train_loss 7.9845 | val_loss 5.2027
+[SupCon] Epoch [453/3360] | train_loss 7.9698 | val_loss 5.1773
+[SupCon] Epoch [454/3360] | train_loss 7.9689 | val_loss 5.1461
+[SupCon] Epoch [455/3360] | train_loss 7.9228 | val_loss 5.1901
+[SupCon] Epoch [456/3360] | train_loss 7.9804 | val_loss 5.1300
+[SupCon] Epoch [457/3360] | train_loss 7.9299 | val_loss 5.1417
+[SupCon] Epoch [458/3360] | train_loss 7.9658 | val_loss 5.1533
+[SupCon] Epoch [459/3360] | train_loss 7.9487 | val_loss 5.1413
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (1/112).
+[SupCon] Epoch [460/3360] | train_loss 7.9337 | val_loss 5.1492 | knn_val_acc_smooth 0.7780 | knn_val_acc 0.7786 | svm_val_acc 0.7975 | knn_train_acc 0.8017 | svm_train_acc 0.8293
+[SupCon] Epoch [461/3360] | train_loss 7.9314 | val_loss 5.1535
+[SupCon] Epoch [462/3360] | train_loss 7.9174 | val_loss 5.1547
+[SupCon] Epoch [463/3360] | train_loss 7.9312 | val_loss 5.1452
+[SupCon] Epoch [464/3360] | train_loss 7.9531 | val_loss 5.1320
+[SupCon] Epoch [465/3360] | train_loss 7.9228 | val_loss 5.1139
+[SupCon] Epoch [466/3360] | train_loss 7.9354 | val_loss 5.1026
+[SupCon] Epoch [467/3360] | train_loss 7.9192 | val_loss 5.1235
+[SupCon] Epoch [468/3360] | train_loss 7.9249 | val_loss 5.1272
+[SupCon] Epoch [469/3360] | train_loss 7.9240 | val_loss 5.1756
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (2/112).
+[SupCon] Epoch [470/3360] | train_loss 7.9718 | val_loss 5.1608 | knn_val_acc_smooth 0.7709 | knn_val_acc 0.7583 | svm_val_acc 0.7666 | knn_train_acc 0.8091 | svm_train_acc 0.8077
+[SupCon] Epoch [471/3360] | train_loss 7.9396 | val_loss 5.1298
+[SupCon] Epoch [472/3360] | train_loss 7.9350 | val_loss 5.1511
+[SupCon] Epoch [473/3360] | train_loss 7.9367 | val_loss 5.1514
+[SupCon] Epoch [474/3360] | train_loss 7.9286 | val_loss 5.1204
+[SupCon] Epoch [475/3360] | train_loss 7.9605 | val_loss 5.3672
+[SupCon] Epoch [476/3360] | train_loss 8.1032 | val_loss 5.3161
+[SupCon] Epoch [477/3360] | train_loss 8.0954 | val_loss 5.2648
+[SupCon] Epoch [478/3360] | train_loss 8.0733 | val_loss 5.2672
+[SupCon] Epoch [479/3360] | train_loss 8.0652 | val_loss 5.2306
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (3/112).
+[SupCon] Epoch [480/3360] | train_loss 8.0507 | val_loss 5.2728 | knn_val_acc_smooth 0.7678 | knn_val_acc 0.7664 | svm_val_acc 0.7509 | knn_train_acc 0.7963 | svm_train_acc 0.8202
+[SupCon] Epoch [481/3360] | train_loss 8.0414 | val_loss 5.2640
+[SupCon] Epoch [482/3360] | train_loss 8.0469 | val_loss 5.1578
+[SupCon] Epoch [483/3360] | train_loss 7.9641 | val_loss 5.2183
+[SupCon] Epoch [484/3360] | train_loss 7.9781 | val_loss 5.1958
+[SupCon] Epoch [485/3360] | train_loss 7.9813 | val_loss 5.1866
+[SupCon] Epoch [486/3360] | train_loss 8.0037 | val_loss 5.2134
+[SupCon] Epoch [487/3360] | train_loss 7.9920 | val_loss 5.1096
+[SupCon] Epoch [488/3360] | train_loss 7.9300 | val_loss 5.1517
+[SupCon] Epoch [489/3360] | train_loss 7.9321 | val_loss 5.0979
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (4/112).
+[SupCon] Epoch [490/3360] | train_loss 7.9079 | val_loss 5.0828 | knn_val_acc_smooth 0.7664 | knn_val_acc 0.7746 | svm_val_acc 0.7706 | knn_train_acc 0.7908 | svm_train_acc 0.8105
+[SupCon] Epoch [491/3360] | train_loss 7.8802 | val_loss 5.1162
+[SupCon] Epoch [492/3360] | train_loss 7.9192 | val_loss 5.0718
+[SupCon] Epoch [493/3360] | train_loss 7.8926 | val_loss 5.2010
+[SupCon] Epoch [494/3360] | train_loss 7.9938 | val_loss 5.0887
+[SupCon] Epoch [495/3360] | train_loss 7.9725 | val_loss 5.1258
+[SupCon] Epoch [496/3360] | train_loss 7.9240 | val_loss 5.1856
+[SupCon] Epoch [497/3360] | train_loss 7.9388 | val_loss 5.1549
+[SupCon] Epoch [498/3360] | train_loss 7.9393 | val_loss 5.1088
+[SupCon] Epoch [499/3360] | train_loss 7.9345 | val_loss 5.1364
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (5/112).
+[SupCon] Epoch [500/3360] | train_loss 7.9234 | val_loss 5.1110 | knn_val_acc_smooth 0.7691 | knn_val_acc 0.7662 | svm_val_acc 0.7687 | knn_train_acc 0.7867 | svm_train_acc 0.8090
+[SupCon] Epoch [501/3360] | train_loss 7.9166 | val_loss 5.1077
+[SupCon] Epoch [502/3360] | train_loss 7.9125 | val_loss 5.1002
+[SupCon] Epoch [503/3360] | train_loss 7.8978 | val_loss 5.1241
+[SupCon] Epoch [504/3360] | train_loss 7.9021 | val_loss 5.1229
+[SupCon] Epoch [505/3360] | train_loss 7.9244 | val_loss 5.0666
+[SupCon] Epoch [506/3360] | train_loss 7.8938 | val_loss 5.1793
+[SupCon] Epoch [507/3360] | train_loss 7.9466 | val_loss 5.1760
+[SupCon] Epoch [508/3360] | train_loss 7.9518 | val_loss 5.1338
+[SupCon] Epoch [509/3360] | train_loss 7.9243 | val_loss 5.1009
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (6/112).
+[SupCon] Epoch [510/3360] | train_loss 7.8965 | val_loss 5.1950 | knn_val_acc_smooth 0.7719 | knn_val_acc 0.7750 | svm_val_acc 0.7857 | knn_train_acc 0.7767 | svm_train_acc 0.8170
+[SupCon] Epoch [511/3360] | train_loss 8.0141 | val_loss 5.1699
+[SupCon] Epoch [512/3360] | train_loss 8.0138 | val_loss 5.1620
+[SupCon] Epoch [513/3360] | train_loss 7.9776 | val_loss 5.1853
+[SupCon] Epoch [514/3360] | train_loss 7.9404 | val_loss 5.1634
+[SupCon] Epoch [515/3360] | train_loss 7.9448 | val_loss 5.1267
+[SupCon] Epoch [516/3360] | train_loss 7.9063 | val_loss 5.1020
+[SupCon] Epoch [517/3360] | train_loss 7.8871 | val_loss 5.1270
+[SupCon] Epoch [518/3360] | train_loss 7.8970 | val_loss 5.0968
+[SupCon] Epoch [519/3360] | train_loss 7.9348 | val_loss 5.3618
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (7/112).
+[SupCon] Epoch [520/3360] | train_loss 8.0951 | val_loss 5.2599 | knn_val_acc_smooth 0.7656 | knn_val_acc 0.7555 | svm_val_acc 0.7764 | knn_train_acc 0.8101 | svm_train_acc 0.8334
+[SupCon] Epoch [521/3360] | train_loss 8.0509 | val_loss 5.2072
+[SupCon] Epoch [522/3360] | train_loss 8.0119 | val_loss 5.1557
+[SupCon] Epoch [523/3360] | train_loss 7.9631 | val_loss 5.1744
+[SupCon] Epoch [524/3360] | train_loss 7.9633 | val_loss 5.1606
+[SupCon] Epoch [525/3360] | train_loss 7.9242 | val_loss 5.1955
+[SupCon] Epoch [526/3360] | train_loss 7.9793 | val_loss 5.1460
+[SupCon] Epoch [527/3360] | train_loss 7.9124 | val_loss 5.0905
+[SupCon] Epoch [528/3360] | train_loss 7.8942 | val_loss 5.1572
+[SupCon] Epoch [529/3360] | train_loss 7.9636 | val_loss 5.1438
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (8/112).
+[SupCon] Epoch [530/3360] | train_loss 7.9329 | val_loss 5.1398 | knn_val_acc_smooth 0.7702 | knn_val_acc 0.7802 | svm_val_acc 0.7889 | knn_train_acc 0.8064 | svm_train_acc 0.8322
+[SupCon] Epoch [531/3360] | train_loss 7.9228 | val_loss 5.0993
+[SupCon] Epoch [532/3360] | train_loss 7.8888 | val_loss 5.0989
+[SupCon] Epoch [533/3360] | train_loss 7.8835 | val_loss 5.1240
+[SupCon] Epoch [534/3360] | train_loss 7.9145 | val_loss 5.1146
+[SupCon] Epoch [535/3360] | train_loss 7.8729 | val_loss 5.0514
+[SupCon] Epoch [536/3360] | train_loss 7.8503 | val_loss 5.0726
+[SupCon] Epoch [537/3360] | train_loss 7.8621 | val_loss 5.1212
+[SupCon] Epoch [538/3360] | train_loss 7.9429 | val_loss 5.1538
+[SupCon] Epoch [539/3360] | train_loss 7.9516 | val_loss 5.1393
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (9/112).
+[SupCon] Epoch [540/3360] | train_loss 7.9274 | val_loss 5.1404 | knn_val_acc_smooth 0.7643 | knn_val_acc 0.7573 | svm_val_acc 0.7512 | knn_train_acc 0.7829 | svm_train_acc 0.8026
+[SupCon] Epoch [541/3360] | train_loss 7.9974 | val_loss 5.2075
+[SupCon] Epoch [542/3360] | train_loss 7.9656 | val_loss 5.1716
+[SupCon] Epoch [543/3360] | train_loss 7.9634 | val_loss 5.1581
+[SupCon] Epoch [544/3360] | train_loss 7.9329 | val_loss 5.1212
+[SupCon] Epoch [545/3360] | train_loss 7.9050 | val_loss 5.0977
+[SupCon] Epoch [546/3360] | train_loss 7.9104 | val_loss 5.1091
+[SupCon] Epoch [547/3360] | train_loss 7.8733 | val_loss 5.0734
+[SupCon] Epoch [548/3360] | train_loss 7.8802 | val_loss 5.1819
+[SupCon] Epoch [549/3360] | train_loss 7.9438 | val_loss 5.1086
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (10/112).
+[SupCon] Epoch [550/3360] | train_loss 7.9082 | val_loss 5.0605 | knn_val_acc_smooth 0.7762 | knn_val_acc 0.7912 | svm_val_acc 0.7758 | knn_train_acc 0.8156 | svm_train_acc 0.8116
+[SupCon] Epoch [551/3360] | train_loss 7.8973 | val_loss 5.1242
+[SupCon] Epoch [552/3360] | train_loss 7.9242 | val_loss 5.0952
+[SupCon] Epoch [553/3360] | train_loss 7.9015 | val_loss 5.1256
+[SupCon] Epoch [554/3360] | train_loss 7.9345 | val_loss 5.1515
+[SupCon] Epoch [555/3360] | train_loss 7.9287 | val_loss 5.0938
+[SupCon] Epoch [556/3360] | train_loss 7.8849 | val_loss 5.0663
+[SupCon] Epoch [557/3360] | train_loss 7.8624 | val_loss 5.1095
+[SupCon] Epoch [558/3360] | train_loss 7.8757 | val_loss 5.0982
+[SupCon] Epoch [559/3360] | train_loss 7.8911 | val_loss 5.2750
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (11/112).
+[SupCon] Epoch [560/3360] | train_loss 8.0050 | val_loss 5.2129 | knn_val_acc_smooth 0.7595 | knn_val_acc 0.7300 | svm_val_acc 0.7564 | knn_train_acc 0.7987 | svm_train_acc 0.7951
+[SupCon] Epoch [561/3360] | train_loss 7.9737 | val_loss 5.1178
+[SupCon] Epoch [562/3360] | train_loss 7.9825 | val_loss 5.1480
+[SupCon] Epoch [563/3360] | train_loss 7.9526 | val_loss 5.2645
+[SupCon] Epoch [564/3360] | train_loss 7.9763 | val_loss 5.1477
+[SupCon] Epoch [565/3360] | train_loss 7.9602 | val_loss 5.1401
+[SupCon] Epoch [566/3360] | train_loss 7.9458 | val_loss 5.1014
+[SupCon] Epoch [567/3360] | train_loss 7.9228 | val_loss 5.1083
+[SupCon] Epoch [568/3360] | train_loss 7.9101 | val_loss 5.0847
+[SupCon] Epoch [569/3360] | train_loss 7.8954 | val_loss 5.0624
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (12/112).
+[SupCon] Epoch [570/3360] | train_loss 7.8639 | val_loss 5.0944 | knn_val_acc_smooth 0.7653 | knn_val_acc 0.7746 | svm_val_acc 0.7957 | knn_train_acc 0.8040 | svm_train_acc 0.8245
+[SupCon] Epoch [571/3360] | train_loss 7.8814 | val_loss 5.1316
+[SupCon] Epoch [572/3360] | train_loss 7.8948 | val_loss 5.1329
+[SupCon] Epoch [573/3360] | train_loss 7.9032 | val_loss 5.0692
+[SupCon] Epoch [574/3360] | train_loss 7.8668 | val_loss 5.0843
+[SupCon] Epoch [575/3360] | train_loss 7.8632 | val_loss 5.1231
+[SupCon] Epoch [576/3360] | train_loss 7.9328 | val_loss 5.1908
+[SupCon] Epoch [577/3360] | train_loss 7.9636 | val_loss 5.2008
+[SupCon] Epoch [578/3360] | train_loss 7.9677 | val_loss 5.1679
+[SupCon] Epoch [579/3360] | train_loss 7.9264 | val_loss 5.1828
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (13/112).
+[SupCon] Epoch [580/3360] | train_loss 7.9296 | val_loss 5.1413 | knn_val_acc_smooth 0.7527 | knn_val_acc 0.7536 | svm_val_acc 0.7641 | knn_train_acc 0.7873 | svm_train_acc 0.8073
+[SupCon] Epoch [581/3360] | train_loss 7.9169 | val_loss 5.1110
+[SupCon] Epoch [582/3360] | train_loss 7.9017 | val_loss 5.2321
+[SupCon] Epoch [583/3360] | train_loss 7.9358 | val_loss 5.1227
+[SupCon] Epoch [584/3360] | train_loss 7.9296 | val_loss 5.0804
+[SupCon] Epoch [585/3360] | train_loss 7.8674 | val_loss 5.1339
+[SupCon] Epoch [586/3360] | train_loss 7.9041 | val_loss 5.1152
+[SupCon] Epoch [587/3360] | train_loss 7.9025 | val_loss 5.0877
+[SupCon] Epoch [588/3360] | train_loss 7.8696 | val_loss 5.0612
+[SupCon] Epoch [589/3360] | train_loss 7.8440 | val_loss 5.0837
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (14/112).
+[SupCon] Epoch [590/3360] | train_loss 7.9340 | val_loss 5.1159 | knn_val_acc_smooth 0.7693 | knn_val_acc 0.7798 | svm_val_acc 0.8019 | knn_train_acc 0.8112 | svm_train_acc 0.8287
+[SupCon] Epoch [591/3360] | train_loss 7.9100 | val_loss 5.1198
+[SupCon] Epoch [592/3360] | train_loss 7.9148 | val_loss 5.0450
+[SupCon] Epoch [593/3360] | train_loss 7.8769 | val_loss 5.0510
+[SupCon] Epoch [594/3360] | train_loss 7.8577 | val_loss 5.1017
+[SupCon] Epoch [595/3360] | train_loss 7.8843 | val_loss 5.0333
+[SupCon] Epoch [596/3360] | train_loss 7.8396 | val_loss 5.0911
+[SupCon] Epoch [597/3360] | train_loss 7.9392 | val_loss 5.0747
+[SupCon] Epoch [598/3360] | train_loss 7.8628 | val_loss 5.1011
+[SupCon] Epoch [599/3360] | train_loss 7.8683 | val_loss 5.1248
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (15/112).
+[SupCon] Epoch [600/3360] | train_loss 7.9079 | val_loss 5.0885 | knn_val_acc_smooth 0.7610 | knn_val_acc 0.7497 | svm_val_acc 0.7843 | knn_train_acc 0.8096 | svm_train_acc 0.8342
+[SupCon] Epoch [601/3360] | train_loss 7.8673 | val_loss 5.0951
+[SupCon] Epoch [602/3360] | train_loss 7.8661 | val_loss 5.0705
+[SupCon] Epoch [603/3360] | train_loss 7.8294 | val_loss 5.0801
+[SupCon] Epoch [604/3360] | train_loss 7.8766 | val_loss 5.0517
+[SupCon] Epoch [605/3360] | train_loss 7.8557 | val_loss 5.1014
+[SupCon] Epoch [606/3360] | train_loss 7.8567 | val_loss 5.0427
+[SupCon] Epoch [607/3360] | train_loss 7.8436 | val_loss 5.0518
+[SupCon] Epoch [608/3360] | train_loss 7.8523 | val_loss 5.0746
+[SupCon] Epoch [609/3360] | train_loss 7.8670 | val_loss 5.0380
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (16/112).
+[SupCon] Epoch [610/3360] | train_loss 7.8286 | val_loss 5.0964 | knn_val_acc_smooth 0.7624 | knn_val_acc 0.7576 | svm_val_acc 0.7402 | knn_train_acc 0.7825 | svm_train_acc 0.7981
+[SupCon] Epoch [611/3360] | train_loss 7.8786 | val_loss 5.0998
+[SupCon] Epoch [612/3360] | train_loss 7.8921 | val_loss 5.1184
+[SupCon] Epoch [613/3360] | train_loss 7.8845 | val_loss 5.0684
+[SupCon] Epoch [614/3360] | train_loss 7.8520 | val_loss 5.0812
+[SupCon] Epoch [615/3360] | train_loss 7.8453 | val_loss 5.0375
+[SupCon] Epoch [616/3360] | train_loss 7.8227 | val_loss 5.0567
+[SupCon] Epoch [617/3360] | train_loss 7.8852 | val_loss 5.0973
+[SupCon] Epoch [618/3360] | train_loss 7.8619 | val_loss 5.0867
+[SupCon] Epoch [619/3360] | train_loss 7.8746 | val_loss 5.0690
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (17/112).
+[SupCon] Epoch [620/3360] | train_loss 7.8723 | val_loss 5.0899 | knn_val_acc_smooth 0.7481 | knn_val_acc 0.7369 | svm_val_acc 0.7648 | knn_train_acc 0.7999 | svm_train_acc 0.8012
+[SupCon] Epoch [621/3360] | train_loss 7.8765 | val_loss 5.0562
+[SupCon] Epoch [622/3360] | train_loss 7.8522 | val_loss 5.0087
+[SupCon] Epoch [623/3360] | train_loss 7.8301 | val_loss 5.1110
+[SupCon] Epoch [624/3360] | train_loss 7.8510 | val_loss 5.0433
+[SupCon] Epoch [625/3360] | train_loss 7.8327 | val_loss 5.0145
+[SupCon] Epoch [626/3360] | train_loss 7.8071 | val_loss 5.0471
+[SupCon] Epoch [627/3360] | train_loss 7.8325 | val_loss 5.0727
+[SupCon] Epoch [628/3360] | train_loss 7.8715 | val_loss 5.0703
+[SupCon] Epoch [629/3360] | train_loss 7.8450 | val_loss 5.0871
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (18/112).
+[SupCon] Epoch [630/3360] | train_loss 7.9085 | val_loss 5.1093 | knn_val_acc_smooth 0.7499 | knn_val_acc 0.7551 | svm_val_acc 0.7775 | knn_train_acc 0.7970 | svm_train_acc 0.8203
+[SupCon] Epoch [631/3360] | train_loss 7.8535 | val_loss 5.1082
+[SupCon] Epoch [632/3360] | train_loss 7.8822 | val_loss 5.0645
+[SupCon] Epoch [633/3360] | train_loss 7.8626 | val_loss 5.0939
+[SupCon] Epoch [634/3360] | train_loss 7.9086 | val_loss 5.0555
+[SupCon] Epoch [635/3360] | train_loss 7.8438 | val_loss 5.1221
+[SupCon] Epoch [636/3360] | train_loss 7.8833 | val_loss 5.0683
+[SupCon] Epoch [637/3360] | train_loss 7.8765 | val_loss 5.0799
+[SupCon] Epoch [638/3360] | train_loss 7.8724 | val_loss 5.1854
+[SupCon] Epoch [639/3360] | train_loss 7.9827 | val_loss 5.2320
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (19/112).
+[SupCon] Epoch [640/3360] | train_loss 7.9952 | val_loss 5.3009 | knn_val_acc_smooth 0.7554 | knn_val_acc 0.7741 | svm_val_acc 0.7917 | knn_train_acc 0.7936 | svm_train_acc 0.8078
+[SupCon] Epoch [641/3360] | train_loss 8.0430 | val_loss 5.3149
+[SupCon] Epoch [642/3360] | train_loss 8.0898 | val_loss 5.1004
+[SupCon] Epoch [643/3360] | train_loss 7.9345 | val_loss 5.2114
+[SupCon] Epoch [644/3360] | train_loss 8.0291 | val_loss 5.2207
+[SupCon] Epoch [645/3360] | train_loss 8.0111 | val_loss 5.2144
+[SupCon] Epoch [646/3360] | train_loss 8.0466 | val_loss 5.1176
+[SupCon] Epoch [647/3360] | train_loss 7.9276 | val_loss 5.0970
+[SupCon] Epoch [648/3360] | train_loss 7.8725 | val_loss 5.1048
+[SupCon] Epoch [649/3360] | train_loss 7.8936 | val_loss 5.1234
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.75it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (20/112).
+[SupCon] Epoch [650/3360] | train_loss 7.9021 | val_loss 5.0766 | knn_val_acc_smooth 0.7572 | knn_val_acc 0.7426 | svm_val_acc 0.7716 | knn_train_acc 0.8007 | svm_train_acc 0.7915
+[SupCon] Epoch [651/3360] | train_loss 7.8700 | val_loss 5.0923
+[SupCon] Epoch [652/3360] | train_loss 7.8549 | val_loss 5.0739
+[SupCon] Epoch [653/3360] | train_loss 7.8869 | val_loss 5.0444
+[SupCon] Epoch [654/3360] | train_loss 7.8696 | val_loss 5.0432
+[SupCon] Epoch [655/3360] | train_loss 7.8717 | val_loss 5.0621
+[SupCon] Epoch [656/3360] | train_loss 7.8531 | val_loss 5.0345
+[SupCon] Epoch [657/3360] | train_loss 7.8780 | val_loss 5.0815
+[SupCon] Epoch [658/3360] | train_loss 7.8525 | val_loss 5.0439
+[SupCon] Epoch [659/3360] | train_loss 7.8760 | val_loss 5.0508
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (21/112).
+[SupCon] Epoch [660/3360] | train_loss 7.8290 | val_loss 5.0450 | knn_val_acc_smooth 0.7571 | knn_val_acc 0.7545 | svm_val_acc 0.7878 | knn_train_acc 0.7997 | svm_train_acc 0.8177
+[SupCon] Epoch [661/3360] | train_loss 7.8576 | val_loss 5.0779
+[SupCon] Epoch [662/3360] | train_loss 7.9118 | val_loss 5.1095
+[SupCon] Epoch [663/3360] | train_loss 7.8921 | val_loss 5.0880
+[SupCon] Epoch [664/3360] | train_loss 7.8755 | val_loss 5.1304
+[SupCon] Epoch [665/3360] | train_loss 7.8870 | val_loss 5.0584
+[SupCon] Epoch [666/3360] | train_loss 7.8517 | val_loss 5.0448
+[SupCon] Epoch [667/3360] | train_loss 7.8376 | val_loss 5.0192
+[SupCon] Epoch [668/3360] | train_loss 7.8041 | val_loss 5.0639
+[SupCon] Epoch [669/3360] | train_loss 7.8506 | val_loss 5.0519
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (22/112).
+[SupCon] Epoch [670/3360] | train_loss 7.8776 | val_loss 5.0364 | knn_val_acc_smooth 0.7561 | knn_val_acc 0.7712 | svm_val_acc 0.7697 | knn_train_acc 0.8047 | svm_train_acc 0.8144
+[SupCon] Epoch [671/3360] | train_loss 7.8456 | val_loss 5.1028
+[SupCon] Epoch [672/3360] | train_loss 7.9190 | val_loss 5.0307
+[SupCon] Epoch [673/3360] | train_loss 7.8426 | val_loss 5.0625
+[SupCon] Epoch [674/3360] | train_loss 7.8656 | val_loss 5.0975
+[SupCon] Epoch [675/3360] | train_loss 7.8696 | val_loss 5.1082
+[SupCon] Epoch [676/3360] | train_loss 7.9700 | val_loss 5.0613
+[SupCon] Epoch [677/3360] | train_loss 7.9048 | val_loss 5.0924
+[SupCon] Epoch [678/3360] | train_loss 7.9604 | val_loss 5.1652
+[SupCon] Epoch [679/3360] | train_loss 8.0034 | val_loss 5.2294
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (23/112).
+[SupCon] Epoch [680/3360] | train_loss 8.0155 | val_loss 5.1187 | knn_val_acc_smooth 0.7658 | knn_val_acc 0.7717 | svm_val_acc 0.7605 | knn_train_acc 0.7937 | svm_train_acc 0.8261
+[SupCon] Epoch [681/3360] | train_loss 7.9390 | val_loss 5.1477
+[SupCon] Epoch [682/3360] | train_loss 7.9216 | val_loss 5.1498
+[SupCon] Epoch [683/3360] | train_loss 7.9331 | val_loss 5.1357
+[SupCon] Epoch [684/3360] | train_loss 7.8886 | val_loss 5.1297
+[SupCon] Epoch [685/3360] | train_loss 7.9286 | val_loss 5.0404
+[SupCon] Epoch [686/3360] | train_loss 7.8539 | val_loss 5.0991
+[SupCon] Epoch [687/3360] | train_loss 7.8596 | val_loss 5.1156
+[SupCon] Epoch [688/3360] | train_loss 7.9009 | val_loss 5.0460
+[SupCon] Epoch [689/3360] | train_loss 7.8759 | val_loss 5.0456
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.46it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (24/112).
+[SupCon] Epoch [690/3360] | train_loss 7.8839 | val_loss 5.0773 | knn_val_acc_smooth 0.7687 | knn_val_acc 0.7632 | svm_val_acc 0.7656 | knn_train_acc 0.8023 | svm_train_acc 0.8051
+[SupCon] Epoch [691/3360] | train_loss 7.8700 | val_loss 5.0635
+[SupCon] Epoch [692/3360] | train_loss 7.8690 | val_loss 5.1493
+[SupCon] Epoch [693/3360] | train_loss 7.8975 | val_loss 5.0651
+[SupCon] Epoch [694/3360] | train_loss 7.8730 | val_loss 5.0909
+[SupCon] Epoch [695/3360] | train_loss 7.9459 | val_loss 5.1151
+[SupCon] Epoch [696/3360] | train_loss 7.9062 | val_loss 5.1211
+[SupCon] Epoch [697/3360] | train_loss 7.8822 | val_loss 5.1668
+[SupCon] Epoch [698/3360] | train_loss 7.9841 | val_loss 5.2061
+[SupCon] Epoch [699/3360] | train_loss 7.9819 | val_loss 5.1616
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (25/112).
+[SupCon] Epoch [700/3360] | train_loss 7.9446 | val_loss 5.0655 | knn_val_acc_smooth 0.7666 | knn_val_acc 0.7649 | svm_val_acc 0.7535 | knn_train_acc 0.8023 | svm_train_acc 0.8107
+[SupCon] Epoch [701/3360] | train_loss 7.9048 | val_loss 5.1406
+[SupCon] Epoch [702/3360] | train_loss 7.9087 | val_loss 5.0782
+[SupCon] Epoch [703/3360] | train_loss 7.8771 | val_loss 5.0688
+[SupCon] Epoch [704/3360] | train_loss 7.8821 | val_loss 5.2709
+[SupCon] Epoch [705/3360] | train_loss 8.0146 | val_loss 5.3817
+[SupCon] Epoch [706/3360] | train_loss 8.1106 | val_loss 5.4334
+[SupCon] Epoch [707/3360] | train_loss 8.1611 | val_loss 5.2685
+[SupCon] Epoch [708/3360] | train_loss 8.0460 | val_loss 5.2359
+[SupCon] Epoch [709/3360] | train_loss 8.0280 | val_loss 5.1916
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (26/112).
+[SupCon] Epoch [710/3360] | train_loss 7.9873 | val_loss 5.1561 | knn_val_acc_smooth 0.7681 | knn_val_acc 0.7763 | svm_val_acc 0.7738 | knn_train_acc 0.8109 | svm_train_acc 0.8261
+[SupCon] Epoch [711/3360] | train_loss 7.9651 | val_loss 5.1249
+[SupCon] Epoch [712/3360] | train_loss 7.9131 | val_loss 5.1077
+[SupCon] Epoch [713/3360] | train_loss 7.8854 | val_loss 5.0952
+[SupCon] Epoch [714/3360] | train_loss 7.8837 | val_loss 5.0917
+[SupCon] Epoch [715/3360] | train_loss 7.8905 | val_loss 5.1369
+[SupCon] Epoch [716/3360] | train_loss 7.9112 | val_loss 5.0575
+[SupCon] Epoch [717/3360] | train_loss 7.8865 | val_loss 5.0907
+[SupCon] Epoch [718/3360] | train_loss 7.9501 | val_loss 5.4618
+[SupCon] Epoch [719/3360] | train_loss 8.1995 | val_loss 5.2971
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (27/112).
+[SupCon] Epoch [720/3360] | train_loss 8.0977 | val_loss 5.2414 | knn_val_acc_smooth 0.7574 | knn_val_acc 0.7310 | svm_val_acc 0.7785 | knn_train_acc 0.8178 | svm_train_acc 0.8353
+[SupCon] Epoch [721/3360] | train_loss 8.0078 | val_loss 5.1999
+[SupCon] Epoch [722/3360] | train_loss 8.0481 | val_loss 5.2388
+[SupCon] Epoch [723/3360] | train_loss 8.0065 | val_loss 5.2417
+[SupCon] Epoch [724/3360] | train_loss 8.0241 | val_loss 5.1422
+[SupCon] Epoch [725/3360] | train_loss 7.9847 | val_loss 5.1418
+[SupCon] Epoch [726/3360] | train_loss 7.9883 | val_loss 5.2028
+[SupCon] Epoch [727/3360] | train_loss 7.9953 | val_loss 5.1688
+[SupCon] Epoch [728/3360] | train_loss 7.9505 | val_loss 5.1195
+[SupCon] Epoch [729/3360] | train_loss 7.9120 | val_loss 5.1121
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (28/112).
+[SupCon] Epoch [730/3360] | train_loss 7.8882 | val_loss 5.0810 | knn_val_acc_smooth 0.7628 | knn_val_acc 0.7811 | svm_val_acc 0.7710 | knn_train_acc 0.8173 | svm_train_acc 0.8211
+[SupCon] Epoch [731/3360] | train_loss 7.8670 | val_loss 5.0959
+[SupCon] Epoch [732/3360] | train_loss 7.9256 | val_loss 5.1016
+[SupCon] Epoch [733/3360] | train_loss 7.8784 | val_loss 5.0818
+[SupCon] Epoch [734/3360] | train_loss 7.8363 | val_loss 5.0584
+[SupCon] Epoch [735/3360] | train_loss 7.8753 | val_loss 5.0481
+[SupCon] Epoch [736/3360] | train_loss 7.8406 | val_loss 5.0808
+[SupCon] Epoch [737/3360] | train_loss 7.8428 | val_loss 5.1187
+[SupCon] Epoch [738/3360] | train_loss 7.8721 | val_loss 5.0627
+[SupCon] Epoch [739/3360] | train_loss 7.8455 | val_loss 5.0701
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (29/112).
+[SupCon] Epoch [740/3360] | train_loss 7.8314 | val_loss 5.1118 | knn_val_acc_smooth 0.7564 | knn_val_acc 0.7572 | svm_val_acc 0.7709 | knn_train_acc 0.7882 | svm_train_acc 0.8165
+[SupCon] Epoch [741/3360] | train_loss 7.9726 | val_loss 5.0759
+[SupCon] Epoch [742/3360] | train_loss 7.9304 | val_loss 5.1168
+[SupCon] Epoch [743/3360] | train_loss 7.8964 | val_loss 5.1470
+[SupCon] Epoch [744/3360] | train_loss 7.9274 | val_loss 5.1362
+[SupCon] Epoch [745/3360] | train_loss 7.9105 | val_loss 5.1035
+[SupCon] Epoch [746/3360] | train_loss 7.9020 | val_loss 5.1057
+[SupCon] Epoch [747/3360] | train_loss 7.8859 | val_loss 5.1238
+[SupCon] Epoch [748/3360] | train_loss 7.9641 | val_loss 5.1504
+[SupCon] Epoch [749/3360] | train_loss 7.9664 | val_loss 5.0849
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (30/112).
+[SupCon] Epoch [750/3360] | train_loss 7.9133 | val_loss 5.1024 | knn_val_acc_smooth 0.7704 | knn_val_acc 0.7728 | svm_val_acc 0.7644 | knn_train_acc 0.8073 | svm_train_acc 0.8465
+[SupCon] Epoch [751/3360] | train_loss 7.8873 | val_loss 5.1445
+[SupCon] Epoch [752/3360] | train_loss 7.9152 | val_loss 5.0613
+[SupCon] Epoch [753/3360] | train_loss 7.8400 | val_loss 5.0501
+[SupCon] Epoch [754/3360] | train_loss 7.8430 | val_loss 5.0304
+[SupCon] Epoch [755/3360] | train_loss 7.8294 | val_loss 5.0411
+[SupCon] Epoch [756/3360] | train_loss 7.8442 | val_loss 5.0392
+[SupCon] Epoch [757/3360] | train_loss 7.8228 | val_loss 5.1184
+[SupCon] Epoch [758/3360] | train_loss 7.8436 | val_loss 5.0107
+[SupCon] Epoch [759/3360] | train_loss 7.8549 | val_loss 5.1346
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (31/112).
+[SupCon] Epoch [760/3360] | train_loss 7.8839 | val_loss 5.1024 | knn_val_acc_smooth 0.7673 | knn_val_acc 0.7718 | svm_val_acc 0.7234 | knn_train_acc 0.8118 | svm_train_acc 0.8205
+[SupCon] Epoch [761/3360] | train_loss 7.9149 | val_loss 5.1723
+[SupCon] Epoch [762/3360] | train_loss 7.9414 | val_loss 5.2017
+[SupCon] Epoch [763/3360] | train_loss 8.1057 | val_loss 5.3591
+[SupCon] Epoch [764/3360] | train_loss 8.1302 | val_loss 5.3705
+[SupCon] Epoch [765/3360] | train_loss 8.1775 | val_loss 5.3648
+[SupCon] Epoch [766/3360] | train_loss 8.1078 | val_loss 5.2429
+[SupCon] Epoch [767/3360] | train_loss 8.0360 | val_loss 5.2115
+[SupCon] Epoch [768/3360] | train_loss 8.0053 | val_loss 5.2041
+[SupCon] Epoch [769/3360] | train_loss 7.9906 | val_loss 5.1167
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (32/112).
+[SupCon] Epoch [770/3360] | train_loss 7.9544 | val_loss 5.1643 | knn_val_acc_smooth 0.7633 | knn_val_acc 0.7452 | svm_val_acc 0.7530 | knn_train_acc 0.8102 | svm_train_acc 0.8073
+[SupCon] Epoch [771/3360] | train_loss 7.9314 | val_loss 5.1014
+[SupCon] Epoch [772/3360] | train_loss 7.9272 | val_loss 5.1540
+[SupCon] Epoch [773/3360] | train_loss 7.9021 | val_loss 5.1205
+[SupCon] Epoch [774/3360] | train_loss 7.9207 | val_loss 5.0921
+[SupCon] Epoch [775/3360] | train_loss 7.8807 | val_loss 5.0847
+[SupCon] Epoch [776/3360] | train_loss 7.8593 | val_loss 5.0494
+[SupCon] Epoch [777/3360] | train_loss 7.8699 | val_loss 5.0181
+[SupCon] Epoch [778/3360] | train_loss 7.8103 | val_loss 5.0219
+[SupCon] Epoch [779/3360] | train_loss 7.8607 | val_loss 5.1841
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (33/112).
+[SupCon] Epoch [780/3360] | train_loss 7.9177 | val_loss 5.0941 | knn_val_acc_smooth 0.7675 | knn_val_acc 0.7856 | svm_val_acc 0.7661 | knn_train_acc 0.8100 | svm_train_acc 0.8299
+[SupCon] Epoch [781/3360] | train_loss 7.8922 | val_loss 5.0642
+[SupCon] Epoch [782/3360] | train_loss 7.8541 | val_loss 5.0555
+[SupCon] Epoch [783/3360] | train_loss 7.8516 | val_loss 5.0791
+[SupCon] Epoch [784/3360] | train_loss 7.8702 | val_loss 5.0679
+[SupCon] Epoch [785/3360] | train_loss 7.8532 | val_loss 5.0259
+[SupCon] Epoch [786/3360] | train_loss 7.8156 | val_loss 5.0446
+[SupCon] Epoch [787/3360] | train_loss 7.8254 | val_loss 5.0415
+[SupCon] Epoch [788/3360] | train_loss 7.8360 | val_loss 5.0253
+[SupCon] Epoch [789/3360] | train_loss 7.7942 | val_loss 5.0474
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (34/112).
+[SupCon] Epoch [790/3360] | train_loss 7.8129 | val_loss 4.9888 | knn_val_acc_smooth 0.7615 | knn_val_acc 0.7536 | svm_val_acc 0.7677 | knn_train_acc 0.8028 | svm_train_acc 0.8173
+[SupCon] Epoch [791/3360] | train_loss 7.8116 | val_loss 5.0372
+[SupCon] Epoch [792/3360] | train_loss 7.8410 | val_loss 5.0009
+[SupCon] Epoch [793/3360] | train_loss 7.8134 | val_loss 5.0277
+[SupCon] Epoch [794/3360] | train_loss 7.7823 | val_loss 5.0613
+[SupCon] Epoch [795/3360] | train_loss 7.9031 | val_loss 5.2322
+[SupCon] Epoch [796/3360] | train_loss 7.9264 | val_loss 5.2269
+[SupCon] Epoch [797/3360] | train_loss 7.9525 | val_loss 5.1506
+[SupCon] Epoch [798/3360] | train_loss 7.9814 | val_loss 5.1859
+[SupCon] Epoch [799/3360] | train_loss 7.9300 | val_loss 5.1032
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (35/112).
+[SupCon] Epoch [800/3360] | train_loss 7.9464 | val_loss 5.2589 | knn_val_acc_smooth 0.7686 | knn_val_acc 0.7666 | svm_val_acc 0.7822 | knn_train_acc 0.8239 | svm_train_acc 0.8263
+[SupCon] Epoch [801/3360] | train_loss 8.0094 | val_loss 5.2457
+[SupCon] Epoch [802/3360] | train_loss 8.0180 | val_loss 5.2384
+[SupCon] Epoch [803/3360] | train_loss 7.9818 | val_loss 5.1838
+[SupCon] Epoch [804/3360] | train_loss 7.9832 | val_loss 5.1758
+[SupCon] Epoch [805/3360] | train_loss 7.9297 | val_loss 5.1180
+[SupCon] Epoch [806/3360] | train_loss 7.9141 | val_loss 5.0819
+[SupCon] Epoch [807/3360] | train_loss 7.8680 | val_loss 5.0867
+[SupCon] Epoch [808/3360] | train_loss 7.8597 | val_loss 5.0283
+[SupCon] Epoch [809/3360] | train_loss 7.8255 | val_loss 5.0431
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (36/112).
+[SupCon] Epoch [810/3360] | train_loss 7.8000 | val_loss 5.0383 | knn_val_acc_smooth 0.7590 | knn_val_acc 0.7568 | svm_val_acc 0.7390 | knn_train_acc 0.8206 | svm_train_acc 0.8411
+[SupCon] Epoch [811/3360] | train_loss 7.8513 | val_loss 5.0559
+[SupCon] Epoch [812/3360] | train_loss 7.8422 | val_loss 5.0759
+[SupCon] Epoch [813/3360] | train_loss 7.8499 | val_loss 5.0064
+[SupCon] Epoch [814/3360] | train_loss 7.8271 | val_loss 5.0447
+[SupCon] Epoch [815/3360] | train_loss 7.8535 | val_loss 5.1973
+[SupCon] Epoch [816/3360] | train_loss 8.0411 | val_loss 5.2149
+[SupCon] Epoch [817/3360] | train_loss 8.0770 | val_loss 5.3236
+[SupCon] Epoch [818/3360] | train_loss 8.0533 | val_loss 5.2373
+[SupCon] Epoch [819/3360] | train_loss 8.0362 | val_loss 5.2129
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (37/112).
+[SupCon] Epoch [820/3360] | train_loss 7.9794 | val_loss 5.1577 | knn_val_acc_smooth 0.7718 | knn_val_acc 0.7920 | svm_val_acc 0.7900 | knn_train_acc 0.8168 | svm_train_acc 0.8205
+[SupCon] Epoch [821/3360] | train_loss 7.9659 | val_loss 5.1381
+[SupCon] Epoch [822/3360] | train_loss 7.9028 | val_loss 5.0694
+[SupCon] Epoch [823/3360] | train_loss 7.8496 | val_loss 5.0870
+[SupCon] Epoch [824/3360] | train_loss 7.8876 | val_loss 5.0928
+[SupCon] Epoch [825/3360] | train_loss 7.8736 | val_loss 5.0390
+[SupCon] Epoch [826/3360] | train_loss 7.8238 | val_loss 5.0683
+[SupCon] Epoch [827/3360] | train_loss 7.8590 | val_loss 5.0540
+[SupCon] Epoch [828/3360] | train_loss 7.8153 | val_loss 5.0371
+[SupCon] Epoch [829/3360] | train_loss 7.9301 | val_loss 5.0422
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (38/112).
+[SupCon] Epoch [830/3360] | train_loss 7.8784 | val_loss 5.1109 | knn_val_acc_smooth 0.7730 | knn_val_acc 0.7702 | svm_val_acc 0.7681 | knn_train_acc 0.8270 | svm_train_acc 0.8241
+[SupCon] Epoch [831/3360] | train_loss 7.8796 | val_loss 5.0445
+[SupCon] Epoch [832/3360] | train_loss 7.8465 | val_loss 5.0107
+[SupCon] Epoch [833/3360] | train_loss 7.8420 | val_loss 5.0172
+[SupCon] Epoch [834/3360] | train_loss 7.8323 | val_loss 5.0427
+[SupCon] Epoch [835/3360] | train_loss 7.8239 | val_loss 5.0378
+[SupCon] Epoch [836/3360] | train_loss 7.8328 | val_loss 5.0512
+[SupCon] Epoch [837/3360] | train_loss 7.8441 | val_loss 5.0580
+[SupCon] Epoch [838/3360] | train_loss 7.8503 | val_loss 5.0381
+[SupCon] Epoch [839/3360] | train_loss 7.8505 | val_loss 5.0244
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.76it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (39/112).
+[SupCon] Epoch [840/3360] | train_loss 7.8222 | val_loss 5.0119 | knn_val_acc_smooth 0.7646 | knn_val_acc 0.7317 | svm_val_acc 0.7601 | knn_train_acc 0.8110 | svm_train_acc 0.8044
+[SupCon] Epoch [841/3360] | train_loss 7.8102 | val_loss 5.0635
+[SupCon] Epoch [842/3360] | train_loss 7.8054 | val_loss 5.0504
+[SupCon] Epoch [843/3360] | train_loss 7.8851 | val_loss 5.0418
+[SupCon] Epoch [844/3360] | train_loss 7.8781 | val_loss 5.0611
+[SupCon] Epoch [845/3360] | train_loss 7.8772 | val_loss 5.0460
+[SupCon] Epoch [846/3360] | train_loss 7.8583 | val_loss 5.0492
+[SupCon] Epoch [847/3360] | train_loss 7.8325 | val_loss 5.0866
+[SupCon] Epoch [848/3360] | train_loss 7.9459 | val_loss 5.1845
+[SupCon] Epoch [849/3360] | train_loss 7.9584 | val_loss 5.1239
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (40/112).
+[SupCon] Epoch [850/3360] | train_loss 7.9362 | val_loss 5.2224 | knn_val_acc_smooth 0.7517 | knn_val_acc 0.7531 | svm_val_acc 0.7739 | knn_train_acc 0.8272 | svm_train_acc 0.7994
+[SupCon] Epoch [851/3360] | train_loss 7.9953 | val_loss 5.2300
+[SupCon] Epoch [852/3360] | train_loss 7.9815 | val_loss 5.1408
+[SupCon] Epoch [853/3360] | train_loss 7.8989 | val_loss 5.1120
+[SupCon] Epoch [854/3360] | train_loss 7.9121 | val_loss 5.1421
+[SupCon] Epoch [855/3360] | train_loss 7.8901 | val_loss 5.1020
+[SupCon] Epoch [856/3360] | train_loss 7.8504 | val_loss 5.0898
+[SupCon] Epoch [857/3360] | train_loss 7.8985 | val_loss 5.0330
+[SupCon] Epoch [858/3360] | train_loss 7.8445 | val_loss 4.9936
+[SupCon] Epoch [859/3360] | train_loss 7.8096 | val_loss 5.0140
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (41/112).
+[SupCon] Epoch [860/3360] | train_loss 7.7972 | val_loss 4.9961 | knn_val_acc_smooth 0.7451 | knn_val_acc 0.7506 | svm_val_acc 0.7447 | knn_train_acc 0.7956 | svm_train_acc 0.8004
+[SupCon] Epoch [861/3360] | train_loss 7.7832 | val_loss 5.0142
+[SupCon] Epoch [862/3360] | train_loss 7.7775 | val_loss 4.9721
+[SupCon] Epoch [863/3360] | train_loss 7.7827 | val_loss 5.0072
+[SupCon] Epoch [864/3360] | train_loss 7.8139 | val_loss 4.9728
+[SupCon] Epoch [865/3360] | train_loss 7.8098 | val_loss 5.0023
+[SupCon] Epoch [866/3360] | train_loss 7.7903 | val_loss 4.9711
+[SupCon] Epoch [867/3360] | train_loss 7.7923 | val_loss 5.0084
+[SupCon] Epoch [868/3360] | train_loss 7.8011 | val_loss 4.9859
+[SupCon] Epoch [869/3360] | train_loss 7.8112 | val_loss 5.0951
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (42/112).
+[SupCon] Epoch [870/3360] | train_loss 7.8531 | val_loss 5.0133 | knn_val_acc_smooth 0.7483 | knn_val_acc 0.7411 | svm_val_acc 0.7683 | knn_train_acc 0.8016 | svm_train_acc 0.8123
+[SupCon] Epoch [871/3360] | train_loss 7.8062 | val_loss 5.0940
+[SupCon] Epoch [872/3360] | train_loss 7.8734 | val_loss 5.0391
+[SupCon] Epoch [873/3360] | train_loss 7.8079 | val_loss 5.0106
+[SupCon] Epoch [874/3360] | train_loss 7.8075 | val_loss 5.0059
+[SupCon] Epoch [875/3360] | train_loss 7.7844 | val_loss 5.0122
+[SupCon] Epoch [876/3360] | train_loss 7.8000 | val_loss 5.0918
+[SupCon] Epoch [877/3360] | train_loss 7.8659 | val_loss 4.9982
+[SupCon] Epoch [878/3360] | train_loss 7.8242 | val_loss 5.1046
+[SupCon] Epoch [879/3360] | train_loss 7.8887 | val_loss 5.0615
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.75it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (43/112).
+[SupCon] Epoch [880/3360] | train_loss 7.8389 | val_loss 5.0280 | knn_val_acc_smooth 0.7504 | knn_val_acc 0.7595 | svm_val_acc 0.7634 | knn_train_acc 0.8151 | svm_train_acc 0.8166
+[SupCon] Epoch [881/3360] | train_loss 7.8258 | val_loss 5.0024
+[SupCon] Epoch [882/3360] | train_loss 7.8046 | val_loss 4.9850
+[SupCon] Epoch [883/3360] | train_loss 7.7761 | val_loss 5.0132
+[SupCon] Epoch [884/3360] | train_loss 7.7918 | val_loss 5.0123
+[SupCon] Epoch [885/3360] | train_loss 7.8397 | val_loss 5.0123
+[SupCon] Epoch [886/3360] | train_loss 7.8102 | val_loss 5.0432
+[SupCon] Epoch [887/3360] | train_loss 7.9189 | val_loss 5.1181
+[SupCon] Epoch [888/3360] | train_loss 7.9275 | val_loss 5.0832
+[SupCon] Epoch [889/3360] | train_loss 7.8905 | val_loss 5.0451
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (44/112).
+[SupCon] Epoch [890/3360] | train_loss 7.8514 | val_loss 5.0659 | knn_val_acc_smooth 0.7402 | knn_val_acc 0.7201 | svm_val_acc 0.7681 | knn_train_acc 0.8276 | svm_train_acc 0.8178
+[SupCon] Epoch [891/3360] | train_loss 7.8846 | val_loss 5.1530
+[SupCon] Epoch [892/3360] | train_loss 7.9184 | val_loss 5.1132
+[SupCon] Epoch [893/3360] | train_loss 7.9074 | val_loss 5.1983
+[SupCon] Epoch [894/3360] | train_loss 7.9633 | val_loss 5.2085
+[SupCon] Epoch [895/3360] | train_loss 7.9519 | val_loss 5.1559
+[SupCon] Epoch [896/3360] | train_loss 7.9360 | val_loss 5.0550
+[SupCon] Epoch [897/3360] | train_loss 7.8615 | val_loss 5.0846
+[SupCon] Epoch [898/3360] | train_loss 7.8631 | val_loss 5.0660
+[SupCon] Epoch [899/3360] | train_loss 7.8687 | val_loss 5.0321
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.53it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (45/112).
+[SupCon] Epoch [900/3360] | train_loss 7.8507 | val_loss 5.1109 | knn_val_acc_smooth 0.7398 | knn_val_acc 0.7398 | svm_val_acc 0.7520 | knn_train_acc 0.8030 | svm_train_acc 0.8260
+[SupCon] Epoch [901/3360] | train_loss 7.8614 | val_loss 5.0632
+[SupCon] Epoch [902/3360] | train_loss 7.8536 | val_loss 5.0148
+[SupCon] Epoch [903/3360] | train_loss 7.8089 | val_loss 5.0104
+[SupCon] Epoch [904/3360] | train_loss 7.7785 | val_loss 5.0357
+[SupCon] Epoch [905/3360] | train_loss 7.8402 | val_loss 5.0277
+[SupCon] Epoch [906/3360] | train_loss 7.7993 | val_loss 5.0324
+[SupCon] Epoch [907/3360] | train_loss 7.8358 | val_loss 5.0908
+[SupCon] Epoch [908/3360] | train_loss 7.8345 | val_loss 5.0619
+[SupCon] Epoch [909/3360] | train_loss 7.8265 | val_loss 4.9801
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.35it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (46/112).
+[SupCon] Epoch [910/3360] | train_loss 7.7670 | val_loss 4.9957 | knn_val_acc_smooth 0.7382 | knn_val_acc 0.7546 | svm_val_acc 0.7727 | knn_train_acc 0.8481 | svm_train_acc 0.8165
+[SupCon] Epoch [911/3360] | train_loss 7.7764 | val_loss 5.0023
+[SupCon] Epoch [912/3360] | train_loss 7.8271 | val_loss 5.1003
+[SupCon] Epoch [913/3360] | train_loss 7.8332 | val_loss 5.1026
+[SupCon] Epoch [914/3360] | train_loss 7.8446 | val_loss 5.0317
+[SupCon] Epoch [915/3360] | train_loss 7.8126 | val_loss 5.0210
+[SupCon] Epoch [916/3360] | train_loss 7.8394 | val_loss 5.0236
+[SupCon] Epoch [917/3360] | train_loss 7.8085 | val_loss 5.0113
+[SupCon] Epoch [918/3360] | train_loss 7.8087 | val_loss 5.0236
+[SupCon] Epoch [919/3360] | train_loss 7.8170 | val_loss 5.0037
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (47/112).
+[SupCon] Epoch [920/3360] | train_loss 7.7906 | val_loss 4.9943 | knn_val_acc_smooth 0.7509 | knn_val_acc 0.7584 | svm_val_acc 0.7927 | knn_train_acc 0.7960 | svm_train_acc 0.8348
+[SupCon] Epoch [921/3360] | train_loss 7.7928 | val_loss 5.0004
+[SupCon] Epoch [922/3360] | train_loss 7.7769 | val_loss 4.9724
+[SupCon] Epoch [923/3360] | train_loss 7.7572 | val_loss 5.0039
+[SupCon] Epoch [924/3360] | train_loss 7.7755 | val_loss 4.9707
+[SupCon] Epoch [925/3360] | train_loss 7.7842 | val_loss 5.0250
+[SupCon] Epoch [926/3360] | train_loss 7.8051 | val_loss 5.0872
+[SupCon] Epoch [927/3360] | train_loss 7.8819 | val_loss 5.0913
+[SupCon] Epoch [928/3360] | train_loss 7.8672 | val_loss 5.0443
+[SupCon] Epoch [929/3360] | train_loss 7.8677 | val_loss 5.2028
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (48/112).
+[SupCon] Epoch [930/3360] | train_loss 7.9432 | val_loss 5.1212 | knn_val_acc_smooth 0.7597 | knn_val_acc 0.7663 | svm_val_acc 0.7900 | knn_train_acc 0.8258 | svm_train_acc 0.8348
+[SupCon] Epoch [931/3360] | train_loss 7.9821 | val_loss 5.0881
+[SupCon] Epoch [932/3360] | train_loss 7.9278 | val_loss 5.0620
+[SupCon] Epoch [933/3360] | train_loss 7.8777 | val_loss 5.0493
+[SupCon] Epoch [934/3360] | train_loss 7.8772 | val_loss 5.1021
+[SupCon] Epoch [935/3360] | train_loss 7.9082 | val_loss 5.0707
+[SupCon] Epoch [936/3360] | train_loss 7.8773 | val_loss 5.0634
+[SupCon] Epoch [937/3360] | train_loss 7.8504 | val_loss 5.0181
+[SupCon] Epoch [938/3360] | train_loss 7.8067 | val_loss 5.0266
+[SupCon] Epoch [939/3360] | train_loss 7.8044 | val_loss 4.9980
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.78it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (49/112).
+[SupCon] Epoch [940/3360] | train_loss 7.7957 | val_loss 4.9820 | knn_val_acc_smooth 0.7587 | knn_val_acc 0.7514 | svm_val_acc 0.7257 | knn_train_acc 0.8296 | svm_train_acc 0.8414
+[SupCon] Epoch [941/3360] | train_loss 7.7606 | val_loss 4.9690
+[SupCon] Epoch [942/3360] | train_loss 7.7810 | val_loss 5.1029
+[SupCon] Epoch [943/3360] | train_loss 7.9315 | val_loss 5.0799
+[SupCon] Epoch [944/3360] | train_loss 7.8547 | val_loss 5.0296
+[SupCon] Epoch [945/3360] | train_loss 7.8261 | val_loss 5.0197
+[SupCon] Epoch [946/3360] | train_loss 7.8372 | val_loss 4.9795
+[SupCon] Epoch [947/3360] | train_loss 7.8049 | val_loss 5.0433
+[SupCon] Epoch [948/3360] | train_loss 7.8082 | val_loss 5.0507
+[SupCon] Epoch [949/3360] | train_loss 7.8175 | val_loss 5.0201
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.75it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (50/112).
+[SupCon] Epoch [950/3360] | train_loss 7.8130 | val_loss 5.0826 | knn_val_acc_smooth 0.7609 | knn_val_acc 0.7651 | svm_val_acc 0.8002 | knn_train_acc 0.8175 | svm_train_acc 0.8294
+[SupCon] Epoch [951/3360] | train_loss 7.8334 | val_loss 5.0451
+[SupCon] Epoch [952/3360] | train_loss 7.8176 | val_loss 5.0138
+[SupCon] Epoch [953/3360] | train_loss 7.8096 | val_loss 5.0262
+[SupCon] Epoch [954/3360] | train_loss 7.8439 | val_loss 5.0873
+[SupCon] Epoch [955/3360] | train_loss 7.8651 | val_loss 5.1132
+[SupCon] Epoch [956/3360] | train_loss 7.9183 | val_loss 5.0355
+[SupCon] Epoch [957/3360] | train_loss 7.8467 | val_loss 5.0689
+[SupCon] Epoch [958/3360] | train_loss 7.8830 | val_loss 5.0603
+[SupCon] Epoch [959/3360] | train_loss 7.8692 | val_loss 5.0803
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.77it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (51/112).
+[SupCon] Epoch [960/3360] | train_loss 7.8722 | val_loss 5.0832 | knn_val_acc_smooth 0.7575 | knn_val_acc 0.7561 | svm_val_acc 0.7788 | knn_train_acc 0.8457 | svm_train_acc 0.8260
+[SupCon] Epoch [961/3360] | train_loss 7.8505 | val_loss 5.0300
+[SupCon] Epoch [962/3360] | train_loss 7.8016 | val_loss 5.0668
+[SupCon] Epoch [963/3360] | train_loss 7.8087 | val_loss 5.0309
+[SupCon] Epoch [964/3360] | train_loss 7.8507 | val_loss 5.0477
+[SupCon] Epoch [965/3360] | train_loss 7.8323 | val_loss 5.0130
+[SupCon] Epoch [966/3360] | train_loss 7.8213 | val_loss 5.0163
+[SupCon] Epoch [967/3360] | train_loss 7.7954 | val_loss 4.9940
+[SupCon] Epoch [968/3360] | train_loss 7.7808 | val_loss 4.9969
+[SupCon] Epoch [969/3360] | train_loss 7.7868 | val_loss 4.9842
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.73it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (52/112).
+[SupCon] Epoch [970/3360] | train_loss 7.7636 | val_loss 4.9884 | knn_val_acc_smooth 0.7643 | knn_val_acc 0.7717 | svm_val_acc 0.7538 | knn_train_acc 0.8106 | svm_train_acc 0.8223
+[SupCon] Epoch [971/3360] | train_loss 7.8018 | val_loss 4.9883
+[SupCon] Epoch [972/3360] | train_loss 7.7964 | val_loss 5.1117
+[SupCon] Epoch [973/3360] | train_loss 7.8708 | val_loss 5.0373
+[SupCon] Epoch [974/3360] | train_loss 7.8153 | val_loss 5.1207
+[SupCon] Epoch [975/3360] | train_loss 8.0406 | val_loss 5.3606
+[SupCon] Epoch [976/3360] | train_loss 8.0960 | val_loss 5.1583
+[SupCon] Epoch [977/3360] | train_loss 8.0792 | val_loss 5.4401
+[SupCon] Epoch [978/3360] | train_loss 8.3825 | val_loss 5.9270
+[SupCon] Epoch [979/3360] | train_loss 8.7688 | val_loss 6.0550
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.68it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (53/112).
+[SupCon] Epoch [980/3360] | train_loss 8.8255 | val_loss 5.9721 | knn_val_acc_smooth 0.7565 | knn_val_acc 0.7418 | svm_val_acc 0.7266 | knn_train_acc 0.7953 | svm_train_acc 0.7714
+[SupCon] Epoch [981/3360] | train_loss 8.7732 | val_loss 5.9368
+[SupCon] Epoch [982/3360] | train_loss 8.7293 | val_loss 5.9498
+[SupCon] Epoch [983/3360] | train_loss 8.7409 | val_loss 5.9752
+[SupCon] Epoch [984/3360] | train_loss 8.7174 | val_loss 5.9338
+[SupCon] Epoch [985/3360] | train_loss 8.7285 | val_loss 5.9565
+[SupCon] Epoch [986/3360] | train_loss 8.7264 | val_loss 5.9881
+[SupCon] Epoch [987/3360] | train_loss 8.7482 | val_loss 5.9589
+[SupCon] Epoch [988/3360] | train_loss 8.7419 | val_loss 6.0610
+[SupCon] Epoch [989/3360] | train_loss 8.8389 | val_loss 5.9747
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.63it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (54/112).
+[SupCon] Epoch [990/3360] | train_loss 8.8185 | val_loss 5.9891 | knn_val_acc_smooth 0.7378 | knn_val_acc 0.6998 | svm_val_acc 0.7199 | knn_train_acc 0.7775 | svm_train_acc 0.7331
+[SupCon] Epoch [991/3360] | train_loss 8.8234 | val_loss 6.1005
+[SupCon] Epoch [992/3360] | train_loss 8.8454 | val_loss 6.2170
+[SupCon] Epoch [993/3360] | train_loss 9.0027 | val_loss 6.2256
+[SupCon] Epoch [994/3360] | train_loss 9.0070 | val_loss 6.2220
+[SupCon] Epoch [995/3360] | train_loss 9.0050 | val_loss 6.2281
+[SupCon] Epoch [996/3360] | train_loss 9.0100 | val_loss 6.2273
+[SupCon] Epoch [997/3360] | train_loss 9.0079 | val_loss 6.2124
+[SupCon] Epoch [998/3360] | train_loss 8.9945 | val_loss 6.2230
+[SupCon] Epoch [999/3360] | train_loss 9.0055 | val_loss 6.2193
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.40it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (55/112).
+[SupCon] Epoch [1000/3360] | train_loss 9.0017 | val_loss 6.1572 | knn_val_acc_smooth 0.7180 | knn_val_acc 0.7125 | svm_val_acc 0.7328 | knn_train_acc 0.7670 | svm_train_acc 0.7539
+[SupCon] Epoch [1001/3360] | train_loss 8.9638 | val_loss 6.2197
+[SupCon] Epoch [1002/3360] | train_loss 9.0005 | val_loss 6.1885
+[SupCon] Epoch [1003/3360] | train_loss 8.9529 | val_loss 6.1791
+[SupCon] Epoch [1004/3360] | train_loss 8.9555 | val_loss 6.1346
+[SupCon] Epoch [1005/3360] | train_loss 8.9111 | val_loss 6.1506
+[SupCon] Epoch [1006/3360] | train_loss 8.9496 | val_loss 6.2037
+[SupCon] Epoch [1007/3360] | train_loss 8.9885 | val_loss 6.2257
+[SupCon] Epoch [1008/3360] | train_loss 9.0083 | val_loss 6.2278
+[SupCon] Epoch [1009/3360] | train_loss 9.0098 | val_loss 6.2277
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.66it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (56/112).
+[SupCon] Epoch [1010/3360] | train_loss 9.0092 | val_loss 6.2249 | knn_val_acc_smooth 0.6834 | knn_val_acc 0.6378 | svm_val_acc 0.6521 | knn_train_acc 0.7475 | svm_train_acc 0.7149
+[SupCon] Epoch [1011/3360] | train_loss 8.9999 | val_loss 6.2205
+[SupCon] Epoch [1012/3360] | train_loss 9.0012 | val_loss 6.2220
+[SupCon] Epoch [1013/3360] | train_loss 9.0031 | val_loss 6.2238
+[SupCon] Epoch [1014/3360] | train_loss 9.0055 | val_loss 6.2213
+[SupCon] Epoch [1015/3360] | train_loss 9.0026 | val_loss 6.2189
+[SupCon] Epoch [1016/3360] | train_loss 9.0033 | val_loss 6.2087
+[SupCon] Epoch [1017/3360] | train_loss 8.9729 | val_loss 6.2198
+[SupCon] Epoch [1018/3360] | train_loss 9.0021 | val_loss 6.2157
+[SupCon] Epoch [1019/3360] | train_loss 8.9909 | val_loss 6.2010
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.63it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    /exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+No improvement in knn_val_acc_smooth (57/112).
+[SupCon] Epoch [1020/3360] | train_loss 8.9829 | val_loss 6.2074 | knn_val_acc_smooth 0.6775 | knn_val_acc 0.6823 | svm_val_acc 0.6904 | knn_train_acc 0.7031 | svm_train_acc 0.7033
+[SupCon] Epoch [1021/3360] | train_loss 8.9872 | val_loss 6.1391
+[SupCon] Epoch [1022/3360] | train_loss 8.9124 | val_loss 6.0780
+[SupCon] Epoch [1023/3360] | train_loss 8.9333 | val_loss 6.2287
+[SupCon] Epoch [1024/3360] | train_loss 9.0106 | val_loss 6.2289
+[SupCon] Epoch [1025/3360] | train_loss 9.0108 | val_loss nan
+[SupCon] Epoch [1026/3360] | train_loss nan | val_loss nan
+[SupCon] Epoch [1027/3360] | train_loss nan | val_loss nan
+[SupCon] Epoch [1028/3360] | train_loss nan | val_loss nan
+[SupCon] Epoch [1029/3360] | train_loss nan | val_loss nan
+SimCLR encode:   0%|          | 0/3 [00:00<?, ?it/s]SimCLR encode:  67%|██████▋   | 2/3 [00:00<00:00, 15.67it/s]                                                            SimCLR encode:   0%|          | 0/1 [00:00<?, ?it/s]                                                    Traceback (most recent call last):
+  File "/exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_supcon_allclass_training_eddie_v3.py", line 760, in <module>
+    rows = [run_seed(seed) for seed in SEEDS]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_supcon_allclass_training_eddie_v3.py", line 760, in <listcomp>
+    rows = [run_seed(seed) for seed in SEEDS]
+            ^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_supcon_allclass_training_eddie_v3.py", line 621, in run_seed
+    history, wandb_run = train_supcon_model(
+                         ^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/SSA/src/training/train.py", line 748, in train_supcon_model
+    eval_metrics = eval_fn(model)
+                   ^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/SSA/experiments/EXP-26-IY036/IY036_supcon_allclass_training_eddie_v3.py", line 482, in eval_fn
+    y_down_tr, fit_predict_knn(Z_tr, y_down_tr, Z_tr, **knn_kw))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/SSA/src/utils/embeddings.py", line 231, in fit_predict_knn
+    knn.fit(Z_train, y_train)
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/neighbors/_classification.py", line 239, in fit
+    return self._fit(X, y)
+           ^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/neighbors/_base.py", line 478, in _fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py", line 2961, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1370, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py", line 1107, in check_array
+    _assert_all_finite(
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/exports/csce/eddie/biology/groups/swain/ian_miniforge/envs/stochastic_sim/lib/python3.11/site-packages/sklearn/utils/validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+KNeighborsClassifier does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33msupcon_allclass_eddie_v3_composed_b4096_lr4.8_L2_H4_D16_temp0.07_20260730_170044_seed42[0m at: [34mhttps://wandb.ai/grignard-reagent/IY036-SupCon-model/runs/bgln2jwe[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20260730_170116-bgln2jwe/logs[0m
