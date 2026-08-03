@@ -156,7 +156,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment uses Brightfield and Flavin autofluorescence channels to measure metabolic oscillations in BY and tsa1 tsa2 deletion strains, with no fluorescently tagged transcription factor being tracked."
-593,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment is tracking pHluorin, a pH sensor, with brightfield/GFP/cy5 channels and does not mention any transcription factor localisation reporter.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+593,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -164,7 +164,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment is tracking pHluorin, a pH sensor, with brightfield/GFP/cy5 channels and does not mention any transcription factor localisation reporter."
+REASON: This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor."
 531,pH_med_to_low_00,True,normal pH (4.21) media to low pH (3.40),247;1510;1511;1512;1513,UNKNOWN,180,YES,NO,"This experiment measures cytoplasmic pH using the pHluorin sensor with brightfield/cy5 channels, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: ph_med_to_low.log;ph_med_to_low_original.log.,pHluorin405;pHluorin488;GFPFast;cy5,brightfield1;Brightfield;pHluorin405_0_4;pHluorin405;pHluorin488_0_4;GFPFast;cy5,"condition=switch-phrase | strain=yst-refs,position-names | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[tf-identity]
 UNKNOWN
 
@@ -180,7 +180,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: The log only shows Brightfield, GFP, and mCherry2 channels with a strain/aim left blank and does not identify any transcription factor being tracked for nuclear-cytoplasmic localisation."
-607,KCl_pH_00,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+607,KCl_pH_00,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures intracellular pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -188,17 +188,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor."
-608,KCl_pH_01,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shift conditions, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-SC (-Leu) to SC (-Leu) + 0.2M KCl
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This experiment measures pH using the pHluorin sensor under KCl shift conditions, not the nuclear-cytoplasmic localisation of a transcription factor."
-609,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This experiment measures intracellular pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor."
+608,KCl_pH_01,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -207,6 +198,15 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor."
+609,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+SC (-Leu) to SC (-Leu) + 0.2M KCl
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor."
 610,2022sgo_bub1GFP_00,False,,,UNKNOWN,,NO,NO,"Bub1-GFP tracks the spindle assembly checkpoint/kinetochore-associated protein Bub1, which is not a transcription factor or nuclear-localisation reporter.",No log or acquisition metadata was attached.,UNKNOWN,,condition=none | strain=none | tf=none | fluorescence=no-metadata | tf_localisation=llm,"[tf-identity]
 UNKNOWN
 
@@ -798,7 +798,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: The log describes a “Gal feedback” experiment with strain 1392 and GFP/mCherry imaging but does not name any transcription factor or indicate nuclear-versus-cytoplasmic localisation tracking."
-664,albicans_YPD_SCswitch_00,True,YPD to SC,crz1-GFP;group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008,Crz1;Maf1;Msn2;Mig1,240,YES,YES,"Known TF(s) detected: Crz1, Maf1, Msn2, Mig1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: albicans_ypd_scswitchlog.txt.,GFP,Brightfield;GFP,"condition=llm | strain=strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
+664,albicans_YPD_SCswitch_00,True,YPD to SC,426;87;89;crz1-GFP;group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008,Crz1;Maf1;Msn2;Mig1,240,YES,YES,"Known TF(s) detected: Crz1, Maf1, Msn2, Mig1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: albicans_ypd_scswitchlog.txt.,GFP,Brightfield;GFP,"condition=llm | strain=yst-refs,strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 YPD to SC"
 666,downupshift_2_0_2_glu_ura8_ura8h360a_ura8h360r_00,True,,Ura7-GFP;Mig1-GFP/msn2-mCherry;pHluorin;group 1: ura8;group 2: ura8h360a;group 3: ura8h360r,Mig1;Msn2,270,YES,YES,"Known TF(s) detected: Mig1, Msn2",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: downupshift_2_0_2_glu_ura8_ura8h360a_ura8h360rlog.txt.,GFP,Brightfield;GFP,"condition=none | strain=strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 UNKNOWN"
@@ -1586,7 +1586,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment aims to visualise kinetochores in nocodazole-arrested cells and does not mention tracking any transcription factor or nuclear-cytoplasmic localisation reporter."
-2723,albicans_YPD_SCswitch_00,True,YPD to SC,crz1-GFP;group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008,Crz1;Maf1;Msn2;Mig1,240,YES,YES,"Known TF(s) detected: Crz1, Maf1, Msn2, Mig1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: albicans_ypd_scswitchlog.txt.,GFP,Brightfield;GFP,"condition=llm | strain=strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
+2723,albicans_YPD_SCswitch_00,True,YPD to SC,426;87;89;crz1-GFP;group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008,Crz1;Maf1;Msn2;Mig1,240,YES,YES,"Known TF(s) detected: Crz1, Maf1, Msn2, Mig1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: albicans_ypd_scswitchlog.txt.,GFP,Brightfield;GFP,"condition=llm | strain=yst-refs,strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 YPD to SC"
 2801,TF_screen_plateIII_fg_zero_glc_00,True,2% glucose to 0%,1138,Rei1;Msn1;Mig3;Rox1;Phd1;Yap3;Spt2;Opi1;Mac1;Yox1;Cup9;Cin5;Yhp1;Stp3;Cbf1;Gcn4;Sut1;Rme1;Ino2;Fzf1,24,YES,YES,"Known TF(s) detected: Rei1, Msn1, Mig3, Rox1, Phd1, Yap3, Spt2, Opi1, Mac1, Yox1, Cup9, Cin5, Yhp1, Stp3, Cbf1, Gcn4, Sut1, Rme1, Ino2, Fzf1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: tf_screen_plateiii_fg_zero_glc.log.,GFP;GFPFast;mCherry;cy5,Brightfield;GFP;GFPFast;mCherry;cy5,"condition=switch-phrase | strain=yst-refs,details | tf=group-labels | fluorescence=parsed-channels | tf_localisation=known-tf",
 2800,Switch_TestBinaryOscillator_0d1to0d3pGlc_cAMP_00,True,0.1% glucose to 0.3% glucose,1702,UNKNOWN,210,YES,NO,"This experiment uses a FRET sensor with mTurquoise2/tdTomatoFRET and cy5 during glucose switching, with no transcription factor or nuclear-localisation reporter being tracked.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: switch_testbinaryoscillator_0d1to0d3pglc_camp.log.,mTurquoise2;tdTomatoFRET;cy5,Brightfield;mTurquoise2;tdTomatoFRET;cy5,condition=llm | strain=group-lines | tf=none | fluorescence=parsed-channels | tf_localisation=llm,"[condition]
@@ -2549,7 +2549,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This appears to be first imaging of a Candida albicans strain with only GFP and brightfield channels described, but no transcription factor or nuclear-localisation reporter is named as being tracked."
-856,KCl_pH_00,True,,247;1512;1511;1510;1513;group 1: YST_1512;group 2: YST_1511;group 3: YST_1510;group 4: YST_247;group 5: YST_1513,UNKNOWN,180,YES,NO,This is a pH calibration experiment using the pHluorin sensor and not a fluorescently tagged transcription factor being tracked for nuclear localisation.,Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=none | strain=details,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+856,KCl_pH_00,True,,1510;1511;1512;1513;247;group 1: YST_1512;group 2: YST_1511;group 3: YST_1510;group 4: YST_247;group 5: YST_1513,UNKNOWN,180,YES,NO,"This is a pH calibration experiment using the pHluorin sensor, not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=none | strain=yst-refs,details,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -2557,7 +2557,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor and not a fluorescently tagged transcription factor being tracked for nuclear localisation."
+REASON: This is a pH calibration experiment using the pHluorin sensor, not tracking the nuclear-cytoplasmic localisation of any transcription factor."
 857,pH5_86_00,True,,247,UNKNOWN,180,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and GFP/Brightfield channels), not a fluorescently tagged transcription factor tracked for nuclear-cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,GFPFast;pHluorin405;Brightfield,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
@@ -3202,7 +3202,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This is a tubing-switch protocol test with no strain or fluorescently tagged transcription factor specified, and only generic brightfield/GFP channel setup is described."
-914,KCl_pH_00,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures cellular pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+914,KCl_pH_00,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl stress, not the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405;cy5,GFPFast;pHluorin405;Brightfield;cy5,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -3210,8 +3210,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment measures cellular pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor."
-915,KCl_pH_01,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor in response to KCl, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This experiment measures pH using the pHluorin sensor under KCl stress, not the nuclear-cytoplasmic localisation of any transcription factor."
+915,KCl_pH_01,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -3219,7 +3219,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment measures pH using the pHluorin sensor in response to KCl, not the nuclear-cytoplasmic localisation of a transcription factor."
+REASON: This experiment tracks pH using the pHluorin sensor under KCl treatment, not the nuclear/cytoplasmic localisation of a transcription factor."
 916,KCl_pH_02,False,,,UNKNOWN,,NO,NO,This appears to be a pH sensor experiment (from the “pH” designation) rather than tracking the nuclear-cytoplasmic localisation of a transcription factor.,No log or acquisition metadata was attached.,UNKNOWN,,condition=none | strain=none | tf=none | fluorescence=no-metadata | tf_localisation=llm,"[tf-identity]
 UNKNOWN
 
@@ -3854,7 +3854,7 @@ TF_LOCALISATION: NO
 REASON: This experiment tracks Gal10-GFP induction from the GAL10 locus, which is a gene-expression reporter rather than a transcription factor changing nuclear/cytoplasmic localisation."
 1006,TFscreen1_00,True,1% glucose to 0.1% glucose,,Rfx1;Reb1;Rph1;Lys14;Ecm22;Bas1;Mbp1;Pip2;Pdr3;Fhl1;Dal81;Asg1;Leu3;Rsc3;Upc2;Zap1;Ace2;Sfl1;Yrr1;Ume6,24,YES,YES,"Known TF(s) detected: Rfx1, Reb1, Rph1, Lys14, Ecm22, Bas1, Mbp1, Pip2, Pdr3, Fhl1, Dal81, Asg1, Leu3, Rsc3, Upc2, Zap1, Ace2, Sfl1, Yrr1, Ume6",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: tfscreen1.log.,GFP;GFPFast;mCherry;cy5,brightfield1;Brightfield;GFP;GFPFast;mCherry;cy5,condition=llm | strain=none | tf=group-labels | fluorescence=parsed-channels | tf_localisation=known-tf,"[condition]
 1% glucose to 0.1% glucose"
-1007,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment is measuring pH with the pHluorin sensor under KCl treatment, not tracking the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1007,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -3862,7 +3862,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment is measuring pH with the pHluorin sensor under KCl treatment, not tracking the nuclear-cytoplasmic localisation of a transcription factor."
+REASON: This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor."
 1008,pH5_86_00,True,,,UNKNOWN,180,YES,NO,This experiment uses the pHluorin sensor channel (with brightfield/GFP) and does not indicate any transcription factor being fluorescently tracked for nuclear localisation.,Fluorescence channel(s) found in parsed acquisition metadata.,pHluorin405;GFPFast,pHluorin405;Brightfield;GFPFast,condition=none | strain=none | tf=none | fluorescence=parsed-channels | tf_localisation=llm,"[condition]
 UNKNOWN
 
@@ -4196,15 +4196,15 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment uses pHluorin/pHluorin405 channels as a pH sensor and does not indicate any transcription factor being fluorescently tracked for nuclear-cytoplasmic localisation."
-1063,KCl_shock0_3v_01,True,2% glucose to 2% glucose + 0.2M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"The log states the aim is to measure pH in wild type and channel mutant strains after KCl increase, indicating a pH/metabolite sensor experiment rather than tracking a transcription factor’s nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5,Brightfield;GFPFast;cy5,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-2% glucose to 2% glucose + 0.2M KCl
+1063,KCl_shock0_3v_01,True,2% glucose to 2% glucose + 0.2 M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"The log states the aim is to measure pH changes in wild type and channel mutant strains after KCl increase, with no transcription factor named or nuclear-cytoplasmic TF tracking described.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5,Brightfield;GFPFast;cy5,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2% glucose to 2% glucose + 0.2 M KCl
 
 [tf-identity]
 UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: The log states the aim is to measure pH in wild type and channel mutant strains after KCl increase, indicating a pH/metabolite sensor experiment rather than tracking a transcription factor’s nuclear localisation."
+REASON: The log states the aim is to measure pH changes in wild type and channel mutant strains after KCl increase, with no transcription factor named or nuclear-cytoplasmic TF tracking described."
 2591,Ramp_2to0pGlc_1h_Msn2Dot6Mig1Sfp1_00,True,2% glucose to 0% glucose,1352;762;758;742,Msn2;Dot6;Mig1;Sfp1,192,YES,YES,"Known TF(s) detected: Msn2, Dot6, Mig1, Sfp1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: ramp_2to0pglc_1h_msn2dot6mig1sfp1.log.,GFP_Z;GFP;cy5;mCherry_Z;mCherry,Brightfield;GFP_Z;GFP;cy5;mCherry_Z;mCherry,condition=llm | strain=group-lines | tf=dataset-name | fluorescence=parsed-channels | tf_localisation=known-tf,"[condition]
 2% glucose to 0% glucose"
 2592,Ramp_2to0pGlc_0h30m_Msn2Dot6Mig1Sfp1_00,True,2% glucose to 0% glucose,1352;762;758;742,Msn2;Dot6;Mig1;Sfp1,192,YES,YES,"Known TF(s) detected: Msn2, Dot6, Mig1, Sfp1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: ramp_2to0pglc_0h30m_msn2dot6mig1sfp1.log.,GFP_Z;GFP;cy5;mCherry_Z;mCherry,Brightfield;GFP_Z;GFP;cy5;mCherry_Z;mCherry,condition=llm | strain=group-lines | tf=dataset-name | fluorescence=parsed-channels | tf_localisation=known-tf,"[condition]
@@ -4491,8 +4491,8 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment tracks Pdr5-GFP, a plasma membrane drug efflux transporter, to measure expression variation rather than nuclear/cytoplasmic localisation of a transcription factor."
-1064,KCl_shock0_3v_02,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-2% glucose to 2% glucose + 0.2 M KCl
+1064,KCl_shock0_3v_02,True,2% glucose to 2% glucose + 0.2M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2% glucose to 2% glucose + 0.2M KCl
 
 [tf-identity]
 UNKNOWN
@@ -4500,7 +4500,16 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor."
-1065,KCl_shock0_3v_03,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor after KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1065,KCl_shock0_3v_03,True,2% glucose to 2% glucose + 0.2M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear/cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2% glucose to 2% glucose + 0.2M KCl
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear/cytoplasmic localisation of a transcription factor."
+1066,KCl_shock0_3v_04,True,2% glucose to 2% glucose + 0.2 M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor after KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_shock0_3vlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 2% glucose + 0.2 M KCl
 
 [tf-identity]
@@ -4509,106 +4518,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment measures pH using the pHluorin sensor after KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor."
-1066,KCl_shock0_3v_04,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor after KCl increase, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_shock0_3vlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-2% glucose to 2% glucose + 0.2 M KCl
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This experiment measures pH using the pHluorin sensor after KCl increase, not the nuclear-cytoplasmic localisation of a transcription factor."
-1067,pH5_86_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405;DIC,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor."
-1068,pH5_86_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear-cytoplasmic localisation of any transcription factor."
-1069,pH5_86_02,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking the nuclear localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking the nuclear localisation of any transcription factor."
-1070,pH6_24_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor."
-1071,pH6_24_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking a transcription factor’s nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not tracking a transcription factor’s nuclear localisation."
-1072,pH6_49_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tracking a transcription factor’s nuclear-cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tracking a transcription factor’s nuclear-cytoplasmic localisation."
-1073,pH6_49_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking a transcription factor’s nuclear versus cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking a transcription factor’s nuclear versus cytoplasmic localisation."
-1074,pH6_76_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFP channels), not fluorescently tagged transcription factor nuclear localisation tracking.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFP channels), not fluorescently tagged transcription factor nuclear localisation tracking."
-1075,pH6_76_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not imaging a transcription factor’s nuclear-cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not imaging a transcription factor’s nuclear-cytoplasmic localisation."
-1076,pH7_00_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not a fluorescently tagged transcription factor tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-UNKNOWN
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not a fluorescently tagged transcription factor tracked for nuclear localisation."
-1077,pH7_00_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear/cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1067,pH5_86_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear/cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405;DIC,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4617,7 +4527,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear/cytoplasmic localisation of any transcription factor."
-1078,pH7_24_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405;DIC,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1068,pH5_86_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4625,8 +4535,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of any transcription factor."
-1079,pH7_24_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tagged transcription factors tracked for nuclear/cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor."
+1069,pH5_86_02,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4634,8 +4544,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tagged transcription factors tracked for nuclear/cytoplasmic localisation."
-1080,pH7_49_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not fluorescently tagged transcription factors monitored for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of a transcription factor."
+1070,pH6_24_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (strain comments list pHluorin2), not tracking a transcription factor’s nuclear/cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4643,8 +4553,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not fluorescently tagged transcription factors monitored for nuclear localisation."
-1081,pH7_49_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tagged transcription factors tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This is a pH calibration experiment using the pHluorin sensor (strain comments list pHluorin2), not tracking a transcription factor’s nuclear/cytoplasmic localisation."
+1071,pH6_24_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels) and does not track any transcription factor nuclear localisation.,Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4652,8 +4562,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tagged transcription factors tracked for nuclear localisation."
-1082,pH7_75_00,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not a fluorescently tagged transcription factor tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels) and does not track any transcription factor nuclear localisation."
+1072,pH6_49_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor’s nuclear/cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4661,8 +4571,8 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not a fluorescently tagged transcription factor tracked for nuclear localisation."
-1083,pH7_75_01,True,,247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor and brightfield/GFP channels, not tracking any transcription factor nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor’s nuclear/cytoplasmic localisation."
+1073,pH6_49_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor and brightfield/GFP channels, not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
 [tf-identity]
@@ -4670,7 +4580,97 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This is a pH calibration experiment using the pHluorin sensor and brightfield/GFP channels, not tracking any transcription factor nuclear localisation."
+REASON: This is a pH calibration experiment using the pHluorin sensor and brightfield/GFP channels, not tracking the nuclear-cytoplasmic localisation of any transcription factor."
+1074,pH6_76_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with GFPFast/pHluorin405 channels), not fluorescently tagged transcription factors tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor (with GFPFast/pHluorin405 channels), not fluorescently tagged transcription factors tracked for nuclear localisation."
+1075,pH6_76_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not imaging the nuclear-cytoplasmic localisation of a transcription factor."
+1076,pH7_00_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not a fluorescently tagged transcription factor being tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not a fluorescently tagged transcription factor being tracked for nuclear localisation."
+1077,pH7_00_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not tracking the nuclear-cytoplasmic localisation of any transcription factor."
+1078,pH7_24_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405;DIC,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor nuclear localisation."
+1079,pH7_24_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor nuclear/cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking any transcription factor nuclear/cytoplasmic localisation."
+1080,pH7_49_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tracking a transcription factor’s nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not fluorescently tracking a transcription factor’s nuclear localisation."
+1081,pH7_49_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not a fluorescently tagged transcription factor tracked for nuclear localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor (with brightfield/GFPFast/pHluorin405 channels), not a fluorescently tagged transcription factor tracked for nuclear localisation."
+1082,pH7_75_00,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not a transcription factor being tracked for nuclear-cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor (and brightfield/GFP channels), not a transcription factor being tracked for nuclear-cytoplasmic localisation."
+1083,pH7_75_01,True,,1510;1511;1512;1513;247,UNKNOWN,240,YES,NO,"This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear-cytoplasmic localisation of any transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;pHluorin405,Brightfield;GFPFast;pHluorin405,"condition=none | strain=yst-refs,details,strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+UNKNOWN
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: This is a pH calibration experiment using the pHluorin sensor in deletion strains, not tracking the nuclear-cytoplasmic localisation of any transcription factor."
 1084,Pdr5_growthrate_01,True,,1490;1490 (pdr5-GFP);group 1: A_1;group 2: A_2;group 3: A_3;group 4: A_4;group 5: A_5;group 6: A_6;group 7: A_7;group 8: A_8;group 9: B_8;group 10: B_7;group 11: B_6;group 12: B_5;group 13: B_4;group 14: B_3;group 15: B_2;group 16: B_1;group 17: C_1;group 18: C_2;group 19: C_3;group 20: C_4;group 21: C_5;group 22: C_6;group 23: C_7;group 24: C_8;group 25: D_8;group 26: D_7;group 27: D_6;group 28: D_5;group 29: D_4;group 30: D_3;group 31: D_2;group 32: D_1;group 33: E_1;group 34: E_2;group 35: E_3;group 36: E_4;group 37: A_5;group 38: A_6;group 39: E_7;group 40: E_8,UNKNOWN,180,YES,NO,"This experiment tracks Pdr5-GFP expression levels to assess high- and low-expressing cells, not the nuclear-versus-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast,Brightfield;GFPFast,"condition=none | strain=details,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 UNKNOWN
 
@@ -6018,7 +6018,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment appears to image Candida albicans strain VM24 with GFP and brightfield for microfluidic/filamentation demonstration, but no transcription factor or nuclear-localisation reporter is named as being tracked."
-2774,KCl_shock0_3v_03,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor in response to KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2774,KCl_shock0_3v_03,True,2% glucose to 2% glucose + 0.2 M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 2% glucose + 0.2 M KCl
 
 [tf-identity]
@@ -6026,7 +6026,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: This experiment measures pH using the pHluorin sensor in response to KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor."
+REASON: This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor."
 1182,B1_02,True,,yMJ30.1,UNKNOWN,180,YES,NO,This is a Halo staining test imaged only in cy5/brightfield with no named transcription factor or nuclear-localisation reporter being tracked.,Fluorescence channel(s) found in parsed acquisition metadata.,cy5,cy5;Brightfield,condition=none | strain=strain-field-labels | tf=none | fluorescence=parsed-channels | tf_localisation=llm,"[condition]
 UNKNOWN
 
@@ -6463,7 +6463,7 @@ Mig1"
 estradiol to NAA with no estradiol"
 1249,Bcy_Sch_Yak_degrade_00,True,2% glucose to 0.1% glucose,1273;1314;1263;1271;1273 (control);1314 (Bcy1-AID-Flag);1263 (Sch9-AAID-GFP);1271 (Yak1-AID-GFP);group 1: 1263Sch;group 2: 1271Yak;group 3: 1273Ctrl;group 4: 1314Bcy,Bcy1;Sch9;Yak1,180,YES,YES,"Known TF(s) detected: Bcy1, Sch9, Yak1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: bcy_sch_yak_degradelog.txt.,GFP;mCherry,Brightfield;GFP;mCherry,"condition=llm | strain=details,strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 2% glucose to 0.1% glucose"
-1250,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,247;1510;1511;1512;1513;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1250,KCl_pH_02,True,SC (-Leu) to SC (-Leu) + 0.2M KCl,1510;1511;1512;1513;247;As position names;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl treatment, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_phlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 SC (-Leu) to SC (-Leu) + 0.2M KCl
 
 [tf-identity]
@@ -7640,7 +7640,16 @@ REASON: This fixed-cell induction experiment is described as measuring IMA1 in G
 UNKNOWN"
 2623,_msn2_dot6_whi5_sfp1_mig1_02,True,,group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008;group 9: pos009;group 10: pos010;group 11: pos011;group 12: pos012;group 13: pos013;group 14: pos014;group 15: pos015;group 16: pos016;group 17: pos017;group 18: pos018;group 19: pos019;group 20: pos020;group 21: pos021;group 22: pos022;group 23: pos023;group 24: pos024;group 25: pos025;group 26: pos026;group 27: pos027;group 28: pos028;group 29: pos029;group 30: pos030,Msn2;Dot6;Whi5;Sfp1;Mig1,240,YES,YES,"Known TF(s) detected: Msn2, Dot6, Whi5, Sfp1, Mig1",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: 0.1%_msn2_dot6_whi5_sfp1_mig1log.txt.,GFP,Brightfield;GFP,condition=none | strain=point-groups | tf=dataset-name | fluorescence=parsed-channels | tf_localisation=known-tf,"[condition]
 UNKNOWN"
-2775,KCl_shock0_3v_01,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"The experiment aim is to measure pH changes in wild type and channel mutant strains after KCl addition, with no transcription factor named or TF nuclear-cytoplasmic localisation indicated.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5,Brightfield;GFPFast;cy5,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2775,KCl_shock0_3v_01,True,2% glucose to higher salt medium,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,The log says the aim is to measure pH changes after KCl increase and does not mention any transcription factor or nuclear-cytoplasmic localisation reporter being tracked.,Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5,Brightfield;GFPFast;cy5,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2% glucose to higher salt medium
+
+[tf-identity]
+UNKNOWN
+
+[tf-localisation]
+TF_LOCALISATION: NO
+REASON: The log says the aim is to measure pH changes after KCl increase and does not mention any transcription factor or nuclear-cytoplasmic localisation reporter being tracked."
+2776,KCl_shock0_3v_04,True,2% glucose to 2% glucose + 0.2 M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the localisation of a transcription factor between nucleus and cytoplasm.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_shock0_3vlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 2% glucose + 0.2 M KCl
 
 [tf-identity]
@@ -7648,16 +7657,7 @@ UNKNOWN
 
 [tf-localisation]
 TF_LOCALISATION: NO
-REASON: The experiment aim is to measure pH changes in wild type and channel mutant strains after KCl addition, with no transcription factor named or TF nuclear-cytoplasmic localisation indicated."
-2776,KCl_shock0_3v_04,True,2% glucose to 2% glucose + 0.2M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: kcl_shock0_3vlog.txt.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
-2% glucose to 2% glucose + 0.2M KCl
-
-[tf-identity]
-UNKNOWN
-
-[tf-localisation]
-TF_LOCALISATION: NO
-REASON: This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor."
+REASON: This experiment measures pH using the pHluorin sensor under KCl shock, not the localisation of a transcription factor between nucleus and cytoplasm."
 2819,Ramp_2to0pGlc_5h_cAMP_00,True,2% glucose to 0% glucose,1702,UNKNOWN,192,YES,NO,"This appears to image a cAMP/FRET reporter (mTurquoise2 and tdTomatoFRET channels) during a glucose ramp, with no transcription factor named or tracked for nuclear-cytoplasmic localisation.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: ramp_2to0pglc_5h_camp.log.,mTurquoise2;tdTomatoFRET;cy5,Brightfield;mTurquoise2;tdTomatoFRET;cy5,condition=llm | strain=group-lines | tf=none | fluorescence=parsed-channels | tf_localisation=llm,"[condition]
 2% glucose to 0% glucose
 
@@ -8033,7 +8033,7 @@ TF_LOCALISATION: NO
 REASON: The log says the aim is to see induction of IMA1 in GFP and mCherry strains, which indicates gene-expression/fluorescence induction imaging rather than tracking the nuclear-cytoplasmic localisation of a transcription factor."
 2624,_dot6_sfp1_msn2_whi5_mig2_01,True,,group 1: pos001;group 2: pos002;group 3: pos003;group 4: pos004;group 5: pos005;group 6: pos006;group 7: pos007;group 8: pos008;group 9: pos009;group 10: pos010;group 11: pos011;group 12: pos012;group 13: pos013;group 14: pos014;group 15: pos015;group 16: pos016;group 17: pos017;group 18: pos018;group 19: pos019;group 20: pos020;group 21: pos021;group 22: pos022;group 23: pos023;group 24: pos024;group 25: pos025;group 26: pos026;group 27: pos027;group 28: pos028;group 29: pos029;group 30: pos030,Dot6;Sfp1;Msn2;Whi5;Mig2,240,YES,YES,"Known TF(s) detected: Dot6, Sfp1, Msn2, Whi5, Mig2",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: 2%_dot6_sfp1_msn2_whi5_mig2log.txt.,GFP,Brightfield;GFP,condition=none | strain=point-groups | tf=dataset-name | fluorescence=parsed-channels | tf_localisation=known-tf,"[condition]
 UNKNOWN"
-2777,KCl_shock0_3v_02,True,2% glucose to 2% glucose + 0.2 M KCl,247;1510;1511;1512;1513;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+2777,KCl_shock0_3v_02,True,2% glucose to 2% glucose + 0.2 M KCl,1510;1511;1512;1513;247;group 1: YST_247;group 2: YST_1510;group 3: YST_1511;group 4: YST_1512;group 5: YST_1513,UNKNOWN,240,YES,NO,"This experiment measures pH using the pHluorin sensor under KCl shock, not the nuclear-cytoplasmic localisation of a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata.,GFPFast;cy5;pHluorin405,Brightfield;GFPFast;cy5;pHluorin405,"condition=llm | strain=yst-refs,position-names,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 2% glucose + 0.2 M KCl
 
 [tf-identity]
@@ -8958,7 +8958,7 @@ UNKNOWN
 [tf-localisation]
 TF_LOCALISATION: NO
 REASON: This experiment tracks MAL11-mCherry, which is a membrane sugar transporter/strain brightness test rather than a transcription factor moving between nucleus and cytoplasm."
-1512,MABY_training_00,True,,165;416;665;1039;1083;Vph1-GFP (165): vacuole;Hog1-GFP (416): cytoplasm/nucleus;Bud3-GFP (665): bud neck;Lte1 (1039);Htb2-sfGFP (1083): chromosomes;group 1: YST_165;group 2: YST_416;group 3: YST_665;group 4: YST_1039;group 5: YST_1083,Hog1,300,YES,YES,Known TF(s) detected: Hog1,Fluorescence channel(s) found in parsed acquisition metadata.,GFP,Brightfield;GFP,"condition=none | strain=details,position-names,strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
+1512,MABY_training_00,True,,1083;665;165;416;1039;Vph1-GFP (165): vacuole;Hog1-GFP (416): cytoplasm/nucleus;Bud3-GFP (665): bud neck;Lte1 (1039);Htb2-sfGFP (1083): chromosomes;group 1: YST_165;group 2: YST_416;group 3: YST_665;group 4: YST_1039;group 5: YST_1083,Hog1,300,YES,YES,Known TF(s) detected: Hog1,Fluorescence channel(s) found in parsed acquisition metadata.,GFP,Brightfield;GFP,"condition=none | strain=yst-refs,details,position-names,strain-field-labels,point-groups | tf=details,tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 UNKNOWN"
 1514,ss_switch_2pc_pyr_to_1pc_pal_cy5_gfp_00,False,,,UNKNOWN,,NO,NO,The dataset name suggests a metabolic carbon-source switch experiment with generic Cy5/GFP channels and does not identify any transcription factor being tracked for nuclear–cytoplasmic localisation.,No log or acquisition metadata was attached.,UNKNOWN,,condition=none | strain=none | tf=none | fluorescence=no-metadata | tf_localisation=llm,"[tf-identity]
 UNKNOWN
@@ -10172,15 +10172,15 @@ TF_LOCALISATION: NO
 REASON: This dataset tracks Sun5-mNeonGreen and Spc72-mCherry, which are not transcription factors or nuclear-localisation reporters but structural/cellular markers for expression testing."
 1655,sgo1_00,True,2% glucose in SC to 2% glucose in SC + 2.5ug/ml nocodazole,See position names;group 1: IL102;group 2: IL143;group 3: 176;group 4: 173;group 5: IL89,Bub1,430,YES,YES,Known TF(s) detected: Bub1,Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: sgo1log.txt.,GFP;cy5,Brightfield;GFP;cy5,"condition=llm | strain=strain-field-labels,point-groups | tf=tagged-proteins | fluorescence=parsed-channels | tf_localisation=known-tf","[condition]
 2% glucose in SC to 2% glucose in SC + 2.5ug/ml nocodazole"
-1656,nuclear_MAYBE_00,True,2% glucose to 0.1% glucose,1352;762;758;1352021;1352022;1352023;1352024;1352025;229;1083;See position names;group 1: YST_229;group 2: YST_758;group 3: YST_762;group 4: YST_1083;group 5: YST,UNKNOWN,216,YES,NO,"Although the aim mentions transcription factor localisation, the listed fluorescent marker is Htb2-sfGFP, which is a histone nuclear marker rather than a transcription factor.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: nuclear_maybelog.txt.,GFP;cy5;mCherry2,Brightfield;GFP;cy5;mCherry2,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
+1656,nuclear_MAYBE_00,True,2% glucose to 0.1% glucose,1083;1352;762;758;229;See position names;group 1: YST_229;group 2: YST_758;group 3: YST_762;group 4: YST_1083;group 5: YST,UNKNOWN,216,YES,YES,"The log explicitly states the aim is “Transcription factor localization,” indicating this experiment tracks TF nuclear localisation despite the strain list also including Htb2-sfGFP as a nuclear marker.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: nuclear_maybelog.txt.,GFP;cy5;mCherry2,Brightfield;GFP;cy5;mCherry2,"condition=llm | strain=yst-refs,position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 0.1% glucose
 
 [tf-identity]
 UNKNOWN
 
 [tf-localisation]
-TF_LOCALISATION: NO
-REASON: Although the aim mentions transcription factor localisation, the listed fluorescent marker is Htb2-sfGFP, which is a histone nuclear marker rather than a transcription factor."
+TF_LOCALISATION: YES
+REASON: The log explicitly states the aim is “Transcription factor localization,” indicating this experiment tracks TF nuclear localisation despite the strain list also including Htb2-sfGFP as a nuclear marker."
 1657,nuclear_MAYBE_01,True,2% glucose to 0.1% glucose,762;1083;1352;229;758;See position names;group 1: YST_762;group 2: YST_1083;group 3: YST_1352;group 4: YST_229;group 5: YST_758,UNKNOWN,300,YES,YES,"The log explicitly states “Aim: Transcription factor localization” under glucose-shift conditions, indicating this experiment tracks TF nuclear localisation even though the specific TF names are only in the position names/strain list.",Fluorescence channel(s) found in parsed acquisition metadata. Metadata truncated: nuclear_maybelog.txt.,GFP;cy5;mCherry2,Brightfield;GFP;cy5;mCherry2,"condition=llm | strain=position-names,strain-field-labels,point-groups | tf=none | fluorescence=parsed-channels | tf_localisation=llm","[condition]
 2% glucose to 0.1% glucose
 

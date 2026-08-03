@@ -35,11 +35,16 @@ cd experiments/EXP-26-IY026
 Credentials and paths live in `.env` (git-ignored) next to this file:
 
 ```ini
-OPENAI_API_KEY=...
+OPENAI_API_KEY=...      # optional
 OMERO_HOST=staffa.bio.ed.ac.uk
 OMERO_USER=upload
 OMERO_PASSWORD=...
 ```
+
+**The OpenAI key is optional.** Without one the run warns and proceeds on the deterministic
+parsers alone: every column is still produced, but the four LLM fallbacks never fire, so
+datasets that need the model to resolve a field leave it empty. `provenance` records this as
+`none`, or `no-model` for the fluorescence verdict.
 
 A full run takes a few hours (~1800 datasets, ~2–5 s each) and streams to `results.csv`
 row by row, so a crash never loses completed work — restart with `--resume`.
@@ -261,7 +266,9 @@ digit, underscore or hyphen — which rules out background-strain names (`BY4741
 `CBS138`), position ranges (`pos001-006`), device codes (`5_75`) and concentrations
 (`100ug/ml`). A parenthesis attached directly to a gene name is a residue range rather
 than an annotation, so `Msn2(604-636)` contributes nothing while `429(Yap1)` gives 429.
-`YST_1490` / `YST1490` / `YST-708` / `yst365` are all reduced to the bare number.
+`YST_1490` / `YST1490` / `YST-708` / `yst365` are all reduced to the bare number, as is a
+`YST` number carrying more of the strain's description after it: `YST_87_BY4741` is strain
+87 in the BY4741 background, and `YST_247_001` is position 1 of strain 247.
 
 ---
 

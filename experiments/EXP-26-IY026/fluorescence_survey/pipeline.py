@@ -51,9 +51,15 @@ def run(
     """Classify every visible OMERO dataset and write results to `output_path`."""
     log = setup_logging()
 
+    # The LLM is optional. Without a key the deterministic parsers still produce
+    # every column; the four fallbacks simply do not fire, which the provenance
+    # column records as "none" (or "no-model" for the fluorescence verdict).
     if not config.OPENAI_API_KEY:
-        log.error("No OpenAI API key found. Set OPENAI_API_KEY in the .env file.")
-        sys.exit(1)
+        log.warning(
+            "No OpenAI API key found — running with the deterministic parsers only. "
+            "Datasets that need the model to resolve a field will leave it empty; "
+            "set OPENAI_API_KEY in the .env file to enable the fallbacks."
+        )
 
     # Resume skips dataset IDs already present in the output CSV
     already_done = load_already_processed(output_path) if resume else set()
@@ -73,7 +79,7 @@ def run(
     conn = connect_omero()
     log.info("Connected.")
 
-    client = llm.make_client()
+    client = llm.make_client() if config.OPENAI_API_KEY else None
 
     try:
         all_datasets = get_all_datasets(conn)

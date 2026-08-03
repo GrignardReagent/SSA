@@ -17,7 +17,8 @@ Usage:
 
 Requirements:
     - Run with the alibylite environment (it provides omero-py)
-    - .env next to this file with OPENAI_API_KEY and the OMERO_* credentials
+    - .env next to this file with the OMERO_* credentials; OPENAI_API_KEY is
+      optional and only enables the LLM fallbacks
 """
 
 import argparse

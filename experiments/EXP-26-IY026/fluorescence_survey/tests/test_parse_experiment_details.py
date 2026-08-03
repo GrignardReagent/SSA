@@ -102,6 +102,24 @@ def test_yst_prefix_variants_are_reduced_to_the_number():
     assert parse_yst_strain_ids("YST_1490 YST365 YST-708 yst556") == ["1490", "365", "708", "556"]
 
 
+def test_yst_number_followed_by_the_genetic_background():
+    """Dataset 664 records every strain as YST_<number>_<background>. A trailing \\b
+    matched none of them, because "_" is a word character."""
+    text = "YST_426_BY4741 Maf1-GFP,YST_87_BY4741 Msn2-GFP  HIS,YST_89_BY4741 Mig1-GFP  HIS"
+    assert parse_yst_strain_ids(text) == ["426", "87", "89"]
+
+
+def test_yst_number_followed_by_a_position_index():
+    """Dataset 1685 names positions YST_247_001..005; the strain is 247."""
+    assert parse_yst_strain_ids("YST_247_001 YST_247_002 YST_1510_005") == ["247", "1510"]
+
+
+def test_yst_position_index_run_together_with_the_strain():
+    """Dataset 1656 writes position 021 of strain 1352 as "YST_1352021" with no
+    separator; an unbounded \\d+ read it as strain 1352021."""
+    assert parse_yst_strain_ids("YST_1352021 YST_1352025") == ["1352"]
+
+
 def test_background_strain_names_are_not_strain_ids():
     """Dataset 1239: BY4742 and W303 name the background, 78 and 56 the strains."""
     details = "Strain: By4742 (78) W303 Ade2+ (56) Comments:"

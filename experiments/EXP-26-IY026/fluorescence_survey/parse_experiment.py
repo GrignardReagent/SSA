@@ -125,8 +125,19 @@ _STRAIN_FIELD_PATTERN = re.compile(
 )
 
 # Strains are referenced in log text as "YST_1490", "YST1490", "YST-708" or
-# "yst365" (lab naming convention). (\d+) captures just the numeric part.
-_YST_STRAIN_PATTERN = re.compile(r'\bYST[\s_-]?(\d+)\b', re.IGNORECASE)
+# "yst365" (YST for "yeast strain"). (\d+) captures just the numeric part.
+#
+# The number is often followed by more of the strain's description rather than by
+# a word break: "YST_87_BY4741" names strain 87 in the BY4741 background, and
+# "YST_247_001" is position 1 of strain 247. A trailing \b matched neither,
+# because "_" is a word character — dataset 664 records all three of its strains
+# this way and yielded none of them.
+#
+# The digits are capped at four, the same bound the bare-number rule uses, because
+# a position index is sometimes run straight onto the strain with no separator:
+# dataset 1656's "YST_1352021" is position 021 of strain 1352, and an unbounded
+# \d+ read it as strain 1352021.
+_YST_STRAIN_PATTERN = re.compile(r'\bYST[\s_-]?(\d{2,4})', re.IGNORECASE)
 
 # A bare lab strain number: 2-4 digits with no leading zero, not glued to a
 # letter, digit, underscore or hyphen. The guards reject the many non-strain
