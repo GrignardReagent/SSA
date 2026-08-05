@@ -70,17 +70,27 @@ def time_warp(x, sigma=0.2, knot=4):
     return ret
 
 def window_slice(x, reduce_ratio=0.9):
-    # https://halshs.archives-ouvertes.fr/halshs-01357973/document
+    '''
+    Randomly slice a window of length ceil(reduce_ratio * T) from each sample, then stretch it back to the original length by linear interpolation. 
+    
+    The output has the same shape as the input. This is useful as neural networks often require fixed-size inputs. The function avoids the shape-mismatch problem by using `np.interp`.
+        
+    ref: https://halshs.archives-ouvertes.fr/halshs-01357973/document
+    '''
+    
     target_len = np.ceil(reduce_ratio*x.shape[1]).astype(int)
     if target_len >= x.shape[1]:
         return x
     starts = np.random.randint(low=0, high=x.shape[1]-target_len, size=(x.shape[0])).astype(int)
     ends = (target_len + starts).astype(int)
 
+    # stretch back to original length by linear interpolation
     ret = np.zeros_like(x)
     for i, pat in enumerate(x):
         for dim in range(x.shape[2]):
-            ret[i,:,dim] = np.interp(np.linspace(0, target_len, num=x.shape[1]), np.arange(target_len), pat[starts[i]:ends[i],dim]).T
+            ret[i,:,dim] = np.interp(np.linspace(0, target_len, num=x.shape[1]), # new x-coordinates 
+                                     np.arange(target_len), # old x-coordinates
+                                     pat[starts[i]:ends[i],dim]).T # old y-values
     return ret
 
 def window_warp(x, window_ratio=0.1, scales=[0.5, 2.]):
@@ -101,6 +111,36 @@ def window_warp(x, window_ratio=0.1, scales=[0.5, 2.]):
             warped = np.concatenate((start_seg, window_seg, end_seg))
             ret[i,:,dim] = np.interp(np.arange(x.shape[1]), np.linspace(0, x.shape[1]-1., num=warped.size), warped).T
     return ret
+
+def subsample(x, factor=2, random_phase=True):
+    # Downsample time: keep every `factor`-th timepoint, so the OUTPUT IS
+    # SHORTER than the input (T // factor timepoints) -- no interpolation back,
+    # unlike window_slice. With random_phase, each sample keeps a different
+    # phase of the grid (start offset drawn from [0, factor)), so two calls
+    # produce views built from (mostly) disjoint timepoints.
+    if factor <= 1:
+        return x
+    n_keep = x.shape[1] // factor
+    if random_phase:
+        starts = np.random.randint(0, factor, size=x.shape[0])
+    else:
+        starts = np.zeros(x.shape[0], dtype=int)
+    # per-sample index grid: starts[i], starts[i]+factor, ... (n_keep points)
+    idx = starts[:, None] + factor * np.arange(n_keep)[None, :]
+    return np.take_along_axis(x, idx[:, :, None], axis=1)
+
+def crop(x, reduce_ratio=0.9):
+    # Time series cropping: random contiguous crop of length
+    # ceil(reduce_ratio * T) per sample. Unlike window_slice, the crop is NOT
+    # stretched back -- the OUTPUT IS SHORTER than the input. All samples share
+    # the same target length, so the batch stays rectangular.
+    target_len = np.ceil(reduce_ratio * x.shape[1]).astype(int)
+    if target_len >= x.shape[1]:
+        return x
+    # +1 so the crop may end flush with the final timepoint
+    starts = np.random.randint(0, x.shape[1] - target_len + 1, size=x.shape[0])
+    idx = starts[:, None] + np.arange(target_len)[None, :]
+    return np.take_along_axis(x, idx[:, :, None], axis=1)
 
 def spawner(x, labels, sigma=0.05, verbose=0):
     # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6983028/
@@ -373,6 +413,30 @@ def permutation_torch(x: torch.Tensor, max_segments: int = 5, seg_mode: str = "e
         else:
             ret[i] = pat
     return ret
+
+def subsample_torch(x: torch.Tensor, factor: int = 2, random_phase: bool = True) -> torch.Tensor:
+    # Native torch mirror of subsample() -- output is SHORTER (T // factor).
+    if factor <= 1:
+        return x
+    n_keep = x.shape[1] // factor
+    if random_phase:
+        starts = torch.randint(0, factor, (x.shape[0],), device=x.device)
+    else:
+        starts = torch.zeros(x.shape[0], dtype=torch.long, device=x.device)
+    idx = starts[:, None] + factor * torch.arange(n_keep, device=x.device)[None, :]
+    return torch.gather(x, 1, idx.unsqueeze(-1).expand(-1, -1, x.shape[2]))
+
+def crop_torch(x: torch.Tensor, reduce_ratio: float = 0.9) -> torch.Tensor:
+    # Native torch mirror of crop() -- output is SHORTER (ceil(ratio * T)).
+    target_len = int(np.ceil(reduce_ratio * x.shape[1]))
+    if target_len >= x.shape[1]:
+        return x
+    
+    starts = torch.randint(0, x.shape[1] - target_len + 1, (x.shape[0],), device=x.device)
+    idx = starts[:, None] + torch.arange(target_len, device=x.device)[None, :]
+    return torch.gather(x, 1, idx.unsqueeze(-1).expand(-1, -1, x.shape[2]))
+
+# TODO: extract steady state augmentation
 
 # --------- thin wrappers around numpy implementations ---------
 def _to_numpy(a):
