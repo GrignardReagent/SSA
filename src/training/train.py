@@ -444,10 +444,27 @@ def train_ssl_model(
     device=None,
     grad_clip=1.0,
     save_path=None,
+    eval_fn=None,
+    eval_every=10,
+    eval_metric_key=None,
     wandb_logging=False,
     wandb_config=None,
     verbose=True,
+    return_run=False,
 ):
+    """SSL (contrastive) training loop for (X1, X2, y) batches.
+
+    `eval_fn`: optional caller-supplied downstream probe (e.g. SVM/KNN readout)
+    invoked every `eval_every` epochs; its returned dict drives wandb logging
+    (under "downstream/") and, via `eval_metric_key`, checkpoint selection +
+    early stopping -- mirroring `train_supcon_model`. When `eval_fn` is None
+    (the default), checkpoint selection + early stopping fall back to the
+    contrastive validation accuracy, i.e. today's behaviour is unchanged.
+
+    `return_run`: return ``(history, run)`` instead of just ``history``, with
+    the wandb run left OPEN so the caller can attach one-shot final metrics
+    before closing it. ``run`` is None when ``wandb_logging=False``.
+    """
     device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     
@@ -463,7 +480,10 @@ def train_ssl_model(
     # Temperature 0.1 matches the info-nce-pytorch library default.
     if loss_fn is None:
         loss_fn = lambda q, k: cross_view_info_nce(q, k, temperature=0.1)
-    
+
+    if eval_fn is not None and save_path is not None and eval_metric_key is None:
+        raise ValueError("eval_metric_key is required when eval_fn + save_path are both given.")
+
     # -------- initialize wandb (optional) --------
     run, start_time = None, None
     if wandb_logging:
@@ -476,9 +496,12 @@ def train_ssl_model(
     if verbose:
         print("Starting SSL training...")
 
-    best_val_acc = -1.0  # We will use Contrastive Accuracy for early stopping
+    best_val_acc = -1.0  # Contrastive Accuracy -- used for early stopping only when eval_fn is None
+    best_eval_value = -float("inf")  # downstream eval_metric_key -- used when eval_fn is given
     epochs_no_improve = 0
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
+    if eval_fn is not None:
+        history["eval_epoch"] = []
 
     for epoch in range(epochs):
         model.train()
@@ -549,25 +572,55 @@ def train_ssl_model(
             history["val_loss"].append(val_loss)
             history["val_acc"].append(val_acc)
 
-            # ===== Early stopping based on Contrastive Accuracy =====
-            # TODO: Consider using SimCLR + kNN downstream evaluation for early stopping instead of raw contrastive accuracy, as the latter may not always correlate with downstream task performance.
-            if val_acc > best_val_acc:
-                best_val_acc = val_acc
-                epochs_no_improve = 0
-                if save_path:
-                    torch.save(model.state_dict(), save_path)
-                    print(f"✅ Model saved at {save_path} (Best Val Acc: {best_val_acc:.4f})")
-            else:
-                epochs_no_improve += 1
-                if verbose:
-                    print(f"No improvement ({epochs_no_improve}/{patience}).")
+            # ===== Early stopping based on Contrastive Accuracy (only when no downstream eval_fn is given) =====
+            if eval_fn is None:
+                if val_acc > best_val_acc:
+                    best_val_acc = val_acc
+                    epochs_no_improve = 0
+                    if save_path:
+                        torch.save(model.state_dict(), save_path)
+                        print(f"✅ Model saved at {save_path} (Best Val Acc: {best_val_acc:.4f})")
+                else:
+                    epochs_no_improve += 1
+                    if verbose:
+                        print(f"No improvement ({epochs_no_improve}/{patience}).")
 
-            if epochs_no_improve >= patience:
-                print("🛑 Early stopping.")
-                break
+                if epochs_no_improve >= patience:
+                    print("🛑 Early stopping.")
+                    break
         else:
             history["val_loss"].append(None)
             history["val_acc"].append(None)
+
+        # ========= Periodic downstream eval + checkpoint selection =========
+        eval_metrics = None
+        if eval_fn is not None and ((epoch + 1) % eval_every == 0 or (epoch + 1) == epochs):
+            eval_metrics = eval_fn(model)
+            history["eval_epoch"].append(epoch + 1)
+            for k, v in eval_metrics.items():
+                history.setdefault(f"eval/{k}", []).append(v)
+
+            # ===== Checkpoint selection + early stopping based on eval_metric_key =====
+            if eval_metric_key is not None:
+                if eval_metric_key not in eval_metrics:
+                    raise ValueError(f"eval_metric_key '{eval_metric_key}' not found in eval_metrics: {list(eval_metrics.keys())}")
+                current_value = eval_metrics[eval_metric_key]
+                if current_value > best_eval_value:
+                    best_eval_value = current_value
+                    epochs_no_improve = 0
+                    if save_path:
+                        torch.save(model.state_dict(), save_path)
+                        if verbose:
+                            print(f"✅ Model saved at {save_path} (best {eval_metric_key}: {best_eval_value:.4f})")
+                else:
+                    epochs_no_improve += 1
+                    if verbose:
+                        print(f"No improvement in {eval_metric_key} ({epochs_no_improve}/{patience}).")
+
+                if patience is not None and epochs_no_improve >= patience:
+                    if verbose:
+                        print("🛑 Early stopping.")
+                    break
 
         # ---- LR scheduler step ----
         if scheduler is not None:
@@ -588,6 +641,8 @@ def train_ssl_model(
             if val_loss is not None:
                 log_dict["val/loss"] = float(val_loss)
                 log_dict["val/acc"] = float(val_acc)
+            if eval_metrics is not None:
+                log_dict.update({f"downstream/{k}": float(v) for k, v in eval_metrics.items()})
 
             try:
                 log_dict["lr"] = optimizer.param_groups[0]["lr"]
@@ -600,13 +655,18 @@ def train_ssl_model(
             msg = f"[SSL] Epoch [{epoch+1}/{epochs}] | train_loss {train_loss:.4f} | train_acc {train_acc:.4f}"
             if val_loader is not None and val_loss is not None:
                 msg += f" | val_loss {val_loss:.4f} | val_acc {val_acc:.4f}"
+            if eval_metrics is not None:
+                msg += " | " + " | ".join(f"{k} {v:.4f}" for k, v in eval_metrics.items())
             print(msg)
 
     if wandb_logging and run is not None:
-        finish_wandb_run(run, best_val_acc, start_time)
+        # when the caller wants the run back, leave it OPEN so it can attach
+        # one-shot final test metrics before closing it
+        finish_wandb_run(run, best_eval_value if eval_fn is not None else best_val_acc,
+                         start_time, finish=not return_run)
 
     print("SSL training complete.")
-    return history
+    return (history, run) if return_run else history
 
 
 # Supervised-Contrastive (SupCon) Training Loop

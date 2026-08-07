@@ -8,7 +8,9 @@ experiment notebooks (IY028, IY029, IY030, IY031, …).
 from __future__ import annotations
 
 import re
+from collections import deque
 from pathlib import Path
+from typing import Callable
 
 import numpy as np
 import pandas as pd
@@ -268,6 +270,57 @@ def knn_downstream_accuracy(
     y_pred = fit_predict_knn(Z_train, y_train, Z_test, n_neighbors=n_neighbors,
                              metric=metric, prior_correction=prior_correction)
     return accuracy_score(y_test, y_pred), y_pred
+
+
+def make_knn_eval_fn(
+    X_tr: np.ndarray,
+    y_tr: np.ndarray,
+    X_val: np.ndarray,
+    y_val: np.ndarray,
+    device,
+    n_neighbors: int = 10,
+    metric: str = "euclidean",
+    smooth_window: int = 3,
+) -> Callable:
+    """Build a periodic downstream-KNN ``eval_fn`` for ``train_ssl_model``/``train_supcon_model``.
+
+    Encodes ``X_tr``/``X_val`` through the (frozen) model, fits a
+    ``KNeighborsClassifier`` on the RAW embeddings (no ``StandardScaler`` --
+    same convention as :func:`knn_downstream_accuracy`), and tracks a trailing
+    mean over ``smooth_window`` calls alongside the raw value. Mirrors the
+    ``eval_fn`` closure in ``IY036_supcon_allclass_training_v4.py`` (the
+    smoothing exists because checkpoint selection on the raw metric can lock
+    onto a lucky noise spike rather than a genuine improvement), lifted here
+    so new scripts (e.g. IY039) don't reimplement it.
+
+    Returns
+    -------
+    Callable[[model], dict]
+        A closure with its own smoothing window, returning
+        ``{"knn_val_acc_smooth", "knn_val_acc", "knn_train_acc"}``. Caller is
+        responsible for the ``eval_every``/``eval_metric_key`` wiring.
+    """
+    window: deque = deque(maxlen=smooth_window)
+
+    def eval_fn(model) -> dict:
+        model.eval()
+        Z_tr = encode_channel(model, X_tr, device)
+        Z_val = encode_channel(model, X_val, device)
+        model.train()
+
+        knn = KNeighborsClassifier(n_neighbors=n_neighbors, metric=metric, n_jobs=-1)
+        knn.fit(Z_tr, y_tr)
+        knn_train_acc = accuracy_score(y_tr, knn.predict(Z_tr))
+        knn_val_acc = accuracy_score(y_val, knn.predict(Z_val))
+
+        window.append(knn_val_acc)
+        return {
+            "knn_val_acc_smooth": float(np.mean(window)),
+            "knn_val_acc": float(knn_val_acc),
+            "knn_train_acc": float(knn_train_acc),
+        }
+
+    return eval_fn
 
 
 # ── Dimensionality reduction ──────────────────────────────────────────────────

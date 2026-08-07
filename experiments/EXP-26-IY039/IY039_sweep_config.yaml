@@ -1,0 +1,40 @@
+# IY039 hyperparameter/architecture sweep config for the SimCLR transformer
+# encoder (cross-view InfoNCE), consumed by IY039_simclr_hparam_sweep.py via
+# Optuna trial.suggest_* (same values/min+max/value shape as IY018's YAML,
+# but no `experiments_definition` -- the dataset is fixed to all 4 IY020
+# sources combined, matching IY024, not a sweep axis).
+#
+# batch_size spans both the AdamW regime (<=1000) and the LARS regime (>1000,
+# see LARGE_BATCH_THRESHOLD in the script) -- lr and lars_base_lr are
+# deliberately separate parameters since they live on very different scales
+# (~1e-3 vs ~0.3) and are never both "the" learning rate for the same trial.
+parameters:
+  nhead:
+    values: [2, 4, 8]
+  num_layers:
+    values: [1, 2, 3, 4]
+  d_model:
+    values: [16, 32, 64, 128]   # all divisible by every nhead value above
+  dropout:
+    min: 0.0
+    max: 0.5
+  use_conv1d:
+    values: [true, false]
+  batch_size:
+    values: [32, 64, 128, 256, 512, 1024, 2048, 4096]
+  lr:
+    min: 0.0001
+    max: 0.01
+    log: true       # AdamW branch, batch_size <= 1000
+  lars_base_lr:
+    min: 0.05
+    max: 1.0
+    log: true       # LARS branch, batch_size > 1000; actual lr = lars_base_lr * batch_size/256
+  weight_decay:
+    min: 0.0
+    max: 0.001
+  nce_temp:
+    min: 0.05
+    max: 0.5
+  epochs:
+    value: 500
